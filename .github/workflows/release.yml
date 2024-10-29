@@ -9,12 +9,17 @@ jobs:
     # Specify runner +  build & upload the static files as an artifact
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Dependencies
+        run: npm install && npm run build
       - uses: actions/checkout@v4
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: initial-test-folder/
+          path: public/
 
   # Deployment job
   deploy:
