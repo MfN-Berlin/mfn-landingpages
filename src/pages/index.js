@@ -20,6 +20,17 @@ const IndexPage = () => {
       hostname: window.location.hostname,
       origin: window.location.origin
     } : null,
+    rawPrefix: process.env.GATSBY_PATH_PREFIX,
+    buildTime: {
+      command: process.env.npm_lifecycle_event,
+      prefixPaths: process.env.PREFIX_PATHS === 'true'
+    },
+    testPaths: {
+      root: withPrefix("/"),
+      image: withPrefix("/images/logo.svg"),
+      absolute: withPrefix("https://example.com"),
+      relative: withPrefix("./relative/path")
+    }
   }
 
   return (
@@ -33,7 +44,7 @@ const IndexPage = () => {
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            headline="mfn-landingpages v0.0.11"
+            headline="mfn-landingpages v0.0.12"
             headlineStyle="h1"
             body="interne Startseite, hier sind die bereits angelegten Landingpages und Zusatzseiten"
             spacing="wide"
