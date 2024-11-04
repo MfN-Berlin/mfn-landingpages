@@ -7,6 +7,8 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const isProduction = process.env.NODE_ENV === 'production'
+
 module.exports = {
   pathPrefix: `/mfn-landingpages`,
   siteMetadata: {
@@ -62,4 +64,10 @@ module.exports = {
       },
     },
   ],
+  flags: {
+    FAST_DEV: true,
+    DEV_SSR: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+  },
+  pathPrefix: isProduction ? "/mfn-landingpages" : "/",
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { withPrefix } from 'gatsby';
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
@@ -28,13 +29,13 @@ const MainNavLink = ({ to, children }) => (
   </Link>
 );
 
-// Logo component
+// Logo component with withPrefix
 const Logo = () => (
   <div className="flex-shrink-0 w-[144px]">
     <div className="mfn-system-branding-block max-w-[calc(100vw-13px)] md:absolute bg-white md:top-[12px] pl-[1px] pr-[2px] top-[13px]">
       <Link to="/" className="block outline-none text-[#7da30b] transition duration-3000">
         <img
-          src="/images/logo.svg"
+          src={withPrefix("/images/logo.svg")}
           alt="Museum für Naturkunde Berlin"
           className="block z-[var(--z-index-logo)] bg-[var(--color-background-logo)] px-[0.7em] h-[84px] m-0 sm:sticky sm:top-0 sm:h-[var(--height-branding-logo)]"
         />
@@ -167,143 +168,344 @@ const MainNavItem = ({ to, children, submenu }) => {
 // Main Header component
 const Header = () => {
   const menuData = {
-    museum: {
-      to: "/museum",
+    besuchplanen: {
+      to: "/besuch-planen",
       submenu: [
-        { 
-          to: "/museum/besuch-planen", 
-          label: "Besuch planen",
-          column: 1,
-          order: 1
-        },
+        
         { 
           to: "/museum/ausstellungen", 
           label: "Ausstellungen",
-          column: 2,
+          column: 1,
           order: 1,
           submenu: [
             { to: "/museum/ausstellungen/zugvoegel", label: "ZUGvögel" },
             { to: "/museum/ausstellungen/zukunftsplan", label: "Zukunftsplan" },
-            { to: "/museum/ausstellungen/dinosaurier", label: "Dinosaurier!" },
-            // ... other exhibitions
+            { to: "/museum/ausstellungen/dinosaurier-zeitalter-der-riesenechsen", label: "Dinosaurier!" },
+            { to: "/museum/ausstellungen/digitize", label: "digitize!" },
+            { to: "/museum/ausstellungen/saurierwelt", label: "Saurierwelt" },
+            { to: "/museum/ausstellungen/system-erde", label: "System Erde" },
+            { to: "/museum/ausstellungen/kosmos-und-sonnensystem", label: "Kosmos und Sonnensystem" },
+            { to: "/museum/ausstellungen/evolution-aktion", label: "Evolution in Aktion" },
+            { to: "/museum/ausstellungen/nass-sammlung", label: "Nass-Sammlung" },
+            { to: "/museum/ausstellungen/kellers-insektenmodelle", label: "Kellers Insektenmodelle" },
+            { to: "/museum/ausstellungen/highlights-der-praeparationskunst", label: "Highlights der Präparationskunst" },
+            { to: "/museum/ausstellungen/mineralien", label: "Mineralien" },
+            { to: "/museum/ausstellungen/humboldt-intervention", label: "Humboldt-Intervention" },
+            { to: "/museum/wanderausstellungen", label: "Wanderausstellungen" },
+            { to: "/museum/ausstellungen/archiv-sonderausstellungen", label: "Archiv: Sonderausstellungen" }
+          ]
+        },
+        
+        { 
+          to: "/museum/fuernatur-digital", 
+          label: "#fürNatur digital",
+          column: 2, 
+          order: 1,  
+          submenu: [
+            { 
+              to: "/museum/fuernatur-digital/beats-bones-der-podcast-aus-dem-museum-fuer-naturkunde-berlin", 
+              label: "Beats & Bones" 
+            },
+            { 
+              to: "/museum/fuernatur-digital/suesses-oder-saurier-der-wissenspodcast-fuer-kinder", 
+              label: "Süßes oder Saurier" 
+            },
+            { 
+              to: "/museum/fuernatur-digital/queering-nature", 
+              label: "Queering Nature" 
+            },
+            { 
+              to: "/museum/fuernatur-digital/wie-gras.-ein-literarischer-audioguide-zum-anthropozaen", 
+              label: "Wie Gras",
+            }
           ]
         },
         { 
-          to: "/museum/veranstaltungen", 
-          label: "Veranstaltungen",
-          column: 1,
-          order: 2
+          to: "/museum", 
+          label: "Im Museum",
+          column: 3,  // Adjust column/order as needed
+          order: 1,   // Adjust column/order as needed
+          submenu: [
+            { 
+              to: "/museum/veranstaltungen", 
+              label: "Veranstaltungen" 
+            },
+            { 
+              to: "/museum/lageplan-barrierefreiheit", 
+              label: "Lageplan & Barrierefreiheit" 
+            },
+            { 
+              to: "/museum/garderobe", 
+              label: "Garderobe" 
+            },
+            { 
+              to: "/museum/cafeteria", 
+              label: "Cafeteria" 
+            },
+            { 
+              to: "/museum/veranstaltungen", 
+              label: "Veranstaltungen" 
+            }, 
+            { 
+              to: "/museum/besuch-planen", 
+              label: "Sonderöffnungszeiten & Kooperationen" 
+            },
+            { 
+              to: "/museum/faq", 
+              label: "FAQ" 
+            }
+          ]
         }
       ]
     },
-    wissenschaft: {
-      to: "/wissenschaft",
+    mitmachen:{ 
+      to: "/mitmachen", 
+      label: "Mitmachen",
       submenu: [
+        // Spalte 1
+        { 
+          to: "/mitmachen/ehrenamt", 
+          label: "Ehrenamt",
+          column: 1,
+          order: 1
+        },
+        { 
+          to: "/mitmachen/buergerwissenschaften", 
+          label: "Bürgerwissenschaften",
+          column: 1,
+          order: 2
+        },
+    
+        // Spalte 2
+        { 
+          to: "/museum/bildung", 
+          label: "Bildungsangebote",
+          column: 2,
+          order: 1,
+          submenu: [
+            { 
+              to: "/museum/bildung/fuernatur-digital-angebote-fuer-familien-und-kinder", 
+              label: "Digitale Angebote" 
+            },
+            { 
+              to: "/museum/bildung/fuehrungen", 
+              label: "Führungen" 
+            },
+            { 
+              to: "/museum/bildung/schule-und-kita", 
+              label: "Schule und Kita" 
+            },
+            { 
+              to: "/museum/bildung/familien", 
+              label: "Familien" 
+            },
+            { 
+              to: "/museum/bildung/kindergeburtstage", 
+              label: "Kindergeburtstage" 
+            },
+            { 
+              to: "/museum/bildung/erwachsene", 
+              label: "Erwachsene" 
+            },
+            { 
+              to: "/museum/bildung/fortbildungen", 
+              label: "Fortbildungen" 
+            },
+            { 
+              to: "/museum/bildung/partnerschaften-und-projekte", 
+              label: "Partnerschaften und Projekte" 
+            }
+          ]
+        },
+    
+        // Spalte 3
+        { 
+          to: "/mitmachen/veranstaltungen", 
+          label: "Veranstaltungen",
+          column: 3,
+          order: 1
+        }
+      ]
+    },
+    forschung:{ 
+      to: "/wissenschaft/forschung", 
+      label: "Forschung",
+      submenu: [
+        // Forschung mit Unterpunkten
         { 
           to: "/wissenschaft/forschung", 
           label: "Forschung",
           column: 1,
           order: 1,
           submenu: [
-            { to: "/wissenschaft/forschung/dynamik-der-natur", label: "Dynamik der Natur" },
-            { to: "/wissenschaft/forschung/zukunft-der-sammlung", label: "Zukunft der Sammlung" },
-            { to: "/wissenschaft/forschung/gesellschaft-und-natur", label: "Gesellschaft und Natur" }
+            { 
+              to: "/wissenschaft/forschung/dynamik-der-natur", 
+              label: "Dynamik der Natur" 
+            },
+            { 
+              to: "/wissenschaft/forschung/zukunft-der-sammlung", 
+              label: "Zukunft der Sammlung" 
+            },
+            { 
+              to: "/wissenschaft/forschung/gesellschaft-und-natur", 
+              label: "Gesellschaft und Natur" 
+            }
           ]
         },
+        { 
+          to: "/mitmachen/team-projekte", 
+          label: "Team & Projekte",
+          column: 1,
+          order: 2
+        },
+        // Infrastruktur mit Unterpunkten
         { 
           to: "/wissenschaft/infrastruktur", 
           label: "Infrastruktur",
           column: 2,
-          order: 1
+          order: 1,
+          submenu: [
+            { 
+              to: "/wissenschaft/infrastruktur/sammlung", 
+              label: "Sammlung" 
+            },
+            { 
+              to: "/wissenschaft/infrastruktur/labore", 
+              label: "Labore" 
+            },
+            { 
+              to: "/wissenschaft/infrastruktur/it-forschungsinfrastruktur", 
+              label: "IT Forschungsinfrastruktur" 
+            },
+            { 
+              to: "/wissenschaft/infrastruktur/forschungsdatenmanagementstruktur", 
+              label: "Forschungsdatenmanagementstruktur" 
+            }
+          ]
         },
+    
+        // Transfer mit Unterpunkten
         { 
           to: "/wissenschaft/transfer", 
           label: "Transfer",
           column: 3,
-          order: 1
-        }
-      ]
-    },
-    zukunft: {
-      to: "/zukunft",
-      submenu: [
-        { 
-          to: "/zukunft/zukunftsplan", 
-          label: "Zukunftsplan",
-          column: 1,
-          order: 1
-        },
-        { 
-          to: "/zukunft/sammlungserschliessung", 
-          label: "Sammlungserschließung",
-          column: 2,
-          order: 1
-        },
-        { 
-          to: "/zukunft/wissenstransfer", 
-          label: "Wissenstransfer",
-          column: 3,
-          order: 1
-        },
-        { 
-          to: "/zukunft/journal-fuer-natur", 
-          label: "Journal für Natur",
-          column: 1,
-          order: 2
-        },
-        { 
-          to: "/zukunft/museums-evolution", 
-          label: "Museums-Evolution",
-          column: 2,
-          order: 2
-        }
-      ]
-    },
-    ueberUns: {
-      to: "/ueber-uns",
-      submenu: [
-        { 
-          to: "/ueber-uns/das-museum", 
-          label: "Das Museum",
-          column: 1,
-          order: 1
-        },
-        { 
-          to: "/ueber-uns/bau", 
-          label: "Bau",
-          column: 2,
-          order: 1
-        },
-        { 
-          to: "/ueber-uns/news", 
-          label: "News",
-          column: 3,
-          order: 1
-        },
-        { 
-          to: "/ueber-uns/sponsoren", 
-          label: "Sponsoren",
-          column: 1,
-          order: 2
-        },
-        { 
-          to: "/ueber-uns/team", 
-          label: "Team",
-          column: 2,
-          order: 2
-        },
-        { 
-          to: "/ueber-uns/jobs-und-karriere", 
-          label: "Jobs und Karriere",
-          column: 3,
-          order: 2,
+          order: 1,
           submenu: [
-            { to: "/ueber-uns/jobs-und-karriere/arbeiten-am-museum", label: "Arbeiten am Museum" },
-            { to: "/ueber-uns/jobs-und-karriere/stellenausschreibungen", label: "Stellenausschreibungen" }
+            { 
+              to: "/wissenschaft/transfer/kommunizieren", 
+              label: "Kommunizieren" 
+            },
+            { 
+              to: "/wissenschaft/transfer/beraten", 
+              label: "Beraten" 
+            },
+            { 
+              to: "/wissenschaft/transfer/anwenden", 
+              label: "Anwenden" 
+            }
           ]
         }
       ]
-    }
+    },
+    museum: { 
+      to: "/museum", 
+      label: "Museum",
+      submenu: [
+        // Über uns Sektion
+        { 
+          to: "/museum/heute", 
+          label: "Das Museum heute",
+          column: 1,
+          order: 1,
+          submenu: [
+            { 
+              to: "/museum/ueber-uns/ueber-uns", 
+              label: "Über uns" 
+            },
+            { 
+              to: "/museum/ueber-uns/bau", 
+              label: "Bau" 
+            },
+            { 
+              to: "/museum/ueber-uns/das-museum", 
+              label: "Das Museum" 
+            },
+            { 
+              to: "/museum/ueber-uns/sponsoren", 
+              label: "Sponsoren" 
+            },
+          ]
+        },
+    
+        // Das Museum in Zukunft Sektion
+        { 
+          to: "/museum/zukunft", 
+          label: "Das Museum in Zukunft",
+          column: 2,
+          order: 1,
+          submenu: [
+            { 
+              to: "/museum/zukunft/zukunftsplan", 
+              label: "Zukunftsplan" 
+            },
+            { 
+              to: "/museum/zukunft/sammlungserschliessung", 
+              label: "Sammlungserschließung" 
+            },
+            { 
+              to: "/museum/zukunft/wissenstransfer", 
+              label: "Wissenstransfer" 
+            },
+            { 
+              to: "/museum/zukunft/museums-evolution", 
+              label: "Museums-Evolution" 
+            }
+          ]
+        },
+        // Das Museum in Zukunft Sektion
+        { 
+          to: "/museum/medien", 
+          label: "Medien",
+          column: 3,
+          order: 1,
+          submenu: [
+            { 
+              to: "/museum/zukunft/zukunftsplan", 
+              label: "Presse" 
+            },
+            { 
+              to: "/museum/zukunft/sammlungserschliessung", 
+              label: "News" 
+            },
+            { 
+              to: "/museum/zukunft/wissenstransfer", 
+              label: "Journal \"für Natur\"" 
+            },
+            { 
+              to: "/museum/zukunft/museums-evolution", 
+              label: "Newsletter" 
+            }
+          ]
+        },
+        // Das Museum in Zukunft Sektion
+        { 
+          to: "/museum/medien", 
+          label: "Jobs & Karriere",
+          column: 4,
+          order: 1,
+          submenu: [
+            { 
+              to: "/museum/zukunft/zukunftsplan", 
+              label: "Hier Arbeiten" 
+            },
+            { 
+              to: "/museum/zukunft/sammlungserschliessung", 
+              label: "Stellenausschreibungen" 
+            }
+          ]
+        }
+      ]
+    },
   };
 
   return (
@@ -342,11 +544,10 @@ const Header = () => {
         <div className="flex items-center justify-between h-[44px] pr-[12px]">
           {/* Menu items */}
           <div className="flex flex-wrap justify-start">
-            <MainNavItem to="/museum" submenu={menuData.museum.submenu}>Museum</MainNavItem>
-            <MainNavItem to="/wissenschaft" submenu={menuData.wissenschaft.submenu}>Wissenschaft</MainNavItem>
-            <MainNavItem to="/zukunft" submenu={menuData.zukunft.submenu}>Zukunft</MainNavItem>
-            {/* This line needs to match the property name exactly */}
-            <MainNavItem to="/ueber-uns" submenu={menuData.ueberUns.submenu}>Über uns</MainNavItem>
+            <MainNavItem to="/museum" submenu={menuData.besuchplanen.submenu}>Besuch planen</MainNavItem>
+            <MainNavItem to="/ueber-uns" submenu={menuData.mitmachen.submenu}>Mitmachen</MainNavItem>
+            <MainNavItem to="/wissenschaft" submenu={menuData.forschung.submenu}>Forschung</MainNavItem>
+            <MainNavItem to="/zukunft" submenu={menuData.museum.submenu}>Das Museum</MainNavItem>
           </div>
           <div className="flex items-center justify-end space-x-4 ml-4 md:ml-10">
             <SearchForm />

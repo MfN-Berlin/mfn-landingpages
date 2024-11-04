@@ -37,19 +37,21 @@ const OpenToday = () => {
     const currentHour = now.getHours();
     const isAfterClosing = currentHour >= 18;
     const timeWord = isAfterClosing ? "war" : "ist";
+    const isHoliday = isDateMatch(holidays, month, date);
 
+    // Prüfe zuerst auf Schließtage
     if (isDateMatch(closingDays, month, date)) {
       return { isOpen: false, message: `${timeWord} das Museum geschlossen.` };
     }
 
-    const isHoliday = isDateMatch(holidays, month, date);
-    const isWeekend = day === 0 || day === 6;
-    const openingTime = isWeekend ? "10:00" : "09:30";
-    
+    // Prüfe auf Montag - nur schließen wenn es KEIN Feiertag ist
     if (day === 1 && !isHoliday) {
       return { isOpen: false, message: `${timeWord} das Museum geschlossen.` };
     }
 
+    const isWeekend = day === 0 || day === 6;
+    const openingTime = isWeekend ? "10:00" : "09:30";
+    
     return { 
       isOpen: !isAfterClosing, 
       message: `${timeWord} das Museum von ${openingTime} bis 18:00 Uhr geöffnet${isHoliday ? " (Feiertag)" : ""}.`
@@ -60,14 +62,14 @@ const OpenToday = () => {
 
   return (
     <div className="mb-4 bg-white">
-      <div className="relative bg-Green-500 flex justify-between items-center p-5 px-34 text-center">
+      <div className="relative bg-Green-500 flex justify-between items-center p-5 px-20 text-center">
         <div className="text-white typography-p w-full">
           <span className="font-bold">Heute</span> {message}
         </div>
-        <div className={`absolute w-30 h-[58px] right-[-8px] top-[-20px] px-[6.91px] py-[11.91px] ${isOpen ? 'bg-Blue-500' : 'bg-Orange'} rounded-md transform rotate-[9.82deg]`}>
+        <div className={`absolute w-30 h-[48px] right-[-8px] top-[-20px] px-[6.91px] py-[8px] ${isOpen ? 'bg-Blue-500' : 'bg-Orange'} rounded-md transform rotate-[9.82deg]`}>
           <div className="text-center text-white relative">
             <span className="block text-[10px] font-bold leading-none">{isOpen ? '' : 'SORRY, '}WE'RE</span>
-            <span className="text-[25px] font-bold leading-none"> {isOpen ? 'OPEN!' : 'CLOSED'}</span>
+            <span className="text-[{isOpen ? '25px' : '20px'}] font-bold leading-none"> {isOpen ? 'OPEN!' : 'CLOSED'}</span>
           </div>
         </div>
       </div>
