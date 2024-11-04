@@ -2,7 +2,7 @@ import React from 'react';
 import ContentImage from '../elements/ContentImage';
 import CardText from '../elements/CardText';
 
-const SlideContent = ({ imageName, imageMap, title, kicker, text, link }) => {
+const SlideContent = ({ imageName, imageMap, title, kicker, text, link, altText }) => {
   if (!imageMap) {
     console.warn('SlideContent: imageMap is undefined');
     return null;
@@ -18,7 +18,7 @@ const SlideContent = ({ imageName, imageMap, title, kicker, text, link }) => {
       <div className="relative w-full pb-[56.25%]"> {/* 16:9 aspect ratio */}
         <ContentImage
           imageName={imageName}
-          alt={title}
+          alt={altText || title}
           imageMap={imageMap}
           className="absolute top-0 left-0 w-full h-full object-cover"
         />

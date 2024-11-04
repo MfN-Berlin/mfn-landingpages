@@ -124,7 +124,7 @@ const theme = {
         fontWeight: 'bold',
         lineHeight: '24px',
         fontSize: '0.75rem',
-        letterSpacing: '0.05em',
+        letterSpacing: '0.25em',
         textTransform: 'uppercase',
       },
       'kicker-small': {

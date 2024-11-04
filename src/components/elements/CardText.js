@@ -42,7 +42,7 @@ const CardText = ({
       )}
       {body && (
         <div 
-          className={`self-stretch text-Black-900 typography-p ${alignmentClasses[alignment]}`}
+          className={`self-stretch text-Black-700 typography-p ${alignmentClasses[alignment]}`}
           dangerouslySetInnerHTML={{ __html: body }}
         />
       )}

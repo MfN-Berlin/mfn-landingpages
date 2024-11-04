@@ -15,11 +15,13 @@
     "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-preload-fonts": "^4.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-json": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
+    "googleapis": "^144.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -44,7 +46,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "repository": {
     "type": "git",

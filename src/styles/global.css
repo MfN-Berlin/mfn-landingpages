@@ -82,10 +82,10 @@
     @apply font-tradegothic text-sm leading-auto tracking-normal;
   }
   .typography-kicker {
-    @apply font-tradegothic-bold text-xs leading-24 tracking-wider uppercase;
+    @apply font-tradegothic-bold text-xs leading-24 tracking-widest uppercase;
   }
   .typography-kicker-small {
-    @apply font-tradegothic-bold text-2xs leading-24 tracking-wider uppercase;
+    @apply font-tradegothic-bold text-2xs leading-24 tracking-widst uppercase;
   }
   .typography-button {
     @apply font-tradegothic-bold text-sm leading-24 tracking-normal;

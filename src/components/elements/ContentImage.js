@@ -16,6 +16,7 @@ const ContentImage = ({ imageName, alt, imageMap, className = '' }) => {
       image={image}
       alt={alt}
       className={`${className} object-contain`}
+      loading="lazy"
     />
   );
 };

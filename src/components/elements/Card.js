@@ -12,7 +12,7 @@ const Card = ({
 }) => {
   const cardContent = (
     <>
-      <ContentImage {...imageProps} />
+      {imageProps && <ContentImage {...imageProps} />}
       {variant === 'classic' ? (
         <CardText {...textProps} />
       ) : (
