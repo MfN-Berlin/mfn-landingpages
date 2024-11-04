@@ -355,8 +355,8 @@ const Header = () => {
         { 
           to: "/mitmachen/team-projekte", 
           label: "Team & Projekte",
-          column: 1,
-          order: 2
+          column: 4,
+          order: 1
         },
         // Infrastruktur mit Unterpunkten
         { 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 
 const FooterLink = ({ to, children, external = false }) => {
   const linkProps = external ? { href: to, target: "_blank", rel: "noopener noreferrer" } : { to };
@@ -125,7 +125,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center text-center text-Black-700 mt-16 pt-16">
           <img
-            src="/images/leibniz.svg"
+            src={withPrefix("/images/leibniz.svg")}
             alt="Leibniz-Institut für Evolutions- und Biodiversitätsforschung"
             className="w-20 h-20 mb-4"
           />

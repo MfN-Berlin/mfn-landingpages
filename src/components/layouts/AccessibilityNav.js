@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { withPrefix } from 'gatsby';
+
 
 const AccessibilityNav = ({ currentPage }) => {
   return (
@@ -20,7 +22,7 @@ const AccessibilityNav = ({ currentPage }) => {
           rel="noopener noreferrer"
           className="flex items-center gap-1.5"
         >
-          <img src="/images/iconGebaerdensprache.png" alt="" className="w-6 h-6" />
+          <img src={withPrefix("/images/iconGebaerdensprache.png")} alt="" className="w-6 h-6" />
           <span className="text-Black-500 text-xs font-tradegothic underline leading-[27px] whitespace-nowrap">
             Gebärdensprache
           </span>
@@ -31,7 +33,7 @@ const AccessibilityNav = ({ currentPage }) => {
           rel="noopener noreferrer"
           className="flex items-center gap-1.5"
         >
-          <img src="/images/iconLeichteSprache.png" alt="" className="w-6 h-6" />
+          <img src={withPrefix("/images/iconLeichteSprache.png")} alt="" className="w-6 h-6" />
           <span className="text-Black-500 text-xs font-tradegothic underline leading-[27px] whitespace-nowrap">
             Leichte Sprache
           </span>
@@ -42,7 +44,7 @@ const AccessibilityNav = ({ currentPage }) => {
           rel="noopener noreferrer"
           className="flex items-center gap-1.5"
         >
-          <img src="/images/iconBarrierefreiheit.png" alt="" className="w-6 h-6" />
+          <img src={withPrefix("/images/iconBarrierefreiheit.png")}  alt="" className="w-6 h-6" />
           <span className="text-Black-500 text-xs font-tradegothic underline leading-[27px] whitespace-nowrap">
             Barrierefreiheit
           </span>
