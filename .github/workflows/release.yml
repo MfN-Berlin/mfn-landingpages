@@ -4,24 +4,36 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  # Build job
   build:
-    # Specify runner +  build & upload the static files as an artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      # Specify exact Node version to match local
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - name: Dependencies
-        run: npm install && npm run build --prefix-paths
+          node-version: '20.16.0'
+      
+      # Install dependencies and Gatsby CLI globally
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm install -g gatsby-cli
+      
+      # Build with explicit prefix paths
+      - name: Build
+        run: |
+          gatsby build --prefix-paths
+        env:
+          PREFIX_PATHS: 'true'
+          NODE_ENV: 'production'
+
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: public/
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
