@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, withPrefix } from "gatsby"
 import Header from "../components/layouts/Header"
 import Footer from "../components/layouts/Footer"
 import Section from "../components/elements/Section"
@@ -9,6 +9,14 @@ import AccessibilityNav from '../components/layouts/AccessibilityNav'
 import HeadComponent from '../components/layouts/HeadComponent'
 
 const IndexPage = () => {
+  const debugInfo = {
+    nodeEnv: process.env.NODE_ENV,
+    prefix: withPrefix("/"),
+    publicUrl: process.env.PUBLIC_URL,
+    baseUrl: typeof window !== 'undefined' ? window.location.href : '',
+    pathPrefix: process.env.PATH_PREFIX,
+  }
+
   return (
     <>
       <Header />
@@ -17,14 +25,23 @@ const IndexPage = () => {
           <AccessibilityNav currentPage="Startseite" />
         </Section>
 
+
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            headline="mfn-landingpages v0.0.6"
+            headline="mfn-landingpages v0.0.9"
             headlineStyle="h1"
             body="interne Startseite, hier sind die bereits angelegten Landingpages und Zusatzseiten"
             spacing="wide"
             alignment="center"
           />
+        </Section>
+        <Section backgroundColor="bg-Yellow-100" columns={1}>
+          <div className="p-4 font-mono text-sm">
+            <h2 className="font-bold mb-2">Debug Information:</h2>
+            <pre className="whitespace-pre-wrap">
+              {JSON.stringify(debugInfo, null, 2)}
+            </pre>
+          </div>
         </Section>
 
         <Section backgroundColor="bg-Green-100" columns={3} gapClass="gap-8">
