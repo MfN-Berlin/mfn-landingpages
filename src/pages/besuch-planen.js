@@ -13,7 +13,7 @@ import Slideshow from '../components/layouts/Slideshow'
 import SlideContent from '../components/layouts/SlideContent'
 import AccessibilityNav from '../components/layouts/AccessibilityNav'
 import OpenToday from '../components/features/OpenToday'
-import Feedback from '../components/features/feedback'
+import Feedback from '../components/features/Feedback'
 import HeadComponent from '../components/layouts/HeadComponent'
 
 
