@@ -11,10 +11,15 @@ import HeadComponent from '../components/layouts/HeadComponent'
 const IndexPage = () => {
   const debugInfo = {
     nodeEnv: process.env.NODE_ENV,
+    isProduction: process.env.NODE_ENV === 'production',
     prefix: withPrefix("/"),
-    publicUrl: process.env.PUBLIC_URL,
     baseUrl: typeof window !== 'undefined' ? window.location.href : '',
-    pathPrefix: process.env.PATH_PREFIX,
+    testPath: withPrefix("/images/logo.svg"),
+    windowLocation: typeof window !== 'undefined' ? {
+      pathname: window.location.pathname,
+      hostname: window.location.hostname,
+      origin: window.location.origin
+    } : null,
   }
 
   return (
@@ -28,7 +33,7 @@ const IndexPage = () => {
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            headline="mfn-landingpages v0.0.9"
+            headline="mfn-landingpages v0.0.11"
             headlineStyle="h1"
             body="interne Startseite, hier sind die bereits angelegten Landingpages und Zusatzseiten"
             spacing="wide"
