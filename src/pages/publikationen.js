@@ -131,52 +131,66 @@ const PublicationsPage = ({ data }) => {
       <main className="bg-white flex flex-col items-center justify-center p-0">
         <Section backgroundColor="bg-Black-100">
           <ErrorBoundary>
-            <h1 className="typography-h1">Alle Publikationen seit 2019</h1>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={handleSearch} // Use the new handler instead of direct setState
-              placeholder="Search publications..."
-            />
-            <table>
-              <thead>
-                <tr>
-                  <th>Publication (APA Style)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {paginatedPublications.map((pub, index) => (
-                  <tr key={index}>
-                    <td dangerouslySetInnerHTML={{ __html: formatAPA(pub) }} className="pb-12"/>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <div>
-              <ul className="p-0 m-0 text-[#666]">
+            <div className="mb-8">
+              <h1>Alle Publikationen seit 2019</h1>
+              <div className="search-container mt-4">
+                <label htmlFor="search-publications" className="block mb-2">
+                  Publikationen durchsuchen
+                </label>
+                <input
+                  id="search-publications"
+                  type="search"
+                  value={searchTerm}
+                  onChange={handleSearch}
+                  placeholder="Suchen Sie nach Titel, Autor, Journal..."
+                  className="w-full p-2 border border-Black-300 rounded"
+                  aria-label="Suchen Sie in allen Publikationen"
+                />
+              </div>
+            </div>
+
+            <div className="publications-list" role="region" aria-label="Publikationsliste">
+              {paginatedPublications.length > 0 ? (
+                <ul className="list-none p-0">
+                  {paginatedPublications.map((pub, index) => (
+                    <li key={index} className="mb-12 border-b border-Black-100 pb-4">
+                      <article>
+                        <p dangerouslySetInnerHTML={{ __html: formatAPA(pub) }} />
+                      </article>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>Keine Publikationen gefunden.</p>
+              )}
+            </div>
+
+            <nav 
+              aria-label="Pagination" 
+              className="mt-8"
+            >
+              <ul className="flex justify-center items-center gap-2 p-0 m-0 list-none">
                 {/* First Page */}
-                <li className="inline">
+                <li>
                   <button 
                     onClick={() => setCurrentPage(1)}
                     disabled={currentPage === 1}
-                    className={`px-[0.3em] text-[#666] hover:text-[#91bd0d] transition-colors duration-300 ${
-                      currentPage === 1 ? 'text-[#7da30b]' : ''
-                    }`}
+                    className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                    aria-label="Erste Seite"
                   >
-                    <VisuallyHidden>Erste Seite</VisuallyHidden>
-                    «
+                    <span aria-hidden="true">«</span>
                   </button>
                 </li>
 
                 {/* Previous Page */}
-                <li className="inline">
+                <li>
                   <button 
                     onClick={() => setCurrentPage(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="px-[0.3em] text-[#666] hover:text-[#91bd0d] transition-colors duration-300"
+                    className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                    aria-label="Vorherige Seite"
                   >
-                    <VisuallyHidden>Vorherige Seite</VisuallyHidden>
-                    ‹
+                    <span aria-hidden="true">‹</span>
                   </button>
                 </li>
 
@@ -216,23 +230,21 @@ const PublicationsPage = ({ data }) => {
                   return pages.map((page, index) => {
                     if (page === '...') {
                       return (
-                        <li key={`ellipsis-${index}`} className="inline px-[0.3em] text-[#666]" role="presentation">
-                          …
+                        <li key={`ellipsis-${index}`}>
+                          <span className="px-3 py-2" aria-hidden="true">…</span>
                         </li>
                       );
                     }
                     
                     return (
-                      <li key={page} className="inline">
+                      <li key={page}>
                         <button
                           onClick={() => setCurrentPage(page)}
-                          className={`px-[0.3em] hover:text-[#91bd0d] transition-colors duration-300 ${
-                            currentPage === page ? 'text-[#7da30b]' : 'text-[#666]'
-                          }`}
+                          className={`px-3 py-2 rounded hover:bg-Green-100 
+                            ${currentPage === page ? 'bg-Green-500 text-white' : ''}`}
+                          aria-label={`Seite ${page}`}
+                          aria-current={currentPage === page ? 'page' : undefined}
                         >
-                          <VisuallyHidden>
-                            {currentPage === page ? 'Aktuelle Seite' : `Seite ${page}`}
-                          </VisuallyHidden>
                           {page}
                         </button>
                       </li>
@@ -241,37 +253,42 @@ const PublicationsPage = ({ data }) => {
                 })()}
 
                 {/* Next Page */}
-                <li className="inline">
+                <li>
                   <button 
                     onClick={() => setCurrentPage(currentPage + 1)}
                     disabled={currentPage === pageCount}
-                    className="px-[0.3em] text-[#666] hover:text-[#91bd0d] transition-colors duration-300"
+                    className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                    aria-label="Nächste Seite"
                   >
-                    <VisuallyHidden>Nächste Seite</VisuallyHidden>
                     <span aria-hidden="true">›</span>
                   </button>
                 </li>
 
                 {/* Last Page */}
-                <li className="inline">
+                <li>
                   <button 
                     onClick={() => setCurrentPage(pageCount)}
                     disabled={currentPage === pageCount}
-                    className="px-[0.3em] text-[#666] hover:text-[#91bd0d] transition-colors duration-300"
+                    className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                    aria-label="Letzte Seite"
                   >
-                    <VisuallyHidden>Letzte Seite</VisuallyHidden>
                     <span aria-hidden="true">»</span>
                   </button>
                 </li>
               </ul>
+            </nav>
+
+            {/* Add pagination info for screen readers */}
+            <div className="sr-only" aria-live="polite">
+              Seite {currentPage} von {pageCount}
             </div>
           </ErrorBoundary>
         </Section>
       </main>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {

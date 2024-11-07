@@ -1,0 +1,44 @@
+Old DE URL,Old DE Label,Old EN URL,Old EN Label,New DE URL,New DE Label,New EN URL,New EN Label,Status
+/de/wissenschaft,Wissenschaft,/en/science,Science,/de/forschung,Forschung,/en/research,Research,Redirect
+/de/ueber-uns,Über uns,/en/about,About,/de/museum/heute,Das Museum heute,/en/museum/today,The Museum Today,Redirect
+/de/museum/mitmachen,Mitmachen,/en/museum/participate,Participate,/de/mitmachen,Mitmachen,/en/participate,Participate,Redirect
+/de/museum/mitmachen/transkriptionswerkstatt,Transkriptionswerkstatt,/en/museum/participate/transcription-workshop,Transcription Workshop,,,,[REMOVED]
+/de/museum/vermietung,Vermietung,/en/museum/location-rental,Location Rental,,,,[REMOVED]
+/de/museum/bildung,Bildung,/en/museum/education,Education,/de/mitmachen/bildung,Bildungsangebote,/en/participate/education,Educational Offers,Redirect
+/de/museum/bildung/fuehrungen,Führungen,/en/museum/education/guided-tours,Guided Tours,/de/mitmachen/bildung/fuehrungen,Führungen,/en/participate/education/guided-tours,Guided Tours,Redirect
+/de/museum/bildung/schule-und-kita,Schule und Kita,/en/museum/education/school-and-kindergarten,School and Kindergarten,/de/mitmachen/bildung/schule-und-kita,Schule und Kita,/en/participate/education/school-and-kindergarten,School and Kindergarten,Redirect
+/de/museum/bildung/familien,Familien,/en/museum/education/families,Families,/de/mitmachen/bildung/familien,Familien,/en/participate/education/families,Families,Redirect
+/de/museum/bildung/kindergeburtstage,Kindergeburtstage,/en/museum/education/childrens-birthday-parties,Children's Birthday Parties,/de/mitmachen/bildung/kindergeburtstage,Kindergeburtstage,/en/participate/education/childrens-birthday-parties,Children's Birthday Parties,Redirect
+/de/museum/bildung/erwachsene,Erwachsene,/en/museum/education/adults,Adults,/de/mitmachen/bildung/erwachsene,Erwachsene,/en/participate/education/adults,Adults,Redirect
+/de/museum/bildung/fortbildungen,Fortbildungen,/en/museum/education/advanced-training,Advanced Training,/de/mitmachen/bildung/fortbildungen,Fortbildungen,/en/participate/education/advanced-training,Advanced Training,Redirect
+/de/museum/bildung/partnerschaften-und-projekte,Partnerschaften und Projekte,/en/museum/education/partnerships-and-projects,Partnerships and Projects,/de/mitmachen/bildung/partnerschaften-und-projekte,Partnerschaften und Projekte,/en/participate/education/partnerships-and-projects,Partnerships and Projects,Redirect
+/de/museum/bildung/fuernatur-digital-angebote,Digitale Angebote,/en/museum/education/furnatur-digital-family-and-children-edition,Digital Offer,/de/mitmachen/bildung/fuernatur-digital-angebote,Digitale Angebote,/en/participate/education/digital-offers,Digital Offers,Redirect
+/de/ueber-uns/das-museum,Das Museum,/en/about/museum,The Museum,/de/museum/heute/das-museum,Das Museum,/en/museum/today/museum,The Museum,Redirect
+/de/ueber-uns/bau,Bau,/en/about/building,Building,/de/museum/heute/bau,Bau,/en/museum/today/building,Building,Redirect
+/de/ueber-uns/news,News,/en/about/news,News,/de/museum/medien/news,News,/en/museum/media/news,News,Redirect
+/de/ueber-uns/team,Team,/en/about/team,Team,,,,[REMOVED]
+/de/ueber-uns/jobs-und-karriere,Jobs und Karriere,/en/jobs-and-career,Jobs and Career,/de/museum/karriere,Jobs & Karriere,/en/museum/career,Jobs & Career,Redirect
+/de/ueber-uns/jobs-und-karriere/arbeiten-am-museum,Arbeiten am Museum,/en/jobs-and-career/working-museum-fur-naturkunde,Working at Museum für Naturkunde,/de/museum/karriere/hier-arbeiten,Hier Arbeiten,/en/museum/career/working-here,Working Here,Redirect
+/de/ueber-uns/jobs-und-karriere/stellenausschreibungen,Stellenausschreibungen,/en/jobs-and-career/jobs,Jobs,/de/museum/karriere/stellenausschreibungen,Stellenausschreibungen,/en/museum/career/jobs,Jobs,Redirect
+/de/wissenschaft/forschung,Forschung,/en/science/research,Research,/de/forschung,Forschung,/en/research,Research,Redirect
+/de/wissenschaft/forschung/dynamik-der-natur,Dynamik der Natur,/en/science/research/dynamics-nature,Dynamics of Nature,/de/forschung/dynamik-der-natur,Dynamik der Natur,/en/research/dynamics-nature,Dynamics of Nature,Redirect
+/de/wissenschaft/forschung/zukunft-der-sammlung,Zukunft der Sammlung,/en/science/research/collection-future,Collection Future,/de/forschung/zukunft-der-sammlung,Zukunft der Sammlung,/en/research/collection-future,Collection Future,Redirect
+/de/wissenschaft/forschung/gesellschaft-und-natur,Gesellschaft und Natur,/en/science/research/society-and-nature,Society and Nature,/de/forschung/gesellschaft-und-natur,Gesellschaft und Natur,/en/research/society-and-nature,Society and Nature,Redirect
+/de/wissenschaft/infrastruktur,Infrastruktur,/en/science/infrastructure,Infrastructure,/de/forschung/infrastruktur,Infrastruktur,/en/research/infrastructure,Infrastructure,Redirect
+/de/wissenschaft/infrastruktur/sammlung,Sammlung,/en/science/infrastructure/collection,Collection,/de/forschung/infrastruktur/sammlung,Sammlung,/en/research/infrastructure/collection,Collection,Redirect
+/de/wissenschaft/infrastruktur/labore,Labore,/en/science/infrastructure/labs,Labs,/de/forschung/infrastruktur/labore,Labore,/en/research/infrastructure/labs,Labs,Redirect
+/de/wissenschaft/infrastruktur/it-forschungsinfrastruktur,IT Forschungsinfrastruktur,/en/science/infrastructure/research-information-technology-infrastructure,Research Information Technology Infrastructure,/de/forschung/infrastruktur/it-forschungsinfrastruktur,IT Forschungsinfrastruktur,/en/research/infrastructure/it-research-infrastructure,IT Research Infrastructure,Redirect
+/de/wissenschaft/infrastruktur/forschungsdatenmanagement,Forschungsdatenmanagement,/en/science/infrastructure/research-data-management-infrastructure,Research Data Management Infrastructure,/de/forschung/infrastruktur/forschungsdatenmanagementstruktur,Forschungsdatenmanagementstruktur,/en/research/infrastructure/research-data-management,Research Data Management,Redirect
+/de/wissenschaft/transfer,Transfer,/en/science/transfer,Transfer,/de/forschung/transfer,Transfer,/en/research/transfer,Transfer,Redirect
+/de/wissenschaft/transfer/kommunizieren,Kommunizieren,/en/science/transfer/communicating,Communicating,/de/forschung/transfer/kommunizieren,Kommunizieren,/en/research/transfer/communicating,Communicating,Redirect
+/de/wissenschaft/transfer/beraten,Beraten,/en/science/transfer/advising,Advising,/de/forschung/transfer/beraten,Beraten,/en/research/transfer/advising,Advising,Redirect
+/de/wissenschaft/transfer/anwenden,Anwenden,/en/science/transfer/applying,Applying,/de/forschung/transfer/anwenden,Anwenden,/en/research/transfer/applying,Applying,Redirect
+/de/wissenschaft/sammlungserschliessung,Sammlungserschließung,/en/science/collection-discovery-and-development,Collection discovery and development,/de/museum/zukunft/sammlungserschliessung,Sammlungserschließung,/en/museum/future/collection-development,Collection Development,Redirect
+/de/zukunft/zukunftsplan,Zukunftsplan,/en/future/future-plan,Future Plan,/de/museum/zukunft/zukunftsplan,Zukunftsplan,/en/museum/future/future-plan,Future Plan,Redirect
+/de/zukunft/wissenstransfer,Wissenstransfer,/en/future/knowledge-transfer,Knowledge Transfer,/de/museum/zukunft/wissenstransfer,Wissenstransfer,/en/museum/future/knowledge-transfer,Knowledge Transfer,Redirect
+/de/zukunft/journal-fuer-natur,Journal "für Natur",/en/future/nature-journals,"für Natur" Journal,/de/museum/medien/fuer-natur,Journal "für Natur",/en/museum/media/nature-journal,"für Natur" Journal,Redirect
+/de/zukunft/museums-evolution,Museums-Evolution,/en/future/join-our-museum-evolution,Museum Evolution,/de/museum/zukunft/museums-evolution,Museums-Evolution,/en/museum/future/museum-evolution,Museum Evolution,Redirect
+,,,,/de/forschung/team-projekte,Team & Projekte,/en/research/team-projects,Team & Projects,[NEW]
+,,,,/de/museum/besuch-planen,Besuch planen,/en/museum/plan-visit,Plan Your Visit,[NEW]
+,,,,/de/museum/medien,Medien,/en/museum/media,Media,[NEW]
+,,,,/de/museum/medien/presse,Presse,/en/museum/media/press,Press,[NEW]

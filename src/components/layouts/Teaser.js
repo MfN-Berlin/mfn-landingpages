@@ -14,13 +14,13 @@ const Teaser = ({
   const getTextStyleClasses = () => {
     switch (textStyle) {
       case 'circle-white':
-        return 'bg-white text-Black-900';
+        return 'bg-white';
       case 'circle-green':
-        return 'bg-Green-500 text-white';
+        return 'bg-Green-500';
       case 'box-white':
-        return 'bg-white text-Black-900';
+        return 'bg-white';
       default:
-        return 'bg-white text-Black-900';
+        return 'bg-white';
     }
   };
 
@@ -40,6 +40,7 @@ const Teaser = ({
   };
 
   const isCircle = textStyle.includes('circle');
+  const isGreenCircle = textStyle === 'circle-green';
 
   return (
     <div className={`relative w-full ${className}`}>
@@ -48,13 +49,25 @@ const Teaser = ({
       )}
       <div className={`absolute ${getTextPositionClasses()}`}>
         <div className={`
-          ${isCircle ? 'w-64 h-64 rounded-full flex items-center justify-center' : 'p-4'}
+          ${isCircle ? (isGreenCircle ? 'w-96 h-96 rounded-full' : 'w-64 h-64 rounded-full') : 'p-4'} 
+           flex items-center justify-center
           ${getTextStyleClasses()}
         `}>
-          <div className={isCircle ? 'w-48 h-48 flex flex-col items-center justify-center text-center' : ''}>
-            <CardText {...textProps} alignment={isCircle ? 'center' : textProps.alignment} />
+          <div className={`
+            ${isCircle ? (isGreenCircle ? 'w-80 h-80' : 'w-48 h-48') : ''} 
+            flex flex-col items-center justify-center text-center
+          `}>
+            <CardText 
+              {...textProps} 
+              alignment={isCircle ? 'center' : textProps.alignment}
+              textColor={isGreenCircle ? 'white' : 'black'}
+            />
             {buttonProps && (
-              <Button variant={buttonProps.variant || 'primary'} className="mt-4">
+              <Button 
+                {...buttonProps}
+                variant={buttonProps.variant || 'primary'} 
+                className={`mt-4 ${isGreenCircle ? 'text-White-White' : ''}`}
+              >
                 {buttonProps.label}
               </Button>
             )}

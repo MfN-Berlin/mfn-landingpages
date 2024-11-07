@@ -63,9 +63,9 @@ const OpenToday = () => {
   return (
     <div className="mb-4 bg-white">
       <div className="relative bg-Green-500 flex justify-between items-center p-5 px-20 text-center">
-        <div className="text-white typography-p w-full">
-          <span className="font-bold">Heute</span> {message}
-        </div>
+        <p className="text-white w-full">
+          <strong>Heute</strong> {message}
+        </p>
         <div className={`absolute w-30 h-[48px] right-[-8px] top-[-20px] px-[6.91px] py-[8px] ${isOpen ? 'bg-Blue-500' : 'bg-Orange'} rounded-md transform rotate-[9.82deg]`}>
           <div className="text-center text-white relative">
             <span className="block text-[10px] font-bold leading-none">{isOpen ? '' : 'SORRY, '}WE'RE</span>

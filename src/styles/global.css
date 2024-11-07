@@ -58,38 +58,44 @@
     opacity: 1;
   }
 
-  
-  
-}
-
-@layer components {
-  .typography-h1 {
-    @apply font-tradegothic-bold text-4xl leading-50 tracking-normal;
-  }
-  .typography-h2 {
-    @apply font-tradegothic-bold text-2xl leading-24 tracking-normal;
-  }
-  .typography-h3 {
-    @apply font-tradegothic-bold text-xl leading-24 tracking-normal;
-  }
-  .typography-h4 {
-    @apply font-tradegothic-bold text-lg leading-24 tracking-normal;
-  }
-  .typography-p {
+  /* Base typography styles for semantic elements */
+  body {
     @apply font-tradegothic text-base leading-24 tracking-normal;
   }
-  .typography-p-small {
-    @apply font-tradegothic text-sm leading-auto tracking-normal;
-  }
+
+  h1 {
+    @apply font-tradegothic-bold text-4xl leading-50 tracking-normal;
+  }  
+
+  h2 {
+    @apply font-tradegothic-bold text-2xl leading-24 tracking-normal;
+  }  
+
+  h3 {
+    @apply font-tradegothic-bold text-xl leading-24 tracking-normal;
+  }  
+
+  h4 {
+    @apply font-tradegothic-bold text-lg leading-24 tracking-normal;
+  }  
+
+  p {
+    @apply font-tradegothic text-base leading-24 tracking-normal;
+  }  
+
+
+  /* You can still keep utility classes for special cases */
   .typography-kicker {
     @apply font-tradegothic-bold text-xs leading-24 tracking-widest uppercase;
   }
-  .typography-kicker-small {
-    @apply font-tradegothic-bold text-2xs leading-24 tracking-widst uppercase;
-  }
+
   .typography-button {
     @apply font-tradegothic-bold text-sm leading-24 tracking-normal;
   }
+}
+
+@layer components {
+
   .mfn-page__navigation {
     margin-bottom: calc(var(--height-branding-logo) - var(--height-menu));
     top: calc(var(--top-menu) * -1);

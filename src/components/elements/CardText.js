@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 const CardText = ({
   kicker,
@@ -6,19 +7,13 @@ const CardText = ({
   headlineStyle = 'h2',
   body,
   spacing = 'regular',
-  alignment = 'left', // New prop for text alignment
+  alignment = 'left',
+  textColor = 'black',
+  buttons = []
 }) => {
   const spacingClasses = {
     regular: 'gap-[7px]',
     wide: 'gap-4',
-  };
-
-  const headlineClasses = {
-    h1: 'typography-h1',
-    'h1-small': 'typography-h1-small',
-    h2: 'typography-h2',
-    h3: 'typography-h3',
-    h4: 'typography-h4',
   };
 
   const alignmentClasses = {
@@ -26,25 +21,45 @@ const CardText = ({
     center: 'text-center items-center',
   };
 
+  const textColorClasses = {
+    black: {
+      kicker: 'text-Black-900/60',
+      headline: 'text-Black-900',
+      body: 'text-Black-700'
+    },
+    white: {
+      kicker: 'text-White-White/80',
+      headline: 'text-White-White',
+      body: 'text-White-White'
+    }
+  };
+
+  const HeadingTag = headlineStyle.replace('-small', '');
+
   return (
     <div className={`w-full max-w-[700px] flex-col justify-start justify-items-center inline-flex ${spacingClasses[spacing]} ${alignmentClasses[alignment]}`}>
       {kicker && (
-        <div className={`self-stretch text-Black-900/60 typography-kicker ${alignmentClasses[alignment]}`}>
+        <p className={`self-stretch ${textColorClasses[textColor].kicker} typography-kicker ${alignmentClasses[alignment]}`}>
           {kicker}
-        </div>
+        </p>
       )}
       {headline && (
-        <div className={`self-stretch justify-center gap-2.5 inline-flex ${alignmentClasses[alignment]}`}>
-          <div className={`grow shrink basis-0 text-Black-900 ${headlineClasses[headlineStyle]}`}>
-            {headline}
-          </div>
-        </div>
+        <HeadingTag className={`self-stretch ${textColorClasses[textColor].headline}`}>
+          {headline}
+        </HeadingTag>
       )}
       {body && (
-        <div 
-          className={`self-stretch text-Black-700 typography-p ${alignmentClasses[alignment]}`}
+        <p 
+          className={`self-stretch ${textColorClasses[textColor].body} ${alignmentClasses[alignment]}`}
           dangerouslySetInnerHTML={{ __html: body }}
         />
+      )}
+      {buttons.length > 0 && (
+        <div className={`flex gap-4 mt-2 flex-wrap ${alignmentClasses[alignment]}`}>
+          {buttons.map((buttonProps, index) => (
+            <Button key={index} {...buttonProps} />
+          ))}
+        </div>
       )}
     </div>
   );

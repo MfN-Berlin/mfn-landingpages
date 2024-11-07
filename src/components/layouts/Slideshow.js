@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Fade from 'embla-carousel-fade';
 import Autoplay from 'embla-carousel-autoplay';
-import CardText from '../elements/CardText';
 
 const Slideshow = ({ children, imageMap }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -46,17 +45,13 @@ const Slideshow = ({ children, imageMap }) => {
     <div className="w-full max-w-[1165px] mx-auto">
       <div className="relative">
         <div ref={emblaRef}>
-          <div className="flex touch-pan-y">
+          <div className="flex touch-pan-y overflow-hidden">
             {React.Children.map(children, (child, index) => (
-              <div className="flex-[0_0_100%] min-w-0 flex flex-col">
-                {/* Image Container with Pagination */}
-                <div className="relative pb-[56.25%]">
-                  <div className="absolute inset-0">
-                    {React.cloneElement(child, { imageMap })}
-                  </div>
-                  {/* Pagination Dots - Now inside image container */}
-                  <div className="absolute left-0 right-0 bottom-4 flex justify-center">
-                    <div className="flex gap-2 rounded-[20px] p-1.5 bg-black/50">
+              <div className="flex-[0_0_100%] min-w-0">
+                {React.cloneElement(child, { 
+                  imageMap,
+                  paginationDots: (
+                    <div className="flex gap-2">
                       {React.Children.map(children, (_, dotIndex) => (
                         <button
                           className={`w-3 h-3 rounded-full cursor-pointer transition-colors
@@ -65,19 +60,8 @@ const Slideshow = ({ children, imageMap }) => {
                         />
                       ))}
                     </div>
-                  </div>
-                </div>
-                
-                {/* CardText below image */}
-                <div className="bg-white p-6">
-                  <CardText
-                    kicker={child.props.kicker}
-                    headline={child.props.headline}
-                    body={child.props.body}
-                    spacing="wide"
-                    alignment="center"
-                  />
-                </div>
+                  )
+                })}
               </div>
             ))}
           </div>

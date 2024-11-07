@@ -7,10 +7,10 @@ const AccessibilityNav = ({ currentPage }) => {
   return (
     <nav className="w-full min-h-[28px] flex flex-wrap justify-center md:justify-between items-center px-4 py-1 gap-4 md:gap-0">
       <div className="flex items-center gap-1.5 whitespace-nowrap">
-        <Link to="/" className="text-Black-500 text-xs font-tradegothic underline leading-[27px]">
+        <Link to="/" className="text-Black-500 text-xs underline leading-[27px]">
           Startseite
         </Link>
-        <span className="text-Black-500 text-xs font-tradegothic leading-[27px]">
+        <span className="text-Black-500 text-xs leading-[27px]">
           {' > '}
           {currentPage}
         </span>
@@ -23,7 +23,7 @@ const AccessibilityNav = ({ currentPage }) => {
           className="flex items-center gap-1.5"
         >
           <img src={withPrefix("/images/iconGebaerdensprache.png")} alt="" className="w-6 h-6" />
-          <span className="text-Black-500 text-xs font-tradegothic underline leading-[27px] whitespace-nowrap">
+          <span className="text-Black-500 text-xs underline leading-[27px] whitespace-nowrap">
             Gebärdensprache
           </span>
         </a>
@@ -34,7 +34,7 @@ const AccessibilityNav = ({ currentPage }) => {
           className="flex items-center gap-1.5"
         >
           <img src={withPrefix("/images/iconLeichteSprache.png")} alt="" className="w-6 h-6" />
-          <span className="text-Black-500 text-xs font-tradegothic underline leading-[27px] whitespace-nowrap">
+          <span className="text-Black-500 text-xs underline leading-[27px] whitespace-nowrap">
             Leichte Sprache
           </span>
         </a>
@@ -45,7 +45,7 @@ const AccessibilityNav = ({ currentPage }) => {
           className="flex items-center gap-1.5"
         >
           <img src={withPrefix("/images/iconBarrierefreiheit.png")}  alt="" className="w-6 h-6" />
-          <span className="text-Black-500 text-xs font-tradegothic underline leading-[27px] whitespace-nowrap">
+          <span className="text-Black-500 text-xs underline leading-[27px] whitespace-nowrap">
             Barrierefreiheit
           </span>
         </a>

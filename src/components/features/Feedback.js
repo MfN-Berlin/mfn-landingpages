@@ -20,7 +20,7 @@ const Feedback = () => {
   };
 
   const submitFeedback = async (rating, feedback) => {
-    const SCRIPT_URL = 'IHRE-GOOGLE-SCRIPT-URL';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxzXHGFOGdlBVqOTXdh-0JRPn_P6FSNotc8YPrd96ORs6sNHSh4CiA-sooOZZpevM9rA/exec';
     
     try {
       const response = await fetch(SCRIPT_URL, {
@@ -82,15 +82,14 @@ const Feedback = () => {
       <div className="flex-grow bg-white p-12">
         <div className="flex items-center justify-between gap-12">
           <div className="flex flex-col gap-4 flex-1">
-            <h2 className="text-Black-900 typography-h4">
+            <h2 className="text-Black-900">
               Finden Sie diese Seite hilfreich?
             </h2>
-            <p className="text-Black-700 typography-p-small">
-              Ihre Meinung hilft uns, unser Angebot zu verbessern. Ihre Wünsche, Tipps und Beschwerden nehmen wir ernst. Das Feedback ist anonym, wir erheben keine persönlichen Daten. (
-              <a href="#" className="text-[#e80029] underline">
+            <p className="text-Black-700">
+            Ihre Meinung hilft uns, unser Angebot zu verbessern. Ihre Wünsche, Tipps und Beschwerden nehmen wir ernst. Das Feedback ist anonym, wir erheben keine persönlichen Daten. (
+              <a href="#" className="text-Red underline">
                 Hinweise zum Datenschutz
               </a>
-              )
             </p>
           </div>
 

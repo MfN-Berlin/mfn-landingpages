@@ -10,13 +10,25 @@ const Card = ({
   url,
   className = ''
 }) => {
+  const getVariantStyles = () => {
+    switch(variant) {
+      case 'green':
+        return "self-stretch p-5 bg-[#d5e0b2] flex-col justify-start items-start gap-2.5 flex";
+      case 'white':
+        return "self-stretch p-5 bg-White-White flex-col justify-start items-start gap-2.5 flex";
+      case 'classic':
+      default:
+        return "";
+    }
+  };
+
   const cardContent = (
     <>
       {imageProps && <ContentImage {...imageProps} />}
       {variant === 'classic' ? (
         <CardText {...textProps} />
       ) : (
-        <div className="self-stretch p-5 bg-[#d5e0b2] flex-col justify-start items-start gap-2.5 flex">
+        <div className={getVariantStyles()}>
           <CardText {...textProps} />
         </div>
       )}

@@ -15,6 +15,7 @@ import AccessibilityNav from '../components/layouts/AccessibilityNav'
 import OpenToday from '../components/features/OpenToday'
 import Feedback from '../components/features/Feedback'
 import HeadComponent from '../components/layouts/HeadComponent'
+import UpcomingHoliday from '../components/features/UpcomingHoliday';
 
 
 const IndexPage = () => {
@@ -40,7 +41,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Header />
+      <Header activeNavItem="besuchplanen"/>
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
         <Section backgroundColor="bg-Black-000" padding="pt-8 pb-0">
           <AccessibilityNav currentPage="Besuch planen" />
@@ -68,14 +69,20 @@ const IndexPage = () => {
           />
 
         </Section>
-        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36">
-          <CardText
+        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
+          <div>
+            <CardText
             headline="Öffnungszeiten"
             headlineStyle="h1"
-            body="Das Museum öffnet täglich bis 18 Uhr. Montags ist das Museum geschlossen. Letzter Einlass ist 30 Minuten vor Schluss.<br/><br/><span className='font-bold'>Info:</span> Am 3.Oktober 2024 öffnet das Museum von 10:00 bis 18:00.<br/><br/><a href='#'>Genauer Plan mit Sonderöffnungszeiten</a>."
+            body="Das Museum öffnet täglich bis 18 Uhr. Montags ist das Museum geschlossen. Letzter Einlass ist 30 Minuten vor Schluss."
             spacing="wide"
             alignment="center" // Center-aligned text
           />
+            <UpcomingHoliday />
+            <div className="w-full">
+            <a className="w-full block text-center text-Green-500 typography-p" href='#'>Genauer Plan mit Sonderöffnungszeiten</a>
+            </div>
+            </div>
           <Accordion bgColor="white">
 
             <OpenToday />
@@ -85,7 +92,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Dienstag, Mittwoch, Donnerstag, Freitag
                 </div>
-                <div className="text-center text-Black-900 typography-h1 text-[34px]">
+                <div className="text-center text-Black-900 font-bold text-[34px]">
                   09:30 <span className="font-extrabold">–</span> 18:00
                 </div>
               </div>
@@ -96,7 +103,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Samstag, Sonntag, und an <span className="underline">Feiertagen</span>
                 </div>
-                <div className="text-center text-Black-900 typography-h1 text-[34px]">
+                <div className="text-center text-Black-900 font-bold text-[34px]">
                   10:00 – 18:00
                 </div>
               </div>
@@ -107,7 +114,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   MONTAGS
                 </div>
-                <div className="text-center text-Black-900 typography-h1 text-[34px]">
+                <div className="text-center text-Black-900 font-bold text-[34px]">
                   geschlossen
                 </div>
               </div>
@@ -116,10 +123,10 @@ const IndexPage = () => {
           </Accordion>
 
         </Section>
-        <Section columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
+        <Section columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div className="flex -mt-40 flex-col justify-center items-center gap-20">
             <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
-              <p className="typography-p text-center text-black">
+              <p className="text-center text-black">
                 Am ersten Sonntag des Monats ist der <strong>Eintritt frei!</strong>
               </p>
             </div>
@@ -133,269 +140,269 @@ const IndexPage = () => {
 
           </div>
           <Accordion bgColor="green" defaultOpenIndex={0}>
-            <AccordionItem title="Einzeltickets" >
+            <AccordionItem title="Einzeltickets">
               <div className="flex flex-col items-end justify-start w-full px-4 pb-4 gap-2.5">
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
-                  <div className="typography-h3 text-Black-700 flex-1">
+                  <h3 className="text-Black-700 flex-1">
                     Erwachsene
-                  </div>
-                  <div className="w-[125px] text-right typography-h2 text-Black-900">
+                  </h3>
+                  <h3 className="w-[125px] text-right text-Black-900">
                     11,00€
-                  </div>
+                  </h3>
                 </div>
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
-                  <div className="typography-h3 text-Black-700 flex-1">
+                  <h3 className="text-Black-700 flex-1">
                     Kinder ab 6
-                  </div>
-                  <div className="w-[125px] text-right typography-h2 text-Black-900">
+                  </h3>
+                  <h3 className="w-[125px] text-right text-Black-900">
                     5,00€
-                  </div>
+                  </h3>
                 </div>
               </div>
 
             </AccordionItem>
-            <AccordionItem title="Gruppentickets" >
+            <AccordionItem title="Gruppentickets">
               <div className="p-5">
                 <ul className="flex flex-col gap-4 list-disc pl-4">
-                  <li className="display-list-item">
+                  <li>
                     <div className="flex justify-between items-baseline">
-                      <div className="flex-1 font-p pr-8">
+                      <p className="flex-1 pr-8">
                         Familien (zwei Erwachsene mit bis zu drei Kindern unter 14 Jahre)
-                      </div>
-                      <div className="font-p font-bold whitespace-nowrap">
+                      </p>
+                      <p className="font-bold whitespace-nowrap">
                         18,00 €
-                      </div>
+                      </p>
                     </div>
                   </li>
-                  <li className="display-list-item">
+                  <li>
                     <div className="flex justify-between items-baseline">
-                      <div className="flex-1 font-p pr-8">
+                      <p className="flex-1 pr-8">
                         Mini-Familien (eine erwachsene Person mit bis zu zwei Kindern unter 14 Jahre)
-                      </div>
-                      <div className="font-p font-bold whitespace-nowrap">
+                      </p>
+                      <p className="font-bold whitespace-nowrap">
                         12,00 €
-                      </div>
+                      </p>
                     </div>
                   </li>
-                  <li className="display-list-item">
+                  <li>
                     <div className="flex justify-between items-baseline">
-                      <div className="flex-1 font-p pr-8">
+                      <p className="flex-1 pr-8">
                         Erwachsene in Gruppen ab 10 Personen
-                      </div>
-                      <div className="font-p font-bold whitespace-nowrap">
+                      </p>
+                      <p className="font-bold whitespace-nowrap">
                         8,00 €
-                      </div>
+                      </p>
                     </div>
                   </li>
-                  <li className="display-list-item">
+                  <li>
                     <div className="flex justify-between items-baseline">
-                      <div className="flex-1 font-p pr-8">
+                      <p className="flex-1 pr-8">
                         Ermäßigte in Gruppen ab 10 Personen
-                      </div>
-                      <div className="font-p font-bold whitespace-nowrap">
+                      </p>
+                      <p className="font-bold whitespace-nowrap">
                         2,00 €
-                      </div>
+                      </p>
                     </div>
                   </li>
                 </ul>
               </div>
             </AccordionItem>
-            <AccordionItem title="Jahreskarten" >
+            <AccordionItem title="Jahreskarten">
               <div className="p-5">
                 <div className="flex flex-col gap-6">
                   <ul className="flex flex-col gap-4 list-disc pl-4">
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Erwachsene
-                        </div>
-                        <div className="font-p font-bold whitespace-nowrap">
+                        </p>
+                        <p className="font-bold whitespace-nowrap">
                           35,00 €
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Ermäßigte
-                        </div>
-                        <div className="font-p font-bold whitespace-nowrap">
+                        </p>
+                        <p className="font-bold whitespace-nowrap">
                           23,00 €
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Familien (zwei Erwachsene mit bis zu drei Kindern unter 14 Jahre)
-                        </div>
-                        <div className="font-p font-bold whitespace-nowrap">
+                        </p>
+                        <p className="font-bold whitespace-nowrap">
                           65,00 €
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Mini-Familien (eine erwachsene Person mit bis zu zwei Kindern unter 14 Jahre)
-                        </div>
-                        <div className="font-p font-bold whitespace-nowrap">
+                        </p>
+                        <p className="font-bold whitespace-nowrap">
                           38,00 €
-                        </div>
+                        </p>
                       </div>
                     </li>
                   </ul>
 
-                  <p className="font-p">
+                  <p>
                     Laden Sie sich das <a href="#" className="underline">Anmeldeformular</a> herunter und beantragen Sie Ihre Jahreskarte noch heute. Senden Sie das ausgefüllte Formular gerne per E-Mail an <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
                   </p>
                 </div>
               </div>
             </AccordionItem>
-            <AccordionItem title="Ermäßigungen" >
+            <AccordionItem title="Ermäßigungen">
               <div className="p-5">
                 <div className="flex flex-col gap-6">
-                  <p className="font-p">
+                  <p>
                     Folgende Personen erhalten, ggf. mit entsprechendem Nachweis, ermäßigten Eintritt:
                   </p>
 
                   <ul className="flex flex-col gap-4 list-disc pl-4">
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Schülerinnen und Schüler ab 16 Jahre mit Schüler:innenausweis
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Studierende
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Auszubildende
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Rentnerinnen und Rentner
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Sozialhilfeempfangende
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Erwerbslose
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Teilnehmende an Freiwilligendiensten und bei Vorlage der Ehrenamtskarte
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Schwerbehinderte (ab GdB 50) mit entsprechendem amtlichen Nachweis
-                        </div>
+                        </p>
                       </div>
                     </li>
                   </ul>
 
-                  <p className="font-p">
+                  <p>
                     Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="#" className="underline">Mehr Infos zu Kooperationen</a>
                   </p>
                 </div>
               </div>
             </AccordionItem>
-            <AccordionItem title="Freier Eintritt" >
+            <AccordionItem title="Freier Eintritt">
               <div className="p-5">
                 <div className="flex flex-col gap-6">
                   <ul className="flex flex-col gap-4 list-disc pl-4">
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Vorschulkinder, Kinder unter 6 Jahren
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           bis zu zwei Lehrkräfte, Erzieherinnen oder Erzieher, die eine Schulklasse, Kinder- oder Jugendgruppe begleiten
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           ICOM-Mitglieder und Mitgliederinnen (Internationaler Museumsrat, International Council of Museums)
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Mitglieder und Mitgliederinnen der WFTGA (the World Federation of Tourist Guide Associations)
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Inhabende einer Mitgliedskarte des Deutschen Museumsbundes
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Angemeldete Gruppen von Studierenden der Berliner Universitäten und Hochschulen, die im Rahmen einer Lehrveranstaltung das Museum besuchen
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Inhabende eines gültigen Presseausweises
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Beschäftigte anderer Berliner Museen, die sich als solche ausweisen
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           im Schwerbehindertenausweis eingetragene Begleitpersonen von Schwerbehinderten
-                        </div>
+                        </p>
                       </div>
                     </li>
-                    <li className="display-list-item">
+                    <li>
                       <div className="flex justify-between items-baseline">
-                        <div className="flex-1 font-p pr-8">
+                        <p className="flex-1 pr-8">
                           Geflüchtete und Willkommensklassen, die sich als solche ausweisen
-                        </div>
+                        </p>
                       </div>
                     </li>
                   </ul>
@@ -407,7 +414,7 @@ const IndexPage = () => {
 
         </Section>
 
-        <Section columns={2} backgroundColor="bg-[#f7f9f0]" padding="py-[75px]" gapClass="gap-36">
+        <Section columns={2} backgroundColor="bg-[#f7f9f0]" padding="py-[75px]" gapClass="gap-36" justifyContent="center">
           <div className="flex flex-col justify-center items-center">
             <div className="py-[30px] mb-[17px]">
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
@@ -533,6 +540,7 @@ const IndexPage = () => {
               imageName="zv_1200x675_WEBSEITE_0.jpg"
               title="ZUGvögel"
               kicker="Unsere Ausstellungen"
+              text="ZUGvögel"
               link="/museum/ausstellungen/zugvoegel"
               altText="Zugvögel"
             />

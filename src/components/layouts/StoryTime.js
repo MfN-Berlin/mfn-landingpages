@@ -6,9 +6,9 @@ import CardText from '../elements/CardText';
 const StoryTime = ({ 
   imageProps,
   textProps,
-  linkUrl = '#',
+  linkUrl,
   imagePosition = 'left',
-  linkText = 'Mehr Stories' // New prop with default value 'Mehr Stories'
+  linkText
 }) => {
   const ImageElement = (
     <div className="w-full md:w-1/2 aspect-square relative">
@@ -18,12 +18,14 @@ const StoryTime = ({
           className="w-full h-full object-cover"
         />
       </div>
-      <Link 
-        to={linkUrl} 
-        className="absolute bottom-4 right-4 w-32 h-32 md:w-36 md:h-36 px-4 py-6 md:px-6 md:py-9 bg-Green-500 rounded-full flex-col justify-center items-center gap-2.5 inline-flex hover:bg-[#5f7d00] transition-colors duration-300 z-10"
-      >
-        <div className="w-full text-center text-white typography-h3 leading-[1.75rem]">{linkText}</div>
-      </Link>
+      {linkUrl && linkText && (
+        <Link 
+          to={linkUrl} 
+          className="absolute bottom-4 right-4 w-32 h-32 md:w-36 md:h-36 px-4 py-6 md:px-6 md:py-9 bg-Green-500 rounded-full flex-col justify-center items-center gap-2.5 inline-flex hover:bg-[#5f7d00] transition-colors duration-300 z-10"
+        >
+          <div className="w-full text-center text-white text-xl font-bold leading-[1.75rem]">{linkText}</div>
+        </Link>
+      )}
     </div>
   );
 
