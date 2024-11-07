@@ -22,7 +22,7 @@ const MainNavLink = ({ to, children, isActive }) => (
   <Link
     to={to}
         
-    className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(calc(1.9vw_-_4px),11px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-3000 font-tradegothic-bold ${
+    className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-3000 font-tradegothic-bold ${
       isActive 
         ? 'bg-Green-500 text-Black-900' 
         : 'hover:bg-Green-500 hover:text-white'
