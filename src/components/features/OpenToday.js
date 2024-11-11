@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 // Move pure functions outside component
 const isDateMatch = (dateList, currentMonth, currentDate) => 

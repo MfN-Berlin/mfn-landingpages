@@ -18,7 +18,7 @@ const CardText = ({
 
   const alignmentClasses = {
     left: 'text-left items-start',
-    center: 'text-center items-center',
+    center: 'text-center items-center justify-center',
   };
 
   const textColorClasses = {
@@ -34,17 +34,30 @@ const CardText = ({
     }
   };
 
-  const HeadingTag = headlineStyle.replace('-small', '');
+  const getHeadingConfig = (style) => {
+    if (style === 'h1-small') {
+      return {
+        tag: 'h1',
+        extraClass: 'typography-h1-small'
+      };
+    }
+    return {
+      tag: style.replace('-small', ''),
+      extraClass: ''
+    };
+  };
+
+  const { tag: HeadingTag, extraClass } = getHeadingConfig(headlineStyle);
 
   return (
-    <div className={`w-full max-w-[700px] flex-col justify-start justify-items-center inline-flex ${spacingClasses[spacing]} ${alignmentClasses[alignment]}`}>
+    <div className={`w-full max-w-[700px] flex-col justify-start justify-items-center  inline-flex ${spacingClasses[spacing]} ${alignmentClasses[alignment]}`}>
       {kicker && (
         <p className={`self-stretch ${textColorClasses[textColor].kicker} typography-kicker ${alignmentClasses[alignment]}`}>
           {kicker}
         </p>
       )}
       {headline && (
-        <HeadingTag className={`self-stretch ${textColorClasses[textColor].headline}`}>
+        <HeadingTag className={`self-stretch ${textColorClasses[textColor].headline} ${extraClass}`}>
           {headline}
         </HeadingTag>
       )}

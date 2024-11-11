@@ -72,12 +72,6 @@ const formatAPA = (pub) => {
 
 const ITEMS_PER_PAGE = 10
 
-// Add these helper components at the top of your file
-const VisuallyHidden = ({ children }) => (
-  <span className="absolute overflow-hidden h-[1px] w-[1px] m-[-1px] p-0 border-0 clip-rect-1">
-    {children}
-  </span>
-);
 
 const PublicationsPage = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('')

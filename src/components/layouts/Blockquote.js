@@ -14,7 +14,7 @@ const BlockQuote = ({
 
   return (
     <blockquote 
-      className={`px-10 pt-20 pb-5 flex flex-col justify-start items-start ${className}`}
+      className={`px-10 pt-32 pb-5 flex flex-col justify-start items-start w-full ${className}`}
       style={{ backgroundColor }}
     >
       <div className="self-stretch flex justify-start items-start gap-[50px] flex-col md:flex-row">
@@ -30,7 +30,7 @@ const BlockQuote = ({
         )}
         <div className="flex-grow flex-shrink basis-0 flex-col justify-start items-start">
           {text && (
-            <p className="self-stretch text-white text-lg italic leading-relaxed mb-4">
+            <p className="self-stretch text-white text-lg italic leading-tight mb-4 max-w-[700px]">
               {text}
             </p>
           )}
@@ -50,7 +50,7 @@ const BlockQuote = ({
           )}
         </div>
       </div>
-      <div className="self-stretch h-10 flex justify-end items-end mt-4">
+      <div className="self-stretch h-10 flex justify-end items-end mt-0">
         <img src='/images/logo-duotone.svg' alt="Logo" className="w-[76.78px] h-10" />
       </div>
     </blockquote>

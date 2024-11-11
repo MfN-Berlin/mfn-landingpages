@@ -51,9 +51,12 @@ const Slideshow = ({ children, imageMap }) => {
                 {React.cloneElement(child, { 
                   imageMap,
                   paginationDots: (
-                    <div className="flex gap-2">
+                    <div className="flex gap-2" role="tablist">
                       {React.Children.map(children, (_, dotIndex) => (
                         <button
+                          role="tab"
+                          aria-label={`Go to slide ${dotIndex + 1}`}
+                          aria-selected={selectedIndex === dotIndex}
                           className={`w-3 h-3 rounded-full cursor-pointer transition-colors
                             ${selectedIndex === dotIndex ? 'bg-[#daff6a]' : 'bg-white/70'}`}
                           onClick={() => scrollTo(dotIndex)}
@@ -71,8 +74,9 @@ const Slideshow = ({ children, imageMap }) => {
         <button 
           className="absolute left-4 top-[48%] -translate-y-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center rotate-180 hover:bg-gray-50"
           onClick={scrollPrev}
+          aria-label="Previous slide"
         >
-          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M1.75586 8.76074L13.5873 8.76074" stroke="#1a1a1a" strokeWidth="3.38043" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M7.23926 15.5217L14.0001 8.76085L7.23926 2" stroke="#1a1a1a" strokeWidth="3.38043" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -80,8 +84,9 @@ const Slideshow = ({ children, imageMap }) => {
         <button 
           className="absolute right-4 top-[48%] -translate-y-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-gray-50"
           onClick={scrollNext}
+          aria-label="Next slide"
         >
-          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M1.75586 8.76074L13.5873 8.76074" stroke="#1a1a1a" strokeWidth="3.38043" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M7.23926 15.5217L14.0001 8.76085L7.23926 2" stroke="#1a1a1a" strokeWidth="3.38043" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>

@@ -1,21 +1,13 @@
 import * as React from "react"
-import { graphql, useStaticQuery, withPrefix } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Header from "../components/layouts/Header"
 import Button from "../components/elements/Button"
 import CardText from '../components/elements/CardText'
-import ContentImage from '../components/elements/ContentImage'
 import Section from '../components/elements/Section'
 import Card from '../components/elements/Card'
-import StoryTime from '../components/layouts/StoryTime'
 import Footer from '../components/layouts/Footer'
-import { Accordion, AccordionItem, AccordionSpacer } from '../components/layouts/Accordion'
-import Slideshow from '../components/layouts/Slideshow'
-import SlideContent from '../components/layouts/SlideContent'
 import AccessibilityNav from '../components/layouts/AccessibilityNav'
-import OpenToday from '../components/features/OpenToday'
-import Feedback from '../components/features/Feedback'
 import HeadComponent from '../components/layouts/HeadComponent'
-import UpcomingHoliday from '../components/features/UpcomingHoliday';
 import Teaser from "../components/layouts/Teaser"
 import Blockquote from "../components/layouts/Blockquote"
 
@@ -93,7 +85,7 @@ const IndexPage = () => {
               imageName: 'Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt.jpg',
               alt: "Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt",
               imageMap: imageMap,
-              className: "aspect-[16/9]"
+              className: "aspect-[16/9] dada"
             }}
             textProps={{
               kicker: "Das inspiriert uns",
@@ -116,6 +108,7 @@ const IndexPage = () => {
             }}
             textStyle="box-white"
             textPosition="bottom-left"
+            alignment="center"
             className="w-full"
           />
         </Section>
@@ -134,7 +127,7 @@ const IndexPage = () => {
               }}
               textProps={{
                 headline: "Das Museum in Zukunft",
-                headlineStyle: "h3",
+                headlineStyle: "h1-small",
                 spacing: "normal",
               }}
               textStyle="circle-white"
@@ -282,7 +275,8 @@ const IndexPage = () => {
                   url: "#"
                 }
               ],
-              spacing: "wide"
+              spacing: "wide",
+              alignment:"left"
             }}
             url="/flat-card-page"
           />
@@ -291,7 +285,7 @@ const IndexPage = () => {
                         source="Prof. Johannes Vogel"
                         sourceTitle="(Leiter des Museums)"
                         backgroundColor=""  // Green-500 color
-                        className="bg-Blue-500 md:col-span-2"
+                        className="bg-Blue-500 col-span-1md:col-span-2"
                     />
           <Card
             variant="classic"
@@ -324,12 +318,13 @@ const IndexPage = () => {
               }}
               textProps={{
                 headline: "Das Museum Heute",
-                headlineStyle: "h2",
+                headlineStyle: "h1-small",
                 spacing: "normal",
               }}
               textStyle="circle-white"
               textPosition="center-center"
-              className="w-full h-[25rem]"
+              className="w-full h-[25rem] text-sm"
+              alignment="center"
             />
           
         </Section>

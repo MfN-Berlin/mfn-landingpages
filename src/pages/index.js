@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, withPrefix } from "gatsby"
+import { withPrefix } from "gatsby"
 import Header from "../components/layouts/Header"
 import Footer from "../components/layouts/Footer"
 import Section from "../components/elements/Section"

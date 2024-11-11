@@ -1,21 +1,14 @@
 import * as React from "react"
-import { graphql, useStaticQuery, withPrefix } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Header from "../components/layouts/Header"
 import Button from "../components/elements/Button"
 import CardText from '../components/elements/CardText'
-import ContentImage from '../components/elements/ContentImage'
 import Section from '../components/elements/Section'
 import Card from '../components/elements/Card'
 import StoryTime from '../components/layouts/StoryTime'
 import Footer from '../components/layouts/Footer'
-import { Accordion, AccordionItem, AccordionSpacer } from '../components/layouts/Accordion'
-import Slideshow from '../components/layouts/Slideshow'
-import SlideContent from '../components/layouts/SlideContent'
 import AccessibilityNav from '../components/layouts/AccessibilityNav'
-import OpenToday from '../components/features/OpenToday'
-import Feedback from '../components/features/Feedback'
 import HeadComponent from '../components/layouts/HeadComponent'
-import UpcomingHoliday from '../components/features/UpcomingHoliday';
 import Teaser from '../components/layouts/Teaser';
 import Blockquote from '../components/layouts/Blockquote';
 
@@ -60,10 +53,43 @@ const IndexPage = () => {
                         textProps={{
                             kicker: "Wissenschaft erleben",
                             headline: "Engagieren Sie sich für Natur!",
-                            body: "Entdecken Sie unsere Angebote sich zu beteiligen und gemeinsam neues Wissen zu schaffen. Finden Sie was zu Ihnen passt: Citizen Science, Ehrenamt oder Bildungsangebote<br/><br/>Ehrenamt  Partizipation  Bildungsangebote  Veranstaltungen  Bürgerwissenschaften  Werkstatt",
+                            body: "Entdecken Sie unsere Angebote sich zu beteiligen und gemeinsam neues Wissen zu schaffen. Finden Sie was zu Ihnen passt: ",
                             headlineStyle: "h1",
                             spacing: "wide",
-                            alignment: "center"
+                            alignment: "center",
+                            buttons: [
+                                {
+                                    text: "Ehrenamt",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "  Partizipation",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "Bildungsangebote",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                }
+                                ,
+                                {
+                                    text: "Veranstaltungen",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "Bürgerwissenschaften",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "Werkstatt",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                }]
+
                         }}
                         imagePosition="right"
                     />
@@ -81,6 +107,7 @@ const IndexPage = () => {
 
                     <Card
                         variant="classic"
+                        alignment="center"
                         imageProps={{
                             imageName: "bioblitz_9822_c_carola-radke_mfn.jpg",
                             alt: "Mann beim Insektensammeln",
@@ -234,7 +261,7 @@ const IndexPage = () => {
                     />
 
                 </Section>
-                <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
+                <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-16">
 
                     <Card
                         variant="classic"
@@ -288,7 +315,7 @@ const IndexPage = () => {
                     />
 
                 </Section>
-                <Section columns={1} backgroundColor="bg-White" padding="py-16">
+                <Section columns={1} backgroundColor="bg-White" padding="pt-16">
                     <CardText
                         headline="Mitmachen: Kurz erklärt"
                         headlineStyle="h1"
@@ -296,7 +323,7 @@ const IndexPage = () => {
                         alignment="center"
                     />
                 </Section>
-                <Section columns={1} backgroundColor="bg-White" padding="py-16">
+                <Section columns={1} backgroundColor="bg-White" padding="pt-16 pb-8">
                     <Teaser
                         imageProps={{
                             imageName: "bioblitz_9847_c_carola-radke_mfn.jpg",
@@ -316,7 +343,7 @@ const IndexPage = () => {
                         textPosition="bottom-left"
                     />
                 </Section>
-                <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0" >
+                <Section columns={2} backgroundColor="bg-White" padding="pt-0 pb-16" >
 
                     <Card
                         variant="classic"

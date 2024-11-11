@@ -10,16 +10,14 @@ const AccordionCloseButton = ({ isOpen }) => (
 );
 
 export const Accordion = ({ children, bgColor = 'white', defaultOpenIndex = null }) => {
-  const [openIndex, setOpenIndex] = useState(defaultOpenIndex);
-  const [previousIndex, setPreviousIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(defaultOpenIndex);
 
   const handleIndexChange = (newIndex) => {
-    setPreviousIndex(openIndex);
-    setOpenIndex(newIndex);
+    setActiveIndex(newIndex);
   };
 
   return (
-    <AccordionContext.Provider value={{ openIndex, previousIndex, handleIndexChange, bgColor }}>
+    <AccordionContext.Provider value={{ activeIndex, handleIndexChange, bgColor }}>
       <div className="w-full">
         {React.Children.map(children, (child, index) =>
           React.cloneElement(child, { index })
@@ -30,8 +28,8 @@ export const Accordion = ({ children, bgColor = 'white', defaultOpenIndex = null
 };
 
 export const AccordionItem = ({ children, title, index }) => {
-  const { openIndex, previousIndex, handleIndexChange, bgColor } = useContext(AccordionContext);
-  const isOpen = openIndex === index;
+  const { activeIndex, handleIndexChange, bgColor } = useContext(AccordionContext);
+  const isOpen = activeIndex === index;
 
   const toggleItem = () => {
     handleIndexChange(isOpen ? null : index);
@@ -44,7 +42,7 @@ export const AccordionItem = ({ children, title, index }) => {
     <div className={`mb-4 ${bgColor === 'green' ? 'bg-Green-100' : 'bg-white'}`}>
       <h3 id={headingId}>
         <button
-          className="w-full p-5 flex justify-between items-center text-left"
+          className="w-full p-4 flex justify-between items-center text-left"
           onClick={toggleItem}
           aria-expanded={isOpen}
           aria-controls={itemId}
