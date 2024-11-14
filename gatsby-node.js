@@ -82,61 +82,87 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs)
 }
 
-exports.onCreateWebpackConfig = ({ actions, stage }) => {
+exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
+  // Get the existing webpack config
+  const config = getConfig();
+
   if (stage === 'build-javascript') {
-    actions.setWebpackConfig({
-      plugins: [
-        new MiniCssExtractPlugin({
-          filename: 'styles.css',
-        }),
-      ],
-      optimization: {
-        moduleIds: 'named',
-        chunkIds: 'named',
-        splitChunks: {
-          chunks: 'all',
-          name(module, chunks, cacheGroupKey) {
-            return cacheGroupKey;
+    // Remove all hash-related configurations
+    config.output = {
+      ...config.output,
+      filename: '[name].js',
+      chunkFilename: '[name].js',
+      publicPath: '/mfn-landingpages/',
+    };
+
+    // Disable all hash plugins
+    config.plugins = config.plugins.filter(plugin => {
+      return !plugin.constructor.name.includes('Hash');
+    });
+
+    // Add our custom chunk naming
+    config.optimization = {
+      ...config.optimization,
+      moduleIds: 'named',
+      chunkIds: 'named',
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|scss)$/,
+            chunks: 'all',
+            enforce: true,
+            priority: 40,
           },
-          cacheGroups: {
-            styles: {
-              name: 'styles',
-              type: 'css/mini-extract',
-              chunks: 'all',
-              enforce: true,
-            },
-            runtime: {
-              name: 'runtime',
-              test: /webpack-runtime/,
-              enforce: true,
-              priority: 30,
-            },
-            framework: {
-              name: 'framework',
-              test: /[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|gatsby)[\\/]/,
-              chunks: 'all',
-              priority: 20,
-            },
-            vendors: {
-              name: 'vendors',
-              test: /[\\/]node_modules[\\/]/,
-              chunks: 'all',
-              priority: 10,
-            }
-          }
+          runtime: {
+            name: 'runtime',
+            test: /webpack-runtime/,
+            enforce: true,
+            priority: 30,
+          },
+          framework: {
+            name: 'framework',
+            test: /[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|gatsby)[\\/]/,
+            chunks: 'all',
+            priority: 20,
+          },
+          vendors: {
+            name: 'vendors',
+            test: /[\\/]node_modules[\\/]/,
+            chunks: 'all',
+            priority: 10,
+          },
         },
-        runtimeChunk: {
-          name: 'runtime',
-        }
       },
+      runtimeChunk: {
+        name: 'runtime',
+      },
+    };
+
+    // Replace the webpack config
+    actions.replaceWebpackConfig(config);
+  }
+};
+
+// Add this to disable Gatsby's default chunk hashing
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: 'babel-plugin-transform-remove-console',
+    options: {
+      exclude: ['error', 'warn'],
+    },
+  });
+};
+
+// Add this to modify Gatsby's HTML generation
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
       output: {
         filename: '[name].js',
         chunkFilename: '[name].js',
-        publicPath: '/mfn-landingpages/',
-        hashFunction: null,
-        hashDigest: null,
-        hashDigestLength: 0
-      }
+      },
     });
   }
 };

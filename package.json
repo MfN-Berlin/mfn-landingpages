@@ -15,6 +15,7 @@
     "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-no-sourcemaps": "^5.14.0",
     "gatsby-plugin-preload-fonts": "^4.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "gatsby-plugin-postcss": "^6.13.1",
     "postcss": "^8.4.47",
     "prettier": "^2.8.8",

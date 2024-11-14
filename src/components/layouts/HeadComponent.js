@@ -10,7 +10,7 @@ const HeadComponent = ({
 
   return (
     <>
-      <title>{title} | Museum für Naturkunde</title>
+      <title>{`${title} | Museum für Naturkunde`}</title>
       <meta charSet="utf-8" />
       
       {/* Favicon */}
@@ -41,8 +41,8 @@ const HeadComponent = ({
       <meta name="twitter:image" content={`${siteUrl}${image}`} />
       
       {/* Language Alternates */}
-      <link rel="alternate" hreflang="de" href={`${siteUrl}/de${pathname}`} />
-      <link rel="alternate" hreflang="en" href={`${siteUrl}/en${pathname}`} />
+      <link rel="alternate" hrefLang="de" href={`${siteUrl}/de${pathname}`} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}/en${pathname}`} />
       
       
     </>

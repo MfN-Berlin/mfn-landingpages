@@ -231,8 +231,8 @@ const PublicationsPage = ({ data }) => {
                     }
                     
                     return (
-                      <li key={page}>
-                        <button
+                      <li key={`page-${index}`}>
+                        <button 
                           onClick={() => setCurrentPage(page)}
                           className={`px-3 py-2 rounded hover:bg-Green-100 
                             ${currentPage === page ? 'bg-Green-500 text-white' : ''}`}

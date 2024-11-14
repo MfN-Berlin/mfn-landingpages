@@ -62,11 +62,13 @@ module.exports = {
         path: `${__dirname}/static`,
       },
     },
+    'gatsby-plugin-no-sourcemaps',
   ],
   flags: {
+    DEV_SSR: true,
     FAST_DEV: true,
-    DEV_SSR: false,
-    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
   },
   pathPrefix: "/mfn-landingpages",
 }
