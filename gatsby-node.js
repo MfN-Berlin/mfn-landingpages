@@ -82,45 +82,64 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
-  // Only modify webpack config during build stage
   if (stage === 'build-javascript') {
     actions.setWebpackConfig({
       optimization: {
         splitChunks: {
           chunks: 'all',
           cacheGroups: {
-            runtime: {
-              name: 'runtime',
-              enforce: true,
-              priority: 30,
-              minChunks: 1,
-              test: /webpack-runtime/
-            },
-            commons: {
-              name: 'commons',
-              enforce: true,
-              priority: 20,
-              minChunks: 2
-            },
-            vendors: {
-              name: 'vendors',
-              test: /[\\/]node_modules[\\/]/,
-              enforce: true,
-              priority: 10
-            },
             styles: {
               name: 'styles',
               test: /\.(css|scss)$/,
               chunks: 'all',
               enforce: true,
               priority: 40
+            },
+            runtime: {
+              name: 'runtime',
+              test: /webpack-runtime/,
+              enforce: true,
+              priority: 30
+            },
+            framework: {
+              name: 'framework',
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|gatsby)[\\/]/,
+              chunks: 'all',
+              priority: 20
+            },
+            vendors: {
+              name: 'vendors',
+              test: /[\\/]node_modules[\\/]/,
+              chunks: 'all',
+              priority: 10
             }
           }
+        },
+        runtimeChunk: {
+          name: 'runtime'
         }
       },
       output: {
         filename: '[name].js',
+        chunkFilename: '[name].js',
         publicPath: '/mfn-landingpages/'
+      }
+    });
+  }
+
+  if (stage === 'build-css') {
+    actions.setWebpackConfig({
+      optimization: {
+        splitChunks: {
+          cacheGroups: {
+            styles: {
+              name: 'styles',
+              test: /\.(css|scss)$/,
+              chunks: 'all',
+              enforce: true
+            }
+          }
+        }
       }
     });
   }
