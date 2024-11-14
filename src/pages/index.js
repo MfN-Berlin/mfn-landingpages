@@ -35,7 +35,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Header />
+      
       <main className="bg-white flex flex-col items-center justify-center p-0">
         <Section backgroundColor="bg-white" padding="pt-8 pb-0">
           <AccessibilityNav currentPage="Startseite" />
@@ -95,7 +95,7 @@ const IndexPage = () => {
           />
         </Section>
       </main>
-      <Footer />
+      
     </>
   )
 }
