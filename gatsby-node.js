@@ -5,6 +5,7 @@
  */
 
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -84,62 +85,57 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
   if (stage === 'build-javascript') {
     actions.setWebpackConfig({
+      plugins: [
+        new MiniCssExtractPlugin({
+          filename: 'styles.css',
+        }),
+      ],
       optimization: {
+        moduleIds: 'named',
+        chunkIds: 'named',
         splitChunks: {
           chunks: 'all',
+          name(module, chunks, cacheGroupKey) {
+            return cacheGroupKey;
+          },
           cacheGroups: {
             styles: {
               name: 'styles',
-              test: /\.(css|scss)$/,
+              type: 'css/mini-extract',
               chunks: 'all',
               enforce: true,
-              priority: 40
             },
             runtime: {
               name: 'runtime',
               test: /webpack-runtime/,
               enforce: true,
-              priority: 30
+              priority: 30,
             },
             framework: {
               name: 'framework',
               test: /[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|gatsby)[\\/]/,
               chunks: 'all',
-              priority: 20
+              priority: 20,
             },
             vendors: {
               name: 'vendors',
               test: /[\\/]node_modules[\\/]/,
               chunks: 'all',
-              priority: 10
+              priority: 10,
             }
           }
         },
         runtimeChunk: {
-          name: 'runtime'
+          name: 'runtime',
         }
       },
       output: {
         filename: '[name].js',
         chunkFilename: '[name].js',
-        publicPath: '/mfn-landingpages/'
-      }
-    });
-  }
-
-  if (stage === 'build-css') {
-    actions.setWebpackConfig({
-      optimization: {
-        splitChunks: {
-          cacheGroups: {
-            styles: {
-              name: 'styles',
-              test: /\.(css|scss)$/,
-              chunks: 'all',
-              enforce: true
-            }
-          }
-        }
+        publicPath: '/mfn-landingpages/',
+        hashFunction: null,
+        hashDigest: null,
+        hashDigestLength: 0
       }
     });
   }
