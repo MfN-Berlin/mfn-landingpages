@@ -1,16 +1,17 @@
 import * as React from "react"
+import PropTypes from 'prop-types'
 
 const HeadComponent = ({ title, description, pathname }) => {
   return (
     <>
-      <title key="title">{title}</title>
+      <title key="page-specific-title">{title}</title>
       <meta 
-        key="description" 
+        key="page-description" 
         name="description" 
         content={description} 
       />
       <meta 
-        key="viewport" 
+        key="page-viewport" 
         name="viewport" 
         content="width=device-width, initial-scale=1" 
       />

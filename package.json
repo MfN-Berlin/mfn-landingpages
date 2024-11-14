@@ -44,9 +44,9 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby clean && gatsby build --prefix-paths",
+    "build": "gatsby clean && node scripts/copy-fonts.js && gatsby build --prefix-paths",
     "build:prefix": "gatsby build --prefix-paths",
-    "develop": "gatsby develop",
+    "develop": "node scripts/copy-fonts.js && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",

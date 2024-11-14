@@ -94,17 +94,17 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
     // Add MiniCssExtractPlugin with fixed filename
     config.plugins.push(
       new MiniCssExtractPlugin({
-        filename: 'mfn-landingpages/styles.css',
-        chunkFilename: 'mfn-landingpages/[name].css',
+        filename: '[name].css',
+        chunkFilename: '[name].css',
       })
     );
 
     // Configure output
     config.output = {
       ...config.output,
-      filename: 'mfn-landingpages/[name].js',
-      chunkFilename: 'mfn-landingpages/[name].js',
-      publicPath: '/mfn-landingpages/',
+      filename: '[name].js',
+      chunkFilename: '[name].js',
+      publicPath: '/',
       hashFunction: 'xxhash64',
       hashDigest: 'hex',
       hashDigestLength: 8,
@@ -120,7 +120,7 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                publicPath: '/mfn-landingpages/',
+                publicPath: '/',
               },
             },
             'css-loader',
@@ -136,8 +136,9 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
             {
               loader: 'file-loader',
               options: {
-                name: 'static/[name].[ext]',
-                publicPath: '/mfn-landingpages/',
+                name: 'fonts/[name].[ext]',
+                outputPath: 'static/',
+                publicPath: '/static/',
               },
             },
           ],
@@ -145,22 +146,6 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
       }
       return rule;
     });
-
-    // Add font rules if they don't exist
-    const fontRule = {
-      test: /\.(woff|woff2)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: 'static/[name].[ext]',
-            publicPath: '/mfn-landingpages/',
-          },
-        },
-      ],
-    };
-
-    config.module.rules.push(fontRule);
 
     actions.replaceWebpackConfig(config);
   }
