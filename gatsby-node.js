@@ -80,3 +80,48 @@ exports.createSchemaCustomization = ({ actions }) => {
   `
   createTypes(typeDefs)
 }
+
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  // Only modify webpack config during build stage
+  if (stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      optimization: {
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            runtime: {
+              name: 'runtime',
+              enforce: true,
+              priority: 30,
+              minChunks: 1,
+              test: /webpack-runtime/
+            },
+            commons: {
+              name: 'commons',
+              enforce: true,
+              priority: 20,
+              minChunks: 2
+            },
+            vendors: {
+              name: 'vendors',
+              test: /[\\/]node_modules[\\/]/,
+              enforce: true,
+              priority: 10
+            },
+            styles: {
+              name: 'styles',
+              test: /\.(css|scss)$/,
+              chunks: 'all',
+              enforce: true,
+              priority: 40
+            }
+          }
+        }
+      },
+      output: {
+        filename: '[name].js',
+        publicPath: '/mfn-landingpages/'
+      }
+    });
+  }
+};
