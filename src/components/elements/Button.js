@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ text, variant = 'primary', url, className = '', ...props }) => {
+const Button = ({ text, children, variant = 'primary', url, className = '', ...props }) => {
   const baseClasses = 'inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none';
 
   const styleClasses = {
@@ -22,7 +22,7 @@ const Button = ({ text, variant = 'primary', url, className = '', ...props }) =>
       className={`${baseClasses} ${styleClasses[variant]} ${className}`}
       {...props}
     >
-      {text}
+      {children || text}
     </button>
   );
 };

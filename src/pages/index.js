@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, withPrefix } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Header from "../components/layouts/Header"
 import Footer from "../components/layouts/Footer"
 import Section from "../components/elements/Section"
@@ -9,33 +9,22 @@ import AccessibilityNav from '../components/layouts/AccessibilityNav'
 import HeadComponent from '../components/layouts/HeadComponent'
 
 const IndexPage = () => {
-  const debugInfo = {
-    nodeEnv: process.env.NODE_ENV,
-    isProduction: process.env.NODE_ENV === 'production',
-    prefix: withPrefix("/"),
-    baseUrl: typeof window !== 'undefined' ? window.location.href : '',
-    testPath: withPrefix("/images/logo.svg"),
-    windowLocation: typeof window !== 'undefined' ? {
-      pathname: window.location.pathname,
-      hostname: window.location.hostname,
-      origin: window.location.origin
-    } : null,
-    rawPrefix: process.env.GATSBY_PATH_PREFIX,
-    buildTime: {
-      command: process.env.npm_lifecycle_event,
-      prefixPaths: process.env.PREFIX_PATHS === 'true'
-    },
-    testPaths: {
-      root: withPrefix("/"),
-      image: withPrefix("/images/logo.svg"),
-      absolute: withPrefix("https://example.com"),
-      relative: withPrefix("./relative/path")
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        buildTime
+      }
     }
-  }
+  `)
+
+  // Remove any client-side-only logic from initial render
+  React.useEffect(() => {
+    // Put client-side-only logic here
+  }, [])
 
   return (
     <>
-      <Header />
+      
       <main className="bg-white flex flex-col items-center justify-center p-0">
         <Section backgroundColor="bg-white" padding="pt-8 pb-0">
           <AccessibilityNav currentPage="Startseite" />
@@ -44,7 +33,7 @@ const IndexPage = () => {
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            headline="mfn-landingpages v0.0.12"
+            headline="mfn-landingpages v0.0.35"
             headlineStyle="h1"
             body="interne Startseite, hier sind die bereits angelegten Landingpages und Zusatzseiten"
             spacing="wide"
@@ -55,7 +44,7 @@ const IndexPage = () => {
           <div className="p-4 font-mono text-sm">
             <h2 className="font-bold mb-2">Debug Information:</h2>
             <pre className="whitespace-pre-wrap">
-              {JSON.stringify(debugInfo, null, 2)}
+              {JSON.stringify(data.site, null, 2)}
             </pre>
           </div>
         </Section>
@@ -69,7 +58,7 @@ const IndexPage = () => {
               body: "Öffnungszeiten, Tickets, Anfahrt und alle wichtigen Informationen für Ihren Museumsbesuch.",
               spacing: "regular"
             }}
-            url="/besuch-planen"
+            url="/mfn-landingpages/besuch-planen"
           />
 
           <Card
@@ -95,7 +84,7 @@ const IndexPage = () => {
           />
         </Section>
       </main>
-      <Footer />
+      
     </>
   )
 }

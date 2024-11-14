@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { withPrefix } from 'gatsby';
+
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
@@ -8,8 +8,8 @@ const TopNavLink = ({ to, children, isSpecial = false }) => (
     <Link
       to={to}
       className={`text-Black-900 hover:text-Green-500 transition duration-3000 no-underline text-[12.6px] ${isSpecial
-          ? "bg-Green-400 text-Black-900 px-[0.7em] py-[0.1em] pb-[0.2em] align-middle font-bold uppercase hover:text-White-White focus:text-White-White"
-          : ""
+        ? "bg-Green-400 text-Black-900 px-[0.9em] py-[0.1em] pb-[0.2em] align-middle font-bold uppercase hover:text-White-White focus:text-White-White"
+        : ""
         }`}
     >
       {children}
@@ -21,26 +21,24 @@ const TopNavLink = ({ to, children, isSpecial = false }) => (
 const MainNavLink = ({ to, children, isActive }) => (
   <Link
     to={to}
-        
-    className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-3000 font-tradegothic-bold ${
-      isActive 
-        ? 'bg-Green-500 text-Black-900' 
-        : 'hover:bg-Green-500 hover:text-white'
-    }`}
+    className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${isActive
+      ? 'bg-Green-500 text-Black-900'
+      : 'hover:bg-Green-500'
+      }`}
   >
-    <span className="inline-block py-[0.1em] pb-[0.2em] px-[min(1.2vw,1em)] hover:bg-Green-500 active:bg-Green-500">
+    <span className="inline-block py-[0.1em] pb-[0.2em] px-[min(1vw,0.5em)]">
       {children}
     </span>
   </Link>
 );
 
-// Logo component with withPrefix
+// Logo component using publicURL for SVG
 const Logo = () => (
-  <div className="flex-shrink-0 w-[144px]">
+  <div className="flex-shrink-0 w-[156px]">
     <div className="mfn-system-branding-block max-w-[calc(100vw-13px)] md:absolute bg-white md:top-[12px] pl-[1px] pr-[2px] top-[13px]">
       <Link to="/" className="block outline-none text-[#7da30b] transition duration-3000">
         <img
-          src={withPrefix("/images/logo.svg")}
+          src="/images/logo.svg"
           alt="Museum für Naturkunde Berlin"
           className="block z-[var(--z-index-logo)] bg-[var(--color-background-logo)] px-[0.7em] h-[84px] m-0 sm:sticky sm:top-0 sm:h-[var(--height-branding-logo)]"
         />
@@ -86,10 +84,10 @@ const LanguageSwitcher = () => (
   <div className="language-switcher-language-url hidden sm:block" id="block-languageswitcherinterfacetext" role="navigation">
     <ul className="flex m-0 items-center leading-[0]">
       <li className="de list-none typography-p font-tradegothic-bold border-r-2 border-Gray-300">
-        <Link to="/de" className="language-link text-Green-500 px-2 inline-block leading-none" hrefLang="de">DE</Link>
+        <Link to="/de" className="language-link text-Green-500 px-3 inline-block leading-none" hrefLang="de">DE</Link>
       </li>
       <li className="en list-none typography-p font-tradegothic-bold border-r-2 border-Gray-300">
-        <Link to="/en" className="language-link text-Black-900 px-2 inline-block leading-none" hrefLang="en">EN</Link>
+        <Link to="/en" className="language-link text-Black-900 px-3 inline-block leading-none" hrefLang="en">EN</Link>
       </li>
       <li className="de-x-ls list-none">
         <Link
@@ -113,20 +111,38 @@ const LanguageSwitcher = () => (
   </div>
 );
 
-// New component for main menu items with dropdowns
+// MainNavItem component with proper accessibility
 const MainNavItem = ({ to, children, submenu, isActive }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === 'Space') {
+      setIsOpen(!isOpen);
+    }
+    if (e.key === 'Escape') {
+      setIsOpen(false);
+    }
+  };
+
   return (
-    <div 
-      className="group"
+    <button
+      className="group "
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
+      onKeyDown={handleKeyDown}
+      aria-expanded={isOpen}
+      aria-haspopup="menu"
     >
-      <MainNavLink to={to} isActive={isActive}>{children}</MainNavLink>
+      <MainNavLink to={to} isActive={isActive}>
+        {children}
+      </MainNavLink>
       
       {submenu && isOpen && (
-        <div className="absolute left-0 w-screen min-h-[12rem] bg-white overflow-y-auto max-h-[calc(100vh-88px)]">
+        <div
+          className="absolute left-0 w-full bg-white "
+          role="menu"
+          aria-label={`${children} submenu`}
+        >
           <div className="max-w-[1140px] mx-auto">
             <div className="grid grid-cols-4 gap-4 py-6 pl-44 pr-3 text-gray-500">
               {/* Group items by column */}
@@ -137,20 +153,20 @@ const MainNavItem = ({ to, children, submenu, isActive }) => {
                     .sort((a, b) => (a.order || 0) - (b.order || 0))
                     .map(item => (
                       <div key={item.to}>
-                        <Link 
-                          to={item.to} 
-                          className="block text-sm text-gray-900 font-bold hover:text-Green-500 transition duration-300"
+                        <Link
+                          to={item.to}
+                          className="block text-sm text-left text-gray-900 font-bold hover:text-Green-500 transition duration-300"
                         >
                           {item.label}
                         </Link>
-                        
+
                         {item.submenu && (
                           <ul className="mt-2 border-l-2 border-gray-200/20">
                             {item.submenu.map((subItem) => (
                               <li key={subItem.to} className="my-1 pl-2">
-                                <Link 
+                                <Link
                                   to={subItem.to}
-                                  className="block text-xs text-gray-500 font-normal hover:text-Green-500 transition duration-300"
+                                  className="block text-xs text-left text-gray-500 font-normal hover:text-Green-500 transition duration-300"
                                 >
                                   {subItem.label}
                                 </Link>
@@ -166,7 +182,7 @@ const MainNavItem = ({ to, children, submenu, isActive }) => {
           </div>
         </div>
       )}
-    </div>
+    </button>
   );
 };
 
@@ -176,9 +192,9 @@ const Header = ({ activeNavItem }) => {
     besuchplanen: {
       to: "/besuch-planen",
       submenu: [
-        
-        { 
-          to: "/besuch-planen/ausstellungen", 
+
+        {
+          to: "/besuch-planen/ausstellungen",
           label: "Ausstellungen",
           column: 1,
           order: 1,
@@ -200,316 +216,322 @@ const Header = ({ activeNavItem }) => {
             { to: "/besuch-planen/ausstellungen/archiv-sonderausstellungen", label: "Archiv: Sonderausstellungen" }
           ]
         },
-        
-        { 
-          to: "/besuch-planen/fuernatur-digital", 
+
+        {
+          to: "/besuch-planen/fuernatur-digital",
           label: "#fürNatur digital",
-          column: 2, 
-          order: 1,  
+          column: 2,
+          order: 1,
           submenu: [
-            { 
-              to: "/besuch-planen/fuernatur-digital/beats-bones-der-podcast-aus-dem-museum-fuer-naturkunde-berlin", 
-              label: "Beats & Bones" 
+            {
+              to: "/besuch-planen/fuernatur-digital/beats-bones-der-podcast-aus-dem-museum-fuer-naturkunde-berlin",
+              label: "Beats & Bones"
             },
-            { 
-              to: "/besuch-planen/fuernatur-digital/suesses-oder-saurier-der-wissenspodcast-fuer-kinder", 
-              label: "Süßes oder Saurier" 
+            {
+              to: "/besuch-planen/fuernatur-digital/suesses-oder-saurier-der-wissenspodcast-fuer-kinder",
+              label: "Süßes oder Saurier"
             },
-            { 
-              to: "/besuch-planen/fuernatur-digital/queering-nature", 
-              label: "Queering Nature" 
+            {
+              to: "/besuch-planen/fuernatur-digital/queering-nature",
+              label: "Queering Nature"
             },
-            { 
-              to: "/besuch-planen/fuernatur-digital/wie-gras.-ein-literarischer-audioguide-zum-anthropozaen", 
+            {
+              to: "/besuch-planen/fuernatur-digital/wie-gras.-ein-literarischer-audioguide-zum-anthropozaen",
               label: "Wie Gras",
             }
           ]
         },
-        { 
-          to: "/im-museum", 
+        {
+          to: "/im-museum",
           label: "Im Museum",
           column: 3,  // Adjust column/order as needed
           order: 1,   // Adjust column/order as needed
           submenu: [
-            { 
-              to: "/besuch-planen/im-museum/veranstaltungen", 
-              label: "Veranstaltungen" 
+            {
+              to: "/besuch-planen/im-museum/veranstaltungen",
+              label: "Veranstaltungen"
             },
-            { 
-              to: "/besuch-planen/im-museum/lageplan-barrierefreiheit", 
-              label: "Lageplan & Barrierefreiheit" 
+            {
+              to: "/besuch-planen/im-museum/lageplan-barrierefreiheit",
+              label: "Lageplan & Barrierefreiheit"
             },
-            { 
-              to: "/besuch-planen/im-museum/garderobe", 
-              label: "Garderobe" 
+            {
+              to: "/besuch-planen/im-museum/garderobe",
+              label: "Garderobe"
             },
-            { 
-              to: "/besuch-planen/im-museum/cafeteria", 
-              label: "Cafeteria" 
+            {
+              to: "/besuch-planen/im-museum/cafeteria",
+              label: "Cafeteria"
             },
-            { 
-              to: "/besuch-planen/im-museum/veranstaltungen", 
-              label: "Veranstaltungen" 
-            }, 
-            { 
-              to: "/besuch-planen/im-museum/sonderoeffnungszeiten", 
-              label: "Sonderöffnungszeiten" 
+            {
+              to: "/besuch-planen/im-museum/veranstaltungen",
+              label: "Veranstaltungen"
             },
-            { 
-              to: "/besuch-planen/im-museum/kooperationen", 
-              label: "Kooperationen" 
+            {
+              to: "/besuch-planen/im-museum/sonderoeffnungszeiten",
+              label: "Sonderöffnungszeiten"
             },
-            { 
-              to: "/besuch-planen/im-museum/faq", 
-              label: "FAQ" 
+            {
+              to: "/besuch-planen/im-museum/kooperationen",
+              label: "Kooperationen"
+            },
+            {
+              to: "/besuch-planen/im-museum/faq",
+              label: "FAQ"
             }
           ]
         }
       ]
     },
-    mitmachen:{ 
-      to: "/mitmachen", 
+    mitmachen: {
+      to: "/mitmachen",
       label: "Mitmachen",
       submenu: [
         // Spalte 1
-        { 
-          to: "/mitmachen/ehrenamt", 
+        {
+          to: "/mitmachen/ehrenamt",
           label: "Ehrenamt",
           column: 1,
           order: 1
         },
-        { 
-          to: "/mitmachen/buergerwissenschaften", 
+        {
+          to: "/mitmachen/buergerwissenschaften",
           label: "Bürgerwissenschaften",
           column: 1,
           order: 2
         },
-    
+
         // Spalte 2
-        { 
-          to: "/mitmachen/bildung", 
+        {
+          to: "/mitmachen/bildung",
           label: "Bildungsangebote",
           column: 2,
           order: 1,
           submenu: [
-            { 
-              to: "/mitmachen/bildung/fuernatur-digital-angebote-fuer-familien-und-kinder", 
-              label: "Digitale Angebote" 
+            {
+              to: "/mitmachen/bildung/fuernatur-digital-angebote-fuer-familien-und-kinder",
+              label: "Digitale Angebote"
             },
-            { 
-              to: "/mitmachen/bildung/fuehrungen", 
-              label: "Führungen" 
+            {
+              to: "/mitmachen/bildung/fuehrungen",
+              label: "Führungen"
             },
-            { 
-              to: "/mitmachen/bildung/schule-und-kita", 
-              label: "Schule und Kita" 
+            {
+              to: "/mitmachen/bildung/schule-und-kita",
+              label: "Schule und Kita"
             },
-            { 
-              to: "/mitmachen/bildung/familien", 
-              label: "Familien" 
+            {
+              to: "/mitmachen/bildung/familien",
+              label: "Familien"
             },
-            { 
-              to: "/mitmachen/bildung/kindergeburtstage", 
-              label: "Kindergeburtstage" 
+            {
+              to: "/mitmachen/bildung/kindergeburtstage",
+              label: "Kindergeburtstage"
             },
-            { 
-              to: "/mitmachen/bildung/erwachsene", 
-              label: "Erwachsene" 
+            {
+              to: "/mitmachen/bildung/erwachsene",
+              label: "Erwachsene"
             },
-            { 
-              to: "/mitmachen/bildung/fortbildungen", 
-              label: "Fortbildungen" 
+            {
+              to: "/mitmachen/bildung/fortbildungen",
+              label: "Fortbildungen"
             },
-            { 
-              to: "/mitmachen/bildung/partnerschaften-und-projekte", 
-              label: "Partnerschaften und Projekte" 
+            {
+              to: "/mitmachen/bildung/partnerschaften-und-projekte",
+              label: "Partnerschaften und Projekte"
             }
           ]
         },
-    
+
         // Spalte 3
-        { 
-          to: "/besuch-planen/im-museum/veranstaltungen", 
+        {
+          to: "/besuch-planen/im-museum/veranstaltungen",
           label: "Veranstaltungen",
           column: 3,
           order: 1
         }
       ]
     },
-    forschung:{ 
-      to: "/forschung", 
+    forschung: {
+      to: "/forschung",
       label: "Forschung",
       submenu: [
         // Forschung mit Unterpunkten
-        { 
-          to: "/forschung", 
+        {
+          to: "/forschung",
           label: "Forschung",
           column: 1,
           order: 1,
           submenu: [
-            { 
-              to: "/forschung/dynamik-der-natur", 
-              label: "Dynamik der Natur" 
+            {
+              to: "/forschung/dynamik-der-natur",
+              label: "Dynamik der Natur"
             },
-            { 
-              to: "/forschung/zukunft-der-sammlung", 
-              label: "Zukunft der Sammlung" 
+            {
+              to: "/forschung/zukunft-der-sammlung",
+              label: "Zukunft der Sammlung"
             },
-            { 
-              to: "/forschung/gesellschaft-und-natur", 
-              label: "Gesellschaft und Natur" 
+            {
+              to: "/forschung/gesellschaft-und-natur",
+              label: "Gesellschaft und Natur"
             }
           ]
         },
-        { 
-          to: "/forschung/team-projekte", 
+        {
+          to: "/forschung/team-projekte",
           label: "Team & Projekte",
           column: 4,
           order: 1
         },
+        {
+          to: "/forschung/publikationen",
+          label: "Publikationen",
+          column: 4,
+          order: 1
+        },
         // Infrastruktur mit Unterpunkten
-        { 
-          to: "/forschung/infrastruktur", 
+        {
+          to: "/forschung/infrastruktur",
           label: "Infrastruktur",
           column: 2,
           order: 1,
           submenu: [
-            { 
-              to: "/forschung/infrastruktur/sammlung", 
-              label: "Sammlung" 
+            {
+              to: "/forschung/infrastruktur/sammlung",
+              label: "Sammlung"
             },
-            { 
-              to: "/forschung/infrastruktur/labore", 
-              label: "Labore" 
+            {
+              to: "/forschung/infrastruktur/labore",
+              label: "Labore"
             },
-            { 
-              to: "/forschung/infrastruktur/it-forschungsinfrastruktur", 
-              label: "IT Forschungsinfrastruktur" 
+            {
+              to: "/forschung/infrastruktur/it-forschungsinfrastruktur",
+              label: "IT Forschungsinfrastruktur"
             },
-            { 
-              to: "/forschung/infrastruktur/forschungsdatenmanagementstruktur", 
-              label: "Forschungsdatenmanagementstruktur" 
+            {
+              to: "/forschung/infrastruktur/forschungsdatenmanagementstruktur",
+              label: "Forschungsdatenmanagementstruktur"
             }
           ]
         },
-    
+
         // Transfer mit Unterpunkten
-        { 
-          to: "/forschung/transfer", 
+        {
+          to: "/forschung/transfer",
           label: "Transfer",
           column: 3,
           order: 1,
           submenu: [
-            { 
-              to: "/forschung/transfer/kommunizieren", 
-              label: "Kommunizieren" 
+            {
+              to: "/forschung/transfer/kommunizieren",
+              label: "Kommunizieren"
             },
-            { 
-              to: "/forschung/transfer/beraten", 
-              label: "Beraten" 
+            {
+              to: "/forschung/transfer/beraten",
+              label: "Beraten"
             },
-            { 
-              to: "/forschung/transfer/anwenden", 
-              label: "Anwenden" 
+            {
+              to: "/forschung/transfer/anwenden",
+              label: "Anwenden"
             }
           ]
         }
       ]
     },
-    museum: { 
-      to: "/museum", 
+    museum: {
+      to: "/museum",
       label: "Museum",
       submenu: [
         // Über uns Sektion
-        { 
-          to: "/museum/heute", 
+        {
+          to: "/museum/heute",
           label: "Das Museum heute",
           column: 1,
           order: 1,
           submenu: [
-            { 
-              to: "/museum/heute/ueber-uns", 
-              label: "Über uns" 
+            {
+              to: "/museum/heute/ueber-uns",
+              label: "Über uns"
             },
-            { 
-              to: "/museum/heute/bau", 
-              label: "Bau" 
+            {
+              to: "/museum/heute/bau",
+              label: "Bau"
             },
-            { 
-              to: "/museum/heute/das-museum", 
-              label: "Das Museum" 
+            {
+              to: "/museum/heute/das-museum",
+              label: "Das Museum"
             },
-            { 
-              to: "/museum/heute/sponsoren", 
-              label: "Sponsoren" 
+            {
+              to: "/museum/heute/sponsoren",
+              label: "Sponsoren"
             },
           ]
         },
-    
+
         // Das Museum in Zukunft Sektion
-        { 
-          to: "/museum/zukunft", 
+        {
+          to: "/museum/zukunft",
           label: "Das Museum in Zukunft",
           column: 2,
           order: 1,
           submenu: [
-            { 
-              to: "/museum/zukunft/zukunftsplan", 
-              label: "Zukunftsplan" 
+            {
+              to: "/museum/zukunft/zukunftsplan",
+              label: "Zukunftsplan"
             },
-            { 
-              to: "/museum/zukunft/sammlungserschliessung", 
-              label: "Sammlungserschließung" 
+            {
+              to: "/museum/zukunft/sammlungserschliessung",
+              label: "Sammlungserschließung"
             },
-            { 
-              to: "/museum/zukunft/wissenstransfer", 
-              label: "Wissenstransfer" 
+            {
+              to: "/museum/zukunft/wissenstransfer",
+              label: "Wissenstransfer"
             },
-            { 
-              to: "/museum/zukunft/museums-evolution", 
-              label: "Museums-Evolution" 
+            {
+              to: "/museum/zukunft/museums-evolution",
+              label: "Museums-Evolution"
             }
           ]
         },
         // Das Museum in Zukunft Sektion
-        { 
-          to: "/museum/medien", 
+        {
+          to: "/museum/medien",
           label: "Medien",
           column: 3,
           order: 1,
           submenu: [
-            { 
-              to: "/museum/medien/presse", 
-              label: "Presse" 
+            {
+              to: "/museum/medien/presse",
+              label: "Presse"
             },
-            { 
-              to: "/museum/medien/news", 
-              label: "News" 
+            {
+              to: "/museum/medien/news",
+              label: "News"
             },
-            { 
-              to: "/museum/medien/fuer-natur", 
-              label: "Journal \"für Natur\"" 
+            {
+              to: "/museum/medien/fuer-natur",
+              label: "Journal \"für Natur\""
             },
-            { 
-              to: "http://eepurl.com/vsVBv", 
-              label: "Newsletter" 
+            {
+              to: "http://eepurl.com/vsVBv",
+              label: "Newsletter"
             }
           ]
         },
         // Das Museum in Zukunft Sektion
-        { 
-          to: "/museum/karriere", 
+        {
+          to: "/museum/karriere",
           label: "Jobs & Karriere",
           column: 4,
           order: 1,
           submenu: [
-            { 
-              to: "/museum/karriere/hier-arbeiten", 
-              label: "Hier Arbeiten" 
+            {
+              to: "/museum/karriere/hier-arbeiten",
+              label: "Hier Arbeiten"
             },
-            { 
-              to: "/museum/karriere/stellenausschreibungen", 
-              label: "Stellenausschreibungen" 
+            {
+              to: "/museum/karriere/stellenausschreibungen",
+              label: "Stellenausschreibungen"
             }
           ]
         }
@@ -520,13 +542,13 @@ const Header = ({ activeNavItem }) => {
   return (
     <>
       {/* TopNav */}
-      <nav 
-        role="navigation" 
-        aria-labelledby="block-mfn-menu-header-menu-menu" 
-        id="block-mfn-menu-header-menu" 
+      <nav
+        role="navigation"
+        aria-labelledby="block-mfn-menu-header-menu-menu"
+        id="block-mfn-menu-header-menu"
         className="w-full bg-[rgba(255,255,255,0.949)] "
       >
-        <div className="hidden sm:block max-w-[1165px] mx-auto pl-[13px] pr-[12px]">
+        <div className="hidden sm:block max-w-[1165px] mx-auto pl-[12px] pr-[12px]">
           <ul className="header-menu__list flex justify-end items-end flex-wrap list-none text-[12.6px] leading-[1.2em] m-0 typography-p pt-2  h-[32px]">
             <TopNavLink to="/museum/besuch-planen">Öffnungszeiten</TopNavLink>
             <TopNavLink to="/museum/besuch-planen/anfahrt">Anfahrt</TopNavLink>
@@ -540,7 +562,7 @@ const Header = ({ activeNavItem }) => {
 
       {/* Logo - Sticky */}
       <div className="relative md:sticky md:top-[20px] bg-white z-[51]">
-        <div className="relative max-w-[1165px] mx-auto pl-[13px] pr-[12px] ">
+        <div className="relative max-w-[1165px] mx-auto pl-[12px] pr-[12px] ">
           <div className="md:absolute md:top-[-34px] w-full flex justify-center md:w-auto">
             <Logo />
           </div>
@@ -549,46 +571,46 @@ const Header = ({ activeNavItem }) => {
 
       {/* MainNav - Sticky */}
       <nav className="sticky top-0 z-50 bg-white/95">
-      <div className="max-w-[1165px] mx-auto md:pl-[144px]">
-        <div className="flex items-center justify-between h-auto py-1 md:px-0 pr-[12px]">
-          {/* Menu items */}
-          <div className="flex flex-wrap justify-start">
-            <MainNavItem 
-              to="/besuch-planen" 
-              submenu={menuData.besuchplanen.submenu}
-              isActive={activeNavItem === 'besuchplanen'}
-            >
-              Besuch planen
-            </MainNavItem>
-            <MainNavItem 
-              to="/mitmachen" 
-              submenu={menuData.mitmachen.submenu}
-              isActive={activeNavItem === 'mitmachen'}
-            >
-              Mitmachen
-            </MainNavItem>
-            <MainNavItem 
-              to="/forschung" 
-              submenu={menuData.forschung.submenu}
-              isActive={activeNavItem === 'forschung'}
-            >
-              Forschung
-            </MainNavItem>
-            <MainNavItem 
-              to="/museum" 
-              submenu={menuData.museum.submenu}
-              isActive={activeNavItem === 'museum'}
-            >
-              Das Museum
-            </MainNavItem>
-          </div>
-          <div className="flex items-center justify-end space-x-4 ml-4 md:ml-10">
-            <SearchForm />
-            <LanguageSwitcher />
+        <div className="max-w-[1165px] mx-auto md:pl-[156px] pr-3">
+          <div className="flex items-center justify-between h-auto py-[7px] md:px-0 pr-[12px]">
+            {/* Menu items */}
+            <div className="flex flex-wrap justify-start">
+              <MainNavItem
+                to="/besuch-planen"
+                submenu={menuData.besuchplanen.submenu}
+                isActive={activeNavItem === 'besuchplanen'}
+              >
+                Besuch planen
+              </MainNavItem>
+              <MainNavItem
+                to="/mitmachen"
+                submenu={menuData.mitmachen.submenu}
+                isActive={activeNavItem === 'mitmachen'}
+              >
+                Mitmachen
+              </MainNavItem>
+              <MainNavItem
+                to="/forschung"
+                submenu={menuData.forschung.submenu}
+                isActive={activeNavItem === 'forschung'}
+              >
+                Forschung
+              </MainNavItem>
+              <MainNavItem
+                to="/museum"
+                submenu={menuData.museum.submenu}
+                isActive={activeNavItem === 'museum'}
+              >
+                Das Museum
+              </MainNavItem>
+            </div>
+            <div className="flex items-center justify-end space-x-4 ml-4 md:ml-10">
+              <SearchForm />
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </>
   );
 };

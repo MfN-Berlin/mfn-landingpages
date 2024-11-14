@@ -15,7 +15,8 @@ const ContentImage = ({ imageName, alt, imageMap, className = '' }) => {
     <GatsbyImage
       image={image}
       alt={alt}
-      className={`${className} object-contain`}
+      className={className}
+      imgClassName="object-contain"
       loading="lazy"
     />
   );

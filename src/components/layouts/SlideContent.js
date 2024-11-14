@@ -7,12 +7,12 @@ const SlideContent = ({ imageName, imageMap, title, kicker, text, link, altText,
 
   return (
     <div className="flex flex-col h-full">
-      <div className="relative w-full pb-[56.25%]">
+      <div className="relative w-full">
         <ContentImage
           imageName={imageName}
           alt={altText || title}
           imageMap={imageMap}
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="relative top-0 left-0 w-full h-full object-cover"
         />
         {paginationDots && (
           <div className="absolute left-0 right-0 bottom-4 flex justify-center">
@@ -22,7 +22,7 @@ const SlideContent = ({ imageName, imageMap, title, kicker, text, link, altText,
           </div>
         )}
       </div>
-      <div className="bg-white p-8">
+      <div className="bg-white p-8 text-center">
         <CardText
           kicker={kicker}
           headline={title}

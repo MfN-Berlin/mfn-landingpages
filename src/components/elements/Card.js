@@ -5,6 +5,7 @@ import CardText from './CardText';
 
 const Card = ({ 
   variant = 'classic', 
+  alignment = 'left',
   imageProps, 
   textProps, 
   url,
@@ -38,12 +39,12 @@ const Card = ({
   return (
     <Link 
       to={url} 
-      className={`group w-full p-3 flex-col justify-start items-start gap-2.5 inline-flex hover:bg-Green-200 rounded-[10px] focus:border-2 focus:border-[#729800] ${className}`}
+      className={`group w-full p-3 flex-col justify-start ${alignment === 'left' ? 'items-start' : 'items-center'} gap-2.5 inline-flex hover:bg-Green-200 rounded-[10px] focus:border-2 focus:border-[#729800] ${className}`}
     >
       {variant === 'classic' ? (
         cardContent
       ) : (
-        <div className="self-stretch flex-col justify-center items-start flex">
+        <div className={`self-stretch flex-col justify-center ${alignment === 'left' ? 'items-start' : 'items-center'} flex`}>
           {cardContent}
         </div>
       )}

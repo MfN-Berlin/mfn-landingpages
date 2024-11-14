@@ -5,6 +5,7 @@
  */
 
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -44,12 +45,10 @@ exports.createPages = async ({ actions, graphql }) => {
   });
 
   createPage({
-    path: "/besuch-planen",
+    path: "/mfn-landingpages/besuch-planen",
     component: path.resolve(`./src/pages/besuch-planen.js`),
     context: { imageMap },
   });
-
-  // Repeat for other pages as needed
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -80,3 +79,81 @@ exports.createSchemaCustomization = ({ actions }) => {
   `
   createTypes(typeDefs)
 }
+
+exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
+  const config = getConfig();
+
+  if (stage === 'build-javascript' || stage === 'develop') {
+    // Remove existing MiniCssExtractPlugin instances
+    config.plugins = config.plugins.filter(plugin => {
+      return plugin.constructor.name !== 'MiniCssExtractPlugin';
+    });
+
+    // Add MiniCssExtractPlugin with fixed filename
+    config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[name].css',
+      })
+    );
+
+    // Configure output
+    config.output = {
+      ...config.output,
+      filename: '[name].js',
+      chunkFilename: '[name].js',
+      publicPath: '/',
+      hashFunction: 'xxhash64',
+      hashDigest: 'hex',
+      hashDigestLength: 8,
+    };
+
+    // Configure font handling
+    config.module.rules = config.module.rules.map(rule => {
+      // Handle CSS
+      if (String(rule.test).includes('css')) {
+        return {
+          ...rule,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: '/',
+              },
+            },
+            'css-loader',
+            'postcss-loader',
+          ],
+        };
+      }
+      // Handle fonts
+      if (String(rule.test).includes('woff') || String(rule.test).includes('woff2')) {
+        return {
+          ...rule,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'static/fonts/[name].[ext]',
+                publicPath: '/',
+              },
+            },
+          ],
+        };
+      }
+      return rule;
+    });
+
+    actions.replaceWebpackConfig(config);
+  }
+};
+
+// Keep the babel config
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: 'babel-plugin-transform-remove-console',
+    options: {
+      exclude: ['error', 'warn'],
+    },
+  });
+};
