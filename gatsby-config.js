@@ -67,6 +67,13 @@ module.exports = {
         fingerprintExtensions: ['css', 'js'], // explicitly include CSS
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fonts`,
+        path: `${__dirname}/src/fonts`,
+      },
+    },
   ],
   flags: {
     DEV_SSR: true,

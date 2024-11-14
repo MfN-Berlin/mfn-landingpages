@@ -49,8 +49,6 @@ exports.createPages = async ({ actions, graphql }) => {
     component: path.resolve(`./src/pages/besuch-planen.js`),
     context: { imageMap },
   });
-
-  // Repeat for other pages as needed
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -136,9 +134,8 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
             {
               loader: 'file-loader',
               options: {
-                name: 'fonts/[name].[ext]',
-                outputPath: 'static/',
-                publicPath: '/static/',
+                name: 'static/fonts/[name].[ext]',
+                publicPath: '/',
               },
             },
           ],

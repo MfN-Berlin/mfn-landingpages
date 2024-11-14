@@ -33,7 +33,7 @@ const IndexPage = () => {
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            headline="mfn-landingpages v0.0.32"
+            headline="mfn-landingpages v0.0.33"
             headlineStyle="h1"
             body="interne Startseite, hier sind die bereits angelegten Landingpages und Zusatzseiten"
             spacing="wide"
@@ -58,7 +58,7 @@ const IndexPage = () => {
               body: "Öffnungszeiten, Tickets, Anfahrt und alle wichtigen Informationen für Ihren Museumsbesuch.",
               spacing: "regular"
             }}
-            url="/besuch-planen"
+            url="/mfn-landingpages/besuch-planen"
           />
 
           <Card

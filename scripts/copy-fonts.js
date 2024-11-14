@@ -20,7 +20,14 @@ const copyFonts = () => {
     }
   });
 
+  // Also copy icomoon font if it exists
+  const icomoonSource = path.join(__dirname, '..', 'src', 'fonts', 'icomoon.woff2');
+  const icomoonTarget = path.join(targetDir, 'icomoon.woff2');
+  if (fs.existsSync(icomoonSource)) {
+    fs.copyFileSync(icomoonSource, icomoonTarget);
+  }
+
   console.log('✅ Fonts copied successfully');
 };
 
-copyFonts(); 
+copyFonts();
