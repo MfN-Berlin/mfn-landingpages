@@ -5,6 +5,7 @@ import Fuse from 'fuse.js'
 import Header from "../components/layouts/Header"
 import Footer from '../components/layouts/Footer'
 import Section from '../components/elements/Section'
+import HeadComponent from '../components/layouts/HeadComponent'
 
 // Error Boundary Component
 class ErrorBoundary extends Component {
@@ -225,13 +226,13 @@ const PublicationsPage = ({ data }) => {
                     if (page === '...') {
                       return (
                         <li key={`ellipsis-${index}`}>
-                          <span className="px-3 py-2" aria-hidden="true">…</span>
+                          <span className="px-3 py-2">…</span>
                         </li>
                       );
                     }
                     
                     return (
-                      <li key={`page-${index}`}>
+                      <li key={`page-${page}`}>
                         <button 
                           onClick={() => setCurrentPage(page)}
                           className={`px-3 py-2 rounded hover:bg-Green-100 
@@ -298,5 +299,13 @@ export const query = graphql`
     }
   }
 `
+
+export const Head = () => (
+  <HeadComponent
+    title="Publikationen"
+    description="Wissenschaftliche Publikationen des Museums für Naturkunde Berlin"
+    pathname="/publikationen"
+  />
+)
 
 export default PublicationsPage

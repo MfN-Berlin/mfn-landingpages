@@ -63,6 +63,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-no-sourcemaps',
+    'gatsby-plugin-remove-fingerprints',
   ],
   flags: {
     DEV_SSR: true,

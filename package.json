@@ -18,6 +18,7 @@
     "gatsby-plugin-no-sourcemaps": "^5.14.0",
     "gatsby-plugin-preload-fonts": "^4.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
+    "gatsby-plugin-remove-fingerprints": "^0.0.2",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-json": "^5.13.1",
