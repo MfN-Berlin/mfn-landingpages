@@ -63,7 +63,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-no-sourcemaps',
-    'gatsby-plugin-remove-fingerprints',
+    {
+      resolve: 'gatsby-plugin-remove-fingerprints',
+      options: {
+        removeAllFingerprints: true,
+        fingerprintExtensions: ['css', 'js'], // explicitly include CSS
+      },
+    },
   ],
   flags: {
     DEV_SSR: true,

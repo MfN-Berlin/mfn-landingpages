@@ -86,7 +86,12 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   const config = getConfig();
 
   if (stage === 'build-javascript' || stage === 'develop') {
-    // Add MiniCssExtractPlugin
+    // Remove existing MiniCssExtractPlugin instances
+    config.plugins = config.plugins.filter(plugin => {
+      return plugin.constructor.name !== 'MiniCssExtractPlugin';
+    });
+
+    // Add MiniCssExtractPlugin with fixed filename
     config.plugins.push(
       new MiniCssExtractPlugin({
         filename: 'styles.css',
@@ -94,79 +99,61 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
       })
     );
 
-    // Configure CSS handling
+    // Configure output with minimal hash settings
+    config.output = {
+      ...config.output,
+      filename: 'mfn-landingpages/[name].js',
+      chunkFilename: 'mfn-landingpages/[name].js',
+      publicPath: '/',
+      hashFunction: 'xxhash64',
+      hashDigest: 'hex',
+      hashDigestLength: 8,
+    };
+
+    // Configure optimization
+    config.optimization = {
+      ...config.optimization,
+      moduleIds: 'named',
+      chunkIds: 'named',
+      realContentHash: false,
+      concatenateModules: true,
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.css$/,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      },
+    };
+
+    // Configure CSS rules
     config.module.rules = config.module.rules.map(rule => {
-      if (rule.test?.toString().includes('css')) {
+      if (String(rule.test).includes('css')) {
         return {
           ...rule,
           use: [
-            MiniCssExtractPlugin.loader,
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: '/mfn-landingpages/',
+              },
+            },
             'css-loader',
-            'postcss-loader'
-          ]
+            'postcss-loader',
+          ],
         };
       }
       return rule;
     });
 
-    // Remove hash-related configurations
-    config.output = {
-      ...config.output,
-      filename: '[name].js',
-      chunkFilename: '[name].js',
-      publicPath: '/mfn-landingpages/',
-    };
-
-    // Disable hash plugins
-    config.plugins = config.plugins.filter(plugin => {
-      return !plugin.constructor.name.includes('Hash');
-    });
-
-    // Configure chunk splitting
-    config.optimization = {
-      ...config.optimization,
-      moduleIds: 'named',
-      chunkIds: 'named',
-      splitChunks: {
-        chunks: 'all',
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|scss)$/,
-            chunks: 'all',
-            enforce: true,
-            priority: 40,
-          },
-          runtime: {
-            name: 'runtime',
-            test: /webpack-runtime/,
-            enforce: true,
-            priority: 30,
-          },
-          framework: {
-            name: 'framework',
-            test: /[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|gatsby)[\\/]/,
-            chunks: 'all',
-            priority: 20,
-          },
-          vendors: {
-            name: 'vendors',
-            test: /[\\/]node_modules[\\/]/,
-            chunks: 'all',
-            priority: 10,
-          },
-        },
-      },
-      runtimeChunk: {
-        name: 'runtime',
-      },
-    };
-
     actions.replaceWebpackConfig(config);
   }
 };
 
-// Add this to disable Gatsby's default chunk hashing
+// Keep the babel config
 exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: 'babel-plugin-transform-remove-console',
@@ -174,16 +161,4 @@ exports.onCreateBabelConfig = ({ actions }) => {
       exclude: ['error', 'warn'],
     },
   });
-};
-
-// Add this to modify Gatsby's HTML generation
-exports.onCreateWebpackConfig = ({ actions, stage }) => {
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      output: {
-        filename: '[name].js',
-        chunkFilename: '[name].js',
-      },
-    });
-  }
 };

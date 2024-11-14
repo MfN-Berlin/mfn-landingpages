@@ -33,6 +33,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "copy-webpack-plugin": "^12.0.2",
     "gatsby-plugin-postcss": "^6.13.1",
     "postcss": "^8.4.47",
     "prettier": "^2.8.8",
@@ -43,7 +44,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build && mkdir -p public/mfn-landingpages && mv public/styles.css public/mfn-landingpages/",
     "build:prefix": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
