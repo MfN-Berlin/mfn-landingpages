@@ -83,11 +83,33 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
-  // Get the existing webpack config
   const config = getConfig();
 
-  if (stage === 'build-javascript') {
-    // Remove all hash-related configurations
+  if (stage === 'build-javascript' || stage === 'develop') {
+    // Add MiniCssExtractPlugin
+    config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'styles.css',
+        chunkFilename: 'styles.css',
+      })
+    );
+
+    // Configure CSS handling
+    config.module.rules = config.module.rules.map(rule => {
+      if (rule.test?.toString().includes('css')) {
+        return {
+          ...rule,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader'
+          ]
+        };
+      }
+      return rule;
+    });
+
+    // Remove hash-related configurations
     config.output = {
       ...config.output,
       filename: '[name].js',
@@ -95,12 +117,12 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
       publicPath: '/mfn-landingpages/',
     };
 
-    // Disable all hash plugins
+    // Disable hash plugins
     config.plugins = config.plugins.filter(plugin => {
       return !plugin.constructor.name.includes('Hash');
     });
 
-    // Add our custom chunk naming
+    // Configure chunk splitting
     config.optimization = {
       ...config.optimization,
       moduleIds: 'named',
@@ -140,7 +162,6 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
       },
     };
 
-    // Replace the webpack config
     actions.replaceWebpackConfig(config);
   }
 };
