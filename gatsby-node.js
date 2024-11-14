@@ -94,43 +94,25 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
     // Add MiniCssExtractPlugin with fixed filename
     config.plugins.push(
       new MiniCssExtractPlugin({
-        filename: 'styles.css',
-        chunkFilename: 'styles.css',
+        filename: 'mfn-landingpages/styles.css',
+        chunkFilename: 'mfn-landingpages/[name].css',
       })
     );
 
-    // Configure output with minimal hash settings
+    // Configure output
     config.output = {
       ...config.output,
       filename: 'mfn-landingpages/[name].js',
       chunkFilename: 'mfn-landingpages/[name].js',
-      publicPath: '/',
+      publicPath: '/mfn-landingpages/',
       hashFunction: 'xxhash64',
       hashDigest: 'hex',
       hashDigestLength: 8,
     };
 
-    // Configure optimization
-    config.optimization = {
-      ...config.optimization,
-      moduleIds: 'named',
-      chunkIds: 'named',
-      realContentHash: false,
-      concatenateModules: true,
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.css$/,
-            chunks: 'all',
-            enforce: true,
-          },
-        },
-      },
-    };
-
-    // Configure CSS rules
+    // Configure font handling
     config.module.rules = config.module.rules.map(rule => {
+      // Handle CSS
       if (String(rule.test).includes('css')) {
         return {
           ...rule,
@@ -146,8 +128,39 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
           ],
         };
       }
+      // Handle fonts
+      if (String(rule.test).includes('woff') || String(rule.test).includes('woff2')) {
+        return {
+          ...rule,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'static/[name].[ext]',
+                publicPath: '/mfn-landingpages/',
+              },
+            },
+          ],
+        };
+      }
       return rule;
     });
+
+    // Add font rules if they don't exist
+    const fontRule = {
+      test: /\.(woff|woff2)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'static/[name].[ext]',
+            publicPath: '/mfn-landingpages/',
+          },
+        },
+      ],
+    };
+
+    config.module.rules.push(fontRule);
 
     actions.replaceWebpackConfig(config);
   }

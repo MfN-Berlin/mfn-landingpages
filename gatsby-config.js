@@ -78,4 +78,5 @@ module.exports = {
     PRESERVE_WEBPACK_CACHE: true,
   },
   pathPrefix: "/mfn-landingpages",
+  assetPrefix: "/mfn-landingpages",
 }
