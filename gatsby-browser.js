@@ -11,6 +11,7 @@ import './src/styles/global.css'
 // Temporär Prefetching deaktivieren
 export const onClientEntry = () => {
     if (typeof window !== 'undefined') {
+      console.log('Client entry initialized');
       window.___loader = { enqueue: () => {}, hovering: () => {} }
     }
   }
@@ -19,6 +20,7 @@ export const onRouteUpdate = ({ location }) => {
   if (process.env.NODE_ENV === 'production') {
     if (location.pathname.startsWith('/mfn-landingpages')) {
       window.__PATH_PREFIX__ = '/mfn-landingpages'
+      console.log('Route updated, pathname:', location.pathname);
     }
   }
 }
