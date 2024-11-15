@@ -57,7 +57,7 @@ module.exports = {
       resolve: 'gatsby-plugin-remove-fingerprints',
       options: {
         removeAllFingerprints: true,
-        fingerprintExtensions: ['css', 'js'],
+        fingerprintExtensions: ['js', 'css'],
       },
     },
 
