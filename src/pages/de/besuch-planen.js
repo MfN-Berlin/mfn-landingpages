@@ -1,21 +1,21 @@
 import * as React from "react"
 import { graphql, useStaticQuery, withPrefix, Link } from "gatsby"
-import Header from "../components/layouts/Header"
-import Button from "../components/elements/Button"
-import CardText from '../components/elements/CardText'
-import ContentImage from '../components/elements/ContentImage'
-import Section from '../components/elements/Section'
-import Card from '../components/elements/Card'
-import StoryTime from '../components/layouts/StoryTime'
-import Footer from '../components/layouts/Footer'
-import { Accordion, AccordionItem, AccordionSpacer } from '../components/layouts/Accordion'
-import Slideshow from '../components/layouts/Slideshow'
-import SlideContent from '../components/layouts/SlideContent'
-import AccessibilityNav from '../components/layouts/AccessibilityNav'
-import OpenToday from '../components/features/OpenToday'
-import Feedback from '../components/features/Feedback'
-import HeadComponent from '../components/layouts/HeadComponent'
-import UpcomingHoliday from '../components/features/UpcomingHoliday';
+import Header from "../../components/layouts/Header"
+import Button from "../../components/elements/Button"
+import CardText from '../../components/elements/CardText'
+import ContentImage from '../../components/elements/ContentImage'
+import Section from '../../components/elements/Section'
+import Card from '../../components/elements/Card'
+import StoryTime from '../../components/layouts/StoryTime'
+import Footer from '../../components/layouts/Footer'
+import { Accordion, AccordionItem, AccordionSpacer } from '../../components/layouts/Accordion'
+import Slideshow from '../../components/layouts/Slideshow'
+import SlideContent from '../../components/layouts/SlideContent'
+import AccessibilityNav from '../../components/layouts/AccessibilityNav'
+import OpenToday from '../../components/features/OpenToday'
+import Feedback from '../../components/features/Feedback'
+import HeadComponent from '../../components/layouts/HeadComponent'
+import UpcomingHoliday from '../../components/features/UpcomingHoliday'
 
 
 const IndexPage = () => {

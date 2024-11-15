@@ -2,10 +2,10 @@ import React, { useState, useMemo, useEffect, Component } from 'react'
 import { graphql } from "gatsby"
 import Fuse from 'fuse.js'
 
-import Header from "../components/layouts/Header"
-import Footer from '../components/layouts/Footer'
-import Section from '../components/elements/Section'
-import HeadComponent from '../components/layouts/HeadComponent'
+import Header from "../../components/layouts/Header"
+import Footer from '../../components/layouts/Footer'
+import Section from '../../components/elements/Section'
+import HeadComponent from '../../components/layouts/HeadComponent'
 
 // Error Boundary Component
 class ErrorBoundary extends Component {
