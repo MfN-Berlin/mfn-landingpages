@@ -44,8 +44,8 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "develop": "gatsby clean && gatsby develop -H 0.0.0.0 --prefix-paths",
-    "build": "gatsby clean && gatsby build",
+    "develop": "gatsby develop -H 0.0.0.0 --prefix-paths",
+    "build": "gatsby clean && GATSBY_PATH_PREFIX=/mfn-landingpages gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "start": "gatsby develop",

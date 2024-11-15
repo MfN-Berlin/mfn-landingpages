@@ -167,29 +167,29 @@
 
 @font-face {
     font-family: "Trade Gothic Next LT W04 Bold";
-    src: url("/fonts/379efdd4-4f0c-44db-b1c9-699fdec19807.woff2") format("woff2"),
-         url("/fonts/70331ade-7a14-4b36-b12e-458c9df64674.woff") format("woff");
+    src: url("/mfn-landingpages/fonts/379efdd4-4f0c-44db-b1c9-699fdec19807.woff2") format("woff2"),
+         url("/mfn-landingpages/fonts/70331ade-7a14-4b36-b12e-458c9df64674.woff") format("woff");
     font-display: swap;
 }
 
 @font-face {
     font-family: "Trade Gothic Next LT W04 Rg";
-    src: url("/fonts/cfe8841a-8eaf-4ab8-8c3e-cf101bceb550.woff2") format("woff2"),
-         url("/fonts/9f9d7abe-6770-4f86-9828-c39d13703317.woff") format("woff");
+    src: url("/mfn-landingpages/fonts/cfe8841a-8eaf-4ab8-8c3e-cf101bceb550.woff2") format("woff2"),
+         url("/mfn-landingpages/fonts/9f9d7abe-6770-4f86-9828-c39d13703317.woff") format("woff");
     font-display: swap;
 }
 
 @font-face {
     font-family: "Trade Gothic Next LT W04 Itali";
-    src: url("/fonts/411d2ee3-cc1c-4ddb-8e33-591bbafd15bc.woff2") format("woff2"),
-         url("/fonts/149d7238-5937-494f-9b4d-659de800b5ea.woff") format("woff");
+    src: url("/mfn-landingpages/fonts/411d2ee3-cc1c-4ddb-8e33-591bbafd15bc.woff2") format("woff2"),
+         url("/mfn-landingpages/fonts/149d7238-5937-494f-9b4d-659de800b5ea.woff") format("woff");
     font-display: swap;
 }
 
 @font-face {
     font-family: "Trade Gothic Next LT W04 Bd It";
-    src: url("/fonts/95e02f70-2e86-4585-91a0-f30fcfc57bd7.woff2") format("woff2"),
-         url("/fonts/0677af06-78d4-4dc0-9b7e-7d88b8bc9b0f.woff") format("woff");
+    src: url("/mfn-landingpages/fonts/95e02f70-2e86-4585-91a0-f30fcfc57bd7.woff2") format("woff2"),
+         url("/mfn-landingpages/fonts/0677af06-78d4-4dc0-9b7e-7d88b8bc9b0f.woff") format("woff");
     font-display: swap;
 }
 
