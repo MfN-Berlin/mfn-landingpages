@@ -10,45 +10,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions, graphql }) => {
+exports.createPages = ({ actions }) => {
   const { createPage } = actions;
-
-  const result = await graphql(`
-    {
-      allFile(filter: { sourceInstanceName: { eq: "images" } }) {
-        edges {
-          node {
-            relativePath
-            extension
-            publicURL
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  if (result.errors) {
-    console.error(result.errors);
-    return;
-  }
-
-  const imageMap = {};
-  result.data.allFile.edges.forEach(({ node }) => {
-    if (node.extension === 'svg') {
-      imageMap[node.relativePath] = node.publicURL;
-    } else if (node.childImageSharp) {
-      imageMap[node.relativePath] = node.childImageSharp.gatsbyImageData;
-    }
-  });
-
-  createPage({
-    path: "/mfn-landingpages/besuch-planen",
-    component: path.resolve(`./src/pages/besuch-planen.js`),
-    context: { imageMap },
-  });
+  // Only create pages you specifically need
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -87,40 +51,40 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
     // Update output configuration
     config.output = {
       ...config.output,
-      filename: '[name].js',
-      chunkFilename: '[name].js',
-      // Remove the leading slash to prevent double paths
-      publicPath: '',
+      filename: `[name].js`,
+      chunkFilename: `[name].js`,
+      // Ensure consistent path for all assets
+      publicPath: `/mfn-landingpages/`,
     };
+
+    // Remove fingerprinting from chunk names
+    if (config.optimization && config.optimization.splitChunks) {
+      config.optimization.splitChunks = {
+        ...config.optimization.splitChunks,
+        cacheGroups: {
+          commons: {
+            name: 'commons',
+            chunks: 'all',
+            minChunks: 2,
+          },
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
+      };
+    }
 
     // Update MiniCssExtractPlugin configuration
     config.plugins = config.plugins.map(plugin => {
       if (plugin.constructor.name === 'MiniCssExtractPlugin') {
         return new MiniCssExtractPlugin({
-          filename: '[name].css',
-          chunkFilename: '[name].css',
+          filename: `[name].css`,
+          chunkFilename: `[name].css`,
         });
       }
       return plugin;
-    });
-
-    // Update file-loader configuration for fonts
-    config.module.rules = config.module.rules.map(rule => {
-      if (String(rule.test).includes('woff') || String(rule.test).includes('woff2')) {
-        return {
-          ...rule,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'fonts/[name].[ext]',
-                publicPath: '',
-              },
-            },
-          ],
-        };
-      }
-      return rule;
     });
 
     actions.replaceWebpackConfig(config);
