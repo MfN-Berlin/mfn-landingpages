@@ -74,6 +74,7 @@ module.exports = {
         background_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`,
+        publicPath: `/mfn-landingpages/`,
       },
     },
   ],
@@ -83,5 +84,4 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   pathPrefix: "/mfn-landingpages",
-  assetPrefix: "/mfn-landingpages",
 }

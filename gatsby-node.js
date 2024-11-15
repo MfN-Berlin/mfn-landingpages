@@ -84,49 +84,28 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
   const config = getConfig();
 
   if (stage === 'build-javascript' || stage === 'develop') {
-    // Remove existing MiniCssExtractPlugin instances
-    config.plugins = config.plugins.filter(plugin => {
-      return plugin.constructor.name !== 'MiniCssExtractPlugin';
-    });
-
-    // Add MiniCssExtractPlugin with fixed filename
-    config.plugins.push(
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[name].css',
-      })
-    );
-
-    // Configure output
+    // Update output configuration
     config.output = {
       ...config.output,
       filename: '[name].js',
       chunkFilename: '[name].js',
-      publicPath: '/',
-      hashFunction: 'xxhash64',
-      hashDigest: 'hex',
-      hashDigestLength: 8,
+      // Remove the leading slash to prevent double paths
+      publicPath: '',
     };
 
-    // Configure font handling
-    config.module.rules = config.module.rules.map(rule => {
-      // Handle CSS
-      if (String(rule.test).includes('css')) {
-        return {
-          ...rule,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                publicPath: '/',
-              },
-            },
-            'css-loader',
-            'postcss-loader',
-          ],
-        };
+    // Update MiniCssExtractPlugin configuration
+    config.plugins = config.plugins.map(plugin => {
+      if (plugin.constructor.name === 'MiniCssExtractPlugin') {
+        return new MiniCssExtractPlugin({
+          filename: '[name].css',
+          chunkFilename: '[name].css',
+        });
       }
-      // Handle fonts
+      return plugin;
+    });
+
+    // Update file-loader configuration for fonts
+    config.module.rules = config.module.rules.map(rule => {
       if (String(rule.test).includes('woff') || String(rule.test).includes('woff2')) {
         return {
           ...rule,
@@ -134,8 +113,8 @@ exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
             {
               loader: 'file-loader',
               options: {
-                name: 'static/fonts/[name].[ext]',
-                publicPath: '/',
+                name: 'fonts/[name].[ext]',
+                publicPath: '',
               },
             },
           ],
