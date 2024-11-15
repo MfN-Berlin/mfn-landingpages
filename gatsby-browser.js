@@ -14,3 +14,11 @@ export const onClientEntry = () => {
       window.___loader = { enqueue: () => {}, hovering: () => {} }
     }
   }
+
+export const onRouteUpdate = ({ location }) => {
+  if (process.env.NODE_ENV === 'production') {
+    if (location.pathname.startsWith('/mfn-landingpages')) {
+      window.__PATH_PREFIX__ = '/mfn-landingpages'
+    }
+  }
+}
