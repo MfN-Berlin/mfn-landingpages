@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, useStaticQuery, withPrefix } from "gatsby"
+import { graphql, useStaticQuery, withPrefix, Link } from "gatsby"
 import Header from "../components/layouts/Header"
 import Button from "../components/elements/Button"
 import CardText from '../components/elements/CardText'
@@ -80,7 +80,12 @@ const IndexPage = () => {
           />
             <UpcomingHoliday />
             <div className="w-full">
-            <a className="w-full block text-center text-Green-500 typography-p" href='#'>Genauer Plan mit Sonderöffnungszeiten</a>
+              <Link 
+                to="/oeffnungszeiten"
+                className="w-full block text-center text-Green-500 typography-p"
+              >
+                Genauer Plan mit Sonderöffnungszeiten
+              </Link>
             </div>
             </div>
           <Accordion bgColor="white">
@@ -92,8 +97,8 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Dienstag, Mittwoch, Donnerstag, Freitag
                 </div>
-                <div className="text-center text-Black-900 font-bold text-[34px]">
-                  09:30 <span className="font-extrabold">–</span> 18:00
+                <div className="text-center text-Black-900 font-bold text-[34px] py-2">
+                  09:30 <span className="font-bold">−</span> 18:00
                 </div>
               </div>
             </AccordionSpacer>
@@ -103,8 +108,8 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Samstag, Sonntag, und an <span className="underline">Feiertagen</span>
                 </div>
-                <div className="text-center text-Black-900 font-bold text-[34px]">
-                  10:00 – 18:00
+                <div className="text-center text-Black-900 font-bold text-[34px] py-2">
+                  10:00 <span className="font-bold">−</span> 18:00
                 </div>
               </div>
             </AccordionSpacer>
@@ -114,7 +119,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   MONTAGS
                 </div>
-                <div className="text-center text-Black-900 font-bold text-[34px]">
+                <div className="text-center text-Black-900 font-bold text-[34px] py-2">
                   geschlossen
                 </div>
               </div>
@@ -133,7 +138,11 @@ const IndexPage = () => {
             <CardText
               headline="Tickets & Preise"
               headlineStyle="h1"
-              body="Tickets können vor Ort und im <a href='#'>Onlineshop</a> gekauft werden. Wir empfehlen die Buchung von <a href='#'> Online-Zeitfenstertickets</a> im Vorfeld um Wartezeiten an der Kasse zu vermeiden. <br/><br/><a href='#'>Sonderpreise, Vergünstigungen und Bedingungen</a>."
+              body={`Tickets können vor Ort und im <Link to="/tickets/online-shop">Onlineshop</Link> gekauft werden. 
+              Wir empfehlen die Buchung von <Link to="/tickets/zeitfenster">Online-Zeitfenstertickets</Link> 
+              im Vorfeld um Wartezeiten an der Kasse zu vermeiden. 
+              <br/><br/>
+              <Link to="/tickets/verguenstigungen">Sonderpreise, Vergünstigungen und Bedingungen</Link>.`}
               spacing="wide"
               alignment="center" // Center-aligned text
             />
@@ -143,18 +152,18 @@ const IndexPage = () => {
             <AccordionItem title="Einzeltickets">
               <div className="flex flex-col items-end justify-start w-full px-4 pb-4 gap-2.5">
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
-                  <h3 className="text-Black-700 flex-1">
+                  <h3 className="text-Black-700 flex-1 text-[21px]">
                     Erwachsene
                   </h3>
-                  <h3 className="w-[125px] text-right text-Black-900">
+                  <h3 className="w-[125px] text-right text-Black-900 text-[21px]">
                     11,00€
                   </h3>
                 </div>
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
-                  <h3 className="text-Black-700 flex-1">
+                  <h3 className="text-Black-700 flex-1 text-[21px]">
                     Kinder ab 6
                   </h3>
-                  <h3 className="w-[125px] text-right text-Black-900">
+                  <h3 className="w-[125px] text-right text-Black-900 text-[21px]">
                     5,00€
                   </h3>
                 </div>
@@ -254,7 +263,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Laden Sie sich das <a href="#" className="underline">Anmeldeformular</a> herunter und beantragen Sie Ihre Jahreskarte noch heute. Senden Sie das ausgefüllte Formular gerne per E-Mail an <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
+                    Laden Sie sich das <a href="https://google.com" className="underline">Anmeldeformular</a> herunter und beantragen Sie Ihre Jahreskarte noch heute. Senden Sie das ausgefüllte Formular gerne per E-Mail an <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
                   </p>
                 </div>
               </div>
@@ -326,7 +335,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="#" className="underline">Mehr Infos zu Kooperationen</a>
+                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="https://google.com" className="underline">Mehr Infos zu Kooperationen</a>
                   </p>
                 </div>
               </div>
@@ -414,7 +423,7 @@ const IndexPage = () => {
 
         </Section>
 
-        <Section columns={2} backgroundColor="bg-[#f7f9f0]" padding="py-[75px]" gapClass="gap-36" justifyContent="center">
+        <Section columns={2} backgroundColor="bg-Green-100"  gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div className="flex flex-col justify-center items-center">
             <div className="py-[30px] mb-[17px]">
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
@@ -821,7 +830,7 @@ const IndexPage = () => {
             url="/flat-card-page"
           />
         </Section>
-        <Section columns={2} backgroundColor="bg-white" gapClass="gap-36">
+        <Section columns={2} backgroundColor="bg-white" gapClass="gap-36" justifyContent="center">
 
           <CardText
             headline="Oft gestellte Fragen"
@@ -856,7 +865,17 @@ const IndexPage = () => {
             </AccordionItem>
             <AccordionItem title="Ist heute offen?">
               <div className="p-5">
-                <p>Die Öffnungszeiten des Museums sind in der Regel von Dienstag bis Sonntag, 10:00 bis 18:00 Uhr. Montags ist das Museum geschlossen. Für spezielle Öffnungszeiten an Feiertagen oder besondere Veranstaltungen überprüfen Sie bitte unsere Website oder kontaktieren Sie uns direkt.</p>
+                <p>Die Öffnungszeiten des Museums sind in der Regel von Dienstag bis Sonntag, 
+                  10:00 bis 18:00 Uhr. Montags ist das Museum geschlossen. 
+                  Für spezielle Öffnungszeiten an Feiertagen oder besondere Veranstaltungen überprüfen Sie bitte 
+                  <Link 
+                    to="/oeffnungszeiten/feiertage" 
+                    className="text-Green-500 hover:text-Green-600"
+                  >
+                    unsere Öffnungszeiten
+                  </Link> 
+                  oder kontaktieren Sie uns direkt.
+                </p>
               </div>
             </AccordionItem>
             <AccordionItem title="Kann ich im Museum Fotos machen?">

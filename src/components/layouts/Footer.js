@@ -4,7 +4,7 @@ import { Link, withPrefix } from 'gatsby';
 const FooterLink = ({ to, children, external = false }) => {
   const linkProps = external ? { href: to, target: "_blank", rel: "noopener noreferrer" } : { to };
   return (
-    <li className="inline-block p-1 pl-7">
+    <li className="inline-block p-1 py-[0.5em] px-[1em] ml-1">
       {external ? (
         <a {...linkProps} className="text-Green-500 hover:text-white text-sm">{children}</a>
       ) : (
@@ -19,18 +19,18 @@ const SocialLink = ({ href, icon, title }) => (
     href={href} 
     target="_blank" 
     rel="noopener noreferrer" 
-    className="text-gray-300 hover:text-white mx-2"
+    className="text-gray-300 hover:text-white mx-0 tracking-[0.8em]"
     title={title}
     aria-label={title}
   >
-    <span className="font-icomoon text-[2.7em] text-Green-500">{icon}</span>
+    <span className="font-icomoon text-[2.5em] text-Green-500">{icon}</span>
   </a>
 );
 
 const Footer = () => {
   return (
     <footer className="bg-Black-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-[1165px] mx-auto px-4 sm:px-[6px] lg:px-[12px] py-12">
         <nav aria-label="Footer Navigation">
           <ul className="flex flex-wrap justify-center text-sm">
             <FooterLink to="/pressemitteilungen">Presse</FooterLink>
@@ -45,7 +45,7 @@ const Footer = () => {
           </ul>
         </nav>
 
-        <nav aria-label="Social Media Links" className="flex justify-center mb-8">
+        <nav aria-label="Social Media Links" className="flex justify-center my-8">
           <SocialLink 
             href="https://www.instagram.com/mfnberlin" 
             icon="" 
@@ -81,9 +81,9 @@ const Footer = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 mb-8">
             <address className="not-italic">
-              <h2 className="text-xl font-bold mb-2">Adresse</h2>
+              <h2 className="text-sm font-bold mb-0">Adresse</h2>
               <p className="text-sm text-white whitespace-nowrap">Invalidenstr. 43 · 10115 Berlin</p>
-              <dl className="mt-2 text-sm">
+              <dl className="mt-0 text-sm">
                 <div className="flex whitespace-nowrap">
                   <dt className="w-16">Tel</dt>
                   <dd>(030) 889140-8591</dd>
@@ -107,7 +107,7 @@ const Footer = () => {
             </address>
 
             <section>
-              <h2 className="text-xl font-bold mb-2">Eintrittspreise</h2>
+              <h2 className="text-sm font-bold mb-0">Eintrittspreise</h2>
               <dl className="text-sm">
                 <div className="flex whitespace-nowrap">
                   <dt className="w-24">Erwachsene</dt>
@@ -126,7 +126,7 @@ const Footer = () => {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold mb-2">Öffnungszeiten</h2>
+              <h2 className="text-sm font-bold mb-0">Öffnungszeiten</h2>
               <dl className="text-sm">
                 <div className="flex">
                   <dt className="w-40">Dienstag – Freitag</dt>
@@ -142,7 +142,7 @@ const Footer = () => {
         </div>
 
         <section className="text-center mb-8">
-          <h2 className="text-xl font-bold mb-2">Für Natur – Der Newsletter</h2>
+          <h2 className="text-sm font-bold mb-4">Für Natur – Der Newsletter</h2>
           <form className="mx-auto flex justify-center">
             <input 
               type="email" 

@@ -1,21 +1,16 @@
 import * as React from "react"
-import { graphql, useStaticQuery, withPrefix } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Header from "../components/layouts/Header"
 import Button from "../components/elements/Button"
 import CardText from '../components/elements/CardText'
-import ContentImage from '../components/elements/ContentImage'
 import Section from '../components/elements/Section'
 import Card from '../components/elements/Card'
 import StoryTime from '../components/layouts/StoryTime'
 import Footer from '../components/layouts/Footer'
-import { Accordion, AccordionItem, AccordionSpacer } from '../components/layouts/Accordion'
 import Slideshow from '../components/layouts/Slideshow'
 import SlideContent from '../components/layouts/SlideContent'
 import AccessibilityNav from '../components/layouts/AccessibilityNav'
-import OpenToday from '../components/features/OpenToday'
-import Feedback from '../components/features/Feedback'
 import HeadComponent from '../components/layouts/HeadComponent'
-import UpcomingHoliday from '../components/features/UpcomingHoliday';
 import Teaser from '../components/layouts/Teaser';
 
 const IndexPage = () => {
@@ -64,7 +59,7 @@ const IndexPage = () => {
                     gapClass="gap-6"
                     layout="equal"
                 >
-                    <div className="bg-Green-100 p-8 h-full flex flex-col">
+                    <div className="bg-Green-100 p-8 h-full w-full  flex flex-col">
                         <form
                             action="https://www.museumfuernaturkunde.berlin/de/wissenschaft/navigator"
                             method="get"
@@ -79,7 +74,7 @@ const IndexPage = () => {
                                 </label>
                                 <p className="text-sm text-Black-700">
                                     Suchen Sie nach Namen, Rollen, Projekten des Museums – oder einfach nach Stichworten um passende Projektportraits zu finden                        </p>
-                                <div className="mt-auto flex gap-2">
+                                <div className="mt-auto flex-col md:flex-row gap-2">
                                     <input
                                         type="text"
                                         id="science-search"
@@ -98,7 +93,7 @@ const IndexPage = () => {
                         </form>
                     </div>
 
-                    <div className="bg-Green-100 p-8 h-full flex flex-col">
+                    <div className="bg-Green-100 p-8 h-full w-full flex flex-col">
                         <form
                             action="https://www.museumfuernaturkunde.berlin/de/wissenschaft/navigator"
                             method="get"
@@ -114,54 +109,34 @@ const IndexPage = () => {
                                 <p className="text-sm text-Black-700">
                                     Nutzen Sie unseren Filter, um Themenspezifische Projekte anzeigen zu lassen
                                 </p>
-                                <div className="mt-auto flex gap-2">
+                                <div className="mt-auto flex flex-col md:flex-row gap-2">
                                     <select
                                         name="f[2]"
                                         className="w-full p-3 border border-Black-300 rounded appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-Green-500"
                                     >
-
                                         <option value="">Alle Themen</option>
                                         <optgroup label="Kernbegriffe">
                                             <option value="topic:792">Forschung</option>
-
                                             <option value="topic:794">Transfer</option>
-
                                         </optgroup>
                                         <optgroup label="Schlagwörter">
                                             <option value="topic:796">Artenschutz</option>
-
                                             <option value="topic:797">Artensterben</option>
-
                                             <option value="topic:798">Biodiversität</option>
-
                                             <option value="topic:799">Bürgerwissenschaften</option>
-
                                             <option value="topic:800">Datenbank</option>
-
                                             <option value="topic:802">Digitalisierung</option>
-
                                             <option value="topic:803">Evolution</option>
-
                                             <option value="topic:806">Genetik</option>
-
                                             <option value="topic:821">Genomik</option>
-
                                             <option value="topic:808">Gesellschaft</option>
-
                                             <option value="topic:810">Kooperation</option>
-
                                             <option value="topic:814">Politik</option>
-
                                             <option value="topic:815">Sammlung</option>
-
                                             <option value="topic:818">Wissenschaftsdatenmanagement</option>
-
                                             <option value="topic:816">Wissenschaftskommunikation</option>
-
                                             <option value="topic:817">Wissenstransfer</option>
-
                                             <option value="topic:823">Öffnung des Museums</option>
-
                                         </optgroup>
 
                                     </select>
@@ -207,8 +182,20 @@ const IndexPage = () => {
                             kicker: "Forschungsbereiche & Infrastruktur",
                             headline: "Forschen am Museum",
                             headlineStyle: "h2",
-                            body: "Wir forschen in Kooperationen, sammlungsbasiert und global vernetz. Teams aus unterschiedlichen Fachrichtungen und mit verschiedenen Aufgaben vertiefen in einem dynamischen Prozess ihre Forschung über das Leben, die Erde und unser Sonnensystem.<br/><br/> Unsere Forschungsbereiche<br/>Mehr über die Forschung am MfN",
+                            body: "Wir forschen in Kooperationen, sammlungsbasiert und global vernetzt. Teams aus unterschiedlichen Fachrichtungen und mit verschiedenen Aufgaben vertiefen in einem dynamischen Prozess ihre Forschung über das Leben, die Erde und unser Sonnensystem.",
                             spacing: "wide",
+                            buttons: [
+                                {
+                                    text: "Mehr über die Forschung am MfN",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "Unsere Forschungsbereiche",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                }
+                            ]
                         }}
                         imagePosition="left"
                         className="max-w-7xl mx-auto"
@@ -265,8 +252,7 @@ const IndexPage = () => {
                         }}
                     />
 
-                </Section>
-                <Section backgroundColor="bg-Green-100" columns={3} padding="py-0">
+
                     <Card
                         variant="white"
                         imageProps={{
@@ -477,7 +463,7 @@ const IndexPage = () => {
                                 <p className="typography-kicker text-White-White font-normal">
                                     September 2024 / Ecography
                                 </p>
-                                <h3 className="text-White-White">
+                                <h3 className="text-White-White  font-normal">
                                     Environmental heterogeneity, rather than stability, explains spider assemblage differences between ecosystems
                                 </h3>
                             </div>
@@ -497,7 +483,7 @@ const IndexPage = () => {
                                 <p className="typography-kicker text-White-White font-normal">
                                     September 2024 / Ecography
                                 </p>
-                                <h3 className="text-White-White">
+                                <h3 className="text-White-White  font-normal">
                                     Environmental heterogeneity, rather than stability, explains spider assemblage differences between ecosystems
                                 </h3>
                             </div>
@@ -517,7 +503,7 @@ const IndexPage = () => {
                                 <p className="typography-kicker text-White-White font-normal">
                                     September 2024 / Ecography
                                 </p>
-                                <h3 className="text-White-White">
+                                <h3 className="text-White-White font-normal">
                                     Environmental heterogeneity, rather than stability, explains spider assemblage differences between ecosystems
                                 </h3>
                             </div>
