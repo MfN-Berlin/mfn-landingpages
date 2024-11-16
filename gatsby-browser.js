@@ -15,22 +15,40 @@ export const onClientEntry = () => {
                          && !window.location.pathname.includes('/mfn-landingpages');
 
     if (isProxiedPath) {
-      // Prevent any routing initialization
-      window.___loader = { enqueue: () => {}, hovering: () => {} };
-      
-      // Override Gatsby's navigate
-      window.___navigate = () => false;
+      // Immediately override crucial Gatsby routing functions
+      Object.defineProperty(window, '___navigate', {
+        value: () => false,
+        writable: false,
+        configurable: false
+      });
 
-      // Prevent history manipulation
-      const originalPushState = window.history.pushState;
-      window.history.pushState = function(...args) {
-        // Block any attempts to modify the URL
-        return false;
+      Object.defineProperty(window, '___loader', {
+        value: { enqueue: () => {}, hovering: () => {} },
+        writable: false,
+        configurable: false
+      });
+
+      // Block history API
+      window.history.pushState = () => {};
+      window.history.replaceState = () => {};
+      
+      // Prevent any pathname modifications
+      Object.defineProperty(window, 'pathname', {
+        get: () => window.location.pathname,
+        configurable: false
+      });
+
+      // Force Gatsby to think we're already at the correct path
+      window.___GATSBY = {
+        ...window.___GATSBY,
+        pathname: window.location.pathname
       };
     }
   }
 }
 
+// Block all routing events
 export const shouldUpdateScroll = () => false;
 export const onPreRouteUpdate = () => false;
 export const onRouteUpdate = () => false;
+export const onRouteUpdateDelayed = () => false;
