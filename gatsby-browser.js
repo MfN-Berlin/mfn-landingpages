@@ -14,14 +14,43 @@ export const onClientEntry = () => {
                          && !window.location.pathname.includes('/mfn-landingpages');
 
     if (isProxiedPath) {
-      // 1. Prevent script loading
+      // 1. Block React immediately
+      const blockReact = () => {
+        // Prevent React initialization
+        Object.defineProperty(window, 'React', { 
+          get: () => null,
+          set: () => {},
+          configurable: false
+        });
+        Object.defineProperty(window, 'ReactDOM', { 
+          get: () => null,
+          set: () => {},
+          configurable: false
+        });
+        
+        // Remove root container
+        const root = document.getElementById('___gatsby');
+        if (root) {
+          const content = root.innerHTML;
+          root.removeAttribute('id');
+          root.innerHTML = content;
+        }
+      };
+
+      // Execute immediately
+      blockReact();
+      // Also execute after a small delay to ensure it catches any late initialization
+      setTimeout(blockReact, 0);
+
+      // 2. Block script loading
       const originalAppendChild = Node.prototype.appendChild;
       Node.prototype.appendChild = function(node) {
         if (node.tagName === 'SCRIPT') {
           if (node.src && (
             node.src.includes('webpack-runtime') ||
             node.src.includes('framework') ||
-            node.src.includes('app')
+            node.src.includes('app') ||
+            node.src.includes('react')
           )) {
             return node;
           }
@@ -29,45 +58,25 @@ export const onClientEntry = () => {
         return originalAppendChild.call(this, node);
       };
 
-      // 2. Store and preserve original URL
+      // 3. Preserve URL
       const originalPath = window.location.pathname;
-      const originalReplaceState = window.history.replaceState;
-      const originalPushState = window.history.pushState;
-      
-      window.history.replaceState = function() {
-        return originalReplaceState.apply(this, [null, '', originalPath]);
+      window.history.pushState = () => {};
+      window.history.replaceState = () => {};
+
+      // 4. Remove existing scripts
+      document.querySelectorAll('script[src*="webpack-runtime"], script[src*="framework"], script[src*="app"], script[src*="react"]')
+        .forEach(script => script.parentNode.removeChild(script));
+
+      // 5. Prevent Gatsby
+      window.___gatsby = {
+        disableCorePrefetching: true,
+        loader: { loadPage: () => Promise.resolve({ error: true }) }
       };
-      
-      window.history.pushState = function() {
-        return originalPushState.apply(this, [null, '', originalPath]);
-      };
-
-      // 3. Prevent React/Gatsby initialization
-      Object.defineProperty(window, 'React', { get: () => undefined });
-      Object.defineProperty(window, 'ReactDOM', { get: () => undefined });
-      Object.defineProperty(window, '___gatsby', { 
-        value: {
-          disableCorePrefetching: true,
-          loader: { loadPage: () => Promise.resolve({ error: true }) }
-        },
-        writable: false
-      });
-
-      // 4. Force original path in Gatsby
-      Object.defineProperty(window, '___location', {
-        get: () => ({ pathname: originalPath }),
-        configurable: false
-      });
-      window.___pathPrefix = '';
-
-      // 5. Remove problematic scripts
-      document.querySelectorAll('script[src*="webpack-runtime"], script[src*="framework"], script[src*="app"]')
-        .forEach(script => script.remove());
     }
   }
 }
 
-// Block all routing events
+// Block all Gatsby events
 export const shouldUpdateScroll = () => false;
 export const onPreRouteUpdate = () => false;
 export const onRouteUpdate = () => false;
