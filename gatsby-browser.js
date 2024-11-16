@@ -14,11 +14,10 @@ export const onClientEntry = () => {
                          && !window.location.pathname.includes('/mfn-landingpages');
 
     if (isProxiedPath) {
-      // Immediately prevent script loading
+      // 1. Prevent script loading
       const originalAppendChild = Node.prototype.appendChild;
       Node.prototype.appendChild = function(node) {
         if (node.tagName === 'SCRIPT') {
-          // Block Gatsby/React scripts
           if (node.src && (
             node.src.includes('webpack-runtime') ||
             node.src.includes('framework') ||
@@ -30,7 +29,20 @@ export const onClientEntry = () => {
         return originalAppendChild.call(this, node);
       };
 
-      // Prevent React from initializing
+      // 2. Store and preserve original URL
+      const originalPath = window.location.pathname;
+      const originalReplaceState = window.history.replaceState;
+      const originalPushState = window.history.pushState;
+      
+      window.history.replaceState = function() {
+        return originalReplaceState.apply(this, [null, '', originalPath]);
+      };
+      
+      window.history.pushState = function() {
+        return originalPushState.apply(this, [null, '', originalPath]);
+      };
+
+      // 3. Prevent React/Gatsby initialization
       Object.defineProperty(window, 'React', { get: () => undefined });
       Object.defineProperty(window, 'ReactDOM', { get: () => undefined });
       Object.defineProperty(window, '___gatsby', { 
@@ -41,14 +53,21 @@ export const onClientEntry = () => {
         writable: false
       });
 
-      // Remove script tags that might cause hydration
+      // 4. Force original path in Gatsby
+      Object.defineProperty(window, '___location', {
+        get: () => ({ pathname: originalPath }),
+        configurable: false
+      });
+      window.___pathPrefix = '';
+
+      // 5. Remove problematic scripts
       document.querySelectorAll('script[src*="webpack-runtime"], script[src*="framework"], script[src*="app"]')
         .forEach(script => script.remove());
     }
   }
 }
 
-// Prevent any Gatsby routing
+// Block all routing events
 export const shouldUpdateScroll = () => false;
 export const onPreRouteUpdate = () => false;
 export const onRouteUpdate = () => false;
