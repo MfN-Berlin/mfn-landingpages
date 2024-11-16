@@ -10,39 +10,38 @@ import './src/styles/global.css'
 
 export const onClientEntry = () => {
   if (typeof window !== 'undefined') {
-    // Check if we're on the proxy domain without /mfn-landingpages
     const isProxiedPath = window.location.hostname === 'test.mfn.gcsdev.de' 
                          && !window.location.pathname.includes('/mfn-landingpages');
 
     if (isProxiedPath) {
-      // Immediately override crucial Gatsby routing functions
-      Object.defineProperty(window, '___navigate', {
-        value: () => false,
-        writable: false,
+      // Prevent React hydration
+      window.___gatsby = {
+        disableCorePrefetching: true,
+        shouldUpdateScroll: () => false,
+        loader: { loadPage: () => Promise.resolve({ error: true }) }
+      };
+
+      // Clear the container to prevent hydration
+      const gatsbyRoot = document.getElementById('___gatsby');
+      if (gatsbyRoot) {
+        const content = gatsbyRoot.innerHTML;
+        gatsbyRoot.innerHTML = '';
+        // Re-insert content after a tick to prevent React from picking it up
+        setTimeout(() => {
+          gatsbyRoot.innerHTML = content;
+        }, 0);
+      }
+
+      // Block all Gatsby/React initialization
+      Object.defineProperty(window, 'ReactDOM', {
+        get: () => null,
         configurable: false
       });
-
-      Object.defineProperty(window, '___loader', {
-        value: { enqueue: () => {}, hovering: () => {} },
-        writable: false,
-        configurable: false
-      });
-
-      // Block history API
+      
+      // Prevent any routing
+      window.___navigate = () => false;
       window.history.pushState = () => {};
       window.history.replaceState = () => {};
-      
-      // Prevent any pathname modifications
-      Object.defineProperty(window, 'pathname', {
-        get: () => window.location.pathname,
-        configurable: false
-      });
-
-      // Force Gatsby to think we're already at the correct path
-      window.___GATSBY = {
-        ...window.___GATSBY,
-        pathname: window.location.pathname
-      };
     }
   }
 }
@@ -51,4 +50,3 @@ export const onClientEntry = () => {
 export const shouldUpdateScroll = () => false;
 export const onPreRouteUpdate = () => false;
 export const onRouteUpdate = () => false;
-export const onRouteUpdateDelayed = () => false;
