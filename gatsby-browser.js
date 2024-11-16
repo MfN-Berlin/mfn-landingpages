@@ -8,29 +8,29 @@
 
 import './src/styles/global.css'
 
-// Disable Gatsby's routing
 export const onClientEntry = () => {
   if (typeof window !== 'undefined') {
-    // Disable prefetching
-    window.___loader = { enqueue: () => {}, hovering: () => {} }
-    
-    // Disable Gatsby's routing
-    window.___navigate = (pathname) => {
-      window.location.href = pathname
+    // Check if we're on the proxy domain without /mfn-landingpages
+    const isProxiedPath = window.location.hostname === 'test.mfn.gcsdev.de' 
+                         && !window.location.pathname.includes('/mfn-landingpages');
+
+    if (isProxiedPath) {
+      // Prevent any routing initialization
+      window.___loader = { enqueue: () => {}, hovering: () => {} };
+      
+      // Override Gatsby's navigate
+      window.___navigate = () => false;
+
+      // Prevent history manipulation
+      const originalPushState = window.history.pushState;
+      window.history.pushState = function(...args) {
+        // Block any attempts to modify the URL
+        return false;
+      };
     }
   }
 }
 
-// Prevent route updates
-export const shouldUpdateScroll = () => {
-  return false
-}
-
-// Prevent page transitions
-export const onPreRouteUpdate = () => {
-  return false
-}
-
-export const onRouteUpdate = () => {
-  return false
-}
+export const shouldUpdateScroll = () => false;
+export const onPreRouteUpdate = () => false;
+export const onRouteUpdate = () => false;
