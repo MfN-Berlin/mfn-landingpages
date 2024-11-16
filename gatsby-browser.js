@@ -8,29 +8,26 @@
 
 import './src/styles/global.css'
 
-// Disable Gatsby's routing
 export const onClientEntry = () => {
   if (typeof window !== 'undefined') {
-    // Disable prefetching
+    // Prevent any routing initialization
     window.___loader = { enqueue: () => {}, hovering: () => {} }
     
-    // Disable Gatsby's routing
+    // Prevent path prefix redirects
+    const originalPush = window.history.pushState
+    window.history.pushState = function() {
+      // Do nothing to prevent redirects
+    }
+    
     window.___navigate = (pathname) => {
-      window.location.href = pathname
+      // Do nothing to prevent Gatsby navigation
+      return false
     }
   }
 }
 
-// Prevent route updates
-export const shouldUpdateScroll = () => {
-  return false
-}
-
-// Prevent page transitions
-export const onPreRouteUpdate = () => {
-  return false
-}
-
-export const onRouteUpdate = () => {
-  return false
-}
+// Block all routing-related functions
+export const shouldUpdateScroll = () => false
+export const onPreRouteUpdate = () => false
+export const onRouteUpdate = () => false
+export const onRouteUpdateDelayed = () => false

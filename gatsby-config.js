@@ -85,6 +85,8 @@ module.exports = {
     FAST_DEV: true,
     DEV_SSR: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
+    PRESERVE_WEBPACK_CACHE: false,
+    DEV_PAGE_RENDERER: false,
   },
-  pathPrefix: "/mfn-landingpages",
+  // pathPrefix: "/mfn-landingpages",
 }
