@@ -5,6 +5,7 @@
  */
 
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -95,3 +96,22 @@ exports.createSchemaCustomization = ({ actions }) => {
   `
   createTypes(typeDefs)
 }
+
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  if (stage === 'build-javascript' || stage === 'build-html') {
+    actions.setWebpackConfig({
+      optimization: {
+        splitChunks: {
+          cacheGroups: {
+            styles: {
+              name: 'styles',
+              test: /\.css$/,
+              chunks: 'all',
+              enforce: true,
+            },
+          },
+        },
+      },
+    });
+  }
+};

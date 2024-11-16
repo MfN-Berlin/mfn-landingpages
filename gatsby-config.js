@@ -71,6 +71,15 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          require('tailwindcss'),
+          require('autoprefixer'),
+        ],
+      },
+    }
   ],
   flags: {
     FAST_DEV: true,
