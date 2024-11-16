@@ -14,39 +14,41 @@ export const onClientEntry = () => {
                          && !window.location.pathname.includes('/mfn-landingpages');
 
     if (isProxiedPath) {
-      // Prevent React hydration
-      window.___gatsby = {
-        disableCorePrefetching: true,
-        shouldUpdateScroll: () => false,
-        loader: { loadPage: () => Promise.resolve({ error: true }) }
+      // Immediately prevent script loading
+      const originalAppendChild = Node.prototype.appendChild;
+      Node.prototype.appendChild = function(node) {
+        if (node.tagName === 'SCRIPT') {
+          // Block Gatsby/React scripts
+          if (node.src && (
+            node.src.includes('webpack-runtime') ||
+            node.src.includes('framework') ||
+            node.src.includes('app')
+          )) {
+            return node;
+          }
+        }
+        return originalAppendChild.call(this, node);
       };
 
-      // Clear the container to prevent hydration
-      const gatsbyRoot = document.getElementById('___gatsby');
-      if (gatsbyRoot) {
-        const content = gatsbyRoot.innerHTML;
-        gatsbyRoot.innerHTML = '';
-        // Re-insert content after a tick to prevent React from picking it up
-        setTimeout(() => {
-          gatsbyRoot.innerHTML = content;
-        }, 0);
-      }
-
-      // Block all Gatsby/React initialization
-      Object.defineProperty(window, 'ReactDOM', {
-        get: () => null,
-        configurable: false
+      // Prevent React from initializing
+      Object.defineProperty(window, 'React', { get: () => undefined });
+      Object.defineProperty(window, 'ReactDOM', { get: () => undefined });
+      Object.defineProperty(window, '___gatsby', { 
+        value: {
+          disableCorePrefetching: true,
+          loader: { loadPage: () => Promise.resolve({ error: true }) }
+        },
+        writable: false
       });
-      
-      // Prevent any routing
-      window.___navigate = () => false;
-      window.history.pushState = () => {};
-      window.history.replaceState = () => {};
+
+      // Remove script tags that might cause hydration
+      document.querySelectorAll('script[src*="webpack-runtime"], script[src*="framework"], script[src*="app"]')
+        .forEach(script => script.remove());
     }
   }
 }
 
-// Block all routing events
+// Prevent any Gatsby routing
 export const shouldUpdateScroll = () => false;
 export const onPreRouteUpdate = () => false;
 export const onRouteUpdate = () => false;
