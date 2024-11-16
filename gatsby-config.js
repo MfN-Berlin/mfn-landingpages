@@ -7,15 +7,18 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const isProduction = process.env.NODE_ENV === 'production'
+
 module.exports = {
   siteMetadata: {
     title: `My Gatsby Tailwind Site`,
-    description: `Kick off your next, great Gatsby project with this default starter.`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://www.yourdomain.tld`,
+    defaultLanguage: 'de',
+    supportedLanguages: ['de', 'en'],
   },
   plugins: [
-    // Image handling
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -26,17 +29,21 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-
-    // Static files
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `static`,
-        path: `${__dirname}/static`,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        // This will impact how browsers show your PWA/website
+        // https://css-tricks.com/meta-theme-color-and-trickery/
+        // theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-
-    // Data handling
+    "gatsby-plugin-postcss",
     {
       resolve: `gatsby-transformer-json`,
       options: {
@@ -50,38 +57,25 @@ module.exports = {
         name: `publications`,
       },
     },
-
-    // Build optimization
-    'gatsby-plugin-no-sourcemaps',
     {
-      resolve: 'gatsby-plugin-remove-fingerprints',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        removeAllFingerprints: true,
-        fingerprintExtensions: ['js', 'css'],
+        name: `static`,
+        path: `${__dirname}/static`,
       },
     },
-
-    // Styling
-    "gatsby-plugin-postcss",
-
-    // PWA/Manifest
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/mfn-landingpages/`,
-        background_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
-        publicPath: `/mfn-landingpages/`,
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
   ],
   flags: {
-    DEV_SSR: true,
     FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    DEV_SSR: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
   },
   pathPrefix: "/mfn-landingpages",
 }

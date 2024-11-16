@@ -15,7 +15,7 @@ import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import OpenToday from '../../components/features/OpenToday'
 import Feedback from '../../components/features/Feedback'
 import HeadComponent from '../../components/layouts/HeadComponent'
-import UpcomingHoliday from '../../components/features/UpcomingHoliday'
+import UpcomingHoliday from '../../components/features/UpcomingHoliday';
 
 
 const IndexPage = () => {

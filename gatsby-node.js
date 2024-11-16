@@ -5,14 +5,66 @@
  */
 
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = ({ actions }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
-  // Only create pages you specifically need
+
+  const result = await graphql(`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+        edges {
+          node {
+            relativePath
+            extension
+            publicURL
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    console.error('Error fetching images:', result.errors);
+    return;
+  }
+
+  const imageMap = {};
+  result.data.allFile.edges.forEach(({ node }) => {
+    try {
+      if (node.extension === 'svg') {
+        imageMap[node.relativePath] = node.publicURL;
+      } else if (node.childImageSharp) {
+        imageMap[node.relativePath] = node.childImageSharp.gatsbyImageData;
+      }
+    } catch (error) {
+      console.warn(`Warning: Could not process image ${node.relativePath}:`, error);
+    }
+  });
+
+  // Create pages with image context
+  const pages = [
+    {
+      path: "/de/besuch-planen",
+      component: path.resolve(`./src/pages/de/besuch-planen.js`),
+    },
+    // Add other pages here
+  ];
+
+  pages.forEach(page => {
+    createPage({
+      ...page,
+      context: { 
+        imageMap,
+        lang: 'de'
+      },
+    });
+  });
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -43,60 +95,3 @@ exports.createSchemaCustomization = ({ actions }) => {
   `
   createTypes(typeDefs)
 }
-
-exports.onCreateWebpackConfig = ({ actions, stage, getConfig }) => {
-  const config = getConfig();
-
-  if (stage === 'build-javascript' || stage === 'develop') {
-    // Update output configuration
-    config.output = {
-      ...config.output,
-      filename: `[name].js`,
-      chunkFilename: `[name].js`,
-      // Ensure consistent path for all assets
-      publicPath: `/mfn-landingpages/`,
-    };
-
-    // Remove fingerprinting from chunk names
-    if (config.optimization && config.optimization.splitChunks) {
-      config.optimization.splitChunks = {
-        ...config.optimization.splitChunks,
-        cacheGroups: {
-          commons: {
-            name: 'commons',
-            chunks: 'all',
-            minChunks: 2,
-          },
-          vendors: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-        },
-      };
-    }
-
-    // Update MiniCssExtractPlugin configuration
-    config.plugins = config.plugins.map(plugin => {
-      if (plugin.constructor.name === 'MiniCssExtractPlugin') {
-        return new MiniCssExtractPlugin({
-          filename: `[name].css`,
-          chunkFilename: `[name].css`,
-        });
-      }
-      return plugin;
-    });
-
-    actions.replaceWebpackConfig(config);
-  }
-};
-
-// Keep the babel config
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPlugin({
-    name: 'babel-plugin-transform-remove-console',
-    options: {
-      exclude: ['error', 'warn'],
-    },
-  });
-};
