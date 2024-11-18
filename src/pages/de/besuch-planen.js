@@ -4,8 +4,8 @@ import Header from "../../components/layouts/Header"
 import Button from "../../components/elements/Button"
 import CardText from '../../components/elements/CardText'
 import ContentImage from '../../components/elements/ContentImage'
-import Section from '../components/elements/Section'
-import Card from '../components/elements/Card'
+import Section from '../../components/elements/Section'
+import Card from '../../components/elements/Card'
 import StoryTime from '../../components/layouts/StoryTime'
 import Footer from '../../components/layouts/Footer'
 import { Accordion, AccordionItem, AccordionSpacer } from '../../components/layouts/Accordion'
