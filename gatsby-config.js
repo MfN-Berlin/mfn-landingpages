@@ -15,8 +15,6 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://www.yourdomain.tld`,
-    defaultLanguage: 'de',
-    supportedLanguages: ['de', 'en'],
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -64,26 +62,10 @@ module.exports = {
         path: `${__dirname}/static`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [
-          require('tailwindcss'),
-          require('autoprefixer'),
-        ],
-      },
-    }
   ],
   flags: {
     FAST_DEV: true,
-    DEV_SSR: true,
+    DEV_SSR: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
   },
   pathPrefix: "/mfn-landingpages",
