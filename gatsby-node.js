@@ -5,7 +5,6 @@
  */
 
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -31,39 +30,48 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   if (result.errors) {
-    console.error('Error fetching images:', result.errors);
+    console.error(result.errors);
     return;
   }
 
   const imageMap = {};
   result.data.allFile.edges.forEach(({ node }) => {
-    try {
-      if (node.extension === 'svg') {
-        imageMap[node.relativePath] = node.publicURL;
-      } else if (node.childImageSharp) {
-        imageMap[node.relativePath] = node.childImageSharp.gatsbyImageData;
-      }
-    } catch (error) {
-      console.warn(`Warning: Could not process image ${node.relativePath}:`, error);
+    if (node.extension === 'svg') {
+      imageMap[node.relativePath] = node.publicURL;
+    } else if (node.childImageSharp) {
+      imageMap[node.relativePath] = node.childImageSharp.gatsbyImageData;
     }
   });
 
-  // Create pages with image context
-  const pages = [
+  // Aktualisierte Pfade für die deutschen Seiten
+  const dePages = [
     {
       path: "/de/besuch-planen",
       component: path.resolve(`./src/pages/de/besuch-planen.js`),
     },
-    // Add other pages here
+    {
+      path: "/de/museum",
+      component: path.resolve(`./src/pages/de/museum.js`),
+    },
+    {
+      path: "/de/forschung",
+      component: path.resolve(`./src/pages/de/forschung.js`),
+    },
+    {
+      path: "/de/mitmachen",
+      component: path.resolve(`./src/pages/de/mitmachen.js`),
+    },
+    {
+      path: "/de/publikationen",
+      component: path.resolve(`./src/pages/de/publikationen.js`),
+    },
   ];
 
-  pages.forEach(page => {
+  dePages.forEach(page => {
     createPage({
-      ...page,
-      context: { 
-        imageMap,
-        lang: 'de'
-      },
+      path: page.path,
+      component: page.component,
+      context: { imageMap },
     });
   });
 };
@@ -96,22 +104,3 @@ exports.createSchemaCustomization = ({ actions }) => {
   `
   createTypes(typeDefs)
 }
-
-exports.onCreateWebpackConfig = ({ actions, stage }) => {
-  if (stage === 'build-javascript' || stage === 'build-html') {
-    actions.setWebpackConfig({
-      optimization: {
-        splitChunks: {
-          cacheGroups: {
-            styles: {
-              name: 'styles',
-              test: /\.css$/,
-              chunks: 'all',
-              enforce: true,
-            },
-          },
-        },
-      },
-    });
-  }
-};
