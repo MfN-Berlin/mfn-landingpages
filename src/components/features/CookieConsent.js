@@ -13,29 +13,38 @@ const CookieConsent = () => {
     misc: false, // For functional cookies
   });
 
-  // Helper function to get the correct domain
-  const getDomain = () => {
-    if (typeof window === 'undefined') return '';
+  const getEnvironmentConfig = () => {
+    if (typeof window === 'undefined') return {};
     
     const hostname = window.location.hostname;
+    const pathname = window.location.pathname;
     
-    // Production domain
-    if (hostname === 'www.museumfuernaturkunde.berlin') {
-      return 'www.museumfuernaturkunde.berlin';
+    // Determine the path prefix based on the environment
+    let pathPrefix = '/';
+    if (hostname === 'test.mfn.gcsdev.de') {
+      pathPrefix = '/mfn-landingpages/';
+    } else if (hostname === 'mfn-berlin.github.io') {
+      pathPrefix = '/mfn-landingpages/';
     }
-    // Test domain
-    else if (hostname === 'test.mfn.gcsdev.de') {
-      return 'test.mfn.gcsdev.de';
-    }
-    // GitHub Pages domain
-    else if (hostname === 'mfn-berlin.github.io') {
-      return 'mfn-berlin.github.io';
-    }
-    // Local development
-    return hostname;
+
+    return {
+      domain: hostname,
+      pathPrefix: pathPrefix
+    };
   };
 
-  // Helper function to check if a cookie exists
+  const setCookie = (name, value) => {
+    const { domain, pathPrefix } = getEnvironmentConfig();
+    const expiryDate = new Date();
+    expiryDate.setFullYear(expiryDate.getFullYear() + 2);
+
+    document.cookie = `${name}=${value}; ` +
+      `expires=${expiryDate.toUTCString()}; ` +
+      `path=${pathPrefix}; ` +
+      `domain=${domain}; ` +
+      'SameSite=Strict';
+  };
+
   const getCookie = (name) => {
     if (typeof window === 'undefined') return null;
     
@@ -43,15 +52,6 @@ const CookieConsent = () => {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
     return null;
-  };
-
-  // Helper function to set a cookie
-  const setCookie = (name, value) => {
-    const domain = getDomain();
-    const expiryDate = new Date();
-    expiryDate.setFullYear(expiryDate.getFullYear() + 2); // 2 years from now
-
-    document.cookie = `${name}=${value}; expires=${expiryDate.toUTCString()}; path=/; domain=${domain}; SameSite=Strict`;
   };
 
   useEffect(() => {

@@ -44,7 +44,7 @@ const IndexPage = () => {
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            headline="mfn-landingpages v0.0.63"
+            headline="mfn-landingpages v0.0.64"
             headlineStyle="h1"
             body="interne Startseite, hier sind die bereits angelegten Landingpages und Zusatzseiten"
             spacing="wide"
@@ -69,8 +69,39 @@ const IndexPage = () => {
               body: "Öffnungszeiten, Tickets, Anfahrt und alle wichtigen Informationen für Ihren Museumsbesuch.",
               spacing: "regular"
             }}
-            url="/besuch-planen"
+            url="/de/besuch-planen"
           />
+          <Card
+            variant="classic"
+            textProps={{
+              headline: "Mitmachen",
+              headlineStyle: "h2",
+              body: "Öffnungszeiten, Tickets, Anfahrt und alle wichtigen Informationen für Ihren Museumsbesuch.",
+              spacing: "regular"
+            }}
+            url="/de/mitmachen"
+          />
+          <Card
+            variant="classic"
+            textProps={{
+              headline: "Forschung",
+              headlineStyle: "h2",
+              body: "Öffnungszeiten, Tickets, Anfahrt und alle wichtigen Informationen für Ihren Museumsbesuch.",
+              spacing: "regular"
+            }}
+            url="/de/forschung"
+          />
+          <Card
+            variant="classic"
+            textProps={{
+              headline: "Museum",
+              headlineStyle: "h2",
+              body: "Öffnungszeiten, Tickets, Anfahrt und alle wichtigen Informationen für Ihren Museumsbesuch.",
+              spacing: "regular"
+            }}
+            url="/de/museum"
+          />
+
 
           <Card
             variant="classic"
