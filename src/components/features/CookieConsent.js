@@ -13,14 +13,32 @@ const CookieConsent = () => {
     misc: false, // For functional cookies
   });
 
-  // Helper function to get current domain
+  // Helper function to get the correct domain
   const getDomain = () => {
+    if (typeof window === 'undefined') return '';
+    
     const hostname = window.location.hostname;
-    return hostname === 'localhost' ? hostname : '.museumfuernaturkunde.berlin';
+    
+    // Production domain
+    if (hostname === 'www.museumfuernaturkunde.berlin') {
+      return 'www.museumfuernaturkunde.berlin';
+    }
+    // Test domain
+    else if (hostname === 'test.mfn.gcsdev.de') {
+      return 'test.mfn.gcsdev.de';
+    }
+    // GitHub Pages domain
+    else if (hostname === 'mfn-berlin.github.io') {
+      return 'mfn-berlin.github.io';
+    }
+    // Local development
+    return hostname;
   };
 
   // Helper function to check if a cookie exists
   const getCookie = (name) => {
+    if (typeof window === 'undefined') return null;
+    
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
@@ -30,9 +48,10 @@ const CookieConsent = () => {
   // Helper function to set a cookie
   const setCookie = (name, value) => {
     const domain = getDomain();
-    const cookieString = `${name}=${value}; path=/; max-age=${365 * 24 * 60 * 60}${domain !== 'localhost' ? `; domain=${domain}` : ''}; SameSite=Strict`;
-    document.cookie = cookieString;
-    console.log('Setting cookie:', cookieString); // Debug log
+    const expiryDate = new Date();
+    expiryDate.setFullYear(expiryDate.getFullYear() + 2); // 2 years from now
+
+    document.cookie = `${name}=${value}; expires=${expiryDate.toUTCString()}; path=/; domain=${domain}; SameSite=Strict`;
   };
 
   useEffect(() => {
