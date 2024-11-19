@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import CookieConsent from '../features/CookieConsent';
 
 
 // Component for top navigation links
@@ -541,6 +542,7 @@ const Header = ({ activeNavItem }) => {
 
   return (
     <>
+      <CookieConsent />
       {/* TopNav */}
       <nav
         role="navigation"
