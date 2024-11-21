@@ -55,7 +55,7 @@ export const generateUrl = (path) => {
   }
 
   // Use withPrefix only once
-  const finalPath = cleanPath;
+  const finalPath = `/${cleanPath}`;
   console.log('Final path with prefix:', finalPath);
   return finalPath;
 }; 
