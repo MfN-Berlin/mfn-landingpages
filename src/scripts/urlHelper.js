@@ -4,7 +4,7 @@ export const getEnvironmentConfig = () => {
   if (typeof window === 'undefined') {
     console.log('SSR: Using default config');
     return {
-      pathPrefix: '/mfn-landingpages',
+      pathPrefix: '',
       hostname: 'mfn-berlin.github.io'
     };
   }
@@ -16,7 +16,7 @@ export const getEnvironmentConfig = () => {
   if (hostname === 'mfn-berlin.github.io') {
     console.log('Environment: GitHub Pages');
     return {
-      pathPrefix: '/mfn-landingpages',
+      pathPrefix: '',
       hostname
     };
   }
