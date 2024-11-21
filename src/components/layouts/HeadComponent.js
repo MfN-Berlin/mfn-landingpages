@@ -1,20 +1,32 @@
 import React from 'react'
+import { withPrefix } from 'gatsby'
+import { getEnvironmentConfig } from '../../scripts/urlHelper'
 
 const HeadComponent = ({ 
   title = "Museum für Naturkunde", 
   description = "Das Museum für Naturkunde Berlin ist ein integriertes Forschungsmuseum, an dem mit Leidenschaft und Kompetenz für Natur geforscht wird.",
-  image = "../images/goldwespe_web.jpg",
+  image = "/images/goldwespe_web.jpg",
   pathname = ""
 }) => {
-  const siteUrl = "https://www.museumfuernaturkunde.berlin"
+  // Get the correct site URL based on environment
+  const getBaseUrl = () => {
+    const { hostname } = getEnvironmentConfig()
+    
+    if (hostname === 'mfn-berlin.github.io') {
+      return 'https://mfn-berlin.github.io/mfn-landingpages'
+    }
+    return 'https://www.museumfuernaturkunde.berlin'
+  }
+
+  const siteUrl = getBaseUrl()
 
   return (
     <>
       <title>{title} | Museum für Naturkunde</title>
       <meta charSet="utf-8" />
       
-      {/* Favicon */}
-      <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+      {/* Favicon - using withPrefix */}
+      <link rel="icon" href={withPrefix('/images/favicon.ico')} type="image/x-icon" />
       
       {/* Viewport */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,22 +37,22 @@ const HeadComponent = ({
       <meta name="description" content={description} />
       <link rel="canonical" href={`${siteUrl}${pathname}`} />
       
-      {/* Open Graph */}
+      {/* Open Graph - using withPrefix for image */}
       <meta property="og:site_name" content="Museum für Naturkunde" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${siteUrl}${pathname}`} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${siteUrl}${image}`} />
+      <meta property="og:image" content={`${siteUrl}${withPrefix(image)}`} />
       
-      {/* Twitter Card */}
+      {/* Twitter Card - using withPrefix for image */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@mfnberlin" />
       <meta name="twitter:title" content={`${title} | Museum für Naturkunde`} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${siteUrl}${image}`} />
+      <meta name="twitter:image" content={`${siteUrl}${withPrefix(image)}`} />
       
-      {/* Language Alternates - Fixed casing for hrefLang */}
+      {/* Language Alternates */}
       <link rel="alternate" hrefLang="de" href={`${siteUrl}/de${pathname}`} />
       <link rel="alternate" hrefLang="en" href={`${siteUrl}/en${pathname}`} />
     </>
