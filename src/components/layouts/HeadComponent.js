@@ -13,7 +13,7 @@ const HeadComponent = ({
     const { hostname } = getEnvironmentConfig()
     
     if (hostname === 'mfn-berlin.github.io') {
-      return 'https://mfn-berlin.github.io/mfn-landingpages'
+      return 'https://mfn-berlin.github.io'
     }
     return 'https://www.museumfuernaturkunde.berlin'
   }
@@ -52,9 +52,9 @@ const HeadComponent = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${siteUrl}${withPrefix(image)}`} />
       
-      {/* Language Alternates */}
-      <link rel="alternate" hrefLang="de" href={`${siteUrl}/de${pathname}`} />
-      <link rel="alternate" hrefLang="en" href={`${siteUrl}/en${pathname}`} />
+      {/* Language Alternates - using withPrefix for paths */}
+      <link rel="alternate" hrefLang="de" href={`${siteUrl}${withPrefix(`/de${pathname}`)}`} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}${withPrefix(`/en${pathname}`)}`} />
     </>
   )
 }
