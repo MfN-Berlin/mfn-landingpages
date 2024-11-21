@@ -92,7 +92,7 @@ const LanguageSwitcher = () => (
       </li>
       <li className="de-x-ls list-none">
         <Link
-          to="/leichte-sprache"
+          to="../leichte-sprache"
           className="language-link text-Black-900 pl-2 inline-block"
           hrefLang="de-x-ls"
           aria-label="Leichte Sprache"
