@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Button from '../elements/Button';
 
-const CookieConsent = () => {
+const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [cookieSettings, setCookieSettings] = useState({
@@ -21,7 +21,7 @@ const CookieConsent = () => {
     // Extract the root domain for test environment
     if (hostname === 'test.mfn.gcsdev.de') {
       return {
-        domain: '.mfn.gcsdev.de', // Note the leading dot to include all subdomains
+        domain: 'test.mfn.gcsdev.de', // Note the leading dot to include all subdomains
         path: '/' // Set to root path to share across all paths
       };
     }
@@ -36,7 +36,7 @@ const CookieConsent = () => {
     
     if (hostname === 'www.museumfuernaturkunde.berlin') {
       return {
-        domain: '.museumfuernaturkunde.berlin',
+        domain: 'www.museumfuernaturkunde.berlin',
         path: '/'
       };
     }
@@ -90,19 +90,32 @@ const CookieConsent = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (forceOpen) {
+      setIsVisible(true);
+      setShowSettings(true); // Directly show settings when opened from footer
+    }
+  }, [forceOpen]);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    setShowSettings(false);
+    onClose(); // Notify parent component
+  };
+
   const handleAcceptAll = () => {
     console.log('Accepting all cookies...');
     setCookie('cookie-agreed', '2');
     setCookie('cookie-agreed-categories', JSON.stringify(["essential","tracking","media_youtube","media_podigee","misc"]));
     setCookie('cookie-agreed-version', '2.0.0');
-    setIsVisible(false);
+    handleClose();
   };
 
   const handleAcceptEssential = () => {
     console.log('Accepting essential cookies only...');
     setCookie('cookie-agreed', '0');
     setCookie('cookie-agreed-categories', JSON.stringify([["essential"]]));
-    setIsVisible(false);
+    handleClose();
   };
 
   const handleSaveSettings = () => {
@@ -116,7 +129,17 @@ const CookieConsent = () => {
     setCookie('cookie-agreed', '2');
     setCookie('cookie-agreed-categories', JSON.stringify(enabledCategories));
     setCookie('cookie-agreed-version', '2.0.0');
-    setIsVisible(false);
+    handleClose();
+  };
+
+  const handleBackButton = () => {
+    if (forceOpen) {
+      // When opened from footer, close the modal completely
+      handleClose();
+    } else {
+      // Normal behavior when opened from initial cookie consent
+      setShowSettings(false);
+    }
   };
 
   const ToggleSwitch = ({ isActive, isReadOnly, onChange }) => (
@@ -209,7 +232,7 @@ const CookieConsent = () => {
               <div className="mfn-cookie-banner__content">
                 <div className="flex items-center mb-4">
                   <button 
-                    onClick={() => setShowSettings(false)}
+                    onClick={handleBackButton}
                     className="flex items-center text-gray-600 hover:text-gray-900"
                   >
                     <span className="mr-2">←</span> zurück

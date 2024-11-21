@@ -14,7 +14,7 @@ const HeadComponent = ({
       <meta charSet="utf-8" />
       
       {/* Favicon */}
-      <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+      <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
       
       {/* Viewport */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,11 +40,9 @@ const HeadComponent = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${siteUrl}${image}`} />
       
-      {/* Language Alternates */}
-      <link rel="alternate" hreflang="de" href={`${siteUrl}/de${pathname}`} />
-      <link rel="alternate" hreflang="en" href={`${siteUrl}/en${pathname}`} />
-      
-      
+      {/* Language Alternates - Fixed casing for hrefLang */}
+      <link rel="alternate" hrefLang="de" href={`${siteUrl}/de${pathname}`} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}/en${pathname}`} />
     </>
   )
 }
