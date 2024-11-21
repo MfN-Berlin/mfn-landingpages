@@ -17,32 +17,49 @@ const CookieConsent = () => {
     if (typeof window === 'undefined') return {};
     
     const hostname = window.location.hostname;
-    const pathname = window.location.pathname;
     
-    // Determine the path prefix based on the environment
-    let pathPrefix = '/';
+    // Extract the root domain for test environment
     if (hostname === 'test.mfn.gcsdev.de') {
-      pathPrefix = '/mfn-landingpages/';
-    } else if (hostname === 'mfn-berlin.github.io') {
-      pathPrefix = '/mfn-landingpages/';
+      return {
+        domain: '.mfn.gcsdev.de', // Note the leading dot to include all subdomains
+        path: '/' // Set to root path to share across all paths
+      };
+    }
+    
+    // For other environments, maintain current behavior
+    if (hostname === 'mfn-berlin.github.io') {
+      return {
+        domain: hostname,
+        path: '/mfn-landingpages/'
+      };
+    }
+    
+    if (hostname === 'www.museumfuernaturkunde.berlin') {
+      return {
+        domain: '.museumfuernaturkunde.berlin',
+        path: '/'
+      };
     }
 
+    // Local development
     return {
       domain: hostname,
-      pathPrefix: pathPrefix
+      path: '/'
     };
   };
 
   const setCookie = (name, value) => {
-    const { domain, pathPrefix } = getEnvironmentConfig();
+    const { domain, path } = getEnvironmentConfig();
     const expiryDate = new Date();
     expiryDate.setFullYear(expiryDate.getFullYear() + 2);
 
     document.cookie = `${name}=${value}; ` +
       `expires=${expiryDate.toUTCString()}; ` +
-      `path=${pathPrefix}; ` +
+      `path=${path}; ` +
       `domain=${domain}; ` +
       'SameSite=Strict';
+      
+    console.log(`Setting cookie for domain: ${domain}, path: ${path}`);
   };
 
   const getCookie = (name) => {
