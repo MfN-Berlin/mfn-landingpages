@@ -73,25 +73,31 @@ const SubmenuItem = ({ item }) => (
 );
 
 // Main navigation item (without dropdown container)
-const MainNavItem = ({ section, isActive, onMouseEnter }) => (
-  <div 
-    className="menu-item"
-    onMouseEnter={() => onMouseEnter(section.to)}
-    role="navigation"
-    tabIndex={0}
-  >
-    <Link
-      to={generateUrl(section.to)}
-      className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${
-        isActive ? 'bg-Green-500 text-Black-900' : 'hover:bg-Green-500'
-      }`}
+const MainNavItem = ({ section, isActive, onMouseEnter }) => {
+  console.log('MainNavItem - Original section.to:', section.to);
+  const generatedUrl = generateUrl(section.to);
+  console.log('MainNavItem - Generated URL:', generatedUrl);
+
+  return (
+    <div 
+      className="menu-item"
+      onMouseEnter={() => onMouseEnter(section.to)}
+      role="navigation"
+      tabIndex={0}
     >
-      <span className="inline-block py-[0.1em] pb-[0.2em] px-[min(1vw,0.5em)]">
-        {section.label}
-      </span>
-    </Link>
-  </div>
-);
+      <Link
+        to={generatedUrl}
+        className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${
+          isActive ? 'bg-Green-500 text-Black-900' : 'hover:bg-Green-500'
+        }`}
+      >
+        <span className="inline-block py-[0.1em] pb-[0.2em] px-[min(1vw,0.5em)]">
+          {section.label}
+        </span>
+      </Link>
+    </div>
+  );
+};
 
 // Logo component using publicURL for SVG
 const Logo = () => (
