@@ -1,7 +1,5 @@
 import * as React from "react"
 import { withPrefix } from "gatsby"
-import Header from "../components/layouts/Header"
-import Footer from "../components/layouts/Footer"
 import Section from "../components/elements/Section"
 import Card from "../components/elements/Card"
 import CardText from "../components/elements/CardText"
@@ -44,7 +42,7 @@ const IndexPage = () => {
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            headline="mfn-landingpages v0.0.65"
+            headline="mfn-landingpages v0.0.66"
             headlineStyle="h1"
             body="interne Startseite, hier sind die bereits angelegten Landingpages und Zusatzseiten"
             spacing="wide"
