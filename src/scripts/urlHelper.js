@@ -2,8 +2,7 @@ import { withPrefix } from 'gatsby';
 
 const getEnvironmentConfig = () => {
   if (typeof window === 'undefined') return {
-    baseUrl: '',
-    isExternal: false
+    pathPrefix: '/mfn-landingpages'
   };
   
   const hostname = window.location.hostname;
@@ -11,51 +10,35 @@ const getEnvironmentConfig = () => {
   // GitHub Pages
   if (hostname === 'mfn-berlin.github.io') {
     return {
-      baseUrl: '/de',
-      pathPrefix: '/mfn-landingpages',
-      isExternal: false
+      pathPrefix: '/mfn-landingpages'
     };
   }
   
-  // Test environment
-  if (hostname === 'test.mfn.gcsdev.de') {
-    return {
-      baseUrl: '/de',
-      pathPrefix: '',
-      isExternal: false
-    };
-  }
-  
-  // Production
-  if (hostname === 'www.museumfuernaturkunde.berlin') {
-    return {
-      baseUrl: '/de',
-      pathPrefix: '',
-      isExternal: false
-    };
-  }
-  
-  // Local development
+  // Other environments (test, production, local)
   return {
-    baseUrl: '',
-    pathPrefix: '',
-    isExternal: false
+    pathPrefix: ''
   };
 };
 
 export const generateUrl = (path) => {
-  const { baseUrl, pathPrefix } = getEnvironmentConfig();
+  const { pathPrefix } = getEnvironmentConfig();
   
   // Handle external URLs
   if (path.startsWith('http')) {
     return path;
   }
   
+  // Remove any existing path prefix and clean up double slashes
+  let cleanPath = path.replace(/^\/mfn-landingpages/, '')
+                     .replace(/^\/undefined/, '')
+                     .replace(/\/+/g, '/');
+  
   // Ensure path starts with slash
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = '/' + cleanPath;
+  }
   
-  // Remove duplicate slashes and combine paths
-  const combinedPath = `${pathPrefix}${normalizedPath}`.replace(/\/+/g, '/');
-  
-  return withPrefix(combinedPath);
+  // For GitHub Pages, we use withPrefix
+  // This will automatically add the pathPrefix from gatsby-config.js
+  return withPrefix(cleanPath);
 }; 
