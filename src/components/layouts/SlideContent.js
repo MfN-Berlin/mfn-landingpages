@@ -1,11 +1,12 @@
 import React from 'react';
 import ContentImage from '../elements/ContentImage';
 import CardText from '../elements/CardText';
+import { Link } from 'gatsby';
 
 const SlideContent = ({ imageName, imageMap, title, kicker, text, link, altText, paginationDots }) => {
   if (!imageMap || !imageName) return null;
 
-  return (
+  const content = (
     <div className="flex flex-col h-full">
       <div className="relative w-full">
         <ContentImage
@@ -27,7 +28,6 @@ const SlideContent = ({ imageName, imageMap, title, kicker, text, link, altText,
           kicker={kicker}
           headline={title}
           body={text}
-          link={link}
           headlineStyle="h3"
           spacing="wide"
           alignment="center"
@@ -35,6 +35,12 @@ const SlideContent = ({ imageName, imageMap, title, kicker, text, link, altText,
       </div>
     </div>
   );
+
+  return link ? (
+    <Link to={link} className="block h-full">
+      {content}
+    </Link>
+  ) : content;
 };
 
 export default SlideContent;
