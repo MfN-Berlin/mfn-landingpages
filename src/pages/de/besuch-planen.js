@@ -101,7 +101,7 @@ const IndexPage = () => {
             <CardText
             headline="Öffnungszeiten"
             headlineStyle="h1"
-            body="Das Museum öffnet täglich bis 18:00 Uhr. Montags ist das Museum geschlossen. Letzter Einlass ist 30 Minuten vor Schluss."
+            body="Das Museum öffnet täglich bis 18:00 Uhr.<br/>Montags ist das Museum geschlossen.<br/>Letzter Einlass ist 30 Minuten vor Schluss."
             spacing="wide"
             alignment="center" // Center-aligned text
           />
@@ -851,7 +851,7 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "160222_Schueler_Fuehrung_System_Erde_07__(c)_Hwa-Ja_Götz_MfN.jpg",
+              imageName: "160222_Schueler_Fuehrung_System_Erde_07__(c)_Hwa-Ja_Goetz_MfN.jpg",
               alt: "Schülerinnen und Schüler entdecken Objekte in den Ausstellungsvitrinen. | Bildquelle: Museum für Naturkunde Berlin",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
@@ -866,8 +866,8 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Digitize_Museum für Naturkunde (c) Thomas Rosenthal 14_1200x800.jpg",
-              alt: "Another Image",
+              imageName: "111123_Zeichenkurs_Exploratorium_15_2.jpg",
+              alt: "Eine Frau sitzt am Mikroskop und zeichnet die vergrößerte Ansicht auf Papier. | Bildquelle: Museum für Naturkunde Berlin",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
@@ -914,10 +914,17 @@ const IndexPage = () => {
           <CardText
             headline="Oft gestellte Fragen"
             headlineStyle="h1"
-            body="Uns erreichen viele Fragen rund um den Besuch des Museums. Hier geben wir Antworten auf die meistgestellten. Wenn Sie eine andere Frage haben, kontaktieren Sie uns gern! Mehr häufig gestellte Fragen"
+            body="Uns erreichen viele Fragen rund um den Besuch des Museums. Hier geben wir Antworten auf die meistgestellten. Wenn Sie eine andere Frage haben, kontaktieren Sie uns gern!"
             spacing="wide"
             alignment="center"
             className="text-[#5f5f5f]"
+            buttons={[
+              {
+                  text: "Mehr häufig gestellte Fragen",
+                  url: "/de/museum/besuch-planen/faq",
+                  variant: "plain"
+              }
+            ]}
           />
 
 
