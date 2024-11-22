@@ -158,24 +158,54 @@ const Footer = () => {
 
           <section className="text-center mb-8">
             <h2 className="text-sm font-bold mb-4">Für Natur – Der Newsletter</h2>
-            <form className="mx-auto flex justify-center">
-              <input 
-                type="email" 
-                placeholder="E-Mail-Adresse" 
-                className="w-[375px] inline-block p-2 mb-2 bg-Black-900 text-white border border-Black-700 text-sm" 
-                required 
-                aria-label="E-Mail-Adresse für Newsletter"
-              />
-              <button type="submit" className="h-[41px] ml-1 px-4 pt-1.5 pb-2 inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 font-bold">
-                Anmelden
-              </button>
+            <form 
+              action="https://berlin.us6.list-manage.com/subscribe/post?u=7cc783779868ff99f465accff&amp;id=6742162bdf"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate mx-auto flex justify-center flex-col items-center"
+              target="_blank"
+              noValidate
+            >
+              <div id="mc_embed_signup_scroll" className="w-full max-w-[375px]">
+                <div className="flex">
+                  <input 
+                    type="email" 
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    placeholder="E-Mail-Adresse" 
+                    className="flex-1 p-2 mb-2 bg-Black-900 text-white border border-Black-700 text-sm" 
+                    required 
+                    aria-label="E-Mail-Adresse für Newsletter"
+                  />
+                  <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+                    <input 
+                      type="text" 
+                      name="b_7cc783779868ff99f465accff_6742162bdf" 
+                      tabIndex="-1" 
+                      value=""
+                    />
+                  </div>
+                  <button 
+                    type="submit"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    className="h-[41px] ml-1 px-4 pt-1.5 pb-2 inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 font-bold"
+                  >
+                    Anmelden
+                  </button>
+                </div>
+                <p className="text-sm text-Black-700 mt-2">
+                  Mit Klick auf "Anmelden" bestätigen Sie unsere{' '}
+                  <Link 
+                    to="/datenschutzerklaerung#newsletter" 
+                    className="text-Black-700 hover:text-white"
+                  >
+                    Datenschutzerklärung
+                  </Link>
+                </p>
+              </div>
             </form>
-            <p className="text-sm text-Black-700 mt-2">
-              Mit Klick auf "Anmelden" bestätigen Sie unsere
-              <Link to="/datenschutzerklaerung#newsletter" className="text-Black-700 hover:text-white ml-1">
-                Datenschutzerklärung
-              </Link>
-            </p>
           </section>
 
           <div className="flex flex-col items-center text-center text-Black-700 mt-16 pt-16">

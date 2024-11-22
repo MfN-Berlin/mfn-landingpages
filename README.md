@@ -1,99 +1,515 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">°°
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Gatsby MfN Landingpages
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This repository contains the Gatsby-based landing pages for the Museum für Naturkunde Berlin. View the repository at [GitHub](https://github.com/MfN-Berlin/mfn-landingpages).
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+## 🛠 Prerequisites
 
-## 🚀 Quick start
+- Node.js v20.16.0 (LTS)
+- npm (comes with Node.js)
+- Git
 
-1.  **Create a Gatsby site.**
+### Setting up Node.js v20.16.0
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the default starter.
+Using nvm (Node Version Manager) - recommended:
+```bash
+# Install nvm if you haven't already
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+# Install and use Node.js v20.16.0
+nvm install 20.16.0
+nvm use 20.16.0
+```
 
-1.  **Start developing.**
+## 📁 Repository Structure
 
-    Navigate into your new site’s directory and start it up.
+```
+.
+├── .github/             # GitHub specific configurations
+│   └── workflows/      # GitHub Actions workflows
+│
+├── src/                # Source code
+│   ├── components/     # React components
+│   │   ├── elements/  # Basic UI elements
+│   │   ├── features/ # Feature components
+│   │   └── layouts/  # Layout components
+│   │
+│   ├── data/          # Static data and content
+│   ├── images/        # Image assets
+│   ├── pages/         # Auto-routed pages
+│   ├── scripts/       # Utility scripts
+│   ├── styles/        # Styling files
+│   └── templates/     # Page templates
+│
+├── static/            # Static assets
+│   └── fonts/        # Web fonts
+│
+├── gatsby-*.js        # Gatsby configuration files
+├── package.json       # Dependencies and scripts
+├── tailwind.config.js # Tailwind CSS configuration
+├── postcss.config.js  # PostCSS configuration
+├── .prettierrc       # Prettier configuration
+├── .gitignore        # Git ignore rules
+└── LICENSE           # Project license
+```
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+## 🔧 Configuration Files
 
-1.  **Open the source code and start editing!**
+- `.github/workflows/` - CI/CD configurations
+- `.prettierrc` - Code formatting rules
+- `gatsby-browser.js` - Browser runtime config
+- `gatsby-config.js` - Site configuration
+- `gatsby-node.js` - Build customization
+- `gatsby-ssr.js` - Server-side rendering
+- `postcss.config.js` - PostCSS/Tailwind processing
+- `tailwind.config.js` - Tailwind customization
 
-    Your site is now running at `http://localhost:8000`!
+## 🚀 Development
 
-    Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries).
+1. Clone the repository:
+```bash
+git clone https://github.com/MfN-Berlin/mfn-landingpages.git
+cd mfn-landingpages
+```
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+2. Install dependencies:
+```bash
+npm install
+```
 
-## 🚀 Quick start (Netlify)
+3. Start development server:
+```bash
+gatsby develop
+```
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+## 📦 Releases
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Latest release: v0.0.77 (November 22, 2024)
+[View all releases](https://github.com/MfN-Berlin/mfn-landingpages/releases)
 
-## 🧐 What's inside?
+## 🚀 Quick Start
 
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
+1. Clone the repository
+```bash
+git clone [repository-url]
+cd mfn-landingpages
+```
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
+2. Install dependencies
+```bash
+npm install
+```
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+3. Start development server
+```bash
+gatsby develop
+```
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+Your site will be running at `http://localhost:8000`
 
-1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+## 🔧 Common Commands
 
-1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+```bash
+# Clean Gatsby cache and public directories
+gatsby clean
 
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
+# Start development server
+gatsby develop
 
-1.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+# Build for production
+gatsby build
 
-1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+# Serve production build locally
+gatsby serve
+```
 
-1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+## 📁 Project Structure
 
-1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+```
+.
+├── src/                  # Source code
+│   ├── components/       # React components
+│   │   ├── elements/    # Basic UI elements (buttons, inputs)
+│   │   ├── features/    # Feature components (forms, cards)
+│   │   └── layouts/     # Layout components (header, footer)
+│   │
+│   ├── data/            # Static data and content
+│   │
+│   ├── images/          # Image assets
+│   │
+│   ├── pages/           # Page components (auto-routed)
+│   │   ├── de/         # German pages
+│   │   └── en/         # English pages
+│   │
+│   ├── scripts/         # JavaScript utilities
+│   │
+│   ├���─ styles/          # Styling files
+│   │   ├── global.css  # Global styles
+│   │   └── theme.js    # Theme configuration
+│   │
+│   └── templates/       # Page templates
+│
+├── static/              # Static files
+├── gatsby-browser.js    # Browser-specific configuration
+├── gatsby-config.js     # Main Gatsby configuration
+├── gatsby-node.js       # Gatsby Node APIs configuration
+├── gatsby-ssr.js       # Server-side rendering configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+├── package.json        # Project dependencies and scripts
+└── README.md          # This file
 
-1.  **`README.md`**: A text file containing useful reference information about your project.
+```
 
-## 🎓 Learning Gatsby
+### Source Directory (`src/`)
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+#### Components (`components/`)
+- `elements/` - Basic UI building blocks
+- `features/` - Complex feature components
+- `layouts/` - Page layout components
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+#### Data (`data/`)
+- Static content and configuration
+- Navigation structure
+- Content data files
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+#### Images (`images/`)
+- Image assets used throughout the site
 
-## 💫 Deploy
+#### Pages (`pages/`)
+- Auto-routed page components
+- Organized by language (de/en)
 
-[Build, Deploy, and Host On Netlify](https://netlify.com)
+#### Scripts (`scripts/`)
+- JavaScript utilities and helpers
+- Custom functions and hooks
 
-The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
+#### Styles (`styles/`)
+- Global CSS and Tailwind configuration
+- Theme settings and design tokens
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+#### Templates (`templates/`)
+- not actively used
+
+## 💅 Styling System
+
+### Tailwind Configuration
+
+The project uses a customized Tailwind CSS setup with specific design tokens and extensions:
+
+```
+├── tailwind.config.js    # Main Tailwind configuration
+├── src/
+    ├── styles/
+        ├── global.css    # Global styles, custom classes
+        └── theme.js      # Theme tokens (colors, typography, etc.)
+```
+
+### Custom Design System
+
+#### Typography
+- Custom Trade Gothic font family with four variants:
+  - Trade Gothic Next LT W04 Rg (Regular)
+  - Trade Gothic Next LT W04 Bold
+  - Trade Gothic Next LT W04 Itali (Italic)
+  - Trade Gothic Next LT W04 Bd It (Bold Italic)
+
+#### Predefined Classes
+- Typography utilities: `.typography-kicker`, `.typography-button`
+- Semantic HTML elements (`h1`, `h2`, `h3`, `p`) are pre-styled
+- Responsive typography scaling for mobile/desktop
+
+#### Custom Variables
+```css
+:root {
+  --width-main: 1140px;
+  --color-background-menu: white;
+  --z-index-menu: 50;
+  --height-branding-logo: 84px;
+  --height-menu: 44px;
+  --top-menu: 40px;
+}
+```
+
+### Webfonts
+- Self-hosted Trade Gothic fonts in WOFF2/WOFF formats
+- Custom icon font (icomoon) embedded as base64
+- Fonts are loaded through `@font-face` declarations in `global.css`
+
+### Development Notes
+- Use Tailwind utility classes when possible
+- Custom components use `@layer components` in `global.css`
+- Theme extensions are managed in `theme.js`
+- Custom gap values available (4.5rem to 10rem)
+- Swiper component has custom styling configuration
+
+### Usage Example
+```jsx
+// Using predefined typography classes
+<h1 className="typography-kicker">Headline</h1>
+
+// Using custom font variants
+<p className="font-tradegothic-bold">Bold text</p>
+```
+
+## 🏗 Built With
+
+- [Gatsby](https://www.gatsbyjs.com/) - Static site generator
+- [React](https://reactjs.org/) - UI library
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Node.js](https://nodejs.org/) - JavaScript runtime
+
+## 📦 Key Dependencies
+
+```json
+{
+  "gatsby": "^5.x.x",
+  "react": "^18.x.x",
+  "tailwindcss": "^3.x.x"
+}
+```
+
+## 🌐 Environment Variables
+
+Create a `.env.development` and `.env.production` file in the root directory:
+
+```env
+# Add any environment variables here
+```
+
+## 📝 Additional Notes
+
+- The site uses Gatsby's image optimization features
+- Custom fonts are loaded through gatsby-plugin-webfonts
+- SEO is handled through gatsby-plugin-react-helmet
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Commit your changes
+3. Push to the branch
+4. Create a Pull Request
+
+## 📜 License
+
+This project is licensed under the [appropriate license] - see the LICENSE file for details
+
+## 🧩 Components
+
+### Elements
+Basic building blocks used across the application.
+
+#### Button (`elements/Button.js`)
+```jsx
+<Button
+  variant="primary" // 'primary' | 'secondary' | 'inverted' | 'plain'
+  text="Click Me"
+  url="/destination"
+  className="custom-class"
+/>
+```
+
+#### Card (`elements/Card.js`)
+```jsx
+<Card
+  variant="green"    // 'classic' | 'green' | 'white'
+  alignment="left"   // 'left' | 'center'
+  imageProps={{
+    src: "path/to/image.jpg",
+    alt: "Description",
+    aspectRatio: 16/9
+  }}
+  textProps={{
+    headline: "Card Title",
+    body: "Card description text",
+    headlineStyle: "h3",
+    spacing: "regular"
+  }}
+  url="/destination-page"
+  className="my-custom-class"
+/>
+```
+
+#### CardText (`elements/CardText.js`)
+```jsx
+<CardText
+  kicker="Subtitle"
+  headline="Main Title"
+  body="Content text"
+  headlineStyle="h2"     // 'h1' | 'h1-small' | 'h2' | 'h3' | 'h4'
+  spacing="regular"      // 'regular' | 'wide'
+  alignment="left"       // 'left' | 'center'
+  textColor="black"      // 'black' | 'white'
+  buttons={[
+    { text: "Learn More", variant: "primary", url: "/more" }
+  ]}
+/>
+```
+
+#### ContentImage (`elements/ContentImage.js`)
+Optimized image component using Gatsby Image.
+```jsx
+<ContentImage
+  imageName="image-key"
+  alt="Description"
+  imageMap={imageData}
+  className="custom-class"
+/>
+```
+
+#### Section (`elements/Section.js`)
+```jsx
+<Section
+  backgroundColor="bg-white"
+  padding="py-16"
+  columns={2}           // 1-4
+  layout="equal"        // 'equal' | 'custom'
+  gapClass="gap-4"
+  justifyContent="start"
+/>
+```
+
+### Features
+Complex functional components with specific business logic.
+
+#### CookieConsent (`features/CookieConsent.js`)
+GDPR-compliant cookie consent manager.
+```jsx
+<CookieConsent
+  forceOpen={false}
+  onClose={() => {}}
+/>
+```
+
+#### Feedback (`features/Feedback.js`)
+User feedback collection with star rating system.
+```jsx
+<Feedback />
+```
+
+#### OpenToday (`features/OpenToday.js`)
+Dynamic component showing museum opening status.
+```jsx
+<OpenToday />
+```
+
+#### UpcomingHoliday (`features/UpcomingHoliday.js`)
+Displays information about upcoming holidays.
+```jsx
+<UpcomingHoliday />
+```
+
+### Layouts
+Components that define the structure and layout of pages.
+
+#### AccessibilityNav (`layouts/AccessibilityNav.js`)
+```jsx
+<AccessibilityNav currentPage="Page Title" />
+```
+
+#### Accordion (`layouts/Accordion.js`)
+```jsx
+<Accordion bgColor="white" defaultOpenIndex={0}>
+  <AccordionItem title="Section 1">Content 1</AccordionItem>
+  <AccordionItem title="Section 2">Content 2</AccordionItem>
+</Accordion>
+```
+
+#### Blockquote (`layouts/Blockquote.js`)
+```jsx
+<BlockQuote
+  text="Quote text"
+  source="Author Name"
+  sourceTitle="Author Title"
+  backgroundColor="#0197b7"
+  imageProps={{
+    src: "path/to/image",
+    alt: "Author"
+  }}
+/>
+```
+
+#### Footer & Header (`layouts/Footer.js`, `layouts/Header.js`)
+Main navigation and footer components.
+
+#### HeadComponent (`layouts/HeadComponent.js`)
+```jsx
+<HeadComponent
+  title="Page Title"
+  description="Page description"
+  image="path/to/og-image.jpg"
+  url="/current-page"
+/>
+```
+
+#### Slideshow & SlideContent (`layouts/Slideshow.js`, `layouts/SlideContent.js`)
+```jsx
+<Slideshow imageMap={images}>
+  <SlideContent
+    imageName="slide1"
+    title="Title"
+    text="Description"
+    link="/page"
+  />
+</Slideshow>
+```
+
+#### StoryTime (`layouts/StoryTime.js`)
+```jsx
+<StoryTime
+  imageProps={{...}}
+  textProps={{...}}
+  linkUrl="/more"
+  imagePosition="left"  // 'left' | 'right'
+  linkText="Read More"
+/>
+```
+
+#### Teaser (`layouts/Teaser.js`)
+```jsx
+<Teaser
+  imageProps={{...}}
+  textProps={{...}}
+  buttonProps={{...}}
+  textStyle="circle-white"  // 'circle-white' | 'circle-green' | 'box-white'
+  textPosition="bottom-left"
+/>
+```
+
+## 📄 Pages
+
+The website follows a multi-language structure with German (`/de/`) as the primary language. Pages are organized using a component-based architecture that emphasizes reusability and consistent layout patterns.
+
+### Common Page Structure
+Each page follows a consistent template:
+```jsx
+<>
+  <Header activeNavItem="current-section" />
+  <main>
+    <Section>
+      <AccessibilityNav currentPage="Page Title" />
+    </Section>
+    {/* Page Content */}
+    <Section>
+      <StoryTime /> {/* Hero section */}
+    </Section>
+    {/* Main Content Sections */}
+    <Section>
+      <Feedback /> {/* Optional */}
+    </Section>
+  </main>
+  <Footer />
+</>
+```
+
+### Common Patterns
+- All pages use `HeadComponent` for SEO
+- Image handling through Gatsby's GraphQL system
+- Consistent section spacing using the `Section` component
+- Accessibility navigation at the top
+- Contact section at the bottom
+- Responsive design considerations
+
+### Data Strategy
+- Images are queried via GraphQL at build time
+- Navigation data is centralized
+- Content is structured for easy maintenance
+- Components receive data through props

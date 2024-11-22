@@ -27,23 +27,28 @@ const Feedback = () => {
         method: 'POST',
         mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain',
+          'Cache-Control': 'no-cache',
         },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
         body: JSON.stringify({
           rating,
           feedback: feedback.trim(),
           date: new Date().toISOString(),
+          url: window.location.href,
         }),
       });
 
-      if (!response) {
-        throw new Error('Network error');
+      if (response.type === 'opaque') {
+        return true;
       }
-
       return true;
     } catch (error) {
-      console.error('Error submitting feedback:', error);
-      throw error;
+      if (error.name !== 'TypeError' || !error.message.includes('opaque')) {
+        console.error('Error submitting feedback:', error);
+      }
+      return false;
     }
   };
 
@@ -60,7 +65,10 @@ const Feedback = () => {
         date: new Date().toISOString(),
       };
       
-      await submitFeedback(submissionData.rating, submissionData.feedback);
+      const success = await submitFeedback(submissionData.rating, submissionData.feedback);
+      if (!success && isFullSubmission) {
+        console.log('Failed to submit feedback');
+      }
     } catch (error) {
       console.error('Error submitting feedback:', error);
       // Optionally show a toast notification for failed submission
@@ -105,14 +113,16 @@ const Feedback = () => {
               Finden Sie diese Seite hilfreich?
             </h2>
             <p className="text-Black-500">
-              Ihre Meinung hilft uns, unser Angebot zu verbessern. Ihre Wünsche, Tipps und Beschwerden nehmen wir ernst. Das Feedback ist anonym, wir erheben keine persönlichen Daten. (
-              <button 
-                onClick={() => {/* Add your privacy policy handler */}}
+              Mit Ihrer Bewertung helfen Sie uns, dieses Angebot für Sie zu verbessern. <br/>
+              Für diese Befragung erheben wir keine persönlichen Daten. (
+              <a 
+                href="https://www.museumfuernaturkunde.berlin/de/datenschutzerklaerung"
                 className="underline"
-                type="button"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Hinweise zum Datenschutz
-              </button>
+              </a>
               )
             </p>
           </div>
@@ -139,15 +149,16 @@ const Feedback = () => {
       </div>
 
       {showModal && (
-        <button 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-full border-none"
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-full"
           onClick={handleClickOutside}
-          aria-label="Close modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="feedback-modal-title"
         >
-          <button 
+          <div 
             className="bg-white rounded-lg p-6 max-w-md w-full relative"
             onClick={(e) => e.stopPropagation()}
-            aria-label="Modal content"
           >
             <button 
               onClick={handleClose}
@@ -177,8 +188,8 @@ const Feedback = () => {
                 Kommentar senden
               </Button>
             </div>
-          </button>
-        </button>
+          </div>
+        </div>
       )}
     </>
   );

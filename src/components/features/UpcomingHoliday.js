@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
 const HOLIDAYS = [
-  { month: 12, date: 24, duration: 3, message: "Am 24. und 25. Dezember ist das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 – 18:00 Uhr." },
-  { month: 12, date: 31, duration: 3, message: "Placeholder message for New Year" },
-  { month: 3, date: 8, duration: 1, message: "Placeholder message for International Women's Day" },
-  { month: 4, date: 18, duration: 5, message: "An Karfreitag, Ostersonntag und Ostermontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
-  { month: 5, date: 1, duration: 1, message: "Placeholder message for Labor Day" },
-  { month: 5, date: 29, duration: 1, message: "Placeholder message for Ascension Day" },
-  { month: 6, date: 8, duration: 1, message: "Placeholder message for Pentecost Sunday" },
-  { month: 6, date: 9, duration: 1, message: "Placeholder message for Pentecost Monday" },
-  { month: 10, date: 3, duration: 1, message: "Placeholder message for German Unity Day" }
+  { month: 12, date: 24, duration: 3, headline: "Weihnachten 2024", message: "Am 24. und 25. Dezember ist das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 bis 18:00 Uhr." },
+  { month: 12, date: 31, duration: 3, headline: "Neujahr 2025", message: "Placeholder message for New Year" },
+  { month: 3, date: 8, duration: 1, headline: "Internationaler Frauentag", message: "Placeholder message for International Women's Day" },
+  { month: 4, date: 18, duration: 5, headline: "Karfreitag, Ostersonntag und Ostermontag", message: "An Karfreitag, Ostersonntag und Ostermontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
+  { month: 5, date: 1, duration: 1, headline: "Tag der Arbeit", message: "Placeholder message for Labor Day" },
+  { month: 5, date: 29, duration: 1, headline: "Fronleichnam", message: "Placeholder message for Ascension Day" },
+  { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "Placeholder message for Pentecost Sunday" },
+  { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Placeholder message for German Unity Day" }
 ];
 
 const UpcomingHoliday = () => {
@@ -71,7 +70,9 @@ const UpcomingHoliday = () => {
         {isDuringHoliday ? (
           upcomingHoliday.message
         ) : (
-          `${upcomingHoliday.message}`
+          <>
+            <strong>{upcomingHoliday.headline}</strong>: {upcomingHoliday.message}
+          </>
         )}
       </p>
     </div>
