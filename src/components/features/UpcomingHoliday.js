@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 const HOLIDAYS = [
-  { month: 12, date: 24, duration: 3, message: "Placeholder message for Christmas" },
+  { month: 12, date: 24, duration: 3, message: "Am 24. und 25. Dezember ist das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 – 18:00 Uhr." },
   { month: 12, date: 31, duration: 3, message: "Placeholder message for New Year" },
   { month: 3, date: 8, duration: 1, message: "Placeholder message for International Women's Day" },
-  { month: 4, date: 18, duration: 5, message: "Placeholder message for Easter" },
+  { month: 4, date: 18, duration: 5, message: "An Karfreitag, Ostersonntag und Ostermontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
   { month: 5, date: 1, duration: 1, message: "Placeholder message for Labor Day" },
   { month: 5, date: 29, duration: 1, message: "Placeholder message for Ascension Day" },
   { month: 6, date: 8, duration: 1, message: "Placeholder message for Pentecost Sunday" },
@@ -71,7 +71,7 @@ const UpcomingHoliday = () => {
         {isDuringHoliday ? (
           upcomingHoliday.message
         ) : (
-          `${upcomingHoliday.message} (Starting ${upcomingHoliday.date.toLocaleDateString()})`
+          `${upcomingHoliday.message}`
         )}
       </p>
     </div>
