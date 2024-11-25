@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link, withPrefix } from 'gatsby';
-import { generateUrl } from '../../scripts/urlHelper';
+import { generateUrl, getEnvironmentConfig } from '../../scripts/urlHelper';
 import { LANGUAGES, getLanguageFromPath, switchLanguagePath, getNavigationData } from '../../scripts/languageManager';
 import { getTranslatedUrl } from '../../data/urlMappings';
 import { Location } from '@reach/router';
-import { getEnvironmentConfig } from '../../scripts/environmentConfig';
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
