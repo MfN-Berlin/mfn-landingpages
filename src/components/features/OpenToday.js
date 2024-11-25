@@ -65,7 +65,7 @@ const OpenToday = () => {
     };
   };
 
-  const { isOpen, openingTime, isHoliday, message } = getOpeningInfo();
+  const { isOpen, message } = getOpeningInfo();
 
   return (
     <div className="mb-4 bg-white">

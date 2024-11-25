@@ -1,6 +1,5 @@
 import * as React from "react"
 import Section from "../../components/elements/Section"
-import Card from "../../components/elements/Card"
 import CardText from "../../components/elements/CardText"
 import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import HeadComponent from '../../components/layouts/HeadComponent'

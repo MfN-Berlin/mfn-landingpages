@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, withPrefix } from 'gatsby';
-import { generateUrl, getEnvironmentConfig } from '../../scripts/urlHelper';
-import { LANGUAGES, getLanguageFromPath, switchLanguagePath, getNavigationData } from '../../scripts/languageManager';
+import { generateUrl } from '../../scripts/urlHelper';
+import { LANGUAGES, getLanguageFromPath, getNavigationData } from '../../scripts/languageManager';
 import { getTranslatedUrl } from '../../data/urlMappings';
 import { Location } from '@reach/router';
 
@@ -151,27 +151,17 @@ const SearchForm = () => (
 // Language switcher component
 const LanguageSwitcher = ({ currentPath }) => {
   const pathPrefix = '/mfn-landingpages';
-  console.log('LanguageSwitcher input currentPath:', currentPath);
   
   // Remove prefix once and store the clean path
   const cleanPath = currentPath?.startsWith(pathPrefix) 
     ? currentPath.slice(pathPrefix.length)
     : currentPath;
-  console.log('After prefix removal cleanPath:', cleanPath);
   
   const currentLang = getLanguageFromPath(cleanPath);
-  console.log('Detected language:', currentLang);
   
   const getTargetPath = (targetLang) => {
-    console.log('getTargetPath called with:', { cleanPath, targetLang });
-    
     if (!cleanPath) return `/${targetLang}/`;
-    
-    const translatedPath = getTranslatedUrl(cleanPath, targetLang);
-    console.log('After translation:', translatedPath);
-    
-    // Return just the path without prefix - let Gatsby handle it
-    return translatedPath;
+    return getTranslatedUrl(cleanPath, targetLang);
   };
   
   return (

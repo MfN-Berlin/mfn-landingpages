@@ -1,16 +1,12 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Header from "../../components/layouts/Header"
-import Button from "../../components/elements/Button"
-import CardText from '../../components/elements/CardText'
 import Section from '../../components/elements/Section'
-import Card from '../../components/elements/Card'
 import StoryTime from '../../components/layouts/StoryTime'
 import Footer from '../../components/layouts/Footer'
 import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import HeadComponent from '../../components/layouts/HeadComponent'
-import Teaser from '../../components/layouts/Teaser';
-import Blockquote from '../../components/layouts/Blockquote';
+import CardText from '../../components/elements/CardText'
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`

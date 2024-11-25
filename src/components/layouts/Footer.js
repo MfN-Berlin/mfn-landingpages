@@ -3,8 +3,6 @@ import { Link, withPrefix } from 'gatsby';
 import CookieConsent from '../features/CookieConsent';
 import { getLanguageFromPath } from '../../scripts/languageManager';
 import { featureTranslations } from '../../data/featureTranslations';
-import { mainNavData } from '../../data/navigationData';
-import { mainNavDataEn } from '../../data/navigationDataEn';
 
 const FooterLink = ({ to, children, external = false, onClick }) => {
   const linkProps = external 
@@ -38,7 +36,6 @@ const SocialLink = ({ href, icon, title }) => (
 const Footer = () => {
   const [showCookieSettings, setShowCookieSettings] = useState(false);
   const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
-  const nav = language === 'en' ? mainNavDataEn : mainNavData;
   const t = featureTranslations.footer?.[language] || {};
 
   const paths = {
