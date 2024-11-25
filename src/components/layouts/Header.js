@@ -161,7 +161,10 @@ const LanguageSwitcher = ({ currentPath }) => {
   const getTargetPath = (targetLang) => {
     console.log('getTargetPath called with:', { currentPath, targetLang });
     if (!currentPath) return withPrefix(`/${targetLang}/`);
-    return getTranslatedUrl(currentPath, targetLang);
+    
+    // Remove any existing prefix before translation
+    const pathWithoutPrefix = currentPath.replace('/mfn-landingpages', '');
+    return getTranslatedUrl(pathWithoutPrefix, targetLang);
   };
   
   return (
