@@ -170,13 +170,8 @@ const LanguageSwitcher = ({ currentPath }) => {
     const translatedPath = getTranslatedUrl(cleanPath, targetLang);
     console.log('After translation:', translatedPath);
     
-    const { hostname } = getEnvironmentConfig();
-    const finalPath = hostname === 'mfn-berlin.github.io' 
-      ? `${pathPrefix}${translatedPath}`
-      : translatedPath;
-    console.log('Final path:', finalPath, 'for hostname:', hostname);
-    
-    return finalPath;
+    // Return just the path without prefix - let Gatsby handle it
+    return translatedPath;
   };
   
   return (
