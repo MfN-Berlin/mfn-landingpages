@@ -58,7 +58,15 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
     console.log('Translated to DE:', translatedPath);
   }
 
-  // Clean up any double slashes and ensure proper prefix
+  // Clean up any double slashes
   const cleanPath = translatedPath.replace(/\/+/g, '/');
-  return cleanPath.startsWith(pathPrefix) ? cleanPath : withPrefix(cleanPath);
+  
+  // If we're in production (has pathPrefix)
+  if (currentPath.includes(pathPrefix)) {
+    // Ensure single pathPrefix
+    return `${pathPrefix}${cleanPath}`;
+  }
+  
+  // In development
+  return cleanPath;
 }; 
