@@ -1,40 +1,48 @@
-// Mapping zwischen deutschen und englischen URLs
+// Map of URLs between languages (DE -> EN and EN -> DE)
 export const urlMappings = {
-  // Hauptnavigation
+  // German to English
+  '/de/': '/en/',
   '/de/besuch-planen': '/en/visit',
   '/de/mitmachen': '/en/participate',
   '/de/forschung': '/en/research',
   '/de/museum': '/en/museum',
-
-  // Besuch planen / Visit
-  '/de/besuch-planen/ausstellungen': '/en/visit/exhibitions',
-  '/de/museum/besuch-planen': '/en/museum/plan-your-visit',
-  '/de/museum/besuch-planen/anfahrt': '/en/museum/besucherinformationen/how-get-here',
-  '/de/museum/besuch-planen/barrierefreiheit': '/en/museum/plan-your-visit/accessibility',
-  '/de/museum/besuch-planen/besuchendenordnung': '/en/museum/plan-your-visit/visitors-regulations',
-  '/de/museum/besuch-planen/digital-guide': '/en/museum/plan-your-visit/digital-guide',
-  '/de/museum/besuch-planen/fotografieren-und-filmaufnahmen': '/en/museum/plan-your-visit/film-and-photography',
-  '/de/museum/besuch-planen/museumscafe': '/en/museum/plan-your-visit/museum-cafe',
-
-  // Mitmachen / Participate
-  '/de/museum/mitmachen/buergerwissenschaften': '/en/museum/participate/citizen-science',
-  '/de/mitmachen/ehrenamtliches-engagement': '/en/museum/participate/citizen-science/volunteering',
-  '/de/mitmachen/bildung': '/en/museum/education',
-
-  // ... weitere Mappings entsprechend der Navigation
+  '/de/kontakt': '/en/contact',
+  '/de/publikationen': '/en/publications',
+  '/de/team-projekte': '/en/teams-projects',
+  
+  // English to German
+  '/en/': '/de/',
+  '/en/visit': '/de/besuch-planen',
+  '/en/participate': '/de/mitmachen',
+  '/en/research': '/de/forschung',
+  '/en/museum': '/de/museum',
+  '/en/contact': '/de/kontakt',
+  '/en/publications': '/de/publikationen',
+  '/en/teams-projects': '/de/team-projekte',
 };
 
-// Reverse mapping für EN -> DE
-export const reverseUrlMappings = Object.entries(urlMappings).reduce((acc, [de, en]) => {
-  acc[en] = de;
-  return acc;
-}, {});
+export const getTranslatedUrl = (currentPath, targetLang) => {
+  console.log('getTranslatedUrl called with:', { currentPath, targetLang });
 
-// Helper function to get translated URL
-export const getTranslatedUrl = (currentUrl, targetLang) => {
+  if (!currentPath) return `/${targetLang}/`;
+
+  // Remove trailing slash for consistency in lookup
+  const normalizedPath = currentPath.replace(/\/$/, '');
+  console.log('normalizedPath:', normalizedPath);
+  
   if (targetLang === 'en') {
-    return urlMappings[currentUrl] || `/en${currentUrl.substring(3)}`;
+    // Looking for German to English mapping
+    console.log('Looking for German to English mapping');
+    console.log('Direct mapping result:', urlMappings[normalizedPath]);
+    return urlMappings[normalizedPath] || `/${targetLang}${currentPath.slice(3)}`;
   } else {
-    return reverseUrlMappings[currentUrl] || `/de${currentUrl.substring(3)}`;
+    // Looking for English to German mapping
+    console.log('Looking for English to German mapping');
+    const matchingPair = Object.entries(urlMappings).find(([_, en]) => en === normalizedPath);
+    console.log('Found matching pair:', matchingPair);
+    if (matchingPair) {
+      return matchingPair[0]; // Return the German URL
+    }
+    return `/${targetLang}${currentPath.slice(3)}`;
   }
 }; 

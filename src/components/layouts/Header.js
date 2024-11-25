@@ -3,6 +3,7 @@ import { Link, withPrefix } from 'gatsby';
 import { generateUrl } from '../../scripts/urlHelper';
 import { LANGUAGES, getLanguageFromPath, switchLanguagePath, getNavigationData } from '../../scripts/languageManager';
 import { getTranslatedUrl } from '../../data/urlMappings';
+import { Location } from '@reach/router';
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
@@ -149,9 +150,12 @@ const SearchForm = () => (
 
 // Language switcher component
 const LanguageSwitcher = ({ currentPath }) => {
+  console.log('LanguageSwitcher currentPath:', currentPath); // Debug log
   const currentLang = getLanguageFromPath(currentPath);
+  console.log('currentLang:', currentLang); // Debug log
   
   const getTargetPath = (targetLang) => {
+    console.log('getTargetPath called with:', { currentPath, targetLang }); // Debug log
     if (!currentPath) return `/${targetLang}/`;
     return getTranslatedUrl(currentPath, targetLang);
   };
@@ -207,7 +211,7 @@ const Header = ({ activeNavItem, location }) => {
       <nav className="hidden md:block bg-white">
         <div className="max-w-[1165px] mx-auto px-3">
           <ul className="flex justify-end py-2">
-            {currentTopNavLinks.map((link) => (  // Verwende currentTopNavLinks statt topNavLinks
+            {currentTopNavLinks.map((link) => (
               <TopNavLink
                 key={link.to}
                 to={link.to}
@@ -293,4 +297,11 @@ const Header = ({ activeNavItem, location }) => {
   );
 };
 
-export default Header;
+// Make sure Header is wrapped with proper location info when exported
+export default function HeaderWithLocation(props) {
+  return (
+    <Location>
+      {({ location }) => <Header {...props} location={location} />}
+    </Location>
+  );
+}
