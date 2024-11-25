@@ -36,16 +36,18 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
     
   console.log('normalizedPath after prefix removal:', normalizedPath);
   
+  let translatedPath;
   if (targetLang === 'en') {
     // Looking for German to English mapping
-    const translatedPath = urlMappings[normalizedPath] || `/${targetLang}${currentPath.slice(3)}`;
+    translatedPath = urlMappings[normalizedPath] || `/${targetLang}${normalizedPath.slice(3)}`;
     console.log('Translated to EN:', translatedPath);
-    return withPrefix(translatedPath);
   } else {
     // Looking for English to German mapping
     const matchingPair = Object.entries(urlMappings).find(([_, en]) => en === normalizedPath);
-    const translatedPath = matchingPair ? matchingPair[0] : `/${targetLang}${currentPath.slice(3)}`;
+    translatedPath = matchingPair ? matchingPair[0] : `/${targetLang}${normalizedPath.slice(3)}`;
     console.log('Translated to DE:', translatedPath);
-    return withPrefix(translatedPath);
   }
+
+  // Only add prefix if it's not already there
+  return translatedPath.startsWith(pathPrefix) ? translatedPath : withPrefix(translatedPath);
 }; 
