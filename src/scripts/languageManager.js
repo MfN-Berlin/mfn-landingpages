@@ -8,7 +8,9 @@ export const DEFAULT_LANGUAGE = LANGUAGES.DE;
 export const getLanguageFromPath = (path) => {
   if (!path) return DEFAULT_LANGUAGE;
   
-  const matches = path.match(/^\/(en|de)\//);
+  const pathWithoutPrefix = path.replace('/mfn-landingpages', '');
+  
+  const matches = pathWithoutPrefix.match(/^\/(en|de)\//);
   
   if (matches && matches[1]) {
     return matches[1];

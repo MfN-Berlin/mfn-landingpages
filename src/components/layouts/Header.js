@@ -150,13 +150,17 @@ const SearchForm = () => (
 
 // Language switcher component
 const LanguageSwitcher = ({ currentPath }) => {
-  console.log('LanguageSwitcher currentPath:', currentPath); // Debug log
-  const currentLang = getLanguageFromPath(currentPath);
-  console.log('currentLang:', currentLang); // Debug log
+  console.log('LanguageSwitcher currentPath:', currentPath);
+  
+  // Remove the path prefix for language detection
+  const pathForLangDetection = currentPath?.replace('/mfn-landingpages', '');
+  const currentLang = getLanguageFromPath(pathForLangDetection);
+  
+  console.log('currentLang:', currentLang);
   
   const getTargetPath = (targetLang) => {
-    console.log('getTargetPath called with:', { currentPath, targetLang }); // Debug log
-    if (!currentPath) return `/${targetLang}/`;
+    console.log('getTargetPath called with:', { currentPath, targetLang });
+    if (!currentPath) return withPrefix(`/${targetLang}/`);
     return getTranslatedUrl(currentPath, targetLang);
   };
   
