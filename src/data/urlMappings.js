@@ -61,15 +61,16 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
 
   // Clean up any double slashes
   const cleanPath = translatedPath.replace(/\/+/g, '/');
-
+  
   // Get environment configuration
   const { hostname } = getEnvironmentConfig();
   
-  // If we're on GitHub Pages
+  // If we're on GitHub Pages, add prefix manually
   if (hostname === 'mfn-berlin.github.io') {
-    return `${pathPrefix}${cleanPath}`;
+    // Don't use withPrefix here to avoid double prefixing
+    return cleanPath.startsWith(pathPrefix) ? cleanPath : `${pathPrefix}${cleanPath}`;
   }
   
-  // In development or other environments
+  // In development, let Gatsby handle the prefix
   return cleanPath;
 }; 
