@@ -150,27 +150,33 @@ const SearchForm = () => (
 
 // Language switcher component
 const LanguageSwitcher = ({ currentPath }) => {
-  console.log('LanguageSwitcher currentPath:', currentPath);
+  const pathPrefix = '/mfn-landingpages';
+  console.log('LanguageSwitcher input currentPath:', currentPath);
   
-  // Remove the path prefix for language detection
-  const pathForLangDetection = currentPath?.replace('/mfn-landingpages', '');
-  const currentLang = getLanguageFromPath(pathForLangDetection);
+  // Remove prefix once and store the clean path
+  const cleanPath = currentPath?.startsWith(pathPrefix) 
+    ? currentPath.slice(pathPrefix.length)
+    : currentPath;
+  console.log('After prefix removal cleanPath:', cleanPath);
   
-  console.log('currentLang:', currentLang);
+  const currentLang = getLanguageFromPath(cleanPath);
+  console.log('Detected language:', currentLang);
   
   const getTargetPath = (targetLang) => {
-    console.log('getTargetPath called with:', { currentPath, targetLang });
-    if (!currentPath) return `/${targetLang}/`;
+    console.log('getTargetPath called with:', { cleanPath, targetLang });
     
-    // Remove any existing prefix before translation
-    const pathWithoutPrefix = currentPath.replace('/mfn-landingpages', '');
-    const translatedPath = getTranslatedUrl(pathWithoutPrefix, targetLang);
+    if (!cleanPath) return `/${targetLang}/`;
     
-    // Add prefix only if we're on GitHub Pages
+    const translatedPath = getTranslatedUrl(cleanPath, targetLang);
+    console.log('After translation:', translatedPath);
+    
     const { hostname } = getEnvironmentConfig();
-    return hostname === 'mfn-berlin.github.io' 
-      ? `/mfn-landingpages${translatedPath}`
+    const finalPath = hostname === 'mfn-berlin.github.io' 
+      ? `${pathPrefix}${translatedPath}`
       : translatedPath;
+    console.log('Final path:', finalPath, 'for hostname:', hostname);
+    
+    return finalPath;
   };
   
   return (
