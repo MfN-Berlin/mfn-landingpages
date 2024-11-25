@@ -15,6 +15,8 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://www.yourdomain.tld`,
+    languages: ['de', 'en'],
+    defaultLanguage: 'de'
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -60,6 +62,15 @@ module.exports = {
       options: {
         name: `static`,
         path: `${__dirname}/static`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'de',
+        langKeyForNull: 'de',
+        prefixDefault: false,
+        useLangKeyLayout: false,
       },
     },
   ],

@@ -13,6 +13,7 @@
     "embla-carousel-react": "^8.3.0",
     "fuse.js": "^7.0.0",
     "gatsby": "^5.13.7",
+    "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-preload-fonts": "^4.13.1",

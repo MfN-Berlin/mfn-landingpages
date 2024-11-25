@@ -292,6 +292,48 @@ Create a `.env.development` and `.env.production` file in the root directory:
 
 This project is licensed under the [appropriate license] - see the LICENSE file for details
 
+
+## 📄 Pages
+
+The website follows a multi-language structure with German (`/de/`) as the primary language. Pages are organized using a component-based architecture that emphasizes reusability and consistent layout patterns.
+
+### Common Page Structure
+Each page follows a consistent template:
+```jsx
+<>
+  <Header activeNavItem="current-section" />
+  <main>
+    <Section>
+      <AccessibilityNav currentPage="Page Title" />
+    </Section>
+    {/* Page Content */}
+    <Section>
+      <StoryTime /> {/* Hero section */}
+    </Section>
+    {/* Main Content Sections */}
+    <Section>
+      <Feedback /> {/* Optional */}
+    </Section>
+  </main>
+  <Footer />
+</>
+```
+
+### Common Patterns
+- All pages use `HeadComponent` for SEO
+- Image handling through Gatsby's GraphQL system
+- Consistent section spacing using the `Section` component
+- Accessibility navigation at the top
+- Contact section at the bottom
+- Responsive design considerations
+
+### Data Strategy
+- Images are queried via GraphQL at build time
+- Navigation data is centralized
+- Content is structured for easy maintenance
+- Components receive data through props
+
+
 ## 🧩 Components
 
 ### Elements
@@ -473,43 +515,3 @@ Main navigation and footer components.
   textPosition="bottom-left"
 />
 ```
-
-## 📄 Pages
-
-The website follows a multi-language structure with German (`/de/`) as the primary language. Pages are organized using a component-based architecture that emphasizes reusability and consistent layout patterns.
-
-### Common Page Structure
-Each page follows a consistent template:
-```jsx
-<>
-  <Header activeNavItem="current-section" />
-  <main>
-    <Section>
-      <AccessibilityNav currentPage="Page Title" />
-    </Section>
-    {/* Page Content */}
-    <Section>
-      <StoryTime /> {/* Hero section */}
-    </Section>
-    {/* Main Content Sections */}
-    <Section>
-      <Feedback /> {/* Optional */}
-    </Section>
-  </main>
-  <Footer />
-</>
-```
-
-### Common Patterns
-- All pages use `HeadComponent` for SEO
-- Image handling through Gatsby's GraphQL system
-- Consistent section spacing using the `Section` component
-- Accessibility navigation at the top
-- Contact section at the bottom
-- Responsive design considerations
-
-### Data Strategy
-- Images are queried via GraphQL at build time
-- Navigation data is centralized
-- Content is structured for easy maintenance
-- Components receive data through props
