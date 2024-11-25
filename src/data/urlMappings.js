@@ -39,15 +39,26 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
   let translatedPath;
   if (targetLang === 'en') {
     // Looking for German to English mapping
-    translatedPath = urlMappings[normalizedPath] || `/${targetLang}${normalizedPath.slice(3)}`;
+    if (normalizedPath.startsWith('/de/')) {
+      translatedPath = urlMappings[normalizedPath] || `/${targetLang}${normalizedPath.slice(3)}`;
+    } else {
+      // Already an English path, keep it
+      translatedPath = normalizedPath;
+    }
     console.log('Translated to EN:', translatedPath);
   } else {
     // Looking for English to German mapping
-    const matchingPair = Object.entries(urlMappings).find(([_, en]) => en === normalizedPath);
-    translatedPath = matchingPair ? matchingPair[0] : `/${targetLang}${normalizedPath.slice(3)}`;
+    if (normalizedPath.startsWith('/en/')) {
+      const matchingPair = Object.entries(urlMappings).find(([_, en]) => en === normalizedPath);
+      translatedPath = matchingPair ? matchingPair[0] : `/${targetLang}${normalizedPath.slice(3)}`;
+    } else {
+      // Already a German path, keep it
+      translatedPath = normalizedPath;
+    }
     console.log('Translated to DE:', translatedPath);
   }
 
-  // Only add prefix if it's not already there
-  return translatedPath.startsWith(pathPrefix) ? translatedPath : withPrefix(translatedPath);
+  // Clean up any double slashes and ensure proper prefix
+  const cleanPath = translatedPath.replace(/\/+/g, '/');
+  return cleanPath.startsWith(pathPrefix) ? cleanPath : withPrefix(cleanPath);
 }; 
