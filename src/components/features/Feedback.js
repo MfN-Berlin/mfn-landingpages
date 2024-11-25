@@ -3,21 +3,18 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import { StarIcon as StarOutline } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Button from '../elements/Button';
+import { getLanguageFromPath } from '../../scripts/languageManager';
+import { featureTranslations } from '../../data/featureTranslations';
 
 const Feedback = () => {
+  const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
+  const t = featureTranslations.feedback[language];
+
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const RATING_MESSAGES = {
-    1: "Das tut uns sehr leid! Ihre Erfahrung ist wichtig für uns - was können wir verbessern?",
-    2: "Das können wir besser! Wir würden gerne verstehen, was Sie enttäuscht hat.",
-    3: "Danke für Ihre ausgewogene Bewertung! Was hat Ihnen gefallen und wo sehen Sie Verbesserungspotenzial?",
-    4: "Schön, dass Ihnen die Seite gefällt! Wir sind neugierig zu erfahren, was Sie überzeugt hat.",
-    5: "Wow, das freut uns sehr! Mögen Sie uns erzählen, was Ihnen besonders gut gefallen hat?"
-  };
 
   const submitFeedback = async (rating, feedback) => {
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxzXHGFOGdlBVqOTXdh-0JRPn_P6FSNotc8YPrd96ORs6sNHSh4CiA-sooOZZpevM9rA/exec';
@@ -110,18 +107,18 @@ const Feedback = () => {
         <div className="flex items-center justify-between gap-12 flex-col md:flex-row ">
           <div className="flex flex-col gap-4 flex-1 text-center md:text-left">
             <h2 className="text-Black-900">
-              Finden Sie diese Seite hilfreich?
+              {t.pageHelpful}
             </h2>
             <p className="text-Black-500">
-              Mit Ihrer Bewertung helfen Sie uns, dieses Angebot für Sie zu verbessern. <br/>
-              Für diese Befragung erheben wir keine persönlichen Daten. (
+              {t.helpImprove} <br/>
+              {t.privacyNote} (
               <a 
-                href="https://www.museumfuernaturkunde.berlin/de/datenschutzerklaerung"
+                href={`/${language}/privacy-policy`}
                 className="underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Hinweise zum Datenschutz
+                {t.privacyLink}
               </a>
               )
             </p>
@@ -169,14 +166,14 @@ const Feedback = () => {
             </button>
 
             <h3 id="feedback-modal-title" className="text-xl font-bold mb-4">
-              {rating} {rating === 1 ? 'Stern' : 'Sterne'}
+              {rating} {rating === 1 ? t.star : t.stars}
             </h3>
-            <p className="mb-4">{RATING_MESSAGES[rating]}</p>
+            <p className="mb-4">{t.ratingMessages[rating]}</p>
             <textarea
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               className="w-full p-2 border rounded-lg mb-4 h-32"
-              placeholder="Ihr Feedback (optional)"
+              placeholder={t.feedbackPlaceholder}
               aria-label="Feedback text"
             />
             <div className="flex justify-end">
@@ -185,7 +182,7 @@ const Feedback = () => {
                 onClick={handleSubmit}
                 disabled={isSubmitting}
               >
-                Kommentar senden
+                {t.sendComment}
               </Button>
             </div>
           </div>

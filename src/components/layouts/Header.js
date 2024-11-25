@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, withPrefix } from 'gatsby';
 import { generateUrl } from '../../scripts/urlHelper';
-import { topNavLinks, mainNavData } from '../../data/navigationData';
+import { LANGUAGES, getLanguageFromPath, switchLanguagePath, getNavigationData } from '../../scripts/languageManager';
+import { getTranslatedUrl } from '../../data/urlMappings';
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
@@ -73,20 +74,20 @@ const SubmenuItem = ({ item }) => (
 );
 
 // Main navigation item (without dropdown container)
-const MainNavItem = ({ section, isActive, onMouseEnter }) => {
-  console.log('MainNavItem - Original section.to:', section.to);
-  const generatedUrl = generateUrl(section.to);
-  console.log('MainNavItem - Generated URL:', generatedUrl);
+const MainNavItem = ({ section, isActive, onMouseEnter, currentPath }) => {
+  const currentLang = getLanguageFromPath(currentPath);
+  const url = currentLang === LANGUAGES.EN ? 
+    section.to.replace(/^\/de\//, '/en/') : 
+    section.to;
 
   return (
-    <div 
+    <button 
       className="menu-item"
       onMouseEnter={() => onMouseEnter(section.to)}
-      role="navigation"
-      tabIndex={0}
+      type="button"
     >
       <Link
-        to={generatedUrl}
+        to={url}
         className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${
           isActive ? 'bg-Green-500 text-Black-900' : 'hover:bg-Green-500'
         }`}
@@ -95,7 +96,7 @@ const MainNavItem = ({ section, isActive, onMouseEnter }) => {
           {section.label}
         </span>
       </Link>
-    </div>
+    </button>
   );
 };
 
@@ -147,55 +148,71 @@ const SearchForm = () => (
 );
 
 // Language switcher component
-const LanguageSwitcher = () => (
-  <div className="language-switcher-language-url hidden sm:block" id="block-languageswitcherinterfacetext" role="navigation">
-    <ul className="flex m-0 items-center leading-[0]">
-      <li className="de list-none typography-p font-tradegothic-bold border-r-2 border-Gray-300">
-        <Link to="/de" className="language-link text-Green-500 px-3 inline-block leading-none" hrefLang="de">DE</Link>
-      </li>
-      <li className="en list-none typography-p font-tradegothic-bold border-r-2 border-Gray-300">
-        <Link to="/en" className="language-link text-Black-900 px-3 inline-block leading-none" hrefLang="en">EN</Link>
-      </li>
-      <li className="de-x-ls list-none">
-        <Link
-          to="../leichte-sprache"
-          className="language-link text-Black-900 pl-2 inline-block"
-          hrefLang="de-x-ls"
-          aria-label="Leichte Sprache"
-          title="Leichte Sprache"
-        >
-          <span className="svg-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.25 87.46" className="w-6 h-6 fill-current">
-              <g>
-                <path d="m64.69,34.6c-.98-.76-2.26-1.01-3.46-.7l-28.1,7.44-28.11-7.45c-1.2-.32-2.48-.06-3.46.7s-1.56,1.93-1.56,3.17v37.95c0,1.81,1.22,3.4,2.97,3.87l28.75,7.63c.3.11.61.18.93.21,0,0,0,0,0,0,.14.02.29.04.43.04.02,0,.04,0,.06,0,0,0,.01,0,.02,0,.05,0,.1-.01.15-.01.11,0,.22-.01.33-.03.29-.04.58-.1.86-.2l28.78-7.64c1.75-.47,2.97-2.05,2.97-3.87v-37.95c0-1.24-.58-2.41-1.56-3.17Zm-56.69,8.36l21.09,5.59v29.68l-21.09-5.6v-29.67Zm50.25,29.68l-21.09,5.6v-29.68l21.09-5.59v29.67Z" />
-                <path d="m33.13,37.79c10.42,0,18.9-8.48,18.9-18.9S43.55,0,33.13,0,14.23,8.48,14.23,18.9s8.48,18.9,18.9,18.9Zm0-29.79c6.01,0,10.9,4.89,10.9,10.9s-4.89,10.9-10.9,10.9-10.9-4.89-10.9-10.9,4.89-10.9,10.9-10.9Z" />
-              </g>
-            </svg>
-          </span>
-        </Link>
-      </li>
-    </ul>
-  </div>
-);
+const LanguageSwitcher = ({ currentPath }) => {
+  const currentLang = getLanguageFromPath(currentPath);
+  
+  const getTargetPath = (targetLang) => {
+    if (!currentPath) return `/${targetLang}/`;
+    return getTranslatedUrl(currentPath, targetLang);
+  };
+  
+  return (
+    <div className="language-switcher-language-url hidden sm:block" role="navigation">
+      <ul className="flex m-0 items-center leading-[0]">
+        <li className={`de list-none typography-p font-tradegothic-bold border-r-2 border-Gray-300 ${currentLang === LANGUAGES.DE ? 'active' : ''}`}>
+          <Link 
+            to={getTargetPath(LANGUAGES.DE)} 
+            className={`language-link px-3 inline-block leading-none ${currentLang === LANGUAGES.DE ? 'text-Green-500' : 'text-Black-900'}`} 
+            hrefLang="de"
+          >
+            DE
+          </Link>
+        </li>
+        <li className={`en list-none typography-p font-tradegothic-bold ${currentLang === LANGUAGES.EN ? 'active' : ''}`}>
+          <Link 
+            to={getTargetPath(LANGUAGES.EN)} 
+            className={`language-link px-3 inline-block leading-none ${currentLang === LANGUAGES.EN ? 'text-Green-500' : 'text-Black-900'}`} 
+            hrefLang="en"
+          >
+            EN
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 // Main Header component with centralized submenu management
-const Header = ({ activeNavItem }) => {
+const Header = ({ activeNavItem, location }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const currentLang = getLanguageFromPath(location?.pathname);
+  
+  // Get the correct navigation data based on language
+  const { topNavLinks: currentTopNavLinks, mainNavData: currentMainNavData } = 
+    getNavigationData(currentLang);
 
   // Find active section data
   const getActiveSectionData = () => {
-    const sectionKey = Object.keys(mainNavData).find(key => mainNavData[key].to === activeSubmenu);
-    return sectionKey ? mainNavData[sectionKey] : null;
+    const currentLang = getLanguageFromPath(location?.pathname);
+    const { mainNavData: currentMainNavData } = getNavigationData(currentLang);
+    
+    return Object.values(currentMainNavData).find(
+      section => section.to === activeSubmenu
+    );
   };
 
   return (
     <>
       {/* TopNav */}
-      <nav className="w-full bg-[rgba(255,255,255,0.949)]">
-        <div className="hidden sm:block max-w-[1165px] mx-auto pl-[12px] pr-[12px]">
-          <ul className="header-menu__list flex justify-end items-end flex-wrap list-none text-[12.6px] leading-[1.2em] m-0 typography-p pt-2 h-[32px]">
-            {topNavLinks.map((link, index) => (
-              <TopNavLink key={index} {...link}>
+      <nav className="hidden md:block bg-white">
+        <div className="max-w-[1165px] mx-auto px-3">
+          <ul className="flex justify-end py-2">
+            {currentTopNavLinks.map((link) => (  // Verwende currentTopNavLinks statt topNavLinks
+              <TopNavLink
+                key={link.to}
+                to={link.to}
+                isSpecial={link.isSpecial}
+              >
                 {link.label}
               </TopNavLink>
             ))}
@@ -215,52 +232,61 @@ const Header = ({ activeNavItem }) => {
       {/* Main Navigation */}
       <nav 
         className="sticky top-0 z-50 bg-white/95 relative"
-        onMouseLeave={() => setActiveSubmenu(null)}
+        role="navigation"
+        aria-label="Main Navigation"
       >
-        <div className="max-w-[1165px] mx-auto md:pl-[156px] pr-3">
-          <div className="flex items-center justify-between h-auto py-[7px] md:px-0 pr-[12px]">
-            <div className="flex flex-wrap justify-start">
-              {Object.entries(mainNavData).map(([key, section]) => (
-                <MainNavItem
-                  key={key}
-                  section={section}
-                  isActive={activeNavItem === key}
-                  onMouseEnter={() => setActiveSubmenu(section.to)}
-                />
-              ))}
-            </div>
-            <div className="flex items-center justify-end space-x-4 ml-4 md:ml-10">
-              <SearchForm />
-              <LanguageSwitcher />
-            </div>
-          </div>
-
-          {/* Centralized submenu container */}
-          {activeSubmenu && getActiveSectionData()?.submenuColumns && (
-            <div className="menu-namu-taxonomy-menu__submenu-container absolute left-0 w-screen min-h-[12em] bg-white max-h-[calc(100vh-var(--height-menu)-var(--height-menu-border))] overflow-y-auto">
-              <div className="menu-namu-taxonomy-menu__submenu pl-[180px] pt-[1.5em] pb-[1.5em] px-[12px]">
-                <div className="max-w-[1165px] mx-auto" style={{ columns: '280px auto', columnGap: '1em' }}>
-                  {getActiveSectionData().submenuColumns
-                    .sort((a, b) => a.column - b.column)
-                    .map((column, columnIndex) => (
-                      <div 
-                        key={`${activeSubmenu}-column-${column.column}-${columnIndex}`} 
-                        className="break-inside-avoid-column"
-                      >
-                        {column.items
-                          .sort((a, b) => a.order - b.order)
-                          .map((item) => (
-                            <SubmenuItem 
-                              key={`${activeSubmenu}-item-${item.to}`} 
-                              item={item} 
-                            />
-                          ))}
-                      </div>
-                    ))}
-                </div>
+        <div 
+          className="navigation-wrapper"
+          onMouseLeave={() => setActiveSubmenu(null)}
+          role="menubar"
+          tabIndex={0}
+        >
+          <div className="max-w-[1165px] mx-auto md:pl-[156px] pr-3">
+            <div className="flex items-center justify-between h-auto py-[7px] md:px-0 pr-[12px]">
+              <div className="flex flex-wrap justify-start">
+                {Object.entries(currentMainNavData).map(([key, section]) => (
+                  <MainNavItem
+                    key={key}
+                    section={section}
+                    isActive={activeNavItem === key}
+                    onMouseEnter={() => setActiveSubmenu(section.to)}
+                    currentPath={location?.pathname}
+                  />
+                ))}
+              </div>
+              <div className="flex items-center justify-end space-x-4 ml-4 md:ml-10">
+                <SearchForm />
+                <LanguageSwitcher currentPath={location?.pathname} />
               </div>
             </div>
-          )}
+
+            {/* Centralized submenu container */}
+            {activeSubmenu && getActiveSectionData() && (
+              <div className="menu-namu-taxonomy-menu__submenu-container absolute left-0 w-screen min-h-[12em] bg-white max-h-[calc(100vh-var(--height-menu)-var(--height-menu-border))] overflow-y-auto">
+                <div className="menu-namu-taxonomy-menu__submenu pl-[180px] pt-[1.5em] pb-[1.5em] px-[12px]">
+                  <div className="max-w-[1165px] mx-auto" style={{ columns: '280px auto', columnGap: '1em' }}>
+                    {getActiveSectionData().submenuColumns
+                      .sort((a, b) => a.column - b.column)
+                      .map((column, columnIndex) => (
+                        <div 
+                          key={`${activeSubmenu}-column-${column.column}-${columnIndex}`} 
+                          className="break-inside-avoid-column"
+                        >
+                          {column.items
+                            .sort((a, b) => a.order - b.order)
+                            .map((item) => (
+                              <SubmenuItem 
+                                key={`${activeSubmenu}-item-${item.to}`} 
+                                item={item} 
+                              />
+                            ))}
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </nav>
     </>

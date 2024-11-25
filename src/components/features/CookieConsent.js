@@ -59,7 +59,7 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
       `domain=${domain}; ` +
       'SameSite=Strict';
       
-    console.log(`Setting cookie for domain: ${domain}, path: ${path}`);
+    // console.log(`Setting cookie for domain: ${domain}, path: ${path}`);
   };
 
   const getCookie = (name) => {
@@ -75,7 +75,7 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
     if (typeof window === 'undefined') return;
 
     const existingConsent = getCookie('cookie-agreed');
-    console.log('Existing consent:', existingConsent);
+    // console.log('Existing consent:', existingConsent);
 
     if (!existingConsent) {
       setIsVisible(true);

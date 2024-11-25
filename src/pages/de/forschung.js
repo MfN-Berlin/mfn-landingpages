@@ -13,7 +13,7 @@ import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import HeadComponent from '../../components/layouts/HeadComponent'
 import Teaser from '../../components/layouts/Teaser';
 
-const IndexPage = () => {
+const VisitPage = () => {
     const data = useStaticQuery(graphql`
     query {
       allFile(filter: { sourceInstanceName: { eq: "images" } }) {
@@ -540,12 +540,12 @@ const IndexPage = () => {
     )
 }
 
-export default IndexPage
+export default VisitPage
 
 export const Head = () => (
     <HeadComponent
-        title="Forschung"
-        description="Willkommen im Museum für Naturkunde Berlin - Entdecken Sie unsere digitalen Angebote und planen Sie Ihren Besuch."
-        pathname="/forschung"
+        title="Plan Your Visit"
+        description="Plan your visit to the Museum für Naturkunde Berlin"
+        pathname="/en/visit"
     />
 )
