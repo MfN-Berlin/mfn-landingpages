@@ -1,4 +1,3 @@
-import { withPrefix } from 'gatsby';
 import { getEnvironmentConfig } from '../scripts/urlHelper';
 
 // Map of URLs between languages (DE -> EN and EN -> DE)
@@ -27,7 +26,7 @@ export const urlMappings = {
 export const getTranslatedUrl = (currentPath, targetLang) => {
   console.log('getTranslatedUrl input:', { currentPath, targetLang });
 
-  if (!currentPath) return withPrefix(`/${targetLang}/`);
+  if (!currentPath) return `/${targetLang}/`;
 
   // Remove the path prefix if it exists
   const pathPrefix = '/mfn-landingpages';
@@ -59,18 +58,6 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
     console.log('Translated to DE:', translatedPath);
   }
 
-  // Clean up any double slashes
-  const cleanPath = translatedPath.replace(/\/+/g, '/');
-  
-  // Get environment configuration
-  const { hostname } = getEnvironmentConfig();
-  
-  // If we're on GitHub Pages, add prefix manually
-  if (hostname === 'mfn-berlin.github.io') {
-    // Don't use withPrefix here to avoid double prefixing
-    return cleanPath.startsWith(pathPrefix) ? cleanPath : `${pathPrefix}${cleanPath}`;
-  }
-  
-  // In development, let Gatsby handle the prefix
-  return cleanPath;
+  // Clean up any double slashes and return without prefix
+  return translatedPath.replace(/\/+/g, '/');
 }; 

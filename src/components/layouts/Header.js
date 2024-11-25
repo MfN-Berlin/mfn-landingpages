@@ -4,6 +4,7 @@ import { generateUrl } from '../../scripts/urlHelper';
 import { LANGUAGES, getLanguageFromPath, switchLanguagePath, getNavigationData } from '../../scripts/languageManager';
 import { getTranslatedUrl } from '../../data/urlMappings';
 import { Location } from '@reach/router';
+import { getEnvironmentConfig } from '../../scripts/environmentConfig';
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
@@ -160,11 +161,17 @@ const LanguageSwitcher = ({ currentPath }) => {
   
   const getTargetPath = (targetLang) => {
     console.log('getTargetPath called with:', { currentPath, targetLang });
-    if (!currentPath) return withPrefix(`/${targetLang}/`);
+    if (!currentPath) return `/${targetLang}/`;
     
     // Remove any existing prefix before translation
     const pathWithoutPrefix = currentPath.replace('/mfn-landingpages', '');
-    return getTranslatedUrl(pathWithoutPrefix, targetLang);
+    const translatedPath = getTranslatedUrl(pathWithoutPrefix, targetLang);
+    
+    // Add prefix only if we're on GitHub Pages
+    const { hostname } = getEnvironmentConfig();
+    return hostname === 'mfn-berlin.github.io' 
+      ? `/mfn-landingpages${translatedPath}`
+      : translatedPath;
   };
   
   return (
