@@ -50,7 +50,7 @@ const UpcomingHoliday = () => {
     const interval = setInterval(findUpcomingHoliday, 3600000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [HOLIDAYS]);
 
   if (!upcomingHoliday) return null;
 

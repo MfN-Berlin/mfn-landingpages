@@ -146,16 +146,19 @@ const Feedback = () => {
       </div>
 
       {showModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-full"
+        <button 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-full border-0"
           onClick={handleClickOutside}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="feedback-modal-title"
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') handleClose();
+          }}
+          aria-label="Close modal"
         >
           <div 
             className="bg-white rounded-lg p-6 max-w-md w-full relative"
-            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="feedback-modal-title"
           >
             <button 
               onClick={handleClose}
@@ -186,7 +189,7 @@ const Feedback = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </button>
       )}
     </>
   );

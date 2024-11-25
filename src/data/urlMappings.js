@@ -1,6 +1,3 @@
-import { getEnvironmentConfig } from '../scripts/urlHelper';
-
-// Map of URLs between languages (DE -> EN and EN -> DE)
 export const urlMappings = {
   // German to English
   '/de/': '/en/',
@@ -24,8 +21,6 @@ export const urlMappings = {
 };
 
 export const getTranslatedUrl = (currentPath, targetLang) => {
-  console.log('getTranslatedUrl input:', { currentPath, targetLang });
-
   if (!currentPath) return `/${targetLang}/`;
 
   // Remove the path prefix if it exists
@@ -33,8 +28,6 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
   const normalizedPath = currentPath
     .replace(pathPrefix, '')  // Remove path prefix if present
     .replace(/\/$/, '');      // Remove trailing slash
-    
-  console.log('normalizedPath after prefix removal:', normalizedPath);
   
   let translatedPath;
   if (targetLang === 'en') {
@@ -45,7 +38,6 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
       // Already an English path, keep it
       translatedPath = normalizedPath;
     }
-    console.log('Translated to EN:', translatedPath);
   } else {
     // Looking for English to German mapping
     if (normalizedPath.startsWith('/en/')) {
@@ -55,7 +47,6 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
       // Already a German path, keep it
       translatedPath = normalizedPath;
     }
-    console.log('Translated to DE:', translatedPath);
   }
 
   // Clean up any double slashes and return without prefix

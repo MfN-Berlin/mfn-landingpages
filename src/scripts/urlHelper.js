@@ -1,4 +1,3 @@
-import { withPrefix } from 'gatsby';
 import { getLanguageFromPath } from './languageManager';
 import { getTranslatedUrl } from '../data/urlMappings';
 
