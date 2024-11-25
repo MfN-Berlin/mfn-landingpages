@@ -1,4 +1,5 @@
 import { withPrefix } from 'gatsby';
+import { getEnvironmentConfig } from '../scripts/urlHelper';
 
 // Map of URLs between languages (DE -> EN and EN -> DE)
 export const urlMappings = {
@@ -60,13 +61,15 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
 
   // Clean up any double slashes
   const cleanPath = translatedPath.replace(/\/+/g, '/');
+
+  // Get environment configuration
+  const { hostname } = getEnvironmentConfig();
   
-  // If we're in production (has pathPrefix)
-  if (currentPath.includes(pathPrefix)) {
-    // Ensure single pathPrefix
+  // If we're on GitHub Pages
+  if (hostname === 'mfn-berlin.github.io') {
     return `${pathPrefix}${cleanPath}`;
   }
   
-  // In development
+  // In development or other environments
   return cleanPath;
 }; 
