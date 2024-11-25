@@ -154,8 +154,8 @@ const VisitPage = () => {
                 <Section backgroundColor="bg-white" columns={1} padding="py-8">
                     <Teaser
                         imageProps={{
-                            imageName: '180809_ct_09_www_c_carola-radke_mfn.jpg',
-                            alt: "Mitarbeiter Martin Kirchner arbeitet am Computertomografen im neuen CT Labor",
+                            imageName: 'Neues CT im Museum für Naturkunde (c) Pablo Castagnola.jpg',
+                            alt: "Neues CT im Museum für Naturkunde (c) Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[16/9]"
                         }}
@@ -182,7 +182,7 @@ const VisitPage = () => {
                             kicker: "Forschungsbereiche & Infrastruktur",
                             headline: "Forschen am Museum",
                             headlineStyle: "h2",
-                            body: "Wir forschen in Kooperationen, sammlungsbasiert und global vernetzt. Teams aus unterschiedlichen Fachrichtungen und mit verschiedenen Aufgaben vertiefen in einem dynamischen Prozess ihre Forschung über das Leben, die Erde und unser Sonnensystem.",
+                            body: "Am Museum erforschen Teams aus verschiedenen Disziplinen das Leben auf der Erde. Unsere Sammlung ist die Basis für weltweit vernetzte Forschung. Hieran beteiligen wir die Gesellschaft: In Kooperation mit Zivilgesellschaft, Politik und Wirtschaft entwickeln wir Formate, die Erkenntnisse vermitteln, für alle relevantes Wissen schaffen und die Bedeutung unserer Sammlung greifbar machen.",
                             spacing: "wide",
                             buttons: [
                                 {
@@ -205,32 +205,32 @@ const VisitPage = () => {
                     <Card
                         variant="green"
                         imageProps={{
-                            imageName: "TRR170_TeaserBild_0.jpeg",
-                            alt: "collision event between two celestial bodies",
+                            imageName: "DART_@NASAJohns Hopkins APL.jpg",
+                            alt: "Ein Satellit DART_@NASAJohns Hopkins APL.jpg",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            kicker: "forschungsbereich 1",
+                            kicker: "Forschungsbereich 1",
                             headline: "Dynamik der Natur",
                             headlineStyle: "h3",
-                            body: "Untersuchung der Prozesse, die die Entwicklung und Vielfalt des Lebens auf der Erde prägen.",
+                            body: "Wir untersuchen die Prozesse, die die natürliche Welt formen, von der Evolution und Vielfalt der Arten bis hin zur Entstehung des Sonnensystems.",
                             spacing: "regular"
                         }}
                     />
                     <Card
                         variant="green"
                         imageProps={{
-                            imageName: "Biodivwand_Mittelteil__(c)_Dittmann_MfN.jpg",
-                            alt: "Biodiversitätswand des Museums für Naturkunde",
+                            imageName: "DSC00396_web.jpg",
+                            alt: "Sammlung des Museums für Naturkunde",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            kicker: "forschungsbereich 2",
-                            headline: "Zu﻿kunft der Sammlung",
+                            kicker: "Forschungsbereich 2",
+                            headline: "Zukkunft der Sammlung",
                             headlineStyle: "h3",
-                            body: "Offene Sammlungen und neue Ansätze, die Forschung und Entdeckung weltweit unterstützen.",
+                            body: "Wir gestalten eine offene und vernetzte Sammlung, die durch innovative Ansätze im Daten- und Wissensmanagement neue Wege für Forschung und Wissenstransfer eröffnet – gemeinsam mit Partnern aus Wissenschaft, Gesellschaft und Kultur.",
                             spacing: "regular"
                         }}
                     />
@@ -238,16 +238,16 @@ const VisitPage = () => {
                     <Card
                         variant="green"
                         imageProps={{
-                            imageName: "large_Header_2023_klein_beschnitten_belichted_7cca538a55.jpg",
-                            alt: "Naturblick",
+                            imageName: "titel_fb3.png",
+                            alt: "Zusammenfassung in einer Graphik der Keynote von Martina Schraudner am 26.9.2022. zum Thema Partizipation in der Wissenschaft.",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
                             kicker: "forschungsbereich 3",
-                            headline: "G﻿esellschaft und Natur",
+                            headline: "Geesellschaft und Natur",
                             headlineStyle: "h3",
-                            body: "Im Dialog mit verschiedenen Akteuren entstehen gemeinsame Lösungen für den Schutz der Natur.",
+                            body: "Wir erforschen, wie Partizipation und Wissensaustausch Forschung und Praxiswissen für Natur bereichern.",
                             spacing: "regular"
                         }}
                     />
@@ -313,9 +313,9 @@ const VisitPage = () => {
                         }}
                         textProps={{
 
-                            headline: "Unsere Labore & IT",
+                            headline:  "Labore & IT",
                             headlineStyle: "h3",
-                            body: "Neben unserer großen Sammlung unterhält das Museum eine Vielzahl an hochmodernen Laboren, eine IT-Forschungs-infrastruktur sowie eine Forschungsdatenmanagement-infrastruktur. LaboreIT-SystemeForschungs-Datenmanagement",
+                            body: "Neben unserer großen Sammlung unterhält das Museum eine Vielzahl an hochmodernen Laboren, eine IT-Forschungs-infrastruktur sowie eine Forschungsdatenmanagement-infrastruktur.",
                             spacing: "regular"
                         }}
                     />
@@ -330,7 +330,7 @@ const VisitPage = () => {
                         textProps={{
                             headline: "Wissen verbindet",
                             headlineStyle: "h3",
-                            body: "Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten. Formate zur Wissenschafts-Kommunikation Politikberatung Unser Engagement für Bürger-Wissenschaften",
+                            body: "Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
                             spacing: "regular"
                         }}
                     />
@@ -341,8 +341,8 @@ const VisitPage = () => {
                 <Section backgroundColor="bg-White" columns={1} padding="py-16">
                     <StoryTime
                         imageProps={{
-                            imageName: 'Portrait_4_w.png', // Replace with your actual image
-                            alt: "Wissenschaftler bei der Forschungsarbeit. Bild: Pablo Castagnola",
+                            imageName: 'LMA_4678.jpg', // Replace with your actual image
+                            alt: "Interessierter Forscher bei der wissenschaftlichen Arbeit. Foto: Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[4/3] object-cover"
                         }}
@@ -350,7 +350,7 @@ const VisitPage = () => {
                             kicker: "Kontakt",
                             headline: "Teams & Projekte",
                             headlineStyle: "h2",
-                            body: "Vernetzen Sie sich mit unseren über 200 Wissenschaftlichen Mitarbeitenden, die sich in über 100 Projekten engagieren.",
+                            body: "Vernetzen Sie sich mit unseren über 200 Wissenschaftler:innen, die sich in über 100 Projekten engagieren.",
                             spacing: "wide",
                             buttons: [
                                 {

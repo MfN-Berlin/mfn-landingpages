@@ -45,26 +45,21 @@ const IndexPage = () => {
                 <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
                     <StoryTime
                         imageProps={{
-                            imageName: "naturtiefen_mfnberlin_c_klara_harden.jpg",
-                            alt: "naturtiefen_mfnberlin_c_klara_harden",
+                            imageName: "240702_mfn_0079.jpg",
+                            alt: "Bürger:innen und Projektbeteiligte von &quot;Vielfalt verstehen&quot; in einer Grünanlage in Berlin-Reinickendorf",
                             imageMap: imageMap,
                             className: "w-full h-full object-cover"
                         }}
                         textProps={{
                             kicker: "Wissenschaft erleben",
                             headline: "Engagieren Sie sich für Natur!",
-                            body: "Entdecken Sie unsere Angebote sich zu beteiligen und gemeinsam neues Wissen zu schaffen. Finden Sie was zu Ihnen passt: ",
+                            body: "Entdecken Sie unsere Angebote, sich an unserer Forschung zu beteiligen, gemeinsam neues Wissen zu schaffen und Natur zu erleben.",
                             headlineStyle: "h1",
                             spacing: "wide",
                             alignment: "center",
                             buttons: [
                                 {
                                     text: "Ehrenamt",
-                                    url: "/teams-projekte",
-                                    variant: "plain"
-                                },
-                                {
-                                    text: "  Partizipation",
                                     url: "/teams-projekte",
                                     variant: "plain"
                                 },
@@ -109,14 +104,14 @@ const IndexPage = () => {
                         variant="classic"
                         alignment="center"
                         imageProps={{
-                            imageName: "bioblitz_9822_c_carola-radke_mfn.jpg",
-                            alt: "Mann beim Insektensammeln",
+                            imageName: "Christine Kuhnert (c) Pablo Castagnola_1.jpg",
+                            alt: "Eine Ehrenamtliche beobachtet mit einem Fernglas Vögel an der Berliner Spree",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
                             headline: "Ehrenamtliches Engagement",
-                            body: "Helfen Sie bei der Erschließung unserer Sammlungsobjekte und tragen Sie aktiv zur Weitergabe von Wissen bei. Dabei sammeln Sie unter anderem Erfahrungen in der Museumsarbeit, Datenbankerfassung und Forschung. Lesen Sie hier mehr über Ihre möglichen Aufgabenbereiche",
+                            body: "Helfen Sie bei der Erschließung unserer Sammlung und tragen Sie aktiv zur Entwicklung neuen Wissens bei. Dabei sammeln Sie unter anderem Erfahrungen in der Museumsarbeit, Datenbankerfassung und Forschung. Lesen Sie hier mehr über Ihre möglichen Aufgabenbereiche.",
                             headlineStyle: "h3",
                             alignment: "center"
                         }}
@@ -135,8 +130,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Transkriptionswerkstatt",
-                            body: "Helfen Sie der historischen Arbeitsstelle des Museums historische Dokumente aus unserem Archiv wieder leserlich und für die Forschung nutzbar zu machen. Voraussetzung ist die Kenntnis der altdeutschen Sprachen Kurrent und Sutterlin.",
+                            headline: "Helfen Sie dem Archiv",
+                            body: "Helfen Sie der historischen Arbeitsstelle des Museums historische Dokumente wieder leserlich und für die Forschung nutzbar zu machen. Voraussetzung ist die Kenntnis altdeutscher Sprachen, wie Kurrent oder Sütterlin.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -146,14 +141,14 @@ const IndexPage = () => {
                     <Card
                         variant="classic"
                         imageProps={{
-                            imageName: "Key visual_NaturderDinge_ohneLogo_klein.jpg",
-                            alt: "Objektcollage aus Sammlungsobjekten von Natur der Dinge",
+                            imageName: "Digamus_final2.jpg",
+                            alt: "Ansicht einiger Objekte aus der Online Sammlung 'Natur der Dinge' vor einer Kartenansicht die den Standort verschiedener beigetragener Objekte innerhalb Europas zeigt.",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
                             headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropozäns",
-                            body: "Apfelbäume blühen früher, Schmetterlinge verschwinden: Was ist passiert? Wie hat sich ihre Umwelt verändert? Welche persönlichen Dinge oder Zeugnisse aus der Vergangenheit erzählen davon?  Tragen Sie dazu bei, mit Ihrem Objekt und Ihrer Geschichte den Wandel der Umwelt und die Herausforderungen der Zukunft besser zu verstehen!",
+                            body: "Wie hat sich Ihre Umwelt verändert? Welche persönlichen Dinge oder Zeugnisse aus der Vergangenheit erzählen davon? Tragen Sie dazu bei, mit Ihrem Objekt und Ihrer Geschichte den Wandel der Umwelt und die Herausforderungen der Zukunft besser zu verstehen!",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -173,7 +168,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Offenes Museumsatelier im Mikroskopierzentrum",
-                            body: "Helfen Sie bei der Erschließung unserer Sammlungsobjekte und tragen Sie aktiv zur Weitergabe von Wissen bei. Dabei sammeln Sie unter anderem Erfahrungen in der Museumsarbeit, Datenbankerfassung und Forschung. Lesen Sie hier mehr über Ihre möglichen Aufgabenbereiche.",
+                            body: "Farbenprächtige Schmetterlinge, beeindruckende Vogelflügel, uralte Fossilien: In unserem Offenen Museumsatelier liegen die Objekte nicht hinter Glas, sondern auf Ihrer Hand, vor Ihrer Nase oder unter dem Mikroskop.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -183,14 +178,14 @@ const IndexPage = () => {
                     <Card
                         variant="classic"
                         imageProps={{
-                            imageName: "citizensciencefest (14 von 32).jpeg",
-                            alt: "Junge sucht Insekten im Wald. Foto: Karo Krämer/WiD",
+                            imageName: "bioblitz_9822_c_carola-radke_mfn.jpg",
+                            alt: "Mann beim Insektensammeln",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
                             headline: "mit:forschen!",
-                            body: "Gemeinsam mit Wissenschaft im Dialog betreiben wir mit:forschen!, die zentrale Online-Plattform für Citizen Science in Deutschland. Dort stellen sich aktuell über 270 Projekte aus den unterschiedlichsten Disziplinen vor und laden zum Mitforschen ein.",
+                            body: "Gemeinsam mit Wissenschaft im Dialog betreiben wir mit:forschen!, die zentrale Online-Platform für Citizen Science in Deutschland. Beteiligen Sie sich an einem der 270 Projekte aus den unterschiedlichsten Disziplinen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -207,7 +202,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Netzwerk Naturwissen",
-                            body: "Klimawandel, Artensterben oder Biodiversitätsverlust: Die Herausforderungen der Gegenwart können ganz offensichtlich nicht alleine bewältigt werden. Für ein umfassendes Bild braucht es ohne Frage einen multiperspektivischen Austausch.",
+                            body: "Im Austausch reflektieren wir Naturwissen aus unterschiedlichen Perspektiven. Einmal im Monat treffen wir uns dazu auch, um im Museum gemeinsam wissenschaftliche Texte zu diskutieren.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -219,7 +214,7 @@ const IndexPage = () => {
                     <Blockquote
                         text="„Unsere Mission: Wir erforschen die Erde und das Leben im Dialog mit den Menschen.“"
                         source="Prof. Johannes Vogel"
-                        sourceTitle="(Leiter des Museums)"
+                        sourceTitle="(Generaldirektor des Museums für Naturkunde Berlin)"
                         backgroundColor=""  // Green-500 color
                         className="bg-Green-500"
                     />
@@ -235,7 +230,7 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Naturblick - Stadtnatur entdecken",
+                            headline: "Naturblick: Stadtnatur entdecken",
                             body: "Mit Naturblick können Sie Pflanzen und Tiere einfach bestimmen und mehr über die Natur in ihrer Stadt erfahren. Speichern Sie Ihre Beobachtungen und teilen Sie sie diese mit Wissenschaft und Naturschutz.",
                             headlineStyle: "h3",
                             alignment: "left"
@@ -252,7 +247,7 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Taschenlampenführung",
+                            headline: "Taschenlampenführungen",
                             body: "Nachdem sich die Tore des Museums geschlossen haben, schleichen Sie im Licht Ihrer Taschenlampen durch die dunklen Museumsräume. Auf der Suche nach den unterschiedlichen Tieren der Nacht erkunden Sie die Ausstellungen des Museums.",
                             headlineStyle: "h3",
                             alignment: "left"
@@ -273,7 +268,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Natur künstlerisch erleben – Führung und Masken basteln",
-                            body: "Im Sauriersaal lernen die Kinder den über 13 Meter großen Giraffatitan und viele weitere Dinosaurier wie den Fleischfresser Allosaurus oder den Stacheldinosaurier Kentrosaurus kennen. ",
+                            body: "Im Sauriersaal lernen die Kinder den über 13 Meter großen <em>Giraffatitan</em> und viele weitere Dinosaurier, wie den Fleischfresser <em>Allosaurus</em> oder den Stacheldinosaurier <em>Kentrosaurus</em>, kennen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -307,7 +302,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Fachgruppen",
-                            body: "Bei uns treffen sich regelmäßig Wissenschaftler, Hobbysammler und Interessierte in Fachgruppen zu spannenden wissenschaftlichen Themen. Kommen Sie vorbei, unterstützen Sie uns bei Mitmachaktionen und Informationsständen und werden Sie Teil unserer Events wie Kinderfeste und Lange Nächte!",
+                            body: "Bei uns treffen sich regelmäßig Forschende, Hobbysammler:innen und weitere Interessierte in Fachgruppen zu spannenden wissenschaftlichen Themen. Kommen Sie vorbei, unterstützen Sie uns bei Mitmachaktionen und Informationsständen und werden Sie Teil unserer Events, wie zum Beispiel den Langen Nächten.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -332,7 +327,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Citizen Science/ Bürgerforschung",
-                            body: "Unterstützen Sie die Arbeit von Wissenschaftler*innen und schaffen so neues Wissen. Werden Sie Teil des Forschungsprozesses und gestalten Sie ihn, je nach Art der Beteiligung, aktiv mit, stillen Sie ihre eigene Neugier … und vor allem haben viel Spaß beim Mitforschen!",
+                            body: "Unterstützen Sie die Arbeit von Wissenschaftler:innen und schaffen so neues Wissen. Werden Sie Teil des Forschungsprozesses und gestalten Sie ihn, je nach Art der Beteiligung, aktiv mit, stillen Sie ihre eigene Neugier – und vor allem haben viel Spaß beim Mitforschen!",
                             headlineStyle: "h3"
                         }}
                         buttonProps={{
@@ -348,14 +343,14 @@ const IndexPage = () => {
                     <Card
                         variant="classic"
                         imageProps={{
-                            imageName: "1685433666641.jpeg",
-                            alt: "Die Sammlung des Museums für Naturkunde. Foto: (c) Carola Radke",
+                            imageName: "sammlungsraum_diptera_17_chwaja-goetz_mfn.jpg",
+                            alt: "Sammlungsraum mit Insektenkästen, Foto: Hwa Ja Götz",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
                             headline: "Ehrenamt",
-                            body: "Unterstützen Sie das Museum, indem Sie Sammlungsobjekte ordnen, inventarisieren, etikettieren, Daten in Datenbanken erfassen und Recherchen übernehmen. Spezialist: innen können auch die Bearbeitung bestimmter Gruppen oder Teilsammlungen in unseren wissenschaftlichen Sammlungen übernehmen.",
+                            body: "Unterstützen Sie das Museum, indem Sie Sammlungsobjekte ordnen, inventarisieren, etikettieren, Daten in Datenbanken erfassen und Recherchen übernehmen. Fachleute können auch die Bearbeitung bestimmter Gruppen oder Teilsammlungen in unseren wissenschaftlichen Sammlungen übernehmen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}

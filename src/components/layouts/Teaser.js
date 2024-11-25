@@ -54,6 +54,7 @@ const Teaser = ({
         />
       )}
       <div className={`
+        absolute top-0 left-0 right-0 bottom-0
         ${isCircle ? (
           isGreenCircle ? 
           'min-h-[20rem] sm:min-h-[28rem]' :
