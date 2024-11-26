@@ -79,5 +79,8 @@ module.exports = {
     DEV_SSR: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
   },
+  assetPrefix: isProduction 
+    ? 'https://mfn-berlin.github.io/mfn-landingpages'
+    : '',
   pathPrefix: "/",
 }
