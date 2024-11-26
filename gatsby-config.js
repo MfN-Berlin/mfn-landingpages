@@ -79,5 +79,5 @@ module.exports = {
     DEV_SSR: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
   },
-  pathPrefix: "/mfn-landingpages",
+  pathPrefix: "/",
 }
