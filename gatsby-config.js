@@ -9,7 +9,7 @@
  */
 const isProduction = process.env.NODE_ENV === 'production'
 
-module.exports = {
+module.exports = { 
   siteMetadata: {
     title: `My Gatsby Tailwind Site`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
