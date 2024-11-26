@@ -16,6 +16,7 @@ import OpenToday from '../../components/features/OpenToday'
 import Feedback from '../../components/features/Feedback'
 import HeadComponent from '../../components/layouts/HeadComponent'
 import UpcomingHoliday from '../../components/features/UpcomingHoliday';
+import { getAssetPath } from '../../scripts/assetPrefix';
 
 
 const IndexPage = () => {
@@ -496,59 +497,59 @@ const IndexPage = () => {
               <div className="p-5 font-bold">
                 <p>U-Naturkundemuseum (
                   <svg className="inline px-[0.1em] h-[15px] w-[24px] m-0 mt-[-3px]" aria-label="U-Bahnlinie 6">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-u6")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-u6")} />
                   </svg>
                   <svg className="inline px-[0.1em] h-[15px] w-[26px] m-0 mt-[-3px]" aria-label="Tramlinie M5">
-                        <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m5")} />
+                        <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-m5")} />
                   </svg>
                   <svg className="inline px-[0.1em] h-[15px] w-[26px] m-0 mt-[-3px]" aria-label="Tramlinie M8">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m8")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-m8")} />
                   </svg>
                   <svg className="inline px-[0.1em] h-[15px] w-[33px] m-0 mt-[-3px]" aria-label="Tramlinie M10">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m10")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-m10")} />
                   </svg>
                   <svg className="inline px-[0.1em] h-[15px] w-[33px] m-0 mt-[-3px]" aria-label="Tramlinie M12">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m12")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-m12")} />
                   </svg>
                   <svg className="inline px-[0.1em] h-[24px] w-[20px] m-0 mt-[-3px]" aria-label="Buslinien">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-bus")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-bus")} />
                   </svg>
                   <span className="text-xs font-normal text-Black-700"> 245 N40 </span>
                   )<span className="font-italic text-Black-500">
                     <svg className="inline px-[0.1em] h-[18px] mt-[-4px] w-[24px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
+                      <use href={getAssetPath("/images/transport-icons3.svg?v=1#person-walking")} />
                     </svg>300m Fußweg</span></p>
                 <br />
 
                 <p>S-Hauptbahnhof (
                   <svg className="inline px-[0.1em] h-[15px] m-0 w-[28px] mt-[-3px]" aria-label="S-Bahnlinie 5">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s5")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-s5")} />
                   </svg>
                   <svg className="inline px-[0.1em] h-[15px] m-0 w-[28px] mt-[-3px]" aria-label="S-Bahnlinie 7">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s7")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-s7")} />
                   </svg>
                   )<span className="font-italic text-Black-500">
                     <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
+                      <use href={getAssetPath("/images/transport-icons3.svg?v=1#person-walking")} />
                     </svg>1.300m Fußweg</span></p>
                 <br />
 
                 <p>S-Nordbahnhof (
                   <svg className="inline px-[0.1em] h-[15px] w-[28px] m-0 mt-[-3px]" aria-label="S-Bahnlinie 1">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s1")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-s1")} />
                   </svg>
                   <svg className="inline px-[0.1em] h-[15px] w-[28px] m-0 mt-[-3px]" aria-label="S-Bahnlinie 2">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s2")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-s2")} />
                   </svg>
                   )<span className="font-italic text-Black-500">
                     <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
+                      <use href={getAssetPath("/images/transport-icons3.svg?v=1#person-walking")} />
                     </svg>900m Fußweg</span></p>
                 <br />
 
                 <p>Invalidenpark (
                   <svg className="inline px-[0.1em] h-[24px] w-[20px] m-0 mt-[-3px]" aria-label="Buslinien">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-bus")} />
+                    <use href={getAssetPath("/images/transport-icons3.svg?v=1#bvg-bus")} />
                   </svg>
                   <span className="text-xs font-normal text-Black-700"> 120 123 142 245 N20 N40 </span>
                   )<span className="font-italic text-Black-500">
