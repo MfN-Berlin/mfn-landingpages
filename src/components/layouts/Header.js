@@ -4,6 +4,7 @@ import { generateUrl } from '../../scripts/urlHelper';
 import { LANGUAGES, getLanguageFromPath, getNavigationData } from '../../scripts/languageManager';
 import { getTranslatedUrl } from '../../data/urlMappings';
 import { Location } from '@reach/router';
+import { getAssetPath } from '../../scripts/assetPrefix';
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
@@ -107,7 +108,7 @@ const Logo = () => (
     <div className="mfn-system-branding-block max-w-[calc(100vw-13px)] md:absolute bg-white md:top-[12px] pl-[1px] pr-[2px] top-[13px]">
       <Link to="/" className="block outline-none text-[#7da30b] transition duration-3000">
         <img
-          src={withPrefix('/images/logo.svg')}
+          src={getAssetPath('/images/logo.svg')}
           alt="Museum für Naturkunde Berlin"
           className="block z-[var(--z-index-logo)] bg-[var(--color-background-logo)] px-[0.7em] h-[84px] m-0 sm:sticky sm:top-0 sm:h-[var(--height-branding-logo)]"
         />

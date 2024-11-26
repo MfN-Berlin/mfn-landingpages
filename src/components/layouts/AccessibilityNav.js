@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { withPrefix } from 'gatsby'; 
 import { getLanguageFromPath } from '../../scripts/languageManager';
 import { featureTranslations } from '../../data/featureTranslations';
+import { getAssetPath } from '../../scripts/assetPrefix';
 
 const AccessibilityNav = ({ currentPage }) => {
   const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
@@ -26,7 +27,7 @@ const AccessibilityNav = ({ currentPage }) => {
           rel="noopener noreferrer"
           className="flex items-center gap-1.5"
         >
-          <img src={withPrefix("/images/iconGebaerdensprache.png")} alt="" className="w-6 h-6" />
+          <img src={getAssetPath("/images/iconGebaerdensprache.png")} alt="" className="w-6 h-6" />
           <span className="text-Black-500 text-xs underline leading-[27px] whitespace-nowrap">
             {t.signLanguage}
           </span>
@@ -37,7 +38,7 @@ const AccessibilityNav = ({ currentPage }) => {
           rel="noopener noreferrer"
           className="flex items-center gap-1.5"
         >
-          <img src={withPrefix("/images/iconLeichteSprache.png")} alt="" className="w-6 h-6" />
+          <img src={getAssetPath("/images/iconLeichteSprache.png")} alt="" className="w-6 h-6" />
           <span className="text-Black-500 text-xs underline leading-[27px] whitespace-nowrap">
             {t.easyLanguage}
           </span>
@@ -48,7 +49,7 @@ const AccessibilityNav = ({ currentPage }) => {
           rel="noopener noreferrer"
           className="flex items-center gap-1.5"
         >
-          <img src={withPrefix("/images/iconBarrierefreiheit.png")} alt="" className="w-6 h-6" />
+          <img src={getAssetPath("/images/iconBarrierefreiheit.png")} alt="" className="w-6 h-6" />
           <span className="text-Black-500 text-xs underline leading-[27px] whitespace-nowrap">
             {t.accessibility}
           </span>

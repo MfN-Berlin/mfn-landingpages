@@ -3,6 +3,7 @@ import { Link, withPrefix } from 'gatsby';
 import CookieConsent from '../features/CookieConsent';
 import { getLanguageFromPath } from '../../scripts/languageManager';
 import { featureTranslations } from '../../data/featureTranslations';
+import { getAssetPath } from '../../scripts/assetPrefix';
 
 const FooterLink = ({ to, children, external = false, onClick }) => {
   const linkProps = external 
@@ -203,7 +204,7 @@ const Footer = () => {
 
           <div className="flex flex-col items-center text-center text-Black-700 mt-16 pt-16">
             <img
-              src={withPrefix("/images/leibniz.svg")}
+              src={getAssetPath("/images/leibniz.svg")}
               alt={t.instituteName || "Museum für Naturkunde Leibniz-Institut für Evolutions- und Biodiversitätsforschung"}
               className="w-20 h-20 mb-4"
             />
