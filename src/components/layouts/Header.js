@@ -79,7 +79,7 @@ const MainNavItem = ({ section, isActive, onMouseEnter, currentPath }) => {
   const currentLang = getLanguageFromPath(currentPath);
   const url = currentLang === LANGUAGES.EN ? 
     section.to.replace(/^\/de\//, '/en/') : 
-    section.to;
+    section.to; 
 
   return (
     <button 

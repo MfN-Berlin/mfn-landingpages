@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { withPrefix } from 'gatsby';
+import { withPrefix } from 'gatsby'; 
 import { getLanguageFromPath } from '../../scripts/languageManager';
 import { featureTranslations } from '../../data/featureTranslations';
 
