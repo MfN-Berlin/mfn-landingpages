@@ -37,7 +37,7 @@ const IndexPage = () => {
   const imageMap = {};
   data.allFile.edges.forEach(({ node }) => {
     imageMap[node.relativePath] = node.childImageSharp?.gatsbyImageData;
-  });
+  }); 
 
   return (
     <>

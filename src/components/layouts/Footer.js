@@ -7,7 +7,7 @@ import { featureTranslations } from '../../data/featureTranslations';
 const FooterLink = ({ to, children, external = false, onClick }) => {
   const linkProps = external 
     ? { href: to, target: "_blank", rel: "noopener noreferrer" } 
-    : { to, onClick };
+    : { to, onClick }; 
   
   return (
     <li className="inline-block p-1 py-[0.5em] px-[1em] ml-1">
