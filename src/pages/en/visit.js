@@ -616,7 +616,7 @@ const IndexPage = () => {
             headline="At the Museum"
             headlineStyle="h1"
             body="We warmly welcome all visitors! In our exhibitions, you'll gain insights into the museum's current research through original research objects! Instead of following predetermined paths, you'll explore the gigantic adventures of nature on your own research journey and experience evolution in action.
-    <br/><br/>More about our <a href='/en/museum/visit/visitor-regulations' className='underline'>visitor regulations</a>, our <a href='en/about-us/museum/together-against-discrimination-prejudice-and-racism' className='underline'>stance against discrimination, prejudice and racism</a> and our <a href='/en/museum/visit/photography-and-filming' className='underline'>rules for film and photo recordings</a>."
+    <br/><br/>More about our <a href='/en/museum/visit/visitor-regulations' className='underline'>visitor regulations</a>, our <a href='https://www.museumfuernaturkunde.berlin/en/about/museum/together-against-discrimination-prejudice-and-racism' className='underline'>stance against discrimination, prejudice and racism</a> and our <a href='/en/museum/visit/photography-and-filming' className='underline'>rules for film and photo recordings</a>."
             spacing="wide"
             alignment="center"
           />

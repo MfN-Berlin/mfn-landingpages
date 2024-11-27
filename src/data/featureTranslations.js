@@ -62,15 +62,27 @@ export const featureTranslations = {
   upcomingHoliday: {
     de: {
       holidays: [
-        { month: 12, date: 24, duration: 3, headline: "Weihnachten 2024", message: "Am 24. und 25. Dezember ist das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 bis 18:00 Uhr." },
-        // ... other German holiday messages
+          { month: 12, date: 24, duration: 3, headline: "Weihnachten 2024", message: "Am 24. und 25. Dezember bleibt das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 12, date: 31, duration: 3, headline: "Neujahr 2025", message: "am 31. Dezember bleibt das Museum geschlossen, an Neujahr öffnet das Museum wieder, von 10:00 bis 18:00 Uhr." },
+          { month: 3, date: 8, duration: 1, headline: "Internationaler Frauentag", message: "Am 8. März öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 4, date: 18, duration: 5, headline: "Karfreitag, Ostersonntag und Ostermontag", message: "an Karfreitag, Ostersonntag und Ostermontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 5, date: 1, duration: 1, headline: "Tag der Arbeit", message: "Am 1. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 5, date: 29, duration: 1, headline: "Christi Himmelfahrt", message: "Am 29. Mai hat das Museum von 10:00 bis 18:00 Uhr geöffnet" },
+          { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
       ]
     },
     en: {
       holidays: [
-        { month: 12, date: 24, duration: 3, headline: "Christmas 2024", message: "The museum is closed on December 24 and 25. On December 26, the museum is open from 10:00 AM to 6:00 PM." },
-        // ... other English holiday messages
-      ]
+        { month: 12, date: 24, duration: 3, headline: "Christmas 2024", message: "On December 24 and 25, the museum will be closed. On December 26, the museum will open from 10:00 AM to 6:00 PM." },
+        { month: 12, date: 31, duration: 3, headline: "New Year 2025", message: "On December 31, the museum will be closed. On New Year's Day, the museum will reopen from 10:00 AM to 6:00 PM." },
+        { month: 3, date: 8, duration: 1, headline: "International Women's Day", message: "On March 8, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 4, date: 18, duration: 5, headline: "Good Friday, Easter Sunday, and Easter Monday", message: "On Good Friday, Easter Sunday, and Easter Monday, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 5, date: 1, duration: 1, headline: "Labor Day", message: "On May 1, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 5, date: 29, duration: 1, headline: "Ascension Day", message: "On May 29, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 6, date: 8, duration: 2, headline: "Pentecost", message: "On Pentecost Sunday and Monday, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 10, date: 3, duration: 1, headline: "German Unity Day", message: "On October 3, the museum will be open from 10:00 AM to 6:00 PM." }
+    ]
     }
   },
   accessibilityNav: {

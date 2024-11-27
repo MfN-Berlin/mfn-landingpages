@@ -1,6 +1,7 @@
 import React from 'react'
 import { withPrefix } from 'gatsby'
 import { getEnvironmentConfig } from '../../scripts/urlHelper'
+import { getAssetPath } from '../../scripts/assetPrefix';
 
 const HeadComponent = ({ 
   title = "Museum für Naturkunde", 
@@ -26,7 +27,7 @@ const HeadComponent = ({
       <meta charSet="utf-8" />
       
       {/* Favicon - using withPrefix */}
-      <link rel="icon" href={withPrefix('/images/favicon.ico')} type="image/x-icon" />
+      <link rel="icon" href={getAssetPath('/images/favicon.ico')} type="image/x-icon" />
       
       {/* Viewport */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

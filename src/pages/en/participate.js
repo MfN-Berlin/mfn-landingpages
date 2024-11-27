@@ -132,7 +132,7 @@ const ParticipatePage = () => {
                 alignment="center"
                 imageProps={{
                   imageName: "bioblitz_9822_c_carola-radke_mfn.jpg",
-                  alt: "Mann beim Insektensammeln",
+                  alt: "Man collecting insects",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -152,7 +152,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "20220827_223801__1200x800Px.jpg",
-                  alt: "Alphabet mit Feder und Tinte nachschreiben",
+                  alt: "Writing alphabet with feather and ink",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -169,7 +169,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "Key visual_NaturderDinge_ohneLogo_klein.jpg",
-                  alt: "Objektcollage aus Sammlungsobjekten von Natur der Dinge",
+                  alt: "Object collage from collection items of Nature of Things",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -189,7 +189,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "Mikroskopierzentrum_CapsarPauli.jpg",
-                  alt: "Kinder und Erwachsene erforschen verschiedene Gegenstände unter dem MIkroskop",
+                  alt: "Children and adults exploring various objects under the microscope",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -206,7 +206,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "citizensciencefest (14 von 32).jpeg",
-                  alt: "Junge sucht Insekten im Wald. Foto: Karo Krämer/WiD",
+                  alt: "Young person looking for insects in the forest. Photo: Karo Krämer/WiD",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -223,7 +223,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "bild.png",
-                  alt: "Man sieht die Nutzeroberfläche des Atlas Naturwissen. In verschiedenen Bildkacheln sieht man die Schlagworte Über uns, Unser Netzwerk, Gemeinsames Handeln und Naturwissen.",
+                  alt: "The user interface of Atlas Nature Knowledge. Various image tiles show the keywords About Us, Our Network, Joint Action, and Nature Knowledge",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -239,9 +239,7 @@ const ParticipatePage = () => {
             </Section>
             <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
               <Blockquote
-                text="„Unsere Mission: Wir erforschen die Erde und das Leben im Dialog mit den Menschen.“"
-                source="Prof. Johannes Vogel"
-                sourceTitle="(Leiter des Museums)"
+                text="Our Mission: We explore Earth and Life in dialogue with people."
                 backgroundColor=""  // Green-500 color
                 className="bg-Green-500"
               />
@@ -269,7 +267,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "131031_taschenlampenfuehrung_halloween_21_c_carola-radke_mfn_0.jpg",
-                  alt: "Taschenlampenführung",
+                  alt: "Flashlight tour",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -289,7 +287,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "180622_Forschen_und_Feiern_37__(c)_Hwa Ja-Goetz_MfN.jpg",
-                  alt: "Kinder betrachten Objekte im Mikroskopierzentrum des Museums. | Bildquelle: Museum für Naturkunde Berlin",
+                  alt: "Children examining objects in the museum's microscope center. | Source: Museum für Naturkunde Berlin",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -306,7 +304,7 @@ const ParticipatePage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "fuchs_c_selina_schultze_mfn.jpg",
-                  alt: "Stadtnatur am Musuem für Naturkunde",
+                  alt: "Urban nature at the Museum für Naturkunde",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
