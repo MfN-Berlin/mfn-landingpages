@@ -619,7 +619,7 @@ const IndexPage = () => {
             headline="Im Museum"
             headlineStyle="h1"
             body="Wir heißen alle Besuchenden herzlich willkommen! In unseren Ausstellungen erhalten Sie Einblicke in die aktuelle Forschung des Museums – anhand originaler Forschungsobjekte! Statt auf vorgegebenen Wegen erkunden Sie die gigantischen Abenteuer der Natur auf einer eigenen Forschungsreise und erleben Evolution in Aktion.
-            <br/><br/>Mehr zu unserer <a href='/de/museum/besuch-planen/besuchendenordnung' className='underline'>Besuchendenordnung</a>, unserer <a href='de/ueber-uns/das-museum/gemeinsam-gegen-diskriminierung-vorurteile-und-rassismus' className='underline'>Haltung gegen Diskriminierung, Vorurteile und Rassismus</a> und unseren <a href='/de/museum/besuch-planen/fotografieren-und-filmaufnahmen' className='underline'>Regeln für Film- und Foto-Aufnahmen</a>."
+            <br/><br/>Mehr zu unserer <a href='/de/museum/besuch-planen/besuchendenordnung' className='underline'>Besuchendenordnung</a>, unserer <a href='https://www.museumfuernaturkunde.berlin/de/ueber-uns/das-museum/gemeinsam-gegen-diskriminierung-vorurteile-und-rassismus' className='underline'>Haltung gegen Diskriminierung, Vorurteile und Rassismus</a> und unseren <a href='/de/museum/besuch-planen/fotografieren-und-filmaufnahmen' className='underline'>Regeln für Film- und Foto-Aufnahmen</a>."
             spacing="wide"
             alignment="center"
           />

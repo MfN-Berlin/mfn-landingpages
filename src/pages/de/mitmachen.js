@@ -213,8 +213,6 @@ const IndexPage = () => {
                 <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Blockquote
                         text="„Unsere Mission: Wir erforschen die Erde und das Leben im Dialog mit den Menschen.“"
-                        source="Prof. Johannes Vogel"
-                        sourceTitle="(Generaldirektor des Museums für Naturkunde Berlin)"
                         backgroundColor=""  // Green-500 color
                         className="bg-Green-500"
                     />
