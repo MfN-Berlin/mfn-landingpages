@@ -7,7 +7,6 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-const { assetPrefix } = require('./src/scripts/assetPrefix');
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = { 
@@ -30,6 +29,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+   
     "gatsby-plugin-postcss",
     {
       resolve: `gatsby-transformer-json`,
@@ -66,6 +66,8 @@ module.exports = {
     DEV_SSR: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
   },
-  assetPrefix: assetPrefix,
-  pathPrefix: isProduction ? '/mfn-landingpages' : '/',
+  assetPrefix: isProduction 
+    ? 'https://mfn-berlin.github.io/mfn-landingpages'
+    : '',
+  pathPrefix: "/",
 }

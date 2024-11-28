@@ -3,4 +3,4 @@ export const getAssetPath = (path) => {
       ? 'https://mfn-berlin.github.io/mfn-landingpages'
       : '';
     return `${prefix}${path}`;
-  };
+  }; 
