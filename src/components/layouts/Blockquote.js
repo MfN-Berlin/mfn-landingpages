@@ -1,5 +1,6 @@
 import React from 'react';
 import ContentImage from '../elements/ContentImage';
+import { getAssetPath } from '../../scripts/assetPrefix';
 
 
 const BlockQuote = ({ 
@@ -51,7 +52,7 @@ const BlockQuote = ({
         </div>
       </div>
       <div className="self-stretch h-10 flex justify-end items-end mt-0">
-        <img src='/images/logo-duotone.svg' alt="Logo" className="w-[76.78px] h-10" />
+        <img src={getAssetPath('/images/logo-duotone.svg')} alt="Logo" className="w-[76.78px] h-10" />
       </div>
     </blockquote>
   );

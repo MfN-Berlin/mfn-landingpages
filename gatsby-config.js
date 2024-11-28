@@ -7,6 +7,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const { assetPrefix } = require('./src/scripts/assetPrefix');
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = { 
@@ -27,17 +28,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: '/',
-        background_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
       },
     },
     "gatsby-plugin-postcss",
@@ -76,8 +66,6 @@ module.exports = {
     DEV_SSR: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
   },
-  assetPrefix: isProduction 
-    ? 'https://mfn-berlin.github.io/mfn-landingpages'
-    : '',
-  pathPrefix: "/",
+  assetPrefix: assetPrefix,
+  pathPrefix: isProduction ? '/mfn-landingpages' : '/',
 }
