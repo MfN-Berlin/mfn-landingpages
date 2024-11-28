@@ -16,6 +16,7 @@ import OpenToday from '../../components/features/OpenToday'
 import Feedback from '../../components/features/Feedback'
 import HeadComponent from '../../components/layouts/HeadComponent'
 import UpcomingHoliday from '../../components/features/UpcomingHoliday';
+import TransportIcon from '../../components/elements/TransportIcon';
 
 
 const IndexPage = () => {
@@ -493,42 +494,22 @@ const IndexPage = () => {
             <AccordionItem title="By Bus & Train">
               <div className="p-5 font-bold">
                 <p>U-Naturkundemuseum (
-                  <svg className="inline px-[0.1em] h-[15px] w-[24px] m-0 mt-[-3px]" aria-label="U-Bahnlinie 6">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-u6")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[26px] m-0 mt-[-3px]" aria-label="Tramlinie M5">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m5")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[26px] m-0 mt-[-3px]" aria-label="Tramlinie M8">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m8")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[33px] m-0 mt-[-3px]" aria-label="Tramlinie M10">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m10")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[33px] m-0 mt-[-3px]" aria-label="Tramlinie M12">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-m12")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[24px] w-[20px] m-0 mt-[-3px]" aria-label="Buslinien">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-bus")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-u6" ariaLabel="U-Bahn Line 6" />
+                  <TransportIcon iconId="bvg-m5" ariaLabel="Tram Line M5" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m8" ariaLabel="Tram Line M8" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m10" ariaLabel="Tram Line M10" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-m12" ariaLabel="Tram Line M12" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Bus Lines" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 245 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] mt-[-4px] w-[24px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
-                    </svg>300m Footpath</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />300m Footpath</span></p>
                 <br />
 
                 <p>S-Hauptbahnhof (
-                  <svg className="inline px-[0.1em] h-[15px] m-0 w-[28px] mt-[-3px]" aria-label="S-Bahnlinie 5">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s5")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] m-0 w-[28px] mt-[-3px]" aria-label="S-Bahnlinie 7">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s7")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-s5" ariaLabel="S-Bahn Line 5" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s7" ariaLabel="S-Bahn Line 7" className="w-[28px]" />
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
-                    </svg>1.300m Footpath</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />1.300m Footpath</span></p>
                 <br />
 
                 <p>S-Nordbahnhof (
