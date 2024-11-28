@@ -12,6 +12,8 @@ import HeadComponent from '../../components/layouts/HeadComponent'
 import Teaser from '../../components/layouts/Teaser';
 import Blockquote from '../../components/layouts/Blockquote';
 
+
+
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
     query {
