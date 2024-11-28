@@ -17,6 +17,7 @@ import Feedback from '../../components/features/Feedback'
 import HeadComponent from '../../components/layouts/HeadComponent'
 import UpcomingHoliday from '../../components/features/UpcomingHoliday';
 import { getAssetPath } from '../../scripts/assetPrefix';
+import TransportIcon from '../../components/elements/TransportIcon';
 
 
 const IndexPage = () => {
@@ -496,66 +497,36 @@ const IndexPage = () => {
             <AccordionItem title="Mit Bus & Bahn">
               <div className="p-5 font-bold">
                 <p>U-Naturkundemuseum (
-                  <svg className="inline px-[0.1em] h-[15px] w-[24px] m-0 mt-[-3px]" aria-label="U-Bahnlinie 6">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-u6")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[26px] m-0 mt-[-3px]" aria-label="Tramlinie M5">
-                        <use href={getAssetPath("/images/transport-icons3.svg#bvg-m5")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[26px] m-0 mt-[-3px]" aria-label="Tramlinie M8">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-m8")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[33px] m-0 mt-[-3px]" aria-label="Tramlinie M10">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-m10")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[33px] m-0 mt-[-3px]" aria-label="Tramlinie M12">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-m12")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[24px] w-[20px] m-0 mt-[-3px]" aria-label="Buslinien">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-bus")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-u6" ariaLabel="U-Bahnlinie 6" />
+                  <TransportIcon iconId="bvg-m5" ariaLabel="Tramlinie M5" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m8" ariaLabel="Tramlinie M8" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m10" ariaLabel="Tramlinie M10" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-m12" ariaLabel="Tramlinie M12" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Buslinien" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 245 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] mt-[-4px] w-[24px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={getAssetPath("/images/transport-icons3.svg#person-walking")} />
-                    </svg>300m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />300m Fußweg</span></p>
                 <br />
 
                 <p>S-Hauptbahnhof (
-                  <svg className="inline px-[0.1em] h-[15px] m-0 w-[28px] mt-[-3px]" aria-label="S-Bahnlinie 5">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-s5")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] m-0 w-[28px] mt-[-3px]" aria-label="S-Bahnlinie 7">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-s7")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-s5" ariaLabel="S-Bahnlinie 5" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s7" ariaLabel="S-Bahnlinie 7" className="w-[28px]" />
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={getAssetPath("/images/transport-icons3.svg#person-walking")} />
-                    </svg>1.300m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />1.300m Fußweg</span></p>
                 <br />
 
                 <p>S-Nordbahnhof (
-                  <svg className="inline px-[0.1em] h-[15px] w-[28px] m-0 mt-[-3px]" aria-label="S-Bahnlinie 1">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-s1")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[28px] m-0 mt-[-3px]" aria-label="S-Bahnlinie 2">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-s2")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-s1" ariaLabel="S-Bahnlinie 1" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s2" ariaLabel="S-Bahnlinie 2" className="w-[28px]" />
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={getAssetPath("/images/transport-icons3.svg#person-walking")} />
-                    </svg>900m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />900m Fußweg</span></p>
                 <br />
 
                 <p>Invalidenpark (
-                  <svg className="inline px-[0.1em] h-[24px] w-[20px] m-0 mt-[-3px]" aria-label="Buslinien">
-                    <use href={getAssetPath("/images/transport-icons3.svg#bvg-bus")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Buslinien" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 120 123 142 245 N20 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg#person-walking")} />
-                    </svg>300m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />300m Fußweg</span></p>
                 <br />
               </div>
             </AccordionItem>
@@ -584,9 +555,7 @@ const IndexPage = () => {
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
                             <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ecba0e90d1:0xab7167f4ea5dd8b9!8m2!3d52.5306377!4d13.3814623" className="underline">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
-                              <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                                <use href={getAssetPath("/images/transport-icons3.svg#person-walking")} />
-                              </svg>200m Fußweg</span>
+                              <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />200m Fußweg</span>
                           </p>
                         </div>
                       </li>
@@ -594,9 +563,7 @@ const IndexPage = () => {
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
                             <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ec7dc000d7:0x506c4690a67db5eb!8m2!3d52.5295898!4d13.3840763" className="underline">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
-                              <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                                <use href={getAssetPath("/images/transport-icons3.svg#person-walking")} />
-                              </svg>350m Fußweg</span>
+                              <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />350m Fußweg</span>
                           </p>
                         </div>
                       </li>
