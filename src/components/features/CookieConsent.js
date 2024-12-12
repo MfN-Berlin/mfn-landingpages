@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Button from '../elements/Button';
 
-const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
+const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [cookieSettings, setCookieSettings] = useState({
-    essential: true, // Always true and readonly
+  const [preferences, setPreferences] = useState({
+    essential: true,
     tracking: false,
     media_youtube: false,
     media_podigee: false,
-    misc: false, // For functional cookies
+    misc: false,
   });
 
   const getEnvironmentConfig = () => {
@@ -18,15 +18,13 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
     
     const hostname = window.location.hostname;
     
-    // Extract the root domain for test environment
     if (hostname === 'test.mfn.gcsdev.de') {
       return {
-        domain: 'test.mfn.gcsdev.de', // Note the leading dot to include all subdomains
-        path: '/' // Set to root path to share across all paths
+        domain: 'test.mfn.gcsdev.de',
+        path: '/'
       };
     }
     
-    // For other environments, maintain current behavior
     if (hostname === 'mfn-berlin.github.io') {
       return {
         domain: hostname,
@@ -41,14 +39,13 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
       };
     }
 
-    // Local development
     return {
       domain: hostname,
       path: '/'
     };
   };
 
-  const setCookie = (name, value) => {
+  const savePreference = (name, value) => {
     const { domain, path } = getEnvironmentConfig();
     const expiryDate = new Date();
     expiryDate.setFullYear(expiryDate.getFullYear() + 2);
@@ -58,11 +55,9 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
       `path=${path}; ` +
       `domain=${domain}; ` +
       'SameSite=Strict';
-      
-    // console.log(`Setting cookie for domain: ${domain}, path: ${path}`);
   };
 
-  const getCookie = (name) => {
+  const getStoredPreference = (name) => {
     if (typeof window === 'undefined') return null;
     
     const value = `; ${document.cookie}`;
@@ -74,14 +69,11 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const existingConsent = getCookie('cookie-agreed');
-    // console.log('Existing consent:', existingConsent);
-
-    if (!existingConsent) {
+    const existingPreference = getStoredPreference('cookie-agreed');
+    if (!existingPreference) {
       setIsVisible(true);
-      // Initialize with essential only
-      setCookieSettings({
-        essential: true, // Always true and readonly
+      setPreferences({
+        essential: true,
         tracking: false,
         media_youtube: false,
         media_podigee: false,
@@ -93,51 +85,46 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
   useEffect(() => {
     if (forceOpen) {
       setIsVisible(true);
-      setShowSettings(true); // Directly show settings when opened from footer
+      setShowSettings(true);
     }
   }, [forceOpen]);
 
   const handleClose = () => {
     setIsVisible(false);
     setShowSettings(false);
-    onClose(); // Notify parent component
+    onClose();
   };
 
   const handleAcceptAll = () => {
-    console.log('Accepting all cookies...');
-    setCookie('cookie-agreed', '2');
-    setCookie('cookie-agreed-categories', JSON.stringify(["essential","tracking","media_youtube","media_podigee","misc"]));
-    setCookie('cookie-agreed-version', '2.0.0');
+    savePreference('cookie-agreed', '2');
+    savePreference('cookie-agreed-categories', JSON.stringify(["essential","tracking","media_youtube","media_podigee","misc"]));
+    savePreference('cookie-agreed-version', '2.0.0');
     handleClose();
   };
 
   const handleAcceptEssential = () => {
-    console.log('Accepting essential cookies only...');
-    setCookie('cookie-agreed', '0');
-    setCookie('cookie-agreed-categories', JSON.stringify([["essential"]]));
+    savePreference('cookie-agreed', '0');
+    savePreference('cookie-agreed-categories', JSON.stringify([["essential"]]));
     handleClose();
   };
 
   const handleSaveSettings = () => {
-    console.log('Saving custom settings...');
     const enabledCategories = ['essential'];
-    if (cookieSettings.tracking) enabledCategories.push('tracking');
-    if (cookieSettings.media_youtube) enabledCategories.push('media_youtube');
-    if (cookieSettings.media_podigee) enabledCategories.push('media_podigee');
-    if (cookieSettings.misc) enabledCategories.push('misc');
+    if (preferences.tracking) enabledCategories.push('tracking');
+    if (preferences.media_youtube) enabledCategories.push('media_youtube');
+    if (preferences.media_podigee) enabledCategories.push('media_podigee');
+    if (preferences.misc) enabledCategories.push('misc');
 
-    setCookie('cookie-agreed', '2');
-    setCookie('cookie-agreed-categories', JSON.stringify(enabledCategories));
-    setCookie('cookie-agreed-version', '2.0.0');
+    savePreference('cookie-agreed', '2');
+    savePreference('cookie-agreed-categories', JSON.stringify(enabledCategories));
+    savePreference('cookie-agreed-version', '2.0.0');
     handleClose();
   };
 
   const handleBackButton = () => {
     if (forceOpen) {
-      // When opened from footer, close the modal completely
       handleClose();
     } else {
-      // Normal behavior when opened from initial cookie consent
       setShowSettings(false);
     }
   };
@@ -190,12 +177,11 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="mfn-cookie-banner fixed inset-0 bg-black/50 z-[100] overflow-y-auto py-8">
+    <div className="fixed inset-0 bg-black/50 z-[100] overflow-y-auto py-8" role="dialog" aria-modal="true">
       <div className="min-h-screen flex items-center justify-center">
-        <div className="mfn-cookie-banner__modal bg-white max-w-2xl w-full mx-4 rounded-lg shadow-xl my-auto">
-          <div className="mfn-cookie-banner__inner p-6">
+        <div className="bg-white max-w-2xl w-full mx-4 rounded-lg shadow-xl my-auto">
+          <div className="p-6">
             {!showSettings ? (
-              // Main View
               <div className="mfn-cookie-banner__content">
                 <p className="text-sm text-gray-500 mb-2">Cookies</p>
                 <h2 className="text-2xl font-bold mb-4">Datenschutzeinstellungen</h2>
@@ -228,7 +214,6 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
                 </div>
               </div>
             ) : (
-              // Settings View
               <div className="mfn-cookie-banner__content">
                 <div className="flex items-center mb-4">
                   <button 
@@ -252,7 +237,6 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
                   </p>
                 </div>
                 
-                {/* Cookie Settings */}
                 <div className="space-y-6 mb-6">
                   <CookieServiceItem
                     title="Essenziell"
@@ -264,9 +248,9 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
                   <CookieServiceItem
                     title="Tracking"
                     description="Wir nutzen Matomo um das Nutzerverhalten in einer Statistik zu erfassen. Dies erlaubt uns das Nutzerverhalten zu analysieren, um unsere Webseite ständig zu verbessern."
-                    isActive={cookieSettings.tracking}
+                    isActive={preferences.tracking}
                     isReadOnly={false}
-                    onChange={() => setCookieSettings(prev => ({
+                    onChange={() => setPreferences(prev => ({
                       ...prev,
                       tracking: !prev.tracking
                     }))}
@@ -275,9 +259,9 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
                   <CookieServiceItem
                     title="Youtube"
                     description="Wir binden Inhalte von Youtube wie z. B. Videos auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Youtube geladen werden. Dadurch können personenbezogene Daten an Youtube übertragen werden, als würden Sie die Webseite von Youtube direkt besuchen."
-                    isActive={cookieSettings.media_youtube}
+                    isActive={preferences.media_youtube}
                     isReadOnly={false}
-                    onChange={() => setCookieSettings(prev => ({
+                    onChange={() => setPreferences(prev => ({
                       ...prev,
                       media_youtube: !prev.media_youtube
                     }))}
@@ -286,9 +270,9 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
                   <CookieServiceItem
                     title="Podigee"
                     description="Wir binden Inhalte von Podigee wie z. B. Podcasts auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Podigee geladen werden. Dadurch können personenbezogene Daten an Podigee übertragen werden, als würden Sie die Webseite von Podigee direkt besuchen."
-                    isActive={cookieSettings.media_podigee}
+                    isActive={preferences.media_podigee}
                     isReadOnly={false}
-                    onChange={() => setCookieSettings(prev => ({
+                    onChange={() => setPreferences(prev => ({
                       ...prev,
                       media_podigee: !prev.media_podigee
                     }))}
@@ -297,9 +281,9 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
                   <CookieServiceItem
                     title="Funktionale Cookies"
                     description="Diese Cookies ermöglichen es der Website, eine verbesserte Funktionalität und Personalisierung zu bieten (z. B. merken wir uns, wenn Sie Hinweise der Seite als gelesen markiert haben und zeigen sie nicht erneut an). Das deaktivieren beeinträchtigt die Funktionalität der Seite nicht."
-                    isActive={cookieSettings.misc}
+                    isActive={preferences.misc}
                     isReadOnly={false}
-                    onChange={() => setCookieSettings(prev => ({
+                    onChange={() => setPreferences(prev => ({
                       ...prev,
                       misc: !prev.misc
                     }))}
@@ -322,4 +306,4 @@ const CookieConsent = ({ forceOpen = false, onClose = () => {} }) => {
   );
 };
 
-export default CookieConsent; 
+export default PreferenceManager; 

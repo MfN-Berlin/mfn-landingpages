@@ -19,6 +19,8 @@ import UpcomingHoliday from '../../components/features/UpcomingHoliday';
 import TransportIcon from '../../components/elements/TransportIcon';
 
 
+// ... existing imports ...
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -102,7 +104,7 @@ const IndexPage = () => {
               headlineStyle="h1"
               body="The Museum is open daily until 18:00.<br/>Monday is closed.<br/>Last entry is 30 minutes before closing."
               spacing="wide"
-              alignment="center" // Center-aligned text
+              alignment="center"
             />
             <UpcomingHoliday />
             <div className="w-full">
@@ -156,11 +158,6 @@ const IndexPage = () => {
         </Section>
         <Section columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div className="flex -mt-40 flex-col justify-center items-center gap-20">
-            <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
-              <p className="text-center text-black">
-                On the first Sunday of the month, admission is free!
-              </p>
-            </div>
             <CardText
               headline="Tickets & Prices"
               headlineStyle="h1"

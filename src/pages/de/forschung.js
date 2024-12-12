@@ -44,13 +44,23 @@ const VisitPage = () => {
 
 
                 <Section backgroundColor="bg-white" columns={1}>
-                    <CardText
-                        kicker="Offen und integriert"
-                        headline="Unsere Forschung"
-                        headlineStyle="h1"
-                        body="Das Museum für Naturkunde Berlin ist ein integriertes Forschungsmuseum der Leibniz-Gemeinschaft und zählt weltweit zu den führenden Einrichtungen für biologische und geowissenschaftliche Evolution sowie Biodiversität. Mit der wissenschaftlichen Forschung und unserer Sammlung als Hauptinfrastruktur bilden diese Bereiche zusammen mit der Wissensvermittlung die zentralen Säulen des Museums."
-                        spacing="wide"
-                        alignment="center"
+                     <StoryTime
+                        imageProps={{
+                            imageName: 'Neues CT im Museum für Naturkunde (c) Pablo Castagnola.jpg',
+                            alt: "Neues CT im Museum für Naturkunde (c) Pablo Castagnola",
+                            imageMap: imageMap,
+                            className: "aspect-[16/9]"
+                        }}
+                        textProps={{
+                            kicker: "Offen und integriert",
+                            headline: "Unsere Forschung",
+                            headlineStyle: "h1",
+                            body: "Das Museum für Naturkunde Berlin ist ein integriertes Forschungsmuseum der Leibniz-Gemeinschaft und zählt weltweit zu den führenden Einrichtungen für biologische und geowissenschaftliche Evolution sowie Biodiversität.<br/><br/> Mit der wissenschaftlichen Forschung und unserer Sammlung als Hauptinfrastruktur bilden diese Bereiche zusammen mit der Wissensvermittlung die zentralen Säulen des Museums.",
+                            spacing: "wide",
+                            alignment: "center",
+                        }}
+                        imagePosition="right"
+                        className="max-w-7xl mx-auto"
                     />
                 </Section>
                 <Section
@@ -151,25 +161,7 @@ const VisitPage = () => {
                         </form>
                     </div>
                 </Section>
-                <Section backgroundColor="bg-white" columns={1} padding="py-8">
-                    <Teaser
-                        imageProps={{
-                            imageName: 'Neues CT im Museum für Naturkunde (c) Pablo Castagnola.jpg',
-                            alt: "Neues CT im Museum für Naturkunde (c) Pablo Castagnola",
-                            imageMap: imageMap,
-                            className: "aspect-[16/9]"
-                        }}
-                        textProps={{
-                            headline: "Wir erforschen die Erde und ihre Lebewesen im Dialog mit dem Menschen.",
-                            body: "Als exzellentes Forschungsmuseum und innovatives Kommunikationszentrum prägen wir den wissenschaftlichen und gesellschaftlichen Dialog um die Zukunft unserer Erde mit – weltweit.",
-                            headlineStyle: "h4",
-                            spacing: "normal"
-                        }}
-                        textStyle="circle-green"
-                        textPosition="center-right"
-                        className="w-full"
-                    />
-                </Section>
+              
                 <Section backgroundColor="bg-Green-100" columns={1} padding="py-16">
                     <StoryTime
                         imageProps={{
@@ -228,7 +220,7 @@ const VisitPage = () => {
                         }}
                         textProps={{
                             kicker: "Forschungsbereich 2",
-                            headline: "Zukkunft der Sammlung",
+                            headline: "Zukunft der Sammlung",
                             headlineStyle: "h3",
                             body: "Wir gestalten eine offene und vernetzte Sammlung, die durch innovative Ansätze im Daten- und Wissensmanagement neue Wege für Forschung und Wissenstransfer eröffnet – gemeinsam mit Partnern aus Wissenschaft, Gesellschaft und Kultur.",
                             spacing: "regular"
@@ -245,7 +237,7 @@ const VisitPage = () => {
                         }}
                         textProps={{
                             kicker: "forschungsbereich 3",
-                            headline: "Geesellschaft und Natur",
+                            headline: "Gesellschaft und Natur",
                             headlineStyle: "h3",
                             body: "Wir erforschen, wie Partizipation und Wissensaustausch Forschung und Praxiswissen für Natur bereichern.",
                             spacing: "regular"
@@ -313,10 +305,27 @@ const VisitPage = () => {
                         }}
                         textProps={{
 
-                            headline:  "Labore & IT",
+                            headline:  "Labore",
                             headlineStyle: "h3",
-                            body: "Neben unserer großen Sammlung unterhält das Museum eine Vielzahl an hochmodernen Laboren, eine IT-Forschungs-infrastruktur sowie eine Forschungsdatenmanagement-infrastruktur.",
-                            spacing: "regular"
+                            body: "Unsere  Labore stehen Mitarbeitenden des Museums, Studierenden, Doktoranden,  Postdocs und Gastwissenschaftlerinnen und Gastwissenschaftlern für ihre  Forschungsprojekte offen.",
+                            spacing: "regular",
+                            buttons: [
+                                {
+                                    text: "Labore",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "IT-Systeme",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "Forschungs-Datenmanagement",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                            ]
                         }}
                     />
                     <Card
@@ -330,8 +339,25 @@ const VisitPage = () => {
                         textProps={{
                             headline: "Wissen verbindet",
                             headlineStyle: "h3",
-                            body: "Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
-                            spacing: "regular"
+                            body: "Zu unserem Angebot gehören  interdisziplinäre und internationale Fortbildungen in den Bereichen  öffentliches Engagement (Public Engagement), Offene Wissenschaft (Open  Science), Bürgerwissenschaften (Citizen Science) und Museum.",
+                            spacing: "regular",
+                            buttons: [
+                                {
+                                    text: "Formate zur Wissenschaftskommunikation",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "Politikberatung",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                                {
+                                    text: "Unser Engagement für Bürgerwissenschaften",
+                                    url: "/teams-projekte",
+                                    variant: "plain"
+                                },
+                            ]
                         }}
                     />
 
@@ -523,14 +549,14 @@ const VisitPage = () => {
                     <CardText
                         headline="Kontakt"
                         headlineStyle="h1"
-                        body="Brauchen Sie noch etwas anderes bei uns mitzumachen?"
+                        body="Fehlt Ihnen noch eine Information rund um das Thema Forschung?"
                         spacing="wide"
                         alignment="center"
                     />
                     <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
                         <Button variant="primary">Stellen Sie uns eine Frage</Button>
                         <Button variant="primary">Rufen Sie uns an</Button>
-                        <Button variant="primary">Besuchen Sie uns im Museum</Button>
+                        <Button variant="primary">Kontaktieren Sie uns!</Button>
                     </div>
 
                 </Section>
