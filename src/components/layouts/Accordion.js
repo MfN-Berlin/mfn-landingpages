@@ -42,7 +42,7 @@ export const AccordionItem = ({ children, title, index }) => {
     <div className={`mb-4 ${bgColor === 'green' ? 'bg-Green-100' : 'bg-white'}`}>
       <h3 id={headingId}>
         <button
-          className="w-full p-4 flex justify-between items-center text-left"
+          className="w-full p-4 flex justify-between items-center text-left gap-8"
           onClick={toggleItem}
           aria-expanded={isOpen}
           aria-controls={itemId}

@@ -101,24 +101,24 @@ const IndexPage = () => {
                     />
                 </Section>
                 <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
-
                     <Card
                         variant="classic"
-                        alignment="center"
                         imageProps={{
-                            imageName: "Christine Kuhnert (c) Pablo Castagnola_1.jpg",
-                            alt: "Eine Ehrenamtliche beobachtet mit einem Fernglas Vögel an der Berliner Spree",
+                            imageName: "TR1C6470 (1).jpg",
+                            alt: "Personen stehen vor dem verbildlichten Netzwerk der Anthropozänobjekte",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Ehrenamtliches Engagement",
-                            body: "Helfen Sie bei der Erschließung unserer Sammlung und tragen Sie aktiv zur Entwicklung neuen Wissens bei. Dabei sammeln Sie unter anderem Erfahrungen in der Museumsarbeit, Datenbankerfassung und Forschung. Lesen Sie hier mehr über Ihre möglichen Aufgabenbereiche.",
+                            headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropozäns",
+                            body: "Wie hat sich Ihre Umwelt verändert? Welche persönlichen Dinge oder Zeugnisse aus der Vergangenheit erzählen davon? Tragen Sie dazu bei, mit Ihrem Objekt und Ihrer Geschichte den Wandel der Umwelt und die Herausforderungen der Zukunft besser zu verstehen!",
                             headlineStyle: "h3",
                             alignment: "center"
                         }}
                         url="/small-card-1-page"
                     />
+
+
 
                 </Section>
                 <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
@@ -142,15 +142,16 @@ const IndexPage = () => {
 
                     <Card
                         variant="classic"
+                        alignment="center"
                         imageProps={{
-                            imageName: "Digamus_final2.jpg",
-                            alt: "Ansicht einiger Objekte aus der Online Sammlung 'Natur der Dinge' vor einer Kartenansicht die den Standort verschiedener beigetragener Objekte innerhalb Europas zeigt.",
+                            imageName: "MfN_Sammlung_Hwja_Goetz.jpg",
+                            alt: "Unsere Vogelsammlung mit circa 200.000 Objekten",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropozäns",
-                            body: "Wie hat sich Ihre Umwelt verändert? Welche persönlichen Dinge oder Zeugnisse aus der Vergangenheit erzählen davon? Tragen Sie dazu bei, mit Ihrem Objekt und Ihrer Geschichte den Wandel der Umwelt und die Herausforderungen der Zukunft besser zu verstehen!",
+                            headline: "Ehrenamtliches Engagement",
+                            body: "Helfen Sie bei der Erschließung unserer Sammlung und tragen Sie aktiv zur Entwicklung neuen Wissens bei. Dabei sammeln Sie unter anderem Erfahrungen in der Museumsarbeit, Datenbankerfassung und Forschung. Lesen Sie hier mehr über Ihre möglichen Aufgabenbereiche.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -197,8 +198,8 @@ const IndexPage = () => {
                     <Card
                         variant="classic"
                         imageProps={{
-                            imageName: "bild.png",
-                            alt: "Man sieht die Nutzeroberfläche des Atlas Naturwissen. In verschiedenen Bildkacheln sieht man die Schlagworte Über uns, Unser Netzwerk, Gemeinsames Handeln und Naturwissen.",
+                            imageName: "gemeinsames-handeln_transform-lab-kopie.webp",
+                            alt: "Teilnehmende des Transformationslabs sitzen an Gruppentischen und diskutieren miteinander",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
@@ -231,7 +232,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Naturblick: Stadtnatur entdecken",
-                            body: "Mit Naturblick können Sie Pflanzen und Tiere einfach bestimmen und mehr über die Natur in ihrer Stadt erfahren. Speichern Sie Ihre Beobachtungen und teilen Sie sie diese mit Wissenschaft und Naturschutz.",
+                            body: "Mit Naturblick können Sie Pflanzen und Tiere einfach bestimmen und mehr über die Natur in ihrer Stadt erfahren. Speichern Sie Ihre Beobachtungen und teilen Sie diese mit Wissenschaft und Naturschutz.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -301,8 +302,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Fachgruppen",
-                            body: "Bei uns treffen sich regelmäßig Forschende, Hobbysammler:innen und weitere Interessierte in Fachgruppen zu spannenden wissenschaftlichen Themen. Kommen Sie vorbei, unterstützen Sie uns bei Mitmachaktionen und Informationsständen und werden Sie Teil unserer Events, wie zum Beispiel den Langen Nächten.",
+                            headline: "Gemeinsam aktiv",
+                            body: "Hier finden Sie Angebote, die speziell für Gruppen konzipiert sind – vom kreativen Miteinander bis zu gemeinsamen Aktivitäten, die verbinden und inspirieren.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}

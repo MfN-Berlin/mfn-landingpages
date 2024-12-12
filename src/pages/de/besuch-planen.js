@@ -109,12 +109,12 @@ const IndexPage = () => {
           />
             <UpcomingHoliday />
             <div className="w-full">
-              <Link 
-                to="/de/besuch-planen/sonderoeffnungszeiten"
-                className="w-full block text-center text-Green-500 typography-p"
-              >
-                Genauer Plan mit Sonderöffnungszeiten
-              </Link>
+              <Button
+                text="Genauer Plan mit Sonderöffnungszeiten"
+                url="/de/besuch-planen/sonderoeffnungszeiten"
+                variant="plain"
+                className="w-full justify-center"
+              />
             </div>
             </div>
           <Accordion bgColor="white">
@@ -159,16 +159,16 @@ const IndexPage = () => {
         </Section>
         <Section columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div className="flex -mt-40 flex-col justify-center items-center gap-20">
-            <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
+            {/* <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
               <p className="text-center text-black">
                 Am ersten Sonntag des Monats ist der <strong>Eintritt frei!</strong>
               </p>
-            </div>
+            </div> */}
             <CardText
               headline="Tickets & Preise"
               headlineStyle="h1"
-              body={`Tickets können Sie vor Ort und im <a href="/tickets/online-shop" className="underline">Onlineshop</a> kaufen. 
-                Wir empfehlen die Buchung von <a href="/tickets/zeitfenster" className="underline">Online-Zeitfenstertickets</a> 
+              body={`Tickets können Sie vor Ort und im <a href="/tickets/online-shop" style="text-decoration: underline;">Onlineshop</a> kaufen. 
+                Wir empfehlen die Buchung von <a href="/tickets/zeitfenster" style="text-decoration: underline;">Online-Zeitfenstertickets</a> 
               im Vorfeld um Wartezeiten an der Kasse zu vermeiden.`}
               spacing="wide"
               alignment="center"
@@ -585,8 +585,10 @@ const IndexPage = () => {
           <CardText
             headline="Im Museum"
             headlineStyle="h1"
-            body="Wir heißen alle Besuchenden herzlich willkommen! In unseren Ausstellungen erhalten Sie Einblicke in die aktuelle Forschung des Museums – anhand originaler Forschungsobjekte! Statt auf vorgegebenen Wegen erkunden Sie die gigantischen Abenteuer der Natur auf einer eigenen Forschungsreise und erleben Evolution in Aktion.
-            <br/><br/>Mehr zu unserer <a href='/de/museum/besuch-planen/besuchendenordnung' className='underline'>Besuchendenordnung</a>, unserer <a href='https://www.museumfuernaturkunde.berlin/de/ueber-uns/das-museum/gemeinsam-gegen-diskriminierung-vorurteile-und-rassismus' className='underline'>Haltung gegen Diskriminierung, Vorurteile und Rassismus</a> und unseren <a href='/de/museum/besuch-planen/fotografieren-und-filmaufnahmen' className='underline'>Regeln für Film- und Foto-Aufnahmen</a>."
+            body={`In unseren Ausstellungen erhalten Sie Einblicke in die gigantischen Abenteuer der Natur – anhand originaler Forschungsobjekte!
+              <br/><br/>
+              Mehr zu unserer <a href="/de/museum/besuch-planen/besuchendenordnung" style="text-decoration: underline;">Besuchendenordnung</a> und 
+              unseren <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" style="text-decoration: underline;">Regeln für Film- und Foto-Aufnahmen</a>.`}
             spacing="wide"
             alignment="center"
           />
@@ -966,7 +968,7 @@ const IndexPage = () => {
           <CardText
             headline="Kontakt"
             headlineStyle="h1"
-            body="Brauchen Sie noch etwas anderes bei uns mitzumachen?"
+            body="Haben Sie Fragen oder möchten mit uns in Kontakt treten? Wir freuen uns auf Ihre Nachricht!"
             spacing="wide"
             alignment="center"
           />
@@ -980,11 +982,6 @@ const IndexPage = () => {
               text="Rufen Sie uns an" 
               variant="primary"
               url="/phone"
-            />
-            <Button 
-              text="Besuchen Sie uns im Museum" 
-              variant="primary"
-              url="/visit"
             />
           </div>
 
