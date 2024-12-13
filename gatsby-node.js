@@ -62,16 +62,20 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve(`./src/pages/de/mitmachen.js`),
     },
     {
-      path: "/de/publikationen",
-      component: path.resolve(`./src/pages/de/publikationen.js`),
+      path: "/de/forschung/publikationen",
+      component: path.resolve(`./src/pages/de/forschung/publikationen.js`),
     },
+    {
+      path: "/de/forschung/team-projekte",
+      component: path.resolve(`./src/pages/de/forschung/team-projekte.js`),
+    }
   ];
 
   dePages.forEach(page => {
     createPage({
       path: page.path,
       component: page.component,
-      context: { imageMap },
+      context: {},
     });
   });
 };

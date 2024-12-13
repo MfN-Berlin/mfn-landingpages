@@ -70,7 +70,13 @@ const CardText = ({
       {buttons.length > 0 && (
         <div className={`flex gap-4 mt-2 flex-wrap ${alignmentClasses[alignment]}`}>
           {buttons.map((buttonProps, index) => (
-            <Button key={index} {...buttonProps} />
+            <Button 
+              key={index} 
+              text={buttonProps.text}
+              url={buttonProps.url}
+              variant={buttonProps.variant}
+              onClick={buttonProps.onClick}
+            />
           ))}
         </div>
       )}

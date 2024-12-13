@@ -4,13 +4,22 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
  */
 
-// You can delete this file if you're not using it
-
 import './src/styles/global.css'
 
-// Temporär Prefetching deaktivieren
+// Version logging
+const VERSION = 'v0.0.106'
+
 export const onClientEntry = () => {
+    // Temporär Prefetching deaktivieren
     if (typeof window !== 'undefined') {
       window.___loader = { enqueue: () => {}, hovering: () => {} }
     }
-  }
+    
+    // Version in Konsole ausgeben
+    console.log(VERSION)
+}
+
+// Alternative: Bei jedem Routenwechsel
+export const onRouteUpdate = () => {
+    console.log(VERSION)
+}

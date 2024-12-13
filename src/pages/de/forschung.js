@@ -11,7 +11,8 @@ import Slideshow from '../../components/layouts/Slideshow'
 import SlideContent from '../../components/layouts/SlideContent'
 import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import HeadComponent from '../../components/layouts/HeadComponent'
-import Teaser from '../../components/layouts/Teaser';
+import { Link } from "gatsby"
+import { generateUrl } from '../../scripts/urlHelper';
 
 const VisitPage = () => {
     const data = useStaticQuery(graphql`
@@ -165,7 +166,7 @@ const VisitPage = () => {
                 <Section backgroundColor="bg-Green-100" columns={1} padding="py-16">
                     <StoryTime
                         imageProps={{
-                            imageName: '213086456_4048064465229816_4437487348901250436_n 1.jpg', // Replace with your actual image
+                            imageName: 'A60A1885.jpg', // Replace with your actual image
                             alt: "Wissenschaftler bei der Forschungsarbeit. Bild: Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[4/3] object-cover"
@@ -209,6 +210,7 @@ const VisitPage = () => {
                             body: "Wir untersuchen die Prozesse, die die natürliche Welt formen, von der Evolution und Vielfalt der Arten bis hin zur Entstehung des Sonnensystems.",
                             spacing: "regular"
                         }}
+                        url="/de/forschung/dynamik-der-natur"
                     />
                     <Card
                         variant="green"
@@ -225,6 +227,7 @@ const VisitPage = () => {
                             body: "Wir gestalten eine offene und vernetzte Sammlung, die durch innovative Ansätze im Daten- und Wissensmanagement neue Wege für Forschung und Wissenstransfer eröffnet – gemeinsam mit Partnern aus Wissenschaft, Gesellschaft und Kultur.",
                             spacing: "regular"
                         }}
+                        url="/de/forschung/zukunft-der-sammlung"
                     />
 
                     <Card
@@ -367,8 +370,8 @@ const VisitPage = () => {
                 <Section backgroundColor="bg-White" columns={1} padding="py-16">
                     <StoryTime
                         imageProps={{
-                            imageName: 'LMA_4678.jpg', // Replace with your actual image
-                            alt: "Interessierter Forscher bei der wissenschaftlichen Arbeit. Foto: Pablo Castagnola",
+                            imageName: '213086456_4048064465229816_4437487348901250436_n 1.jpg', // Replace with your actual image
+                            alt: "Wissenschaftler bei der Forschungsarbeit. Bild: Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[4/3] object-cover"
                         }}
@@ -477,73 +480,74 @@ const VisitPage = () => {
                             {
                                 text: "Alle Publikationen im Überblick",
                                 variant: "plain",
-                                url: "#"
+                                url: generateUrl("/de/forschung/publikationen/", "/de/forschung")
                             }
                         ]}
                     />
                 </Section>
                 <Section backgroundColor="bg-White" columns={3} padding="pb-16">
-                    <div className="p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5">
-                        <div className="w-full bg-Green-100 flex flex-col">
-                            <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20"> {/* Reduced gap from 90px */}
+                    <Link to="https://www.museumfuernaturkunde.berlin/de/presse/pressemitteilungen/wie-lebensstrategien-und-lebensraeume-die-regenerationsfaehigkeiten-von" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
+                        <div className="w-full bg-Green-100 flex flex-col  ">
+                            <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
-                                    September 2024 / Ecography
-                                </p>
-                                <h3 className="text-White-White  font-normal">
-                                    Environmental heterogeneity, rather than stability, explains spider assemblage differences between ecosystems
-                                </h3>
-                            </div>
-                            <div className="w-full p-[30px] flex flex-col gap-2.5">
-                                <p className="text-Green-500 typography-body text-sm leading-tight font-italic">
-                                    Daniel Suárez, Paula Arribas, Amrita Srivathsan, [...], Brent C. Emerson
-                                </p>
-                                <p className="text-Black-700 text-sm leading-tight">
-                                    The open ecosystem (e.g. grasslands, prairies, shrublands) tends to be ecologically less stable than closed one (i.e. forests) and encompassess higher spatial heterogeneity in terms of environmental diversity. Such differences are expected to…
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5">
-                        <div className="w-full bg-Green-100 flex flex-col">
-                            <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20"> {/* Reduced gap from 90px */}
-                                <p className="typography-kicker text-White-White font-normal">
-                                    September 2024 / Ecography
-                                </p>
-                                <h3 className="text-White-White  font-normal">
-                                    Environmental heterogeneity, rather than stability, explains spider assemblage differences between ecosystems
-                                </h3>
-                            </div>
-                            <div className="w-full p-[30px] flex flex-col gap-2.5">
-                                <p className="text-Green-500 typography-body text-sm leading-tight font-italic">
-                                    Daniel Suárez, Paula Arribas, Amrita Srivathsan, [...], Brent C. Emerson
-                                </p>
-                                <p className="text-Black-700 text-sm leading-tight">
-                                    The open ecosystem (e.g. grasslands, prairies, shrublands) tends to be ecologically less stable than closed one (i.e. forests) and encompassess higher spatial heterogeneity in terms of environmental diversity. Such differences are expected to…
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5">
-                        <div className="w-full bg-Green-100 flex flex-col">
-                            <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20"> {/* Reduced gap from 90px */}
-                                <p className="typography-kicker text-White-White font-normal">
-                                    September 2024 / Ecography
+                                    September 20th 2024 / Developmental Dynamics
                                 </p>
                                 <h3 className="text-White-White font-normal">
-                                    Environmental heterogeneity, rather than stability, explains spider assemblage differences between ecosystems
+                                    Effects of life history strategies and habitats on limb regeneration in plethodontid salamanders
+                                </h3>
+                            </div>
+                            <div className="w-full p-[30px] flex flex-col gap-2.5">
+                                <p className="text-Green-500 typography-body text-sm leading-tight font-italic ">
+                                    Vivien Bothe, Hendrik Müller, Neil Shubin, Nadia Fröbisch
+                                </p>
+                                <p className="text-Black-700 text-sm leading-tight ">
+                                    Salamanders are the only tetrapods that exhibit the ability to fully regenerate limbs...
+                                </p>
+                            </div>
+                        </div>
+                    </Link>
+
+                    <Link to="https://www.museumfuernaturkunde.berlin/de/presse/pressemitteilungen/neuer-bromacker-ursaurier-nach-unesco-geopark-thueringen-benannt" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
+                        <div className="w-full bg-Green-100 flex flex-col ">
+                            <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
+                                <p className="typography-kicker text-White-White font-normal">
+                                    June 26th 2024 / Royal Society Open Science
+                                </p>
+                                <h3 className="text-White-White font-normal">
+                                    A comprehensive phylogeny and revised taxonomy of Diadectomorpha with a discussion on the origin of tetrapod herbivory
                                 </h3>
                             </div>
                             <div className="w-full p-[30px] flex flex-col gap-2.5">
                                 <p className="text-Green-500 typography-body text-sm leading-tight font-italic">
-                                    Daniel Suárez, Paula Arribas, Amrita Srivathsan, [...], Brent C. Emerson
+                                    Jasper Ponstein, Mark J. MacDougall, Jörg Fröbisch
                                 </p>
-                                <p className="text-Black-700 text-sm leading-tight">
-                                    The open ecosystem (e.g. grasslands, prairies, shrublands) tends to be ecologically less stable than closed one (i.e. forests) and encompassess higher spatial heterogeneity in terms of environmental diversity. Such differences are expected to…
+                                <p className="text-Black-700 text-sm leading-tight ">
+                                    Among terrestrial tetrapods, the origin of herbivory marked a key evolutionary event...
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
+                    <Link to="https://www.museumfuernaturkunde.berlin/de/presse/pressemitteilungen/paradiesvoegel-schmuecken-sich-erfolgreich-mit-fremden-federn" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
+                        <div className="w-full bg-Green-100 flex flex-col ">
+                            <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
+                                <p className="typography-kicker text-White-White font-normal">
+                                    June 8th 2024 / Evolution Letters
+                                </p>
+                                <h3 className="text-White-White font-normal">
+                                    Contemporary intergeneric hybridization and backcrossing among birds-of-paradise
+                                </h3>
+                            </div>
+                            <div className="w-full p-[30px] flex flex-col gap-2.5">
+                                <p className="text-Green-500 typography-body text-sm leading-tight font-italic">
+                                    Filip Thörn, André E R Soares, Ingo A Müller, Martin Päckert...
+                                </p>
+                                <p className="text-Black-700 text-sm leading-tight ">
+                                    Despite large differences in morphology, behavior and lek-mating strategies...
+                                </p>
+                            </div>
+                        </div>
+                    </Link>
                 </Section>
                 <Section columns={1} backgroundColor="bg-Black-100">
                     <CardText

@@ -11,6 +11,7 @@ import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import HeadComponent from '../../components/layouts/HeadComponent'
 import Teaser from '../../components/layouts/Teaser';
 import Blockquote from '../../components/layouts/Blockquote';
+import { generateUrl } from '../../scripts/urlHelper';
 
 
 
@@ -62,28 +63,28 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Ehrenamt",
-                                    url: "/teams-projekte",
+                                    url: generateUrl("/de/mitmachen/ehrenamt", "/de/mitmachen"),
                                     variant: "plain"
                                 },
                                 {
                                     text: "Bildungsangebote",
-                                    url: "/teams-projekte",
+                                    url: generateUrl("/de/mitmachen/bildung", "/de/mitmachen"),
                                     variant: "plain"
                                 }
                                 ,
                                 {
                                     text: "Veranstaltungen",
-                                    url: "/teams-projekte",
+                                    url: generateUrl("/de/mitmachen/veranstaltungen", "/de/mitmachen"),
                                     variant: "plain"
                                 },
                                 {
                                     text: "Bürgerwissenschaften",
-                                    url: "/teams-projekte",
+                                    url: generateUrl("/de/mitmachen/bürgerwissenschaften", "/de/mitmachen"),
                                     variant: "plain"
                                 },
                                 {
                                     text: "Werkstatt",
-                                    url: "/teams-projekte",
+                                    url: generateUrl("/de/mitmachen/ehrenamt/transkriptionswerkstatt", "/de/mitmachen"),
                                     variant: "plain"
                                 }]
 
@@ -103,6 +104,7 @@ const IndexPage = () => {
                 <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Card
                         variant="classic"
+                        alignment="center"
                         imageProps={{
                             imageName: "TR1C6470 (1).jpg",
                             alt: "Personen stehen vor dem verbildlichten Netzwerk der Anthropozänobjekte",
@@ -110,12 +112,12 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropozäns",
+                            headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropoz��ns",
                             body: "Wie hat sich Ihre Umwelt verändert? Welche persönlichen Dinge oder Zeugnisse aus der Vergangenheit erzählen davon? Tragen Sie dazu bei, mit Ihrem Objekt und Ihrer Geschichte den Wandel der Umwelt und die Herausforderungen der Zukunft besser zu verstehen!",
                             headlineStyle: "h3",
                             alignment: "center"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("de/wissenschaft/natur-der-dinge.-eine-partizipative-sammlung-des-anthropozaens", "/de/mitmachen")}
                     />
 
 
@@ -137,7 +139,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("de/museum/mitmachen/transkriptionswerkstatt", "/de/mitmachen")}
                     />
 
                     <Card
@@ -155,7 +157,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("/de/mitmachen/ehrenamt", "/de/mitmachen")}
                     />
 
                 </Section>
@@ -175,7 +177,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren", "/de/mitmachen")}
                     />
 
                     <Card
@@ -192,7 +194,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("de/wissenschaft/mit%3Aforschen%21", "/de/mitmachen")}
                     />
 
                     <Card
@@ -209,13 +211,13 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("de/wissenschaft/netzwerk-naturwissen", "/de/mitmachen")}
                     />
 
                 </Section>
                 <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Blockquote
-                        text="„Unsere Mission: Wir erforschen die Erde und das Leben im Dialog mit den Menschen.“"
+                        text="<strong>Unsere Mission:</strong><br/> Wir erforschen die Erde und das Leben im Dialog mit den Menschen."
                         backgroundColor=""  // Green-500 color
                         className="bg-Green-500"
                     />
@@ -236,7 +238,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("de/wissenschaft/naturblick-stadtnatur-entdecken", "/de/mitmachen")}
                     />
 
                     <Card
@@ -253,7 +255,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("/de/mitmachen/taschenlampenführungen", "/de/mitmachen")}
                     />
 
                 </Section>
@@ -273,7 +275,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren", "/de/mitmachen")}
                     />
 
                     <Card
@@ -290,7 +292,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("/de/museum/veranstaltungen/grossstadtsafari-stadtoekologie-und-klimawandel-5", "/de/mitmachen")}
                     />
 
                     <Card
@@ -307,7 +309,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("/de/museum/mitmachen", "/de/mitmachen")}
                     />
 
                 </Section>
@@ -355,7 +357,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("/de/mitmachen/ehrenamt", "/de/mitmachen")}
                     />
 
                     <Card
@@ -372,7 +374,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/small-card-1-page"
+                        url={generateUrl("/de/mitmachen/bildungsangebote", "/de/mitmachen")}
                     />
 
                 </Section>

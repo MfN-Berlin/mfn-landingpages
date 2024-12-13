@@ -93,8 +93,8 @@ export const featureTranslations = {
       accessibility: "Barrierefreiheit",
       urls: {
         signLanguage: "https://www.youtube.com/watch?v=pUUvyoe0tpc",
-        easyLanguage: "https://www.museumfuernaturkunde.berlin/leichte-sprache",
-        accessibility: "https://www.museumfuernaturkunde.berlin/leichte-sprache/museum/besuch-planen/barrierefreiheit"
+        easyLanguage: "/de/leichte-sprache",
+        accessibility: "/de/besuch-planen/barrierefreiheit"
       }
     },
     en: {
@@ -104,8 +104,8 @@ export const featureTranslations = {
       accessibility: "Accessibility",
       urls: {
         signLanguage: "https://www.youtube.com/watch?v=pUUvyoe0tpc",
-        easyLanguage: "https://www.museumfuernaturkunde.berlin/en/easy-language",
-        accessibility: "https://www.museumfuernaturkunde.berlin/en/easy-language/museum/visit/accessibility"
+        easyLanguage: "/en/easy-language",
+        accessibility: "/en/visit/accessibility"
       }
     }
   },

@@ -1,23 +1,24 @@
 import * as React from "react"
-import { graphql, useStaticQuery, withPrefix, Link } from "gatsby"
-import Header from "../../components/layouts/Header"
-import Button from "../../components/elements/Button"
-import CardText from '../../components/elements/CardText'
-import ContentImage from '../../components/elements/ContentImage'
-import Section from '../../components/elements/Section'
-import Card from '../../components/elements/Card'
-import StoryTime from '../../components/layouts/StoryTime'
-import Footer from '../../components/layouts/Footer'
-import { Accordion, AccordionItem, AccordionSpacer } from '../../components/layouts/Accordion'
-import Slideshow from '../../components/layouts/Slideshow'
-import SlideContent from '../../components/layouts/SlideContent'
-import AccessibilityNav from '../../components/layouts/AccessibilityNav'
-import OpenToday from '../../components/features/OpenToday'
-import Feedback from '../../components/features/Feedback'
-import HeadComponent from '../../components/layouts/HeadComponent'
-import UpcomingHoliday from '../../components/features/UpcomingHoliday';
-import { getAssetPath } from '../../scripts/assetPrefix';
-import TransportIcon from '../../components/elements/TransportIcon';
+import { graphql, useStaticQuery, withPrefix, Link } from "gatsby"  // Gatsby-spezifische Imports für Datenabfragen und Navigation
+import Header from "../../components/layouts/Header"  // Kopfbereich der Seite mit Navigation
+import Button from "../../components/elements/Button"  // Wiederverwendbare Button-Komponente
+import CardText from '../../components/elements/CardText'  // Text-Komponente für Karten mit verschiedenen Stilen
+import ContentImage from '../../components/elements/ContentImage'  // Bild-Komponente mit Gatsby-Image-Optimierung
+import Section from '../../components/elements/Section'  // Container für Seitenabschnitte
+import Card from '../../components/elements/Card'  // Karten-Komponente für Content-Blöcke
+import StoryTime from '../../components/layouts/StoryTime'  // Layout für Story-artige Inhalte mit Bild und Text
+import Footer from '../../components/layouts/Footer'  // Fußbereich der Seite
+import { Accordion, AccordionItem, AccordionSpacer } from '../../components/layouts/Accordion'  // Ausklappbare Inhaltsblöcke
+import Slideshow from '../../components/layouts/Slideshow'  // Karussell für Bilder/Inhalte
+import SlideContent from '../../components/layouts/SlideContent'  // Einzelne Slides für die Slideshow
+import AccessibilityNav from '../../components/layouts/AccessibilityNav'  // Barrierefreie Navigation
+import OpenToday from '../../components/features/OpenToday'  // Zeigt aktuelle Öffnungszeiten
+import Feedback from '../../components/features/Feedback'  // Feedback-Formular mit Sternebewertung
+import HeadComponent from '../../components/layouts/HeadComponent'  // Head/Meta-Informationen für SEO
+import UpcomingHoliday from '../../components/features/UpcomingHoliday'  // Zeigt kommende Feiertage/Events
+import { getAssetPath } from '../../scripts/assetPrefix'  // Helper für Asset-Pfade
+import TransportIcon from '../../components/elements/TransportIcon'  // Icons für Verkehrsmittel
+import { generateUrl } from '../../scripts/urlHelper'  // URL-Generator für mehrsprachige Seiten
 
 
 const IndexPage = () => {
@@ -39,11 +40,11 @@ const IndexPage = () => {
   const imageMap = {};
   data.allFile.edges.forEach(({ node }) => {
     imageMap[node.relativePath] = node.childImageSharp?.gatsbyImageData;
-  }); 
+  });
 
   return (
     <>
-      <Header activeNavItem="besuchplanen"/>
+      <Header activeNavItem="besuchplanen" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
         <Section backgroundColor="bg-Black-000" padding="pt-8 pb-0">
           <AccessibilityNav currentPage="Besuch planen" />
@@ -65,30 +66,30 @@ const IndexPage = () => {
               alignment: "center",
               buttons: [
                 {
-                    text: "Tickets",
-                    url: "https://ticketshop.museumfuernaturkunde.berlin",
-                    variant: "plain"
+                  text: "Tickets",
+                  url: "https://ticketshop.museumfuernaturkunde.berlin",
+                  variant: "plain"
                 },
                 {
-                    text: "Anfahrt",
-                    url: "/de/museum/besuch-planen/anfahrt",
-                    variant: "plain"
+                  text: "Anfahrt",
+                  url: "#anreise",
+                  variant: "plain"
                 },
                 {
-                    text: "Ausstellungen",
-                    url: "/de/museum/ausstellungen",
-                    variant: "plain"
+                  text: "Ausstellungen",
+                  url: "#im-museum",
+                  variant: "plain"
                 }
                 ,
                 {
-                    text: "Digitale Angebote",
-                    url: "/de/museum/bildung/fuernatur-digital-angebote",
-                    variant: "plain"
+                  text: "Digitale Angebote",
+                  url: generateUrl("/de/museum/bildung/fuernatur-digital-angebote-fuer-familien-und-kinder", "/de/besuch-planen"),
+                  variant: "plain"
                 },
                 {
-                    text: "Bildungsangebote",
-                    url: "/de/mitmachen/bildung",
-                    variant: "plain"
+                  text: "Bildungsangebote",
+                  url: generateUrl("/de/museum/bildung", "/de/besuch-planen"),
+                  variant: "plain"
                 }]
             }}
             linkUrl="https://ticketshop.museumfuernaturkunde.berlin"
@@ -101,22 +102,22 @@ const IndexPage = () => {
         <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div>
             <CardText
-            headline="Öffnungszeiten"
-            headlineStyle="h1"
-            body="Das Museum öffnet täglich bis 18:00 Uhr.<br/>Montags ist das Museum geschlossen.<br/>Letzter Einlass ist 30 Minuten vor Schluss."
-            spacing="wide"
-            alignment="center" // Center-aligned text
-          />
+              headline="Öffnungszeiten"
+              headlineStyle="h1"
+              body="Das Museum öffnet täglich bis 18:00 Uhr.<br/>Montags ist das Museum geschlossen.<br/>Letzter Einlass ist 30 Minuten vor Schluss."
+              spacing="wide"
+              alignment="center" // Center-aligned text
+            />
             <UpcomingHoliday />
             <div className="w-full">
               <Button
                 text="Genauer Plan mit Sonderöffnungszeiten"
-                url="/de/besuch-planen/sonderoeffnungszeiten"
+                url={generateUrl("/de/besuch-planen/sonderoeffnungszeiten", "/de/besuch-planen")}
                 variant="plain"
                 className="w-full justify-center"
               />
             </div>
-            </div>
+          </div>
           <Accordion bgColor="white">
 
             <OpenToday />
@@ -135,7 +136,7 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Samstag, Sonntag, und an <span className="underline">Feiertagen</span>
+                  Samstag, Sonntag, und <a href={generateUrl("/de/besuch-planen/sonderoeffnungszeiten", "/de/besuch-planen")} className="underline">an Feiertagen</a>
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2">
                   10:00 bis 18:00
@@ -157,7 +158,7 @@ const IndexPage = () => {
           </Accordion>
 
         </Section>
-        <Section columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
+        <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div className="flex -mt-40 flex-col justify-center items-center gap-20">
             {/* <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
               <p className="text-center text-black">
@@ -167,16 +168,16 @@ const IndexPage = () => {
             <CardText
               headline="Tickets & Preise"
               headlineStyle="h1"
-              body={`Tickets können Sie vor Ort und im <a href="/tickets/online-shop" style="text-decoration: underline;">Onlineshop</a> kaufen. 
-                Wir empfehlen die Buchung von <a href="/tickets/zeitfenster" style="text-decoration: underline;">Online-Zeitfenstertickets</a> 
+              body={`Tickets können Sie vor Ort und im <a href="https://ticketshop.museumfuernaturkunde.berlin/" style="text-decoration: underline;">Onlineshop</a> kaufen. 
+                Wir empfehlen die Buchung von <a href="https://ticketshop.museumfuernaturkunde.berlin/#/tickets/time?group=timeSlot" style="text-decoration: underline;">Online-Zeitfenstertickets</a> 
               im Vorfeld um Wartezeiten an der Kasse zu vermeiden.`}
               spacing="wide"
               alignment="center"
               buttons={[
                 {
-                    text: "Ticketkooperationen",
-                    url: "/de/besuch-planen/kooperationen",
-                    variant: "plain"
+                  text: "Ticketkooperationen",
+                  url: generateUrl("/de/besuch-planen/ticketkooperationen", "/de/besuch-planen"),
+                  variant: "plain"
                 }]}
             />
 
@@ -296,7 +297,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Laden Sie sich das <a href="https://www.naturkundemuseum-shop.de" className="underline">Anmeldeformular</a> herunter und beantragen Sie Ihre Jahreskarte noch heute. Senden Sie das ausgefüllte Formular gerne per E-Mail an <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
+                    Laden Sie sich das <a href="http://www.museumfuernaturkunde.berlin/sites/default/files/23_0629a_Antrag_Jahreskarten_DE.pdf" className="underline">Anmeldeformular</a> herunter und beantragen Sie Ihre Jahreskarte noch heute. Senden Sie das ausgefüllte Formular gerne per E-Mail an <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
                   </p>
                   <h4>Gutscheine</h4>
                   <p>Sie erhalten Gutscheine für einen Museumsbesuch an der Museumskasse zu den regulären Kassenöffnungszeiten.</p>
@@ -356,7 +357,7 @@ const IndexPage = () => {
                     <li>
                       <div className="flex justify-between items-baseline">
                         <p className="flex-1 pr-8">
-                          Teilnehmende an Freiwilligendiensten und bei Vorlage der Ehrenamtskarte
+                          Teilnehmende an Freiwilligendiensten und bei Vorlage der <a href="https://www.berlin.de/buergeraktiv/anerkennung/ehrenamtskarte/" className="underline">Ehrenamtskarte</a>
                         </p>
                       </div>
                     </li>
@@ -370,7 +371,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="/de/besuch-planen/kooperationen" className="underline">Mehr Infos zu Kooperationen</a>
+                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href={generateUrl("/de/besuch-planen/ticketkooperationen", "/de/besuch-planen")} className="underline">Mehr Infos zu Kooperationen</a>
                   </p>
                 </div>
               </div>
@@ -438,7 +439,7 @@ const IndexPage = () => {
                     <li>
                       <div className="flex justify-between items-baseline">
                         <p className="flex-1 pr-8">
-                         Begleitpersonen von Schwerbehinderten, die im Schwerbehindertenausweis eingetragen sind
+                          Begleitpersonen von Schwerbehinderten, die im Schwerbehindertenausweis eingetragen sind
                         </p>
                       </div>
                     </li>
@@ -458,7 +459,7 @@ const IndexPage = () => {
 
         </Section>
 
-        <Section columns={2} backgroundColor="bg-Green-100"  gapClass="gap-20 xl:gap-36" justifyContent="center">
+        <Section id="anreise" columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div className="flex flex-col justify-center items-center">
             <div className="py-[30px] mb-[17px]">
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
@@ -485,9 +486,9 @@ const IndexPage = () => {
               className="text-[#5f5f5f]"
               buttons={[
                 {
-                    text: "Das Museum auf Google Maps",
-                    url: "https://www.google.com/maps/place/Museum+f%C3%BCr+Naturkunde+Berlin/@52.521666,13.396666,17z/data=!3m1!4b1!4m6!3m5!1s0x47a851c79659d299:0x4f8747d2187d277d!8m2!3d52.521666!4d13.399151!16s%2Fg%2F11c48yq34j",
-                    variant: "plain"
+                  text: "Das Museum auf Google Maps",
+                  url: "https://www.google.com/maps/place/Museum+f%C3%BCr+Naturkunde+Berlin/@52.521666,13.396666,17z/data=!3m1!4b1!4m6!3m5!1s0x47a851c79659d299:0x4f8747d2187d277d!8m2!3d52.521666!4d13.399151!16s%2Fg%2F11c48yq34j",
+                  variant: "plain"
                 }
               ]}
             />
@@ -533,10 +534,10 @@ const IndexPage = () => {
             <AccordionItem title="Mit Fahrrad">
               <div className="p-5">
                 <p>
-                  Sie können das Museum auch bequem über die Invalidenstraße mit dem Fahrrad erreichen.<br/>
-                  <br/>
-                  Wir bieten ausreichend Stellplätze für Fahrräder vor Ort. So tragen Sie nicht nur zur Umwelt bei, sondern können Ihre Anreise flexibel und aktiv gestalten. Zusätzlich stehen Ihnen im Museum Garderobenfächer zur Verfügung, in denen Sie Ihre Fahrradutensilien sicher verstauen können.<br/>
-                  <br/>
+                  Sie können das Museum auch bequem über die Invalidenstraße mit dem Fahrrad erreichen.<br />
+                  <br />
+                  Wir bieten ausreichend Stellplätze für Fahrräder vor Ort. So tragen Sie nicht nur zur Umwelt bei, sondern können Ihre Anreise flexibel und aktiv gestalten. Zusätzlich stehen Ihnen im Museum Garderobenfächer zur Verfügung, in denen Sie Ihre Fahrradutensilien sicher verstauen können.<br />
+                  <br />
                   Am benachbarten Bundesministerium für Digitales und Verkehr gibt es eine elektrische Fahrradpumpe, die Sie rund um die Uhr kostenfrei nutzen können.
                 </p>
               </div>
@@ -544,8 +545,8 @@ const IndexPage = () => {
             <AccordionItem title="Mit Auto">
               <div className="p-5">
                 <p>
-                  Am Museum für Naturkunde gibt es keine Parkmöglichkeiten.<br/>
-                  <br/>
+                  Am Museum für Naturkunde gibt es keine Parkmöglichkeiten.<br />
+                  <br />
                   Parkplätze und Parkhäuser im Umkreis:
                 </p>
                 <div className="p-5">
@@ -569,135 +570,135 @@ const IndexPage = () => {
                       </li>
                     </ul>
                   </div>
-               </div>
+                </div>
               </div>
             </AccordionItem>
             <AccordionItem title="Barrierefreier Zugang">
               <div className="p-5">
-                <p>Der barrierefreie Eingang befindet sich rechts neben dem Hauptportal. Gegenüber gibt es drei Behindertenparkplätze. <br/><br/>
-                <strong>Bitte beachten Sie:</strong> die Behindertenparkplätze sind aufgrund von Baumaßnahmen am Nachbargebäude zur Zeit nicht zugänglich. Wir bitten um Verständis!<br/><br/>
-                Die Garderoben, das barrierefreie WC und die Ausstellungsebene sind von diesem Eingang mit einem Fahrstuhl oder Treppenlift erreichbar. <a href="https://www.museumfuernaturkunde.berlin/de/museum/besuch-planen/barrierefreiheit" className="underline">Mehr Infos</a></p>
+                <p>Der barrierefreie Eingang befindet sich rechts neben dem Hauptportal. Gegenüber gibt es drei Behindertenparkplätze. <br /><br />
+                  <strong>Bitte beachten Sie:</strong> die Behindertenparkplätze sind aufgrund von Baumaßnahmen am Nachbargebäude zur Zeit nicht zugänglich. Wir bitten um Verständis!<br /><br />
+                  Die Garderoben, das barrierefreie WC und die Ausstellungsebene sind von diesem Eingang mit einem Fahrstuhl oder Treppenlift erreichbar. <a href={generateUrl("/de/museum/besuch-planen/barrierefreiheit", "/de/besuch-planen")} className="underline">Mehr Infos</a></p>
               </div>
             </AccordionItem>
           </Accordion>
         </Section>
-        <Section columns={1} backgroundColor="bg-white" padding="pb-4 pt-16">
+        <Section id="im-museum" columns={1} backgroundColor="bg-white" padding="pb-4 pt-16">
           <CardText
             headline="Im Museum"
             headlineStyle="h1"
             body={`In unseren Ausstellungen erhalten Sie Einblicke in die gigantischen Abenteuer der Natur – anhand originaler Forschungsobjekte!
               <br/><br/>
-              Mehr zu unserer <a href="/de/museum/besuch-planen/besuchendenordnung" style="text-decoration: underline;">Besuchendenordnung</a> und 
-              unseren <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" style="text-decoration: underline;">Regeln für Film- und Foto-Aufnahmen</a>.`}
+              Mehr zu unserer <a href="${generateUrl("/de/museum/besuch-planen/besuchendenordnung", "/de/besuch-planen")}" style="text-decoration: underline;">Besuchendenordnung</a> und 
+              unseren <a href="${generateUrl("/de/museum/besuch-planen/fotografieren-und-filmaufnahmen", "/de/besuch-planen")}" style="text-decoration: underline;">Regeln für Film- und Foto-Aufnahmen</a>.`}
             spacing="wide"
             alignment="center"
           />
-          <br/><br/>
+          <br /><br />
 
           <Slideshow imageMap={imageMap}>
             <SlideContent
               imageName="zv_1200x675_WEBSEITE_0.jpg"
               title="ZUGvögel"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/zugvoegel"
+              link={generateUrl("/de/museum/ausstellungen/zugvoegel", "/de/besuch-planen")}
               altText="Zugvögel"
             />
             <SlideContent
               imageName="zp_1200x675_WEBSEITE.jpg"
               title="Zukunftsplan"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/zukunftsplan"
+              link={generateUrl("/de/museum/ausstellungen/zukunftsplan", "/de/besuch-planen")}
               altText="Zukunftsplan"
             />
             <SlideContent
               imageName="1200x800_0.jpg"
               title="Dinosaurier!"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/dinosaurier-zeitalter-der-riesenechsen"
+              link={generateUrl("/de/museum/ausstellungen/dinosaurier-zeitalter-der-riesenechsen", "/de/besuch-planen")}
               altText="Dinosaurier! Zeitalter der Riesenechsen"
             />
             <SlideContent
               imageName="digitize_webseite_V2_1200x800_Live Science.jpg"
               title="digitize!"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/digitize"
+              link={generateUrl("/de/museum/ausstellungen/digitize", "/de/besuch-planen")}
               altText="digitize! Live Science"
             />
             <SlideContent
               imageName="sauriersaal_04_c_carola-radke-mfn.jpg"
               title="Saurierwelt"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/saurierwelt"
+              link={generateUrl("/de/museum/ausstellungen/saurierwelt", "/de/besuch-planen")}
               altText="Saurierskelette im Sauriersaal"
             />
             <SlideContent
               imageName="system_erde_02_c_carola-radke_mfn.jpg"
               title="System Erde"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/system-erde"
+              link={generateUrl("/de/museum/ausstellungen/system-erde", "/de/besuch-planen")}
               altText="Der Multimedia-Globus im Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="kosmos_saal_c_hwa-ja-goetz-mfn.jpg"
               title="Kosmos und Sonnensystem"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/kosmos-und-sonnensystem"
+              link={generateUrl("/de/museum/ausstellungen/kosmos-und-sonnensystem", "/de/besuch-planen")}
               altText="Besucher schauen liegend in Projektionshimmel im Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="biodivwand_c_carola-radke-mfn.jpg"
               title="Evolution in Aktion"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/evolution-aktion"
+              link={generateUrl("/de/museum/ausstellungen/evolution-aktion", "/de/besuch-planen")}
               altText="Die Biodiversitätswand im Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="101028_nasssammlung_02_c_carola-radke-mfn.jpg"
               title="Nass-Sammlung"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/nass-sammlung"
+              link={generateUrl("/de/museum/ausstellungen/nass-sammlung", "/de/besuch-planen")}
               altText="Hohe Regale mit Tierpräparaten in der Nass-Sammlung"
             />
             <SlideContent
               imageName="130220_kellermodell_floh_c_carola-radke_mfn.jpg"
               title="Kellers Insektenmodelle"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/kellers-insektenmodelle"
+              link={generateUrl("/de/museum/ausstellungen/kellers-insektenmodelle", "/de/besuch-planen")}
               altText="Modell eines Flohs"
             />
             <SlideContent
               imageName="2015_bobby_c_carola-radke_mfn_0.jpg"
               title="Highlights der Präparationskunst"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/highlights-der-praeparationskunst"
+              link={generateUrl("/de/museum/ausstellungen/highlights-der-praeparationskunst", "/de/besuch-planen")}
               altText="Das Gesicht des Gorillas Bobby, dahinter das Präparat einer Riesen-Elanantilope"
             />
             <SlideContent
               imageName="110919_mineraliensaal_13_c_hwa-ja-goetz-mfn.jpg"
               title="Mineralien"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/mineralien"
+              link={generateUrl("/de/museum/ausstellungen/mineralien", "/de/besuch-planen")}
               altText="Schaukästen mit Mineralien im Mineraliensaal"
             />
             <SlideContent
               imageName="humboldt-intervention-museum-fuer-naturkunde-berlin.jpg"
               title="Humboldt-Intervention"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/humboldt-intervention"
+              link={generateUrl("/de/museum/ausstellungen/humboldt-intervention", "/de/besuch-planen")}
               altText="Plakate der Humboldt-Intervention zwischen und über den Schaukästen im Mineraliensaal"
             />
             <SlideContent
               imageName="100423_parasiten_03_c_hwaja-goetz_mfn_0.jpg"
               title="Wanderausstellungen"
               kicker="Unsere Ausstellungen"
-              link="/museum/wanderausstellungen"
+              link={generateUrl("/de/museum/wanderausstellungen", "/de/besuch-planen")}
               altText="Das Foto zeigt einen präparierten Springbock mit Madenhacker"
             />
             <SlideContent
               imageName="federband_c_hwaja-goetz_mfn.jpg"
               title="Archiv: Sonderausstellungen"
               kicker="Unsere Ausstellungen"
-              link="/museum/ausstellungen/archiv-sonderausstellungen"
+              link={generateUrl("/de/museum/ausstellungen/archiv-sonderausstellungen", "/de/besuch-planen")}
               altText="Federband aus verschiedenfarbigen Federn"
             />
           </Slideshow>
@@ -718,7 +719,7 @@ const IndexPage = () => {
                   spacing: "regular",
                   headlineStyle: "h3"
                 }}
-                url="/de/mitmachen/veranstaltungen"
+                url={generateUrl("/de/museum/veranstaltungen", "/de/besuch-planen")}
               />
             </div>
 
@@ -736,7 +737,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url="/de/museum/besuch-planen/barrierefreiheit"
+                url={generateUrl("/de/museum/besuch-planen/barrierefreiheit", "/de/besuch-planen")}
               />
               <Card
                 variant="classic"
@@ -751,7 +752,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url="/de/museum/besuch-planen"
+                url={generateUrl("/de/museum/besuch-planen/garderobe", "/de/besuch-planen")}
               />
             </div>
 
@@ -769,7 +770,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "regular"
                 }}
-                url="/de/museum/besuch-planen/museumscafe"
+                url={generateUrl("/de/museum/besuch-planen/museumscafe", "/de/besuch-planen")}
               />
             </div>
             <div className="sm:col-span-1 lg:col-span-1">
@@ -786,7 +787,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "wide"
                 }}
-                url="/de/museum/besuch-planen/digital-guide"
+                url={generateUrl("/de/museum/besuch-planen/digital-guide", "/de/besuch-planen")}
               />
             </div>
             <div className="sm:col-span-1 lg:col-span-1">
@@ -803,7 +804,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "wide"
                 }}
-                url="https://www.naturkundemuseum-shop.de"
+                url="https://www.naturkundemuseum-shop.de"  // Externe URL bleibt unverändert
               />
             </div>
           </div>
@@ -831,7 +832,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/de/museum/bildung/schule-und-kita"
+            url={generateUrl("/de/museum/bildung/schule-und-kita", "/de/besuch-planen")}
           />
           <Card
             variant="classic"
@@ -846,7 +847,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/de/museum/bildung/erwachsene"
+            url={generateUrl("/de/museum/bildung/erwachsene", "/de/besuch-planen")}
           />
           <Card
             variant="classic"
@@ -861,7 +862,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/de/museum/bildung/kindergeburtstage"
+            url={generateUrl("/de/museum/bildung/kindergeburtstage", "/de/besuch-planen")}
           />
           <Card
             variant="classic"
@@ -876,7 +877,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/de/museum/bildung/fuehrungen"
+            url={generateUrl("/de/museum/bildung/familien", "/de/besuch-planen")}
           />
         </Section>
         <Section columns={2} backgroundColor="bg-white" gapClass="gap-36" justifyContent="center">
@@ -890,9 +891,9 @@ const IndexPage = () => {
             className="text-[#5f5f5f]"
             buttons={[
               {
-                  text: "Mehr häufig gestellte Fragen",
-                  url: "/de/museum/besuch-planen/faq",
-                  variant: "plain"
+                text: "Mehr häufig gestellte Fragen",
+                url: generateUrl("/de/museum/besuch-planen/faq", "/de/besuch-planen"),
+                variant: "plain"
               }
             ]}
           />
@@ -902,19 +903,19 @@ const IndexPage = () => {
             <AccordionItem title="Wo erhalte ich die Tickets?">
               <div className="p-5">
                 <p>
-                  Sie können Online-Tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline">hier</a> oder vor Ort an der Museumskasse kaufen. 
-                  <br/><br/>
-                  Wir empfehlen die Buchung von Online-Zeitfenstertickets im Vorfeld um 
-                  Wartezeiten an der Kasse zu vermeiden. Die Tickets sind 14 Tage im Voraus 
+                  Sie können Online-Tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline">hier</a> oder vor Ort an der Museumskasse kaufen.
+                  <br /><br />
+                  Wir empfehlen die Buchung von Online-Zeitfenstertickets im Vorfeld um
+                  Wartezeiten an der Kasse zu vermeiden. Die Tickets sind 14 Tage im Voraus
                   buchbar.
-                  <br/><br/>
-                  Ein Zeitfensterticket berechtigt Sie zum Eintritt in das Museum innerhalb von 
-                  einer Stunde, ab der gebuchten Uhrzeit. Danach können Sie sich im Rahmen 
+                  <br /><br />
+                  Ein Zeitfensterticket berechtigt Sie zum Eintritt in das Museum innerhalb von
+                  einer Stunde, ab der gebuchten Uhrzeit. Danach können Sie sich im Rahmen
                   unserer Öffnungszeiten unbegrenzt im Museum aufhalten.
-                  <br/><br/>
+                  <br /><br />
                   Hinweis: Ihre Eintrittskarte gilt am selben Tag für alle laufenden Ausstellungen im
                   Museum für Naturkunde.
-                  
+
                 </p>
               </div>
             </AccordionItem>
@@ -926,28 +927,28 @@ const IndexPage = () => {
             </AccordionItem>
             <AccordionItem title="Gibt es einen Audioguide?">
               <div className="p-5">
-                <p>Ja. Wir bieten einen kostenfreien digitalen Guide für Ihr eigenes Smartphone an. 
-                Diesen gibt es in 11 Sprachen. Es gibt außerdem einen Audioguide für Kinder und
-                eine Highlight-Tour für Gehörlose in deutscher Gebärdensprache (DGS).
-                <br/><br/>
-                Außerdem bieten wir zwei Audio Guides mit thematischen Schwerpunkten an, um
-                die Ausstellung und Objekte durch eine zusätzliche Perspektive erfahrbar zu 
-                machen.
-                <br/><br/>
-                <a href="https://www.museumfuernaturkunde.berlin/de/museum/besuch-planen/digital-guide" className="underline">Hier</a> finden Sie weitere Informationen.
-                <br/><br/>
-                Für die Nutzung des Audioguides empfehlen wir Ihnen eigene Kopfhörer mitzubringen.
+                <p>Ja. Wir bieten einen kostenfreien digitalen Guide für Ihr eigenes Smartphone an.
+                  Diesen gibt es in 11 Sprachen. Es gibt außerdem einen Audioguide für Kinder und
+                  eine Highlight-Tour für Gehörlose in deutscher Gebärdensprache (DGS).
+                  <br /><br />
+                  Außerdem bieten wir zwei Audio Guides mit thematischen Schwerpunkten an, um
+                  die Ausstellung und Objekte durch eine zusätzliche Perspektive erfahrbar zu
+                  machen.
+                  <br /><br />
+                  <a href="https://www.museumfuernaturkunde.berlin/de/museum/besuch-planen/digital-guide" className="underline">Hier</a> finden Sie weitere Informationen.
+                  <br /><br />
+                  Für die Nutzung des Audioguides empfehlen wir Ihnen eigene Kopfhörer mitzubringen.
                 </p>
               </div>
             </AccordionItem>
             <AccordionItem title="Darf ich im Museum fotografieren?">
               <div className="p-5">
-                <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href="https://www.museumfuernaturkunde.berlin/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" className="underline">hier</a>.</p>
+                <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href={generateUrl("/de/museum/besuch-planen/fotografieren-und-filmaufnahmen", "/de/besuch-planen")} className="underline">hier</a>.</p>
               </div>
             </AccordionItem>
             <AccordionItem title="Darf ich meinen Kinderwagen mit in das Museum nehmen?">
               <div className="p-5">
-                <p>Ja, das Museum kann mit einem Kinderwagen besucht werden. 
+                <p>Ja, das Museum kann mit einem Kinderwagen besucht werden.
                 </p>
               </div>
             </AccordionItem>
@@ -973,15 +974,15 @@ const IndexPage = () => {
             alignment="center"
           />
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-            <Button 
-              text="Stellen Sie uns eine Frage" 
+            <Button
+              text="Stellen Sie uns eine Frage"
               variant="primary"
-              url="/contact"
+              url={generateUrl("/das-museum/heute/kontakt", "/de/besuch-planen")}
             />
-            <Button 
-              text="Rufen Sie uns an" 
+            <Button
+              text="Rufen Sie uns an"
               variant="primary"
-              url="/phone"
+              url="tel:+4930889140-8591"  // Telefonnummer ohne Klammern und Leerzeichen
             />
           </div>
 
