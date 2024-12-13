@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ text, children, variant = 'primary', url, className = '', ...props }) => {
+const Button = ({ text, children, variant = 'primary', url, onClick, className = '', ...props }) => {
   const baseClasses = 'inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none';
 
   const styleClasses = {
@@ -10,9 +10,21 @@ const Button = ({ text, children, variant = 'primary', url, className = '', ...p
     plain: 'text-Green-500 hover:text-Green-600 underline typography-body focus:outline-2 focus:outline-offset-2 focus:outline-Green-500'
   };
 
-  const handleClick = () => {
-    if (url) {
-      window.open(url, '_blank', 'noopener noreferrer');
+  const handleClick = (e) => {
+    if (onClick) {
+      onClick(e);
+    } else if (url) {
+      // Wenn die URL mit einem Hash beginnt, scrolle zur Section
+      if (url.startsWith('#')) {
+        e.preventDefault();
+        const element = document.getElementById(url.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Öffne externe URLs in neuem Tab
+        window.open(url, '_blank', 'noopener noreferrer');
+      }
     }
   };
 

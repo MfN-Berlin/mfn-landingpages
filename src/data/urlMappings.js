@@ -6,8 +6,8 @@ export const urlMappings = {
   '/de/forschung': '/en/research',
   '/de/museum': '/en/museum',
   '/de/kontakt': '/en/contact',
-  '/de/publikationen': '/en/publications',
-  '/de/team-projekte': '/en/teams-projects',
+  '/de/forschung/publikationen': '/en/research/publications',
+  '/de/forschung/team-projekte': '/en/research/team-projects',
   
   // English to German
   '/en/': '/de/',
@@ -16,8 +16,8 @@ export const urlMappings = {
   '/en/research': '/de/forschung',
   '/en/museum': '/de/museum',
   '/en/contact': '/de/kontakt',
-  '/en/publications': '/de/publikationen',
-  '/en/teams-projects': '/de/team-projekte',
+  '/en/research/publications': '/de/forschung/publikationen',
+  '/en/research/team-projects': '/de/forschung/team-projekte',
 };
 
 export const getTranslatedUrl = (currentPath, targetLang) => {

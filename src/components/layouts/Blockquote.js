@@ -31,9 +31,10 @@ const BlockQuote = ({
         )}
         <div className="flex-grow flex-shrink basis-0 flex-col justify-start items-start">
           {text && (
-            <p className="self-stretch text-white text-lg italic leading-tight mb-4 max-w-[700px]">
-              {text}
-            </p>
+            <p 
+              className="self-stretch text-white text-lg italic leading-tight mb-4 max-w-[700px]"
+              dangerouslySetInnerHTML={{ __html: text }}
+            />
           )}
           {(source || sourceTitle) && (
             <cite className="self-stretch opacity-70">
