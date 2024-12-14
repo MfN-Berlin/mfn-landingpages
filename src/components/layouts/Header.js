@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, withPrefix } from 'gatsby';
 import { generateUrl } from '../../scripts/urlHelper';
 import { LANGUAGES, getLanguageFromPath, getNavigationData } from '../../scripts/languageManager';
 import { getTranslatedUrl } from '../../data/urlMappings';
 import { Location } from '@reach/router';
 import { getAssetPath } from '../../scripts/assetPrefix';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 // Component for top navigation links
 const TopNavLink = ({ to, children, isSpecial = false }) => (
@@ -151,13 +153,7 @@ const SearchForm = () => (
 
 // Language switcher component
 const LanguageSwitcher = ({ currentPath }) => {
-  const pathPrefix = '/mfn-landingpages';
-  
-  // Remove prefix once and store the clean path
-  const cleanPath = currentPath?.startsWith(pathPrefix) 
-    ? currentPath.slice(pathPrefix.length)
-    : currentPath;
-  
+  const cleanPath = currentPath || '/';
   const currentLang = getLanguageFromPath(cleanPath);
   
   const getTargetPath = (targetLang) => {
@@ -196,6 +192,20 @@ const Header = ({ activeNavItem, location }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const currentLang = getLanguageFromPath(location?.pathname);
   
+  // Carousel-Initialisierung nur auf Client-Side
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true },
+    // Autoplay nur auf Client-Side initialisieren
+    [typeof window !== 'undefined' && Autoplay()]
+  );
+
+  // Optional: Cleanup für Embla
+  useEffect(() => {
+    return () => {
+      if (emblaApi) emblaApi.destroy();
+    };
+  }, [emblaApi]);
+
   // Get the correct navigation data based on language
   const { topNavLinks: currentTopNavLinks, mainNavData: currentMainNavData } = 
     getNavigationData(currentLang);
