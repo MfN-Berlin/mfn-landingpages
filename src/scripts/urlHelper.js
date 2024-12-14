@@ -34,6 +34,13 @@ export const generateUrl = (to, currentPath) => {
   // If it's an external URL, return as is
   if (to.startsWith('http')) return to;
   
+  // Wenn kein currentPath vorhanden ist (z.B. während SSR)
+  if (!currentPath) {
+    // Extrahiere die Sprache aus der Ziel-URL
+    const matches = to.match(/^\/(en|de)\//);
+    return matches ? to : `/de${to}`;  // Fallback auf Deutsch
+  }
+  
   // Get the target language
   const targetLang = getLanguageFromPath(currentPath);
   
