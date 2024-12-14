@@ -113,7 +113,7 @@ const Feedback = () => {
               {t.helpImprove} <br/>
               {t.privacyNote} (
               <a 
-                href={`/${language}/privacy-policy`}
+                href={language === 'de' ? '/de/datenschutzerklaerung' : '/en/general-privacy-notice'}
                 className="underline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -146,24 +146,21 @@ const Feedback = () => {
       </div>
 
       {showModal && (
-        <button 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-full border-0"
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 w-full h-full"
           onClick={handleClickOutside}
-          onKeyDown={(e) => {
-            if (e.key === 'Escape') handleClose();
-          }}
-          aria-label="Close modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="feedback-modal-title"
         >
           <div 
             className="bg-white rounded-lg p-6 max-w-md w-full relative"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="feedback-modal-title"
+            onClick={e => e.stopPropagation()}
           >
             <button 
               onClick={handleClose}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-              aria-label="Close feedback modal"
+              aria-label={t.closeModal || "Close feedback modal"}
             >
               <XMarkIcon className="w-6 h-6" />
             </button>
@@ -189,7 +186,7 @@ const Feedback = () => {
               </Button>
             </div>
           </div>
-        </button>
+        </div>
       )}
     </>
   );

@@ -8,6 +8,8 @@ export const urlMappings = {
   '/de/kontakt': '/en/contact',
   '/de/forschung/publikationen': '/en/research/publications',
   '/de/forschung/team-projekte': '/en/research/team-projects',
+  '/de/datenschutzerklaerung': '/en/general-privacy-notice',
+  '/de/datenschutzeinstellungen': '/en/privacy-settings',
   
   // English to German
   '/en/': '/de/',
@@ -18,6 +20,8 @@ export const urlMappings = {
   '/en/contact': '/de/kontakt',
   '/en/research/publications': '/de/forschung/publikationen',
   '/en/research/team-projects': '/de/forschung/team-projekte',
+  '/en/general-privacy-notice': '/de/datenschutzerklaerung',
+  '/en/privacy-settings': '/de/datenschutzeinstellungen',
 };
 
 export const getTranslatedUrl = (currentPath, targetLang) => {

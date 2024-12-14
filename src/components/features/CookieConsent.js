@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Button from '../elements/Button';
+import { getLanguageFromPath } from '../../scripts/languageManager';
+import { featureTranslations } from '../../data/featureTranslations';
 
 const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
+  const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
+  const t = featureTranslations.cookieConsent[language];
+
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState({
@@ -104,7 +109,7 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
 
   const handleAcceptEssential = () => {
     savePreference('cookie-agreed', '0');
-    savePreference('cookie-agreed-categories', JSON.stringify([["essential"]]));
+    savePreference('cookie-agreed-categories', JSON.stringify(["essential"]));
     handleClose();
   };
 
@@ -141,7 +146,7 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
       disabled={isReadOnly}
     >
       <span className="absolute right-[2px] mt-[4px] top-full uppercase text-[0.75em] whitespace-nowrap">
-        {isActive ? 'Zugestimmt' : 'Abgelehnt'}
+        {isActive ? t.accepted : t.rejected}
       </span>
       <span 
         className={`
@@ -184,32 +189,27 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
             {!showSettings ? (
               <div className="mfn-cookie-banner__content">
                 <p className="text-sm text-gray-500 mb-2">Cookies</p>
-                <h2 className="text-2xl font-bold mb-4">Datenschutzeinstellungen</h2>
+                <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
                 <div className="prose prose-sm mb-6">
                   <p>
-                    Auf unserer Webseite nutzen wir Cookies und binden Inhalte Dritter wie z. B. Videos ein. 
-                    Cookies dienen Ihnen dazu, das Anzeigen von Inhalten Dritter und das statistische Erfassen 
-                    Ihres Besuches auf unserer Webseite zu erlauben. Außerdem ermöglichen Cookies essenzielle 
-                    Funktionen der Webseite.
-                    <br /><br />
-                    Mehr dazu können Sie in unserer <Link to="/de/datenschutzerklaerung" className="text-[#91bd0d] hover:underline">Datenschutzerklärung</Link> nachlesen.
+                    {t.intro}
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
                     onClick={() => setShowSettings(true)}
                     variant="primary"
-                    text="Einstellungen"
+                    text={t.settings}
                   />
                   <Button
                     onClick={handleAcceptEssential}
                     variant="primary"
-                    text="Essenzielles akzeptieren"
+                    text={t.acceptEssential}
                   />
                   <Button
                     onClick={handleAcceptAll}
                     variant="primary"
-                    text="Alles akzeptieren"
+                    text={t.acceptAll}
                   />
                 </div>
               </div>
@@ -220,34 +220,29 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
                     onClick={handleBackButton}
                     className="flex items-center text-gray-600 hover:text-gray-900"
                   >
-                    <span className="mr-2">←</span> zurück
+                    <span className="mr-2">←</span> {t.back}
                   </button>
                 </div>
                 <p className="text-sm text-gray-500 mb-2">Cookies</p>
-                <h2 className="text-2xl font-bold mb-4">Datenschutzeinstellungen</h2>
+                <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
                 
                 <div className="prose prose-sm mb-6">
                   <p>
-                    Auf unserer Webseite nutzen wir Cookies und binden Inhalte Dritter wie z. B. Videos ein. 
-                    Cookies dienen Ihnen dazu, das Anzeigen von Inhalten Dritter und das statistische Erfassen 
-                    Ihres Besuches auf unserer Webseite zu erlauben. Außerdem ermöglichen Cookies essenzielle 
-                    Funktionen der Webseite. Hier können Sie einstellen, welche Funktionen Sie zulassen.
-                    <br /><br />
-                    Mehr dazu können Sie in unserer <Link to="/de/datenschutzerklaerung" className="text-[#91bd0d] hover:underline">Datenschutzerklärung</Link> nachlesen.
+                    {t.intro}
                   </p>
                 </div>
                 
                 <div className="space-y-6 mb-6">
                   <CookieServiceItem
-                    title="Essenziell"
-                    description="Diese Cookies sind notwendig, um die Webseite nutzen zu können."
+                    title={t.categories.essential.title}
+                    description={t.categories.essential.description}
                     isActive={true}
                     isReadOnly={true}
                   />
                   
                   <CookieServiceItem
-                    title="Tracking"
-                    description="Wir nutzen Matomo um das Nutzerverhalten in einer Statistik zu erfassen. Dies erlaubt uns das Nutzerverhalten zu analysieren, um unsere Webseite ständig zu verbessern."
+                    title={t.categories.tracking.title}
+                    description={t.categories.tracking.description}
                     isActive={preferences.tracking}
                     isReadOnly={false}
                     onChange={() => setPreferences(prev => ({
@@ -257,8 +252,8 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
                   />
 
                   <CookieServiceItem
-                    title="Youtube"
-                    description="Wir binden Inhalte von Youtube wie z. B. Videos auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Youtube geladen werden. Dadurch können personenbezogene Daten an Youtube übertragen werden, als würden Sie die Webseite von Youtube direkt besuchen."
+                    title={t.categories.youtube.title}
+                    description={t.categories.youtube.description}
                     isActive={preferences.media_youtube}
                     isReadOnly={false}
                     onChange={() => setPreferences(prev => ({
@@ -268,8 +263,8 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
                   />
 
                   <CookieServiceItem
-                    title="Podigee"
-                    description="Wir binden Inhalte von Podigee wie z. B. Podcasts auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Podigee geladen werden. Dadurch können personenbezogene Daten an Podigee übertragen werden, als würden Sie die Webseite von Podigee direkt besuchen."
+                    title={t.categories.podigee.title}
+                    description={t.categories.podigee.description}
                     isActive={preferences.media_podigee}
                     isReadOnly={false}
                     onChange={() => setPreferences(prev => ({
@@ -279,8 +274,8 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
                   />
 
                   <CookieServiceItem
-                    title="Funktionale Cookies"
-                    description="Diese Cookies ermöglichen es der Website, eine verbesserte Funktionalität und Personalisierung zu bieten (z. B. merken wir uns, wenn Sie Hinweise der Seite als gelesen markiert haben und zeigen sie nicht erneut an). Das deaktivieren beeinträchtigt die Funktionalität der Seite nicht."
+                    title={t.categories.misc.title}
+                    description={t.categories.misc.description}
                     isActive={preferences.misc}
                     isReadOnly={false}
                     onChange={() => setPreferences(prev => ({
@@ -294,7 +289,7 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
                   <Button
                     onClick={handleSaveSettings}
                     variant="primary"
-                    text="Einstellungen übernehmen"
+                    text={t.saveSettings}
                   />
                 </div>
               </div>
