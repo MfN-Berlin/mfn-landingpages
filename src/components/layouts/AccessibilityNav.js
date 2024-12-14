@@ -4,7 +4,7 @@ import { getLanguageFromPath } from '../../scripts/languageManager';
 import { featureTranslations } from '../../data/featureTranslations';
 import { getAssetPath } from '../../scripts/assetPrefix';
 import { generateUrl } from '../../scripts/urlHelper';
-
+ 
 const AccessibilityNav = ({ currentPage }) => {
   const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
   const t = featureTranslations.accessibilityNav[language];
