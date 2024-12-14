@@ -11,7 +11,6 @@ import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import HeadComponent from '../../components/layouts/HeadComponent'
 import Teaser from '../../components/layouts/Teaser';
 import Blockquote from '../../components/layouts/Blockquote';
-import { generateUrl } from '../../scripts/urlHelper';
 
 
 
@@ -63,28 +62,28 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Ehrenamt",
-                                    url: generateUrl("/de/mitmachen/ehrenamt", "/de/mitmachen"),
+                                    url: "/de/mitmachen/ehrenamt",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Bildungsangebote",
-                                    url: generateUrl("/de/mitmachen/bildung", "/de/mitmachen"),
+                                    url: "/de/mitmachen/bildung",
                                     variant: "plain"
                                 }
                                 ,
                                 {
                                     text: "Veranstaltungen",
-                                    url: generateUrl("/de/mitmachen/veranstaltungen", "/de/mitmachen"),
+                                    url: "/de/mitmachen/veranstaltungen",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Bürgerwissenschaften",
-                                    url: generateUrl("/de/mitmachen/bürgerwissenschaften", "/de/mitmachen"),
+                                    url: "/de/mitmachen/bürgerwissenschaften",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Werkstatt",
-                                    url: generateUrl("/de/mitmachen/ehrenamt/transkriptionswerkstatt", "/de/mitmachen"),
+                                    url: "/de/mitmachen/ehrenamt/transkriptionswerkstatt",
                                     variant: "plain"
                                 }]
 
@@ -112,12 +111,12 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropoz��ns",
+                            headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropozäns",
                             body: "Wie hat sich Ihre Umwelt verändert? Welche persönlichen Dinge oder Zeugnisse aus der Vergangenheit erzählen davon? Tragen Sie dazu bei, mit Ihrem Objekt und Ihrer Geschichte den Wandel der Umwelt und die Herausforderungen der Zukunft besser zu verstehen!",
                             headlineStyle: "h3",
                             alignment: "center"
                         }}
-                        url={generateUrl("de/wissenschaft/natur-der-dinge.-eine-partizipative-sammlung-des-anthropozaens", "/de/mitmachen")}
+                        url="/de/wissenschaft/natur-der-dinge.-eine-partizipative-sammlung-des-anthropozaens"
                     />
 
 
@@ -139,7 +138,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("de/museum/mitmachen/transkriptionswerkstatt", "/de/mitmachen")}
+                        url="/de/museum/mitmachen/transkriptionswerkstatt"
                     />
 
                     <Card
@@ -157,7 +156,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("/de/mitmachen/ehrenamt", "/de/mitmachen")}
+                        url="/de/mitmachen/ehrenamt"
                     />
 
                 </Section>
@@ -177,7 +176,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren", "/de/mitmachen")}
+                        url="/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren"
                     />
 
                     <Card
@@ -194,7 +193,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("de/wissenschaft/mit%3Aforschen%21", "/de/mitmachen")}
+                        url="/de/wissenschaft/mit%3Aforschen%21"
                     />
 
                     <Card
@@ -211,7 +210,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("de/wissenschaft/netzwerk-naturwissen", "/de/mitmachen")}
+                        url="/de/wissenschaft/netzwerk-naturwissen"
                     />
 
                 </Section>
@@ -238,7 +237,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("de/wissenschaft/naturblick-stadtnatur-entdecken", "/de/mitmachen")}
+                        url="/de/wissenschaft/naturblick-stadtnatur-entdecken"
                     />
 
                     <Card
@@ -255,7 +254,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("/de/mitmachen/taschenlampenführungen", "/de/mitmachen")}
+                        url="/de/mitmachen/taschenlampenführungen"
                     />
 
                 </Section>
@@ -275,7 +274,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren", "/de/mitmachen")}
+                        url="/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren"
                     />
 
                     <Card
@@ -292,7 +291,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("/de/museum/veranstaltungen/grossstadtsafari-stadtoekologie-und-klimawandel-5", "/de/mitmachen")}
+                        url="/de/museum/veranstaltungen/grossstadtsafari-stadtoekologie-und-klimawandel-5"
                     />
 
                     <Card
@@ -309,7 +308,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("/de/museum/mitmachen", "/de/mitmachen")}
+                        url="/de/museum/mitmachen"
                     />
 
                 </Section>
@@ -357,7 +356,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("/de/mitmachen/ehrenamt", "/de/mitmachen")}
+                        url="/de/mitmachen/ehrenamt"
                     />
 
                     <Card
@@ -374,7 +373,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url={generateUrl("/de/mitmachen/bildungsangebote", "/de/mitmachen")}
+                        url="/de/mitmachen/bildungsangebote"
                     />
 
                 </Section>

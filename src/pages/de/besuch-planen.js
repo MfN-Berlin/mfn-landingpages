@@ -48,6 +48,7 @@ const IndexPage = () => {
         <Section backgroundColor="bg-Black-000" padding="pt-8 pb-0">
           <AccessibilityNav currentPage="Besuch planen" />
         </Section>
+
         <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
           <StoryTime
             imageProps={{

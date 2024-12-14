@@ -12,7 +12,6 @@ import SlideContent from '../../components/layouts/SlideContent'
 import AccessibilityNav from '../../components/layouts/AccessibilityNav'
 import HeadComponent from '../../components/layouts/HeadComponent'
 import { Link } from "gatsby"
-import { generateUrl } from '../../scripts/urlHelper';
 
 const VisitPage = () => {
     const data = useStaticQuery(graphql`
@@ -480,7 +479,7 @@ const VisitPage = () => {
                             {
                                 text: "Alle Publikationen im Überblick",
                                 variant: "plain",
-                                url: generateUrl("/de/forschung/publikationen/", "/de/forschung")
+                                url: "/de/forschung/publikationen/"
                             }
                         ]}
                     />
