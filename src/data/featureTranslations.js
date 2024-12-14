@@ -208,5 +208,75 @@ export const featureTranslations = {
       },
       instituteName: "Museum für Naturkunde Leibniz Institute for Evolution and Biodiversity Research"
     }
+  },
+  cookieConsent: {
+    de: {
+      title: "Datenschutzeinstellungen",
+      intro: "Auf unserer Webseite nutzen wir Cookies und binden Inhalte Dritter wie z. B. Videos ein. Cookies dienen Ihnen dazu, das Anzeigen von Inhalten Dritter und das statistische Erfassen Ihres Besuches auf unserer Webseite zu erlauben. Außerdem ermöglichen Cookies essenzielle Funktionen der Webseite.",
+      privacyLink: "Datenschutzerklärung",
+      settings: "Einstellungen",
+      acceptEssential: "Essenzielles akzeptieren",
+      acceptAll: "Alles akzeptieren",
+      saveSettings: "Einstellungen übernehmen",
+      categories: {
+        essential: {
+          title: "Essenziell",
+          description: "Diese Cookies sind notwendig, um die Webseite nutzen zu können."
+        },
+        tracking: {
+          title: "Tracking",
+          description: "Wir nutzen Matomo um das Nutzerverhalten in einer Statistik zu erfassen. Dies erlaubt uns das Nutzerverhalten zu analysieren, um unsere Webseite ständig zu verbessern."
+        },
+        youtube: {
+          title: "Youtube",
+          description: "Wir binden Inhalte von Youtube wie z. B. Videos auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Youtube geladen werden. Dadurch können personenbezogene Daten an Youtube übertragen werden, als würden Sie die Webseite von Youtube direkt besuchen."
+        },
+        podigee: {
+          title: "Podigee",
+          description: "Wir binden Inhalte von Podigee wie z. B. Podcasts auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Podigee geladen werden. Dadurch können personenbezogene Daten an Podigee übertragen werden, als würden Sie die Webseite von Podigee direkt besuchen."
+        },
+        misc: {
+          title: "Funktionale Cookies",
+          description: "Diese Cookies ermöglichen es der Website, eine verbesserte Funktionalität und Personalisierung zu bieten (z. B. merken wir uns, wenn Sie Hinweise der Seite als gelesen markiert haben und zeigen sie nicht erneut an). Das deaktivieren beeinträchtigt die Funktionalität der Seite nicht."
+        }
+      },
+      accepted: "Zugestimmt",
+      rejected: "Abgelehnt",
+      back: "zurück"
+    },
+    en: {
+      title: "Privacy Settings",
+      intro: "On our website, we use cookies and integrate third-party content such as videos. Cookies help you allow the display of third-party content and the statistical recording of your visit to our website. Cookies also enable essential website functions.",
+      privacyLink: "Privacy Policy",
+      settings: "Settings",
+      acceptEssential: "Accept Essential",
+      acceptAll: "Accept All",
+      saveSettings: "Save Settings",
+      categories: {
+        essential: {
+          title: "Essential",
+          description: "These cookies are necessary to use the website."
+        },
+        tracking: {
+          title: "Tracking",
+          description: "We use Matomo to record user behavior in statistics. This allows us to analyze user behavior to continuously improve our website."
+        },
+        youtube: {
+          title: "Youtube",
+          description: "We embed content from Youtube such as videos on our website. This content supplements the information on the respective page. If you activate this option, a cookie will be set that allows you to automatically load content from Youtube. This may transfer personal data to Youtube as if you were visiting the Youtube website directly."
+        },
+        podigee: {
+          title: "Podigee",
+          description: "We embed content from Podigee such as podcasts on our website. This content supplements the information on the respective page. If you activate this option, a cookie will be set that allows you to automatically load content from Podigee. This may transfer personal data to Podigee as if you were visiting the Podigee website directly."
+        },
+        misc: {
+          title: "Functional Cookies",
+          description: "These cookies enable the website to provide enhanced functionality and personalization (e.g., we remember when you have marked notices on the page as read and don't show them again). Disabling these does not impair the functionality of the site."
+        }
+      },
+      accepted: "Accepted",
+      rejected: "Rejected",
+      back: "back"
+    }
   }
 }; 
