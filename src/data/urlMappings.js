@@ -6,8 +6,8 @@ export const urlMappings = {
   '/de/forschung': '/en/research',
   '/de/museum': '/en/museum',
   '/de/kontakt': '/en/contact',
-  '/de/forschung/publikationen': '/en/research/publications',
-  '/de/forschung/team-projekte': '/en/research/team-projects',
+  '/de/publikationen': '/en/publications',
+  '/de/team-projekte': '/en/teams-projects',
   
   // English to German
   '/en/': '/de/',
