@@ -34,24 +34,11 @@ export const generateUrl = (to, currentPath) => {
   // If it's an external URL, return as is
   if (to.startsWith('http')) return to;
   
-  // Wenn kein currentPath vorhanden ist (z.B. während SSR)
-  if (!currentPath) {
-    // Extrahiere die Sprache aus der Ziel-URL
-    const matches = to.match(/^\/(en|de)\//);
-    return matches ? to : `/de${to}`;  // Fallback auf Deutsch
+  // If the URL already has a language prefix, use it
+  if (to.startsWith('/de/') || to.startsWith('/en/')) {
+    return to;
   }
   
-  // Get the target language
-  const targetLang = getLanguageFromPath(currentPath);
-  
-  // If the URL already starts with the correct language prefix, return as is
-  if (to.startsWith(`/${targetLang}/`)) return to;
-  
-  // If it's a root path without language, add the language prefix
-  if (to.startsWith('/') && !to.startsWith('/de/') && !to.startsWith('/en/')) {
-    return `/${targetLang}${to}`;
-  }
-  
-  // Otherwise, use the URL mapping
-  return getTranslatedUrl(to, targetLang);
+  // Default to German for paths without language prefix
+  return `/de${to}`;
 }; 
