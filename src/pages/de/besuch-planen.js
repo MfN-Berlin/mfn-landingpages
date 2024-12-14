@@ -18,7 +18,6 @@ import HeadComponent from '../../components/layouts/HeadComponent'  // Head/Meta
 import UpcomingHoliday from '../../components/features/UpcomingHoliday'  // Zeigt kommende Feiertage/Events
 import { getAssetPath } from '../../scripts/assetPrefix'  // Helper für Asset-Pfade
 import TransportIcon from '../../components/elements/TransportIcon'  // Icons für Verkehrsmittel
-import { generateUrl } from '../../scripts/urlHelper'  // URL-Generator für mehrsprachige Seiten
 
 
 const IndexPage = () => {
@@ -83,12 +82,12 @@ const IndexPage = () => {
                 ,
                 {
                   text: "Digitale Angebote",
-                  url: generateUrl("/de/museum/bildung/fuernatur-digital-angebote-fuer-familien-und-kinder", "/de/besuch-planen"),
+                  url: "/de/museum/bildung/fuernatur-digital-angebote-fuer-familien-und-kinder",
                   variant: "plain"
                 },
                 {
                   text: "Bildungsangebote",
-                  url: generateUrl("/de/museum/bildung", "/de/besuch-planen"),
+                  url: "/de/museum/bildung",
                   variant: "plain"
                 }]
             }}
@@ -112,7 +111,7 @@ const IndexPage = () => {
             <div className="w-full">
               <Button
                 text="Genauer Plan mit Sonderöffnungszeiten"
-                url={generateUrl("/de/besuch-planen/sonderoeffnungszeiten", "/de/besuch-planen")}
+                url="/de/besuch-planen/sonderoeffnungszeiten"
                 variant="plain"
                 className="w-full justify-center"
               />
@@ -136,7 +135,7 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Samstag, Sonntag, und <a href={generateUrl("/de/besuch-planen/sonderoeffnungszeiten", "/de/besuch-planen")} className="underline">an Feiertagen</a>
+                  Samstag, Sonntag, und <a href="/de/besuch-planen/sonderoeffnungszeiten" className="underline">an Feiertagen</a>
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2">
                   10:00 bis 18:00
@@ -176,7 +175,7 @@ const IndexPage = () => {
               buttons={[
                 {
                   text: "Ticketkooperationen",
-                  url: generateUrl("/de/besuch-planen/ticketkooperationen", "/de/besuch-planen"),
+                  url: "/de/besuch-planen/ticketkooperationen",
                   variant: "plain"
                 }]}
             />
@@ -371,7 +370,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href={generateUrl("/de/besuch-planen/ticketkooperationen", "/de/besuch-planen")} className="underline">Mehr Infos zu Kooperationen</a>
+                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="/de/besuch-planen/ticketkooperationen" className="underline">Mehr Infos zu Kooperationen</a>
                   </p>
                 </div>
               </div>
@@ -577,7 +576,7 @@ const IndexPage = () => {
               <div className="p-5">
                 <p>Der barrierefreie Eingang befindet sich rechts neben dem Hauptportal. Gegenüber gibt es drei Behindertenparkplätze. <br /><br />
                   <strong>Bitte beachten Sie:</strong> die Behindertenparkplätze sind aufgrund von Baumaßnahmen am Nachbargebäude zur Zeit nicht zugänglich. Wir bitten um Verständis!<br /><br />
-                  Die Garderoben, das barrierefreie WC und die Ausstellungsebene sind von diesem Eingang mit einem Fahrstuhl oder Treppenlift erreichbar. <a href={generateUrl("/de/museum/besuch-planen/barrierefreiheit", "/de/besuch-planen")} className="underline">Mehr Infos</a></p>
+                  Die Garderoben, das barrierefreie WC und die Ausstellungsebene sind von diesem Eingang mit einem Fahrstuhl oder Treppenlift erreichbar. <a href="/de/museum/besuch-planen/barrierefreiheit" className="underline">Mehr Infos</a></p>
               </div>
             </AccordionItem>
           </Accordion>
@@ -588,8 +587,8 @@ const IndexPage = () => {
             headlineStyle="h1"
             body={`In unseren Ausstellungen erhalten Sie Einblicke in die gigantischen Abenteuer der Natur – anhand originaler Forschungsobjekte!
               <br/><br/>
-              Mehr zu unserer <a href="${generateUrl("/de/museum/besuch-planen/besuchendenordnung", "/de/besuch-planen")}" style="text-decoration: underline;">Besuchendenordnung</a> und 
-              unseren <a href="${generateUrl("/de/museum/besuch-planen/fotografieren-und-filmaufnahmen", "/de/besuch-planen")}" style="text-decoration: underline;">Regeln für Film- und Foto-Aufnahmen</a>.`}
+              Mehr zu unserer <a href="/de/museum/besuch-planen/besuchendenordnung" style="text-decoration: underline;">Besuchendenordnung</a> und 
+              unseren <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" style="text-decoration: underline;">Regeln für Film- und Foto-Aufnahmen</a>.`}
             spacing="wide"
             alignment="center"
           />
@@ -600,105 +599,105 @@ const IndexPage = () => {
               imageName="zv_1200x675_WEBSEITE_0.jpg"
               title="ZUGvögel"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/zugvoegel", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/zugvoegel"
               altText="Zugvögel"
             />
             <SlideContent
               imageName="zp_1200x675_WEBSEITE.jpg"
               title="Zukunftsplan"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/zukunftsplan", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/zukunftsplan"
               altText="Zukunftsplan"
             />
             <SlideContent
               imageName="1200x800_0.jpg"
               title="Dinosaurier!"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/dinosaurier-zeitalter-der-riesenechsen", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/dinosaurier-zeitalter-der-riesenechsen"
               altText="Dinosaurier! Zeitalter der Riesenechsen"
             />
             <SlideContent
               imageName="digitize_webseite_V2_1200x800_Live Science.jpg"
               title="digitize!"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/digitize", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/digitize"
               altText="digitize! Live Science"
             />
             <SlideContent
               imageName="sauriersaal_04_c_carola-radke-mfn.jpg"
               title="Saurierwelt"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/saurierwelt", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/saurierwelt"
               altText="Saurierskelette im Sauriersaal"
             />
             <SlideContent
               imageName="system_erde_02_c_carola-radke_mfn.jpg"
               title="System Erde"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/system-erde", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/system-erde"
               altText="Der Multimedia-Globus im Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="kosmos_saal_c_hwa-ja-goetz-mfn.jpg"
               title="Kosmos und Sonnensystem"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/kosmos-und-sonnensystem", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/kosmos-und-sonnensystem"
               altText="Besucher schauen liegend in Projektionshimmel im Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="biodivwand_c_carola-radke-mfn.jpg"
               title="Evolution in Aktion"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/evolution-aktion", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/evolution-aktion"
               altText="Die Biodiversitätswand im Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="101028_nasssammlung_02_c_carola-radke-mfn.jpg"
               title="Nass-Sammlung"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/nass-sammlung", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/nass-sammlung"
               altText="Hohe Regale mit Tierpräparaten in der Nass-Sammlung"
             />
             <SlideContent
               imageName="130220_kellermodell_floh_c_carola-radke_mfn.jpg"
               title="Kellers Insektenmodelle"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/kellers-insektenmodelle", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/kellers-insektenmodelle"
               altText="Modell eines Flohs"
             />
             <SlideContent
               imageName="2015_bobby_c_carola-radke_mfn_0.jpg"
               title="Highlights der Präparationskunst"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/highlights-der-praeparationskunst", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/highlights-der-praeparationskunst"
               altText="Das Gesicht des Gorillas Bobby, dahinter das Präparat einer Riesen-Elanantilope"
             />
             <SlideContent
               imageName="110919_mineraliensaal_13_c_hwa-ja-goetz-mfn.jpg"
               title="Mineralien"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/mineralien", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/mineralien"
               altText="Schaukästen mit Mineralien im Mineraliensaal"
             />
             <SlideContent
               imageName="humboldt-intervention-museum-fuer-naturkunde-berlin.jpg"
               title="Humboldt-Intervention"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/humboldt-intervention", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/humboldt-intervention"
               altText="Plakate der Humboldt-Intervention zwischen und über den Schaukästen im Mineraliensaal"
             />
             <SlideContent
               imageName="100423_parasiten_03_c_hwaja-goetz_mfn_0.jpg"
               title="Wanderausstellungen"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/wanderausstellungen", "/de/besuch-planen")}
+              link="/de/museum/wanderausstellungen"
               altText="Das Foto zeigt einen präparierten Springbock mit Madenhacker"
             />
             <SlideContent
               imageName="federband_c_hwaja-goetz_mfn.jpg"
               title="Archiv: Sonderausstellungen"
               kicker="Unsere Ausstellungen"
-              link={generateUrl("/de/museum/ausstellungen/archiv-sonderausstellungen", "/de/besuch-planen")}
+              link="/de/museum/ausstellungen/archiv-sonderausstellungen"
               altText="Federband aus verschiedenfarbigen Federn"
             />
           </Slideshow>
@@ -719,7 +718,7 @@ const IndexPage = () => {
                   spacing: "regular",
                   headlineStyle: "h3"
                 }}
-                url={generateUrl("/de/museum/veranstaltungen", "/de/besuch-planen")}
+                url="/de/museum/veranstaltungen"
               />
             </div>
 
@@ -737,7 +736,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url={generateUrl("/de/museum/besuch-planen/barrierefreiheit", "/de/besuch-planen")}
+                url="/de/museum/besuch-planen/barrierefreiheit"
               />
               <Card
                 variant="classic"
@@ -752,7 +751,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url={generateUrl("/de/museum/besuch-planen/garderobe", "/de/besuch-planen")}
+                url="/de/museum/besuch-planen/garderobe"
               />
             </div>
 
@@ -770,7 +769,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "regular"
                 }}
-                url={generateUrl("/de/museum/besuch-planen/museumscafe", "/de/besuch-planen")}
+                url="/de/museum/besuch-planen/museumscafe"
               />
             </div>
             <div className="sm:col-span-1 lg:col-span-1">
@@ -787,7 +786,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "wide"
                 }}
-                url={generateUrl("/de/museum/besuch-planen/digital-guide", "/de/besuch-planen")}
+                url="/de/museum/besuch-planen/digital-guide"
               />
             </div>
             <div className="sm:col-span-1 lg:col-span-1">
@@ -832,7 +831,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url={generateUrl("/de/museum/bildung/schule-und-kita", "/de/besuch-planen")}
+            url="/de/museum/bildung/schule-und-kita"
           />
           <Card
             variant="classic"
@@ -847,7 +846,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url={generateUrl("/de/museum/bildung/erwachsene", "/de/besuch-planen")}
+            url="/de/museum/bildung/erwachsene"
           />
           <Card
             variant="classic"
@@ -862,7 +861,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url={generateUrl("/de/museum/bildung/kindergeburtstage", "/de/besuch-planen")}
+            url="/de/museum/bildung/kindergeburtstage"
           />
           <Card
             variant="classic"
@@ -877,7 +876,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url={generateUrl("/de/museum/bildung/familien", "/de/besuch-planen")}
+            url="/de/museum/bildung/familien"
           />
         </Section>
         <Section columns={2} backgroundColor="bg-white" gapClass="gap-36" justifyContent="center">
@@ -892,7 +891,7 @@ const IndexPage = () => {
             buttons={[
               {
                 text: "Mehr häufig gestellte Fragen",
-                url: generateUrl("/de/museum/besuch-planen/faq", "/de/besuch-planen"),
+                url: "/de/museum/besuch-planen/faq",
                 variant: "plain"
               }
             ]}
@@ -935,7 +934,7 @@ const IndexPage = () => {
                   die Ausstellung und Objekte durch eine zusätzliche Perspektive erfahrbar zu
                   machen.
                   <br /><br />
-                  <a href="https://www.museumfuernaturkunde.berlin/de/museum/besuch-planen/digital-guide" className="underline">Hier</a> finden Sie weitere Informationen.
+                  <a href="/de/museum/besuch-planen/digital-guide" className="underline">Hier</a> finden Sie weitere Informationen.
                   <br /><br />
                   Für die Nutzung des Audioguides empfehlen wir Ihnen eigene Kopfhörer mitzubringen.
                 </p>
@@ -943,7 +942,7 @@ const IndexPage = () => {
             </AccordionItem>
             <AccordionItem title="Darf ich im Museum fotografieren?">
               <div className="p-5">
-                <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href={generateUrl("/de/museum/besuch-planen/fotografieren-und-filmaufnahmen", "/de/besuch-planen")} className="underline">hier</a>.</p>
+                <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" className="underline">hier</a>.</p>
               </div>
             </AccordionItem>
             <AccordionItem title="Darf ich meinen Kinderwagen mit in das Museum nehmen?">
@@ -977,7 +976,7 @@ const IndexPage = () => {
             <Button
               text="Stellen Sie uns eine Frage"
               variant="primary"
-              url={generateUrl("/das-museum/heute/kontakt", "/de/besuch-planen")}
+              url="/das-museum/heute/kontakt"
             />
             <Button
               text="Rufen Sie uns an"
