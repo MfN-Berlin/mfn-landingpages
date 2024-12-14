@@ -11,12 +11,14 @@ const Slideshow = ({ children, imageMap }) => {
     },
     [
       Fade(),
-      Autoplay({
-        delay: 4000, // 4 seconds
-        stopOnInteraction: true, // stops on user interaction
-        stopOnMouseEnter: true, // optional: stops on mouse enter
-        rootNode: (emblaRoot) => emblaRoot.parentElement, // optional: track mouse enter on the whole component
-      })
+      ...(typeof window !== 'undefined' ? [
+        Autoplay({
+          delay: 4000,
+          stopOnInteraction: true,
+          stopOnMouseEnter: true,
+          rootNode: (emblaRoot) => emblaRoot.parentElement,
+        })
+      ] : [])
     ]
   );
   const [selectedIndex, setSelectedIndex] = useState(0);
