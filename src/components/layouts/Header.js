@@ -14,18 +14,16 @@ const TopNavLink = ({ to, children, isSpecial = false }) => (
     {to.startsWith('http') ? (
       <a
         href={to}
-        className={`text-Black-900 hover:text-Green-500 transition duration-3000 no-underline text-[12.6px] ${
-          isSpecial ? "bg-Green-400 text-Black-900 px-[0.9em] py-[0.1em] pb-[0.2em] align-middle font-bold uppercase hover:text-White-White focus:text-White-White" : ""
-        }`}
+        className={`text-Black-900 hover:text-Green-500 transition duration-3000 no-underline text-[12.6px] ${isSpecial ? "bg-Green-400 text-Black-900 px-[0.9em] py-[0.1em] pb-[0.2em] align-middle font-bold uppercase hover:text-White-White focus:text-White-White" : ""
+          }`}
       >
         {children}
       </a>
     ) : (
       <Link
         to={generateUrl(to)}
-        className={`text-Black-900 hover:text-Green-500 transition duration-3000 no-underline text-[12.6px] ${
-          isSpecial ? "bg-Green-400 text-Black-900 px-[0.9em] py-[0.1em] pb-[0.2em] align-middle font-bold uppercase hover:text-White-White focus:text-White-White" : ""
-        }`}
+        className={`text-Black-900 hover:text-Green-500 transition duration-3000 no-underline text-[12.6px] ${isSpecial ? "bg-Green-400 text-Black-900 px-[0.9em] py-[0.1em] pb-[0.2em] align-middle font-bold uppercase hover:text-White-White focus:text-White-White" : ""
+          }`}
       >
         {children}
       </Link>
@@ -37,14 +35,14 @@ const TopNavLink = ({ to, children, isSpecial = false }) => (
 const SubmenuItem = ({ item }) => (
   <div className="menu-namu-taxonomy-menu__submenu-item mb-6">
     {item.to.startsWith('http') ? (
-      <a 
+      <a
         href={item.to}
         className="block text-sm text-left text-gray-900 font-bold hover:text-Green-500 transition duration-300"
       >
         {item.label}
       </a>
     ) : (
-      <Link 
+      <Link
         to={generateUrl(item.to)}
         className="block text-sm text-left text-gray-900 font-bold hover:text-Green-500 transition duration-300"
       >
@@ -56,14 +54,14 @@ const SubmenuItem = ({ item }) => (
         {item.submenu.map((subItem) => (
           <li key={`${item.to}-subitem-${subItem.to}`}>
             {subItem.to.startsWith('http') ? (
-              <a 
+              <a
                 href={subItem.to}
                 className="block text-sm text-gray-600 hover:text-Green-500 transition duration-300"
               >
                 {subItem.label}
               </a>
             ) : (
-              <Link 
+              <Link
                 to={generateUrl(subItem.to)}
                 className="block text-sm text-gray-600 hover:text-Green-500 transition duration-300"
               >
@@ -80,21 +78,20 @@ const SubmenuItem = ({ item }) => (
 // Main navigation item (without dropdown container)
 const MainNavItem = ({ section, isActive, onMouseEnter, currentPath }) => {
   const currentLang = getLanguageFromPath(currentPath);
-  const url = currentLang === LANGUAGES.EN ? 
-    section.to.replace(/^\/de\//, '/en/') : 
-    section.to; 
+  const url = currentLang === LANGUAGES.EN ?
+    section.to.replace(/^\/de\//, '/en/') :
+    section.to;
 
   return (
-    <button 
+    <button
       className="menu-item"
       onMouseEnter={() => onMouseEnter(section.to)}
       type="button"
     >
       <Link
         to={url}
-        className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${
-          isActive ? 'bg-Green-500 text-Black-900' : 'hover:bg-Green-500'
-        }`}
+        className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${isActive ? 'bg-Green-500 text-Black-900' : 'hover:bg-Green-500'
+          }`}
       >
         <span className="inline-block py-[0.1em] pb-[0.2em] px-[min(1vw,0.5em)]">
           {section.label}
@@ -104,20 +101,6 @@ const MainNavItem = ({ section, isActive, onMouseEnter, currentPath }) => {
   );
 };
 
-// Logo component using publicURL for SVG
-const Logo = () => (
-  <div className="flex-shrink-0 w-[156px]">
-    <div className="mfn-system-branding-block max-w-[calc(100vw-13px)] md:absolute bg-white md:top-[12px] pl-[1px] pr-[2px] top-[13px]">
-      <Link to="/" className="block outline-none text-[#7da30b] transition duration-3000">
-        <img
-          src={getAssetPath('/images/logo.svg')}
-          alt="Museum für Naturkunde Berlin"
-          className="block z-[var(--z-index-logo)] bg-[var(--color-background-logo)] px-[0.7em] h-[84px] m-0 sm:sticky sm:top-0 sm:h-[var(--height-branding-logo)]"
-        />
-      </Link>
-    </div>
-  </div>
-);
 
 // Search form component
 const SearchForm = () => (
@@ -155,31 +138,49 @@ const SearchForm = () => (
 const LanguageSwitcher = ({ currentPath }) => {
   const cleanPath = currentPath || '/';
   const currentLang = getLanguageFromPath(cleanPath);
-  
+
   const getTargetPath = (targetLang) => {
     if (!cleanPath) return `/${targetLang}/`;
     return getTranslatedUrl(cleanPath, targetLang);
   };
-  
+
   return (
     <div className="language-switcher-language-url hidden sm:block" role="navigation">
       <ul className="flex m-0 items-center leading-[0]">
         <li className={`de list-none typography-p font-tradegothic-bold border-r-2 border-Gray-300 ${currentLang === LANGUAGES.DE ? 'active' : ''}`}>
-          <Link 
-            to={getTargetPath(LANGUAGES.DE)} 
-            className={`language-link px-3 inline-block leading-none ${currentLang === LANGUAGES.DE ? 'text-Green-500' : 'text-Black-900'}`} 
+          <Link
+            to={getTargetPath(LANGUAGES.DE)}
+            className={`language-link px-3 inline-block leading-none ${currentLang === LANGUAGES.DE ? 'text-Green-500' : 'text-Black-900'}`}
             hrefLang="de"
           >
             DE
           </Link>
         </li>
-        <li className={`en list-none typography-p font-tradegothic-bold ${currentLang === LANGUAGES.EN ? 'active' : ''}`}>
-          <Link 
-            to={getTargetPath(LANGUAGES.EN)} 
-            className={`language-link px-3 inline-block leading-none ${currentLang === LANGUAGES.EN ? 'text-Green-500' : 'text-Black-900'}`} 
+        <li className={`en list-none typography-p font-tradegothic-bold border-r-2 border-Gray-300 ${currentLang === LANGUAGES.EN ? 'active' : ''}`}>
+          <Link
+            to={getTargetPath(LANGUAGES.EN)}
+            className={`language-link px-3 inline-block leading-none ${currentLang === LANGUAGES.EN ? 'text-Green-500' : 'text-Black-900'}`}
             hrefLang="en"
           >
             EN
+          </Link>
+        </li>
+        <li className="de-x-ls list-none">
+          <Link
+            to="/leichte-sprache"
+            className="language-link text-Black-900 pl-2 inline-block"
+            hrefLang="de-x-ls"
+            aria-label="Leichte Sprache"
+            title="Leichte Sprache"
+          >
+            <span className="svg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.25 87.46" className="w-6 h-6 fill-current">
+                <g>
+                  <path d="m64.69,34.6c-.98-.76-2.26-1.01-3.46-.7l-28.1,7.44-28.11-7.45c-1.2-.32-2.48-.06-3.46.7s-1.56,1.93-1.56,3.17v37.95c0,1.81,1.22,3.4,2.97,3.87l28.75,7.63c.3.11.61.18.93.21,0,0,0,0,0,0,.14.02.29.04.43.04.02,0,.04,0,.06,0,0,0,.01,0,.02,0,.05,0,.1-.01.15-.01.11,0,.22-.01.33-.03.29-.04.58-.1.86-.2l28.78-7.64c1.75-.47,2.97-2.05,2.97-3.87v-37.95c0-1.24-.58-2.41-1.56-3.17Zm-56.69,8.36l21.09,5.59v29.68l-21.09-5.6v-29.67Zm50.25,29.68l-21.09,5.6v-29.68l21.09-5.59v29.67Z" />
+                  <path d="m33.13,37.79c10.42,0,18.9-8.48,18.9-18.9S43.55,0,33.13,0,14.23,8.48,14.23,18.9s8.48,18.9,18.9,18.9Zm0-29.79c6.01,0,10.9,4.89,10.9,10.9s-4.89,10.9-10.9,10.9-10.9-4.89-10.9-10.9,4.89-10.9,10.9-10.9Z" />
+                </g>
+              </svg>
+            </span>
           </Link>
         </li>
       </ul>
@@ -191,7 +192,7 @@ const LanguageSwitcher = ({ currentPath }) => {
 const Header = ({ activeNavItem, location }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const currentLang = getLanguageFromPath(location?.pathname);
-  
+
   // Carousel-Initialisierung nur auf Client-Side
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true },
@@ -207,14 +208,14 @@ const Header = ({ activeNavItem, location }) => {
   }, [emblaApi]);
 
   // Get the correct navigation data based on language
-  const { topNavLinks: currentTopNavLinks, mainNavData: currentMainNavData } = 
+  const { topNavLinks: currentTopNavLinks, mainNavData: currentMainNavData } =
     getNavigationData(currentLang);
 
   // Find active section data
   const getActiveSectionData = () => {
     const currentLang = getLanguageFromPath(location?.pathname);
     const { mainNavData: currentMainNavData } = getNavigationData(currentLang);
-    
+
     return Object.values(currentMainNavData).find(
       section => section.to === activeSubmenu
     );
@@ -223,9 +224,9 @@ const Header = ({ activeNavItem, location }) => {
   return (
     <>
       {/* TopNav */}
-      <nav className="hidden md:block bg-white">
+      <nav className="hidden sm:block bg-white">
         <div className="max-w-[1165px] mx-auto px-3">
-          <ul className="flex justify-end py-2">
+          <ul className="flex justify-end pt-1">
             {currentTopNavLinks.map((link) => (
               <TopNavLink
                 key={link.to}
@@ -240,21 +241,35 @@ const Header = ({ activeNavItem, location }) => {
       </nav>
 
       {/* Logo Section */}
-      <div className="relative md:sticky md:top-[20px] bg-white z-[51]">
-        <div className="relative max-w-[1165px] mx-auto pl-[12px] pr-[12px]">
-          <div className="md:absolute md:top-[-34px] w-full flex justify-center md:w-auto">
-            <Logo />
-          </div>
-        </div>
+      
+{/* Äußerer Container */}
+{/* Äußerer Container für das Logo */}
+<div className="relative md:sticky flex md:block m-0 top-0 left-0 z-[51] w-full bg-whit md:mt-[-20px] md:mb-[20px]">
+  {/* Zentrierter Container mit gleicher max-width */}
+  <div className="max-w-[1165px] mx-auto relative">
+    {/* Logo-Container */}
+    <div className="relative md:absolute left-0 w-[156px] pl-[12px]">
+                <Link to="/" className="block outline-none text-[#7da30b] bg-white transition duration-3000">
+                  <img
+                    src={getAssetPath('/images/logo.svg')}
+                    alt="Museum für Naturkunde Berlin"
+                    className="block z-[var(--z-index-logo)] bg-[var(--color-background-logo)] px-[0.7em] h-[84px] m-0 sm:sticky sm:top-0 sm:h-[var(--height-branding-logo)]"
+                  />
+                </Link>
+              
+      </div>
+      </div>
       </div>
 
+      
+
       {/* Main Navigation */}
-      <nav 
+      <nav
         className="sticky top-0 z-50 bg-white/95 relative"
         role="navigation"
         aria-label="Main Navigation"
       >
-        <div 
+        <div
           className="navigation-wrapper"
           onMouseLeave={() => setActiveSubmenu(null)}
           role="menubar"
@@ -262,7 +277,7 @@ const Header = ({ activeNavItem, location }) => {
         >
           <div className="max-w-[1165px] mx-auto md:pl-[156px] pr-3">
             <div className="flex items-center justify-between h-auto py-[7px] md:px-0 pr-[12px]">
-              <div className="flex flex-wrap justify-start">
+              <div className="flex flex-wrap justify-center w-full sm:w-auto sm:justify-start">
                 {Object.entries(currentMainNavData).map(([key, section]) => (
                   <MainNavItem
                     key={key}
@@ -287,16 +302,16 @@ const Header = ({ activeNavItem, location }) => {
                     {getActiveSectionData().submenuColumns
                       .sort((a, b) => a.column - b.column)
                       .map((column, columnIndex) => (
-                        <div 
-                          key={`${activeSubmenu}-column-${column.column}-${columnIndex}`} 
+                        <div
+                          key={`${activeSubmenu}-column-${column.column}-${columnIndex}`}
                           className="break-inside-avoid-column"
                         >
                           {column.items
                             .sort((a, b) => a.order - b.order)
                             .map((item) => (
-                              <SubmenuItem 
-                                key={`${activeSubmenu}-item-${item.to}`} 
-                                item={item} 
+                              <SubmenuItem
+                                key={`${activeSubmenu}-item-${item.to}`}
+                                item={item}
                               />
                             ))}
                         </div>

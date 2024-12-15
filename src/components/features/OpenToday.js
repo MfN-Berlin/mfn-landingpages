@@ -28,40 +28,43 @@ const OpenToday = () => {
 
   const getOpeningInfo = () => {
     const now = new Date();
-    const day = now.getDay();
-    const date = now.getDate();
-    const month = now.getMonth() + 1;
     const currentHour = now.getHours();
     const isAfterClosing = currentHour >= 18;
+
+    // Wenn nach Schließzeit, dann Infos für morgen anzeigen
+    const targetDate = new Date();
+    if (isAfterClosing) {
+      targetDate.setDate(targetDate.getDate() + 1);
+    }
+
+    const day = targetDate.getDay();
+    const date = targetDate.getDate();
+    const month = targetDate.getMonth() + 1;
     const isHoliday = isDateMatch(holidays, month, date);
     const isWeekend = day === 0 || day === 6;
     const openingTime = isWeekend ? "10:00" : "09:30";
+    const timePrefix = isAfterClosing ? t.tomorrow : t.today;
+
+    // Prüfe ob der Zieltag geschlossen ist
+    const isTargetDayClosed = isDateMatch(closingDays, month, date) || 
+                             (day === 1 && !isHoliday); // Montag und kein Feiertag
 
     // Check closing days first
-    if (isDateMatch(closingDays, month, date)) {
+    if (isTargetDayClosed) {
       return { 
-        isOpen: false, 
+        isOpen: false,
         openingTime: null,
         isHoliday: false,
-        message: t.closedMessage 
+        message: `${timePrefix} ${t.closedMessage}`
       };
     }
 
-    // Check Monday - only close if it's NOT a holiday
-    if (day === 1 && !isHoliday) {
-      return { 
-        isOpen: false, 
-        openingTime: null,
-        isHoliday: false,
-        message: t.closedMessage 
-      };
-    }
-
+    // Wenn wir hier sind, ist der Zieltag ein Öffnungstag
     return { 
-      isOpen: !isAfterClosing,
+      isOpen: !isAfterClosing || isTargetDayClosed === false, // Heute nach 18 Uhr aber morgen offen = OPEN
       openingTime,
       isHoliday,
-      message: `${t.openHours} ${openingTime} ${t.until} 18:00 Uhr${isHoliday ? ` (${t.holiday})` : ''}.`
+      message: `${timePrefix} ${t.openHours} ${openingTime} ${t.until} 18:00 ${t.clock}${isHoliday ? ` (${t.holiday})` : ''}.`
     };
   };
 
@@ -71,7 +74,7 @@ const OpenToday = () => {
     <div className="mb-4 bg-white">
       <div className="relative bg-Green-500 flex justify-between items-center p-5 px-20 text-center">
         <p className="text-white w-full">
-          <strong>{t.today}</strong> {message}
+          {message}
         </p>
         <div className={`absolute w-30 h-[48px] right-[-8px] top-[-20px] px-[6.91px] py-[8px] ${isOpen ? 'bg-Blue-500' : 'bg-Orange'} rounded-md transform rotate-[9.82deg]`}>
           <div className="text-center text-white relative">

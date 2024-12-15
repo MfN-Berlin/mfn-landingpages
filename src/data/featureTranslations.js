@@ -38,17 +38,20 @@ export const featureTranslations = {
   openToday: {
     de: {
       today: "Heute",
+      tomorrow: "Morgen",
       closedMessage: "ist das Museum geschlossen.",
-      openHours: "ist das Museum von",
+      openHours: "öffnet das Museum von",
       until: "bis",
       holiday: "Feiertag",
       sorry: "SORRY,",
       were: "WE'RE",
       open: "OPEN!",
-      closed: "CLOSED"
+      closed: "CLOSED",
+      clock: "Uhr"
     },
     en: {
       today: "Today",
+      tomorrow: "Tomorrow",
       closedMessage: "the museum is closed.",
       openHours: "the museum is open from",
       until: "until",
@@ -56,7 +59,8 @@ export const featureTranslations = {
       sorry: "SORRY,",
       were: "WE'RE",
       open: "OPEN!",
-      closed: "CLOSED"
+      closed: "CLOSED",
+      clock: "hrs"
     }
   },
   upcomingHoliday: {
