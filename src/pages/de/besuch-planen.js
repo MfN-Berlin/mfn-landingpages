@@ -45,9 +45,9 @@ const IndexPage = () => {
     <>
       <Header activeNavItem="besuchplanen" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
-        <Section backgroundColor="bg-Black-000" padding="pt-8 pb-0">
+       
           <AccessibilityNav currentPage="Besuch planen" />
-        </Section>
+       
 
         <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
           <StoryTime

@@ -9,6 +9,10 @@ module.exports = {
   theme: {
     extend: {
       ...theme.extend,
+      screens: {
+        'sm': '650px',
+        'md': '790px',
+      },
       fontFamily: theme.fontFamily,
       fontSize: theme.fontSize,
       lineHeight: theme.lineHeight,
