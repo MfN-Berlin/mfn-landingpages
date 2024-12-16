@@ -69,28 +69,31 @@ const VisitPage = () => {
                     gapClass="gap-6"
                     layout="equal"
                 >
-                    <div className="bg-Green-100 p-8 h-full w-full  flex flex-col">
+                    <div className="bg-Green-100 p-8 h-full flex">
                         <form
                             action="https://www.museumfuernaturkunde.berlin/de/wissenschaft/navigator"
                             method="get"
-                            className="flex flex-col flex-1"
+                            className="flex flex-col w-full"
                         >
-                            <div className="flex flex-col gap-2">
-                                <label
-                                    htmlFor="science-search"
-                                    className="text-xl font-bold text-Black-900"
-                                >
-                                    Wissenschafts-Suche
-                                </label>
-                                <p className="text-sm text-Black-700">
-                                    Suchen Sie nach Namen, Rollen, Projekten des Museums – oder einfach nach Stichworten um passende Projektportraits zu finden                        </p>
-                                <div className="mt-auto flex-col md:flex-row gap-2">
+                            <div className="flex flex-col h-full">
+                                <div className="flex-none">
+                                    <label
+                                        htmlFor="science-search"
+                                        className="text-xl font-bold text-Black-900"
+                                    >
+                                        Wissenschafts-Suche
+                                    </label>
+                                    <p className="text-sm text-Black-700 mt-2">
+                                        Suchen Sie nach Namen, Rollen, Projekten des Museums – oder einfach nach Stichworten um passende Projektportraits zu finden. <br/><br/>
+                                    </p>
+                                </div>
+                                <div className="mt-auto flex flex-col md:flex-row gap-2">
                                     <input
                                         type="text"
                                         id="science-search"
                                         name="query"
                                         placeholder="Suchen Sie nach Namen, Rollen, Projekten..."
-                                        className="flex-1 p-3 border border-Black-300 focus:outline-none focus:ring-2 focus:ring-Green-500"
+                                        className="w-full p-3 border border-Black-300 rounded appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-Green-500"
                                     />
                                     <button
                                         type="submit"
@@ -103,22 +106,24 @@ const VisitPage = () => {
                         </form>
                     </div>
 
-                    <div className="bg-Green-100 p-8 h-full w-full flex flex-col">
+                    <div className="bg-Green-100 p-8 h-full flex">
                         <form
                             action="https://www.museumfuernaturkunde.berlin/de/wissenschaft/navigator"
                             method="get"
-                            className="flex flex-col flex-1"
+                            className="flex flex-col w-full"
                         >
-                            <div className="flex flex-col gap-2">
-                                <label
-                                    htmlFor="projects-search"
-                                    className="text-xl font-bold text-Black-900"
-                                >
-                                    Projekte und Arbeitsgruppen
-                                </label>
-                                <p className="text-sm text-Black-700">
-                                    Nutzen Sie unseren Filter, um Themenspezifische Projekte anzeigen zu lassen
-                                </p>
+                            <div className="flex flex-col h-full">
+                                <div className="flex-none">
+                                    <label
+                                        htmlFor="projects-search"
+                                        className="text-xl font-bold text-Black-900"
+                                    >
+                                        Projekte und Arbeitsgruppen
+                                    </label>
+                                    <p className="text-sm text-Black-700 mt-2">
+                                        Nutzen Sie unseren Filter, um Themenspezifische Projekte anzeigen zu lassen
+                                    </p>
+                                </div>
                                 <div className="mt-auto flex flex-col md:flex-row gap-2">
                                     <select
                                         name="f[2]"

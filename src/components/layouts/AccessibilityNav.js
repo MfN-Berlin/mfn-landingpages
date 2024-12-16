@@ -14,7 +14,7 @@ const AccessibilityNav = ({ currentPage }) => {
     <section
       className={`w-full bg-Black-100 md:bg-white pt-0 md:pt-8`}
     >
-      <div className={`grid`}  >
+      <div className={`grid 1fr grid-cols-[1fr_minmax(auto,_min(1165px,_100vw))_1fr]`}  >
         <div className={`col-start-2 col-end-3 px-3`}>
           <div className={`grid px-3 sm:px-12 xl:px-0 justify-items-center `}>
             <nav className="min-h-[28px] bg-[#f0f0f0] md:bg-white flex flex-wrap justify-center md:justify-between items-center w-full max-w-[1165px] mx-auto px-4 py-1 gap-1 md:gap-0">

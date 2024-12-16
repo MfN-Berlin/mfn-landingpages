@@ -74,7 +74,7 @@ const Footer = () => {
             </ul>
           </nav>
 
-          <nav aria-label="Social Media Links" className="flex justify-center my-8">
+          <nav aria-label="Social Media Links" className="flex flex-wrap justify-center gap-4 my-8">
             <SocialLink 
               href="https://www.instagram.com/mfnberlin" 
               icon="" 
@@ -167,25 +167,25 @@ const Footer = () => {
             </div>
           </div>
 
-          <section className="text-center mb-8">
+          <section className="text-center mb-8 px-4">
             <h2 className="text-sm font-bold mb-4">{t.newsletterSignup?.title || 'Newsletter'}</h2>
             <form 
               action="https://berlin.us6.list-manage.com/subscribe/post?u=7cc783779868ff99f465accff&amp;id=6742162bdf" 
               method="post" 
               target="_blank"
-              className="max-w-[375px] mx-auto"
+              className="w-full max-w-[375px] mx-auto"
             >
-              <div className="flex">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input 
                   type="email" 
                   name="EMAIL"
                   placeholder={t.newsletterSignup?.emailPlaceholder || 'Email address'} 
-                  className="flex-1 p-2 mb-2 bg-Black-900 text-white border border-Black-700 text-sm" 
+                  className="flex-1 p-2 bg-Black-900 text-white border border-Black-700 text-sm min-w-0" 
                   required 
                 />
                 <button 
                   type="submit"
-                  className="h-[41px] ml-1 px-4 pt-1.5 pb-2 inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 font-bold"
+                  className="h-[41px] px-4 pt-1.5 pb-2 inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 font-bold whitespace-nowrap"
                 >
                   {t.newsletterSignup?.subscribe || 'Subscribe'}
                 </button>
