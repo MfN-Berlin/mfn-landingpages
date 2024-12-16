@@ -127,7 +127,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Dienstag, Mittwoch, Donnerstag, Freitag
                 </div>
-                <div className="text-center text-Black-900 font-bold text-[34px] py-2">
+                <div className="text-center text-Black-900 font-bold text-[34px] py-2  leading-none">
                   09:30 bis 18:00
                 </div>
               </div>
@@ -138,7 +138,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Samstag, Sonntag, und <a href="/de/besuch-planen/sonderoeffnungszeiten" className="underline">an Feiertagen</a>
                 </div>
-                <div className="text-center text-Black-900 font-bold text-[34px] py-2">
+                <div className="text-center text-Black-900 font-bold text-[34px] py-2 leading-none">
                   10:00 bis 18:00
                 </div>
               </div>
@@ -159,7 +159,7 @@ const IndexPage = () => {
 
         </Section>
         <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div className="flex -mt-40 flex-col justify-center items-center gap-20">
+          <div className="flex flex-col justify-center items-center gap-20">
             {/* <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
               <p className="text-center text-black">
                 Am ersten Sonntag des Monats ist der <strong>Eintritt frei!</strong>
