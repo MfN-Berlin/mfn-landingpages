@@ -958,11 +958,6 @@ const IndexPage = () => {
                 </p>
               </div>
             </AccordionItem>
-            <AccordionItem title="Kann ich im Museum Fotos machen?">
-              <div className="p-5">
-                <p>Ja, das Fotografieren für den persönlichen Gebrauch ist erlaubt, solange Sie keinen Blitz verwenden. Professionelle Foto- und Filmaufnahmen sind nur nach vorheriger Genehmigung gestattet. Bitte achten Sie darauf, die anderen Besucher nicht zu stören.</p>
-              </div>
-            </AccordionItem>
           </Accordion>
         </Section>
         <Section columns={1} backgroundColor="bg-Black-100">
