@@ -76,16 +76,6 @@ const OpenToday = () => {
         <p className="text-white w-full">
           {message}
         </p>
-        <div className={`absolute w-30 h-[48px] right-[-8px] top-[-20px] px-[6.91px] py-[8px] ${isOpen ? 'bg-Blue-500' : 'bg-Orange'} rounded-md transform rotate-[9.82deg]`}>
-          <div className="text-center text-white relative">
-            <span className="block text-[10px] font-bold leading-none">
-              {!isOpen && t.sorry} {t.were}
-            </span>
-            <span className="text-[{isOpen ? '25px' : '20px'}] font-bold leading-none">
-              {isOpen ? t.open : t.closed}
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   );

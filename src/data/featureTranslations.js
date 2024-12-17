@@ -43,10 +43,6 @@ export const featureTranslations = {
       openHours: "öffnet das Museum von",
       until: "bis",
       holiday: "Feiertag",
-      sorry: "SORRY,",
-      were: "WE'RE",
-      open: "OPEN!",
-      closed: "CLOSED",
       clock: "Uhr"
     },
     en: {
@@ -56,10 +52,6 @@ export const featureTranslations = {
       openHours: "the museum is open from",
       until: "until",
       holiday: "holiday",
-      sorry: "SORRY,",
-      were: "WE'RE",
-      open: "OPEN!",
-      closed: "CLOSED",
       clock: "hrs"
     }
   },
