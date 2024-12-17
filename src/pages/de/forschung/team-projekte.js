@@ -131,7 +131,7 @@ const TeamProjectsPage = ({ data }) => {
           <div className="mb-8 max-w-[768px] mx-auto">
             <h1 className="text-center">Team-Projekte</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-                Diese Datenbank enthält Publikationen aus dem Zeitraum 2017 bis 2023, die dem Museum für Naturkunde Berlin vorliegen. <br/><br/>
+                Finden Sie Menschen im Museum für Naturkunde Berlin und Projekte nach Namen, E-Mail, Telefonnummer, Projekt-Titel und Tags. <br/><br/>
               </label>
             <div className="search-container mt-4">
               <div className="flex flex-col md:flex-row gap-4">
