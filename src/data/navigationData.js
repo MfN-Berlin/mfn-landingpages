@@ -176,12 +176,12 @@ export const mainNavData = {
         column: 3,
         items: [
           {
-            to: "/de/wissenschaft/forschung/team-projekte",
+            to: "/de/forschung/team-projekte",
             label: "Team & Projekte",
             order: 1
           },
           {
-            to: "/de/wissenschaft/forschung/publikationen",
+            to: "/de/forschung/publikationen",
             label: "Publikationen",
             order: 2
           }
