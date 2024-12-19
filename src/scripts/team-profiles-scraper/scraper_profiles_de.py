@@ -13,7 +13,7 @@ response = requests.get(team_url)
 soup = BeautifulSoup(response.content, 'html.parser')
 
 # CSV-Datei erstellen
-with open('team_profiles.csv', mode='w', newline='', encoding='utf-8') as file:
+with open('team_profiles_de.csv', mode='w', newline='', encoding='utf-8') as file:
     # Verwende Semikolon als Separator
     writer = csv.writer(file, delimiter=';')
     

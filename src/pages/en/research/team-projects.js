@@ -129,9 +129,9 @@ const TeamProjectsPage = ({ data }) => {
       <main>
         <Section backgroundColor="bg-Black-100" columns={1} padding="pt-16 pb-8">
           <div className="mb-8 max-w-[768px] mx-auto">
-            <h1 className="text-center">Team und Projekte</h1>
+            <h1 className="text-center">Team and Projects</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-                Finden Sie Menschen im Museum für Naturkunde Berlin und Projekte nach Namen, E-Mail, Telefonnummer, Projekt-Titel und Tags. <br/><br/>
+            Find people at Museum für Naturkunde Berlin and projects by name, email, phone number, project title and tags. <br/><br/>
               </label>
             <div className="search-container mt-4">
               <div className="flex flex-col md:flex-row gap-4">
@@ -160,29 +160,29 @@ const TeamProjectsPage = ({ data }) => {
               {isSettingsOpen && (
                 <div className="mt-2 p-4 bg-white border border-Black-200 rounded shadow-lg">
                   <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2">Suchmodus:</label>
+                    <label className="block text-sm font-medium mb-2">Search mode:</label>
                     <select
                       value={searchMode}
                       onChange={(e) => setSearchMode(e.target.value)}
                       className="w-full p-2 border border-Black-300 rounded"
-                      aria-label="Suchmodus auswählen"
+                      aria-label="Select search mode"
                     >
-                      <option value="fuzzy">Fuzzy Suche (Standard)</option>
-                      <option value="exact">Exakte Suche</option>
-                      <option value="extended">Erweiterte Suche</option>
+                      <option value="fuzzy">Fuzzy Search (Default)</option>
+                      <option value="exact">Exact Search</option>
+                      <option value="extended">Extended Search</option>
                     </select>
                   </div>
                   
                   {searchMode === 'extended' && (
                     <div className="text-sm text-Black-600">
-                      <p className="font-medium mb-2">Erweiterte Suchoperatoren:</p>
+                      <p className="font-medium mb-2">Extended search operators:</p>
                       <ul className="list-disc pl-5">
-                        <li>'wort (exakte Übereinstimmung)</li>
-                        <li>^wort (Präfix-Suche)</li>
-                        <li>wort$ (Suffix-Suche)</li>
-                        <li>!wort (Negation)</li>
-                        <li>'wort1 wort2 (AND-Suche)</li>
-                        <li>'wort1 |wort2 (OR-Suche)</li>
+                        <li>'word (exact match)</li>
+                        <li>^word (prefix search)</li>
+                        <li>word$ (suffix search)</li>
+                        <li>!word (negation)</li>
+                        <li>'word1 word2 (AND search)</li>
+                        <li>'word1 |word2 (OR search)</li>
                       </ul>
                     </div>
                   )}
@@ -196,16 +196,17 @@ const TeamProjectsPage = ({ data }) => {
           <div className="mb-8">
             <h2 className="mb-8">
               {searchTerm 
-                ? `${filteredTeamMembers.length} Ergebnisse gefunden`
-                : `${filteredTeamMembers.length} Team-Mitglieder`
+                ? `${filteredTeamMembers.length} results found`
+                : `${filteredTeamMembers.length} team members`
               }
             </h2>
-            
+
+            {/* Team Members List */}
             <div className="mt-8">
               {paginatedMembers.map((member) => (
                 <div key={member.name} className="mb-8 pb-8 border-b border-b-2 border-Green-200">
                   <div className="grid grid-cols-8 gap-6">
-                    {/* Linke Spalte: Persönliche Informationen (3/8) */}
+                    {/* Left Column: Personal Information (3/8) */}
                     <div className="col-span-3">
                       <h2 className="text-xl font-bold mb-2">
                         {member.url ? (
@@ -253,15 +254,15 @@ const TeamProjectsPage = ({ data }) => {
                       )}
                     </div>
 
-                    {/* Rechte Spalte: Projekte (5/8) */}
+                    {/* Right Column: Projects (5/8) */}
                     <div className="col-span-5">
                       {member.projects?.length > 0 && (
                         <div className="mb-4">
                           <h3 className="text-xs uppercase tracking-wider font-light text-Black-400 mb-2">
-                            Projekte
+                            Projects
                           </h3>
                           
-                          {/* Projektliste */}
+                          {/* Project List */}
                           <div className="flex flex-wrap gap-2 mb-2">
                             {member.projects.map((project, index) => (
                               <a 
@@ -273,7 +274,7 @@ const TeamProjectsPage = ({ data }) => {
                             ))}
                           </div>
 
-                          {/* Gesammelte Tags */}
+                          {/* Collected Tags */}
                           {/* <div className="flex flex-wrap gap-2 mt-2">
                             {member.projects
                               .flatMap(project => project.tags || [])
@@ -307,7 +308,7 @@ const TeamProjectsPage = ({ data }) => {
                       onClick={() => setCurrentPage(1)}
                       disabled={currentPage === 1}
                       className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Erste Seite"
+                      aria-label="First page"
                     >
                       <span aria-hidden="true">«</span>
                     </button>
@@ -319,7 +320,7 @@ const TeamProjectsPage = ({ data }) => {
                       onClick={() => setCurrentPage(currentPage - 1)}
                       disabled={currentPage === 1}
                       className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Vorherige Seite"
+                      aria-label="Previous page"
                     >
                       <span aria-hidden="true">‹</span>
                     </button>
@@ -389,7 +390,7 @@ const TeamProjectsPage = ({ data }) => {
                       onClick={() => setCurrentPage(currentPage + 1)}
                       disabled={currentPage === pageCount}
                       className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Nächste Seite"
+                      aria-label="Next page"
                     >
                       <span aria-hidden="true">›</span>
                     </button>
@@ -401,7 +402,7 @@ const TeamProjectsPage = ({ data }) => {
                       onClick={() => setCurrentPage(pageCount)}
                       disabled={currentPage === pageCount}
                       className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Letzte Seite"
+                      aria-label="Last page"
                     >
                       <span aria-hidden="true">»</span>
                     </button>
@@ -412,7 +413,7 @@ const TeamProjectsPage = ({ data }) => {
 
             {/* Pagination info for screen readers */}
             <div className="sr-only" aria-live="polite">
-              Seite {currentPage} von {pageCount}
+              Page {currentPage} of {pageCount}
             </div>
           </div>
         </Section>
@@ -424,7 +425,7 @@ const TeamProjectsPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    file(name: {eq: "team_profiles_with_projects_de"}) {
+    file(name: {eq: "team_profiles_with_projects_en"}) {
       sourceInstanceName
       internal {
         content

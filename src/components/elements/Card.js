@@ -25,7 +25,13 @@ const Card = ({
 
   const cardContent = (
     <>
-      {imageProps && <ContentImage {...imageProps} />}
+      {imageProps && (
+        <div className="relative w-full pt-[56.25%]">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <ContentImage {...imageProps} className="h-full" />
+          </div>
+        </div>
+      )}
       {variant === 'classic' ? (
         <CardText {...textProps} />
       ) : (

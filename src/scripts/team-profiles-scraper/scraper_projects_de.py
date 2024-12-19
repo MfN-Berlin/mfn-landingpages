@@ -8,7 +8,7 @@ base_url = "https://www.museumfuernaturkunde.berlin/de/wissenschaft/navigator"
 start_url = base_url + "?query=&f%5B0%5D=&f%5B0%5D=&f%5B0%5D="
 
 # CSV-Datei erstellen
-with open('navigator_data2.csv', mode='w', newline='', encoding='utf-8') as file:
+with open('navigator_data2_de.csv', mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file, delimiter=';')
     # CSV-Header schreiben
     writer.writerow(['Title', 'Excerpt','Tags', 'Team', 'Projekt-URL'])
