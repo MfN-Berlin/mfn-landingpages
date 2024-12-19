@@ -39,8 +39,8 @@ def clean_team_member(member_data):
 
 def main():
     # Dateien einlesen
-    team_profiles_df = pd.read_csv('team_profiles.csv', delimiter=';')
-    navigator_data_df = pd.read_csv('navigator_data2.csv', delimiter=';')
+    team_profiles_df = pd.read_csv('team_profiles_de.csv', delimiter=';')
+    navigator_data_df = pd.read_csv('navigator_data2_de.csv', delimiter=';')
 
     # Dictionary für die JSON-Struktur erstellen
     team_data = {}
@@ -78,7 +78,7 @@ def main():
                 project['tags'] = []
 
     # Als JSON speichern
-    output_file = 'team_profiles_with_projects.json'
+    output_file = 'team_profiles_with_projects_de.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(team_data, f, ensure_ascii=False, indent=2)
     

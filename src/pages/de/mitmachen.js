@@ -105,8 +105,8 @@ const IndexPage = () => {
                         variant="classic"
                         alignment="center"
                         imageProps={{
-                            imageName: "TR1C6470 (1).jpg",
-                            alt: "Personen stehen vor dem verbildlichten Netzwerk der Anthropozänobjekte",
+                            imageName: "Key visual_NaturderDinge_ohneLogo_klein.jpg",
+                            alt: "Objektcollage aus Sammlungsobjekten von Natur der Dinge",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}

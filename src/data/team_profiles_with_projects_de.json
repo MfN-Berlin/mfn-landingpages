@@ -330,7 +330,16 @@
     "phone": "+49 30 889140 - 8354",
     "role": "Scan-Operatorin | Digitalisierung",
     "url": "https://www.museumfuernaturkunde.berlin/de/ueber-uns/team/margot.belot",
-    "navigator_projects": []
+    "navigator_projects": [
+      {
+        "title": "ELIO - Entwicklungslabor für Innovation in der Objektdigitalisierung",
+        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/elio-entwicklungslabor-fuer-innovation-der-objektdigitalisierung",
+        "excerpt": "Innovation in der Objektdigitalisierung",
+        "tags": [
+          "FB2 Zukunft der Sammlung"
+        ]
+      }
+    ]
   },
   "Eva-Maria Bendel": {
     "email": "eva-maria.bendel@mfn.berlin",
@@ -1155,21 +1164,6 @@
         ]
       },
       {
-        "title": "Mikropaläontologiesammlungen",
-        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/mikropalaeontologiesammlungen",
-        "excerpt": "Wir unterhalten zwei Schlüsselsammlungen für die internationale Mikropaläontologieforschung: die Ehrenberg-Sammlung und die Sammlung heutiger Radiolarien, Teil des Micropaleontologic Reference Center-Sammlungsnetzwerks.",
-        "tags": [
-          "FB1 Dynamik der Natur",
-          "Evolutionäre Diversitätsdynamik",
-          "FB2 Zukunft der Sammlung",
-          "Forschung",
-          "Wissenschaftskommunikation",
-          "Sammlung",
-          "Biodiversität",
-          "Fossilien"
-        ]
-      },
-      {
         "title": "Biodiversitätsdynamik der Radiolarien",
         "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/biodiversitaetsdynamik-der-radiolarien",
         "excerpt": "Wir vergleichen die Geschichte der Radiolarienfauna des Neogens aus unterschiedlichen Umgebungen in verschiedenen Breitengraden, um zu verstehen, was für die Biodiversität des Planktons verantwortlich ist.",
@@ -1485,7 +1479,11 @@
         "excerpt": "Vielfalt Verstehen ist ein gemeinsames Projekt aus Forschung und Bildung, das sich mit der Biodiversität in Berlin beschäftigt.",
         "tags": [
           "FB1 Dynamik der Natur",
-          "FB3 Gesellschaft und Natur"
+          "FB3 Gesellschaft und Natur",
+          "Öffnung des Museums",
+          "Wissenstransfer",
+          "Biodiversität",
+          "Bürgerwissenschaften"
         ]
       },
       {
@@ -1605,7 +1603,11 @@
         "excerpt": "Vielfalt Verstehen ist ein gemeinsames Projekt aus Forschung und Bildung, das sich mit der Biodiversität in Berlin beschäftigt.",
         "tags": [
           "FB1 Dynamik der Natur",
-          "FB3 Gesellschaft und Natur"
+          "FB3 Gesellschaft und Natur",
+          "Öffnung des Museums",
+          "Wissenstransfer",
+          "Biodiversität",
+          "Bürgerwissenschaften"
         ]
       }
     ]
@@ -2548,7 +2550,11 @@
         "excerpt": "Vielfalt Verstehen ist ein gemeinsames Projekt aus Forschung und Bildung, das sich mit der Biodiversität in Berlin beschäftigt.",
         "tags": [
           "FB1 Dynamik der Natur",
-          "FB3 Gesellschaft und Natur"
+          "FB3 Gesellschaft und Natur",
+          "Öffnung des Museums",
+          "Wissenstransfer",
+          "Biodiversität",
+          "Bürgerwissenschaften"
         ]
       }
     ]
@@ -3351,8 +3357,8 @@
     "url": "https://www.museumfuernaturkunde.berlin/de/ueber-uns/team/anke.hoffmann",
     "navigator_projects": [
       {
-        "title": "Unsere neuen Forschungscluster",
-        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/unsere-neuen-forschungscluster",
+        "title": "Unsere Forschungscluster",
+        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/unsere-forschungscluster",
         "excerpt": "Das Museum stellt seine sechs neuen Forschungscluster vor",
         "tags": [
           "Forschungscluster"
@@ -4014,7 +4020,11 @@
         "excerpt": "Vielfalt Verstehen ist ein gemeinsames Projekt aus Forschung und Bildung, das sich mit der Biodiversität in Berlin beschäftigt.",
         "tags": [
           "FB1 Dynamik der Natur",
-          "FB3 Gesellschaft und Natur"
+          "FB3 Gesellschaft und Natur",
+          "Öffnung des Museums",
+          "Wissenstransfer",
+          "Biodiversität",
+          "Bürgerwissenschaften"
         ]
       }
     ]
@@ -4493,7 +4503,20 @@
     "email": "ekaterina.loginova@mfn.berlin",
     "phone": "+49 30 889140 - 8124",
     "url": "https://www.museumfuernaturkunde.berlin/de/ueber-uns/team/ekaterina.loginova",
-    "navigator_projects": []
+    "navigator_projects": [
+      {
+        "title": "WiNoDa",
+        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/winoda",
+        "excerpt": "In dem Projekt WiNoDa (Wissenslabor für Naturwissenschaftliche Sammlungen und objektzentrierte Daten) wird ein Datenkompetenzzentrum entwickelt, das sich auf die Erforschung von naturwissenschaftlichen Sammlungen konzentriert.",
+        "tags": [
+          "FB2 Zukunft der Sammlung",
+          "Forschungsinfrastruktur",
+          "Datenbank",
+          "Wissenschaftsdatenmanagement",
+          "Digitalisierung"
+        ]
+      }
+    ]
   },
   "Tomke Lompa": {
     "email": "tomke.lompa@mfn.berlin",
@@ -5412,7 +5435,16 @@
     "phone": "+49 30 889140 - 8848",
     "role": "Projektkoordination ELIO - Entwicklungslabor für Innovation in der Objektdigitalisierung",
     "url": "https://www.museumfuernaturkunde.berlin/de/ueber-uns/team/jakob.mueller",
-    "navigator_projects": []
+    "navigator_projects": [
+      {
+        "title": "ELIO - Entwicklungslabor für Innovation in der Objektdigitalisierung",
+        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/elio-entwicklungslabor-fuer-innovation-der-objektdigitalisierung",
+        "excerpt": "Innovation in der Objektdigitalisierung",
+        "tags": [
+          "FB2 Zukunft der Sammlung"
+        ]
+      }
+    ]
   },
   "Prof. Dr. Johannes Müller": {
     "email": "johannes.mueller@mfn.berlin",
@@ -5682,23 +5714,6 @@
         "excerpt": "Das Zentrum für Kultur- und Sozialwissenschaften der Natur vereint Wissenschaftler*innen und Akteur*innen aus Wissenschaftsgeschichte, Science & Technology Studies, Wissenschafts- und Umweltsoziologie, Kulturwissenschaften, Museum Studies sowie den bildenden Künsten. Es widmet sich den Politiken, Geschichten und Kulturen von Natur durch eigenständige Forschung und öffentliche Aktivitäten im Bereich Wissenstransfer.",
         "tags": [
           "FB2 Zukunft der Sammlung"
-        ]
-      },
-      {
-        "title": "Forschungscluster: OpenHeritage",
-        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/forschungscluster-openheritage",
-        "excerpt": "Das Cluster “Open Heritage” vereint Projekte aus allen Forschungsbereichen des Museums für Naturkunde",
-        "tags": [
-          "Forschung",
-          "Transfer",
-          "Forschungscluster",
-          "Öffnung des Museums",
-          "Zukunftsplan",
-          "Wissenstransfer",
-          "Wissenschaftskommunikation",
-          "Sammlung",
-          "Gesellschaft",
-          "Kulturerbe"
         ]
       },
       {
@@ -6296,7 +6311,11 @@
         "excerpt": "Vielfalt Verstehen ist ein gemeinsames Projekt aus Forschung und Bildung, das sich mit der Biodiversität in Berlin beschäftigt.",
         "tags": [
           "FB1 Dynamik der Natur",
-          "FB3 Gesellschaft und Natur"
+          "FB3 Gesellschaft und Natur",
+          "Öffnung des Museums",
+          "Wissenstransfer",
+          "Biodiversität",
+          "Bürgerwissenschaften"
         ]
       }
     ]
@@ -6330,21 +6349,6 @@
           "Biodiversität",
           "Fossilien",
           "Klimawandel"
-        ]
-      },
-      {
-        "title": "Mikropaläontologiesammlungen",
-        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/mikropalaeontologiesammlungen",
-        "excerpt": "Wir unterhalten zwei Schlüsselsammlungen für die internationale Mikropaläontologieforschung: die Ehrenberg-Sammlung und die Sammlung heutiger Radiolarien, Teil des Micropaleontologic Reference Center-Sammlungsnetzwerks.",
-        "tags": [
-          "FB1 Dynamik der Natur",
-          "Evolutionäre Diversitätsdynamik",
-          "FB2 Zukunft der Sammlung",
-          "Forschung",
-          "Wissenschaftskommunikation",
-          "Sammlung",
-          "Biodiversität",
-          "Fossilien"
         ]
       },
       {
@@ -6735,23 +6739,6 @@
         "tags": [
           "FB2 Zukunft der Sammlung"
         ]
-      },
-      {
-        "title": "Forschungscluster: OpenHeritage",
-        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/forschungscluster-openheritage",
-        "excerpt": "Das Cluster “Open Heritage” vereint Projekte aus allen Forschungsbereichen des Museums für Naturkunde",
-        "tags": [
-          "Forschung",
-          "Transfer",
-          "Forschungscluster",
-          "Öffnung des Museums",
-          "Zukunftsplan",
-          "Wissenstransfer",
-          "Wissenschaftskommunikation",
-          "Sammlung",
-          "Gesellschaft",
-          "Kulturerbe"
-        ]
       }
     ]
   },
@@ -6988,6 +6975,14 @@
     "phone": "+49 30 889140 - 8422",
     "url": "https://www.museumfuernaturkunde.berlin/de/ueber-uns/team/bernhard.schurian",
     "navigator_projects": [
+      {
+        "title": "ELIO - Entwicklungslabor für Innovation in der Objektdigitalisierung",
+        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/elio-entwicklungslabor-fuer-innovation-der-objektdigitalisierung",
+        "excerpt": "Innovation in der Objektdigitalisierung",
+        "tags": [
+          "FB2 Zukunft der Sammlung"
+        ]
+      },
       {
         "title": "Biodiversität auf der Überholspur – das Indobiosys-Projekt",
         "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/biodiversitaet-auf-der-ueberholspur-das-indobiosys-projekt",
@@ -7816,7 +7811,11 @@
         "excerpt": "Vielfalt Verstehen ist ein gemeinsames Projekt aus Forschung und Bildung, das sich mit der Biodiversität in Berlin beschäftigt.",
         "tags": [
           "FB1 Dynamik der Natur",
-          "FB3 Gesellschaft und Natur"
+          "FB3 Gesellschaft und Natur",
+          "Öffnung des Museums",
+          "Wissenstransfer",
+          "Biodiversität",
+          "Bürgerwissenschaften"
         ]
       }
     ]
@@ -8857,33 +8856,7 @@
     "email": "Hanna.Wueste@mfn.berlin",
     "role": "Studentische Mitarbeiterin im Zentrum für Kultur- und Sozialwissenschaften der Natur und der Transkriptionswerkstatt.",
     "url": "https://www.museumfuernaturkunde.berlin/de/ueber-uns/team/hanna.wueste",
-    "navigator_projects": [
-      {
-        "title": "Zentrum für Kultur- und Sozialwissenschaften der Natur",
-        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/zentrum-fuer-kultur-und-sozialwissenschaften-der-natur",
-        "excerpt": "Das Zentrum für Kultur- und Sozialwissenschaften der Natur vereint Wissenschaftler*innen und Akteur*innen aus Wissenschaftsgeschichte, Science & Technology Studies, Wissenschafts- und Umweltsoziologie, Kulturwissenschaften, Museum Studies sowie den bildenden Künsten. Es widmet sich den Politiken, Geschichten und Kulturen von Natur durch eigenständige Forschung und öffentliche Aktivitäten im Bereich Wissenstransfer.",
-        "tags": [
-          "FB2 Zukunft der Sammlung"
-        ]
-      },
-      {
-        "title": "Forschungscluster: OpenHeritage",
-        "url": "https://www.museumfuernaturkunde.berlin/de/wissenschaft/forschungscluster-openheritage",
-        "excerpt": "Das Cluster “Open Heritage” vereint Projekte aus allen Forschungsbereichen des Museums für Naturkunde",
-        "tags": [
-          "Forschung",
-          "Transfer",
-          "Forschungscluster",
-          "Öffnung des Museums",
-          "Zukunftsplan",
-          "Wissenstransfer",
-          "Wissenschaftskommunikation",
-          "Sammlung",
-          "Gesellschaft",
-          "Kulturerbe"
-        ]
-      }
-    ]
+    "navigator_projects": []
   },
   "Dr. Joachim Ziegler": {
     "email": "joachim.ziegler@mfn.berlin",
