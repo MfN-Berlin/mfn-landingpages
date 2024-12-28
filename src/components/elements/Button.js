@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Button = ({ text, children, variant = 'primary', url, onClick, className = '', ...props }) => {
-  const baseClasses = 'inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none';
+const Button = ({ text, children, variant = 'primary', url, onClick, className = '', inheritAlignment = true, ...props }) => {
+  const baseClasses = `inline-flex items-center whitespace-normal ${
+    inheritAlignment ? "" : "justify-center"
+  } transition-colors duration-200 ease-in-out focus:outline-none`;
 
   const styleClasses = {
     primary: 'h-[34px] px-4 pt-1.5 pb-2 bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 typography-button',

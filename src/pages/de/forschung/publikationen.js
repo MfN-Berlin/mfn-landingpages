@@ -5,6 +5,7 @@ import Fuse from 'fuse.js'
 import Header from "../../../components/layouts/Header"
 import Footer from '../../../components/layouts/Footer'
 import Section from '../../../components/elements/Section'
+import AccessibilityNav from '../../../components/layouts/AccessibilityNav'
 
 // Error Boundary Component
 class ErrorBoundary extends Component {
@@ -126,12 +127,13 @@ const PublicationsPage = ({ data }) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [activeTooltip, setActiveTooltip] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
+  const [sortOrder, setSortOrder] = useState('year-desc');
 
   const publications = useMemo(() => {
     try {
       const publicationFile = data?.allFile?.edges?.find(
         edge => edge.node.sourceInstanceName === 'data' && 
-               edge.node.name === 'publications_2017-2023'
+               edge.node.name === 'publications_2007-2023'
       );
       
       if (!publicationFile?.node?.internal?.content) {
@@ -139,7 +141,7 @@ const PublicationsPage = ({ data }) => {
       }
       
       const parsed = JSON.parse(publicationFile.node.internal.content);
-      return parsed.publications_2020_merged || [];
+      return parsed.publications || [];
     } catch (error) {
       console.error('Error parsing publications:', error);
       return [];
@@ -171,15 +173,31 @@ const PublicationsPage = ({ data }) => {
     ...fuseConfigs[searchMode]
   }), [publications, searchMode])
 
+  const sortPublications = (pubs) => {
+    return [...pubs].sort((a, b) => {
+      switch (sortOrder) {
+        case 'year-asc':
+          return (a.year || 0) - (b.year || 0);
+        case 'year-desc':
+          return (b.year || 0) - (a.year || 0);
+        case 'title-asc':
+          return (a.title || '').localeCompare(b.title || '');
+        case 'title-desc':
+          return (b.title || '').localeCompare(a.title || '');
+        default:
+          return 0;
+      }
+    });
+  };
+
   const filteredPublications = useMemo(() => {
-    if (!searchTerm) return publications;
-    const results = fuse.search(searchTerm);
-    return results.map(result => ({
+    const filtered = !searchTerm ? publications : fuse.search(searchTerm).map(result => ({
       ...result.item,
       score: result.score,
       matches: result.matches
     }));
-  }, [searchTerm, fuse, publications]);
+    return sortPublications(filtered);
+  }, [searchTerm, fuse, publications, sortOrder]);
 
   const pageCount = Math.ceil(filteredPublications.length / ITEMS_PER_PAGE);
   const paginatedPublications = filteredPublications.slice(
@@ -196,11 +214,12 @@ const PublicationsPage = ({ data }) => {
     <>
       <Header />
       <main>
-        <Section backgroundColor="bg-Black-100" columns={1} padding="pt-16 pb-8">
-          <div className="mb-8 max-w-[768px] mx-auto">
+      <AccessibilityNav currentPage="Publikationen" />
+        <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
+          <div className="mb-4 max-w-[768px] mx-auto">
             <h1 className="text-center">Publikationen</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-              Diese Datenbank enthält Publikationen aus dem Zeitraum 2017 bis 2023, die dem Museum für Naturkunde Berlin vorliegen. <br/><br/>
+              Diese Datenbank enthält Publikationen aus dem Zeitraum 2007 bis 2023, die dem Museum für Naturkunde Berlin vorliegen. <br/><br/>
             </label>
             <div className="search-container mt-4">
               <div className="flex flex-col md:flex-row gap-4">
@@ -229,7 +248,7 @@ const PublicationsPage = ({ data }) => {
               {isSettingsOpen && (
                 <div className="mt-2 p-4 bg-white border border-Black-200 rounded shadow-lg">
                   <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2">Suchmodus:</label>
+                    <label className="block text-sm font-medium mb-2">Suchmodus (unterschiedliche Algorithmen können unterschiedliche Suchergebnisse liefern):</label>
                     <select
                       value={searchMode}
                       onChange={(e) => setSearchMode(e.target.value)}
@@ -239,6 +258,21 @@ const PublicationsPage = ({ data }) => {
                       <option value="fuzzy">Fuzzy Suche (Standard)</option>
                       <option value="exact">Exakte Suche</option>
                       <option value="extended">Erweiterte Suche</option>
+                    </select>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium mb-2">Sortierung:</label>
+                    <select
+                      value={sortOrder}
+                      onChange={(e) => setSortOrder(e.target.value)}
+                      className="w-full p-2 border border-Black-300 rounded"
+                      aria-label="Sortierung auswählen"
+                    >
+                      <option value="year-desc">Jahr (neueste zuerst)</option>
+                      <option value="year-asc">Jahr (älteste zuerst)</option>
+                      <option value="title-asc">Titel (A-Z)</option>
+                      <option value="title-desc">Titel (Z-A)</option>
                     </select>
                   </div>
                   
@@ -262,19 +296,27 @@ const PublicationsPage = ({ data }) => {
         </Section>
 
         {/* Publikationsliste */}
-        <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
+        <Section backgroundColor="bg-Green-100" columns={1} padding="pt-8 pb-8">
           <div className="mb-8 publications-list max-w-3xl mx-auto" role="region" aria-label="Publikationsliste">
-            <h2 className="mb-8 pb-4 border-b border-b-2 border-Green-200">
+            <h2 className="mb-4">
               {searchTerm 
                 ? `${filteredPublications.length} Ergebnisse gefunden`
                 : `${publications.length} Publikationen verfügbar`
               }
             </h2>
+            <p className="text-sm text-Black-600 mb-8">
+              Sortierung: {
+                sortOrder === 'year-desc' ? 'Jahr (neueste zuerst)' :
+                sortOrder === 'year-asc' ? 'Jahr (älteste zuerst)' :
+                sortOrder === 'title-asc' ? 'Titel (A-Z)' :
+                'Titel (Z-A)'
+              }
+            </p>
 
             {/* Publications List */}
             <div className="mt-8">
               {paginatedPublications.map((pub, index) => (
-                <div key={index} className="mb-8 pb-8 border-b border-b-2 border-Green-200">
+                <div key={index} className="bg-White-White mb-8 p-8">
                   <article>
                     <div className="flex items-start justify-between">
                       <p dangerouslySetInnerHTML={{ 

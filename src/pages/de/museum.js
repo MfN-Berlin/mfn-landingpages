@@ -36,10 +36,7 @@ const IndexPage = () => {
     <>
       <Header activeNavItem="museum" />
       <main className="bg-white flex flex-col items-center justify-center p-0">
-        <Section backgroundColor="bg-white" padding="pt-8 pb-0">
           <AccessibilityNav currentPage="Das Museum" />
-        </Section>
-
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
@@ -134,14 +131,7 @@ const IndexPage = () => {
               textPosition="center-center"
               className="w-full"
             />
-          
-        </Section>
-        <Section
-          backgroundColor="bg-Blue-200"
-          innerBg="bg-Green-100"
-          padding="pt-0 pb-0"
-        >
-          <CardText
+            <CardText
             body="Der Zukunftsplan, den das Museum tagtäglich umsetzt, sieht die bauliche Sanierung des Museums vor, die mehr als 30 Millionen Objekte umfassende wissenschaftliche Sammlung des Museums wird erschlossen und besser zugänglich gemacht."
             spacing="normal"
             alignment="center"
@@ -159,6 +149,7 @@ const IndexPage = () => {
             ]}
           />
         </Section>
+       
         <Section
           backgroundColor="bg-Blue-200"
           innerBg="bg-Green-100"
@@ -248,6 +239,7 @@ const IndexPage = () => {
           />
           <Card
             variant="classic"
+            alignment="left"
             imageProps={{
               imageName: "TR1C6470.jpg",
               alt: "Personen stehen vor dem verbildlichten Netzwerk der Anthropozänobjekte",
@@ -257,27 +249,27 @@ const IndexPage = () => {
             textProps={{
               headline: "Wissen verbindet",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
-              buttons: [
-                {
-                  text: "Formate zur Wissenschafts-Kommunikation",
-                  variant: "plain",
-                  url: "#"
-                },
-                {
-                  text: "Politikberatung",
-                  variant: "plain",
-                  url: "#"
-                },
-                {
-                  text: "Unser Engagement für Bürger-Wissenschaften",
-                  variant: "plain",
-                  url: "#"
-                }
-              ],
+              body: "Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
               spacing: "wide",
-              alignment:"left"
+              alignment: "left"
             }}
+            buttons={[
+              {
+                text: "Formate zur Wissenschafts-Kommunikation",
+                variant: "plain",
+                url: "#"
+              },
+              {
+                text: "Politikberatung",
+                variant: "plain",
+                url: "#"
+              },
+              {
+                text: "Unser Engagement für Bürger-Wissenschaften",
+                variant: "plain",
+                url: "#"
+              }
+            ]}
             url="/flat-card-page"
           />
           <Blockquote
@@ -285,7 +277,7 @@ const IndexPage = () => {
                         source="Prof. Johannes Vogel"
                         sourceTitle="(Leiter des Museums)"
                         backgroundColor=""  // Green-500 color
-                        className="bg-Blue-500 col-span-1md:col-span-2"
+                        className="bg-Blue-500 col-span-1 md:col-span-2"
                     />
           <Card
             variant="classic"
@@ -464,11 +456,11 @@ const IndexPage = () => {
                     <CardText
                         headline="Kontakt"
                         headlineStyle="h1"
-                        body="Brauchen Sie noch etwas anderes bei uns mitzumachen?"
+                        body="Möchten Sie mehr über das Museum für Naturkunde Berlin erfahren?"
                         spacing="wide"
                         alignment="center"
                     />
-                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
                         <Button variant="primary">Stellen Sie uns eine Frage</Button>
                         <Button variant="primary">Rufen Sie uns an</Button>
                         <Button variant="primary">Besuchen Sie uns im Museum</Button>

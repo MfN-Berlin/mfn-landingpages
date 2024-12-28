@@ -74,7 +74,7 @@ const Slideshow = ({ children, imageMap }) => {
 
         {/* Navigation Buttons */}
         <button 
-          className="absolute left-4 top-[48%] -translate-y-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center rotate-180 hover:bg-gray-50"
+          className="absolute left-8 top-[48%] -translate-y-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center rotate-180 hover:bg-gray-50"
           onClick={scrollPrev}
           aria-label="Previous slide"
         >
@@ -84,7 +84,7 @@ const Slideshow = ({ children, imageMap }) => {
           </svg>
         </button>
         <button 
-          className="absolute right-4 top-[48%] -translate-y-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-gray-50"
+          className="absolute right-8 top-[48%] -translate-y-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-gray-50"
           onClick={scrollNext}
           aria-label="Next slide"
         >

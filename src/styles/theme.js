@@ -81,7 +81,7 @@ const theme = {
         fontFamily: 'Trade Gothic Next LT W04 Bold',
         fontWeight: 'bold',
         lineHeight: '44px',
-        fontSize: '2.75rem',
+        fontSize: '2.5rem',
         letterSpacing: 'normal',
       },
       'h2': {

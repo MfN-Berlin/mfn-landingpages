@@ -177,7 +177,7 @@ export const mainNavDataEn = {
         column: 3,
         items: [
           {
-            to: "/en/science/research/team-projects",
+            to: "/en/research/team-projects",
             label: "Team & Projects",
             order: 1
           },

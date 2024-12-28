@@ -5,7 +5,7 @@ import Fuse from 'fuse.js'
 import Header from "../../../components/layouts/Header"
 import Footer from '../../../components/layouts/Footer'
 import Section from '../../../components/elements/Section'
-
+import AccessibilityNav from '../../../components/layouts/AccessibilityNav'
 const ITEMS_PER_PAGE = 10
 
 const TeamProjectsPage = ({ data }) => {
@@ -127,7 +127,9 @@ const TeamProjectsPage = ({ data }) => {
     <>
       <Header />
       <main>
-        <Section backgroundColor="bg-Black-100" columns={1} padding="pt-16 pb-8">
+        <AccessibilityNav currentPage="Team und Projekte" />
+
+        <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
           <div className="mb-8 max-w-[768px] mx-auto">
             <h1 className="text-center">Team und Projekte</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
@@ -141,7 +143,7 @@ const TeamProjectsPage = ({ data }) => {
                     type="search"
                     value={searchTerm}
                     onChange={handleSearch}
-                    placeholder="Suchen Sie nach Namen, Projekten, Tags..."
+                    placeholder="Suchen Sie nach Namen, Projekten, Tags oder Rollen..."
                     className="w-full p-2 border border-Black-300 rounded pr-10"
                     aria-label="Suchen Sie in allen Team-Projekten"
                   />
@@ -160,7 +162,7 @@ const TeamProjectsPage = ({ data }) => {
               {isSettingsOpen && (
                 <div className="mt-2 p-4 bg-white border border-Black-200 rounded shadow-lg">
                   <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2">Suchmodus:</label>
+                    <label className="block text-sm font-medium mb-2">Suchmodus (unterschiedliche Algorithmen können unterschiedliche Suchergebnisse liefern):</label>
                     <select
                       value={searchMode}
                       onChange={(e) => setSearchMode(e.target.value)}
@@ -192,18 +194,20 @@ const TeamProjectsPage = ({ data }) => {
           </div>
         </Section>
 
-        <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
+        <Section backgroundColor="bg-Green-100" columns={1} padding="pt-16 pb-8">
           <div className="mb-8">
             <h2 className="mb-8">
               {searchTerm 
-                ? `${filteredTeamMembers.length} Ergebnisse gefunden`
-                : `${filteredTeamMembers.length} Team-Mitglieder`
+                ? filteredTeamMembers.length === 0
+                  ? `Keine Ergebnisse gefunden für "${searchTerm}". Haben Sie versucht, die Suche zu erweitern?`
+                  : `${filteredTeamMembers.length} Team-Mitglied${filteredTeamMembers.length === 1 ? '' : 'er'} gefunden für "${searchTerm}"`
+                : `${filteredTeamMembers.length} Team-Mitglied${filteredTeamMembers.length === 1 ? '' : 'er'}`
               }
             </h2>
             
             <div className="mt-8">
               {paginatedMembers.map((member) => (
-                <div key={member.name} className="mb-8 pb-8 border-b border-b-2 border-Green-200">
+                <div key={member.name} className="bg-White-White mb-8 p-8">
                   <div className="grid grid-cols-8 gap-6">
                     {/* Linke Spalte: Persönliche Informationen (3/8) */}
                     <div className="col-span-3">
@@ -267,7 +271,7 @@ const TeamProjectsPage = ({ data }) => {
                               <a 
                                 key={index}
                                 href={project.url} 
-                                className="px-3 py-1.5 bg-Green-100 text-Black-900 text-xs hover:bg-Green-200 hover:text-Green-800 rounded"
+                                className="px-3 py-1.5 bg-Green-200 text-Black-900 text-xs hover:bg-Green-200 hover:text-Green-800 rounded"
                                 dangerouslySetInnerHTML={{ __html: highlightMatches(project.title, searchTerm) }}
                               />
                             ))}

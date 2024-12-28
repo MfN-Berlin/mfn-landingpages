@@ -46,9 +46,7 @@ const IndexPage = () => {
     <>
       <Header activeNavItem="visit" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
-        <Section backgroundColor="bg-Black-000" padding="pt-8 pb-0">
           <AccessibilityNav currentPage="Plan Your Visit" />
-        </Section>
         <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
           <StoryTime
             imageProps={{
@@ -591,12 +589,23 @@ const IndexPage = () => {
         </Section>
         <Section columns={1} backgroundColor="bg-white" padding="pb-4 pt-16">
           <CardText
-            headline="At the Museum"
+            headline="In the Museum"
             headlineStyle="h1"
-            body="We warmly welcome all visitors! In our exhibitions, you'll gain insights into the museum's current research through original research objects! Instead of following predetermined paths, you'll explore the gigantic adventures of nature on your own research journey and experience evolution in action.
-    <br/><br/>More about our <a href='/en/museum/visit/visitor-regulations' className='underline'>visitor regulations</a>, our <a href='https://www.museumfuernaturkunde.berlin/en/about/museum/together-against-discrimination-prejudice-and-racism' className='underline'>stance against discrimination, prejudice and racism</a> and our <a href='/en/museum/visit/photography-and-filming' className='underline'>rules for film and photo recordings</a>."
+            body="In our exhibitions, you'll discover the gigantic adventures of nature - through original research objects!<br/><br/>More about our visitor regulations and our rules for filming and photography."
             spacing="wide"
             alignment="center"
+            buttons={[
+              {
+                text: "Visitor Regulations",
+                url: "/en/museum/visit/visitor-regulations",
+                variant: "plain"
+              },
+              {
+                text: "Photography and Filming",
+                url: "/en/museum/visit/photography-and-filming",
+                variant: "plain"
+              }
+            ]}
           />
           <br /><br />
 
@@ -713,6 +722,7 @@ const IndexPage = () => {
             <div className="sm:col-span-2 lg:col-span-2">
               <Card
                 variant="classic"
+                imageRatio="75"
                 imageProps={{
                   imageName: "veranstaltungen-museum-fuer-naturkunde-berlin (1).jpg",
                   alt: "Event visitors in the dinosaur hall of the Museum für Naturkunde Berlin",
@@ -974,7 +984,7 @@ const IndexPage = () => {
             spacing="wide"
             alignment="center"
           />
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
             <Button
               text="Ask Us a Question"
               variant="primary"
@@ -1005,8 +1015,8 @@ export default IndexPage
 
 export const Head = () => (
   <HeadComponent
-    title="Visit"
-    description="Plan Your Visit to the Museum für Naturkunde Berlin"
-    pathname="/visit"
+    title="Plan Your Visit"
+    description="Plan your visit to the Museum für Naturkunde Berlin"
+    pathname="/en/visit"
   />
 )

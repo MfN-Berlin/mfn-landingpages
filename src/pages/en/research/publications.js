@@ -1,14 +1,11 @@
 import React, { useState, useMemo, useEffect, Component } from 'react'
 import { graphql } from "gatsby"
 import Fuse from 'fuse.js'
-import { Location } from '@reach/router'
 
 import Header from "../../../components/layouts/Header"
 import Footer from '../../../components/layouts/Footer'
 import Section from '../../../components/elements/Section'
 import AccessibilityNav from '../../../components/layouts/AccessibilityNav'
-import HeadComponent from '../../../components/layouts/HeadComponent'
-
 // Error Boundary Component
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -39,157 +36,347 @@ const formatAuthors = (mfnAuthors, unknownAuthors) => {
     ...(unknownAuthors ? unknownAuthors.split('; ') : []),
     ...(mfnAuthors ? [mfnAuthors] : [])
   ].filter(Boolean)
+    .filter(author => author !== "0");
   
-  if (allAuthors.length === 0) return 'Unknown Author'
-  if (allAuthors.length > 7) {
-    return `${allAuthors.slice(0, 6).join(', ')}, ... ${allAuthors[allAuthors.length - 1]}`
+  if (allAuthors.length === 0) return 'Unknown Author';
+  if (allAuthors.length > 20) {
+    return `${allAuthors.slice(0, 19).join(', ')}, ... ${allAuthors[allAuthors.length - 1]}`;
   }
-  return allAuthors.join(', ')
-}
+  return allAuthors.join(', ');
+};
 
-const formatAPA = (pub) => {
+const highlightMatches = (text, searchTerm) => {
+  if (!searchTerm || !text) return text;
+  
   try {
-    const authors = formatAuthors(pub.mfn_authors || '', pub.unknown_authors || '')
-    const year = pub.year || 'n.d.'
-    const title = pub.title 
-      ? `<span class="font-bold">${pub.title}</span>` 
-      : '<span class="font-bold">Untitled</span>'
-    const journal = pub.journal || 'Unknown Journal'
-    const volume = pub.volume ? `*${pub.volume}*` : ''
-    const issue = pub.issue ? `(${pub.issue})` : ''
-    const pageInfo = pub.page_info 
-      ? (typeof pub.page_info === 'string' && pub.page_info.startsWith('Article') 
-        ? pub.page_info 
-        : `p. ${pub.page_info}`)
-      : ''
-    const doi = pub.upload_id && typeof pub.upload_id === 'string' && pub.upload_id.startsWith('10.') 
-      ? `<a href="https://doi.org/${pub.upload_id}" target="_blank" rel="noopener noreferrer" class="text-Green-500 hover:text-Green-600">https://doi.org/${pub.upload_id}</a>` 
-      : ''
-
-    return `${authors}. (${year}). ${title}. *${journal}*, ${volume}${issue}, ${pageInfo}. ${doi}`.trim().replace(/\s+/g, ' ')
+    // Escape special characters in the search term
+    const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escapedSearchTerm})`, 'gi');
+    return text.replace(regex, '<mark class="bg-Yellow-100">$1</mark>');
   } catch (error) {
-    console.error('Error formatting publication:', pub, error)
-    return 'Error formatting publication'
+    console.error('Error highlighting matches:', error);
+    return text;
   }
 }
+
+const formatAPA = (pub, searchTerm) => {
+  try {
+    // Helper function to check if a value is empty or "0"
+    const isValidValue = value => value && value !== "0" && value !== 0;
+
+    const authors = isValidValue(pub.mfn_authors) || isValidValue(pub.unknown_authors)
+      ? `<span id="authors" class="publication-authors">${highlightMatches(formatAuthors(pub.mfn_authors || '', pub.unknown_authors || ''), searchTerm)}</span>`
+      : '';
+
+    const year = isValidValue(pub.year)
+      ? `<span id="year" class="publication-year">${pub.year}</span>`
+      : '<span id="year" class="publication-year">n.d.</span>';
+
+    const title = isValidValue(pub.title)
+      ? `<span id="title" class="publication-title font-bold">${highlightMatches(pub.title, searchTerm)}</span>`
+      : '<span id="title" class="publication-title font-bold">Untitled</span>';
+
+    const journal = isValidValue(pub.journal)
+      ? `<span id="journal" class="publication-journal">${highlightMatches(pub.journal, searchTerm)}</span>`
+      : '';
+
+    const volume = isValidValue(pub.volume)
+      ? `<span id="volume" class="publication-volume"><i>${highlightMatches(pub.volume, searchTerm)}</i></span>`
+      : '';
+
+    const issue = isValidValue(pub.issue)
+      ? `<span id="issue" class="publication-issue">(${highlightMatches(pub.issue, searchTerm)})</span>`
+      : '';
+
+    const pageInfo = isValidValue(pub.page_info)
+      ? `<span id="pages" class="publication-pages">${typeof pub.page_info === 'string' && pub.page_info.startsWith('Article')
+          ? highlightMatches(pub.page_info, searchTerm)
+          : `p. ${highlightMatches(pub.page_info, searchTerm)}`}</span>`
+      : '';
+
+    const doi = isValidValue(pub.upload_id) && typeof pub.upload_id === 'string' && pub.upload_id.startsWith('10.')
+      ? `<span id="doi" class="publication-doi"><a href="https://doi.org/${pub.upload_id}" target="_blank" rel="noopener noreferrer" class="underline text-Green-500 hover:text-Green-600">https://doi.org/${pub.upload_id}</a></span>`
+      : '';
+
+    // Combine elements and filter out empty strings
+    const elements = [
+      authors && `${authors}.`,
+      `(${year})`,
+      `${title}.`,
+      journal && `<i>${journal}</i>`,
+      volume,
+      issue,
+      pageInfo,
+      doi
+    ].filter(Boolean);
+
+    return elements.join(' ').trim().replace(/\s+/g, ' ').replace(/\s+\./g, '.').replace(/,\s*\./g, '.');
+  } catch (error) {
+    console.error('Error formatting publication:', pub, error);
+    return 'Error formatting publication';
+  }
+};
 
 const ITEMS_PER_PAGE = 10
 
 
 const PublicationsPage = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [publications, setPublications] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [searchMode, setSearchMode] = useState('fuzzy')
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
+  const [activeTooltip, setActiveTooltip] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
+  const [sortOrder, setSortOrder] = useState('year-desc'); // Default sort: Year descending
 
-  useEffect(() => {
-    if (data && data.allFile && data.allFile.edges.length > 0) {
-      const fileContent = data.allFile.edges[0].node.internal.content
-      try {
-        const parsedContent = JSON.parse(fileContent)
-        setPublications(parsedContent.publications_2020_merged || [])
-        setIsLoading(false)
-      } catch (error) {
-        console.error('Error parsing JSON:', error)
-        setError('Error loading publications')
-        setIsLoading(false)
+  const publications = useMemo(() => {
+    try {
+      const publicationFile = data?.allFile?.edges?.find(
+        edge => edge.node.sourceInstanceName === 'data' && 
+               edge.node.name === 'publications_2007-2023'
+      );
+      
+      if (!publicationFile?.node?.internal?.content) {
+        return [];
       }
+      
+      const parsed = JSON.parse(publicationFile.node.internal.content);
+      return parsed.publications || [];
+    } catch (error) {
+      console.error('Error parsing publications:', error);
+      return [];
     }
-  }, [data])
+  }, [data]);
+
+  const fuseConfigs = {
+    exact: {
+      threshold: 0,
+      ignoreLocation: true,
+      includeMatches: true,
+      includeScore: true,
+    },
+    fuzzy: {
+      threshold: 0.3,
+      distance: 100,
+      includeMatches: true,
+      includeScore: true,
+    },
+    extended: {
+      useExtendedSearch: true,
+      includeMatches: true,
+      includeScore: true,
+    }
+  }
 
   const fuse = useMemo(() => new Fuse(publications, {
     keys: ['title', 'mfn_authors', 'unknown_authors', 'journal', 'year', 'keyword'],
-    threshold: 0.3,
-  }), [publications])
+    ...fuseConfigs[searchMode]
+  }), [publications, searchMode])
+
+  const sortPublications = (pubs) => {
+    return [...pubs].sort((a, b) => {
+      switch (sortOrder) {
+        case 'year-asc':
+          return (a.year || 0) - (b.year || 0);
+        case 'year-desc':
+          return (b.year || 0) - (a.year || 0);
+        case 'title-asc':
+          return (a.title || '').localeCompare(b.title || '');
+        case 'title-desc':
+          return (b.title || '').localeCompare(a.title || '');
+        default:
+          return 0;
+      }
+    });
+  };
 
   const filteredPublications = useMemo(() => {
-    return searchTerm ? fuse.search(searchTerm).map(result => result.item) : publications
-  }, [searchTerm, fuse, publications])
+    const filtered = !searchTerm ? publications : fuse.search(searchTerm).map(result => ({
+      ...result.item,
+      score: result.score,
+      matches: result.matches
+    }));
+    return sortPublications(filtered);
+  }, [searchTerm, fuse, publications, sortOrder]);
 
-  const pageCount = Math.ceil(filteredPublications.length / ITEMS_PER_PAGE)
+  const pageCount = Math.ceil(filteredPublications.length / ITEMS_PER_PAGE);
   const paginatedPublications = filteredPublications.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
-  )
+  );
 
-  // Modify the search handler to reset pagination
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value)
-    setCurrentPage(1) // Reset to first page whenever search term changes
-  }
-
-  if (isLoading) return <div>Loading publications...</div>
-  if (error) return <div>{error}</div>
+    setSearchTerm(e.target.value);
+    setCurrentPage(1);
+  };
 
   return (
-    <Location>
-      {({ location }) => (
-        <>
-          <Header activeNavItem="publications" location={location} />
-          <main className="bg-white flex flex-col items-center justify-center p-0">
-            <Section backgroundColor="bg-white" padding="pt-8 pb-0">
-              <AccessibilityNav currentPage="Publications" />
-            </Section>
-            <ErrorBoundary>
-              <div className="mb-8">
-                <h1>All Publications since 2019</h1>
-                <div className="search-container mt-4">
-                  <label htmlFor="search-publications" className="block mb-2">
-                    Search Publications
-                  </label>
+    <>
+      <Header />
+      <main>
+        <AccessibilityNav currentPage="Publications" />
+        <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
+          <div className="mb-4 max-w-[768px] mx-auto">
+            <h1 className="text-center">Publications</h1>
+            <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
+              Search publications from 2007 to 2023 by title, author, journal, year, or keywords.<br/><br/>
+            </label>
+            
+            <div className="search-container mt-4">
+              <div className="flex flex-col md:flex-row gap-4">
+              
+                <div className="flex-grow relative w-full">
                   <input
-                    id="search-publications"
                     type="search"
                     value={searchTerm}
                     onChange={handleSearch}
-                    placeholder="Search for title, author, journal..."
-                    className="w-full p-2 border border-Black-300 rounded"
-                    aria-label="Search in all publications"
+                    placeholder="Search for names, projects, tags..."
+                    className="w-full p-2 border border-Black-300 rounded pr-10"
+                    aria-label="Search in all projects"
                   />
+                  <button
+                    onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 hover:bg-Black-100 rounded-full"
+                    aria-label="Search settings"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                    </svg>
+                  </button>
                 </div>
               </div>
 
-              <div className="publications-list" role="region" aria-label="Publikationsliste">
-                {paginatedPublications.length > 0 ? (
-                  <ul className="list-none p-0">
-                    {paginatedPublications.map((pub, index) => (
-                      <li key={index} className="mb-12 border-b border-Black-100 pb-4">
-                        <article>
-                          <p dangerouslySetInnerHTML={{ __html: formatAPA(pub) }} />
-                        </article>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>No publications found.</p>
-                )}
-              </div>
+              {isSettingsOpen && (
+                <div className="mt-2 p-4 bg-white border border-Black-200 rounded shadow-lg">
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium mb-2">Search mode (different algorithms can yield different search results):</label>
+                    <select
+                      value={searchMode}
+                      onChange={(e) => setSearchMode(e.target.value)}
+                      className="w-full p-2 border border-Black-300 rounded"
+                      aria-label="Select search mode"
+                    >
+                      <option value="fuzzy">Fuzzy Search (Default)</option>
+                      <option value="exact">Exact Search</option>
+                      <option value="extended">Extended Search</option>
+                    </select>
+                  </div>
 
-              <nav 
-                aria-label="Pagination" 
-                className="mt-8"
-              >
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium mb-2">Sort by:</label>
+                    <select
+                      value={sortOrder}
+                      onChange={(e) => setSortOrder(e.target.value)}
+                      className="w-full p-2 border border-Black-300 rounded"
+                      aria-label="Select sort order"
+                    >
+                      <option value="year-desc">Year (newest first)</option>
+                      <option value="year-asc">Year (oldest first)</option>
+                      <option value="title-asc">Title (A-Z)</option>
+                      <option value="title-desc">Title (Z-A)</option>
+                    </select>
+                  </div>
+                  
+                  {searchMode === 'extended' && (
+                    <div className="text-sm text-Black-600">
+                      <p className="font-medium mb-2">Extended search operators:</p>
+                      <ul className="list-disc pl-5">
+                        <li>'word (exact match)</li>
+                        <li>^word (prefix search)</li>
+                        <li>word$ (suffix search)</li>
+                        <li>!word (negation)</li>
+                        <li>'word1 word2 (AND search)</li>
+                        <li>'word1 |word2 (OR search)</li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </Section>
+
+        <Section backgroundColor="bg-Green-100" columns={1} padding="pt-8 pb-8">
+          <div className="mb-8 publications-list max-w-3xl mx-auto" role="region" aria-label="Publications list">
+            <h2 className="mb-4">
+              {searchTerm 
+                ? `${filteredPublications.length} results found`
+                : `${publications.length} publications available`
+              }
+            </h2>
+            <p className="text-sm text-Black-600 mb-8">
+              Sorted by: {
+                sortOrder === 'year-desc' ? 'Year (newest first)' :
+                sortOrder === 'year-asc' ? 'Year (oldest first)' :
+                sortOrder === 'title-asc' ? 'Title (A-Z)' :
+                'Title (Z-A)'
+              }
+            </p>
+
+            {/* Publications List */}
+            <div className="mt-8">
+              {paginatedPublications.map((pub, index) => (
+                <div key={index} className="bg-White-White mb-8 p-8">
+                  <article>
+                    <div className="flex items-start justify-between">
+                      <p dangerouslySetInnerHTML={{ 
+                        __html: formatAPA(pub, searchTerm) 
+                      }} className="flex-grow" />
+                      
+                      {searchTerm && (
+                        <div className="relative ml-2">
+                          <button
+                            onClick={() => setActiveTooltip(activeTooltip === index ? null : index)}
+                            className="p-2 hover:bg-Black-100 rounded-full"
+                            aria-label="Show search result details"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                          
+                          {activeTooltip === index && (
+                            <div className="absolute z-10 right-0 mt-2 w-64 bg-white border border-Black-200 rounded-lg shadow-lg p-4">
+                              <h4 className="font-bold mb-2">Found in:</h4>
+                              {pub.matches?.map((match, i) => (
+                                <p key={i} className="text-sm mb-1">
+                                  <span className="font-medium">{match.key}:</span> {match.value}
+                                  <br />
+                                  <span className="text-Black-500">
+                                    Score: {Math.round(pub.score * 100)}%
+                                  </span>
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {pageCount > 1 && (
+              <nav aria-label="Pagination" className="mt-8">
                 <ul className="flex justify-center items-center gap-2 p-0 m-0 list-none">
-                  {/* First Page */}
                   <li>
                     <button 
                       onClick={() => setCurrentPage(1)}
                       disabled={currentPage === 1}
-                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="First Page"
+                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50"
+                      aria-label="First page"
                     >
                       <span aria-hidden="true">«</span>
                     </button>
                   </li>
 
-                  {/* Previous Page */}
                   <li>
                     <button 
                       onClick={() => setCurrentPage(currentPage - 1)}
                       disabled={currentPage === 1}
-                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Previous Page"
+                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50"
+                      aria-label="Previous page"
                     >
                       <span aria-hidden="true">‹</span>
                     </button>
@@ -201,29 +388,23 @@ const PublicationsPage = ({ data }) => {
                     const totalPages = pageCount;
                     const current = currentPage;
                     
-                    // Always show first page
                     pages.push(1);
                     
-                    // Calculate range around current page
                     let start = Math.max(2, current - 2);
                     let end = Math.min(totalPages - 1, current + 2);
                     
-                    // Add ellipsis after first page if needed
                     if (start > 2) {
                       pages.push('...');
                     }
                     
-                    // Add pages around current page
                     for (let i = start; i <= end; i++) {
                       pages.push(i);
                     }
                     
-                    // Add ellipsis before last page if needed
                     if (end < totalPages - 1) {
                       pages.push('...');
                     }
                     
-                    // Add last page if there is more than one page
                     if (totalPages > 1) {
                       pages.push(totalPages);
                     }
@@ -232,7 +413,7 @@ const PublicationsPage = ({ data }) => {
                       if (page === '...') {
                         return (
                           <li key={`ellipsis-${index}`}>
-                            <span className="px-3 py-2" aria-hidden="true">…</span>
+                            <span className="px-3 py-2">…</span>
                           </li>
                         );
                       }
@@ -253,50 +434,49 @@ const PublicationsPage = ({ data }) => {
                     });
                   })()}
 
-                  {/* Next Page */}
                   <li>
                     <button 
                       onClick={() => setCurrentPage(currentPage + 1)}
                       disabled={currentPage === pageCount}
-                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Next Page"
+                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50"
+                      aria-label="Next page"
                     >
                       <span aria-hidden="true">›</span>
                     </button>
                   </li>
 
-                  {/* Last Page */}
                   <li>
                     <button 
                       onClick={() => setCurrentPage(pageCount)}
                       disabled={currentPage === pageCount}
-                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Last Page"
+                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50"
+                      aria-label="Last page"
                     >
                       <span aria-hidden="true">»</span>
                     </button>
                   </li>
                 </ul>
               </nav>
+            )}
 
-              {/* Add pagination info for screen readers */}
-              <div className="sr-only" aria-live="polite">
-                Page {currentPage} of {pageCount}
-              </div>
-            </ErrorBoundary>
-          </main>
-          <Footer />
-        </>
-      )}
-    </Location>
-  );
-};
+            {/* Screen reader pagination info */}
+            <div className="sr-only" aria-live="polite">
+              Page {currentPage} of {pageCount}
+            </div>
+          </div>
+        </Section>
+      </main>
+      <Footer />
+    </>
+  )
+}
 
 export const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "publications"}, extension: {eq: "json"}}) {
+    allFile(filter: {sourceInstanceName: {eq: "data"}}) {
       edges {
         node {
+          sourceInstanceName
           name
           internal {
             content
@@ -305,14 +485,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 export default PublicationsPage
-
-export const Head = () => (
-  <HeadComponent 
-    title="Publications | Museum für Naturkunde Berlin"
-    description="Browse our scientific publications and research findings."
-    pathname="/en/publications"
-  />
-)
