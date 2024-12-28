@@ -15,10 +15,7 @@ const IndexPage = () => {
         <>
           <Header activeNavItem="home" location={location} />
           <main className="bg-white flex flex-col items-center justify-center p-0">
-            <Section backgroundColor="bg-white" padding="pt-8 pb-0">
               <AccessibilityNav currentPage="Home" />
-            </Section>
-
 
             <Section backgroundColor="bg-white" columns={1}>
               <CardText

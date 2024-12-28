@@ -45,10 +45,7 @@ const IndexPage = () => {
     <>
       <Header activeNavItem="besuchplanen" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
-       
-          <AccessibilityNav currentPage="Besuch planen" />
-       
-
+        <AccessibilityNav currentPage="Besuch planen" />
         <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
           <StoryTime
             imageProps={{
@@ -708,6 +705,8 @@ const IndexPage = () => {
             <div className="sm:col-span-2 lg:col-span-2">
               <Card
                 variant="classic"
+                imageRatio="65" // 4:3 format
+
                 imageProps={{
                   imageName: "veranstaltungen-museum-fuer-naturkunde-berlin (1).jpg",
                   alt: "Veranstaltungsbesuchende im Sauriersaal des Museums für Naturkunde Berlin",
@@ -968,7 +967,7 @@ const IndexPage = () => {
             spacing="wide"
             alignment="center"
           />
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
             <Button
               text="Stellen Sie uns eine Frage"
               variant="primary"

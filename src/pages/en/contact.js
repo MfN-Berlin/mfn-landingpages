@@ -46,13 +46,13 @@ const ContactPage = () => {
         <>
           <Header activeNavItem="contact" location={location} />
           <main className="bg-white flex flex-col items-center justify-center p-0">
+            <AccessibilityNav currentPage="Contact" />
             <Section backgroundColor="bg-white" padding="pt-8 pb-0">
-              <AccessibilityNav currentPage="Contact" />
               {Object.keys(imageMap).length > 0 && (
                 <StoryTime
                   imageProps={{
                     imageName: "PCastagnola_MfN_Einzelportraits_06-1.jpg",
-                    alt: "Thomas Kleinert, Museumsschlosser, ist immer für ein Wort zu haben. Foto: Pablo Castagnola",
+                    alt: "Thomas Kleinert, Museum locksmith, is always up for a chat. Photo: Pablo Castagnola",
                     imageMap: imageMap,
                     className: "w-full h-full object-cover"
                   }}
@@ -66,28 +66,27 @@ const ContactPage = () => {
                     buttons: [
                       {
                         text: "Team",
-                        url: "de/museum/team",
+                        url: "en/museum/team",
                         variant: "plain"
                       },
                       {
                         text: "FAQ",
-                        url: "de/besuch-planen/faq",
+                        url: "en/plan-your-visit/faq",
                         variant: "plain"
                       },
                       {
-                        text: "Presse",
-                        url: "de/presse",
+                        text: "Press",
+                        url: "en/press",
                         variant: "plain"
                       },
                       {
-                        text: "Besuch planen",
-                        url: "de/besuch-planen",
+                        text: "Plan Your Visit",
+                        url: "en/plan-your-visit",
                         variant: "plain"
-                      }
-                      ,
+                      },
                       {
-                        text: "Über uns",
-                        url: "de/ueber-uns",
+                        text: "About Us",
+                        url: "en/about-us",
                         variant: "plain"
                       }]
                   }}
@@ -97,83 +96,64 @@ const ContactPage = () => {
             </Section>
             <Section backgroundColor="bg-Green-100" columns={2} padding="pt-16 pb-8">
               <CardText
-                headline="Allgemeiner Kontakt"
+                headline="General Contact"
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`Für Fragen rund um das Museum<br/>
+                body={`For questions about the museum<br/>
                 <a href='mailto:info@mfn.berlin'>info@mfn.berlin</a><br/>
                 (030) 889140-8591<br/>
-                Montag bis Donnerstag 8-16.30 Uhr, Freitag 7.30-14.30 Uhr`}
+                Monday to Thursday 8am-4:30pm, Friday 7:30am-2:30pm`}
               />
               <CardText
-                headline="Pressekontakt"
+                headline="Press Contact"
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`Für Medienvertreter haben wir ein <a href='/de/presse'>Presseportal</a> eingerichtet.<br/>
+                body={`For media representatives, we have set up a <a href='/en/press'>press portal</a>.<br/>
                 <a href='mailto:presse@mfn.berlin'>presse@mfn.berlin</a><br/>
-                <a href='mailto:gesine.steiner@mfn.berlin'>Dr. Gesine Steiner</a> (Pressesprecherin)<br/>
+                <a href='mailto:gesine.steiner@mfn.berlin'>Dr. Gesine Steiner</a> (Press Officer)<br/>
                 030 889140-8917`}
               />
             </Section>
             <Section backgroundColor="bg-Green-100" columns={2} padding="py-8">
               <CardText
-                headline="Veranstaltungen"
+                headline="Events"
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`Für Fragen rund um unsere <a href='/de/mitmachen/veranstaltungen'>Veranstaltungen</a><br/>
+                body={`For questions about our <a href='/en/get-involved/events'>events</a><br/>
                 
                 <a href='mailto:info@mfn.berlin'>info@mfn.berlin</a>`}
               />
               <CardText
-                headline="Führungen"
+                headline="Guided Tours"
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`Alles rund um unsere <a href='/de/museum/bildung/fuehrungen'>Führungen</a><br/>
+                body={`Everything about our <a href='/en/museum/education/guided-tours'>guided tours</a><br/>
                 <a href='mailto:bildung@mfn.berlin'>bildung@mfn.berlin</a><br/>
-                <a href='/de/kontakt'>Kontaktformular</a> für Mailanfragen`}
+                <a href='/en/contact'>Contact form</a> for email inquiries`}
               />
             </Section>
             <Section backgroundColor="bg-Green-100" columns={2} padding="py-8">
               <CardText
-                headline="Museumsshop"
+                headline="Museum Shop"
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`Unser <a href='https://www.naturkundemuseum-shop.de'>Shop</a> findet sich im Erdgeschoss<br/>
+                body={`Our <a href='https://www.naturkundemuseum-shop.de'>shop</a> is located on the ground floor<br/>
                 <a href='mailto:shop@mfn.berlin'>shop@mfn.berlin</a><br/>
                 030 8891406101`}
               />
               <CardText
-                headline="Vermietung"
+                headline="Venue Rental"
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`Für ein individuelles Angebot wenden Sie sich gern an:<br/>
+                body={`For individual offers, please contact:<br/>
                 <a href='mailto:s.krzyzniewski@mfn.berlin'>Stefanie Krzyzniewski</a><br/>
                 <a href='mailto:s.krzyzniewski@mfn.berlin'>s.krzyzniewski@mfn.berlin</a>`}
-              />
-            </Section>
-            <Section backgroundColor="bg-Green-100" columns={2} padding="pt-8 pb-16">
-              <CardText
-                headline="Bibliothek"
-                headlineStyle="h3"
-                spacing="regular"
-                alignment="left"
-                body={`<a href='/de/wissenschaft/bibliothek'>Die Bibliothek</a> ist Dienstag bis Freitag für externe Nutzende zugänglich. Bitte melden Sie sich per <a href='mailto:bibliothek@mfn.berlin'>Email</a> zwecks Terminabsprache.`}
-              />
-              <CardText
-                headline="Archiv"
-                headlineStyle="h3"
-                spacing="regular"
-                alignment="left"
-                body={`Der Archivbesuch ist nur nach vorheriger Terminvereinbarung möglich.<br/>
-                <a href='mailto:archiv@mfn.berlin'>archiv@mfn.berlin</a><br/>
-                030 889140 8519<br/>
-                `}
               />
             </Section>
           </main>

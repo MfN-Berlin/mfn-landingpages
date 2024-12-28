@@ -39,10 +39,10 @@ export const AccordionItem = ({ children, title, index }) => {
   const headingId = `accordion-heading-${index}`;
 
   return (
-    <div className={`mb-4 ${bgColor === 'green' ? 'bg-Green-100' : 'bg-white'}`}>
+    <div className="mb-4">
       <h3 id={headingId}>
         <button
-          className="w-full p-4 flex justify-between items-center text-left gap-8"
+          className={`w-full p-4 flex justify-between items-center text-left gap-8 ${bgColor === 'green' ? 'bg-Green-100' : 'bg-white'} hover:bg-Green-200 transition-colors duration-300`}
           onClick={toggleItem}
           aria-expanded={isOpen}
           aria-controls={itemId}
@@ -62,10 +62,11 @@ export const AccordionItem = ({ children, title, index }) => {
             ? 'grid-rows-[1fr] opacity-100' 
             : 'grid-rows-[0fr] opacity-0'
           }
+          ${bgColor === 'green' ? 'bg-Green-100' : 'bg-white'}
         `}
       >
         <div className="overflow-hidden">
-          <div className="p-0">
+          <div className="p-4">
             {children}
           </div>
         </div>

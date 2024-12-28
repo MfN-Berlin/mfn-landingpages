@@ -33,9 +33,7 @@ const IndexPage = () => {
         <>
             <Header activeNavItem="mitmachen" />
             <main className="bg-white flex flex-col items-center justify-center p-0">
-                <Section backgroundColor="bg-white" padding="pt-8 pb-0">
                     <AccessibilityNav currentPage="Kontakt" />
-                </Section>
 
 
                 <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">

@@ -38,10 +38,7 @@ const VisitPage = () => {
         <>
             <Header activeNavItem="forschung" />
             <main className="bg-white flex flex-col items-center justify-center p-0">
-                <Section backgroundColor="bg-white" padding="pt-8 pb-0">
-                    <AccessibilityNav currentPage="Forschung" />
-                </Section>
-
+                <AccessibilityNav currentPage="Forschung" />
 
                 <Section backgroundColor="bg-white" columns={1}>
                      <StoryTime
@@ -81,10 +78,10 @@ const VisitPage = () => {
                                         htmlFor="science-search"
                                         className="text-xl font-bold text-Black-900"
                                     >
-                                        Wissenschafts-Suche
+                                        Projekt-Suche
                                     </label>
                                     <p className="text-sm text-Black-700 mt-2">
-                                        Suchen Sie nach Namen, Rollen, Projekten des Museums – oder einfach nach Stichworten um passende Projektportraits zu finden. <br/><br/>
+                                    Suchen Sie nach Personen und/oder Stichworte und finden Sie dazu passende Forschungsaktivitäten. <br/><br/>
                                     </p>
                                 </div>
                                 <div className="mt-auto flex flex-col md:flex-row gap-2">
@@ -118,7 +115,7 @@ const VisitPage = () => {
                                         htmlFor="projects-search"
                                         className="text-xl font-bold text-Black-900"
                                     >
-                                        Projekte und Arbeitsgruppen
+                                        Arbeitsgruppen
                                     </label>
                                     <p className="text-sm text-Black-700 mt-2">
                                         Nutzen Sie unseren Filter, um Themenspezifische Projekte anzeigen zu lassen
@@ -561,7 +558,7 @@ const VisitPage = () => {
                         spacing="wide"
                         alignment="center"
                     />
-                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
                         <Button variant="primary">Stellen Sie uns eine Frage</Button>
                         <Button variant="primary">Rufen Sie uns an</Button>
                         <Button variant="primary">Kontaktieren Sie uns!</Button>

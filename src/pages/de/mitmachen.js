@@ -39,10 +39,7 @@ const IndexPage = () => {
         <>
             <Header activeNavItem="mitmachen" />
             <main className="bg-white flex flex-col items-center justify-center p-0">
-                <Section backgroundColor="bg-white" padding="pt-8 pb-0">
-                    <AccessibilityNav currentPage="Mitmachen" />
-                </Section>
-
+                <AccessibilityNav currentPage="Mitmachen" />
 
                 <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
                     <StoryTime
@@ -79,11 +76,6 @@ const IndexPage = () => {
                                 {
                                     text: "Bürgerwissenschaften",
                                     url: "/de/mitmachen/bürgerwissenschaften",
-                                    variant: "plain"
-                                },
-                                {
-                                    text: "Werkstatt",
-                                    url: "/de/mitmachen/ehrenamt/transkriptionswerkstatt",
                                     variant: "plain"
                                 }]
 
@@ -221,24 +213,27 @@ const IndexPage = () => {
                         className="bg-Green-500"
                     />
                 </Section>
-                <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
+                {/* <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
+
+
 
                     <Card
                         variant="classic"
                         imageProps={{
-                            imageName: "Naturblick_Screen_2024_klein.jpg",
-                            alt: "Startbildschirm der Naturblick-App",
+                            imageName: "fuchs_c_selina_schultze_mfn.jpg",
+                            alt: "Stadtnatur am Musuem für Naturkunde",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Naturblick: Stadtnatur entdecken",
-                            body: "Mit Naturblick können Sie Pflanzen und Tiere einfach bestimmen und mehr über die Natur in ihrer Stadt erfahren. Speichern Sie Ihre Beobachtungen und teilen Sie diese mit Wissenschaft und Naturschutz.",
+                            headline: "Großstadtsafaris",
+                            body: "Erleben Sie Berlin als grünste und artenreichste Hauptstadt Europas! Auf einer stadtökologischen Führung rund um das Museum entdecken Sie die Tier- und Pflanzenvielfalt der Innenstadt und erfahren, wie sich diese an das Leben in der Großstadt anpasst. Der Fokus liegt dabei auf den sichtbaren Folgen des Klimawandels für Pflanzen, Tiere und Menschen in Berlin.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/wissenschaft/naturblick-stadtnatur-entdecken"
+                        url="/de/museum/veranstaltungen/grossstadtsafari-stadtoekologie-und-klimawandel-5"
                     />
+
 
                     <Card
                         variant="classic"
@@ -257,9 +252,24 @@ const IndexPage = () => {
                         url="/de/mitmachen/taschenlampenführungen"
                     />
 
-                </Section>
+                </Section> */}
                 <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-16">
-
+                    <Card
+                        variant="classic"
+                        imageProps={{
+                            imageName: "Naturblick_Screen_2024_klein.jpg",
+                            alt: "Startbildschirm der Naturblick-App",
+                            imageMap: imageMap,
+                            className: "w-full h-auto object-cover"
+                        }}
+                        textProps={{
+                            headline: "Naturblick: Stadtnatur entdecken",
+                            body: "Mit Naturblick können Sie Pflanzen und Tiere einfach bestimmen und mehr über die Natur in ihrer Stadt erfahren. Speichern Sie Ihre Beobachtungen und teilen Sie diese mit Wissenschaft und Naturschutz.",
+                            headlineStyle: "h3",
+                            alignment: "left"
+                        }}
+                        url="/de/wissenschaft/naturblick-stadtnatur-entdecken"
+                    />
                     <Card
                         variant="classic"
                         imageProps={{
@@ -277,22 +287,6 @@ const IndexPage = () => {
                         url="/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren"
                     />
 
-                    <Card
-                        variant="classic"
-                        imageProps={{
-                            imageName: "fuchs_c_selina_schultze_mfn.jpg",
-                            alt: "Stadtnatur am Musuem für Naturkunde",
-                            imageMap: imageMap,
-                            className: "w-full h-auto object-cover"
-                        }}
-                        textProps={{
-                            headline: "Großstadtsafaris",
-                            body: "Erleben Sie Berlin als grünste und artenreichste Hauptstadt Europas! Auf einer stadtökologischen Führung rund um das Museum entdecken Sie die Tier- und Pflanzenvielfalt der Innenstadt und erfahren, wie sich diese an das Leben in der Großstadt anpasst. Der Fokus liegt dabei auf den sichtbaren Folgen des Klimawandels für Pflanzen, Tiere und Menschen in Berlin.",
-                            headlineStyle: "h3",
-                            alignment: "left"
-                        }}
-                        url="/de/museum/veranstaltungen/grossstadtsafari-stadtoekologie-und-klimawandel-5"
-                    />
 
                     <Card
                         variant="classic"
@@ -385,7 +379,7 @@ const IndexPage = () => {
                         spacing="wide"
                         alignment="center"
                     />
-                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
                         <Button variant="primary">Stellen Sie uns eine Frage</Button>
                         <Button variant="primary">Rufen Sie uns an</Button>
                         <Button variant="primary">Besuchen Sie uns im Museum</Button>

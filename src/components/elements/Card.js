@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import ContentImage from './ContentImage';
 import CardText from './CardText';
+import Button from './Button';
 
 const Card = ({ 
   variant = 'classic', 
@@ -9,7 +10,9 @@ const Card = ({
   imageProps, 
   textProps, 
   url,
-  className = ''
+  className = '',
+  imageRatio = '56.25',
+  buttons
 }) => {
   const getVariantStyles = () => {
     switch(variant) {
@@ -26,7 +29,7 @@ const Card = ({
   const cardContent = (
     <>
       {imageProps && (
-        <div className="relative w-full pt-[56.25%]">
+        <div className="relative w-full" style={{ paddingTop: `${imageRatio}%` }}>
           <div className="absolute top-0 left-0 w-full h-full">
             <ContentImage {...imageProps} className="h-full" />
           </div>
@@ -54,6 +57,16 @@ const Card = ({
           {cardContent}
         </div>
       )}
+      <div className={`flex flex-col ${alignment === 'left' ? 'items-start' : 'items-center'}`}>
+        {buttons?.map((button, index) => (
+          <Button
+            key={index}
+            {...button}
+            className={`w-full ${alignment === 'left' ? 'text-left' : 'text-center'}`}
+            inheritAlignment={true}
+          />
+        ))}
+      </div>
     </Link>
   );
 };
