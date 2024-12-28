@@ -25,82 +25,78 @@ const IndexPage = () => {
         }
       }
     }
-  `);
+  `)
 
-  const imageMap = {};
+  const imageMap = {}
   data.allFile.edges.forEach(({ node }) => {
-    imageMap[node.relativePath] = node.childImageSharp?.gatsbyImageData;
-  });
+    imageMap[node.relativePath] = node.childImageSharp?.gatsbyImageData
+  })
 
   return (
     <>
       <Header activeNavItem="museum" />
       <main className="bg-white flex flex-col items-center justify-center p-0">
-          <AccessibilityNav currentPage="Das Museum" />
+        <AccessibilityNav currentPage="The Museum" />
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            kicker="Unsere Vision und Mission"
-            headline="Wir erforschen die Erde und das Leben im Dialog mit den Menschen"
+            kicker="Our Vision and Mission"
+            headline="We research Earth and life in dialogue with people"
             headlineStyle="h1"
-            body="Als exzellentes Forschungsmuseum und innovatives Kommunikationszentrum prägen wir den wissenschaftlichen und gesellschaftlichen Dialog um die Zukunft unserer Erde mit – weltweit. 
-            Karriere  Team  Service   News  Sponsoren"
+            body="As an excellent research museum and innovative communication center, we shape the scientific and social dialogue about the future of our planet – worldwide. 
+            Career  Team  Contact  News  Sponsors"
             spacing="wide"
             alignment="center"
             buttons={[
               {
-                text: "Karriere",
+                text: "Career",
                 variant: "plain",
-                url: "#"
+                url: "en/about/jobs-and-career/"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "#"
+                url: "en/about/team/"
               },
               {
-                text: "Service",
+                text: "Contact",
                 variant: "plain",
-                url: "#"
+                url: "/en/contact/"
               },
               {
                 text: "News",
                 variant: "plain",
-                url: "#"
+                url: "en/about/news/"
               },
               {
-                text: "Sponsoren",
+                text: "Sponsors",
                 variant: "plain",
-                url: "#"
+                url: "en/about/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin/"
               }
             ]}
           />
         </Section>
+
         <Section backgroundColor="bg-white" columns={1}>
           <Teaser
             imageProps={{
               imageName: 'Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt.jpg',
-              alt: "Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt",
+              alt: "Visualization of the courtyard by GMP with Rainer Schmidt Landscape Architect",
               imageMap: imageMap,
               className: "aspect-[16/9] dada"
             }}
             textProps={{
-              kicker: "Das inspiriert uns",
-              headline: "Ein Haus für Natur und Gesellschaft",
-              body: "„Für uns geht es darum, ein Ort der Begegnung, des Dialogs und der Demokratie zu sein. Konstante Veränderung ist Teil unserer DNA. Wir si﻿nd das Museum der Zukunft“ – Prof. Johannes Vogel, PhD, Generaldirektor",
+              kicker: "What Inspires Us",
+              headline: "A House for Nature and Society",
+              body: `"For us, it's about being a place of encounter, dialogue, and democracy. Constant change is part of our DNA. We are the museum of the future." – Prof. Johannes Vogel, PhD, Director General`,
               headlineStyle: "h4",
               spacing: "normal",
               buttons: [
                 {
-                  text: "Zum Interview mit Johannes Vogel",
+                  text: "More about our future",
                   variant: "plain",
-                  url: "#"
+                  url: "en/future/join-our-museum-evolution/"
                 },
-                {
-                  text: "Unsere Vision",
-                  variant: "plain",
-                  url: "#"
-                }
               ]
             }}
             textStyle="box-white"
@@ -109,47 +105,47 @@ const IndexPage = () => {
             className="w-full"
           />
         </Section>
+
         <Section
           backgroundColor="bg-Blue-200"
           innerBg="bg-Green-100"
           padding="pt-16 pb-0"
         >
-          
-            <Teaser
-              imageProps={{
-                imageName: 'agn_Adlershof_NMB_Perspektive.jpeg',
-                alt: "Visualisierung des neuen Standorts in Adlershof: Der Gebäudeentwurf ist vom Wechsel von Begrünung und Holzfassade geprägt. Der rechteckige Grundriss gliedert sich über drei Geschosse.",
-                imageMap: imageMap,
-                className: "aspect-[16/9]"
-              }}
-              textProps={{
-                headline: "Das Museum in Zukunft",
-                headlineStyle: "h1-small",
-                spacing: "normal",
-              }}
-              textStyle="circle-white"
-              textPosition="center-center"
-              className="w-full"
-            />
-            <CardText
-            body="Der Zukunftsplan, den das Museum tagtäglich umsetzt, sieht die bauliche Sanierung des Museums vor, die mehr als 30 Millionen Objekte umfassende wissenschaftliche Sammlung des Museums wird erschlossen und besser zugänglich gemacht."
+          <Teaser
+            imageProps={{
+              imageName: 'agn_Adlershof_NMB_Perspektive.jpeg',
+              alt: "Visualization of the new location in Adlershof: The building design is characterized by alternating greenery and wooden façade. The rectangular layout is divided over three floors.",
+              imageMap: imageMap,
+              className: "aspect-[16/9]"
+            }}
+            textProps={{
+              headline: "The Museum in the Future",
+              headlineStyle: "h1-small",
+              spacing: "normal",
+            }}
+            textStyle="circle-white"
+            textPosition="center-center"
+            className="w-full"
+          />
+          <CardText
+            body="The future plan, which the museum implements daily, envisions the structural renovation of the museum, and will render the scientific collection of more than 30 million objects more accessible and better available."
             spacing="normal"
             alignment="center"
             buttons={[
               {
-                text: "Zukunftsplan",
+                text: "Future Plan",
                 variant: "plain",
-                url: "#"
+                url: "en/future/future-plan/"
               },
               {
-                text: "Wissenstransfer",
+                text: "Knowledge Transfer",
                 variant: "plain",
-                url: "#"
+                url: "en/future/knowledge-transfer/"
               }
             ]}
           />
         </Section>
-       
+
         <Section
           backgroundColor="bg-Blue-200"
           innerBg="bg-Green-100"
@@ -160,51 +156,51 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "zp_1200x675_WEBSEITE.jpg",
-              alt: "logo Zukunftsplan and shadow drawing of a person with a wheelbarrow",
+              alt: "Future Plan logo and silhouette of a person with a wheelbarrow",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Der Zukunftsplan",
+              headline: "The Future Plan",
               headlineStyle: "h3",
-              body: "Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
+              body: "Read our annual report here, which provides an easy-to-understand overview of the activities of the Museum für Naturkunde Berlin during the past year.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="en/future/future-plan/"
           />
           <Card
             variant="classic"
             imageProps={{
               imageName: "Digitize_Museum_fuer_Naturkunde_(c)_Thomas_Rosenthal_3.jpg",
-              alt: "Besucherinnen bestaunen Insektenfilm in der Ausstellung",
+              alt: "Visitors marvel at insect film in the exhibition",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Die Erschließung der gesamten Sammlung",
+              headline: "Making the Entire Collection Accessible",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="en/science/collection-discovery-and-development/"
           />
           <Card
             variant="classic"
             imageProps={{
               imageName: "Museums-Evolution 3 (c) Pablo Castagnola.jpg",
-              alt: "Christiane Quaisser und Jana Hoffmann an der Massendigitalisierungsstraße in der Sonderausstellung digitize!",
+              alt: "Christiane Quaisser and Jana Hoffmann at the mass digitization station in the special exhibition digitize!",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Die Entwicklung des Museums auf Youtube",
+              headline: "The Museum’s Evolution on YouTube",
               headlineStyle: "h3",
-              body:"Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
+              body: "Read our annual report here, which provides an easy-to-understand overview of the Museum für Naturkunde Berlin’s activities in the past year.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="en/future/join-our-museum-evolution/"
           />
-        
+
           <Card
             variant="classic"
             imageProps={{
@@ -214,259 +210,258 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropozäns",
+              headline: "Nature of Things: A Participatory Collection of the Anthropocene",
               headlineStyle: "h3",
-              body: "Im Sammlungsexperiment beleuchten wir sowohl die planetare Wirkmacht des Menschen als geologischem Faktor als auch seine Verstrickung in das Erdsystem .",
+              body: "In this collection experiment, we analyze both humanity’s planetary impact as a geological factor and its entanglement in the Earth system.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="en/science/changing-natures.-collecting-anthropocene-together/"
           />
           <Card
             variant="classic"
             imageProps={{
               imageName: "BromackerTeam_Drohnenfoto_Luftbild_Rohde_1200x800.jpg",
-              alt: "Team Bromacker in der Grabungsstelle im August 2021, Foto: Luftbild Rohde",
+              alt: "Team Bromacker at the excavation site in August 2021, Photo: Luftbild Rohde",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "BROMACKER: Neue Wege der Wissenschafts-kommunikation",
+              headline: "BROMACKER: New Ways of Science Communication",
               headlineStyle: "h3",
-              body:"Im August 2020 hat das einmalige Kooperationsprojekt 'Öffnen von Wissenschaft: Neue Wege des Wissenstransfers am Beispiel des Forschungsprojekts BROMACKER' unter der Mitwirkung eines interdisziplinären Forschungsteams begonnen.",
+              body: "In August 2020, the unique cooperation project ‘Opening Science: New Ways of Knowledge Transfer Using the BROMACKER Research Project as an Example’ began, involving an interdisciplinary research team.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/en/science/bromacker-new-ways-science-communication"
           />
           <Card
             variant="classic"
             alignment="left"
             imageProps={{
               imageName: "TR1C6470.jpg",
-              alt: "Personen stehen vor dem verbildlichten Netzwerk der Anthropozänobjekte",
+              alt: "People standing in front of the visualized network of Anthropocene objects",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Wissen verbindet",
+              headline: "Knowledge Connects",
               headlineStyle: "h3",
-              body: "Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
               spacing: "wide",
               alignment: "left"
             }}
             buttons={[
               {
-                text: "Formate zur Wissenschafts-Kommunikation",
+                text: "Science Communication Formats",
                 variant: "plain",
-                url: "#"
+                url: "en/science/transfer/communicating/"
               },
               {
-                text: "Politikberatung",
+                text: "Policy Advice",
                 variant: "plain",
-                url: "#"
+                url: "en/science/transfer/advising/"
               },
               {
-                text: "Unser Engagement für Bürger-Wissenschaften",
+                text: "Our Commitment to Citizen Science",
                 variant: "plain",
-                url: "#"
+                url: "en/science/transfer/applying/"
               }
             ]}
-            url="/flat-card-page"
           />
           <Blockquote
-                        text="Die sieben Exzellenzcluster in Berlin leben die aktive, transdisziplinäre Zusammenarbeit und sind genau deshalb so wichtig für die BUA. Wenn ich die BUA-Cluster besuche, erlebe ich all das: transd﻿isziplinäre Zusammenarbeit, die Suche nach Lösungen für die großen Probleme, die wir heute und in Zukunft haben."
-                        source="Prof. Johannes Vogel"
-                        sourceTitle="(Leiter des Museums)"
-                        backgroundColor=""  // Green-500 color
-                        className="bg-Blue-500 col-span-1 md:col-span-2"
-                    />
+            text="The seven Excellence Clusters in Berlin embody active, transdisciplinary collaboration and are therefore so important for the BUA. When I visit the BUA clusters, I experience all of this: transdisciplinary collaboration, the search for solutions to the major problems we face today and in the future."
+            source="Prof. Johannes Vogel"
+            sourceTitle="(Director of the Museum)"
+            backgroundColor=""
+            className="bg-Blue-500 col-span-1 md:col-span-2"
+          />
           <Card
             variant="classic"
             imageProps={{
               imageName: "180809_ct_09_www_c_carola-radke_mfn.jpg",
-              alt: "Mitarbeiter Martin Kirchner arbeitet am Computertomografen im neuen CT Labor",
+              alt: "Staff member Martin Kirchner working at the CT scanner in the new CT lab",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unsere wissenschaftliche Arbeit",
+              headline: "Our Scientific Work",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/en/research/"
           />
         </Section>
-        <Section
-          backgroundColor="bg-White"
-          padding="pt-16 pb-0"
-        >
-          
-            <Teaser
-              imageProps={{
-                imageName: '230826_mfn_318.jpg',
-                alt: "Fassade des Museums und Menschen die in der Schlange anstehen",
-                imageMap: imageMap,
-                className: "aspect-[16/9]"
-              }}
-              textProps={{
-                headline: "Das Museum Heute",
-                headlineStyle: "h1-small",
-                spacing: "normal",
-              }}
-              textStyle="circle-white"
-              textPosition="center-center"
-              className="w-full h-[25rem] text-sm"
-              alignment="center"
-            />
-          
+
+        <Section backgroundColor="bg-White" padding="pt-16 pb-0">
+          <Teaser
+            imageProps={{
+              imageName: '230826_mfn_318.jpg',
+              alt: "Museum façade and people waiting in line",
+              imageMap: imageMap,
+              className: "aspect-[16/9]"
+            }}
+            textProps={{
+              headline: "The Museum Today",
+              headlineStyle: "h1-small",
+              spacing: "normal",
+            }}
+            textStyle="circle-white"
+            textPosition="center-center"
+            className="w-full h-[25rem] text-sm"
+            alignment="center"
+          />
         </Section>
+
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            body="Der Zukunftsplan, den das Museum tagtäglich umsetzt, sieht die bauliche Sanierung des Museums vor, die mehr als 30 Millionen Objekte umfassende wissenschaftliche Sammlung des Museums wird erschlossen und besser zugänglich gemacht."
+            body="The future plan, which the museum implements daily, envisions the structural renovation of the museum, and will render the scientific collection of more than 30 million objects more accessible and better available."
             spacing="wide"
             alignment="center"
             buttons={[
               {
-                text: "Über uns",
+                text: "About Us",
                 variant: "plain",
-                url: "#"
+                url: "en/about/museum/"
               },
               {
-                text: "Bau",
+                text: "Building",
                 variant: "plain",
-                url: "#"
+                url: "en/about/building/"
               },
               {
-                text: "Das Museum",
+                text: "Team",
                 variant: "plain",
-                url: "#"
+                url: "en/about/team/"
               },
               {
-                text: "Sponsoren",
+                text: "Sponsors",
                 variant: "plain",
-                url: "#"
+                url: "en/about/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin/"
               }
             ]}
           />
         </Section>
-        <Section
-          backgroundColor="bg-White"
-          padding="pt-0 pb-16"
-          columns={3}
-        >
+
+        <Section backgroundColor="bg-White" padding="pt-0 pb-16" columns={3}>
           <Card
             variant="classic"
             imageProps={{
               imageName: "tagesspiegel-journal-1.jpg",
-              alt: "Titelbild des Journals 'für natur' im Tagesspiegel",
+              alt: "Cover of the 'für natur' journal in Tagesspiegel",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unser Magazin „für natur“",
+              headline: "Our 'für natur' Magazine",
               headlineStyle: "h3",
-              body: "In unseren Journalen für Natur nehmen wir Sie mit auf diesem Weg in die Zukunft.",
+              body: "In our 'für natur' journals, we take you along on this journey into the future.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="en/future/nature-journals/"
           />
           <Card
             variant="classic"
             imageProps={{
               imageName: "geschaeftsbericht.jpg",
-              alt: "Unser Geschäftsbericht",
+              alt: "Our Annual Report",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unser Geschäftsbericht 2023",
+              headline: "Our Annual Report 2023",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="en/about/museum/publications-and-downloads"
           />
           <Card
             variant="classic"
             imageProps={{
               imageName: "sauriersaal_vermessung_03_c_hwa-ja_goetz_mfn_0.jpg",
-              alt: "Wissenschaftler vermisst den Schädel des Brachiosaurus in der Ausstellung des Museums für Naturkunde",
+              alt: "Scientist measuring the skull of a Brachiosaurus in the Museum für Naturkunde’s exhibition",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Karriereportal",
+              headline: "Career Portal",
               headlineStyle: "h3",
-              body:"Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
+              body: "Read our annual report, which provides an easy-to-understand overview of the Museum für Naturkunde Berlin’s activities in the past year.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/en/about/jobs-and-career"
           />
-        
+
           <Card
             variant="classic"
             imageProps={{
               imageName: "conus_kegelschnecken_c_hwaja_goetz_mfn.jpg",
-              alt: "Kegelschnecken © HwaJa Goetz, MfN",
+              alt: "Cone snails © HwaJa Goetz, MfN",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Mitgliedschaften",
+              headline: "Memberships",
               headlineStyle: "h3",
-              body: "Im Sammlungsexperiment beleuchten wir sowohl die planetare Wirkmacht des Menschen als geologischem Faktor als auch seine Verstrickung in das Erdsystem .",
+              body: "In this collection experiment, we examine both humanity’s planetary impact as a geological factor and its entanglement in the Earth system.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/en/about/museum/memberships"
           />
           <Card
             variant="classic"
             imageProps={{
               imageName: "Jana Hoffmann und Christiane Quaiser in digitize (c) Pablo Castagnola.jpg",
-              alt: "Jana Hoffmann und Christiane Quaiser sitzen vor einer Wand auf Insektenkästen in der Sonderausstellung digitize!",
+              alt: "Jana Hoffmann and Christiane Quaiser sitting in front of a wall of insect boxes in the special digitize! exhibition",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Service",
+              headline: "Contact",
               headlineStyle: "h3",
-              body:"Im August 2020 hat das einmalige Kooperationsprojekt 'Öffnen von Wissenschaft: Neue Wege des Wissenstransfers am Beispiel des Forschungsprojekts BROMACKER' unter der Mitwirkung eines interdisziplinären Forschungsteams begonnen.",
+              body: "In August 2020, the unique cooperation project ‘Opening Science: New Ways of Knowledge Transfer Using the BROMACKER Research Project as an Example’ began, involving an interdisciplinary research team.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/en/contact"
           />
           <Card
             variant="classic"
             imageProps={{
               imageName: "190603_mfn_gesamt_gruppenfoto_22_1200x800px_c_hwa_ja-goetz_mfn.jpg",
-              alt: "Beschäftigte des Museums versammeln sich vor dem Hauptportal, Stand 2019",
+              alt: "Museum staff gathered in front of the main entrance in 2019",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
               headline: "Team",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/en/about/team/"
           />
         </Section>
-        <Section columns={1} backgroundColor="bg-Black-100">
-                    <CardText
-                        headline="Kontakt"
-                        headlineStyle="h1"
-                        body="Möchten Sie mehr über das Museum für Naturkunde Berlin erfahren?"
-                        spacing="wide"
-                        alignment="center"
-                    />
-                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary">Stellen Sie uns eine Frage</Button>
-                        <Button variant="primary">Rufen Sie uns an</Button>
-                        <Button variant="primary">Besuchen Sie uns im Museum</Button>
-                    </div>
 
-                </Section>
+        <Section columns={1} backgroundColor="bg-Black-100">
+          <CardText
+            headline="Contact"
+            headlineStyle="h1"
+            body="Would you like to learn more about the Museum für Naturkunde Berlin?"
+            spacing="wide"
+            alignment="center"
+          />
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
+            <Button variant="primary" url="/en/contact/">
+              Ask Us a Question
+            </Button>
+            <Button variant="primary" url="tel:+4930889140-8591">
+              Call Us
+            </Button>
+            <Button variant="primary" url="/en/visit/">
+              Visit Us at the Museum
+            </Button>
+          </div>
+        </Section>
       </main>
       <Footer />
     </>
@@ -477,8 +472,8 @@ export default IndexPage
 
 export const Head = () => (
   <HeadComponent
-    title="Das Museum"
-    description="Willkommen im Museum für Naturkunde Berlin - Entdecken Sie unsere digitalen Angebote und planen Sie Ihren Besuch."
-    pathname="/museum"
+    title="The Museum"
+    description="Welcome to the Museum für Naturkunde Berlin – Discover our digital offerings and plan your visit."
+    pathname="/en/museum"
   />
 )

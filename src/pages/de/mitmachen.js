@@ -59,7 +59,7 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Ehrenamt",
-                                    url: "/de/mitmachen/ehrenamt",
+                                    url: "/de/mitmachen/ehrenamtliches-engagement/",
                                     variant: "plain"
                                 },
                                 {
@@ -75,7 +75,7 @@ const IndexPage = () => {
                                 },
                                 {
                                     text: "Bürgerwissenschaften",
-                                    url: "/de/mitmachen/bürgerwissenschaften",
+                                    url: "/de/museum/mitmachen/buergerwissenschaften",
                                     variant: "plain"
                                 }]
 
@@ -148,7 +148,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/ehrenamt"
+                        url="/de/mitmachen/ehrenamtliches-engagement/"
                     />
 
                 </Section>
@@ -302,7 +302,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/museum/mitmachen"
+                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
                     />
 
                 </Section>
@@ -328,7 +328,8 @@ const IndexPage = () => {
                         }}
                         buttonProps={{
                             label: "Forschen Sie bei uns mit!",
-                            variant: "primary"
+                            variant: "primary",
+                            url: "/de/museum/mitmachen/buergerwissenschaften/"
                         }}
                         textStyle="box-white"
                         textPosition="bottom-left"
@@ -350,7 +351,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/ehrenamt"
+                        url="/de/mitmachen/ehrenamtliches-engagement/"
                     />
 
                     <Card
@@ -367,7 +368,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/bildungsangebote"
+                        url="/de/mitmachen/bildung"
                     />
 
                 </Section>
@@ -380,9 +381,9 @@ const IndexPage = () => {
                         alignment="center"
                     />
                     <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary">Stellen Sie uns eine Frage</Button>
-                        <Button variant="primary">Rufen Sie uns an</Button>
-                        <Button variant="primary">Besuchen Sie uns im Museum</Button>
+                        <Button variant="primary" url="/de/kontakt/">Stellen Sie uns eine Frage</Button>
+                        <Button variant="primary" url="tel:+4930889140-8591">Rufen Sie uns an</Button>
+                        <Button variant="primary" url="/de/besuch-planen/">Besuchen Sie uns im Museum</Button>
                     </div>
 
                 </Section>

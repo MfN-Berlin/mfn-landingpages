@@ -66,7 +66,7 @@ const ContactPage = () => {
                     buttons: [
                       {
                         text: "Team",
-                        url: "en/museum/team",
+                        url: "en/about/team",
                         variant: "plain"
                       },
                       {
@@ -76,17 +76,17 @@ const ContactPage = () => {
                       },
                       {
                         text: "Press",
-                        url: "en/press",
+                        url: "en/press-releases",
                         variant: "plain"
                       },
                       {
                         text: "Plan Your Visit",
-                        url: "en/plan-your-visit",
+                        url: "en/visit/",
                         variant: "plain"
                       },
                       {
                         text: "About Us",
-                        url: "en/about-us",
+                        url: "en/about/museum",
                         variant: "plain"
                       }]
                   }}
@@ -94,7 +94,7 @@ const ContactPage = () => {
                 />
               )}
             </Section>
-            <Section backgroundColor="bg-Green-100" columns={2} padding="pt-16 pb-8">
+            <Section backgroundColor="bg-Green-100" columns={2} padding="pt-16 pb-16">
               <CardText
                 headline="General Contact"
                 headlineStyle="h3"
@@ -110,7 +110,7 @@ const ContactPage = () => {
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`For media representatives, we have set up a <a href='/en/press'>press portal</a>.<br/>
+                body={`For media representatives, we have set up a <a href='en/press-releases'>press portal</a>.<br/>
                 <a href='mailto:presse@mfn.berlin'>presse@mfn.berlin</a><br/>
                 <a href='mailto:gesine.steiner@mfn.berlin'>Dr. Gesine Steiner</a> (Press Officer)<br/>
                 030 889140-8917`}
@@ -122,7 +122,7 @@ const ContactPage = () => {
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`For questions about our <a href='/en/get-involved/events'>events</a><br/>
+                body={`For questions about our <a href='en/museum/events'>events</a><br/>
                 
                 <a href='mailto:info@mfn.berlin'>info@mfn.berlin</a>`}
               />
@@ -133,7 +133,7 @@ const ContactPage = () => {
                 alignment="left"
                 body={`Everything about our <a href='/en/museum/education/guided-tours'>guided tours</a><br/>
                 <a href='mailto:bildung@mfn.berlin'>bildung@mfn.berlin</a><br/>
-                <a href='/en/contact'>Contact form</a> for email inquiries`}
+                <a href='https://survey.naturkundemuseum-berlin.de/en/contact%20form'>Contact form</a> (currently out of order) for email inquiries`}
               />
             </Section>
             <Section backgroundColor="bg-Green-100" columns={2} padding="py-8">
@@ -151,11 +151,26 @@ const ContactPage = () => {
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`For individual offers, please contact:<br/>
-                <a href='mailto:s.krzyzniewski@mfn.berlin'>Stefanie Krzyzniewski</a><br/>
-                <a href='mailto:s.krzyzniewski@mfn.berlin'>s.krzyzniewski@mfn.berlin</a>`}
+                body={`For individual offers, please contact: Stefanie Krzyzniewski (<a href='mailto:s.krzyzniewski@mfn.berlin'>s.krzyzniewski@mfn.berlin</a>)`}
               />
             </Section>
+            <CardText
+              headline="Library"
+              headlineStyle="h3"
+              spacing="regular"
+              alignment="left"
+              body={`<a href='/en/science/library'>The library</a> is accessible Tuesday through Friday for external users. Please contact us via <a href='mailto:bibliothek@mfn.berlin'>email</a> to schedule an appointment.`}
+            />
+            <CardText
+              headline="Archive"
+              headlineStyle="h3"
+              spacing="regular"
+              alignment="left"
+              body={`Archive visits are only possible by prior appointment.<br/>
+              <a href='mailto:archiv@mfn.berlin'>archiv@mfn.berlin</a><br/>
+              030 889140 8519<br/>
+              `}
+            />
           </main>
           <Footer />
         </>

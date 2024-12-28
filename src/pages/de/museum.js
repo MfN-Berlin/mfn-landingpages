@@ -51,27 +51,27 @@ const IndexPage = () => {
               {
                 text: "Karriere",
                 variant: "plain",
-                url: "#"
+                url: "/de/museum/jobs-und-karriere/"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "#"
+                url: "/de/ueber-uns/team/"
               },
               {
-                text: "Service",
+                text: "Kontakt",
                 variant: "plain",
-                url: "#"
+                url: "/de/kontakt/"
               },
               {
                 text: "News",
                 variant: "plain",
-                url: "#"
+                url: "/de/museum/medien/news/"
               },
               {
                 text: "Sponsoren",
                 variant: "plain",
-                url: "#"
+                url: "/de/ueber-uns/berliner-sparkasse-ist-hauptsponsor/"
               }
             ]}
           />
@@ -94,13 +94,8 @@ const IndexPage = () => {
                 {
                   text: "Zum Interview mit Johannes Vogel",
                   variant: "plain",
-                  url: "#"
+                  url: "/de/evolution-des-museums"
                 },
-                {
-                  text: "Unsere Vision",
-                  variant: "plain",
-                  url: "#"
-                }
               ]
             }}
             textStyle="box-white"
@@ -139,12 +134,12 @@ const IndexPage = () => {
               {
                 text: "Zukunftsplan",
                 variant: "plain",
-                url: "#"
+                url: "/de/museum/zukunft/zukunftsplan/"
               },
               {
                 text: "Wissenstransfer",
                 variant: "plain",
-                url: "#"
+                url: "/de/zukunft/wissenstransfer/"
               }
             ]}
           />
@@ -170,7 +165,7 @@ const IndexPage = () => {
               body: "Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/museum/zukunft/zukunftsplan/"
           />
           <Card
             variant="classic"
@@ -186,7 +181,7 @@ const IndexPage = () => {
               body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/wissenschaft/sammlungserschliessung-und-entwicklung/"
           />
           <Card
             variant="classic"
@@ -202,7 +197,7 @@ const IndexPage = () => {
               body:"Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/zukunft/werde-teil-unserer-museums-evolution/"
           />
         
           <Card
@@ -219,7 +214,7 @@ const IndexPage = () => {
               body: "Im Sammlungsexperiment beleuchten wir sowohl die planetare Wirkmacht des Menschen als geologischem Faktor als auch seine Verstrickung in das Erdsystem .",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/wissenschaft/natur-der-dinge.-eine-partizipative-sammlung-des-anthropozaens"
           />
           <Card
             variant="classic"
@@ -235,7 +230,7 @@ const IndexPage = () => {
               body:"Im August 2020 hat das einmalige Kooperationsprojekt 'Öffnen von Wissenschaft: Neue Wege des Wissenstransfers am Beispiel des Forschungsprojekts BROMACKER' unter der Mitwirkung eines interdisziplinären Forschungsteams begonnen.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="de/wissenschaft/bromacker-neue-wege-der-wissenschaftskommunikation"
           />
           <Card
             variant="classic"
@@ -257,20 +252,19 @@ const IndexPage = () => {
               {
                 text: "Formate zur Wissenschafts-Kommunikation",
                 variant: "plain",
-                url: "#"
+                url: "/de/wissenschaft/transfer/kommunizieren/"
               },
               {
                 text: "Politikberatung",
                 variant: "plain",
-                url: "#"
+                url: "/de/wissenschaft/transfer/beraten/"
               },
               {
                 text: "Unser Engagement für Bürger-Wissenschaften",
                 variant: "plain",
-                url: "#"
+                url: "/de/wissenschaft/transfer/anwenden/"
               }
             ]}
-            url="/flat-card-page"
           />
           <Blockquote
                         text="Die sieben Exzellenzcluster in Berlin leben die aktive, transdisziplinäre Zusammenarbeit und sind genau deshalb so wichtig für die BUA. Wenn ich die BUA-Cluster besuche, erlebe ich all das: transd﻿isziplinäre Zusammenarbeit, die Suche nach Lösungen für die großen Probleme, die wir heute und in Zukunft haben."
@@ -293,7 +287,7 @@ const IndexPage = () => {
               body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/forschung/"
           />
         </Section>
         <Section
@@ -329,22 +323,22 @@ const IndexPage = () => {
               {
                 text: "Über uns",
                 variant: "plain",
-                url: "#"
+                url: "/de/ueber-uns/das-museum/"
               },
               {
                 text: "Bau",
                 variant: "plain",
-                url: "#"
+                url: "/de/ueber-uns/bau/"
               },
               {
-                text: "Das Museum",
+                text: "Team",
                 variant: "plain",
-                url: "#"
+                url: "/de/ueber-uns/team/"
               },
               {
                 text: "Sponsoren",
                 variant: "plain",
-                url: "#"
+                url: "/de/ueber-uns/berliner-sparkasse-ist-hauptsponsor/"
               }
             ]}
           />
@@ -368,7 +362,7 @@ const IndexPage = () => {
               body: "In unseren Journalen für Natur nehmen wir Sie mit auf diesem Weg in die Zukunft.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="de/museum/medien/journal-fuer-natur/"
           />
           <Card
             variant="classic"
@@ -384,7 +378,7 @@ const IndexPage = () => {
               body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="de/ueber-uns/das-museum/publikationen-und-downloads"
           />
           <Card
             variant="classic"
@@ -400,7 +394,7 @@ const IndexPage = () => {
               body:"Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="de/museum/jobs-und-karriere/"
           />
         
           <Card
@@ -417,7 +411,7 @@ const IndexPage = () => {
               body: "Im Sammlungsexperiment beleuchten wir sowohl die planetare Wirkmacht des Menschen als geologischem Faktor als auch seine Verstrickung in das Erdsystem .",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/ueber-uns/das-museum/mitgliedschaften"
           />
           <Card
             variant="classic"
@@ -428,12 +422,12 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Service",
+              headline: "Kontakt",
               headlineStyle: "h3",
               body:"Im August 2020 hat das einmalige Kooperationsprojekt 'Öffnen von Wissenschaft: Neue Wege des Wissenstransfers am Beispiel des Forschungsprojekts BROMACKER' unter der Mitwirkung eines interdisziplinären Forschungsteams begonnen.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/kontakt/"
           />
           <Card
             variant="classic"
@@ -449,7 +443,7 @@ const IndexPage = () => {
               body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
               spacing: "wide"
             }}
-            url="/flat-card-page"
+            url="/de/ueber-uns/team/"
           />
         </Section>
         <Section columns={1} backgroundColor="bg-Black-100">
@@ -460,11 +454,12 @@ const IndexPage = () => {
                         spacing="wide"
                         alignment="center"
                     />
-                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary">Stellen Sie uns eine Frage</Button>
-                        <Button variant="primary">Rufen Sie uns an</Button>
-                        <Button variant="primary">Besuchen Sie uns im Museum</Button>
+                   <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
+                        <Button variant="primary" url="/de/kontakt/">Stellen Sie uns eine Frage</Button>
+                        <Button variant="primary" url="tel:+4930889140-8591">Rufen Sie uns an</Button>
+                        <Button variant="primary" url="/de/besuch-planen/">Besuchen Sie uns im Museum</Button>
                     </div>
+
 
                 </Section>
       </main>

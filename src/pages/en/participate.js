@@ -59,22 +59,22 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Volunteering",
-                                    url: "/en/participate/volunteering",
+                                    url: "/en/museum/participate/citizen-science/volunteering",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Educational Programs",
-                                    url: "/en/participate/education",
+                                    url: "/en/museum/education",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Events",
-                                    url: "/en/participate/events",
+                                    url: "/en/museum/events",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Citizen Science",
-                                    url: "/en/participate/citizen-science",
+                                    url: "/en/museum/participate/citizen-science",
                                     variant: "plain"
                                 }]
                         }}
@@ -106,7 +106,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "center"
                         }}
-                        url="/en/science/nature-of-things-a-participatory-collection-of-the-anthropocene"
+                        url="/en/science/changing-natures.-collecting-anthropocene-together"
                     />
 
 
@@ -146,7 +146,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/participate/volunteering"
+                        url="/en/museum/participate/citizen-science/volunteering"
                     />
 
                 </Section>
@@ -183,7 +183,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/science/co-research"
+                        url="/en/science/citizens-create-knowledge"
                     />
 
                     <Card
@@ -200,7 +200,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/science/nature-knowledge-network"
+                        url="/en/science/netzwerk-naturwissen"
                     />
 
                 </Section>
@@ -266,7 +266,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/science/naturblick-discover-urban-nature"
+                        url="/en/science/naturblick-discovering-nature-city"
                     />
                     <Card
                         variant="classic"
@@ -300,7 +300,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/museum/participate"
+                        url="en/museum/participate/citizen-science/special-interest-groups"
                     />
 
                 </Section>
@@ -326,7 +326,8 @@ const IndexPage = () => {
                         }}
                         buttonProps={{
                             label: "Research with us!",
-                            variant: "primary"
+                            variant: "primary",
+                            url: "/en/museum/participate/citizen-science/"
                         }}
                         textStyle="box-white"
                         textPosition="bottom-left"
@@ -348,7 +349,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/participate/volunteering"
+                        url="/en/museum/participate/citizen-science/volunteering"
                     />
 
                     <Card
@@ -365,7 +366,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/participate/educational-programs"
+                        url="/en/museum/education"
                     />
 
                 </Section>
@@ -378,9 +379,9 @@ const IndexPage = () => {
                         alignment="center"
                     />
                     <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary">Ask Us a Question</Button>
-                        <Button variant="primary">Call Us</Button>
-                        <Button variant="primary">Visit Us at the Museum</Button>
+                        <Button variant="primary" url="/en/contact/">Ask Us a Question</Button>
+                        <Button variant="primary" url="tel:+4930889140-8591">Call Us</Button>
+                        <Button variant="primary" url="/en/visit/">Visit Us at the Museum</Button>
                     </div>
 
                 </Section>

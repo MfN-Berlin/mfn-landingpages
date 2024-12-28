@@ -89,8 +89,8 @@ export const featureTranslations = {
       accessibility: "Barrierefreiheit",
       urls: {
         signLanguage: "https://www.youtube.com/watch?v=pUUvyoe0tpc",
-        easyLanguage: "/de/leichte-sprache",
-        accessibility: "/de/besuch-planen/barrierefreiheit"
+        easyLanguage: "/leichte-sprache",
+        accessibility: "/de/museum/besuch-planen/barrierefreiheit"
       }
     },
     en: {
@@ -100,8 +100,8 @@ export const featureTranslations = {
       accessibility: "Accessibility",
       urls: {
         signLanguage: "https://www.youtube.com/watch?v=pUUvyoe0tpc",
-        easyLanguage: "/en/easy-language",
-        accessibility: "/en/visit/accessibility"
+        easyLanguage: "/leichte-sprache",
+        accessibility: "/en/museum/plan-your-visit/accessibility"
       }
     }
   },

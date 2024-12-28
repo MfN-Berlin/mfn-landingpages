@@ -54,7 +54,7 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Team",
-                                    url: "de/museum/team",
+                                    url: "de/ueber-uns/team",
                                     variant: "plain"
                                 },
                                 {
@@ -64,18 +64,18 @@ const IndexPage = () => {
                                 },
                                 {
                                     text: "Presse",
-                                    url: "de/presse",
+                                    url: "de/pressemitteilungen",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Besuch planen",
-                                    url: "de/besuch-planen",
+                                    url: "de/besuch-planen/",
                                     variant: "plain"
                                 }
                                 ,
                                 {
                                     text: "Über uns",
-                                    url: "de/ueber-uns",
+                                    url: "de/ueber-uns/das-museum",
                                     variant: "plain"
                                 }]
 
@@ -99,7 +99,7 @@ const IndexPage = () => {
                         headlineStyle="h3"
                         spacing="regular"
                         alignment="left"
-                        body={`Für Medienvertreter haben wir ein <a href='/de/presse'>Presseportal</a> eingerichtet.<br/>
+                        body={`Für Medienvertreter haben wir ein <a href='de/pressemitteilungen'>Presseportal</a> eingerichtet.<br/>
                         <a href='mailto:presse@mfn.berlin'>presse@mfn.berlin</a><br/>
                         <a href='mailto:gesine.steiner@mfn.berlin'>Dr. Gesine Steiner</a> (Pressesprecherin)<br/>
                         030 889140-8917`}
@@ -122,7 +122,7 @@ const IndexPage = () => {
                         alignment="left"
                         body={`Alles rund um unsere <a href='/de/museum/bildung/fuehrungen'>Führungen</a><br/>
                         <a href='mailto:bildung@mfn.berlin'>bildung@mfn.berlin</a><br/>
-                        <a href='/de/kontakt'>Kontaktformular</a> für Mailanfragen`}
+                        <a href='https://survey.naturkundemuseum-berlin.de/de/Kontaktformular'>Kontaktformular</a> (aktuell nicht erreichbar) für Mailanfragen`}
                     />
                 </Section>
                 <Section backgroundColor="bg-Green-100" columns={2} padding="py-8">
@@ -140,9 +140,8 @@ const IndexPage = () => {
                         headlineStyle="h3"
                         spacing="regular"
                         alignment="left"
-                        body={`Für ein individuelles Angebot wenden Sie sich gern an:<br/>
-                        <a href='mailto:s.krzyzniewski@mfn.berlin'>Stefanie Krzyzniewski</a><br/>
-                        <a href='mailto:s.krzyzniewski@mfn.berlin'>s.krzyzniewski@mfn.berlin</a>`}
+                        body={`Für ein individuelles Angebot wenden Sie sich gern an Stefanie Krzyzniewski 
+                        (<a href='mailto:s.krzyzniewski@mfn.berlin'>s.krzyzniewski@mfn.berlin</a>)`}
                     />
                 </Section>
                 <Section backgroundColor="bg-Green-100" columns={2} padding="pt-8 pb-16">
