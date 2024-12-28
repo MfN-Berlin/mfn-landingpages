@@ -43,7 +43,7 @@ const VisitPage = () => {
                 <Section backgroundColor="bg-white" columns={1}>
                      <StoryTime
                         imageProps={{
-                            imageName: 'Neues CT im Museum für Naturkunde (c) Pablo Castagnola.jpg',
+                            imageName: 'NeuesCTimMuseumfürNaturkundecPabloCastagnola.jpg',
                             alt: "Neues CT im Museum für Naturkunde (c) Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[16/9]"
@@ -181,14 +181,15 @@ const VisitPage = () => {
                             buttons: [
                                 {
                                     text: "Mehr über die Forschung am MfN",
-                                    url: "/teams-projekte",
+                                    url: "/de/forschung/forschung",
                                     variant: "plain"
                                 },
                                 {
-                                    text: "Unsere Forschungsbereiche",
-                                    url: "/teams-projekte",
+                                    text: "Unsere Infrastruktur",
+                                    url: "/de/forschung/infrastruktur",
                                     variant: "plain"
                                 }
+                                
                             ]
                         }}
                         imagePosition="left"
@@ -211,7 +212,7 @@ const VisitPage = () => {
                             body: "Wir untersuchen die Prozesse, die die natürliche Welt formen, von der Evolution und Vielfalt der Arten bis hin zur Entstehung des Sonnensystems.",
                             spacing: "regular"
                         }}
-                        url="/de/forschung/dynamik-der-natur"
+                        url="/de/wissenschaft/forschung/dynamik-der-natur/"
                     />
                     <Card
                         variant="green"
@@ -228,7 +229,7 @@ const VisitPage = () => {
                             body: "Wir gestalten eine offene und vernetzte Sammlung, die durch innovative Ansätze im Daten- und Wissensmanagement neue Wege für Forschung und Wissenstransfer eröffnet – gemeinsam mit Partnern aus Wissenschaft, Gesellschaft und Kultur.",
                             spacing: "regular"
                         }}
-                        url="/de/forschung/zukunft-der-sammlung"
+                        url="/de/wissenschaft/forschung/zukunft-der-sammlung"
                     />
 
                     <Card
@@ -246,11 +247,13 @@ const VisitPage = () => {
                             body: "Wir erforschen, wie Partizipation und Wissensaustausch Forschung und Praxiswissen für Natur bereichern.",
                             spacing: "regular"
                         }}
+                        url="/de/wissenschaft/forschung/gesellschaft-und-natur"
                     />
 
 
                     <Card
                         variant="white"
+                        imageRatio="28.125" // 32:9 format
                         imageProps={{
                             imageName: "sammlung-ai-generated.jpg",
                             alt: "Drei Schnecken (KI generiertes Bild)",
@@ -264,9 +267,11 @@ const VisitPage = () => {
                             body: "Unsere Sammlung bietet vielfältige Datenquellen für die Erforschung biologischer und geologischer Vielfalt.",
                             spacing: "regular"
                         }}
+                        url="/de/wissenschaft/infrastruktur/sammlung/"
                     />
                     <Card
                         variant="white"
+                        imageRatio="28.125" // 32:9 format
                         imageProps={{
                             imageName: "archiv-ai-generated.jpg",
                             alt: "Buchseite (KI generiertes Bild)",
@@ -279,10 +284,12 @@ const VisitPage = () => {
                             body: "Historische Dokumente und Forschung-sergebnisse stehen als wertvolle Ressourcen für Studien bereit.",
                             spacing: "regular"
                         }}
+                        url="/de/wissenschaft/archiv"
                     />
 
                     <Card
                         variant="white"
+                        imageRatio="28.125" // 32:9 format
                         imageProps={{
                             imageName: "bibliotheken-ai-generated.jpg",
                             alt: "Buchrücken (KI generiertes Bild)",
@@ -295,12 +302,14 @@ const VisitPage = () => {
                             body: "Naturwissenschaftliche und historische Bestände unterstützen Forschung, Lehre und Wissensvermittlung.",
                             spacing: "regular"
                         }}
+                        url="de/wissenschaft/bibliothek/"
                     />
 
                 </Section>
                 <Section backgroundColor="bg-Green-100" columns={2} padding="py-0 pb-16">
                     <Card
                         variant="white"
+                        imageRatio="28.125" // 32:9 format
                         imageProps={{
                             imageName: "it-infrastruktur-ai-generated.jpg",
                             alt: "Fotoapparat (KI generiertes Bild)",
@@ -316,24 +325,26 @@ const VisitPage = () => {
                             buttons: [
                                 {
                                     text: "Labore",
-                                    url: "/teams-projekte",
+                                    url: "/de/wissenschaft/infrastruktur/labore",
                                     variant: "plain"
                                 },
                                 {
                                     text: "IT-Systeme",
-                                    url: "/teams-projekte",
+                                    url: "/de/wissenschaft/infrastruktur/it-forschungsinfrastruktur",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Forschungs-Datenmanagement",
-                                    url: "/teams-projekte",
+                                    url: "/de/wissenschaft/infrastruktur/forschungsdatenmanagementstruktur",
                                     variant: "plain"
                                 },
                             ]
                         }}
+                        
                     />
                     <Card
                         variant="white"
+                        imageRatio="28.125" // 32:9 format
                         imageProps={{
                             imageName: "wissen-verbindet.jpg",
                             alt: "Telefon mit einer Socialmedia App",
@@ -343,26 +354,27 @@ const VisitPage = () => {
                         textProps={{
                             headline: "Wissen verbindet",
                             headlineStyle: "h3",
-                            body: "Zu unserem Angebot gehören  interdisziplinäre und internationale Fortbildungen in den Bereichen  öffentliches Engagement (Public Engagement), Offene Wissenschaft (Open  Science), Bürgerwissenschaften (Citizen Science) und Museum.",
+                            body: "Zu unserem Angebot gehören interdisziplinäre und internationale Fortbildungen in den Bereichen öffentliches Engagement (Public Engagement), Offene Wissenschaft (Open  Science), Bürgerwissenschaften (Citizen Science) und Museum.",
                             spacing: "regular",
                             buttons: [
                                 {
                                     text: "Formate zur Wissenschaftskommunikation",
-                                    url: "/teams-projekte",
+                                    url: "/de/wissenschaft/transfer/kommunizieren/",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Politikberatung",
-                                    url: "/teams-projekte",
+                                    url: "/de/wissenschaft/transfer/beraten/",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Unser Engagement für Bürgerwissenschaften",
-                                    url: "/teams-projekte",
+                                    url: "/de/wissenschaft/transfer/anwenden/",
                                     variant: "plain"
                                 },
                             ]
                         }}
+                        
                     />
 
 
@@ -385,7 +397,7 @@ const VisitPage = () => {
                             buttons: [
                                 {
                                     text: "Team- und Projektdatenbank öffnen",
-                                    url: "/teams-projekte",
+                                    url: "/de/forschung/team-projekte/",
                                     variant: "primary"
                                 }
                             ]
@@ -410,7 +422,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 1"
                             title="AG Paläobotanik"
                             text="Die AG Paläobotanik erforscht die Evolution und Diversität fossiler Pflanzen. Unser Fokus liegt auf der Rekonstruktion von ausgestorbenen Pflanzen und ihrer Lebensräume."
-                            link="/wissenschaft/ag-palaeobotanik"
+                            link="/de/wissenschaft/ag-palaeobotanik"
                         />
                         <SlideContent
                             imageName="Ortholasmatinae fossil Jonas Damzen.jpg"
@@ -418,7 +430,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 1"
                             title="AG Dunlop"
                             text="Die AG Dunlop untersucht die Evolution und Systematik fossiler und rezenter Spinnentiere, mit besonderem Schwerpunkt auf Skorpionen und Spinnen."
-                            link="/wissenschaft/ag-dunlop"
+                            link="/de/wissenschaft/ag-dunlop"
                         />
                         <SlideContent
                             imageName="Thomisid5-crop.jpg"
@@ -426,7 +438,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 1"
                             title="Forschungsgruppe MultiplEye Lab"
                             text="Das MultiplEye Lab erforscht die Funktion und Evolution von Vielaugen-Systemen bei Tieren, insbesondere bei Spinnen und anderen Arthropoden."
-                            link="/wissenschaft/multipleye-lab"
+                            link="/de/wissenschaft/multipleye-lab"
                         />
                         <SlideContent
                             imageName="Chameleon_Sudan_Erkowit.jpg"
@@ -434,7 +446,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 1"
                             title="Amniota Lab"
                             text="Unsere Forschung konzentriert sich auf fossile und an Land lebende Wirbeltiere, wie Eidechsen und Schlangen (Müller) sowie pflanzenfressende Säugetiere (Bibi). "
-                            link="/wissenschaft/multipleye-lab"
+                            link="/de/wissenschaft/multipleye-lab"
                         />
                         <SlideContent
                             imageName="zm_b_vi_0245_walmodell.jpg"
@@ -442,7 +454,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 2"
                             title="Zentrum für Kultur- und Sozialwissenschaften der Natur"
                             text="Unsere Arbeitsgruppe widmet sich den Politiken, Geschichten und Kulturen von Natur durch eigenständige Forschung und öffentliche Aktivitäten im Bereich Wissenstransfer. "
-                            link="/wissenschaft/multipleye-lab"
+                            link="/de/wissenschaft/multipleye-lab"
                         />
                         <SlideContent
                             imageName="large_Header_2023_klein_beschnitten_belichted_7cca538a55.jpg"
@@ -450,7 +462,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 3"
                             title="Mensch-Natur-Beziehungen im Anthropozän"
                             text="Inter- und transdisziplinäre Forschung zu den Wechselbeziehungen zwischen Mensch, Natur und digitaler Transformation"
-                            link="/wissenschaft/multipleye-lab"
+                            link="/de/wissenschaft/multipleye-lab"
                         />
                         <SlideContent
                             imageName="ECSA_Tag2_BenKriemann_MfN2022_334_zugeschnitten.jpg"
@@ -458,7 +470,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 3"
                             title="Entwicklung eines Citizen Science-Zentrums für Natur, Nachhaltigkeit, Digitalisierung"
                             text="Innovative Technologien im Natur- und Umweltschutz: Wie können wir den Chancen und Herausforderungen für Citizen Science begegnen?"
-                            link="/wissenschaft/multipleye-lab"
+                            link="/de/wissenschaft/multipleye-lab"
                         />
                         <SlideContent
                             imageName="ieti-keyvisual.png"
@@ -466,7 +478,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 3"
                             title="Public Engagement und Impact"
                             text="Wir fördern die strategische Verankerung von Public Engagement in der Forschung und in Forschungseinrichtungen. Dazu öffnen wir sowohl die Forschungskultur als auch -prozesse für nicht-akademische Stakeholder durch ein breites Spektrum an Formaten und Methoden."
-                            link="/wissenschaft/multipleye-lab"
+                            link="/de/wissenschaft/multipleye-lab"
                         />
 
                     </Slideshow>
@@ -487,7 +499,7 @@ const VisitPage = () => {
                     />
                 </Section>
                 <Section backgroundColor="bg-White" columns={3} padding="pb-16">
-                    <Link to="https://www.museumfuernaturkunde.berlin/de/presse/pressemitteilungen/wie-lebensstrategien-und-lebensraeume-die-regenerationsfaehigkeiten-von" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
+                    <Link to="/de/presse/pressemitteilungen/wie-lebensstrategien-und-lebensraeume-die-regenerationsfaehigkeiten-von" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
                         <div className="w-full bg-Green-100 flex flex-col  ">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
@@ -508,7 +520,7 @@ const VisitPage = () => {
                         </div>
                     </Link>
 
-                    <Link to="https://www.museumfuernaturkunde.berlin/de/presse/pressemitteilungen/neuer-bromacker-ursaurier-nach-unesco-geopark-thueringen-benannt" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
+                    <Link to="/de/presse/pressemitteilungen/neuer-bromacker-ursaurier-nach-unesco-geopark-thueringen-benannt" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
                         <div className="w-full bg-Green-100 flex flex-col ">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
@@ -529,7 +541,7 @@ const VisitPage = () => {
                         </div>
                     </Link>
 
-                    <Link to="https://www.museumfuernaturkunde.berlin/de/presse/pressemitteilungen/paradiesvoegel-schmuecken-sich-erfolgreich-mit-fremden-federn" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
+                    <Link to="/de/presse/pressemitteilungen/paradiesvoegel-schmuecken-sich-erfolgreich-mit-fremden-federn" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
                         <div className="w-full bg-Green-100 flex flex-col ">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
@@ -559,9 +571,9 @@ const VisitPage = () => {
                         alignment="center"
                     />
                     <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary">Stellen Sie uns eine Frage</Button>
-                        <Button variant="primary">Rufen Sie uns an</Button>
-                        <Button variant="primary">Kontaktieren Sie uns!</Button>
+                        <Button variant="primary" url="/de/kontakt/">Stellen Sie uns eine Frage</Button>
+                        <Button variant="primary" url="tel:+4930889140-8591">Rufen Sie uns an</Button>
+                        <Button variant="primary" url="/de/besuch-planen/">Besuchen Sie uns im Museum</Button>
                     </div>
 
                 </Section>
@@ -575,8 +587,8 @@ export default VisitPage
 
 export const Head = () => (
     <HeadComponent
-        title="Plan Your Visit"
-        description="Plan your visit to the Museum für Naturkunde Berlin"
-        pathname="/en/visit"
+        title="Unsere Forschung"
+        description="Das Museum für Naturkunde Berlin zählt weltweit zu den führenden Einrichtungen für biologische und geowissenschaftliche Evolution sowie Biodiversität"
+        pathname="/de/forschung"
     />
 )

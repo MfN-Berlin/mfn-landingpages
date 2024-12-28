@@ -180,12 +180,12 @@ const ResearchPage = () => {
                             buttons: [
                                 {
                                     text: "More about Research at MfN",
-                                    url: "/en/teams-projects",
+                                    url: "/en/science/research",
                                     variant: "plain"
                                 },
                                 {
-                                    text: "Our Research Areas",
-                                    url: "/en/teams-projects",
+                                    text: "Our Infrastructure",
+                                    url: "/en/science/infrastructure",
                                     variant: "plain"
                                 }
                             ]
@@ -210,7 +210,7 @@ const ResearchPage = () => {
                             body: "We study the processes that shape the natural world, from the evolution and diversity of species to the formation of the solar system.",
                             spacing: "regular"
                         }}
-                        url="/en/research/dynamics-of-nature"
+                        url="/en/science/dynamics-of-nature"
                     />
                     <Card
                         variant="green"
@@ -227,7 +227,7 @@ const ResearchPage = () => {
                             body: "We are creating an open and networked collection that opens up new paths for research and knowledge transfer through innovative approaches in data and knowledge management – together with partners from science, society, and culture.",
                             spacing: "regular"
                         }}
-                        url="/en/research/future-of-collection"
+                        url="/en/science/research/collection-future"
                     />
 
                     <Card
@@ -245,6 +245,7 @@ const ResearchPage = () => {
                             body: "We investigate how participation and knowledge exchange enrich research and practical knowledge for nature.",
                             spacing: "regular"
                         }}
+                        url="/en/science/society-and-nature"
                     />
 
                     <Card
@@ -262,6 +263,7 @@ const ResearchPage = () => {
                             body: "Our collection provides diverse data sources for researching biological and geological diversity.",
                             spacing: "regular"
                         }}
+                        url="/en/science/infrastructure/collection"
                     />
                     <Card
                         variant="white"
@@ -278,6 +280,7 @@ const ResearchPage = () => {
                             body: "Historical documents and research results are available as valuable resources for studies.",
                             spacing: "regular"
                         }}
+                        url="/en/science/archive"
                     />
 
                     <Card
@@ -295,6 +298,7 @@ const ResearchPage = () => {
                             body: "Scientific and historical collections support research, teaching, and knowledge transfer.",
                             spacing: "regular"
                         }}
+                        url="/en/science/library"
                     />
 
                 </Section>
@@ -317,17 +321,17 @@ const ResearchPage = () => {
                             buttons: [
                                 {
                                     text: "Laboratories",
-                                    url: "/en/teams-projects",
+                                    url: "/en/science/infrastructure/labs/",
                                     variant: "plain"
                                 },
                                 {
                                     text: "IT Systems",
-                                    url: "/en/teams-projects",
+                                    url: "/en/science/infrastructure/research-information-technology-infrastructure/",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Research Data Management",
-                                    url: "/en/teams-projects",
+                                    url: "/en/science/infrastructure/research-data-management-infrastructure/",
                                     variant: "plain"
                                 },
                             ]
@@ -351,17 +355,17 @@ const ResearchPage = () => {
                             buttons: [
                                 {
                                     text: "Science Communication Formats",
-                                    url: "/en/teams-projects",
+                                    url: "/en/science/transfer/communicating/",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Policy Advice",
-                                    url: "/en/teams-projects",
+                                    url: "/en/science/transfer/advising/",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Our Commitment to Citizen Science",
-                                    url: "/en/teams-projects",
+                                    url: "/en/science/transfer/applying/",
                                     variant: "plain"
                                 },
                             ]
@@ -386,7 +390,7 @@ const ResearchPage = () => {
                             buttons: [
                                 {
                                     text: "Open Team and Project Database",
-                                    url: "/en/teams-projects",
+                                    url: "/en/research/team-projects/",
                                     variant: "primary"
                                 }
                             ]
@@ -563,10 +567,10 @@ const ResearchPage = () => {
                         spacing="wide"
                         alignment="center"
                     />
-                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary">Ask a Question</Button>
-                        <Button variant="primary">Call Us</Button>
-                        <Button variant="primary">Contact Us</Button>
+                     <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
+                        <Button variant="primary" url="/en/contact/">Ask Us a Question</Button>
+                        <Button variant="primary" url="tel:+4930889140-8591">Call Us</Button>
+                        <Button variant="primary" url="/en/visit/">Visit Us at the Museum</Button>
                     </div>
                 </Section>
             </main>

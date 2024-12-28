@@ -165,8 +165,8 @@ const IndexPage = () => {
             <CardText
               headline="Tickets & Preise"
               headlineStyle="h1"
-              body={`Tickets können Sie vor Ort und im <a href="https://ticketshop.museumfuernaturkunde.berlin/" style="text-decoration: underline;">Onlineshop</a> kaufen. 
-                Wir empfehlen die Buchung von <a href="https://ticketshop.museumfuernaturkunde.berlin/#/tickets/time?group=timeSlot" style="text-decoration: underline;">Online-Zeitfenstertickets</a> 
+              body={`Tickets können Sie vor Ort und im <a href="https://ticketshop.museumfuernaturkunde.berlin/" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Onlineshop</a> kaufen. 
+                Wir empfehlen die Buchung von <a href="https://ticketshop.museumfuernaturkunde.berlin/#/tickets/time?group=timeSlot" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Online-Zeitfenstertickets</a> 
               im Vorfeld um Wartezeiten an der Kasse zu vermeiden.`}
               spacing="wide"
               alignment="center"
@@ -294,7 +294,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Laden Sie sich das <a href="http://www.museumfuernaturkunde.berlin/sites/default/files/23_0629a_Antrag_Jahreskarten_DE.pdf" className="underline">Anmeldeformular</a> herunter und beantragen Sie Ihre Jahreskarte noch heute. Senden Sie das ausgefüllte Formular gerne per E-Mail an <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
+                    Laden Sie sich das <a href="http://www.museumfuernaturkunde.berlin/sites/default/files/23_0629a_Antrag_Jahreskarten_DE.pdf" className="underline" target="_blank" rel="noopener noreferrer">Anmeldeformular</a> herunter und beantragen Sie Ihre Jahreskarte noch heute. Senden Sie das ausgefüllte Formular gerne per E-Mail an <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
                   </p>
                   <h4>Gutscheine</h4>
                   <p>Sie erhalten Gutscheine für einen Museumsbesuch an der Museumskasse zu den regulären Kassenöffnungszeiten.</p>
@@ -354,7 +354,7 @@ const IndexPage = () => {
                     <li>
                       <div className="flex justify-between items-baseline">
                         <p className="flex-1 pr-8">
-                          Teilnehmende an Freiwilligendiensten und bei Vorlage der <a href="https://www.berlin.de/buergeraktiv/anerkennung/ehrenamtskarte/" className="underline">Ehrenamtskarte</a>
+                          Teilnehmende an Freiwilligendiensten und bei Vorlage der <a href="https://www.berlin.de/buergeraktiv/anerkennung/ehrenamtskarte/" className="underline" target="_blank" rel="noopener noreferrer">Ehrenamtskarte</a>
                         </p>
                       </div>
                     </li>
@@ -368,7 +368,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="/de/besuch-planen/ticketkooperationen" className="underline">Mehr Infos zu Kooperationen</a>
+                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="/de/besuch-planen/ticketkooperationen" className="underline" target="_blank" rel="noopener noreferrer">Mehr Infos zu Kooperationen</a>
                   </p>
                 </div>
               </div>
@@ -484,7 +484,7 @@ const IndexPage = () => {
               buttons={[
                 {
                   text: "Das Museum auf Google Maps",
-                  url: "https://www.google.com/maps/place/Museum+f%C3%BCr+Naturkunde+Berlin/@52.521666,13.396666,17z/data=!3m1!4b1!4m6!3m5!1s0x47a851c79659d299:0x4f8747d2187d277d!8m2!3d52.521666!4d13.399151!16s%2Fg%2F11c48yq34j",
+                  url: "https://maps.app.goo.gl/4orDoD9aBkAnS8zy9",
                   variant: "plain"
                 }
               ]}
@@ -552,7 +552,7 @@ const IndexPage = () => {
                       <li>
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
-                            <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ecba0e90d1:0xab7167f4ea5dd8b9!8m2!3d52.5306377!4d13.3814623" className="underline">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
+                            <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ecba0e90d1:0xab7167f4ea5dd8b9!8m2!3d52.5306377!4d13.3814623" className="underline" target="_blank" rel="noopener noreferrer">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
                               <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />200m Fußweg</span>
                           </p>
                         </div>
@@ -560,7 +560,7 @@ const IndexPage = () => {
                       <li>
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
-                            <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ec7dc000d7:0x506c4690a67db5eb!8m2!3d52.5295898!4d13.3840763" className="underline">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
+                            <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ec7dc000d7:0x506c4690a67db5eb!8m2!3d52.5295898!4d13.3840763" className="underline" target="_blank" rel="noopener noreferrer">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
                               <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />350m Fußweg</span>
                           </p>
                         </div>
@@ -585,8 +585,8 @@ const IndexPage = () => {
             headlineStyle="h1"
             body={`In unseren Ausstellungen erhalten Sie Einblicke in die gigantischen Abenteuer der Natur – anhand originaler Forschungsobjekte!
               <br/><br/>
-              Mehr zu unserer <a href="/de/museum/besuch-planen/besuchendenordnung" style="text-decoration: underline;">Besuchendenordnung</a> und 
-              unseren <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" style="text-decoration: underline;">Regeln für Film- und Foto-Aufnahmen</a>.`}
+              Mehr zu unserer <a href="/de/museum/besuch-planen/besuchendenordnung" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Besuchendenordnung</a> und 
+              unseren <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer"  >Regeln für Film- und Foto-Aufnahmen</a>.`}
             spacing="wide"
             alignment="center"
           />
@@ -902,7 +902,7 @@ const IndexPage = () => {
             <AccordionItem title="Wo erhalte ich die Tickets?">
               <div className="p-5">
                 <p>
-                  Sie können Online-Tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline">hier</a> oder vor Ort an der Museumskasse kaufen.
+                  Sie können Online-Tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline" target="_blank" rel="noopener noreferrer">hier</a> oder vor Ort an der Museumskasse kaufen.
                   <br /><br />
                   Wir empfehlen die Buchung von Online-Zeitfenstertickets im Vorfeld um
                   Wartezeiten an der Kasse zu vermeiden. Die Tickets sind 14 Tage im Voraus
@@ -934,7 +934,7 @@ const IndexPage = () => {
                   die Ausstellung und Objekte durch eine zusätzliche Perspektive erfahrbar zu
                   machen.
                   <br /><br />
-                  <a href="/de/museum/besuch-planen/digital-guide" className="underline">Hier</a> finden Sie weitere Informationen.
+                  <a href="/de/museum/besuch-planen/digital-guide" className="underline" target="_blank" rel="noopener noreferrer">Hier</a> finden Sie weitere Informationen.
                   <br /><br />
                   Für die Nutzung des Audioguides empfehlen wir Ihnen eigene Kopfhörer mitzubringen.
                 </p>
@@ -942,7 +942,7 @@ const IndexPage = () => {
             </AccordionItem>
             <AccordionItem title="Darf ich im Museum fotografieren?">
               <div className="p-5">
-                <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" className="underline">hier</a>.</p>
+                <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" className="underline" target="_blank" rel="noopener noreferrer">hier</a>.</p>
               </div>
             </AccordionItem>
             <AccordionItem title="Darf ich meinen Kinderwagen mit in das Museum nehmen?">
@@ -971,7 +971,7 @@ const IndexPage = () => {
             <Button
               text="Stellen Sie uns eine Frage"
               variant="primary"
-              url="/das-museum/heute/kontakt"
+              url="/de/kontakt/"
             />
             <Button
               text="Rufen Sie uns an"

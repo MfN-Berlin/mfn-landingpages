@@ -132,7 +132,7 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Saturday, Sunday, and on <span className="underline">Holidays</span>
+                  Saturday, Sunday, and on <a href="/en/visit/special-opening-hours" className="underline">Holidays</a>
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2">
                   10:00 to 18:00
@@ -159,8 +159,8 @@ const IndexPage = () => {
             <CardText
               headline="Tickets & Prices"
               headlineStyle="h1"
-              body={`Tickets can be purchased at the Museum or in the <a href="/tickets/online-shop" className="underline">Online Shop</a>. 
-                We recommend booking <a href="/tickets/zeitfenster" className="underline">Online-Zeitfenstertickets</a> 
+              body={`Tickets can be purchased at the Museum or in the <a href="/tickets/online-shop" className="underline" target="_blank" rel="noopener noreferrer">Online Shop</a>. 
+                We recommend booking <a href="/tickets/zeitfenster" className="underline" target="_blank" rel="noopener noreferrer">Online-Zeitfenstertickets</a> 
               beforehand to avoid waiting at the ticket counter.`}
               spacing="wide"
               alignment="center"
@@ -288,7 +288,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Download the <a href="https://www.naturkundemuseum-shop.de" className="underline">Application Form</a> and apply for your annual pass today. Please send the completed form by email to <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
+                    Download the <a href="https://www.museumfuernaturkunde.berlin/sites/default/files/23_0704_Antrag_Jahreskarten_EN.pdf" className="underline" target="_blank" rel="noopener noreferrer">Application Form</a> and apply for your annual pass today. Please send the completed form by email to <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
                   </p>
                   <h4>Vouchers</h4>
                   <p>You will receive vouchers for a visit to the Museum at the regular ticket counter times.</p>
@@ -348,7 +348,7 @@ const IndexPage = () => {
                     <li>
                       <div className="flex justify-between items-baseline">
                         <p className="flex-1 pr-8">
-                          Participants in voluntary services and with the Ehrenamtskarte
+                          Participants in voluntary services and with the <a href="https://www.berlin.de/buergeraktiv/anerkennung/ehrenamtskarte/" className="underline" target="_blank" rel="noopener noreferrer">Ehrenamtskarte</a>
                         </p>
                       </div>
                     </li>
@@ -362,7 +362,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    You can get a discount with the Museum Pass Berlin, the Welcome Card Berlin, and a ticket for the Deutsches Technikmuseum. <a href="/en/visit/cooperations" className="underline">More information about cooperations</a>
+                    You can get a discount with the Museum Pass Berlin, the Welcome Card Berlin, and a ticket for the Deutsches Technikmuseum. <a href="/en/visit/cooperations" className="underline" target="_blank" rel="noopener noreferrer">More information about cooperations</a>
                   </p>
                 </div>
               </div>
@@ -478,7 +478,7 @@ const IndexPage = () => {
               buttons={[
                 {
                   text: "Museum on Google Maps",
-                  url: "https://www.google.com/maps/place/Museum+f%C3%BCr+Naturkunde+Berlin/@52.521666,13.396666,17z/data=!3m1!4b1!4m6!3m5!1s0x47a851c79659d299:0x4f8747d2187d277d!8m2!3d52.521666!4d13.399151!16s%2Fg%2F11c48yq34j",
+                  url: "https://maps.app.goo.gl/4orDoD9aBkAnS8zy9",
                   variant: "plain"
                 }
               ]}
@@ -556,7 +556,7 @@ const IndexPage = () => {
                       <li>
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
-                            <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ecba0e90d1:0xab7167f4ea5dd8b9!8m2!3d52.5306377!4d13.3814623" className="underline">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, paid, <span className="font-italic text-Black-500">
+                            <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ecba0e90d1:0xab7167f4ea5dd8b9!8m2!3d52.5306377!4d13.3814623" className="underline" target="_blank" rel="noopener noreferrer">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, paid, <span className="font-italic text-Black-500">
                               <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
                                 <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
                               </svg>200m Footpath</span>
@@ -566,7 +566,7 @@ const IndexPage = () => {
                       <li>
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
-                            <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ec7dc000d7:0x506c4690a67db5eb!8m2!3d52.5295898!4d13.3840763" className="underline">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, paid, <span className="font-italic text-Black-500">
+                            <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ec7dc000d7:0x506c4690a67db5eb!8m2!3d52.5295898!4d13.3840763" className="underline" target="_blank" rel="noopener noreferrer">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, paid, <span className="font-italic text-Black-500">
                               <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
                                 <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
                               </svg>350m Footpath</span>
@@ -582,7 +582,7 @@ const IndexPage = () => {
               <div className="p-5">
                 <p>The accessible entrance is located to the right of the main entrance. Opposite, there are three disabled parking spaces. <br /><br />
                   <strong>Please note:</strong> the disabled parking spaces are currently not accessible due to construction work at the neighboring building. We ask for your understanding!<br /><br />
-                  The cloakroom, the accessible WC, and the exhibition floor are accessible from this entrance with a lift or wheelchair ramp. <a href="https://www.museumfuernaturkunde.berlin/en/museum/visit/accessibility" className="underline">More information</a></p>
+                  The cloakroom, the accessible WC, and the exhibition floor are accessible from this entrance with a lift or wheelchair ramp. <a href="/en/museum/plan-your-visit/accessibility" className="underline" target="_blank" rel="noopener noreferrer">More information</a></p>
               </div>
             </AccordionItem>
           </Accordion>
@@ -591,21 +591,12 @@ const IndexPage = () => {
           <CardText
             headline="In the Museum"
             headlineStyle="h1"
-            body="In our exhibitions, you'll discover the gigantic adventures of nature - through original research objects!<br/><br/>More about our visitor regulations and our rules for filming and photography."
+            body={`In our exhibitions, you'll gain insights into the gigantic adventures of nature - through original research objects!
+              <br/><br/>
+              More about our <a href="/en/museum/plan-your-visit/visitors-regulations" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Visitor Regulations</a> and 
+              our <a href="/en/museum/plan-your-visit/film-and-photography" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Rules for Film and Photography</a>.`}
             spacing="wide"
             alignment="center"
-            buttons={[
-              {
-                text: "Visitor Regulations",
-                url: "/en/museum/visit/visitor-regulations",
-                variant: "plain"
-              },
-              {
-                text: "Photography and Filming",
-                url: "/en/museum/visit/photography-and-filming",
-                variant: "plain"
-              }
-            ]}
           />
           <br /><br />
 
@@ -614,105 +605,105 @@ const IndexPage = () => {
               imageName="zv_1200x675_WEBSEITE_0.jpg"
               title="Migratory Birds"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/migratory-birds"
+              link="/en/museum/exhibitions/migratory-birds"
               altText="Migratory Birds"
             />
             <SlideContent
               imageName="zp_1200x675_WEBSEITE.jpg"
               title="Future Plan"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/future-plan"
+              link="/en/museum/exhibitions/future-plan"
               altText="Future Plan"
             />
             <SlideContent
               imageName="1200x800_0.jpg"
               title="Dinosaurs!"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/dinosaurs-age-of-giant-reptiles"
+              link="/en/museum/exhibitions/dinosaurs-age-of-giant-reptiles"
               altText="Dinosaurs! Age of Giant Reptiles"
             />
             <SlideContent
               imageName="digitize_webseite_V2_1200x800_Live Science.jpg"
               title="digitize!"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/digitize"
+              link="/en/museum/exhibitions/digitize"
               altText="digitize! Live Science"
             />
             <SlideContent
               imageName="sauriersaal_04_c_carola-radke-mfn.jpg"
               title="World of Dinosaurs"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/world-of-dinosaurs"
+              link="/en/museum/exhibitions/world-of-dinosaurs"
               altText="Dinosaur skeletons in the Dinosaur Hall"
             />
             <SlideContent
               imageName="system_erde_02_c_carola-radke_mfn.jpg"
               title="System Earth"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/system-earth"
+              link="/en/museum/exhibitions/system-earth"
               altText="The multimedia globe at the Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="kosmos_saal_c_hwa-ja-goetz-mfn.jpg"
               title="Cosmos and Solar System"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/cosmos-and-solar-system"
+              link="/en/museum/exhibitions/cosmos-and-solar-system"
               altText="Visitors looking up at projection sky at Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="biodivwand_c_carola-radke-mfn.jpg"
               title="Evolution in Action"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/evolution-action"
+              link="/en/museum/exhibitions/evolution-action"
               altText="The biodiversity wall at Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="101028_nasssammlung_02_c_carola-radke-mfn.jpg"
               title="Wet Collection"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/wet-collection"
+              link="/en/museum/exhibitions/wet-collection"
               altText="Tall shelves with animal specimens in the Wet Collection"
             />
             <SlideContent
               imageName="130220_kellermodell_floh_c_carola-radke_mfn.jpg"
               title="Keller's Insect Models"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/kellers-insect-models"
+              link="/en/museum/exhibitions/kellers-insect-models"
               altText="Model of a flea"
             />
             <SlideContent
               imageName="2015_bobby_c_carola-radke_mfn_0.jpg"
               title="Highlights of Taxidermy"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/highlights-of-taxidermy"
+              link="/en/museum/exhibitions/highlights-of-taxidermy"
               altText="The face of the gorilla Bobby, behind it the specimen of a giant eland antelope"
             />
             <SlideContent
               imageName="110919_mineraliensaal_13_c_hwa-ja-goetz-mfn.jpg"
               title="Minerals"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/minerals"
+              link="/en/museum/exhibitions/minerals"
               altText="Display cases with minerals in the Minerals Hall"
             />
             <SlideContent
               imageName="humboldt-intervention-museum-fuer-naturkunde-berlin.jpg"
               title="Humboldt Intervention"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/humboldt-intervention"
+              link="/en/museum/exhibitions/humboldt-intervention"
               altText="Posters of the Humboldt Intervention between and above the display cases in the Minerals Hall"
             />
             <SlideContent
               imageName="100423_parasiten_03_c_hwaja-goetz_mfn_0.jpg"
               title="Traveling Exhibitions"
               kicker="Our Exhibitions"
-              link="/museum/traveling-exhibitions"
+              link="/en/museum/traveling-exhibitions"
               altText="The photo shows a prepared springbok with oxpeckers"
             />
             <SlideContent
               imageName="federband_c_hwaja-goetz_mfn.jpg"
               title="Archive: Special Exhibitions"
               kicker="Our Exhibitions"
-              link="/museum/exhibitions/archive-special-exhibitions"
+              link="/en/museum/exhibitions/archive-special-exhibitions"
               altText="Feather band made of different colored feathers"
             />
           </Slideshow>
@@ -734,7 +725,7 @@ const IndexPage = () => {
                   spacing: "regular",
                   headlineStyle: "h3"
                 }}
-                url="/en/participate/events"
+                url="/en/museum/events"
               />
             </div>
 
@@ -752,7 +743,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url="/en/museum/visit/accessibility"
+                url="/en/museum/plan-your-visit/accessibility"
               />
               <Card
                 variant="classic"
@@ -767,7 +758,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url="/en/museum/visit"
+                url="/en/museum/plan-your-visit/cloakroom"
               />
             </div>
 
@@ -785,7 +776,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "regular"
                 }}
-                url="/en/museum/visit/museum-cafe"
+                url="/en/museum/plan-your-visit/museum-cafe"
               />
             </div>
             <div className="sm:col-span-1 lg:col-span-1">
@@ -802,7 +793,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "wide"
                 }}
-                url="/en/museum/visit/digital-guide"
+                url="/en/museum/plan-your-visit/digital-guide"
               />
             </div>
             <div className="sm:col-span-1 lg:col-span-1">
@@ -879,7 +870,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/en/museum/education/birthday-parties"
+            url="/en/museum/education/childrens-birthday-parties"
           />
           <Card
             variant="classic"
@@ -918,7 +909,7 @@ const IndexPage = () => {
             <AccordionItem title="Where can I get tickets?">
               <div className="p-5">
                 <p>
-                  You can buy online tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline">here</a> or at the museum ticket counter.
+                  You can buy online tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline" target="_blank" rel="noopener noreferrer">here</a> or at the museum ticket counter.
                   <br /><br />
                   We recommend booking online time-slot tickets in advance to avoid waiting times. Tickets can be booked 14 days in advance.
                   <br /><br />
@@ -941,7 +932,7 @@ const IndexPage = () => {
                   <br /><br />
                   We also offer two themed audio guides to experience the exhibition and objects from additional perspectives.
                   <br /><br />
-                  <a href="https://www.museumfuernaturkunde.berlin/en/museum/visit/digital-guide" className="underline">Here</a> you can find more information.
+                  <a href="/en/museum/plan-your-visit/digital-guide" className="underline" target="_blank" rel="noopener noreferrer">Here</a> you can find more information.
                   <br /><br />
                   We recommend bringing your own headphones to use the audio guide.</p>
               </div>
@@ -949,7 +940,7 @@ const IndexPage = () => {
 
             <AccordionItem title="Can I take photos in the museum?">
               <div className="p-5">
-                <p>Photography for personal use is allowed in the museum. Commercial photography requires permission. More information <a href="https://www.museumfuernaturkunde.berlin/en/museum/visit/photography-and-filming" className="underline">here</a>.</p>
+                <p>Photography for personal use is allowed in the museum. Commercial photography requires permission. More information <a href="/en/museum/plan-your-visit/film-and-photography" className="underline" target="_blank" rel="noopener noreferrer">here</a>.</p>
               </div>
             </AccordionItem>
 
@@ -971,7 +962,7 @@ const IndexPage = () => {
                   <br /><br />
                   <strong>Please note:</strong> the disabled parking spaces are currently not accessible due to construction work on the neighboring building. We ask for your understanding!
                   <br /><br />
-                  The cloakrooms, accessible toilet and exhibition level can be reached from this entrance by elevator or stair lift. <a href="https://www.museumfuernaturkunde.berlin/en/museum/visit/accessibility" className="underline">More information</a></p>
+                  The cloakrooms, accessible toilet and exhibition level can be reached from this entrance by elevator or stair lift. <a href="/en/museum/plan-your-visit/accessibility" className="underline" target="_blank" rel="noopener noreferrer">More information</a></p>
               </div>
             </AccordionItem>
           </Accordion>
@@ -993,13 +984,9 @@ const IndexPage = () => {
             <Button
               text="Call Us"
               variant="primary"
-              url="/en/phone"
+              url="tel:+4930889140-8591"  // Telefonnummer ohne Klammern und Leerzeichen
             />
-            <Button
-              text="Visit Us at the Museum"
-              variant="primary"
-              url="/en/visit"
-            />
+           
           </div>
         </Section>
         <Section columns={1} backgroundColor="bg-Black-100">
