@@ -362,7 +362,7 @@ const IndexPage = () => {
               body: "In unseren Journalen für Natur nehmen wir Sie mit auf diesem Weg in die Zukunft.",
               spacing: "wide"
             }}
-            url="https://test.mfn.gcsdev.de/de/museum/medien/journal-fuer-natur/"
+            url="de/museum/medien/journal-fuer-natur/"
           />
           <Card
             variant="classic"
@@ -394,7 +394,7 @@ const IndexPage = () => {
               body:"Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
               spacing: "wide"
             }}
-            url="https://test.mfn.gcsdev.de/de/museum/jobs-und-karriere/"
+            url="de/museum/jobs-und-karriere/"
           />
         
           <Card

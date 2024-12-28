@@ -51,12 +51,12 @@ const IndexPage = () => {
               {
                 text: "Career",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/jobs-and-career/"
+                url: "en/about/jobs-and-career/"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/team/"
+                url: "en/about/team/"
               },
               {
                 text: "Contact",
@@ -66,12 +66,12 @@ const IndexPage = () => {
               {
                 text: "News",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/news/"
+                url: "en/about/news/"
               },
               {
                 text: "Sponsors",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin/"
+                url: "en/about/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin/"
               }
             ]}
           />
@@ -95,7 +95,7 @@ const IndexPage = () => {
                 {
                   text: "More about our future",
                   variant: "plain",
-                  url: "http://localhost:8000/en/future/join-our-museum-evolution/"
+                  url: "en/future/join-our-museum-evolution/"
                 },
               ]
             }}
@@ -135,12 +135,12 @@ const IndexPage = () => {
               {
                 text: "Future Plan",
                 variant: "plain",
-                url: "http://localhost:8000/en/future/future-plan/"
+                url: "en/future/future-plan/"
               },
               {
                 text: "Knowledge Transfer",
                 variant: "plain",
-                url: "http://localhost:8000/en/future/knowledge-transfer/"
+                url: "en/future/knowledge-transfer/"
               }
             ]}
           />
@@ -166,7 +166,7 @@ const IndexPage = () => {
               body: "Read our annual report here, which provides an easy-to-understand overview of the activities of the Museum für Naturkunde Berlin during the past year.",
               spacing: "wide"
             }}
-            url="http://localhost:8000/en/future/future-plan/"
+            url="en/future/future-plan/"
           />
           <Card
             variant="classic"
@@ -182,7 +182,7 @@ const IndexPage = () => {
               body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
               spacing: "wide"
             }}
-            url="http://localhost:8000/en/science/collection-discovery-and-development/"
+            url="en/science/collection-discovery-and-development/"
           />
           <Card
             variant="classic"
@@ -198,7 +198,7 @@ const IndexPage = () => {
               body: "Read our annual report here, which provides an easy-to-understand overview of the Museum für Naturkunde Berlin’s activities in the past year.",
               spacing: "wide"
             }}
-            url="http://localhost:8000/en/future/join-our-museum-evolution/"
+            url="en/future/join-our-museum-evolution/"
           />
 
           <Card
@@ -253,17 +253,17 @@ const IndexPage = () => {
               {
                 text: "Science Communication Formats",
                 variant: "plain",
-                url: "http://localhost:8000/en/science/transfer/communicating/"
+                url: "en/science/transfer/communicating/"
               },
               {
                 text: "Policy Advice",
                 variant: "plain",
-                url: "http://localhost:8000/en/science/transfer/advising/"
+                url: "en/science/transfer/advising/"
               },
               {
                 text: "Our Commitment to Citizen Science",
                 variant: "plain",
-                url: "http://localhost:8000/en/science/transfer/applying/"
+                url: "en/science/transfer/applying/"
               }
             ]}
           />
@@ -321,22 +321,22 @@ const IndexPage = () => {
               {
                 text: "About Us",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/museum/"
+                url: "en/about/museum/"
               },
               {
                 text: "Building",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/building/"
+                url: "en/about/building/"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/team/"
+                url: "en/about/team/"
               },
               {
                 text: "Sponsors",
                 variant: "plain",
-                url: "http://localhost:8000/en/about/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin/"
+                url: "en/about/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin/"
               }
             ]}
           />
@@ -357,7 +357,7 @@ const IndexPage = () => {
               body: "In our 'für natur' journals, we take you along on this journey into the future.",
               spacing: "wide"
             }}
-            url="http://localhost:8000/en/future/nature-journals/"
+            url="en/future/nature-journals/"
           />
           <Card
             variant="classic"
