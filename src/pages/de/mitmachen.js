@@ -74,7 +74,7 @@ const IndexPage = () => {
                                     variant: "plain"
                                 },
                                 {
-                                    text: "Bürgerwissenschaften",
+                                    text: "Citizen Science / Bürgerforschung",
                                     url: "/de/museum/mitmachen/buergerwissenschaften",
                                     variant: "plain"
                                 }]
@@ -97,7 +97,7 @@ const IndexPage = () => {
                         variant="classic"
                         alignment="center"
                         imageProps={{
-                            imageName: "Key visual_NaturderDinge_ohneLogo_klein.jpg",
+                            imageName: "Digamus_final2.jpg",
                             alt: "Objektcollage aus Sammlungsobjekten von Natur der Dinge",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
@@ -213,46 +213,7 @@ const IndexPage = () => {
                         className="bg-Green-500"
                     />
                 </Section>
-                {/* <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
 
-
-
-                    <Card
-                        variant="classic"
-                        imageProps={{
-                            imageName: "fuchs_c_selina_schultze_mfn.jpg",
-                            alt: "Stadtnatur am Musuem für Naturkunde",
-                            imageMap: imageMap,
-                            className: "w-full h-auto object-cover"
-                        }}
-                        textProps={{
-                            headline: "Großstadtsafaris",
-                            body: "Erleben Sie Berlin als grünste und artenreichste Hauptstadt Europas! Auf einer stadtökologischen Führung rund um das Museum entdecken Sie die Tier- und Pflanzenvielfalt der Innenstadt und erfahren, wie sich diese an das Leben in der Großstadt anpasst. Der Fokus liegt dabei auf den sichtbaren Folgen des Klimawandels für Pflanzen, Tiere und Menschen in Berlin.",
-                            headlineStyle: "h3",
-                            alignment: "left"
-                        }}
-                        url="/de/museum/veranstaltungen/grossstadtsafari-stadtoekologie-und-klimawandel-5"
-                    />
-
-
-                    <Card
-                        variant="classic"
-                        imageProps={{
-                            imageName: "131031_taschenlampenfuehrung_halloween_21_c_carola-radke_mfn_0.jpg",
-                            alt: "Taschenlampenführung",
-                            imageMap: imageMap,
-                            className: "w-full h-auto object-cover"
-                        }}
-                        textProps={{
-                            headline: "Taschenlampenführungen",
-                            body: "Nachdem sich die Tore des Museums geschlossen haben, schleichen Sie im Licht Ihrer Taschenlampen durch die dunklen Museumsräume. Auf der Suche nach den unterschiedlichen Tieren der Nacht erkunden Sie die Ausstellungen des Museums.",
-                            headlineStyle: "h3",
-                            alignment: "left"
-                        }}
-                        url="/de/mitmachen/taschenlampenführungen"
-                    />
-
-                </Section> */}
                 <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-16">
                     <Card
                         variant="classic"
@@ -297,13 +258,65 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Gemeinsam aktiv",
-                            body: "Hier finden Sie Angebote, die speziell für Gruppen konzipiert sind – vom kreativen Miteinander bis zu gemeinsamen Aktivitäten, die verbinden und inspirieren.",
+                            headline: "Fachgruppe Mineralogie/Geologie",
+                            body: "Die Fachgruppe Mineralogie/Geologie am Museum für Naturkunde ist ein loser Zusammenschluss von Hobbysammler:innen und Interessierten für Mineralien und Gesteine, die sich jeden ersten Dienstag im Monat (außer im August) zu einem Fachvortrag trifft. Gäste sind zu den Vorträgen willkommen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
                         url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
                     />
+
+                    <Card
+                        variant="classic"
+                        imageProps={{
+                            imageName: "csm_Ruesselkaefer_697cb77b53.jpg",
+                            alt: "Rüsselkäfer im Baltischen Bernstein, ca. 35 Millionen Jahre alt, Sammlung und Foto Michael Zwanzig",
+                            imageMap: imageMap,
+                            className: "w-full h-auto object-cover"
+                        }}
+                        textProps={{
+                            headline: "Kulturring in Berlin e.V. – Fachgruppe Paläontologie",
+                            body: "Jeden dritten Dienstag im Monat treffen sich Hobbysammler:innen und an Paläontologie interessierte Besuchende im Museum für Naturkunde für paläontologische Fachvorträge mit Wissenschaftler:innen des Museums, der Freien Universität oder der Technischen Universität. Nach dem Vortrag gibt es die Möglichkeit, mit den Forschenden zu diskutieren und eigene Fragen zu stellen. Alle, die sich für Paläontologie interessieren, sind herzlich zu den Museumstreffs eingeladen.",
+                            headlineStyle: "h3",
+                            alignment: "left"
+                        }}
+                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
+                    />
+
+                    <Card
+                        variant="classic"
+                        imageProps={{
+                            imageName: "160216_lepidoptera_kasten_05_c_hwaja-goetz_mfn.jpg",
+                            alt: "Fotografie eines Insektenkastens mit Schmetterlingen in unterschiedlichen Farben.",
+                            imageMap: imageMap,
+                            className: "w-full h-auto object-cover"
+                        }}
+                        textProps={{
+                            headline: "Entomologische Gesellschaft ORION Berlin ",
+                            body: "Die Entomologische Gesellschaft ORION Berlin möchte insbesondere junge Menschen für die Artenvielfalt der Insekten in unserer Region begeistern. Auch der Schutz bedrohter Insektenarten und ihrer Biotope ist ein zentrales Thema ihrer Vereinsarbeit",
+                            headlineStyle: "h3",
+                            alignment: "left"
+                        }}
+                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
+                    />
+
+                    <Card
+                        variant="classic"
+                        imageProps={{
+                            imageName: "bild-2619.png",
+                            alt: "Fotografie eines Käfers auf einem Blatt.",
+                            imageMap: imageMap,
+                            className: "w-full h-auto object-cover"
+                        }}
+                        textProps={{
+                            headline: "Deutscher Jugendbund für Naturbeobachtung",
+                            body: "Die DJN-Gruppe Brandenburg und Berlin sind naturkundlich und politisch interessierte junge Leute aus Berlin und Umgebung. Mitten in einer der naturkundlich interessantesten Gegenden Deutschlands (Schorfheide, Odertal, ehem. Truppenübungsplätze, Havellandschaft) treffen sie sich, um gemeinsam die artenreiche Flora und Fauna zu entdecken, zu beobachten und kennenzulernen.",
+                            headlineStyle: "h3",
+                            alignment: "left"
+                        }}
+                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
+                    />
+
 
                 </Section>
                 <Section columns={1} backgroundColor="bg-White" padding="pt-16">

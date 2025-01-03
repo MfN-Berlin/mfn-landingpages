@@ -508,27 +508,18 @@ const IndexPage = () => {
                 <br />
 
                 <p>S-Nordbahnhof (
-                  <svg className="inline px-[0.1em] h-[15px] w-[28px] m-0 mt-[-3px]" aria-label="S-Bahnlinie 1">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s1")} />
-                  </svg>
-                  <svg className="inline px-[0.1em] h-[15px] w-[28px] m-0 mt-[-3px]" aria-label="S-Bahnlinie 2">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-s2")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-s1" ariaLabel="S-Bahnlinie 1" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s2" ariaLabel="S-Bahnlinie 2" className="w-[28px]" />
+                  
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
-                    </svg>900m Footpath</span></p>
+                  <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />900m Footpath</span></p>
                 <br />
 
                 <p>Invalidenpark (
-                  <svg className="inline px-[0.1em] h-[24px] w-[20px] m-0 mt-[-3px]" aria-label="Buslinien">
-                    <use href={withPrefix("/images/transport-icons3.svg?v=1#bvg-bus")} />
-                  </svg>
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Buslinien" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 120 123 142 245 N20 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                      <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
-                    </svg>300m Footpath</span></p>
+                  <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />300m Footpath</span></p>
                 <br />
               </div>
             </AccordionItem>
@@ -977,12 +968,12 @@ const IndexPage = () => {
           />
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
             <Button
-              text="Ask Us a Question"
+              text="Ask us a question"
               variant="primary"
               url="/en/contact"
             />
             <Button
-              text="Call Us"
+              text="Call us"
               variant="primary"
               url="tel:+4930889140-8591"  // Telefonnummer ohne Klammern und Leerzeichen
             />

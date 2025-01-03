@@ -40,10 +40,10 @@ const ResearchPage = () => {
             <main className="bg-white flex flex-col items-center justify-center p-0">
                 <AccessibilityNav currentPage="Research" />
 
-                <Section backgroundColor="bg-white" columns={1}>
+                <Section backgroundColor="bg-white" columns={1} padding="pt-16 pb-0">
                     <StoryTime
                         imageProps={{
-                            imageName: 'Neues CT im Museum für Naturkunde (c) Pablo Castagnola.jpg',
+                            imageName: 'NeuesCTimMuseumfuerNaturkundecPabloCastagnola.jpg',
                             alt: "New CT at the Museum für Naturkunde. Photo: Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[16/9]"
@@ -62,7 +62,7 @@ const ResearchPage = () => {
                 </Section>
                 <Section
                     backgroundColor="bg-white"
-                    columns={2}
+                    columns={1}
                     gapClass="gap-6"
                     layout="equal"
                 >
@@ -103,64 +103,7 @@ const ResearchPage = () => {
                         </form>
                     </div>
 
-                    <div className="bg-Green-100 p-8 h-full flex">
-                        <form
-                            action="https://www.museumfuernaturkunde.berlin/en/science/navigator"
-                            method="get"
-                            className="flex flex-col w-full"
-                        >
-                            <div className="flex flex-col h-full">
-                                <div className="flex-none">
-                                    <label
-                                        htmlFor="projects-search"
-                                        className="text-xl font-bold text-Black-900"
-                                    >
-                                        Working Groups
-                                    </label>
-                                    <p className="text-sm text-Black-700 mt-2">
-                                        Use our filter to display topic-specific projects
-                                    </p>
-                                </div>
-                                <div className="mt-auto flex flex-col md:flex-row gap-2">
-                                    <select
-                                        name="f[2]"
-                                        className="w-full p-3 border border-Black-300 rounded appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-Green-500"
-                                    >
-                                        <option value="">All Topics</option>
-                                        <optgroup label="Core Terms">
-                                            <option value="topic:792">Research</option>
-                                            <option value="topic:794">Transfer</option>
-                                        </optgroup>
-                                        <optgroup label="Keywords">
-                                            <option value="topic:796">Species Conservation</option>
-                                            <option value="topic:797">Species Extinction</option>
-                                            <option value="topic:798">Biodiversity</option>
-                                            <option value="topic:799">Citizen Science</option>
-                                            <option value="topic:800">Database</option>
-                                            <option value="topic:802">Digitalization</option>
-                                            <option value="topic:803">Evolution</option>
-                                            <option value="topic:806">Genetics</option>
-                                            <option value="topic:821">Genomics</option>
-                                            <option value="topic:808">Society</option>
-                                            <option value="topic:810">Cooperation</option>
-                                            <option value="topic:814">Politics</option>
-                                            <option value="topic:815">Collection</option>
-                                            <option value="topic:818">Research Data Management</option>
-                                            <option value="topic:816">Science Communication</option>
-                                            <option value="topic:817">Knowledge Transfer</option>
-                                            <option value="topic:823">Museum Opening</option>
-                                        </optgroup>
-                                    </select>
-                                    <button
-                                        type="submit"
-                                        className="px-6 py-2 bg-Green-500 text-white font-bold hover:bg-Green-600 transition-colors"
-                                    >
-                                        Search
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    
                 </Section>
               
                 <Section backgroundColor="bg-Green-100" columns={1} padding="py-16">
@@ -260,7 +203,7 @@ const ResearchPage = () => {
                         textProps={{
                             headline: "Collection",
                             headlineStyle: "h3",
-                            body: "Our collection provides diverse data sources for researching biological and geological diversity.",
+                            body: "The collection includes objects from the time of the origin of the solar system more than 4.5 billion years ago to the present day and contains a large number of first descriptions of species (type specimens).",
                             spacing: "regular"
                         }}
                         url="/en/science/infrastructure/collection"
@@ -568,9 +511,9 @@ const ResearchPage = () => {
                         alignment="center"
                     />
                      <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary" url="/en/contact/">Ask Us a Question</Button>
-                        <Button variant="primary" url="tel:+4930889140-8591">Call Us</Button>
-                        <Button variant="primary" url="/en/visit/">Visit Us at the Museum</Button>
+                        <Button variant="primary" url="/en/contact/">Ask us a question</Button>
+                        <Button variant="primary" url="tel:+4930889140-8591">Call us</Button>
+                        <Button variant="primary" url="/en/visit/">Visit us at the Museum</Button>
                     </div>
                 </Section>
             </main>

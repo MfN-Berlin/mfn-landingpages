@@ -40,10 +40,10 @@ const VisitPage = () => {
             <main className="bg-white flex flex-col items-center justify-center p-0">
                 <AccessibilityNav currentPage="Forschung" />
 
-                <Section backgroundColor="bg-white" columns={1}>
+                <Section backgroundColor="bg-white" columns={1} padding="pt-16 pb-0">
                      <StoryTime
                         imageProps={{
-                            imageName: 'NeuesCTimMuseumfürNaturkundecPabloCastagnola.jpg',
+                            imageName: 'NeuesCTimMuseumfuerNaturkundecPabloCastagnola.jpg',
                             alt: "Neues CT im Museum für Naturkunde (c) Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[16/9]"
@@ -62,7 +62,7 @@ const VisitPage = () => {
                 </Section>
                 <Section
                     backgroundColor="bg-white"
-                    columns={2}
+                    columns={1}
                     gapClass="gap-6"
                     layout="equal"
                 >
@@ -103,65 +103,7 @@ const VisitPage = () => {
                         </form>
                     </div>
 
-                    <div className="bg-Green-100 p-8 h-full flex">
-                        <form
-                            action="https://www.museumfuernaturkunde.berlin/de/wissenschaft/navigator"
-                            method="get"
-                            className="flex flex-col w-full"
-                        >
-                            <div className="flex flex-col h-full">
-                                <div className="flex-none">
-                                    <label
-                                        htmlFor="projects-search"
-                                        className="text-xl font-bold text-Black-900"
-                                    >
-                                        Arbeitsgruppen
-                                    </label>
-                                    <p className="text-sm text-Black-700 mt-2">
-                                        Nutzen Sie unseren Filter, um Themenspezifische Projekte anzeigen zu lassen
-                                    </p>
-                                </div>
-                                <div className="mt-auto flex flex-col md:flex-row gap-2">
-                                    <select
-                                        name="f[2]"
-                                        className="w-full p-3 border border-Black-300 rounded appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-Green-500"
-                                    >
-                                        <option value="">Alle Themen</option>
-                                        <optgroup label="Kernbegriffe">
-                                            <option value="topic:792">Forschung</option>
-                                            <option value="topic:794">Transfer</option>
-                                        </optgroup>
-                                        <optgroup label="Schlagwörter">
-                                            <option value="topic:796">Artenschutz</option>
-                                            <option value="topic:797">Artensterben</option>
-                                            <option value="topic:798">Biodiversität</option>
-                                            <option value="topic:799">Bürgerwissenschaften</option>
-                                            <option value="topic:800">Datenbank</option>
-                                            <option value="topic:802">Digitalisierung</option>
-                                            <option value="topic:803">Evolution</option>
-                                            <option value="topic:806">Genetik</option>
-                                            <option value="topic:821">Genomik</option>
-                                            <option value="topic:808">Gesellschaft</option>
-                                            <option value="topic:810">Kooperation</option>
-                                            <option value="topic:814">Politik</option>
-                                            <option value="topic:815">Sammlung</option>
-                                            <option value="topic:818">Wissenschaftsdatenmanagement</option>
-                                            <option value="topic:816">Wissenschaftskommunikation</option>
-                                            <option value="topic:817">Wissenstransfer</option>
-                                            <option value="topic:823">Öffnung des Museums</option>
-                                        </optgroup>
-
-                                    </select>
-                                    <button
-                                        type="submit"
-                                        className="px-6 py-2 bg-Green-500 text-white font-bold hover:bg-Green-600 transition-colors"
-                                    >
-                                        Suchen
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                   
                 </Section>
               
                 <Section backgroundColor="bg-Green-100" columns={1} padding="py-16">
@@ -180,7 +122,7 @@ const VisitPage = () => {
                             spacing: "wide",
                             buttons: [
                                 {
-                                    text: "Mehr über die Forschung am MfN",
+                                    text: "Mehr über die Forschung am Museum",
                                     url: "/de/forschung/forschung",
                                     variant: "plain"
                                 },
@@ -264,7 +206,7 @@ const VisitPage = () => {
 
                             headline: "Sammlung",
                             headlineStyle: "h3",
-                            body: "Unsere Sammlung bietet vielfältige Datenquellen für die Erforschung biologischer und geologischer Vielfalt.",
+                            body: "Die Sammlung umfasst Objekte aus der Zeit des Ursprungs des Sonnensystems vor mehr als 4,5 Milliarden Jahren bis heute und enthält eine große Anzahl von Erstbeschreibungen von Arten (Typusexemplare).",
                             spacing: "regular"
                         }}
                         url="/de/wissenschaft/infrastruktur/sammlung/"
