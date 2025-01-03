@@ -452,13 +452,13 @@ const IndexPage = () => {
           />
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
             <Button variant="primary" url="/en/contact/">
-              Ask Us a Question
+              Ask us a question
             </Button>
             <Button variant="primary" url="tel:+4930889140-8591">
-              Call Us
+              Call us
             </Button>
             <Button variant="primary" url="/en/visit/">
-              Visit Us at the Museum
+              Visit us at the Museum
             </Button>
           </div>
         </Section>

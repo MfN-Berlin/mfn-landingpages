@@ -211,46 +211,6 @@ const IndexPage = () => {
                         className="bg-Green-500"
                     />
                 </Section>
-                {/* <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
-
-
-
-                    <Card
-                        variant="classic"
-                        imageProps={{
-                            imageName: "fuchs_c_selina_schultze_mfn.jpg",
-                            alt: "Stadtnatur am Musuem für Naturkunde",
-                            imageMap: imageMap,
-                            className: "w-full h-auto object-cover"
-                        }}
-                        textProps={{
-                            headline: "Großstadtsafaris",
-                            body: "Erleben Sie Berlin als grünste und artenreichste Hauptstadt Europas! Auf einer stadtökologischen Führung rund um das Museum entdecken Sie die Tier- und Pflanzenvielfalt der Innenstadt und erfahren, wie sich diese an das Leben in der Großstadt anpasst. Der Fokus liegt dabei auf den sichtbaren Folgen des Klimawandels für Pflanzen, Tiere und Menschen in Berlin.",
-                            headlineStyle: "h3",
-                            alignment: "left"
-                        }}
-                        url="/de/museum/veranstaltungen/grossstadtsafari-stadtoekologie-und-klimawandel-5"
-                    />
-
-
-                    <Card
-                        variant="classic"
-                        imageProps={{
-                            imageName: "131031_taschenlampenfuehrung_halloween_21_c_carola-radke_mfn_0.jpg",
-                            alt: "Taschenlampenführung",
-                            imageMap: imageMap,
-                            className: "w-full h-auto object-cover"
-                        }}
-                        textProps={{
-                            headline: "Taschenlampenführungen",
-                            body: "Nachdem sich die Tore des Museums geschlossen haben, schleichen Sie im Licht Ihrer Taschenlampen durch die dunklen Museumsräume. Auf der Suche nach den unterschiedlichen Tieren der Nacht erkunden Sie die Ausstellungen des Museums.",
-                            headlineStyle: "h3",
-                            alignment: "left"
-                        }}
-                        url="/de/mitmachen/taschenlampenführungen"
-                    />
-
-                </Section> */}
                 <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-16">
                     <Card
                         variant="classic"
@@ -266,19 +226,19 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/science/naturblick-discovering-nature-city"
+                        url="/en/science/naturblick-discover-urban-nature"
                     />
                     <Card
                         variant="classic"
                         imageProps={{
                             imageName: "180622_Forschen_und_Feiern_37__(c)_Hwa Ja-Goetz_MfN.jpg",
-                            alt: "Children looking at objects in the museum's microscopy center. | Image source: Museum für Naturkunde Berlin",
+                            alt: "Children examining objects in the museum's microscopy center | Source: Museum für Naturkunde Berlin",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Experience Nature Through Art – Tour and Mask Making",
-                            body: "In the dinosaur hall, children get to know the over 13-meter-tall <em>Giraffatitan</em> and many other dinosaurs, like the carnivore <em>Allosaurus</em> or the spiky dinosaur <em>Kentrosaurus</em>.",
+                            headline: "Experience Nature Through Art – Guided Tour and Mask Making",
+                            body: "In the dinosaur hall, children get to know the over 13-meter-tall <em>Giraffatitan</em> and many other dinosaurs, such as the carnivorous <em>Allosaurus</em> or the spiky <em>Kentrosaurus</em>.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -295,13 +255,65 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Active Together",
-                            body: "Here you'll find offerings specifically designed for groups – from creative collaboration to joint activities that connect and inspire.",
+                            headline: "Mineralogy/Geology Special Interest Group",
+                            body: "The Mineralogy/Geology group at the Museum für Naturkunde is a loose association of hobby collectors and those interested in minerals and rocks, meeting every first Tuesday of the month (except August) for expert lectures. Guests are welcome to attend the lectures.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="en/museum/participate/citizen-science/special-interest-groups"
+                        url="/en/museum/participate/citizen-science/special-interest-groups"
                     />
+
+                    <Card
+                        variant="classic"
+                        imageProps={{
+                            imageName: "csm_Ruesselkaefer_697cb77b53.jpg",
+                            alt: "Weevil in Baltic amber, approx. 35 million years old, collection and photo by Michael Zwanzig",
+                            imageMap: imageMap,
+                            className: "w-full h-auto object-cover"
+                        }}
+                        textProps={{
+                            headline: "Kulturring in Berlin e.V. – Paleontology Group",
+                            body: "Every third Tuesday of the month, hobby collectors and those interested in paleontology meet at the Museum für Naturkunde for paleontological lectures with scientists from the museum, Free University, or Technical University. After the lecture, there's an opportunity to discuss with researchers and ask questions. Anyone interested in paleontology is warmly invited to these museum meetings.",
+                            headlineStyle: "h3",
+                            alignment: "left"
+                        }}
+                        url="/en/museum/participate/citizen-science/special-interest-groups"
+                    />
+
+                    <Card
+                        variant="classic"
+                        imageProps={{
+                            imageName: "160216_lepidoptera_kasten_05_c_hwaja-goetz_mfn.jpg",
+                            alt: "Photograph of an insect box with butterflies in different colors.",
+                            imageMap: imageMap,
+                            className: "w-full h-auto object-cover"
+                        }}
+                        textProps={{
+                            headline: "Entomological Society ORION Berlin",
+                            body: "The Entomological Society ORION Berlin aims to inspire particularly young people about the diversity of insects in our region. The protection of endangered insect species and their biotopes is also a central theme of their association work.",
+                            headlineStyle: "h3",
+                            alignment: "left"
+                        }}
+                        url="/en/museum/participate/citizen-science/special-interest-groups"
+                    />
+
+                    <Card
+                        variant="classic"
+                        imageProps={{
+                            imageName: "bild-2619.png",
+                            alt: "Photograph of a beetle on a leaf.",
+                            imageMap: imageMap,
+                            className: "w-full h-auto object-cover"
+                        }}
+                        textProps={{
+                            headline: "German Youth Association for Nature Observation",
+                            body: "The DJN group Brandenburg and Berlin consists of young people from Berlin and surrounding areas interested in natural history and politics. Located in one of Germany's most interesting regions for natural history (Schorfheide, Oder Valley, former military training grounds, Havel landscape), they meet to discover, observe, and learn about the rich flora and fauna together.",
+                            headlineStyle: "h3",
+                            alignment: "left"
+                        }}
+                        url="/en/museum/participate/citizen-science/special-interest-groups"
+                    />
+
 
                 </Section>
                 <Section columns={1} backgroundColor="bg-White" padding="pt-16">
@@ -379,9 +391,9 @@ const IndexPage = () => {
                         alignment="center"
                     />
                     <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary" url="/en/contact/">Ask Us a Question</Button>
-                        <Button variant="primary" url="tel:+4930889140-8591">Call Us</Button>
-                        <Button variant="primary" url="/en/visit/">Visit Us at the Museum</Button>
+                        <Button variant="primary" url="/en/contact/">Ask us a question</Button>
+                        <Button variant="primary" url="tel:+4930889140-8591">Call us</Button>
+                        <Button variant="primary" url="/en/visit/">Visit us at the Museum</Button>
                     </div>
 
                 </Section>
