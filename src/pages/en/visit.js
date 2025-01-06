@@ -114,7 +114,7 @@ const IndexPage = () => {
               </Link>
             </div>
           </div>
-          <Accordion bgColor="white">
+          <Accordion bgColor="white" id="öffnungszeiten">
 
             <OpenToday />
 
@@ -173,7 +173,7 @@ const IndexPage = () => {
             />
 
           </div>
-          <Accordion bgColor="green" defaultOpenIndex={0}>
+          <Accordion bgColor="green" defaultOpenIndex={0} id="tickets-preise">
             <AccordionItem title="Single Tickets">
               <div className="flex flex-col items-end justify-start w-full px-4 pb-4 gap-2.5">
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
@@ -456,7 +456,7 @@ const IndexPage = () => {
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
                 <ContentImage
                   imageName="150313_u-bahhof_14_c_carola-radke_mfn.jpg"
-                  alt="U-Bahnhof"
+                  alt="Naturkundemuseum subway station - Main entrance to U6 line"
                   imageMap={imageMap}
                   className="w-full h-full object-cover"
                   imgStyle={{
@@ -485,41 +485,41 @@ const IndexPage = () => {
             />
           </div>
 
-          <Accordion bgColor="white" defaultOpenIndex={0}>
+          <Accordion bgColor="white" id="visit-transport" defaultOpenIndex={0}>
             <AccordionItem title="By Bus & Train">
               <div className="p-5 font-bold">
                 <p>U-Naturkundemuseum (
-                  <TransportIcon iconId="bvg-u6" ariaLabel="U-Bahn Line 6" />
-                  <TransportIcon iconId="bvg-m5" ariaLabel="Tram Line M5" className="w-[26px]" />
-                  <TransportIcon iconId="bvg-m8" ariaLabel="Tram Line M8" className="w-[26px]" />
-                  <TransportIcon iconId="bvg-m10" ariaLabel="Tram Line M10" className="w-[33px]" />
-                  <TransportIcon iconId="bvg-m12" ariaLabel="Tram Line M12" className="w-[33px]" />
-                  <TransportIcon iconId="bvg-bus" ariaLabel="Bus Lines" className="h-[24px] w-[20px]" />
+                  <TransportIcon iconId="bvg-u6" ariaLabel="Subway symbol U6" />
+                  <TransportIcon iconId="bvg-m5" ariaLabel="Tram symbol M5" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m8" ariaLabel="Tram symbol M8" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m10" ariaLabel="Tram symbol M10" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-m12" ariaLabel="Tram symbol M12" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Bus symbol for lines 245 and N40" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 245 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />300m Footpath</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />300m Footpath</span></p>
                 <br />
 
                 <p>S-Hauptbahnhof (
-                  <TransportIcon iconId="bvg-s5" ariaLabel="S-Bahn Line 5" className="w-[28px]" />
-                  <TransportIcon iconId="bvg-s7" ariaLabel="S-Bahn Line 7" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s5" ariaLabel="S-Bahn symbol S5" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s7" ariaLabel="S-Bahn symbol S7" className="w-[28px]" />
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />1.300m Footpath</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />1.300m Footpath</span></p>
                 <br />
 
                 <p>S-Nordbahnhof (
-                  <TransportIcon iconId="bvg-s1" ariaLabel="S-Bahnlinie 1" className="w-[28px]" />
-                  <TransportIcon iconId="bvg-s2" ariaLabel="S-Bahnlinie 2" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s1" ariaLabel="S-Bahn symbol S1" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s2" ariaLabel="S-Bahn symbol S2" className="w-[28px]" />
                   
                   )<span className="font-italic text-Black-500">
-                  <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />900m Footpath</span></p>
+                  <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />900m Footpath</span></p>
                 <br />
 
                 <p>Invalidenpark (
-                  <TransportIcon iconId="bvg-bus" ariaLabel="Buslinien" className="h-[24px] w-[20px]" />
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Bus symbol for lines 120, 123, 142, 245, N20 and N40" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 120 123 142 245 N20 N40 </span>
                   )<span className="font-italic text-Black-500">
-                  <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />300m Footpath</span></p>
+                  <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />300m Footpath</span></p>
                 <br />
               </div>
             </AccordionItem>
@@ -604,7 +604,7 @@ const IndexPage = () => {
               title="Future Plan"
               kicker="Our Exhibitions"
               link="/en/museum/exhibitions/future-plan"
-              altText="Future Plan"
+              altText="Visualization of the future plan for the Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="1200x800_0.jpg"
@@ -740,7 +740,7 @@ const IndexPage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "151216_saal_1_picnic-area_28_c_hwaja-goetz-mfn.jpg",
-                  alt: "Cloakroom",
+                  alt: "Cloakroom and picnic area in Hall 1 of the museum",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -758,7 +758,7 @@ const IndexPage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "230713-Museumscafe_15_web__(c)_Hwa_Ja-Götz.jpg",
-                  alt: "Cafeteria",
+                  alt: "Interior view of the museum café with seating area",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -822,7 +822,7 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "160222_Schueler_Fuehrung_System_Erde_07__(c)_Hwa-Ja_Goetz_MfN.jpg",
-              alt: "Students discovering objects in the exhibition cases. | Image source: Museum für Naturkunde Berlin",
+              alt: "School class during a guided tour with the excavation box",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
@@ -867,7 +867,7 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "171030_naturkunde_356_(c)_Thomas_Rosenthal.jpg",
-              alt: "Another Image",
+              alt: "Exhibition area in the Museum für Naturkunde Berlin",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
@@ -896,7 +896,7 @@ const IndexPage = () => {
             ]}
           />
 
-          <Accordion bgColor="green">
+          <Accordion bgColor="green" id="faq">
             <AccordionItem title="Where can I get tickets?">
               <div className="p-5">
                 <p>
