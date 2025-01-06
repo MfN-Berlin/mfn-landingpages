@@ -106,8 +106,13 @@ const MainNavItem = ({ section, isActive, onMouseEnter, currentPath }) => {
 const SearchForm = () => (
   <div className="" role="search">
     <input type="checkbox" id="mfn-search-field" className="peer hidden" />
-    <label htmlFor="mfn-search-field" className="cursor-pointer">
-      <span className="font-icomoon text-[min(5.8vw,2em)] block h-[24px] leading-[0.7]"></span>
+    <label 
+      htmlFor="mfn-search-field" 
+      className="cursor-pointer"
+      role="button"
+      aria-label="Suchfeld ein-/ausblenden"
+    >
+      <span className="font-icomoon text-[min(5.8vw,2em)] block h-[24px] leading-[0.7]" role="presentation"></span>
     </label>
     <div className="hidden peer-checked:block absolute left-0 right-0 top-full bg-white py-16 text-center z-[199] height-[42px]">
       <form action="/de/search" method="get" id="views-exposed-form-mfn-search-page-1" acceptCharset="UTF-8" className="inline-block">
@@ -252,7 +257,7 @@ const Header = ({ activeNavItem, location }) => {
                 <Link to="/" className="block outline-none text-[#7da30b] bg-white transition duration-3000">
                   <img
                     src={getAssetPath('/images/logo.svg')}
-                    alt="Museum für Naturkunde Berlin"
+                    alt="Museum für Naturkunde Berlin Logo" 
                     className="block z-[var(--z-index-logo)] bg-[var(--color-background-logo)] px-[0.7em] h-[84px] m-0 sm:sticky sm:top-0 sm:h-[var(--height-branding-logo)]"
                   />
                 </Link>
@@ -271,9 +276,8 @@ const Header = ({ activeNavItem, location }) => {
       >
         <div
           className="navigation-wrapper"
+          role="navigation"
           onMouseLeave={() => setActiveSubmenu(null)}
-          role="menubar"
-          tabIndex={0}
         >
           <div className="max-w-[1165px] mx-auto md:pl-[156px] pr-3">
             <div className="flex items-center justify-between h-auto py-[7px] md:px-0 pr-[12px]">

@@ -9,15 +9,16 @@ const AccordionCloseButton = ({ isOpen }) => (
   </span>
 );
 
-export const Accordion = ({ children, bgColor = 'white', defaultOpenIndex = null }) => {
+export const Accordion = ({ children, bgColor = 'white', defaultOpenIndex = null, id }) => {
   const [activeIndex, setActiveIndex] = useState(defaultOpenIndex);
+  const accordionId = id || `accordion-${Math.random().toString(36).substr(2, 9)}`;
 
   const handleIndexChange = (newIndex) => {
     setActiveIndex(newIndex);
   };
 
   return (
-    <AccordionContext.Provider value={{ activeIndex, handleIndexChange, bgColor }}>
+    <AccordionContext.Provider value={{ activeIndex, handleIndexChange, bgColor, accordionId }}>
       <div className="w-full">
         {React.Children.map(children, (child, index) =>
           React.cloneElement(child, { index })
@@ -28,15 +29,15 @@ export const Accordion = ({ children, bgColor = 'white', defaultOpenIndex = null
 };
 
 export const AccordionItem = ({ children, title, index }) => {
-  const { activeIndex, handleIndexChange, bgColor } = useContext(AccordionContext);
+  const { activeIndex, handleIndexChange, bgColor, accordionId } = useContext(AccordionContext);
   const isOpen = activeIndex === index;
+
+  const itemId = `${accordionId}-item-${index}`;
+  const headingId = `${accordionId}-heading-${index}`;
 
   const toggleItem = () => {
     handleIndexChange(isOpen ? null : index);
   };
-
-  const itemId = `accordion-item-${index}`;
-  const headingId = `accordion-heading-${index}`;
 
   return (
     <div className="mb-4">

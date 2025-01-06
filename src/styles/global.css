@@ -31,13 +31,13 @@
   a {
     outline: none;
     text-decoration: none;
-    color: #7da30b;
+    color: theme('colors.Green.500');
     transition: 0.3s;
   }
 
   a:hover {
     text-decoration: none;
-    color: #91bd0d;
+    color: theme('colors.Green.700');
   }
 
   .custom-swiper {

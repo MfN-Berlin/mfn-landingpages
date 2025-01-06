@@ -115,7 +115,7 @@ const IndexPage = () => {
               />
             </div>
           </div>
-          <Accordion bgColor="white">
+          <Accordion bgColor="white" id="öffnungszeiten">
 
             <OpenToday />
 
@@ -179,7 +179,7 @@ const IndexPage = () => {
             />
 
           </div>
-          <Accordion bgColor="green" defaultOpenIndex={0}>
+          <Accordion bgColor="green" defaultOpenIndex={0} id="tickets-preise">
             <AccordionItem title="Einzeltickets">
               <div className="flex flex-col items-end justify-start w-full px-4 pb-4 gap-2.5">
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
@@ -462,7 +462,7 @@ const IndexPage = () => {
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
                 <ContentImage
                   imageName="150313_u-bahhof_14_c_carola-radke_mfn.jpg"
-                  alt="U-Bahnhof"
+                  alt="U-Bahnhof Naturkundemuseum - Haupteingang zur U6"
                   imageMap={imageMap}
                   className="w-full h-full object-cover"
                   imgStyle={{
@@ -491,40 +491,40 @@ const IndexPage = () => {
             />
           </div>
 
-          <Accordion bgColor="white" defaultOpenIndex={0}>
+          <Accordion bgColor="white" defaultOpenIndex={0} id="anreise">
             <AccordionItem title="Mit Bus & Bahn">
               <div className="p-5 font-bold">
                 <p>U-Naturkundemuseum (
-                  <TransportIcon iconId="bvg-u6" ariaLabel="U-Bahnlinie 6" />
-                  <TransportIcon iconId="bvg-m5" ariaLabel="Tramlinie M5" className="w-[26px]" />
-                  <TransportIcon iconId="bvg-m8" ariaLabel="Tramlinie M8" className="w-[26px]" />
-                  <TransportIcon iconId="bvg-m10" ariaLabel="Tramlinie M10" className="w-[33px]" />
-                  <TransportIcon iconId="bvg-m12" ariaLabel="Tramlinie M12" className="w-[33px]" />
-                  <TransportIcon iconId="bvg-bus" ariaLabel="Buslinien" className="h-[24px] w-[20px]" />
+                  <TransportIcon iconId="bvg-u6" ariaLabel="U-Bahn Symbol U6" />
+                  <TransportIcon iconId="bvg-m5" ariaLabel="Straßenbahn Symbol M5" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m8" ariaLabel="Straßenbahn Symbol M8" className="w-[26px]" />
+                  <TransportIcon iconId="bvg-m10" ariaLabel="Straßenbahn Symbol M10" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-m12" ariaLabel="Straßenbahn Symbol M12" className="w-[33px]" />
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Bus Symbol für Linien 245 und N40" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 245 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />300m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Fußweg Symbol" className="h-[18px] mt-[-4px] opacity-50" />300m Fußweg</span></p>
                 <br />
 
                 <p>S-Hauptbahnhof (
-                  <TransportIcon iconId="bvg-s5" ariaLabel="S-Bahnlinie 5" className="w-[28px]" />
-                  <TransportIcon iconId="bvg-s7" ariaLabel="S-Bahnlinie 7" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s5" ariaLabel="S-Bahn Symbol S5" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s7" ariaLabel="S-Bahn Symbol S7" className="w-[28px]" />
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] mt-[-4px] opacity-50" />1.300m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Fußweg Symbol" className="h-[18px] mt-[-4px] opacity-50" />1.300m Fußweg</span></p>
                 <br />
 
                 <p>S-Nordbahnhof (
-                  <TransportIcon iconId="bvg-s1" ariaLabel="S-Bahnlinie 1" className="w-[28px]" />
-                  <TransportIcon iconId="bvg-s2" ariaLabel="S-Bahnlinie 2" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s1" ariaLabel="S-Bahn Symbol S1" className="w-[28px]" />
+                  <TransportIcon iconId="bvg-s2" ariaLabel="S-Bahn Symbol S2" className="w-[28px]" />
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />900m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Fußweg Symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />900m Fußweg</span></p>
                 <br />
 
                 <p>Invalidenpark (
-                  <TransportIcon iconId="bvg-bus" ariaLabel="Buslinien" className="h-[24px] w-[20px]" />
+                  <TransportIcon iconId="bvg-bus" ariaLabel="Bus Symbol für Linien 120, 123, 142, 245, N20 und N40" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 120 123 142 245 N20 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />300m Fußweg</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Fußweg Symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />300m Fußweg</span></p>
                 <br />
               </div>
             </AccordionItem>
@@ -553,7 +553,7 @@ const IndexPage = () => {
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
                             <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ecba0e90d1:0xab7167f4ea5dd8b9!8m2!3d52.5306377!4d13.3814623" className="underline" target="_blank" rel="noopener noreferrer">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
-                              <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />200m Fußweg</span>
+                              <TransportIcon iconId="person-walking" ariaLabel="Fußweg Symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />200m Fußweg</span>
                           </p>
                         </div>
                       </li>
@@ -561,7 +561,7 @@ const IndexPage = () => {
                         <div className="flex justify-between items-baseline">
                           <p className="flex-1 pr-8">
                             <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ec7dc000d7:0x506c4690a67db5eb!8m2!3d52.5295898!4d13.3840763" className="underline" target="_blank" rel="noopener noreferrer">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, kostenpflichtig, <span className="font-italic text-Black-500">
-                              <TransportIcon iconId="person-walking" ariaLabel="Person Walking" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />350m Fußweg</span>
+                              <TransportIcon iconId="person-walking" ariaLabel="Fußweg Symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />350m Fußweg</span>
                           </p>
                         </div>
                       </li>
@@ -605,7 +605,7 @@ const IndexPage = () => {
               title="Zukunftsplan"
               kicker="Unsere Ausstellungen"
               link="/de/museum/ausstellungen/zukunftsplan"
-              altText="Zukunftsplan"
+              altText="Visualisierung des Zukunftsplans für das Museum für Naturkunde Berlin"
             />
             <SlideContent
               imageName="1200x800_0.jpg"
@@ -742,7 +742,7 @@ const IndexPage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "151216_saal_1_picnic-area_28_c_hwaja-goetz-mfn.jpg",
-                  alt: "Garderobe",
+                  alt: "Garderobe und Picknickbereich im Saal 1 des Museums",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -760,7 +760,7 @@ const IndexPage = () => {
                 variant="classic"
                 imageProps={{
                   imageName: "230713-Museumscafe_15_web__(c)_Hwa_Ja-Götz.jpg",
-                  alt: "Cafeteria",
+                  alt: "Innenansicht des Museumscafés mit Sitzgelegenheiten",
                   imageMap: imageMap,
                   className: "w-full h-auto object-cover"
                 }}
@@ -822,7 +822,7 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "160222_Schueler_Fuehrung_System_Erde_07__(c)_Hwa-Ja_Goetz_MfN.jpg",
-              alt: "Schülerinnen und Schüler entdecken Objekte in den Ausstellungsvitrinen. | Bildquelle: Museum für Naturkunde Berlin",
+              alt: "Schulklasse bei einer Führung mit der Grabungskiste",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
@@ -867,7 +867,7 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "171030_naturkunde_356_(c)_Thomas_Rosenthal.jpg",
-              alt: "Another Image",
+              alt: "Ausstellungsbereich im Museum für Naturkunde Berlin",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
@@ -898,7 +898,7 @@ const IndexPage = () => {
           />
 
 
-          <Accordion bgColor="green">
+          <Accordion bgColor="green" id="faq">
             <AccordionItem title="Wo erhalte ich die Tickets?">
               <div className="p-5">
                 <p>
