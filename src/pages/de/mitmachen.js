@@ -259,7 +259,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Fachgruppe Mineralogie/Geologie",
-                            body: "Die Fachgruppe Mineralogie/Geologie am Museum für Naturkunde ist ein loser Zusammenschluss von Hobbysammler:innen und Interessierten für Mineralien und Gesteine, die sich jeden ersten Dienstag im Monat (außer im August) zu einem Fachvortrag trifft. Gäste sind zu den Vorträgen willkommen.",
+                            body: "Die Fachgruppe Mineralogie/Geologie am Museum für Naturkunde ist ein offener Zusammenschluss von Hobbysammler:innen und Interessierten, die eine Leidenschaft für Mineralien und Gesteine teilen. Jeden ersten Dienstag im Monat (außer im August) treffen sie sich zu spannenden Fachvorträgen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -276,7 +276,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Kulturring in Berlin e.V. – Fachgruppe Paläontologie",
-                            body: "Jeden dritten Dienstag im Monat treffen sich Hobbysammler:innen und an Paläontologie interessierte Besuchende im Museum für Naturkunde für paläontologische Fachvorträge mit Wissenschaftler:innen des Museums, der Freien Universität oder der Technischen Universität. Nach dem Vortrag gibt es die Möglichkeit, mit den Forschenden zu diskutieren und eigene Fragen zu stellen. Alle, die sich für Paläontologie interessieren, sind herzlich zu den Museumstreffs eingeladen.",
+                            body: "Jeden dritten Dienstag im Monat lädt das Museum für Naturkunde Hobbysammler:innen und alle an Paläontologie Interessierten zu spannenden Fachvorträgen ein. Wissenschaftler:innen des Museums, der Freien Universität oder der Technischen Universität präsentieren aktuelle Forschungsthemen. Im Anschluss besteht die Möglichkeit, mit den Forschenden ins Gespräch zu kommen, Fragen zu stellen und zu diskutieren.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -293,7 +293,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Entomologische Gesellschaft ORION Berlin ",
-                            body: "Die Entomologische Gesellschaft ORION Berlin möchte insbesondere junge Menschen für die Artenvielfalt der Insekten in unserer Region begeistern. Auch der Schutz bedrohter Insektenarten und ihrer Biotope ist ein zentrales Thema ihrer Vereinsarbeit",
+                            body: "Die Gesellschaft begeistert junge Menschen für die regionale Insektenvielfalt und setzt sich für den Schutz bedrohter Arten sowie ihrer Lebensräume ein. Mit Bildungsangeboten und Naturschutzprojekten trägt sie aktiv zur Erhaltung der Biodiversität bei.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -310,7 +310,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Deutscher Jugendbund für Naturbeobachtung",
-                            body: "Die DJN-Gruppe Brandenburg und Berlin sind naturkundlich und politisch interessierte junge Leute aus Berlin und Umgebung. Mitten in einer der naturkundlich interessantesten Gegenden Deutschlands (Schorfheide, Odertal, ehem. Truppenübungsplätze, Havellandschaft) treffen sie sich, um gemeinsam die artenreiche Flora und Fauna zu entdecken, zu beobachten und kennenzulernen.",
+                            body: "Die DJN-Gruppe Brandenburg und Berlin besteht aus naturkundlich und politisch interessierten jungen Menschen aus Berlin und Umgebung. Gemeinsam erkunden sie einige der artenreichsten und spannendsten Naturgebiete Deutschlands – darunter die Schorfheide, das Odertal, ehemalige Truppenübungsplätze und die Havellandschaft.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -335,8 +335,8 @@ const IndexPage = () => {
                             imageMap: imageMap
                         }}
                         textProps={{
-                            headline: "Citizen Science/ Bürgerforschung",
-                            body: "Unterstützen Sie die Arbeit von Wissenschaftler:innen und schaffen so neues Wissen. Werden Sie Teil des Forschungsprozesses und gestalten Sie ihn, je nach Art der Beteiligung, aktiv mit, stillen Sie ihre eigene Neugier – und vor allem haben viel Spaß beim Mitforschen!",
+                            headline: "Citizen Science / Bürgerforschung",
+                            body: "Unterstützen Sie Wissenschaftler:innen bei ihrer Arbeit und tragen Sie zur Entstehung neuen Wissens bei. Je nach Art Ihrer Beteiligung können Sie den Forschungsprozess aktiv mitgestalten, Ihre Neugier stillen und dabei vor allem eines: viel Freude am Mitforschen erleben!",
                             headlineStyle: "h3"
                         }}
                         buttonProps={{

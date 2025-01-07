@@ -256,7 +256,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Mineralogy/Geology Special Interest Group",
-                            body: "The Mineralogy/Geology group at the Museum für Naturkunde is a loose association of hobby collectors and those interested in minerals and rocks, meeting every first Tuesday of the month (except August) for expert lectures. Guests are welcome to attend the lectures.",
+                            body: "The Mineralogy/Geology Group at the Museum für Naturkunde is an open association of hobby collectors and enthusiasts who share a passion for minerals and rocks. They meet for fascinating specialist lectures on the first Tuesday of every month (except August).",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -273,7 +273,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Kulturring in Berlin e.V. – Paleontology Group",
-                            body: "Every third Tuesday of the month, hobby collectors and those interested in paleontology meet at the Museum für Naturkunde for paleontological lectures with scientists from the museum, Free University, or Technical University. After the lecture, there's an opportunity to discuss with researchers and ask questions. Anyone interested in paleontology is warmly invited to these museum meetings.",
+                            body: "Every third Tuesday of the month, the Museum für Naturkunde invites hobby collectors and anyone interested in paleontology to engaging specialist lectures. Scientists from the museum, Free University, or Technical University present current research topics. Afterwards, there are opportunities to engage with the researchers, ask questions, and participate in discussions.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -290,7 +290,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Entomological Society ORION Berlin",
-                            body: "The Entomological Society ORION Berlin aims to inspire particularly young people about the diversity of insects in our region. The protection of endangered insect species and their biotopes is also a central theme of their association work.",
+                            body: "The society inspires young people to appreciate regional insect diversity and is committed to protecting endangered species and their habitats. Through educational programs and nature conservation projects, they actively contribute to preserving biodiversity.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -307,7 +307,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "German Youth Association for Nature Observation",
-                            body: "The DJN group Brandenburg and Berlin consists of young people from Berlin and surrounding areas interested in natural history and politics. Located in one of Germany's most interesting regions for natural history (Schorfheide, Oder Valley, former military training grounds, Havel landscape), they meet to discover, observe, and learn about the rich flora and fauna together.",
+                            body: "The DJN group Brandenburg and Berlin consists of young people from Berlin and surrounding areas who are interested in natural history and politics. Together, they explore some of Germany's most species-rich and exciting natural areas – including the Schorfheide, the Oder Valley, former military training grounds, and the Havel landscape.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -333,7 +333,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Citizen Science",
-                            body: "Support the work of scientists and help create new knowledge. Become part of the research process and, depending on the type of participation, actively shape it, satisfy your own curiosity – and above all, have fun while doing research!",
+                            body: "Support scientists in their work and contribute to the creation of new knowledge. Depending on how you choose to participate, you can actively shape the research process, satisfy your curiosity, and above all: experience the joy of being part of research!",
                             headlineStyle: "h3"
                         }}
                         buttonProps={{
