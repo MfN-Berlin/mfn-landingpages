@@ -138,7 +138,7 @@ const VisitPage = () => {
                         className="max-w-7xl mx-auto"
                     />
                 </Section>
-                <Section backgroundColor="bg-Green-100" columns={3} padding="py-16">
+                <Section backgroundColor="bg-Green-100" columns={3} padding="py-16" >
                     <Card
                         variant="green"
                         imageProps={{
@@ -223,7 +223,7 @@ const VisitPage = () => {
                         textProps={{
                             headline: "Archiv",
                             headlineStyle: "h3",
-                            body: "Historische Dokumente und Forschung-sergebnisse stehen als wertvolle Ressourcen für Studien bereit.",
+                            body: "Historische Dokumente und Forschungsergebnisse stehen als wertvolle Ressourcen für Studien bereit.",
                             spacing: "regular"
                         }}
                         url="/de/wissenschaft/archiv"
@@ -241,7 +241,7 @@ const VisitPage = () => {
                         textProps={{
                             headline: "Bibliotheken",
                             headlineStyle: "h3",
-                            body: "Naturwissenschaftliche und historische Bestände unterstützen Forschung, Lehre und Wissensvermittlung.",
+                            body: "Nutzen sie unsere naturwissenschaftlichen und historischen Bestände zur Unterstützung von Forschung, Lehre und Wissensvermittlung.",
                             spacing: "regular"
                         }}
                         url="de/wissenschaft/bibliothek/"
@@ -362,7 +362,7 @@ const VisitPage = () => {
                             imageName="Website_Palaeobotanik_aktualisiert.jpg"
                             altText="Blick auf die Sammlung der Paläobotanik. Foto: Carola Radke"
                             kicker="Forschungsbereich 1"
-                            title="AG Paläobotanik"
+                            title="Arbeitsgruppe Paläobotanik"
                             text="Die AG Paläobotanik erforscht die Evolution und Diversität fossiler Pflanzen. Unser Fokus liegt auf der Rekonstruktion von ausgestorbenen Pflanzen und ihrer Lebensräume."
                             link="/de/wissenschaft/ag-palaeobotanik"
                         />
@@ -370,7 +370,7 @@ const VisitPage = () => {
                             imageName="Ortholasmatinae fossil Jonas Damzen.jpg"
                             altText="Ausgestorbener Weberknecht in ukrainischem Rovno Bernstein "
                             kicker="Forschungsbereich 1"
-                            title="AG Dunlop"
+                            title="Arbeitsgruppe Dunlop"
                             text="Die AG Dunlop untersucht die Evolution und Systematik fossiler und rezenter Spinnentiere, mit besonderem Schwerpunkt auf Skorpionen und Spinnen."
                             link="/de/wissenschaft/ag-dunlop"
                         />

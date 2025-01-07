@@ -53,7 +53,7 @@ const Card = ({
       {variant === 'classic' ? (
         cardContent
       ) : (
-        <div className={`self-stretch flex-col justify-center ${alignment === 'left' ? 'items-start' : 'items-center'} flex`}>
+        <div className={`self-stretch flex-col bg-White-White justify-center ${alignment === 'left' ? 'items-start' : 'items-center'} flex`}>
           {cardContent}
         </div>
       )}
