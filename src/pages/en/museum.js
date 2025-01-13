@@ -86,18 +86,39 @@ const IndexPage = () => {
               className: "aspect-[16/9] dada"
             }}
             textProps={{
-              kicker: "What Inspires Us",
               headline: "A House for Nature and Society",
-              body: `"For us, it's about being a place of encounter, dialogue, and democracy. Constant change is part of our DNA. We are the museum of the future." – Prof. Johannes Vogel, PhD, Director General`,
+              body: `
+      <div class="text-sm">
+        <div id="shortText">
+          The Museum für Naturkunde Berlin of the future will be open, integrated and strong in research, a role model for research museums worldwide. Our script on the way there is our future plan.
+        </div>
+        <div id="fullText" style="display: none">
+          The Museum für Naturkunde Berlin of the future will be open, integrated and strong in research, a role model for research museums worldwide. Our script on the way there is our future plan.<br/><br/>
+          Upon completion of this future plan, the entire building will be structurally renovated and made fit for the future. We will open the museum even further to society than before, not only with new and innovative exhibitions but also through the complete development of our collection, which will be digitally accessible worldwide. Of course, we want to further expand our position as one of the most visited museums in Berlin. – <i>Prof. Johannes Vogel, PhD, Director General</i> & <i>Stephan Junker, Managing Director of the Museum</i>
+        </div>
+        <button 
+          onclick="
+            const shortText = document.getElementById('shortText');
+            const fullText = document.getElementById('fullText');
+            const btn = this;
+            if (fullText.style.display === 'none') {
+              shortText.style.display = 'none';
+              fullText.style.display = 'block';
+              btn.textContent = 'Show less';
+            } else {
+              shortText.style.display = 'block';
+              fullText.style.display = 'none';
+              btn.textContent = 'Read more';
+            }
+          "
+          class="mt-4 text-Green-500 hover:text-Green-600 text-sm font-medium focus:outline-none"
+        >
+          Read more
+        </button>
+      </div>
+    `,
               headlineStyle: "h4",
               spacing: "normal",
-              buttons: [
-                {
-                  text: "More about our future",
-                  variant: "plain",
-                  url: "en/future/join-our-museum-evolution/"
-                },
-              ]
             }}
             textStyle="box-white"
             textPosition="bottom-left"
@@ -395,7 +416,7 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Jana Hoffmann und Christiane Quaiser in digitize (c) Pablo Castagnola.jpg",
+              imageName: "PCastagnola_MfN_Einzelportraits_06-2.jpg",
               alt: "Jana Hoffmann and Christiane Quaiser sitting in front of a wall of insect boxes in the special digitize! exhibition",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
