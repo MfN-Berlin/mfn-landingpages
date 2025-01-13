@@ -95,7 +95,7 @@ const IndexPage = () => {
                         variant="classic"
                         alignment="center"
                         imageProps={{
-                            imageName: "Key visual_NaturderDinge_ohneLogo_klein.jpg",
+                            imageName: "naturderdinge2.png",
                             alt: "Object collage from collection objects of Nature of Things",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
@@ -124,7 +124,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Help the Archive",
-                            body: "Help the museum's historical department make historical documents readable and usable for research again. Knowledge of old German scripts like Kurrent or Sütterlin is required.",
+                            body: "Help us develop our collection and actively contribute to the creation of new knowledge. Along the way, you'll gain experience in museum work, database management, and research.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -273,7 +273,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Kulturring in Berlin e.V. – Paleontology Group",
-                            body: "Every third Tuesday of the month, the Museum für Naturkunde invites hobby collectors and anyone interested in paleontology to engaging specialist lectures. Scientists from the museum, Free University, or Technical University present current research topics. Afterwards, there are opportunities to engage with the researchers, ask questions, and participate in discussions.",
+                            body: "Every third Tuesday of the month, we invite hobby collectors and anyone interested in paleontology to engaging specialist lectures. Afterwards, there are opportunities to engage with the researchers, ask questions, and participate in discussions.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}

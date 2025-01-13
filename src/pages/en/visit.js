@@ -160,8 +160,7 @@ const IndexPage = () => {
               headline="Tickets & Prices"
               headlineStyle="h1"
               body={`Tickets can be purchased at the Museum or in the <a href="/tickets/online-shop" className="underline" target="_blank" rel="noopener noreferrer">Online Shop</a>. 
-                We recommend booking <a href="/tickets/zeitfenster" className="underline" target="_blank" rel="noopener noreferrer">Online-Zeitfenstertickets</a> 
-              beforehand to avoid waiting at the ticket counter.`}
+                We recommend booking Online-Zeitfenstertickets beforehand to avoid waiting at the ticket counter.`}
               spacing="wide"
               alignment="center"
               buttons={[
@@ -787,23 +786,7 @@ const IndexPage = () => {
                 url="/en/museum/plan-your-visit/digital-guide"
               />
             </div>
-            <div className="sm:col-span-1 lg:col-span-1">
-              <Card
-                variant="classic"
-                imageProps={{
-                  imageName: "299980239_448016240677212_6197202936618778314_n.jpg",
-                  alt: "Books filling the shelves in the museum shop. Credits: Humboldt-Innovation GmbH",
-                  imageMap: imageMap,
-                  className: "w-full h-auto object-cover"
-                }}
-                textProps={{
-                  headline: "Museum Shop",
-                  headlineStyle: "h3",
-                  spacing: "wide"
-                }}
-                url="https://www.naturkundemuseum-shop.de"
-              />
-            </div>
+            
           </div>
         </Section>
 

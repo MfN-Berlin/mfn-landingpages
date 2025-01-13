@@ -97,7 +97,7 @@ const IndexPage = () => {
                         variant="classic"
                         alignment="center"
                         imageProps={{
-                            imageName: "Digamus_final2.jpg",
+                            imageName: "naturderdinge2.png",
                             alt: "Objektcollage aus Sammlungsobjekten von Natur der Dinge",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
@@ -144,7 +144,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Ehrenamtliches Engagement",
-                            body: "Helfen Sie bei der Erschließung unserer Sammlung und tragen Sie aktiv zur Entwicklung neuen Wissens bei. Dabei sammeln Sie unter anderem Erfahrungen in der Museumsarbeit, Datenbankerfassung und Forschung. Lesen Sie hier mehr über Ihre möglichen Aufgabenbereiche.",
+                            body: "Helfen Sie bei der Erschließung unserer Sammlung und tragen Sie aktiv zur Entwicklung neuen Wissens bei. Dabei sammeln Sie unter anderem Erfahrungen in der Museumsarbeit, Datenbankerfassung und Forschung.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -259,7 +259,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Fachgruppe Mineralogie/Geologie",
-                            body: "Die Fachgruppe Mineralogie/Geologie am Museum für Naturkunde ist ein offener Zusammenschluss von Hobbysammler:innen und Interessierten, die eine Leidenschaft für Mineralien und Gesteine teilen. Jeden ersten Dienstag im Monat (außer im August) treffen sie sich zu spannenden Fachvorträgen.",
+                            body: "Die Fachgruppe Mineralogie/Geologie ist ein offener Zusammenschluss von Hobbysammler:innen und Interessierten, die eine Leidenschaft für Mineralien und Gesteine teilen. Jeden ersten Dienstag im Monat (außer im August) treffen sie sich zu spannenden Fachvorträgen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -276,7 +276,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Kulturring in Berlin e.V. – Fachgruppe Paläontologie",
-                            body: "Jeden dritten Dienstag im Monat lädt das Museum für Naturkunde Hobbysammler:innen und alle an Paläontologie Interessierten zu spannenden Fachvorträgen ein. Wissenschaftler:innen des Museums, der Freien Universität oder der Technischen Universität präsentieren aktuelle Forschungsthemen. Im Anschluss besteht die Möglichkeit, mit den Forschenden ins Gespräch zu kommen, Fragen zu stellen und zu diskutieren.",
+                            body: "Jeden dritten Dienstag im Monat lädt die Fachgruppe Hobbysammler:innen und alle an Paläontologie Interessierten zu spannenden Fachvorträgen ein. Im Anschluss besteht die Möglichkeit, mit den Forschenden ins Gespräch zu kommen, Fragen zu stellen und zu diskutieren.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}

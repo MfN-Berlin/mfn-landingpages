@@ -187,35 +187,35 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Museums-Evolution 3 (c) Pablo Castagnola.jpg",
-              alt: "Christiane Quaisser and Jana Hoffmann at the mass digitization station in the special exhibition digitize!",
+              imageName: "Hamann_Luther_FuerNaturJournal.jpg",
+              alt: "Hamann_Luther_Für Natur Journal",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "The Museum’s Evolution on YouTube",
+              headline: "Research on the Ribbeck Meteorite",
               headlineStyle: "h3",
-              body: "Read our annual report here, which provides an easy-to-understand overview of the Museum für Naturkunde Berlin’s activities in the past year.",
+              body: "The meteorite fall in Ribbeck in January 2024 caused a sensation. Experts are examining the aubrite rock and leading an international research consortium. Initial analyses suggest a possible connection to Earth and building blocks of life.",
               spacing: "wide"
             }}
-            url="en/future/join-our-museum-evolution/"
+            url="en/visit-a-distant-relative"
           />
 
           <Card
             variant="classic"
             imageProps={{
-              imageName: "naturderdinge.png",
-              alt: "naturderdinge logo",
+              imageName: "diversityscanner-vielfalt-erhalten.jpg",
+              alt: "Researchers at the DiversityScanner of the Center for Integrative Biodiversity Discovery",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Nature of Things: A Participatory Collection of the Anthropocene",
+              headline: "Species Discovery Factory",
               headlineStyle: "h3",
-              body: "In this collection experiment, we analyze both humanity’s planetary impact as a geological factor and its entanglement in the Earth system.",
+              body: "The Museum für Naturkunde Berlin uses the innovative DiversityScanner to efficiently capture insect diversity. Using state-of-the-art technology, thousands of samples can be analyzed and systematically classified in a short time. In this way, the \"Species Discovery Factory\" contributes to the research and conservation of biological diversity.",
               spacing: "wide"
             }}
-            url="en/science/changing-natures.-collecting-anthropocene-together/"
+            url="en/species-discovery-factory"
           />
           <Card
             variant="classic"
@@ -237,35 +237,19 @@ const IndexPage = () => {
             variant="classic"
             alignment="left"
             imageProps={{
-              imageName: "TR1C6470.jpg",
-              alt: "People standing in front of the visualized network of Anthropocene objects",
+              imageName: "2022_c_IsabelAlvarez_2021_c_AlenaSchmick_TheMuseumsLab.jpeg",
+              alt: "TheMuseumsLab",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Knowledge Connects",
+              headline: "The Museums Lab",
               headlineStyle: "h3",
-              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
+              body: "In the international cooperation 'TheMuseumsLab', African and European museum professionals jointly develop concepts for the future of museums in Africa and Europe. The initiative promotes mutual learning, exchange, and professional development.",
               spacing: "wide",
               alignment: "left"
             }}
-            buttons={[
-              {
-                text: "Science Communication Formats",
-                variant: "plain",
-                url: "en/science/transfer/communicating/"
-              },
-              {
-                text: "Policy Advice",
-                variant: "plain",
-                url: "en/science/transfer/advising/"
-              },
-              {
-                text: "Our Commitment to Citizen Science",
-                variant: "plain",
-                url: "en/science/transfer/applying/"
-              }
-            ]}
+            url="/en/about/the-museum/themuseumslab"
           />
           <Blockquote
             text="The seven Excellence Clusters in Berlin embody active, transdisciplinary collaboration and are therefore so important for the BUA. When I visit the BUA clusters, I experience all of this: transdisciplinary collaboration, the search for solutions to the major problems we face today and in the future."

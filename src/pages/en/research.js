@@ -43,7 +43,7 @@ const ResearchPage = () => {
                 <Section backgroundColor="bg-white" columns={1} padding="pt-16 pb-0">
                     <StoryTime
                         imageProps={{
-                            imageName: 'NeuesCTimMuseumfuerNaturkundecPabloCastagnola.jpg',
+                            imageName: 'NeuesCTimMuseumfürNaturkundecPabloCastagnola.jpg',
                             alt: "New CT at the Museum für Naturkunde. Photo: Pablo Castagnola",
                             imageMap: imageMap,
                             className: "aspect-[16/9]"
@@ -52,7 +52,7 @@ const ResearchPage = () => {
                             kicker: "Open and Integrated",
                             headline: "Our Research",
                             headlineStyle: "h1",
-                            body: "The Museum für Naturkunde Berlin is an integrated research museum of the Leibniz Association and is one of the world's leading institutions for biological and geological evolution and biodiversity.<br/><br/>Together with scientific research and our collection as main infrastructure, these areas form the central pillars of the museum along with knowledge transfer.",
+                            body: "The \"Museum für Naturkunde – Leibniz Institute for Evolution and Biodiversity Research\" is an integrated research museum within the Leibniz Association. Collections, research, and knowledge transfer are closely interconnected, working together to generate new insights.",
                             spacing: "wide",
                             alignment: "center",
                         }}
@@ -78,10 +78,10 @@ const ResearchPage = () => {
                                         htmlFor="science-search"
                                         className="text-xl font-bold text-Black-900"
                                     >
-                                        Project Search
+                                        Explore Our Research
                                     </label>
                                     <p className="text-sm text-Black-700 mt-2">
-                                        Search for people and/or keywords to find matching research activities. <br/><br/>
+                                        Search for people and/or keywords to find related research activities. <br /><br />
                                     </p>
                                 </div>
                                 <div className="mt-auto flex flex-col md:flex-row gap-2">
@@ -103,9 +103,9 @@ const ResearchPage = () => {
                         </form>
                     </div>
 
-                    
+
                 </Section>
-              
+
                 <Section backgroundColor="bg-Green-100" columns={1} padding="py-16">
                     <StoryTime
                         imageProps={{
@@ -115,8 +115,8 @@ const ResearchPage = () => {
                             className: "aspect-[4/3] object-cover"
                         }}
                         textProps={{
-                            kicker: "Research Areas & Infrastructure",
-                            headline: "Research at the Museum",
+                            kicker: "Research at the Museum",
+                            headline: "Research Areas & Infrastructure",
                             headlineStyle: "h2",
                             body: "At the museum, teams from various disciplines explore life on Earth. Our collection serves as the foundation for globally connected research. We involve society in this endeavor: In cooperation with civil society, politics, and industry, we develop formats that convey insights, create relevant knowledge for all, and make the significance of our collection tangible.",
                             spacing: "wide",
@@ -236,7 +236,7 @@ const ResearchPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Libraries",
+                            headline: "Library",
                             headlineStyle: "h3",
                             body: "Scientific and historical collections support research, teaching, and knowledge transfer.",
                             spacing: "regular"
@@ -266,53 +266,26 @@ const ResearchPage = () => {
                                     text: "Laboratories",
                                     url: "/en/science/infrastructure/labs/",
                                     variant: "plain"
-                                },
-                                {
-                                    text: "IT Systems",
-                                    url: "/en/science/infrastructure/research-information-technology-infrastructure/",
-                                    variant: "plain"
-                                },
-                                {
-                                    text: "Research Data Management",
-                                    url: "/en/science/infrastructure/research-data-management-infrastructure/",
-                                    variant: "plain"
-                                },
+                                }
                             ]
                         }}
                     />
                     <Card
                         variant="white"
                         imageRatio="28.125" // 32:9 format
-
                         imageProps={{
-                            imageName: "wissen-verbindet.jpg",
-                            alt: "Phone with a social media app",
+                            imageName: "Zeitschriften_Cover_04__c_Hwa_Ja-Goetz_MfN.jpg",
+                            alt: "Cover photo of the museum's three Open Access journals",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Knowledge Connects",
+                            headline: "Scientific Journals",
                             headlineStyle: "h3",
-                            body: "Our offerings include interdisciplinary and international training in the areas of public engagement, open science, citizen science, and museum studies.",
-                            spacing: "regular",
-                            buttons: [
-                                {
-                                    text: "Science Communication Formats",
-                                    url: "/en/science/transfer/communicating/",
-                                    variant: "plain"
-                                },
-                                {
-                                    text: "Policy Advice",
-                                    url: "/en/science/transfer/advising/",
-                                    variant: "plain"
-                                },
-                                {
-                                    text: "Our Commitment to Citizen Science",
-                                    url: "/en/science/transfer/applying/",
-                                    variant: "plain"
-                                },
-                            ]
+                            body: "We publish three scientific journals: Deutsche Entomologische Zeitschrift, Zoosystematics and Evolution (formerly Mitteilungen aus dem Zoologischen Museum Berlin), and Fossil Record.",
+                            spacing: "regular"
                         }}
+                        url="/en/science/scientific-journals"
                     />
                 </Section>
 
@@ -326,13 +299,13 @@ const ResearchPage = () => {
                         }}
                         textProps={{
                             kicker: "Contact",
-                            headline: "Teams & Projects",
+                            headline: "Teams",
                             headlineStyle: "h2",
-                            body: "Connect with our more than 200 scientists who are engaged in over 100 projects.",
+                            body: "Search and find people working at the Museum für Naturkunde Berlin. The search provides information about people, projects, contact options, and roles.",
                             spacing: "wide",
                             buttons: [
                                 {
-                                    text: "Open Team and Project Database",
+                                    text: "Open Team Search",
                                     url: "/en/research/team-projects/",
                                     variant: "primary"
                                 }
@@ -403,14 +376,6 @@ const ResearchPage = () => {
                             link="/en/science/human-nature-relations"
                         />
                         <SlideContent
-                            imageName="ECSA_Tag2_BenKriemann_MfN2022_334_zugeschnitten.jpg"
-                            altText="ECSA workshop with post-it notes"
-                            kicker="Research Area 3"
-                            title="Development of a Citizen Science Center for Nature, Sustainability, Digitalization"
-                            text="Innovative technologies in nature and environmental protection: How can we address the opportunities and challenges for Citizen Science?"
-                            link="/en/science/citizen-science-center"
-                        />
-                        <SlideContent
                             imageName="ieti-keyvisual.png"
                             altText="IETI Keyvisual"
                             kicker="Research Area 3"
@@ -429,7 +394,7 @@ const ResearchPage = () => {
                         alignment="center"
                         buttons={[
                             {
-                                text: "View All Publications",
+                                text: "Publications 2007 - 2023",
                                 variant: "plain",
                                 url: "/en/research/publications/"
                             }
@@ -442,18 +407,20 @@ const ResearchPage = () => {
                         <div className="w-full bg-Green-100 flex flex-col">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
-                                    September 20th 2024 / Developmental Dynamics
+                                    Selected Publication 2024
                                 </p>
                                 <h3 className="text-White-White font-normal">
                                     Effects of life history strategies and habitats on limb regeneration in plethodontid salamanders
                                 </h3>
                             </div>
                             <div className="w-full p-[30px] flex flex-col gap-2.5">
-                                <p className="text-Green-500 typography-body text-sm leading-tight font-italic">
-                                    Vivien Bothe, Hendrik Müller, Neil Shubin, Nadia Fröbisch
-                                </p>
                                 <p className="text-Black-700 text-sm leading-tight">
-                                    Salamanders are the only tetrapods that exhibit the ability to fully regenerate limbs...
+                                    Bothe, V., Müller, H., Shubin, N., & Fröbisch, N. (2024).
+                                    <span className="font-bold">Effects of life history strategies and habitats on limb regeneration in plethodontid salamanders</span>.
+                                    <span className="italic">Developmental Dynamics</span>.
+                                    <a href="https://doi.org/10.1002/dvdy.742" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
+                                        https://doi.org/10.1002/dvdy.742
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -463,18 +430,20 @@ const ResearchPage = () => {
                         <div className="w-full bg-Green-100 flex flex-col">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
-                                    June 26th 2024 / Royal Society Open Science
+                                    Selected Publication 2024
                                 </p>
                                 <h3 className="text-White-White font-normal">
                                     A comprehensive phylogeny and revised taxonomy of Diadectomorpha with a discussion on the origin of tetrapod herbivory
                                 </h3>
                             </div>
                             <div className="w-full p-[30px] flex flex-col gap-2.5">
-                                <p className="text-Green-500 typography-body text-sm leading-tight font-italic">
-                                    Jasper Ponstein, Mark J. MacDougall, Jörg Fröbisch
-                                </p>
                                 <p className="text-Black-700 text-sm leading-tight">
-                                    Among terrestrial tetrapods, the origin of herbivory marked a key evolutionary event...
+                                    Ponstein, J., MacDougall, M. J., & Fröbisch, J. (2024).
+                                    <span className="font-bold">A comprehensive phylogeny and revised taxonomy of Diadectomorpha with a discussion on the origin of tetrapod herbivory</span>.
+                                    <span className="italic">Royal Society Open Science</span>.
+                                    <a href="https://doi.org/10.1098/rsos.231355" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
+                                        https://doi.org/10.1098/rsos.231355
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -484,18 +453,20 @@ const ResearchPage = () => {
                         <div className="w-full bg-Green-100 flex flex-col">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
-                                    June 8th 2024 / Evolution Letters
+                                    Selected Publication 2024
                                 </p>
                                 <h3 className="text-White-White font-normal">
                                     Contemporary intergeneric hybridization and backcrossing among birds-of-paradise
                                 </h3>
                             </div>
                             <div className="w-full p-[30px] flex flex-col gap-2.5">
-                                <p className="text-Green-500 typography-body text-sm leading-tight font-italic">
-                                    Filip Thörn, André E R Soares, Ingo A Müller, Martin Päckert...
-                                </p>
                                 <p className="text-Black-700 text-sm leading-tight">
-                                    Despite large differences in morphology, behavior and lek-mating strategies...
+                                    Thörn, F., Soares, A. E. R., Müller, I. A., Päckert, M., Frahnert, S., van Grouw, H., Kamminga, P., Peona, V., Suh, A., Blom, M. P. K., & Irestedt, M. (2024).
+                                    <span className="font-bold">Contemporary intergeneric hybridization and backcrossing among birds-of-paradise</span>.
+                                    <span className="italic">Evolution Letters</span>.
+                                    <a href="https://doi.org/10.1093/evlett/qrae023" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
+                                        https://doi.org/10.1093/evlett/qrae023
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -510,7 +481,7 @@ const ResearchPage = () => {
                         spacing="wide"
                         alignment="center"
                     />
-                     <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
+                    <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
                         <Button variant="primary" url="/en/contact/">Ask us a question</Button>
                         <Button variant="primary" url="tel:+4930889140-8591">Call us</Button>
                         <Button variant="primary" url="/en/visit/">Visit us at the Museum</Button>

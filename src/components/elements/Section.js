@@ -38,9 +38,9 @@ const Section = ({
       id={id}
       className={`w-full ${padding} ${backgroundColor} ${className}`}
     >
-      <div className={`grid  ${innerBg ? 'grid-cols-[1fr_minmax(auto,_min(1200px,_95vw))_1fr]' : '1fr grid-cols-[1fr_minmax(auto,_min(1165px,_100vw))_1fr]'} `}>
+      <div className={`block md:grid  ${innerBg ? 'grid-cols-[1fr_minmax(auto,_min(1200px,_95vw))_1fr]' : '1fr grid-cols-[1fr_minmax(auto,_min(1165px,_100vw))_1fr]'} `}>
         <div className={`col-start-2 col-end-3 px-3 ${innerBg ? `${innerBg} py-12` : ''}`}>
-          <div className={`grid px-3 sm:px-12 xl:px-0 justify-items-center ${getGridClass()} ${getJustifyClass()}`}>
+          <div className={`block md:grid px-3 sm:px-12 xl:px-0 justify-items-center ${getGridClass()} ${getJustifyClass()}`}>
             {children}
           </div>
         </div>

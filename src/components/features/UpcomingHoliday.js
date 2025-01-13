@@ -36,11 +36,21 @@ const UpcomingHoliday = () => {
         };
       });
 
-      // Find the next upcoming holiday or current holiday if we're in the middle of one
-      const upcoming = holidaysWithDates.find(holiday => 
-        (today <= holiday.endDate && today >= holiday.date) || // During holiday
-        today < holiday.date // Before holiday
-      );
+      // After creating holidaysWithDates, we should sort them
+      const sortedHolidays = holidaysWithDates.sort((a, b) => a.date - b.date);
+
+      // Then find the next upcoming holiday within 30 days
+      const upcoming = sortedHolidays.find(holiday => {
+        const today = new Date();
+        const thirtyDaysFromNow = new Date(today.getTime() + (30 * 24 * 60 * 60 * 1000));
+        
+        return (
+          // During holiday
+          (today <= holiday.endDate && today >= holiday.date) ||
+          // Before holiday but within 30 days
+          (today < holiday.date && holiday.date <= thirtyDaysFromNow)
+        );
+      });
 
       setUpcomingHoliday(upcoming);
     };
