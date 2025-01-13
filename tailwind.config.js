@@ -16,7 +16,20 @@ module.exports = {
       fontFamily: theme.fontFamily,
       fontSize: theme.fontSize,
       lineHeight: theme.lineHeight,
-      colors: theme.colors,
+      colors: {
+        ...theme.colors,
+        Green: {
+          100: '#F4F9E7',
+          200: '#E8F2CF',
+          300: '#DAFF6A',
+          400: '#91BD0D',
+          500: '#7DA30B', // Original Grün
+          600: '#658709',
+          700: '#597409',
+          800: '#4D6507', // Neu für besseren Link-Kontrast
+          900: '#3F5206', // Neu für Hover-Zustand
+        }
+      },
       gap: {
         '18': '4.5rem',
         '20': '5rem',

@@ -186,35 +186,35 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Museums-Evolution 3 (c) Pablo Castagnola.jpg",
-              alt: "Christiane Quaisser und Jana Hoffmann an der Massendigitalisierungsstraße in der Sonderausstellung digitize!",
+              imageName: "Hamann_Luther_FuerNaturJournal.jpg",
+              alt: "Hamann_Luther_Für Natur Journal",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Die Entwicklung des Museums auf Youtube",
+              headline: "Erforschung des Ribbeck-Meteoriten",
               headlineStyle: "h3",
-              body:"Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
+              body:"Der Meteoritenfall von Ribbeck im Januar 2024 sorgte für Aufsehen. Expert:innen untersuchen das Aubrit-Gestein und leiten ein internationales Forschungskonsortium. Erste Analysen deuten auf eine mögliche Verbindung zur Erde und Bausteine des Lebens hin.",
               spacing: "wide"
             }}
-            url="/de/zukunft/werde-teil-unserer-museums-evolution/"
+            url="/de/zukunde/besuch-eines-fernen-verwandten"
           />
         
           <Card
             variant="classic"
             imageProps={{
-              imageName: "naturderdinge.png",
-              alt: "naturderdinge logo",
+              imageName: "diversityscanner-vielfalt-erhalten.jpg",
+              alt: "Forschende am DiversityScanner des Zentrums für Integrative Biodiversitätsentdeckung",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Natur der Dinge. Eine partizipative Sammlung des Anthropozäns",
+              headline: "Artentdeckungsfabrik",
               headlineStyle: "h3",
-              body: "Im Sammlungsexperiment beleuchten wir sowohl die planetare Wirkmacht des Menschen als geologischem Faktor als auch seine Verstrickung in das Erdsystem .",
+              body: "Das Museum für Naturkunde Berlin setzt den innovativen DiversityScanner ein, um Insektenvielfalt effizient zu erfassen. Mit modernster Technologie können Tausende von Proben in kurzer Zeit analysiert und systematisch zugeordnet werden. So trägt die \"Artentdeckungsfabrik\" zur Erforschung und Erhaltung der biologischen Vielfalt bei.",
               spacing: "wide"
             }}
-            url="/de/wissenschaft/natur-der-dinge.-eine-partizipative-sammlung-des-anthropozaens"
+            url="de/die-artentdeckungsfabrik"
           />
           <Card
             variant="classic"
@@ -236,35 +236,19 @@ const IndexPage = () => {
             variant="classic"
             alignment="left"
             imageProps={{
-              imageName: "TR1C6470.jpg",
-              alt: "Personen stehen vor dem verbildlichten Netzwerk der Anthropozänobjekte",
+              imageName: "2022_c_IsabelAlvarez_2021_c_AlenaSchmick_TheMuseumsLab.jpeg",
+              alt: "TheMuseumsLab",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Wissen verbindet",
+              headline: "The Museums Lab",
               headlineStyle: "h3",
-              body: "Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body: "In der internationalen Kooperation \"TheMuseumsLab\" entwickeln afrikanische und europäische Museumsbeschäftigte gemeinsam Konzepte für die Zukunft von Museen in Afrika und Europa. Das Vorhaben fördert beiderseitiges Lernen, Austausch und Fortbildung.",
               spacing: "wide",
               alignment: "left"
             }}
-            buttons={[
-              {
-                text: "Formate zur Wissenschafts-Kommunikation",
-                variant: "plain",
-                url: "/de/wissenschaft/transfer/kommunizieren/"
-              },
-              {
-                text: "Politikberatung",
-                variant: "plain",
-                url: "/de/wissenschaft/transfer/beraten/"
-              },
-              {
-                text: "Unser Engagement für Bürger-Wissenschaften",
-                variant: "plain",
-                url: "/de/wissenschaft/transfer/anwenden/"
-              }
-            ]}
+            url="de/ueber-uns/das-museum/themuseumslab"
           />
           <Blockquote
                         text="Die sieben Exzellenzcluster in Berlin leben die aktive, transdisziplinäre Zusammenarbeit und sind genau deshalb so wichtig für die BUA. Wenn ich die BUA-Cluster besuche, erlebe ich all das: transd﻿isziplinäre Zusammenarbeit, die Suche nach Lösungen für die großen Probleme, die wir heute und in Zukunft haben."

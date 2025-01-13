@@ -6,6 +6,7 @@ import Header from "../../../components/layouts/Header"
 import Footer from '../../../components/layouts/Footer'
 import Section from '../../../components/elements/Section'
 import AccessibilityNav from '../../../components/layouts/AccessibilityNav'
+import HeadComponent from "../../../components/layouts/HeadComponent"
 // Error Boundary Component
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -218,7 +219,7 @@ const PublicationsPage = ({ data }) => {
           <div className="mb-4 max-w-[768px] mx-auto">
             <h1 className="text-center">Publications</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-              Search publications from 2007 to 2023 by title, author, journal, year, or keywords.<br/><br/>
+              from 2007 to 2023<br/><br/>
             </label>
             
             <div className="search-container mt-4">
@@ -300,7 +301,7 @@ const PublicationsPage = ({ data }) => {
             <h2 className="mb-4">
               {searchTerm 
                 ? `${filteredPublications.length} results found`
-                : `${publications.length} publications available`
+                : `${publications.length} publications`
               }
             </h2>
             <p className="text-sm text-Black-600 mb-8">
@@ -488,3 +489,11 @@ export const query = graphql`
 `;
 
 export default PublicationsPage
+
+export const Head = () => (
+    <HeadComponent
+        title="Publications"
+        description="Browse scientific publications from the Museum für Naturkunde Berlin"
+        pathname="/en/research/publications"
+    />
+)

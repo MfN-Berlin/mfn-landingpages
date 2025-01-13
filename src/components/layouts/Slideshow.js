@@ -1,25 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Fade from 'embla-carousel-fade';
-import Autoplay from 'embla-carousel-autoplay';
 
-const Slideshow = ({ children, imageMap }) => {
+const Slideshow = ({ children, imageMap, centered = false }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
       loop: true,
       duration: 40
     },
-    [
-      Fade(),
-      ...(typeof window !== 'undefined' ? [
-        Autoplay({
-          delay: 4000,
-          stopOnInteraction: true,
-          stopOnMouseEnter: true,
-          rootNode: (emblaRoot) => emblaRoot.parentElement,
-        })
-      ] : [])
-    ]
+    [Fade()]
   );
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -52,6 +41,7 @@ const Slideshow = ({ children, imageMap }) => {
               <div className="flex-[0_0_100%] min-w-0">
                 {React.cloneElement(child, { 
                   imageMap,
+                  centered,
                   paginationDots: (
                     <div className="flex gap-2" role="tablist">
                       {React.Children.map(children, (_, dotIndex) => (

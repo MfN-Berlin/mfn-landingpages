@@ -6,6 +6,7 @@ import Header from "../../../components/layouts/Header"
 import Footer from '../../../components/layouts/Footer'
 import Section from '../../../components/elements/Section'
 import AccessibilityNav from '../../../components/layouts/AccessibilityNav'
+import HeadComponent from "../../../components/layouts/HeadComponent"
 const ITEMS_PER_PAGE = 10
 
 const TeamProjectsPage = ({ data }) => {
@@ -81,7 +82,7 @@ const TeamProjectsPage = ({ data }) => {
         projects: data.navigator_projects || []
       }))
     }
-    
+
     const results = fuse.search(searchTerm)
     return results.map(result => ({
       ...result.item,
@@ -109,7 +110,7 @@ const TeamProjectsPage = ({ data }) => {
   // Funktion zum Markieren der Suchbegriffe
   const highlightMatches = (text, searchTerm) => {
     if (!searchTerm || !text) return text;
-    
+
     try {
       const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const regex = new RegExp(`(${escapedSearchTerm})`, 'gi');
@@ -131,19 +132,19 @@ const TeamProjectsPage = ({ data }) => {
 
         <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
           <div className="mb-8 max-w-[768px] mx-auto">
-            <h1 className="text-center">Team und Projekte</h1>
+            <h1 className="text-center">Team Suche</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-                Finden Sie Menschen im Museum für Naturkunde Berlin und Projekte nach Namen, E-Mail, Telefonnummer, Projekt-Titel und Tags. <br/><br/>
-              </label>
+              Finden Sie Personen nach Namen, E-Mail, Telefonnummer, Arbeitsbereich, Projekt, Sammlung, Labore oder Rolle. <br /><br />
+            </label>
             <div className="search-container mt-4">
               <div className="flex flex-col md:flex-row gap-4">
-              
+
                 <div className="flex-grow relative w-full">
                   <input
                     type="search"
                     value={searchTerm}
                     onChange={handleSearch}
-                    placeholder="Suchen Sie nach Namen, Projekten, Tags oder Rollen..."
+                    placeholder="Suchen Sie nach Namen, Projekten oder Rollen..."
                     className="w-full p-2 border border-Black-300 rounded pr-10"
                     aria-label="Suchen Sie in allen Team-Projekten"
                   />
@@ -174,7 +175,7 @@ const TeamProjectsPage = ({ data }) => {
                       <option value="extended">Erweiterte Suche</option>
                     </select>
                   </div>
-                  
+
                   {searchMode === 'extended' && (
                     <div className="text-sm text-Black-600">
                       <p className="font-medium mb-2">Erweiterte Suchoperatoren:</p>
@@ -197,51 +198,51 @@ const TeamProjectsPage = ({ data }) => {
         <Section backgroundColor="bg-Green-100" columns={1} padding="pt-16 pb-8">
           <div className="mb-8">
             <h2 className="mb-8">
-              {searchTerm 
+              {searchTerm
                 ? filteredTeamMembers.length === 0
                   ? `Keine Ergebnisse gefunden für "${searchTerm}". Haben Sie versucht, die Suche zu erweitern?`
                   : `${filteredTeamMembers.length} Team-Mitglied${filteredTeamMembers.length === 1 ? '' : 'er'} gefunden für "${searchTerm}"`
                 : `${filteredTeamMembers.length} Team-Mitglied${filteredTeamMembers.length === 1 ? '' : 'er'}`
               }
             </h2>
-            
+
             <div className="mt-8">
               {paginatedMembers.map((member) => (
-                <div key={member.name} className="bg-White-White mb-8 p-8">
-                  <div className="grid grid-cols-8 gap-6">
-                    {/* Linke Spalte: Persönliche Informationen (3/8) */}
-                    <div className="col-span-3">
-                      <h2 className="text-xl font-bold mb-2">
+                <div key={member.name} className="bg-White-White mb-8 p-4 sm:p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-8 gap-6">
+                    {/* Left Column: Personal Information (3/8) */}
+                    <div className="md:col-span-3">
+                      <h2 className="text-xl font-bold mb-2 break-words">
                         {member.url ? (
-                          <a 
+                          <a
                             href={member.url}
-                            className="text-Black-900 hover:text-Green-600 hover:underline"
+                            className="text-Black-900 hover:text-Green-600 hover:underline break-words"
                             target="_blank"
                             rel="noopener noreferrer"
                             dangerouslySetInnerHTML={{ __html: highlightMatches(member.name, searchTerm) }}
                           />
                         ) : (
-                          <span 
-                            className="text-Black-900"
+                          <span
+                            className="text-Black-900 break-words"
                             dangerouslySetInnerHTML={{ __html: highlightMatches(member.name, searchTerm) }}
                           />
                         )}
                       </h2>
-                      
-                      <div className="mb-4 text-sm text-Black-600">
+
+                      <div className="mb-4 text-sm text-Black-600 break-words">
                         {member.email && (
                           <div className="mb-1">
-                            <a 
-                              href={`mailto:${member.email}`} 
-                              className="hover:underline"
+                            <a
+                              href={`mailto:${member.email}`}
+                              className="hover:underline break-all"
                               dangerouslySetInnerHTML={{ __html: highlightMatches(member.email, searchTerm) }}
                             />
                           </div>
                         )}
                         {member.phone && (
-                          <div>
-                            <a 
-                              href={`tel:${member.phone.replace(/\s/g, '')}`} 
+                          <div className="break-words">
+                            <a
+                              href={`tel:${member.phone.replace(/\s/g, '')}`}
                               className="hover:underline"
                               dangerouslySetInnerHTML={{ __html: highlightMatches(member.phone, searchTerm) }}
                             />
@@ -250,49 +251,32 @@ const TeamProjectsPage = ({ data }) => {
                       </div>
 
                       {member.role && (
-                        <p 
-                          className="text-sm text-Black-600"
+                        <p
+                          className="text-sm text-Black-600 break-words"
                           dangerouslySetInnerHTML={{ __html: highlightMatches(member.role, searchTerm) }}
                         />
                       )}
                     </div>
 
-                    {/* Rechte Spalte: Projekte (5/8) */}
-                    <div className="col-span-5">
+                    {/* Right Column: Projects (5/8) */}
+                    <div className="md:col-span-5">
                       {member.projects?.length > 0 && (
                         <div className="mb-4">
-                          <h3 className="text-xs uppercase tracking-wider font-light text-Black-400 mb-2">
-                            Projekte
+                          <h3 className="text-xs uppercase tracking-wider font-light text-Black-400 mb-2 break-words">
+                            Projekte, Sammlungen, Labore
                           </h3>
-                          
-                          {/* Projektliste */}
-                          <div className="flex flex-wrap gap-2 mb-2">
+
+                          {/* Project List */}
+                          <div className="flex flex-wrap gap-2 mb-2 max-w-full">
                             {member.projects.map((project, index) => (
-                              <a 
+                              <a
                                 key={index}
-                                href={project.url} 
-                                className="px-3 py-1.5 bg-Green-200 text-Black-900 text-xs hover:bg-Green-200 hover:text-Green-800 rounded"
+                                href={project.url}
+                                className="inline-block px-3 py-1.5 bg-Green-200 text-Black-900 text-xs hover:bg-Green-400 hover:text-Green-800 rounded break-all max-w-full"
                                 dangerouslySetInnerHTML={{ __html: highlightMatches(project.title, searchTerm) }}
                               />
                             ))}
                           </div>
-
-                          {/* Gesammelte Tags */}
-                          {/* <div className="flex flex-wrap gap-2 mt-2">
-                            {member.projects
-                              .flatMap(project => project.tags || [])
-                              .filter((tag, index, self) => tag && self.indexOf(tag) === index) // Duplikate entfernen
-                              .sort()
-                              .map((tag, index) => (
-                                <a
-                                  key={index}
-                                  href={`?search=${encodeURIComponent(tag)}`}
-                                  className="text-xs text-Black-500 hover:text-Green-500 hover:underline"
-                                >
-                                  #{tag}
-                                </a>
-                              ))}
-                          </div> */}
                         </div>
                       )}
                     </div>
@@ -305,119 +289,146 @@ const TeamProjectsPage = ({ data }) => {
             {pageCount > 1 && (
               <nav aria-label="Pagination" className="mt-8">
                 <ul className="flex justify-center items-center gap-2 p-0 m-0 list-none">
-                  {/* First Page */}
-                  <li>
-                    <button 
-                      onClick={() => setCurrentPage(1)}
+                  {/* First/Previous Page - nur auf xs screens */}
+                  <li className="block sm:hidden">
+                    <button
+                      onClick={() => setCurrentPage(currentPage > 1 ? currentPage - 1 : 1)}
                       disabled={currentPage === 1}
                       className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Erste Seite"
+                      aria-label="Vorherige Seite"
                     >
                       <span aria-hidden="true">«</span>
                     </button>
                   </li>
 
-                  {/* Previous Page */}
-                  <li>
-                    <button 
-                      onClick={() => setCurrentPage(currentPage - 1)}
-                      disabled={currentPage === 1}
-                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Vorherige Seite"
-                    >
-                      <span aria-hidden="true">‹</span>
-                    </button>
-                  </li>
+                  {/* Standard Pagination - ausgeblendet auf xs screens */}
+                  <div className="hidden sm:flex sm:items-center sm:gap-2">
+                    {/* First Page */}
+                    <li>
+                      <button
+                        onClick={() => setCurrentPage(1)}
+                        disabled={currentPage === 1}
+                        className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                        aria-label="Erste Seite"
+                      >
+                        <span aria-hidden="true">«</span>
+                      </button>
+                    </li>
 
-                  {/* Page Numbers */}
-                  {(() => {
-                    let pages = [];
-                    const totalPages = pageCount;
-                    const current = currentPage;
-                    
-                    // Always show first page
-                    pages.push(1);
-                    
-                    // Calculate range around current page
-                    let start = Math.max(2, current - 2);
-                    let end = Math.min(totalPages - 1, current + 2);
-                    
-                    // Add ellipsis after first page if needed
-                    if (start > 2) {
-                      pages.push('...');
-                    }
-                    
-                    // Add pages around current page
-                    for (let i = start; i <= end; i++) {
-                      pages.push(i);
-                    }
-                    
-                    // Add ellipsis before last page if needed
-                    if (end < totalPages - 1) {
-                      pages.push('...');
-                    }
-                    
-                    // Add last page if there is more than one page
-                    if (totalPages > 1) {
-                      pages.push(totalPages);
-                    }
-                    
-                    return pages.map((page, index) => {
-                      if (page === '...') {
+                    {/* Previous Page */}
+                    <li>
+                      <button
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                        aria-label="Vorherige Seite"
+                      >
+                        <span aria-hidden="true">‹</span>
+                      </button>
+                    </li>
+
+                    {/* Page Numbers */}
+                    {(() => {
+                      let pages = [];
+                      const totalPages = pageCount;
+                      const current = currentPage;
+
+                      // Always show first page
+                      pages.push(1);
+
+                      // Calculate range around current page
+                      let start = Math.max(2, current - 2);
+                      let end = Math.min(totalPages - 1, current + 2);
+
+                      // Add ellipsis after first page if needed
+                      if (start > 2) {
+                        pages.push('...');
+                      }
+
+                      // Add pages around current page
+                      for (let i = start; i <= end; i++) {
+                        pages.push(i);
+                      }
+
+                      // Add ellipsis before last page if needed
+                      if (end < totalPages - 1) {
+                        pages.push('...');
+                      }
+
+                      // Add last page if there is more than one page
+                      if (totalPages > 1) {
+                        pages.push(totalPages);
+                      }
+
+                      return pages.map((page, index) => {
+                        if (page === '...') {
+                          return (
+                            <li key={`ellipsis-${index}`}>
+                              <span className="px-3 py-2" aria-hidden="true">…</span>
+                            </li>
+                          );
+                        }
+
                         return (
-                          <li key={`ellipsis-${index}`}>
-                            <span className="px-3 py-2" aria-hidden="true">…</span>
+                          <li key={page}>
+                            <button
+                              onClick={() => setCurrentPage(page)}
+                              className={`px-3 py-2 rounded hover:bg-Green-100 
+                                ${currentPage === page ? 'bg-Green-500 text-white' : ''}`}
+                              aria-label={`Seite ${page}`}
+                              aria-current={currentPage === page ? 'page' : undefined}
+                            >
+                              {page}
+                            </button>
                           </li>
                         );
-                      }
-                      
-                      return (
-                        <li key={page}>
-                          <button
-                            onClick={() => setCurrentPage(page)}
-                            className={`px-3 py-2 rounded hover:bg-Green-100 
-                              ${currentPage === page ? 'bg-Green-500 text-white' : ''}`}
-                            aria-label={`Seite ${page}`}
-                            aria-current={currentPage === page ? 'page' : undefined}
-                          >
-                            {page}
-                          </button>
-                        </li>
-                      );
-                    });
-                  })()}
+                      });
+                    })()}
 
-                  {/* Next Page */}
-                  <li>
-                    <button 
-                      onClick={() => setCurrentPage(currentPage + 1)}
+                    {/* Next Page */}
+                    <li>
+                      <button
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                        disabled={currentPage === pageCount}
+                        className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                        aria-label="Nächste Seite"
+                      >
+                        <span aria-hidden="true">›</span>
+                      </button>
+                    </li>
+
+                    {/* Last Page */}
+                    <li>
+                      <button
+                        onClick={() => setCurrentPage(pageCount)}
+                        disabled={currentPage === pageCount}
+                        className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
+                        aria-label="Letzte Seite"
+                      >
+                        <span aria-hidden="true">»</span>
+                      </button>
+                    </li>
+                  </div>
+
+                  {/* Next/Last Page - nur auf xs screens */}
+                  <li className="block sm:hidden">
+                    <button
+                      onClick={() => setCurrentPage(currentPage < pageCount ? currentPage + 1 : pageCount)}
                       disabled={currentPage === pageCount}
                       className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
                       aria-label="Nächste Seite"
-                    >
-                      <span aria-hidden="true">›</span>
-                    </button>
-                  </li>
-
-                  {/* Last Page */}
-                  <li>
-                    <button 
-                      onClick={() => setCurrentPage(pageCount)}
-                      disabled={currentPage === pageCount}
-                      className="px-3 py-2 rounded hover:bg-Green-100 disabled:opacity-50 disabled:hover:bg-transparent"
-                      aria-label="Letzte Seite"
                     >
                       <span aria-hidden="true">»</span>
                     </button>
                   </li>
                 </ul>
+
+                {/* Current page indicator - sichtbar auf xs screens */}
+                <div className="text-center mt-2 text-sm block sm:hidden">
+                  Seite {currentPage} von {pageCount}
+                </div>
               </nav>
             )}
-
-            {/* Pagination info for screen readers */}
-            <div className="sr-only" aria-live="polite">
-              Seite {currentPage} von {pageCount}
-            </div>
           </div>
         </Section>
       </main>
@@ -438,3 +449,11 @@ export const query = graphql`
 `
 
 export default TeamProjectsPage
+
+export const Head = () => (
+    <HeadComponent
+        title="Team und Projekte"
+        description="Finden Sie Personen, Projekte, Sammlungen und Labore des Museums für Naturkunde Berlin"
+        pathname="/de/forschung/team-projekte"
+    />
+)

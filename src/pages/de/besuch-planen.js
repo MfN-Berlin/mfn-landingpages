@@ -166,8 +166,7 @@ const IndexPage = () => {
               headline="Tickets & Preise"
               headlineStyle="h1"
               body={`Tickets können Sie vor Ort und im <a href="https://ticketshop.museumfuernaturkunde.berlin/" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Onlineshop</a> kaufen. 
-                Wir empfehlen die Buchung von <a href="https://ticketshop.museumfuernaturkunde.berlin/#/tickets/time?group=timeSlot" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Online-Zeitfenstertickets</a> 
-              im Vorfeld um Wartezeiten an der Kasse zu vermeiden.`}
+                Wir empfehlen die Buchung von Online-Zeitfenstertickets im Vorfeld um Wartezeiten an der Kasse zu vermeiden.`}
               spacing="wide"
               alignment="center"
               buttons={[
@@ -789,23 +788,7 @@ const IndexPage = () => {
                 url="/de/museum/besuch-planen/digital-guide"
               />
             </div>
-            <div className="sm:col-span-1 lg:col-span-1">
-              <Card
-                variant="classic"
-                imageProps={{
-                  imageName: "299980239_448016240677212_6197202936618778314_n.jpg",
-                  alt: "Bücher füllen die Regale im Museumsshop. Credits: Humboldt-Innovation GmbH",
-                  imageMap: imageMap,
-                  className: "w-full h-auto object-cover"
-                }}
-                textProps={{
-                  headline: "Museums-Shop",
-                  headlineStyle: "h3",
-                  spacing: "wide"
-                }}
-                url="https://www.naturkundemuseum-shop.de"  // Externe URL bleibt unverändert
-              />
-            </div>
+            
           </div>
         </Section>
         <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">

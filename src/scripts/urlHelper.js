@@ -36,3 +36,6 @@ export const generateUrl = (to, currentPath) => {
   const finalUrl = `/de${to}`;
   return finalUrl;
 }; 
+
+
+// https://pre-prod.museumfuernaturkunde.berlin/de

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import ContentImage from '../elements/ContentImage';
 import CardText from '../elements/CardText';
 
-const SlideContent = ({ imageName, altText, kicker, title, text, link, imageMap }) => {
+const SlideContent = ({ imageName, altText, kicker, title, text, link, imageMap, centered = false }) => {
   const slideContent = (
     <div className="w-full h-full flex flex-col">
       <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
@@ -16,14 +16,14 @@ const SlideContent = ({ imageName, altText, kicker, title, text, link, imageMap 
           />
         </div>
       </div>
-      <div className="bg-Green-100 p-8 group-hover:bg-Green-200 transition-colors duration-300">
+      <div className={`bg-Green-100 p-8 group-hover:bg-Green-200 transition-colors duration-300 ${centered ? 'text-center' : ''}`}>
         <CardText
           kicker={kicker}
           headline={title}
           body={text}
           headlineStyle="h3"
           spacing="wide"
-          alignment="left"
+          alignment={centered ? 'center' : 'left'}
         />
       </div>
     </div>
@@ -33,7 +33,7 @@ const SlideContent = ({ imageName, altText, kicker, title, text, link, imageMap 
     return (
       <Link 
         to={link}
-        className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]"
+        className={`group w-full p-3 rounded-[10px] inline-flex flex-col ${centered ? 'items-center' : 'items-start gap-2.5'} hover:bg-Green-200 focus:border-2 focus:border-[#729800]`}
       >
         {slideContent}
       </Link>

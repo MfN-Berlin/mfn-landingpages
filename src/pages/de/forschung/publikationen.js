@@ -6,6 +6,7 @@ import Header from "../../../components/layouts/Header"
 import Footer from '../../../components/layouts/Footer'
 import Section from '../../../components/elements/Section'
 import AccessibilityNav from '../../../components/layouts/AccessibilityNav'
+import HeadComponent from '../../../components/layouts/HeadComponent'
 
 // Error Boundary Component
 class ErrorBoundary extends Component {
@@ -219,7 +220,7 @@ const PublicationsPage = ({ data }) => {
           <div className="mb-4 max-w-[768px] mx-auto">
             <h1 className="text-center">Publikationen</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-              Diese Datenbank enthält Publikationen aus dem Zeitraum 2007 bis 2023, die dem Museum für Naturkunde Berlin vorliegen. <br/><br/>
+            Zeitraum 2007 bis 2023<br/><br/>
             </label>
             <div className="search-container mt-4">
               <div className="flex flex-col md:flex-row gap-4">
@@ -301,7 +302,7 @@ const PublicationsPage = ({ data }) => {
             <h2 className="mb-4">
               {searchTerm 
                 ? `${filteredPublications.length} Ergebnisse gefunden`
-                : `${publications.length} Publikationen verfügbar`
+                : `${publications.length} Publikationen`
               }
             </h2>
             <p className="text-sm text-Black-600 mb-8">
@@ -489,3 +490,11 @@ export const query = graphql`
 `;
 
 export default PublicationsPage
+
+export const Head = () => (
+    <HeadComponent
+        title="Publikationen"
+        description="Durchsuchen Sie die wissenschaftlichen Publikationen des Museums für Naturkunde Berlin"
+        pathname="/de/forschung/publikationen"
+    />
+)
