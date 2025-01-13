@@ -85,18 +85,39 @@ const IndexPage = () => {
               className: "aspect-[16/9] dada"
             }}
             textProps={{
-              kicker: "Das inspiriert uns",
               headline: "Ein Haus für Natur und Gesellschaft",
-              body: "„Für uns geht es darum, ein Ort der Begegnung, des Dialogs und der Demokratie zu sein. Konstante Veränderung ist Teil unserer DNA. Wir si﻿nd das Museum der Zukunft“ – Prof. Johannes Vogel, PhD, Generaldirektor",
+              body: `
+                <div class="text-sm">
+                  <div id="shortText">
+                    Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan.
+                  </div>
+                  <div id="fullText" style="display: none">
+                    Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan.<br/><br/>
+                    Nach Abschluss dieses Zukunftsplanes wird das gesamte Haus baulich saniert und zukunftsfähig gemacht sein. Wir werden das Museum für die Gesellschaft noch weiter als bisher öffnen, nicht nur mit neuen und neuartigen Ausstellungen, sondern auch durch die vollständige Erschließung unserer Sammlung, die weltweit digital zugänglich sein wird. Natürlich wollen wir unsere Position als eines der meistbesuchten Museen in Berlin weiter ausbauen. – <i>Prof. Johannes Vogel, PhD, Generaldirektor</i> & <i>Stephan Junker, Geschäftsführer des Museums</i>
+                  </div>
+                  <button 
+                    onclick="
+                      const shortText = document.getElementById('shortText');
+                      const fullText = document.getElementById('fullText');
+                      const btn = this;
+                      if (fullText.style.display === 'none') {
+                        shortText.style.display = 'none';
+                        fullText.style.display = 'block';
+                        btn.textContent = 'Weniger anzeigen';
+                      } else {
+                        shortText.style.display = 'block';
+                        fullText.style.display = 'none';
+                        btn.textContent = 'Mehr lesen';
+                      }
+                    "
+                    class="mt-4 text-Green-500 hover:text-Green-600 text-sm font-medium focus:outline-none"
+                  >
+                    Mehr lesen
+                  </button>
+                </div>
+              `,
               headlineStyle: "h4",
               spacing: "normal",
-              buttons: [
-                {
-                  text: "Zum Interview mit Johannes Vogel",
-                  variant: "plain",
-                  url: "/de/evolution-des-museums"
-                },
-              ]
             }}
             textStyle="box-white"
             textPosition="bottom-left"
@@ -400,7 +421,7 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Jana Hoffmann und Christiane Quaiser in digitize (c) Pablo Castagnola.jpg",
+              imageName: "PCastagnola_MfN_Einzelportraits_06-2.jpg",
               alt: "Jana Hoffmann und Christiane Quaiser sitzen vor einer Wand auf Insektenkästen in der Sonderausstellung digitize!",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
