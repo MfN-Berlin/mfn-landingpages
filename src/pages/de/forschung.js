@@ -138,7 +138,12 @@ const VisitPage = () => {
                         className="max-w-7xl mx-auto"
                     />
                 </Section>
-                <Section backgroundColor="bg-Green-100" columns={3} padding="py-16" >
+                <Section 
+                    backgroundColor="bg-Green-100" 
+                    columns={3} 
+                    padding="py-16"
+                    className="grid-rows-auto"
+                >
                     <Card
                         variant="green"
                         imageProps={{

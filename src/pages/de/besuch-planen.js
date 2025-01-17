@@ -97,7 +97,7 @@ const IndexPage = () => {
 
         </Section>
         <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div>
+          <div className="py-20">
             <CardText
               headline="Öffnungszeiten"
               headlineStyle="h1"
@@ -156,7 +156,7 @@ const IndexPage = () => {
 
         </Section>
         <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div className="flex flex-col justify-center items-center gap-20">
+          <div className="flex flex-col justify-center items-center gap-20 py-20">
             {/* <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
               <p className="text-center text-black">
                 Am ersten Sonntag des Monats ist der <strong>Eintritt frei!</strong>
@@ -456,7 +456,7 @@ const IndexPage = () => {
         </Section>
 
         <Section id="anreise" columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center py-20">
             <div className="py-[30px] mb-[17px]">
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
                 <ContentImage
@@ -579,17 +579,20 @@ const IndexPage = () => {
           </Accordion>
         </Section>
         <Section id="im-museum" columns={1} backgroundColor="bg-white" padding="pb-4 pt-16">
-          <CardText
-            headline="Im Museum"
-            headlineStyle="h1"
-            body={`In unseren Ausstellungen erhalten Sie Einblicke in die gigantischen Abenteuer der Natur – anhand originaler Forschungsobjekte!
+          <div className="py-20">
+            <CardText
+              headline="Im Museum"
+              headlineStyle="h1"
+              body={`In unseren Ausstellungen erhalten Sie Einblicke in die gigantischen Abenteuer der Natur – anhand originaler Forschungsobjekte!
               <br/><br/>
               Mehr zu unserer <a href="/de/museum/besuch-planen/besuchendenordnung" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Besuchendenordnung</a> und 
               unseren <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer"  >Regeln für Film- und Foto-Aufnahmen</a>.`}
-            spacing="wide"
-            alignment="center"
-          />
-          <br /><br />
+              spacing="wide"
+              alignment="center"
+            />
+
+          </div>
+
 
           <Slideshow imageMap={imageMap}>
             <SlideContent
@@ -788,17 +791,29 @@ const IndexPage = () => {
                 url="/de/museum/besuch-planen/digital-guide"
               />
             </div>
-            
+
           </div>
         </Section>
         <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
-          <CardText
-            headline="Besondere Besuche"
-            headlineStyle="h1"
-            body="Wir freuen uns, wenn Sie in Gruppen und zu besonderen Anlässen zu uns kommen. Alle Bildungsangebote"
-            spacing="wide"
-            alignment="center"
-          />
+          <div className="py-20">
+
+            <CardText
+              headline="Besondere Besuche"
+              headlineStyle="h1"
+              body="Wir freuen uns, wenn Sie in Gruppen und zu besonderen Anlässen zu uns kommen."
+              spacing="wide"
+              alignment="center"
+              buttons={
+                [
+                  {
+                    text: "Alle Bildungsangebote",
+                    url: "/de/museum/bildung",
+                    variant: "plain"
+                  }
+                ]
+              }
+            />
+          </div>
         </Section>
         <Section columns={4} backgroundColor="bg-Green-100">
           <Card
@@ -863,84 +878,84 @@ const IndexPage = () => {
           />
         </Section>
         <Section columns={2} backgroundColor="bg-white" gapClass="gap-36" justifyContent="center">
+          <div className="py-20">
+            <CardText
+              headline="Oft gestellte Fragen"
+              headlineStyle="h1"
+              body="Uns erreichen viele Fragen rund um den Besuch des Museums. Hier geben wir Antworten auf die meistgestellten. Wenn Sie eine andere Frage haben, kontaktieren Sie uns gern!"
+              spacing="wide"
+              alignment="center"
+              className="text-[#5f5f5f]"
+              buttons={[
+                {
+                  text: "Mehr häufig gestellte Fragen",
+                  url: "/de/museum/besuch-planen/faq",
+                  variant: "plain"
+                }
+              ]}
+            />
+          </div>
 
-          <CardText
-            headline="Oft gestellte Fragen"
-            headlineStyle="h1"
-            body="Uns erreichen viele Fragen rund um den Besuch des Museums. Hier geben wir Antworten auf die meistgestellten. Wenn Sie eine andere Frage haben, kontaktieren Sie uns gern!"
-            spacing="wide"
-            alignment="center"
-            className="text-[#5f5f5f]"
-            buttons={[
-              {
-                text: "Mehr häufig gestellte Fragen",
-                url: "/de/museum/besuch-planen/faq",
-                variant: "plain"
-              }
-            ]}
-          />
+            <Accordion bgColor="green" id="faq">
+              <AccordionItem title="Wo erhalte ich die Tickets?">
+                <div className="p-5">
+                  <p>
+                    Sie können Online-Tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline" target="_blank" rel="noopener noreferrer">hier</a> oder vor Ort an der Museumskasse kaufen.
+                    <br /><br />
+                    Wir empfehlen die Buchung von Online-Zeitfenstertickets im Vorfeld um
+                    Wartezeiten an der Kasse zu vermeiden. Die Tickets sind 14 Tage im Voraus
+                    buchbar.
+                    <br /><br />
+                    Ein Zeitfensterticket berechtigt Sie zum Eintritt in das Museum innerhalb von
+                    einer Stunde, ab der gebuchten Uhrzeit. Danach können Sie sich im Rahmen
+                    unserer Öffnungszeiten unbegrenzt im Museum aufhalten.
+                    <br /><br />
+                    Hinweis: Ihre Eintrittskarte gilt am selben Tag für alle laufenden Ausstellungen im
+                    Museum für Naturkunde.
 
-
-          <Accordion bgColor="green" id="faq">
-            <AccordionItem title="Wo erhalte ich die Tickets?">
-              <div className="p-5">
-                <p>
-                  Sie können Online-Tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline" target="_blank" rel="noopener noreferrer">hier</a> oder vor Ort an der Museumskasse kaufen.
-                  <br /><br />
-                  Wir empfehlen die Buchung von Online-Zeitfenstertickets im Vorfeld um
-                  Wartezeiten an der Kasse zu vermeiden. Die Tickets sind 14 Tage im Voraus
-                  buchbar.
-                  <br /><br />
-                  Ein Zeitfensterticket berechtigt Sie zum Eintritt in das Museum innerhalb von
-                  einer Stunde, ab der gebuchten Uhrzeit. Danach können Sie sich im Rahmen
-                  unserer Öffnungszeiten unbegrenzt im Museum aufhalten.
-                  <br /><br />
-                  Hinweis: Ihre Eintrittskarte gilt am selben Tag für alle laufenden Ausstellungen im
-                  Museum für Naturkunde.
-
-                </p>
-              </div>
-            </AccordionItem>
-            <AccordionItem title="Wie reise ich am besten an?">
-              <div className="p-5">
-                <p>Wir empfehlen die Anreise mit den öffentlichen Verkehrsmitteln oder mit dem Fahrrad.
-                </p>
-              </div>
-            </AccordionItem>
-            <AccordionItem title="Gibt es einen Audioguide?">
-              <div className="p-5">
-                <p>Ja. Wir bieten einen kostenfreien digitalen Guide für Ihr eigenes Smartphone an.
-                  Diesen gibt es in 11 Sprachen. Es gibt außerdem einen Audioguide für Kinder und
-                  eine Highlight-Tour für Gehörlose in deutscher Gebärdensprache (DGS).
-                  <br /><br />
-                  Außerdem bieten wir zwei Audio Guides mit thematischen Schwerpunkten an, um
-                  die Ausstellung und Objekte durch eine zusätzliche Perspektive erfahrbar zu
-                  machen.
-                  <br /><br />
-                  <a href="/de/museum/besuch-planen/digital-guide" className="underline" target="_blank" rel="noopener noreferrer">Hier</a> finden Sie weitere Informationen.
-                  <br /><br />
-                  Für die Nutzung des Audioguides empfehlen wir Ihnen eigene Kopfhörer mitzubringen.
-                </p>
-              </div>
-            </AccordionItem>
-            <AccordionItem title="Darf ich im Museum fotografieren?">
-              <div className="p-5">
-                <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" className="underline" target="_blank" rel="noopener noreferrer">hier</a>.</p>
-              </div>
-            </AccordionItem>
-            <AccordionItem title="Darf ich meinen Kinderwagen mit in das Museum nehmen?">
-              <div className="p-5">
-                <p>Ja, das Museum kann mit einem Kinderwagen besucht werden.
-                </p>
-              </div>
-            </AccordionItem>
-            <AccordionItem title="Darf ich Tiere mit in das Museum nehmen?">
-              <div className="p-5">
-                <p>Nein. Ausnahmen gelten für Assistenz- und Blindenführhunde mit entsprechendem Nachweis.
-                </p>
-              </div>
-            </AccordionItem>
-          </Accordion>
+                  </p>
+                </div>
+              </AccordionItem>
+              <AccordionItem title="Wie reise ich am besten an?">
+                <div className="p-5">
+                  <p>Wir empfehlen die Anreise mit den öffentlichen Verkehrsmitteln oder mit dem Fahrrad.
+                  </p>
+                </div>
+              </AccordionItem>
+              <AccordionItem title="Gibt es einen Audioguide?">
+                <div className="p-5">
+                  <p>Ja. Wir bieten einen kostenfreien digitalen Guide für Ihr eigenes Smartphone an.
+                    Diesen gibt es in 11 Sprachen. Es gibt außerdem einen Audioguide für Kinder und
+                    eine Highlight-Tour für Gehörlose in deutscher Gebärdensprache (DGS).
+                    <br /><br />
+                    Außerdem bieten wir zwei Audio Guides mit thematischen Schwerpunkten an, um
+                    die Ausstellung und Objekte durch eine zusätzliche Perspektive erfahrbar zu
+                    machen.
+                    <br /><br />
+                    <a href="/de/museum/besuch-planen/digital-guide" className="underline" target="_blank" rel="noopener noreferrer">Hier</a> finden Sie weitere Informationen.
+                    <br /><br />
+                    Für die Nutzung des Audioguides empfehlen wir Ihnen eigene Kopfhörer mitzubringen.
+                  </p>
+                </div>
+              </AccordionItem>
+              <AccordionItem title="Darf ich im Museum fotografieren?">
+                <div className="p-5">
+                  <p>Das Fotografieren für private Zwecke ist im Museum erlaubt. Für kommerzielle Zwecke benötigen Sie eine Genehmigung. Mehr Infos <a href="/de/museum/besuch-planen/fotografieren-und-filmaufnahmen" className="underline" target="_blank" rel="noopener noreferrer">hier</a>.</p>
+                </div>
+              </AccordionItem>
+              <AccordionItem title="Darf ich meinen Kinderwagen mit in das Museum nehmen?">
+                <div className="p-5">
+                  <p>Ja, das Museum kann mit einem Kinderwagen besucht werden.
+                  </p>
+                </div>
+              </AccordionItem>
+              <AccordionItem title="Darf ich Tiere mit in das Museum nehmen?">
+                <div className="p-5">
+                  <p>Nein. Ausnahmen gelten für Assistenz- und Blindenführhunde mit entsprechendem Nachweis.
+                  </p>
+                </div>
+              </AccordionItem>
+            </Accordion>
         </Section>
         <Section columns={1} backgroundColor="bg-Black-100">
           <CardText

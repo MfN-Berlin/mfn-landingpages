@@ -22,7 +22,7 @@ const SlideContent = ({ imageName, altText, kicker, title, text, link, imageMap,
           headline={title}
           body={text}
           headlineStyle="h3"
-          spacing="wide"
+          spacing="regular"
           alignment={centered ? 'center' : 'left'}
         />
       </div>
