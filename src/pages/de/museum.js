@@ -76,7 +76,7 @@ const IndexPage = () => {
             ]}
           />
         </Section>
-        <Section backgroundColor="bg-white" columns={1}>
+        <Section backgroundColor="bg-white" columns={1} forceGrid={true}>
           <Teaser
             imageProps={{
               imageName: 'Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt.jpg',
@@ -140,7 +140,7 @@ const IndexPage = () => {
               }}
               textProps={{
                 headline: "Das Museum in Zukunft",
-                headlineStyle: "h1-small",
+                headlineStyle: "h2",
                 spacing: "normal",
               }}
               textStyle="circle-white"
@@ -309,7 +309,7 @@ const IndexPage = () => {
               }}
               textProps={{
                 headline: "Das Museum Heute",
-                headlineStyle: "h1-small",
+                headlineStyle: "h2",
                 spacing: "normal",
               }}
               textStyle="circle-white"

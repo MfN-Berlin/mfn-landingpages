@@ -324,7 +324,7 @@ const IndexPage = () => {
                         alignment="center"
                     />
                 </Section>
-                <Section columns={1} backgroundColor="bg-White" padding="pt-16 pb-8">
+                <Section columns={1} forceGrid={true} backgroundColor="bg-White" padding="pt-16 pb-8">
                     <Teaser
                         imageProps={{
                             imageName: "bioblitz_9847_c_carola-radke_mfn.jpg",
