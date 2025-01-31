@@ -146,7 +146,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Montag
                 </div>
-                <div className="text-center text-Black-900 font-bold text-[34px] py-2">
+                <div className="text-center text-Black-500 font-bold text-[34px] py-2">
                   geschlossen
                 </div>
               </div>
@@ -597,17 +597,24 @@ const IndexPage = () => {
           <Slideshow imageMap={imageMap}>
             <SlideContent
               imageName="zv_1200x675_WEBSEITE_0.jpg"
-              title="ZUGvögel"
-              kicker="Unsere Ausstellungen"
+              title="ZUGvögel – Eine Sammlung in Bewegung"
+              kicker="Sonderausstellung vom 11. Juni 2024 bis Ende Juni 2027"
               link="/de/museum/ausstellungen/zugvoegel"
               altText="Zugvögel"
             />
             <SlideContent
               imageName="zp_1200x675_WEBSEITE.jpg"
-              title="Zukunftsplan"
-              kicker="Unsere Ausstellungen"
+              title="Zukunftsplan – Das Museum in Bewegung"
+              kicker="Installation im Museum vom 11. Juni 2024 bis Ende Juni 2027"
               link="/de/museum/ausstellungen/zukunftsplan"
               altText="Visualisierung des Zukunftsplans für das Museum für Naturkunde Berlin"
+            />
+            <SlideContent
+              imageName="Ribbeck-Meteorit_im_Museum_fuer_Naturkunde_Berlin_c_Pablo_Castagnola.jpg"
+              title="Ribbet Meteorit im Mineraliensaal"
+              kicker="Bruchstücke fielen im Januar 2024 im Havelland vom Himmel"
+              link="de/presse/pressemitteilungen/meteoritenfunde-bei-berlin-meteor-als-seltener-aubrit-klassifiziert"
+              altText="Ribbeck-Meteorit im Museum für Naturkunde Berlin (c) Pablo Castagnola"
             />
             <SlideContent
               imageName="1200x800_0.jpg"

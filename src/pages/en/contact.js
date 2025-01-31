@@ -51,8 +51,8 @@ const ContactPage = () => {
               {Object.keys(imageMap).length > 0 && (
                 <StoryTime
                   imageProps={{
-                    imageName: "PCastagnola_MfN_Einzelportraits_06-1.jpg",
-                    alt: "Thomas Kleinert, Museum locksmith, is always up for a chat. Photo: Pablo Castagnola",
+                    imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+                    alt: "Birds view of the Museum für Naturkunde",
                     imageMap: imageMap,
                     className: "w-full h-full object-cover"
                   }}

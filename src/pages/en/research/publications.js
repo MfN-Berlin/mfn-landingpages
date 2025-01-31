@@ -219,7 +219,7 @@ const PublicationsPage = ({ data }) => {
           <div className="mb-4 max-w-[768px] mx-auto">
             <h1 className="text-center">Publications</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-              from 2007 to 2023<br/><br/>
+            Scientific Articles, Scientific Monographs, Edited Volumes - Editorship, Book Chapters, Conference Papers, Popular Science Articles, Popular Science Books, Reports and Position Papers. From 2007 to 2023<br/><br/>
             </label>
             
             <div className="search-container mt-4">
@@ -230,7 +230,7 @@ const PublicationsPage = ({ data }) => {
                     type="search"
                     value={searchTerm}
                     onChange={handleSearch}
-                    placeholder="Search for names, projects, tags..."
+                    placeholder="Search for names, years, journals or keywords"
                     className="w-full p-2 border border-Black-300 rounded pr-10"
                     aria-label="Search in all projects"
                   />

@@ -43,8 +43,7 @@ const IndexPage = () => {
             kicker="Unsere Vision und Mission"
             headline="Wir erforschen die Erde und das Leben im Dialog mit den Menschen"
             headlineStyle="h1"
-            body="Als exzellentes Forschungsmuseum und innovatives Kommunikationszentrum prägen wir den wissenschaftlichen und gesellschaftlichen Dialog um die Zukunft unserer Erde mit – weltweit. 
-            Karriere  Team  Service   News  Sponsoren"
+            body="Als exzellentes Forschungsmuseum und innovatives Kommunikationszentrum prägen wir den wissenschaftlichen und gesellschaftlichen Dialog um die Zukunft unserer Erde mit – weltweit."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -79,45 +78,23 @@ const IndexPage = () => {
         <Section backgroundColor="bg-white" columns={1} forceGrid={true}>
           <Teaser
             imageProps={{
-              imageName: 'Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt.jpg',
-              alt: "Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt",
+              imageName: 'gmp_4451_4451_Perspektive_Eingang.jpeg',
+              alt: "Visualisierung des Gewinnerentwurfs aus dem Architekturwettbewerb: Vorplatz des Hauptgebäudes mit einem barrierefreien Eingang",
               imageMap: imageMap,
               className: "aspect-[16/9] dada"
             }}
             textProps={{
               headline: "Ein Haus für Natur und Gesellschaft",
-              body: `
-                <div class="text-sm">
-                  <div id="shortText">
-                    Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan.
-                  </div>
-                  <div id="fullText" style="display: none">
-                    Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan.<br/><br/>
-                    Nach Abschluss dieses Zukunftsplanes wird das gesamte Haus baulich saniert und zukunftsfähig gemacht sein. Wir werden das Museum für die Gesellschaft noch weiter als bisher öffnen, nicht nur mit neuen und neuartigen Ausstellungen, sondern auch durch die vollständige Erschließung unserer Sammlung, die weltweit digital zugänglich sein wird. Natürlich wollen wir unsere Position als eines der meistbesuchten Museen in Berlin weiter ausbauen. – <i>Prof. Johannes Vogel, PhD, Generaldirektor</i> & <i>Stephan Junker, Geschäftsführer des Museums</i>
-                  </div>
-                  <button 
-                    onclick="
-                      const shortText = document.getElementById('shortText');
-                      const fullText = document.getElementById('fullText');
-                      const btn = this;
-                      if (fullText.style.display === 'none') {
-                        shortText.style.display = 'none';
-                        fullText.style.display = 'block';
-                        btn.textContent = 'Weniger anzeigen';
-                      } else {
-                        shortText.style.display = 'block';
-                        fullText.style.display = 'none';
-                        btn.textContent = 'Mehr lesen';
-                      }
-                    "
-                    class="mt-4 text-Green-500 hover:text-Green-600 text-sm font-medium focus:outline-none"
-                  >
-                    Mehr lesen
-                  </button>
-                </div>
-              `,
+              body: "Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan.",
               headlineStyle: "h4",
-              spacing: "normal",
+              spacing: "wide",
+              buttons: [
+                {
+                  text: "Zukunftsplan",
+                  url: "/de/museum/zukunft/zukunftsplan/",
+                  className: "mt-4",
+                }
+              ]
             }}
             textStyle="box-white"
             textPosition="bottom-left"
@@ -126,8 +103,7 @@ const IndexPage = () => {
           />
         </Section>
         <Section
-          backgroundColor="bg-Blue-200"
-          innerBg="bg-Green-100"
+          backgroundColor="bg-Green-100"
           padding="pt-16 pb-0"
         >
           
@@ -147,59 +123,39 @@ const IndexPage = () => {
               textPosition="center-center"
               className="w-full"
             />
+             </Section>
+             <Section backgroundColor="bg-Green-100" columns={1}>
             <CardText
             body="Der Zukunftsplan, den das Museum tagtäglich umsetzt, sieht die bauliche Sanierung des Museums vor, die mehr als 30 Millionen Objekte umfassende wissenschaftliche Sammlung des Museums wird erschlossen und besser zugänglich gemacht."
-            spacing="normal"
+            spacing="wide"
             alignment="center"
             buttons={[
               {
                 text: "Zukunftsplan",
                 variant: "plain",
                 url: "/de/museum/zukunft/zukunftsplan/"
-              },
-              {
-                text: "Wissenstransfer",
-                variant: "plain",
-                url: "/de/zukunft/wissenstransfer/"
               }
             ]}
           />
         </Section>
        
         <Section
-          backgroundColor="bg-Blue-200"
-          innerBg="bg-Green-100"
-          padding="pt-0 pb-16"
+          backgroundColor="bg-Green-100"
+          padding="pt-0 pb-8"
           columns={3}
         >
           <Card
             variant="classic"
             imageProps={{
-              imageName: "zp_1200x675_WEBSEITE.jpg",
-              alt: "logo Zukunftsplan and shadow drawing of a person with a wheelbarrow",
+              imageName: "Digitize_Museum_fuer_Naturkunde_c_Thomas_Rosenthal.jpg",
+              alt: "Eine Wissenschaftlerin arbeitet am Computer",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Der Zukunftsplan",
+              headline: "Sammlungserschließung und -entwicklung",
               headlineStyle: "h3",
-              body: "Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
-              spacing: "wide"
-            }}
-            url="/de/museum/zukunft/zukunftsplan/"
-          />
-          <Card
-            variant="classic"
-            imageProps={{
-              imageName: "Digitize_Museum_fuer_Naturkunde_(c)_Thomas_Rosenthal_3.jpg",
-              alt: "Besucherinnen bestaunen Insektenfilm in der Ausstellung",
-              imageMap: imageMap,
-              className: "w-full h-auto object-cover"
-            }}
-            textProps={{
-              headline: "Die Erschließung der gesamten Sammlung",
-              headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body:"Am Museum für Naturkunde Berlin bewahren wir 30 Millionen Sammlungsobjekte, jedes davon birgt Wissen von unschätzbarem Wert. Um eine umfängliche Nutzung der Sammlung zu ermöglichen, erschließen wir sie im Rahmen des Zukunftsplans – das heißt konservatorisch sichern, digital erfassen und innovative Nutzungszugänge schaffen.",
               spacing: "wide"
             }}
             url="/de/wissenschaft/sammlungserschliessung-und-entwicklung/"
@@ -207,21 +163,20 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Hamann_Luther_FuerNaturJournal.jpg",
-              alt: "Hamann_Luther_Für Natur Journal",
+              imageName: "biodiversitaetswand_c_thomas_rosenthal.jpg",
+              alt: "Kinder an der Biodiversitätswand",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Erforschung des Ribbeck-Meteoriten",
+              headline: "Wissenstransfer",
               headlineStyle: "h3",
-              body:"Der Meteoritenfall von Ribbeck im Januar 2024 sorgte für Aufsehen. Expert:innen untersuchen das Aubrit-Gestein und leiten ein internationales Forschungskonsortium. Erste Analysen deuten auf eine mögliche Verbindung zur Erde und Bausteine des Lebens hin.",
+              body: "Im Rahmen des Zukunftsplans entwickeln wir das Museum und seine Ausstellung zu einem lebendigen Ort des Wissens, der über zukunftsweisender Formate interdisziplinärer und partizipativer Wissenschaft und einer offenen Informationsinfrastruktur, die Sammlung und Forschung des Museums zugänglich und erlebbar macht. ",
               spacing: "wide"
             }}
-            url="/de/zukunde/besuch-eines-fernen-verwandten"
+            url="/de/zukunft/wissenstransfer"
           />
-        
-          <Card
+           <Card
             variant="classic"
             imageProps={{
               imageName: "diversityscanner-vielfalt-erhalten.jpg",
@@ -230,28 +185,12 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Artentdeckungsfabrik",
+              headline: "Die Artentdeckungsfabrik",
               headlineStyle: "h3",
-              body: "Das Museum für Naturkunde Berlin setzt den innovativen DiversityScanner ein, um Insektenvielfalt effizient zu erfassen. Mit modernster Technologie können Tausende von Proben in kurzer Zeit analysiert und systematisch zugeordnet werden. So trägt die \"Artentdeckungsfabrik\" zur Erforschung und Erhaltung der biologischen Vielfalt bei.",
+              body: "Unsere \"Artentdeckungsfabrik\" trägt zur Erforschung und Erhaltung der biologischen Vielfalt bei, indem wir mit modernster Technologie  Tausende von Insekten-Proben in kurzer Zeit analysieren und systematisch zuordnen können.",
               spacing: "wide"
             }}
-            url="de/die-artentdeckungsfabrik"
-          />
-          <Card
-            variant="classic"
-            imageProps={{
-              imageName: "BromackerTeam_Drohnenfoto_Luftbild_Rohde_1200x800.jpg",
-              alt: "Team Bromacker in der Grabungsstelle im August 2021, Foto: Luftbild Rohde",
-              imageMap: imageMap,
-              className: "w-full h-auto object-cover"
-            }}
-            textProps={{
-              headline: "BROMACKER: Neue Wege der Wissenschafts-kommunikation",
-              headlineStyle: "h3",
-              body:"Im August 2020 hat das einmalige Kooperationsprojekt 'Öffnen von Wissenschaft: Neue Wege des Wissenstransfers am Beispiel des Forschungsprojekts BROMACKER' unter der Mitwirkung eines interdisziplinären Forschungsteams begonnen.",
-              spacing: "wide"
-            }}
-            url="de/wissenschaft/bromacker-neue-wege-der-wissenschaftskommunikation"
+            url="/de/die-artentdeckungsfabrik"
           />
           <Card
             variant="classic"
@@ -271,30 +210,77 @@ const IndexPage = () => {
             }}
             url="de/ueber-uns/das-museum/themuseumslab"
           />
-          <Blockquote
-                        text="Die sieben Exzellenzcluster in Berlin leben die aktive, transdisziplinäre Zusammenarbeit und sind genau deshalb so wichtig für die BUA. Wenn ich die BUA-Cluster besuche, erlebe ich all das: transd﻿isziplinäre Zusammenarbeit, die Suche nach Lösungen für die großen Probleme, die wir heute und in Zukunft haben."
-                        source="Prof. Johannes Vogel"
-                        sourceTitle="(Leiter des Museums)"
-                        backgroundColor=""  // Green-500 color
-                        className="bg-Blue-500 col-span-1 md:col-span-2"
-                    />
+          
+        
+          
           <Card
             variant="classic"
             imageProps={{
-              imageName: "180809_ct_09_www_c_carola-radke_mfn.jpg",
-              alt: "Mitarbeiter Martin Kirchner arbeitet am Computertomografen im neuen CT Labor",
+              imageName: "BromackerTeam_Drohnenfoto_Luftbild_Rohde_1200x800.jpg",
+              alt: "Team Bromacker in der Grabungsstelle im August 2021, Foto: Luftbild Rohde",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unsere wissenschaftliche Arbeit",
+              headline: "BROMACKER: Neue Wege der Wissenschafts-kommunikation",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body:"Das einzigartige Projekt verknüpft Forschung und Wissenstransfer an der Ursaurier-Fundstelle im UNESCO Global Geopark Thüringen Inselsberg - Drei Gleichen, am Museum für Naturkunde Berlin, an der Stiftung Schloss Friedenstein Gotha und übergeordnet multimedial.",
               spacing: "wide"
             }}
-            url="/de/forschung/"
+            url="de/wissenschaft/bromacker-neue-wege-der-wissenschaftskommunikation"
           />
+          <Card
+            variant="classic"
+            imageProps={{
+              imageName: "Hamann_Luther_FuerNaturJournal.jpg",
+              alt: "Hamann_Luther_Für Natur Journal",
+              imageMap: imageMap,
+              className: "w-full h-auto object-cover"
+            }}
+            textProps={{
+              headline: "Erforschung des Ribbeck-Meteoriten",
+              headlineStyle: "h3",
+              body:"Expert:innen des Museums für Naturkunde Berlin untersuchen das außerirdische Aubrit-Gestein und koordinieren ein internationales Konsortium zur Erforschung des Ribbeck-Meteoriten. Erste Ergebnisse zeigen: Er könnte mit der Erde verwandt sein – und Bausteine des Lebens in sich tragen.",
+              spacing: "wide"
+            }}
+            url="/de/zukunde/besuch-eines-fernen-verwandten"
+          />
+
         </Section>
+        <Section backgroundColor="bg-Green-100" padding="pt-0 pb-16" forceGrid={true}>
+            <Teaser
+              imageProps={{
+                imageName: "180809_ct_09_www_c_carola-radke_mfn.jpg",
+                alt: "Staff member Martin Kirchner working at the CT scanner in the new CT lab",
+                imageMap: imageMap,
+                className: "w-full h-auto object-cover"
+              }}
+              textProps={{
+                headline: "Ein integriertes Forschungsmuseum der Leibniz-Gemeinschaft",
+                headlineStyle: "h3",
+                body: "Am Museum erforschen Teams aus verschiedenen Disziplinen das Leben auf der Erde. Sammlung, Forschung und Wissenstransfer sind eng verknüpft und schaffen gemeinsam neue Erkenntnisse.",
+                spacing: "wide",
+                buttons: [
+                  {
+                    text: "Mehr über unsere Forschung",
+                    url: "/de/forschung/",
+                    className: "mt-4",
+                    variant: "plain",
+                  },
+                  {
+                    text: "Mehr über unsere Angebote, sich an unserer Forschung zu beteiligen",
+                    url: "/de/mitmachen/",
+                    className: "mt-4",
+                    variant: "plain",
+                  }
+                ]
+              }}
+              url="/en/research/"
+              alignment="center"
+              className="w-full"
+              textStyle="box-white"
+            />
+          </Section>
         <Section
           backgroundColor="bg-White"
           padding="pt-16 pb-0"
@@ -308,7 +294,7 @@ const IndexPage = () => {
                 className: "aspect-[16/9]"
               }}
               textProps={{
-                headline: "Das Museum Heute",
+                headline: "Das Museum",
                 headlineStyle: "h2",
                 spacing: "normal",
               }}
@@ -321,7 +307,7 @@ const IndexPage = () => {
         </Section>
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            body="Der Zukunftsplan, den das Museum tagtäglich umsetzt, sieht die bauliche Sanierung des Museums vor, die mehr als 30 Millionen Objekte umfassende wissenschaftliche Sammlung des Museums wird erschlossen und besser zugänglich gemacht."
+            body="Wir setzen unseren Zukunftsplan tagtäglich um. Erfahren Sie mehr über unsere Arbeit und verstärken Sie unser Team."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -353,6 +339,22 @@ const IndexPage = () => {
           padding="pt-0 pb-16"
           columns={3}
         >
+           <Card
+            variant="classic"
+            imageProps={{
+              imageName: "zp_1200x675_WEBSEITE.jpg",
+              alt: "Titelbild Zukunftsplan",
+              imageMap: imageMap,
+              className: "w-full h-auto object-cover"
+            }}
+            textProps={{
+              headline: "Installation Zukunftsplan",
+              headlineStyle: "h3",
+              body: "An vier Orten im Ausstellungsrundgang informieren wir vom 11. Juni 2024 bis Ende Juni 2027 mit Installationen über den Zukunftsplan.",
+              spacing: "wide"
+            }}
+            url="de/museum/ausstellungen/zukunftsplan"
+          />
           <Card
             variant="classic"
             imageProps={{
@@ -362,9 +364,9 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unser Magazin „für natur“",
+              headline: "Unser Magazin \"für natur\"",
               headlineStyle: "h3",
-              body: "In unseren Journalen für Natur nehmen wir Sie mit auf diesem Weg in die Zukunft.",
+              body: "In unseren Journalen für Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
               spacing: "wide"
             }}
             url="de/museum/medien/journal-fuer-natur/"
@@ -378,9 +380,9 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unser Geschäftsbericht 2023",
+              headline: "Wissenschaftsreports und Geschäftsberichte",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body:"Unsere Berichte geben einen detaillierten Einblick in unsere Forschungsbereiche sowie über die spannendsten und wichtigsten Forschungsprojekte.",
               spacing: "wide"
             }}
             url="de/ueber-uns/das-museum/publikationen-und-downloads"
@@ -396,40 +398,25 @@ const IndexPage = () => {
             textProps={{
               headline: "Karriereportal",
               headlineStyle: "h3",
-              body:"Lesen Sie hier unseren Geschäftsbericht, der leicht verständlich einen Überblick über die Tätigkeiten des Museums für Naturkunde Berlin im jeweils vergangenen Jahr vermittelt.",
+              body:"Verstärken Sie unser Team im wissenschaftlichen Bereich, im technischen Bereich oder in der Verwaltung.",
               spacing: "wide"
             }}
             url="de/museum/jobs-und-karriere/"
           />
         
+          
           <Card
             variant="classic"
             imageProps={{
-              imageName: "conus_kegelschnecken_c_hwaja_goetz_mfn.jpg",
-              alt: "Kegelschnecken © HwaJa Goetz, MfN",
-              imageMap: imageMap,
-              className: "w-full h-auto object-cover"
-            }}
-            textProps={{
-              headline: "Mitgliedschaften",
-              headlineStyle: "h3",
-              body: "Im Sammlungsexperiment beleuchten wir sowohl die planetare Wirkmacht des Menschen als geologischem Faktor als auch seine Verstrickung in das Erdsystem .",
-              spacing: "wide"
-            }}
-            url="/de/ueber-uns/das-museum/mitgliedschaften"
-          />
-          <Card
-            variant="classic"
-            imageProps={{
-              imageName: "PCastagnola_MfN_Einzelportraits_06-2.jpg",
-              alt: "Jana Hoffmann und Christiane Quaiser sitzen vor einer Wand auf Insektenkästen in der Sonderausstellung digitize!",
+              imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+              alt: "Fassade des Museums für Naturkunde",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
               headline: "Kontakt",
               headlineStyle: "h3",
-              body:"Im August 2020 hat das einmalige Kooperationsprojekt 'Öffnen von Wissenschaft: Neue Wege des Wissenstransfers am Beispiel des Forschungsprojekts BROMACKER' unter der Mitwirkung eines interdisziplinären Forschungsteams begonnen.",
+              body:"Wir stehen gerne mit Ihnen in direktem Kontakt zu einzelnen Bereichen unseres Museums.",
               spacing: "wide"
             }}
             url="/de/kontakt/"
@@ -445,7 +432,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Team",
               headlineStyle: "h3",
-              body:"Das Museum für Naturkunde Berlin experimentiert mit verschiedenen individuell zugeschnittenen Formaten, um mit vielen unterschiedlichen Zielgruppen in den Dialog zu treten.",
+              body:"Suchen und finden Sie Menschen, die am Museum für Naturkunde Berlin arbeiten.",
               spacing: "wide"
             }}
             url="/de/ueber-uns/team/"

@@ -43,8 +43,7 @@ const IndexPage = () => {
             kicker="Our Vision and Mission"
             headline="We research Earth and life in dialogue with people"
             headlineStyle="h1"
-            body="As an excellent research museum and innovative communication center, we shape the scientific and social dialogue about the future of our planet – worldwide. 
-            Career  Team  Contact  News  Sponsors"
+            body="As an excellent research museum and innovative communication center, we shape the scientific and social dialogue about the future of our planet – worldwide."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -80,45 +79,23 @@ const IndexPage = () => {
         <Section backgroundColor="bg-white" columns={1} forceGrid={true}>
           <Teaser
             imageProps={{
-              imageName: 'Visualisierung_Innenhof@GMP mit Rainer Schmidt Landschaftsarchitekt.jpg',
-              alt: "Visualization of the courtyard by GMP with Rainer Schmidt Landscape Architect",
+              imageName: 'gmp_4451_4451_Perspektive_Eingang.jpeg',
+              alt: "Visualization of the winning design from the architectural competition: Main building forecourt with barrier-free entrance",
               imageMap: imageMap,
               className: "aspect-[16/9] dada"
             }}
             textProps={{
               headline: "A House for Nature and Society",
-              body: `
-      <div class="text-sm">
-        <div id="shortText">
-          The Museum für Naturkunde Berlin of the future will be open, integrated and strong in research, a role model for research museums worldwide. Our script on the way there is our future plan.
-        </div>
-        <div id="fullText" style="display: none">
-          The Museum für Naturkunde Berlin of the future will be open, integrated and strong in research, a role model for research museums worldwide. Our script on the way there is our future plan.<br/><br/>
-          Upon completion of this future plan, the entire building will be structurally renovated and made fit for the future. We will open the museum even further to society than before, not only with new and innovative exhibitions but also through the complete development of our collection, which will be digitally accessible worldwide. Of course, we want to further expand our position as one of the most visited museums in Berlin. – <i>Prof. Johannes Vogel, PhD, Director General</i> & <i>Stephan Junker, Managing Director of the Museum</i>
-        </div>
-        <button 
-          onclick="
-            const shortText = document.getElementById('shortText');
-            const fullText = document.getElementById('fullText');
-            const btn = this;
-            if (fullText.style.display === 'none') {
-              shortText.style.display = 'none';
-              fullText.style.display = 'block';
-              btn.textContent = 'Show less';
-            } else {
-              shortText.style.display = 'block';
-              fullText.style.display = 'none';
-              btn.textContent = 'Read more';
-            }
-          "
-          class="mt-4 text-Green-500 hover:text-Green-600 text-sm font-medium focus:outline-none"
-        >
-          Read more
-        </button>
-      </div>
-    `,
+              body: "The Museum für Naturkunde Berlin of the future will be open, integrated and strong in research, a role model for research museums worldwide. Our script on the way there is our future plan.",
               headlineStyle: "h4",
-              spacing: "normal",
+              spacing: "wide",
+              buttons: [
+                {
+                  text: "Future Plan",
+                  url: "/en/future/future-plan/",
+                  className: "mt-4",
+                }
+              ]
             }}
             textStyle="box-white"
             textPosition="bottom-left"
@@ -128,8 +105,7 @@ const IndexPage = () => {
         </Section>
 
         <Section
-          backgroundColor="bg-Blue-200"
-          innerBg="bg-Green-100"
+          backgroundColor="bg-Green-100"
           padding="pt-16 pb-0"
         >
           <Teaser
@@ -168,39 +144,23 @@ const IndexPage = () => {
         </Section>
 
         <Section
-          backgroundColor="bg-Blue-200"
-          innerBg="bg-Green-100"
-          padding="pt-0 pb-16"
+          backgroundColor="bg-Green-100"
+          padding="pt-0 pb-8"
           columns={3}
         >
+
           <Card
             variant="classic"
             imageProps={{
-              imageName: "zp_1200x675_WEBSEITE.jpg",
-              alt: "Future Plan logo and silhouette of a person with a wheelbarrow",
+              imageName: "Digitize_Museum_fuer_Naturkunde_c_Thomas_Rosenthal.jpg",
+              alt: "A scientist working at a computer",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "The Future Plan",
+              headline: "Collection Development and Access",
               headlineStyle: "h3",
-              body: "Read our annual report here, which provides an easy-to-understand overview of the activities of the Museum für Naturkunde Berlin during the past year.",
-              spacing: "wide"
-            }}
-            url="en/future/future-plan/"
-          />
-          <Card
-            variant="classic"
-            imageProps={{
-              imageName: "Digitize_Museum_fuer_Naturkunde_(c)_Thomas_Rosenthal_3.jpg",
-              alt: "Visitors marvel at insect film in the exhibition",
-              imageMap: imageMap,
-              className: "w-full h-auto object-cover"
-            }}
-            textProps={{
-              headline: "Making the Entire Collection Accessible",
-              headlineStyle: "h3",
-              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
+              body: "At the Museum für Naturkunde Berlin, we preserve 30 million collection objects, each holding knowledge of invaluable worth. To enable comprehensive use of the collection, we are making it accessible as part of our Future Plan – this means conservation, digital cataloging, and creating innovative access solutions.",
               spacing: "wide"
             }}
             url="en/science/collection-discovery-and-development/"
@@ -208,20 +168,19 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Hamann_Luther_FuerNaturJournal.jpg",
-              alt: "Hamann_Luther_Für Natur Journal",
+              imageName: "zp_1200x675_WEBSEITE.jpg",
+              alt: "Kids at the Biodiversity Wall",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Research on the Ribbeck Meteorite",
+              headline: "Knowledge Transfer",
               headlineStyle: "h3",
-              body: "The meteorite fall in Ribbeck in January 2024 caused a sensation. Experts are examining the aubrite rock and leading an international research consortium. Initial analyses suggest a possible connection to Earth and building blocks of life.",
+              body: "As part of the Future Plan, we are developing the museum and its exhibition into a vibrant place of knowledge, making the museum's collection and research accessible and experienceable through forward-looking formats of interdisciplinary and participatory science and an open information infrastructure.",
               spacing: "wide"
             }}
-            url="en/visit-a-distant-relative"
+            url="/en/future/knowledge-transfer"
           />
-
           <Card
             variant="classic"
             imageProps={{
@@ -231,28 +190,12 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Species Discovery Factory",
+              headline: "The species discovery factory",
               headlineStyle: "h3",
-              body: "The Museum für Naturkunde Berlin uses the innovative DiversityScanner to efficiently capture insect diversity. Using state-of-the-art technology, thousands of samples can be analyzed and systematically classified in a short time. In this way, the \"Species Discovery Factory\" contributes to the research and conservation of biological diversity.",
+              body: "Our \"Species Discovery Factory\" contributes to the research and conservation of biological diversity by using state-of-the-art technology to analyze and systematically classify thousands of insect samples in a short time.",
               spacing: "wide"
             }}
-            url="en/species-discovery-factory"
-          />
-          <Card
-            variant="classic"
-            imageProps={{
-              imageName: "BromackerTeam_Drohnenfoto_Luftbild_Rohde_1200x800.jpg",
-              alt: "Team Bromacker at the excavation site in August 2021, Photo: Luftbild Rohde",
-              imageMap: imageMap,
-              className: "w-full h-auto object-cover"
-            }}
-            textProps={{
-              headline: "BROMACKER: New Ways of Science Communication",
-              headlineStyle: "h3",
-              body: "In August 2020, the unique cooperation project ‘Opening Science: New Ways of Knowledge Transfer Using the BROMACKER Research Project as an Example’ began, involving an interdisciplinary research team.",
-              spacing: "wide"
-            }}
-            url="/en/science/bromacker-new-ways-science-communication"
+            url="/en/species-discovery-factory"
           />
           <Card
             variant="classic"
@@ -272,15 +215,44 @@ const IndexPage = () => {
             }}
             url="/en/about/the-museum/themuseumslab"
           />
-          <Blockquote
-            text="The seven Excellence Clusters in Berlin embody active, transdisciplinary collaboration and are therefore so important for the BUA. When I visit the BUA clusters, I experience all of this: transdisciplinary collaboration, the search for solutions to the major problems we face today and in the future."
-            source="Prof. Johannes Vogel"
-            sourceTitle="(Director of the Museum)"
-            backgroundColor=""
-            className="bg-Blue-500 col-span-1 md:col-span-2"
-          />
+
+
           <Card
             variant="classic"
+            imageProps={{
+              imageName: "BromackerTeam_Drohnenfoto_Luftbild_Rohde_1200x800.jpg",
+              alt: "Team Bromacker at the excavation site in August 2021, Photo: Luftbild Rohde",
+              imageMap: imageMap,
+              className: "w-full h-auto object-cover"
+            }}
+            textProps={{
+              headline: "BROMACKER: New Ways of Science Communication",
+              headlineStyle: "h3",
+              body: "This unique project connects research and knowledge transfer at the primitive reptile excavation site in the UNESCO Global Geopark Thuringia Inselsberg - Drei Gleichen, at the Museum für Naturkunde Berlin, at the Friedenstein Castle Foundation Gotha, and through multimedia platforms.",
+              spacing: "wide"
+            }}
+            url="/en/science/bromacker-new-ways-science-communication"
+          />
+
+          <Card
+            variant="classic"
+            imageProps={{
+              imageName: "Hamann_Luther_FuerNaturJournal.jpg",
+              alt: "Hamann_Luther_Für Natur Journal",
+              imageMap: imageMap,
+              className: "w-full h-auto object-cover"
+            }}
+            textProps={{
+              headline: "Research on the Ribbeck Meteorite",
+              headlineStyle: "h3",
+              body: "The meteorite fall in Ribbeck in January 2024 caused a sensation. Experts are examining the aubrite rock and leading an international research consortium. Initial analyses suggest a possible connection to Earth and building blocks of life.",
+              spacing: "wide"
+            }}
+            url="en/visit-a-distant-relative"
+          />
+        </Section>
+        <Section backgroundColor="bg-Green-100" padding="pt-0 pb-16" forceGrid={true}>
+          <Teaser
             imageProps={{
               imageName: "180809_ct_09_www_c_carola-radke_mfn.jpg",
               alt: "Staff member Martin Kirchner working at the CT scanner in the new CT lab",
@@ -288,14 +260,33 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Our Scientific Work",
+              headline: "An Integrated Research Museum of the Leibniz Association",
               headlineStyle: "h3",
-              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
-              spacing: "wide"
+              body: "At the museum, teams from various disciplines study life on Earth. Collection, research, and knowledge transfer are closely interconnected, jointly creating new insights.",
+              spacing: "wide",
+              buttons: [
+                {
+                  text: "Learn more about our research",
+                  url: "/en/research/",
+                  className: "mt-4",
+                  variant: "plain",
+                },
+                {
+                  text: "Learn more about opportunities to participate in our research",
+                  url: "/en/participate/",
+                  className: "mt-4",
+                  variant: "plain",
+                }
+              ]
             }}
             url="/en/research/"
+            alignment="center"
+            className="w-full"
+            textStyle="box-white"
           />
         </Section>
+
+
 
         <Section backgroundColor="bg-White" padding="pt-16 pb-0">
           <Teaser
@@ -306,7 +297,7 @@ const IndexPage = () => {
               className: "aspect-[16/9]"
             }}
             textProps={{
-              headline: "The Museum Today",
+              headline: "The Museum",
               headlineStyle: "h2",
               spacing: "normal",
             }}
@@ -319,7 +310,7 @@ const IndexPage = () => {
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
-            body="The future plan, which the museum implements daily, envisions the structural renovation of the museum, and will render the scientific collection of more than 30 million objects more accessible and better available."
+            body="We implement our Future Plan every day. Learn more about our work and join our team."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -351,6 +342,22 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
+              imageName: "zp_1200x675_WEBSEITE.jpg",
+              alt: "Titelbild Zukunftsplan",
+              imageMap: imageMap,
+              className: "w-full h-auto object-cover"
+            }}
+            textProps={{
+              headline: "Installation Zukunftsplan",
+              headlineStyle: "h3",
+              body: "From June 11, 2024 until the end of June 2027, we will provide information about the Future Plan through installations at four locations along the exhibition route.",
+              spacing: "wide"
+            }}
+            url="/en/museum/exhibitions/zukunftsplan"
+          />
+          <Card
+            variant="classic"
+            imageProps={{
               imageName: "tagesspiegel-journal-1.jpg",
               alt: "Cover of the 'für natur' journal in Tagesspiegel",
               imageMap: imageMap,
@@ -359,7 +366,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Our 'für natur' Magazine",
               headlineStyle: "h3",
-              body: "In our 'für natur' journals, we take you along on this journey into the future.",
+              body: "In our 'für natur' journals, we take you along on our journey into the future.",
               spacing: "wide"
             }}
             url="en/future/nature-journals/"
@@ -373,9 +380,9 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Our Annual Report 2023",
+              headline: "Scientific Reports and Annual Reports",
               headlineStyle: "h3",
-              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
+              body: "Our reports provide detailed insights into our research areas and highlight our most exciting and important research projects.",
               spacing: "wide"
             }}
             url="en/about/museum/publications-and-downloads"
@@ -391,40 +398,25 @@ const IndexPage = () => {
             textProps={{
               headline: "Career Portal",
               headlineStyle: "h3",
-              body: "Read our annual report, which provides an easy-to-understand overview of the Museum für Naturkunde Berlin’s activities in the past year.",
+              body: "Join our team in scientific research, technical operations, or administration.", 
               spacing: "wide"
             }}
             url="/en/about/jobs-and-career"
           />
 
+
           <Card
             variant="classic"
             imageProps={{
-              imageName: "conus_kegelschnecken_c_hwaja_goetz_mfn.jpg",
-              alt: "Cone snails © HwaJa Goetz, MfN",
-              imageMap: imageMap,
-              className: "w-full h-auto object-cover"
-            }}
-            textProps={{
-              headline: "Memberships",
-              headlineStyle: "h3",
-              body: "In this collection experiment, we examine both humanity’s planetary impact as a geological factor and its entanglement in the Earth system.",
-              spacing: "wide"
-            }}
-            url="/en/about/museum/memberships"
-          />
-          <Card
-            variant="classic"
-            imageProps={{
-              imageName: "PCastagnola_MfN_Einzelportraits_06-2.jpg",
-              alt: "Jana Hoffmann and Christiane Quaiser sitting in front of a wall of insect boxes in the special digitize! exhibition",
+              imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+              alt: "Birds View of the Museum für Naturkunde",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
               headline: "Contact",
               headlineStyle: "h3",
-              body: "In August 2020, the unique cooperation project ‘Opening Science: New Ways of Knowledge Transfer Using the BROMACKER Research Project as an Example’ began, involving an interdisciplinary research team.",
+              body: "We welcome direct contact regarding specific areas of our museum.",
               spacing: "wide"
             }}
             url="/en/contact"
@@ -440,7 +432,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Team",
               headlineStyle: "h3",
-              body: "The Museum für Naturkunde Berlin experiments with various individually tailored formats to engage in dialogue with many different target groups.",
+              body: "Find and connect with people working at the Museum für Naturkunde Berlin.",
               spacing: "wide"
             }}
             url="/en/about/team/"

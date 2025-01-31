@@ -145,7 +145,7 @@ const IndexPage = () => {
                 <div className="text-center text-Green-600 typography-kicker">
                   Monday
                 </div>
-                <div className="text-center text-Black-900 font-bold text-[34px] py-2">
+                <div className="text-center text-Black-500 font-bold text-[34px] py-2">
                   closed
                 </div>
               </div>
@@ -593,17 +593,24 @@ const IndexPage = () => {
           <Slideshow imageMap={imageMap}>
             <SlideContent
               imageName="zv_1200x675_WEBSEITE_0.jpg"
-              title="Migratory Birds"
-              kicker="Our Exhibitions"
-              link="/en/museum/exhibitions/migratory-birds"
+              title="ZUGvögel – Collection in Motion"
+              kicker="Special exhibition from 11 June 2024 to the end of June 2027"
+              link="en/museum/exhibitions/zugvogel"
               altText="Migratory Birds"
             />
             <SlideContent
               imageName="zp_1200x675_WEBSEITE.jpg"
-              title="Future Plan"
-              kicker="Our Exhibitions"
-              link="/en/museum/exhibitions/future-plan"
+              title="Zukunftsplan – The Museum in Motion"
+              kicker="Installation in the museum from 11 June 2024 to the end of June 2027"
+              link="/en/museum/exhibitions/zukunftsplan"
               altText="Visualization of the future plan for the Museum für Naturkunde Berlin"
+            />
+            <SlideContent
+              imageName="Ribbeck-Meteorit_im_Museum_fuer_Naturkunde_Berlin_c_Pablo_Castagnola.jpg"
+              title="Ribbet Meteorite in the Mineral Hall"
+              kicker="Pieces fell in January 2024 in the Havelland from the sky"
+              link="de/presse/pressemitteilungen/meteoritenfunde-bei-berlin-meteor-als-seltener-aubrit-klassifiziert"
+              altText="Ribbeck Meteorite in the Mineral Hall (c) Pablo Castagnola"
             />
             <SlideContent
               imageName="1200x800_0.jpg"

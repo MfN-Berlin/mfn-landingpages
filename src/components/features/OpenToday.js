@@ -2,6 +2,7 @@ import React from 'react';
 import { getLanguageFromPath } from '../../scripts/languageManager';
 import { featureTranslations } from '../../data/featureTranslations';
 
+
 // Move pure functions outside component
 const isDateMatch = (dateList, currentMonth, currentDate) => 
   dateList.some(d => d.month === currentMonth && d.date === currentDate);
@@ -27,12 +28,15 @@ const OpenToday = () => {
   const t = featureTranslations.openToday[language];
 
   const getOpeningInfo = () => {
-    const now = new Date();
+    // const now = new Date();
+    const xdate = new Date('2024-12-25T22:00:00');  
+    const now = xdate;
     const currentHour = now.getHours();
     const isAfterClosing = currentHour >= 18;
 
     // Wenn nach Schließzeit, dann Infos für morgen anzeigen
-    const targetDate = new Date();
+    // const targetDate = new Date();
+    const targetDate = xdate;
     if (isAfterClosing) {
       targetDate.setDate(targetDate.getDate() + 1);
     }
@@ -55,29 +59,34 @@ const OpenToday = () => {
         isOpen: false,
         openingTime: null,
         isHoliday: false,
-        message: `${timePrefix} ${t.closedMessage}`
+        message1: `${timePrefix} ${t.isMuseum2}`,
+        message2: t.closedMessage
       };
     }
 
     // Wenn wir hier sind, ist der Zieltag ein Öffnungstag
     return { 
-      isOpen: !isAfterClosing || isTargetDayClosed === false, // Heute nach 18 Uhr aber morgen offen = OPEN
+      isOpen: !isAfterClosing || isTargetDayClosed === false,
       openingTime,
       isHoliday,
-      message: `${timePrefix} ${t.openHours} ${openingTime} ${t.until} 18:00 ${t.clock}${isHoliday ? ` (${t.holiday})` : ''}.`
+      message1: `${timePrefix} ${isHoliday ? ` (${t.holiday})` : ''} ${t.isMuseum1}`,
+      message2: `${openingTime} ${t.until} 18:00 `
     };
   };
 
-  const { isOpen, message } = getOpeningInfo();
+  const { isOpen, message1, message2 } = getOpeningInfo();
 
   return (
-    <div className="mb-4 bg-white">
-      <div className="relative bg-Green-500 flex justify-between items-center p-5 px-20 text-center">
-        <p className="text-white w-full">
-          {message}
-        </p>
+    <div className="mb-4 p-4 bg-Green-500">
+    <div className="p-0  flex flex-col justify-center items-center gap-0">
+      <div className="text-center text-White-White typography-kicker">
+        {message1}
+      </div>
+      <div className="text-center text-White-White font-bold text-[34px] py-2  leading-none">
+        {message2}
       </div>
     </div>
+  </div>
   );
 };
 

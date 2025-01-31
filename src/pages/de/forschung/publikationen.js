@@ -220,7 +220,7 @@ const PublicationsPage = ({ data }) => {
           <div className="mb-4 max-w-[768px] mx-auto">
             <h1 className="text-center">Publikationen</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-            Zeitraum 2007 bis 2023<br/><br/>
+            Wissenschaftliche Artikel, Fachwissenschaftliche Monografien, Sammelwerke – Herausgeberschaft, Sammelbandbeiträge, Konferenzbeiträge, Populärwissenschaftliche Beiträge, Populärwissenschaftliche Monografien, Berichte und Positionspapiere. Zeitraum 2007 bis 2023<br/><br/>
             </label>
             <div className="search-container mt-4">
               <div className="flex flex-col md:flex-row gap-4">
@@ -230,7 +230,7 @@ const PublicationsPage = ({ data }) => {
                     type="search"
                     value={searchTerm}
                     onChange={handleSearch}
-                    placeholder="Suchen Sie nach Namen, Projekten, Tags..."
+                    placeholder="Suchen Sie nach Personen, Jahren, Journals oder Stichworten"
                     className="w-full p-2 border border-Black-300 rounded pr-10"
                     aria-label="Suchen Sie in allen Team-Projekten"
                   />
