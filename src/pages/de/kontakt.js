@@ -39,8 +39,8 @@ const IndexPage = () => {
                 <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
                     <StoryTime
                         imageProps={{
-                            imageName: "PCastagnola_MfN_Einzelportraits_06-1.jpg",
-                            alt: "Thomas Kleinert, Museumsschlosser, ist immer für ein Wort zu haben. Foto: Pablo Castagnola",
+                            imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+                            alt: "Fassade des Museums für Naturkunde",
                             imageMap: imageMap,
                             className: "w-full h-full object-cover"
                         }}

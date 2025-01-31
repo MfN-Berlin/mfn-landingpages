@@ -303,14 +303,14 @@ const VisitPage = () => {
                             className: "aspect-[4/3] object-cover"
                         }}
                         textProps={{
-                            kicker: "Kontakt",
-                            headline: "Teams",
+                            kicker: "Arbeitsgruppen und Teams",
+                            headline: "Kontakt",
                             headlineStyle: "h2",
                             body: "Suchen und finden Sie Menschen, die am Museum für Naturkunde Berlin arbeiten. Die Suche bietet Informationen zu Personen, Projekten, Kontaktmöglichkeiten und Rollen.",
                             spacing: "wide",
                             buttons: [
                                 {
-                                    text: "Team Suche öffnen",
+                                    text: "Personenuche öffnen",
                                     url: "/de/forschung/team-projekte/",
                                     variant: "primary"
                                 }
@@ -404,7 +404,7 @@ const VisitPage = () => {
                         ]}
                     />
                 </Section>
-                <Section backgroundColor="bg-White" columns={3} padding="pb-16">
+                {/* <Section backgroundColor="bg-White" columns={3} padding="pb-16">
                     <Link to="/de/presse/pressemitteilungen/wie-lebensstrategien-und-lebensraeume-die-regenerationsfaehigkeiten-von" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
                         <div className="w-full bg-Green-100 flex flex-col  ">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
@@ -470,7 +470,7 @@ const VisitPage = () => {
                             </div>
                         </div>
                     </Link>
-                </Section>
+                </Section> */}
                 <Section columns={1} backgroundColor="bg-Black-100">
                     <CardText
                         headline="Kontakt"

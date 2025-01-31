@@ -132,7 +132,7 @@ const TeamProjectsPage = ({ data }) => {
 
         <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
           <div className="mb-8 max-w-[768px] mx-auto">
-            <h1 className="text-center">Team Suche</h1>
+            <h1 className="text-center">Personen-Suche</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
               Finden Sie Personen nach Namen, E-Mail, Telefonnummer, Arbeitsbereich, Projekt, Sammlung, Labore oder Rolle. <br /><br />
             </label>

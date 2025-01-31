@@ -131,7 +131,7 @@ const TeamProjectsPage = ({ data }) => {
         <AccessibilityNav currentPage="Team and Projects" />
         <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
           <div className="mb-8 max-w-[768px] mx-auto">
-            <h1 className="text-center">Team Search</h1>
+            <h1 className="text-center">People Search</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
               Search for people using their name, email, phone number, department, project, collection, laboratory, or role.<br /><br />
             </label>

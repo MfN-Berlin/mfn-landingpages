@@ -298,14 +298,14 @@ const ResearchPage = () => {
                             className: "aspect-[4/3] object-cover"
                         }}
                         textProps={{
-                            kicker: "Contact",
-                            headline: "Teams",
+                            kicker: "Working Groups and Teams",
+                            headline: "Contact",
                             headlineStyle: "h2",
                             body: "Search and find people working at the Museum für Naturkunde Berlin. The search provides information about people, projects, contact options, and roles.",
                             spacing: "wide",
                             buttons: [
                                 {
-                                    text: "Open Team Search",
+                                    text: "Open Person Search",
                                     url: "/en/research/team-projects/",
                                     variant: "primary"
                                 }
@@ -402,7 +402,7 @@ const ResearchPage = () => {
                     />
                 </Section>
 
-                <Section backgroundColor="bg-White" columns={3} padding="pb-16">
+                {/* <Section backgroundColor="bg-White" columns={3} padding="pb-16">
                     <Link to="/en/press/releases/how-life-strategies-and-habitats-influence-regeneration-abilities" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
                         <div className="w-full bg-Green-100 flex flex-col">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
@@ -471,7 +471,7 @@ const ResearchPage = () => {
                             </div>
                         </div>
                     </Link>
-                </Section>
+                </Section> */}
 
                 <Section columns={1} backgroundColor="bg-Black-100">
                     <CardText
