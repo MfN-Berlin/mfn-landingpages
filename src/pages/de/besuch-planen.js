@@ -46,7 +46,7 @@ const IndexPage = () => {
       <Header activeNavItem="besuchplanen" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
         <AccessibilityNav currentPage="Besuch planen" />
-        <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
+        <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36">
           <StoryTime
             imageProps={{
               imageName: "171030_naturkunde_156_c_thomas_rosenthal_0.jpg",
@@ -96,8 +96,8 @@ const IndexPage = () => {
           />
 
         </Section>
-        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div className="py-20">
+        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+          <div className="py-10 md:py-20">
             <CardText
               headline="Öffnungszeiten"
               headlineStyle="h1"
@@ -155,8 +155,8 @@ const IndexPage = () => {
           </Accordion>
 
         </Section>
-        <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div className="flex flex-col justify-center items-center gap-20 py-20">
+        <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+          <div className="flex flex-col justify-center items-center gap-10 md:gap-20 py-10 md:py-20">
             {/* <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
               <p className="text-center text-black">
                 Am ersten Sonntag des Monats ist der <strong>Eintritt frei!</strong>
@@ -455,8 +455,8 @@ const IndexPage = () => {
 
         </Section>
 
-        <Section id="anreise" columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div className="flex flex-col justify-center items-center py-20">
+        <Section id="anreise" columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+          <div className="flex flex-col justify-center items-center py-10 md:py-20">
             <div className="py-[30px] mb-[17px]">
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
                 <ContentImage
@@ -578,8 +578,8 @@ const IndexPage = () => {
             </AccordionItem>
           </Accordion>
         </Section>
-        <Section id="im-museum" columns={1} backgroundColor="bg-white" padding="pb-4 pt-16">
-          <div className="py-20">
+        <Section id="im-museum" columns={1} backgroundColor="bg-white" padding="pt-8 md:pt-16 pb-4 md:pb-8">
+          <div className="py-10 md:py-20">
             <CardText
               headline="Im Museum"
               headlineStyle="h1"
@@ -709,7 +709,7 @@ const IndexPage = () => {
             />
           </Slideshow>
         </Section>
-        <Section backgroundColor="bg-white" padding="py-0 gap-0 pb-16">
+        <Section backgroundColor="bg-white" padding="pt-8 md:pt-16 pb-4 md:pb-8">
           <div className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="sm:col-span-2 lg:col-span-2">
               <Card
@@ -801,8 +801,8 @@ const IndexPage = () => {
 
           </div>
         </Section>
-        <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
-          <div className="py-20">
+        <Section columns={1} backgroundColor="bg-Green-100" padding="pt-8 md:pt-16 pb-0">
+          <div className="py-10 md:py-20">
 
             <CardText
               headline="Besondere Besuche"
@@ -884,8 +884,8 @@ const IndexPage = () => {
             url="/de/museum/bildung/familien"
           />
         </Section>
-        <Section columns={2} backgroundColor="bg-white" gapClass="gap-36" justifyContent="center">
-          <div className="py-20">
+        <Section columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-36" justifyContent="center">
+          <div className="py-10 md:py-20">
             <CardText
               headline="Oft gestellte Fragen"
               headlineStyle="h1"

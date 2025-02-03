@@ -86,16 +86,9 @@ const IndexPage = () => {
             }}
             textProps={{
               headline: "A House for Nature and Society",
-              body: "The Museum für Naturkunde Berlin of the future will be open, integrated and strong in research, a role model for research museums worldwide. Our script on the way there is our future plan.",
+              body: "\"For us, it is about being a place of encounter, dialogue, and democracy. Constant change is part of our DNA. We are the museum of the future.\" Prof. Johannes Vogel, PhD, Generaldirektor",
               headlineStyle: "h4",
               spacing: "wide",
-              buttons: [
-                {
-                  text: "Future Plan",
-                  url: "/en/future/future-plan/",
-                  className: "mt-4",
-                }
-              ]
             }}
             textStyle="box-white"
             textPosition="bottom-left"
@@ -125,7 +118,7 @@ const IndexPage = () => {
             className="w-full"
           />
           <CardText
-            body="The future plan, which the museum implements daily, envisions the structural renovation of the museum, and will render the scientific collection of more than 30 million objects more accessible and better available."
+            body="The Museum für Naturkunde Berlin of the future will be open, integrated and strong in research, a role model for research museums worldwide. Our script on the way there is our future plan."
             spacing="normal"
             alignment="center"
             buttons={[
@@ -408,7 +401,7 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+              imageName: "Museum_fuer_Naturkunde_mit_Vorplatz_im_Sommer_c_Pablo_Castagnola.jpg",
               alt: "Birds View of the Museum für Naturkunde",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"

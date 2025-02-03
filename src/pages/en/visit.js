@@ -47,7 +47,7 @@ const IndexPage = () => {
       <Header activeNavItem="visit" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
           <AccessibilityNav currentPage="Plan Your Visit" />
-        <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
+        <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36">
           <StoryTime
             imageProps={{
               imageName: "171030_naturkunde_156_c_thomas_rosenthal_0.jpg",
@@ -95,8 +95,8 @@ const IndexPage = () => {
             linkText="To Ticket Shop"
           />
         </Section>
-        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div>
+        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+          <div className="py-10 md:py-20">
             <CardText
               headline="Opening Hours"
               headlineStyle="h1"
@@ -154,8 +154,8 @@ const IndexPage = () => {
           </Accordion>
 
         </Section>
-        <Section columns={2} backgroundColor="bg-white" gapClass="gap-20 xl:gap-36" justifyContent="center">
-          <div className="flex -mt-40 flex-col justify-center items-center gap-20">
+        <Section columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+          <div className="flex -mt-20 md:-mt-40 flex-col justify-center items-center gap-10 md:gap-20">
             <CardText
               headline="Tickets & Prices"
               headlineStyle="h1"
@@ -869,7 +869,7 @@ const IndexPage = () => {
             url="/en/museum/education/guided-tours"
           />
         </Section>
-        <Section columns={2} backgroundColor="bg-white" gapClass="gap-36" justifyContent="center">
+        <Section columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-36" justifyContent="center">
           <CardText
             headline="Frequently Asked Questions"
             headlineStyle="h1"

@@ -39,7 +39,7 @@ const IndexPage = () => {
                 <Section backgroundColor="bg-white" gapClass="gap-20 xl:gap-36">
                     <StoryTime
                         imageProps={{
-                            imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+                            imageName: "Museum_fuer_Naturkunde_mit_Vorplatz_im_Sommer_c_Pablo_Castagnola.jpg",
                             alt: "Fassade des Museums für Naturkunde",
                             imageMap: imageMap,
                             className: "w-full h-full object-cover"
