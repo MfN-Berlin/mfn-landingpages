@@ -301,7 +301,7 @@ const Header = ({ activeNavItem, location }) => {
             {/* Centralized submenu container */}
             {activeSubmenu && getActiveSectionData() && (
               <div className="menu-namu-taxonomy-menu__submenu-container absolute left-0 w-screen bg-white overflow-y-auto max-h-[80vh] md:max-h-[calc(100vh-var(--height-menu)-var(--height-menu-border))]">
-                <div className="menu-namu-taxonomy-menu__submenu pl-[12px] md:pl-[180px] pt-[1.5em] pb-[1.5em] px-[12px]">
+                <div className="menu-namu-taxonomy-menu__submenu pl-[12px] max-w-[1165px] mx-auto md:pl-[180px] pt-[1.5em] pb-[1.5em] px-[12px]">
                   <div className="max-w-[1165px] mx-auto" style={{ columns: '280px auto', columnGap: '1em' }}>
                     {getActiveSectionData().submenuColumns
                       .sort((a, b) => a.column - b.column)
