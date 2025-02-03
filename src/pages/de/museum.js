@@ -36,7 +36,7 @@ const IndexPage = () => {
     <>
       <Header activeNavItem="museum" />
       <main className="bg-white flex flex-col items-center justify-center p-0">
-          <AccessibilityNav currentPage="Das Museum" />
+        <AccessibilityNav currentPage="Das Museum" />
 
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
@@ -78,8 +78,8 @@ const IndexPage = () => {
         <Section backgroundColor="bg-white" columns={1} forceGrid={true}>
           <Teaser
             imageProps={{
-              imageName: 'gmp_4451_4451_Perspektive_Eingang.jpeg',
-              alt: "Visualisierung des Gewinnerentwurfs aus dem Architekturwettbewerb: Vorplatz des Hauptgebäudes mit einem barrierefreien Eingang",
+              imageName: 'Museum_fuer_Naturkunde_mit_Vorplatz_im_Sommer_c_Pablo_Castagnola.jpg',
+              alt: "Das Museum für Naturkunde in Berlin",
               imageMap: imageMap,
               className: "aspect-[16/9] dada"
             }}
@@ -99,26 +99,26 @@ const IndexPage = () => {
           backgroundColor="bg-Green-100"
           padding="pt-16 pb-0"
         >
-          
-            <Teaser
-              imageProps={{
-                imageName: 'agn_Adlershof_NMB_Perspektive.jpeg',
-                alt: "Visualisierung des neuen Standorts in Adlershof: Der Gebäudeentwurf ist vom Wechsel von Begrünung und Holzfassade geprägt. Der rechteckige Grundriss gliedert sich über drei Geschosse.",
-                imageMap: imageMap,
-                className: "aspect-[16/9]"
-              }}
-              textProps={{
-                headline: "Das Museum in Zukunft",
-                headlineStyle: "h2",
-                spacing: "normal",
-              }}
-              textStyle="circle-white"
-              textPosition="center-center"
-              className="w-full"
-            />
-             </Section>
-             <Section backgroundColor="bg-Green-100" columns={1}>
-            <CardText
+
+          <Teaser
+            imageProps={{
+              imageName: 'gmp_4451_4451_Perspektive_Eingang.jpeg',
+              alt: "Visualisierung des Gewinnerentwurfs aus dem Architekturwettbewerb: Vorplatz des Hauptgebäudes mit einem barrierefreien Eingang",
+              imageMap: imageMap,
+              className: "aspect-[16/9]"
+            }}
+            textProps={{
+              headline: "Das Museum in Zukunft",
+              headlineStyle: "h2",
+              spacing: "normal",
+            }}
+            textStyle="circle-white"
+            textPosition="center-center"
+            className="w-full"
+          />
+        </Section>
+        <Section backgroundColor="bg-Green-100" columns={1}>
+          <CardText
             body="Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan."
             spacing="wide"
             alignment="center"
@@ -131,7 +131,7 @@ const IndexPage = () => {
             ]}
           />
         </Section>
-       
+
         <Section
           backgroundColor="bg-Green-100"
           padding="pt-0 pb-8"
@@ -148,7 +148,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Sammlungserschließung und -entwicklung",
               headlineStyle: "h3",
-              body:"Am Museum für Naturkunde Berlin bewahren wir 30 Millionen Sammlungsobjekte, jedes davon birgt Wissen von unschätzbarem Wert. Um eine umfängliche Nutzung der Sammlung zu ermöglichen, erschließen wir sie im Rahmen des Zukunftsplans – das heißt konservatorisch sichern, digital erfassen und innovative Nutzungszugänge schaffen.",
+              body: "Am Museum für Naturkunde Berlin bewahren wir 30 Millionen Sammlungsobjekte, jedes davon birgt Wissen von unschätzbarem Wert. Um eine umfängliche Nutzung der Sammlung zu ermöglichen, erschließen wir sie im Rahmen des Zukunftsplans – das heißt konservatorisch sichern, digital erfassen und innovative Nutzungszugänge schaffen.",
               spacing: "wide"
             }}
             url="/de/wissenschaft/sammlungserschliessung-und-entwicklung/"
@@ -169,7 +169,7 @@ const IndexPage = () => {
             }}
             url="/de/zukunft/wissenstransfer"
           />
-           <Card
+          <Card
             variant="classic"
             imageProps={{
               imageName: "diversityscanner-vielfalt-erhalten.jpg",
@@ -203,9 +203,9 @@ const IndexPage = () => {
             }}
             url="de/ueber-uns/das-museum/themuseumslab"
           />
-          
-        
-          
+
+
+
           <Card
             variant="classic"
             imageProps={{
@@ -217,7 +217,7 @@ const IndexPage = () => {
             textProps={{
               headline: "BROMACKER: Neue Wege der Wissenschafts-kommunikation",
               headlineStyle: "h3",
-              body:"Das einzigartige Projekt verknüpft Forschung und Wissenstransfer an der Ursaurier-Fundstelle im UNESCO Global Geopark Thüringen Inselsberg - Drei Gleichen, am Museum für Naturkunde Berlin, an der Stiftung Schloss Friedenstein Gotha und übergeordnet multimedial.",
+              body: "Das einzigartige Projekt verknüpft Forschung und Wissenstransfer an der Ursaurier-Fundstelle im UNESCO Global Geopark Thüringen Inselsberg - Drei Gleichen, am Museum für Naturkunde Berlin, an der Stiftung Schloss Friedenstein Gotha und übergeordnet multimedial.",
               spacing: "wide"
             }}
             url="de/wissenschaft/bromacker-neue-wege-der-wissenschaftskommunikation"
@@ -233,7 +233,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Erforschung des Ribbeck-Meteoriten",
               headlineStyle: "h3",
-              body:"Expert:innen des Museums für Naturkunde Berlin untersuchen das außerirdische Aubrit-Gestein und koordinieren ein internationales Konsortium zur Erforschung des Ribbeck-Meteoriten. Erste Ergebnisse zeigen: Er könnte mit der Erde verwandt sein – und Bausteine des Lebens in sich tragen.",
+              body: "Expert:innen des Museums für Naturkunde Berlin untersuchen das außerirdische Aubrit-Gestein und koordinieren ein internationales Konsortium zur Erforschung des Ribbeck-Meteoriten. Erste Ergebnisse zeigen: Er könnte mit der Erde verwandt sein – und Bausteine des Lebens in sich tragen.",
               spacing: "wide"
             }}
             url="/de/zukunde/besuch-eines-fernen-verwandten"
@@ -241,62 +241,62 @@ const IndexPage = () => {
 
         </Section>
         <Section backgroundColor="bg-Green-100" padding="pt-0 pb-16" forceGrid={true}>
-            <Teaser
-              imageProps={{
-                imageName: "180809_ct_09_www_c_carola-radke_mfn.jpg",
-                alt: "Staff member Martin Kirchner working at the CT scanner in the new CT lab",
-                imageMap: imageMap,
-                className: "w-full h-auto object-cover"
-              }}
-              textProps={{
-                headline: "Ein integriertes Forschungsmuseum der Leibniz-Gemeinschaft",
-                headlineStyle: "h3",
-                body: "Am Museum erforschen Teams aus verschiedenen Disziplinen das Leben auf der Erde. Sammlung, Forschung und Wissenstransfer sind eng verknüpft und schaffen gemeinsam neue Erkenntnisse.",
-                spacing: "wide",
-                buttons: [
-                  {
-                    text: "Mehr über unsere Forschung",
-                    url: "/de/forschung/",
-                    className: "mt-4",
-                    variant: "plain",
-                  },
-                  {
-                    text: "Mehr über unsere Angebote, sich an unserer Forschung zu beteiligen",
-                    url: "/de/mitmachen/",
-                    className: "mt-4",
-                    variant: "plain",
-                  }
-                ]
-              }}
-              url="/en/research/"
-              alignment="center"
-              className="w-full"
-              textStyle="box-white"
-            />
-          </Section>
+          <Teaser
+            imageProps={{
+              imageName: "180809_ct_09_www_c_carola-radke_mfn.jpg",
+              alt: "Staff member Martin Kirchner working at the CT scanner in the new CT lab",
+              imageMap: imageMap,
+              className: "w-full h-auto object-cover"
+            }}
+            textProps={{
+              headline: "Ein integriertes Forschungsmuseum der Leibniz-Gemeinschaft",
+              headlineStyle: "h3",
+              body: "Am Museum erforschen Teams aus verschiedenen Disziplinen das Leben auf der Erde. Sammlung, Forschung und Wissenstransfer sind eng verknüpft und schaffen gemeinsam neue Erkenntnisse.",
+              spacing: "wide",
+              buttons: [
+                {
+                  text: "Mehr über unsere Forschung",
+                  url: "/de/forschung/",
+                  className: "mt-4",
+                  variant: "plain",
+                },
+                {
+                  text: "Mehr über unsere Angebote, sich an unserer Forschung zu beteiligen",
+                  url: "/de/mitmachen/",
+                  className: "mt-4",
+                  variant: "plain",
+                }
+              ]
+            }}
+            url="/en/research/"
+            alignment="center"
+            className="w-full"
+            textStyle="box-white"
+          />
+        </Section>
         <Section
           backgroundColor="bg-White"
           padding="pt-16 pb-0"
         >
-          
-            <Teaser
-              imageProps={{
-                imageName: '230826_mfn_318.jpg',
-                alt: "Fassade des Museums und Menschen die in der Schlange anstehen",
-                imageMap: imageMap,
-                className: "aspect-[16/9]"
-              }}
-              textProps={{
-                headline: "Das Museum",
-                headlineStyle: "h2",
-                spacing: "normal",
-              }}
-              textStyle="circle-white"
-              textPosition="center-center"
-              className="w-full h-[25rem] text-sm"
-              alignment="center"
-            />
-          
+
+          <Teaser
+            imageProps={{
+              imageName: '230826_mfn_318.jpg',
+              alt: "Fassade des Museums und Menschen die in der Schlange anstehen",
+              imageMap: imageMap,
+              className: "aspect-[16/9]"
+            }}
+            textProps={{
+              headline: "Das Museum",
+              headlineStyle: "h2",
+              spacing: "normal",
+            }}
+            textStyle="circle-white"
+            textPosition="center-center"
+            className="w-full h-[25rem] text-sm"
+            alignment="center"
+          />
+
         </Section>
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
@@ -332,7 +332,7 @@ const IndexPage = () => {
           padding="pt-0 pb-16"
           columns={3}
         >
-           <Card
+          <Card
             variant="classic"
             imageProps={{
               imageName: "zp_1200x675_WEBSEITE.jpg",
@@ -375,7 +375,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Wissenschaftsreports und Geschäftsberichte",
               headlineStyle: "h3",
-              body:"Unsere Berichte geben einen detaillierten Einblick in unsere Forschungsbereiche sowie über die spannendsten und wichtigsten Forschungsprojekte.",
+              body: "Unsere Berichte geben einen detaillierten Einblick in unsere Forschungsbereiche sowie über die spannendsten und wichtigsten Forschungsprojekte.",
               spacing: "wide"
             }}
             url="de/ueber-uns/das-museum/publikationen-und-downloads"
@@ -391,13 +391,13 @@ const IndexPage = () => {
             textProps={{
               headline: "Karriereportal",
               headlineStyle: "h3",
-              body:"Verstärken Sie unser Team im wissenschaftlichen Bereich, im technischen Bereich oder in der Verwaltung.",
+              body: "Verstärken Sie unser Team im wissenschaftlichen Bereich, im technischen Bereich oder in der Verwaltung.",
               spacing: "wide"
             }}
             url="de/museum/jobs-und-karriere/"
           />
-        
-          
+
+
           <Card
             variant="classic"
             imageProps={{
@@ -409,7 +409,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Kontakt",
               headlineStyle: "h3",
-              body:"Wir stehen gerne mit Ihnen in direktem Kontakt zu einzelnen Bereichen unseres Museums.",
+              body: "Wir stehen gerne mit Ihnen in direktem Kontakt zu einzelnen Bereichen unseres Museums.",
               spacing: "wide"
             }}
             url="/de/kontakt/"
@@ -425,28 +425,28 @@ const IndexPage = () => {
             textProps={{
               headline: "Team",
               headlineStyle: "h3",
-              body:"Suchen und finden Sie Menschen, die am Museum für Naturkunde Berlin arbeiten.",
+              body: "Suchen und finden Sie Menschen, die am Museum für Naturkunde Berlin arbeiten.",
               spacing: "wide"
             }}
             url="/de/ueber-uns/team/"
           />
         </Section>
         <Section columns={1} backgroundColor="bg-Black-100">
-                    <CardText
-                        headline="Kontakt"
-                        headlineStyle="h1"
-                        body="Möchten Sie mehr über das Museum für Naturkunde Berlin erfahren?"
-                        spacing="wide"
-                        alignment="center"
-                    />
-                   <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
-                        <Button variant="primary" url="/de/kontakt/">Stellen Sie uns eine Frage</Button>
-                        <Button variant="primary" url="tel:+4930889140-8591">Rufen Sie uns an</Button>
-                        <Button variant="primary" url="/de/besuch-planen/">Besuchen Sie uns im Museum</Button>
-                    </div>
+          <CardText
+            headline="Kontakt"
+            headlineStyle="h1"
+            body="Möchten Sie mehr über das Museum für Naturkunde Berlin erfahren?"
+            spacing="wide"
+            alignment="center"
+          />
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-2">
+            <Button variant="primary" url="/de/kontakt/">Stellen Sie uns eine Frage</Button>
+            <Button variant="primary" url="tel:+4930889140-8591">Rufen Sie uns an</Button>
+            <Button variant="primary" url="/de/besuch-planen/">Besuchen Sie uns im Museum</Button>
+          </div>
 
 
-                </Section>
+        </Section>
       </main>
       <Footer />
     </>

@@ -79,8 +79,8 @@ const IndexPage = () => {
         <Section backgroundColor="bg-white" columns={1} forceGrid={true}>
           <Teaser
             imageProps={{
-              imageName: 'gmp_4451_4451_Perspektive_Eingang.jpeg',
-              alt: "Visualization of the winning design from the architectural competition: Main building forecourt with barrier-free entrance",
+              imageName: 'Museum_fuer_Naturkunde_mit_Vorplatz_im_Sommer_c_Pablo_Castagnola.jpg',
+              alt: "The Museum für Naturkunde in Berlin",
               imageMap: imageMap,
               className: "aspect-[16/9] dada"
             }}
@@ -103,8 +103,8 @@ const IndexPage = () => {
         >
           <Teaser
             imageProps={{
-              imageName: 'agn_Adlershof_NMB_Perspektive.jpeg',
-              alt: "Visualization of the new location in Adlershof: The building design is characterized by alternating greenery and wooden façade. The rectangular layout is divided over three floors.",
+              imageName: 'gmp_4451_4451_Perspektive_Eingang.jpeg',
+              alt: "Visualization of the winning design from the architectural competition: Main building forecourt with barrier-free entrance",
               imageMap: imageMap,
               className: "aspect-[16/9]"
             }}
