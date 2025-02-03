@@ -60,6 +60,7 @@ const ResearchPage = () => {
                         className="max-w-7xl mx-auto"
                     />
                 </Section>
+
                 <Section
                     backgroundColor="bg-white"
                     columns={1}
@@ -78,10 +79,10 @@ const ResearchPage = () => {
                                         htmlFor="science-search"
                                         className="text-xl font-bold text-Black-900"
                                     >
-                                        Explore Our Research
+                                        Find out about our research
                                     </label>
                                     <p className="text-sm text-Black-700 mt-2">
-                                        Search for people and/or keywords to find related research activities. <br /><br />
+                                        Search by people and/or keywords to find the right research activities for you.
                                     </p>
                                 </div>
                                 <div className="mt-auto flex flex-col md:flex-row gap-2">
@@ -89,7 +90,7 @@ const ResearchPage = () => {
                                         type="text"
                                         id="science-search"
                                         name="query"
-                                        placeholder="Search for names, roles, projects..."
+                                        placeholder="Search by name, role, project..."
                                         className="w-full p-3 border border-Black-300 rounded appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-Green-500"
                                     />
                                     <button
@@ -102,8 +103,6 @@ const ResearchPage = () => {
                             </div>
                         </form>
                     </div>
-
-
                 </Section>
 
                 <Section backgroundColor="bg-Green-100" columns={1} padding="py-16">
@@ -116,9 +115,9 @@ const ResearchPage = () => {
                         }}
                         textProps={{
                             kicker: "Research at the Museum",
-                            headline: "Research Areas & Infrastructure",
+                            headline: "Areas of Research & Infrastructure",
                             headlineStyle: "h2",
-                            body: "At the museum, teams from various disciplines explore life on Earth. Our collection serves as the foundation for globally connected research. We involve society in this endeavor: In cooperation with civil society, politics, and industry, we develop formats that convey insights, create relevant knowledge for all, and make the significance of our collection tangible.",
+                            body: "The teams at our museum research life on earth across a variety of disciplines. Our collection is used as a foundation for globally networked research. We cooperate with actors from civil society, politics and business to develop formats, to teach people about the latest findings, to make discoveries that are relevant for everyone, and to demonstrate the importance of our collection.",
                             spacing: "wide",
                             buttons: [
                                 {
@@ -148,9 +147,9 @@ const ResearchPage = () => {
                         }}
                         textProps={{
                             kicker: "Research Area 1",
-                            headline: "Dynamics of Nature",
+                            headline: "The Dynamics of Nature",
                             headlineStyle: "h3",
-                            body: "We study the processes that shape the natural world, from the evolution and diversity of species to the formation of the solar system.",
+                            body: "We are investigating the processes that form the natural world: from evolution and the diversity of species, to the origins of the solar system.",
                             spacing: "regular"
                         }}
                         url="/en/science/dynamics-of-nature"
@@ -165,9 +164,9 @@ const ResearchPage = () => {
                         }}
                         textProps={{
                             kicker: "Research Area 2",
-                            headline: "Future of the Collection",
+                            headline: "The Future of the Collection",
                             headlineStyle: "h3",
-                            body: "We are creating an open and networked collection that opens up new paths for research and knowledge transfer through innovative approaches in data and knowledge management – together with partners from science, society, and culture.",
+                            body: "We curate an open and networked collection which opens up new avenues for research and knowledge transfer through innovative approaches to data and knowledge management – in partnership with stakeholders from science, society and culture.",
                             spacing: "regular"
                         }}
                         url="/en/science/research/collection-future"
@@ -185,7 +184,7 @@ const ResearchPage = () => {
                             kicker: "Research Area 3",
                             headline: "Society and Nature",
                             headlineStyle: "h3",
-                            body: "We investigate how participation and knowledge exchange enrich research and practical knowledge for nature.",
+                            body: "We are exploring how participation and knowledge-sharing enrich research and practical knowledge for nature.",
                             spacing: "regular"
                         }}
                         url="/en/science/society-and-nature"
@@ -203,7 +202,7 @@ const ResearchPage = () => {
                         textProps={{
                             headline: "Collection",
                             headlineStyle: "h3",
-                            body: "The collection includes objects from the time of the origin of the solar system more than 4.5 billion years ago to the present day and contains a large number of first descriptions of species (type specimens).",
+                            body: "The items in our collection date from the very beginnings of the solar system, more than 4.5 billion years ago, to the present day and a large number of them represent the first of their species to be described (type specimens).",
                             spacing: "regular"
                         }}
                         url="/en/science/infrastructure/collection"
@@ -220,7 +219,7 @@ const ResearchPage = () => {
                         textProps={{
                             headline: "Archive",
                             headlineStyle: "h3",
-                            body: "Historical documents and research results are available as valuable resources for studies.",
+                            body: "Historical documents and findings are valuable resources which are available for use in scientific studies.",
                             spacing: "regular"
                         }}
                         url="/en/science/archive"
@@ -238,7 +237,7 @@ const ResearchPage = () => {
                         textProps={{
                             headline: "Library",
                             headlineStyle: "h3",
-                            body: "Scientific and historical collections support research, teaching, and knowledge transfer.",
+                            body: "Use our collection of works on history and natural sciences to help with your research, teaching and education work.",
                             spacing: "regular"
                         }}
                         url="/en/science/library"
@@ -257,9 +256,9 @@ const ResearchPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Laboratories",
+                            headline: "Labs",
                             headlineStyle: "h3",
-                            body: "Our laboratories are open to museum staff, students, doctoral candidates, postdocs, and visiting scientists for their research projects.",
+                            body: "Employees of the museum, students, doctoral candidates, post-docs and guest researchers can use our labs for their own research projects.",
                             spacing: "regular",
                             buttons: [
                                 {
@@ -280,9 +279,9 @@ const ResearchPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Scientific Journals",
+                            headline: "Academic Journals",
                             headlineStyle: "h3",
-                            body: "We publish three scientific journals: Deutsche Entomologische Zeitschrift, Zoosystematics and Evolution (formerly Mitteilungen aus dem Zoologischen Museum Berlin), and Fossil Record.",
+                            body: "We publish three academic journals: Deutsche Entomologische Zeitschrift, Zoosystematics and Evolution (formerly Mitteilungen aus dem Zoologischen Museum Berlin) and Fossil Record.",
                             spacing: "regular"
                         }}
                         url="/en/science/scientific-journals"
@@ -318,7 +317,7 @@ const ResearchPage = () => {
 
                 <Section backgroundColor="bg-Green-100" columns={1} padding="pt-16 pb-8">
                     <CardText
-                        headline="Working Groups"
+                        headline="Working Groups and Teams"
                         headlineStyle="h1"
                         spacing="wide"
                         alignment="center"
@@ -331,56 +330,62 @@ const ResearchPage = () => {
                             imageName="Website_Palaeobotanik_aktualisiert.jpg"
                             altText="View of the paleobotany collection. Photo: Carola Radke"
                             kicker="Research Area 1"
-                            title="Paleobotany Working Group"
-                            text="The Paleobotany Working Group researches the evolution and diversity of fossil plants. Our focus is on reconstructing extinct plants and their habitats."
+                            title="Palaeobotany Working Group"
+                            text="The Palaeobotany Working Group conducts research on the evolution and diversity of fossilised plants. Our focus is on reconstructing extinct plants and their habitats."
                             link="/en/science/paleobotany-working-group"
                         />
+
                         <SlideContent
                             imageName="Ortholasmatinae fossil Jonas Damzen.jpg"
                             altText="Extinct harvestman in Ukrainian Rovno amber"
                             kicker="Research Area 1"
                             title="Dunlop Working Group"
-                            text="The Dunlop Working Group investigates the evolution and systematics of fossil and recent arachnids, with particular emphasis on scorpions and spiders."
+                            text="The Dunlop Working Group is investigating the evolution and taxonomy of fossilised and living arachnids, with a particular focus on spiders and scorpions."
                             link="/en/science/dunlop-working-group"
                         />
+
                         <SlideContent
                             imageName="Thomisid5-crop.jpg"
                             altText="Close-up of a crab spider (Thomisidae)"
                             kicker="Research Area 1"
-                            title="MultiplEye Lab Research Group"
-                            text="The MultiplEye Lab researches the function and evolution of multiple-eye systems in animals, particularly in spiders and other arthropods."
+                            title="MultiplEye Lab Working Group"
+                            text="The MultiplEye Lab conducts research on the function and evolution of multiple-eye systems in animals, with a focus on spiders and other arthropods."
                             link="/en/science/multipleye-lab"
                         />
+
                         <SlideContent
                             imageName="Chameleon_Sudan_Erkowit.jpg"
                             altText="Chameleon on trunk, blue sky and trees in background"
                             kicker="Research Area 1"
                             title="Amniota Lab"
-                            text="Our research focuses on fossil and living terrestrial vertebrates, such as lizards and snakes (Müller) and herbivorous mammals (Bibi)."
+                            text="Our research is focused on fossilised and land vertebrates, like lizards and snakes (Müller), and herbivorous mammals (Bibi)."
                             link="/en/science/amniota-lab"
                         />
+
                         <SlideContent
                             imageName="zm_b_vi_0245_walmodell.jpg"
                             altText="Historical whale model"
                             kicker="Research Area 2"
-                            title="Center for Cultural and Social Sciences of Nature"
-                            text="Our working group is dedicated to the politics, histories, and cultures of nature through independent research and public activities in knowledge transfer."
+                            title="Centre for Nature in Cultural and Social Sciences"
+                            text="Our working group is dedicated to the politics, history and culture of nature, conducting independent research and public knowledge transfer activities."
                             link="/en/science/cultural-social-sciences"
                         />
+
                         <SlideContent
                             imageName="large_Header_2023_klein_beschnitten_belichted_7cca538a55.jpg"
                             altText="Nature View"
                             kicker="Research Area 3"
-                            title="Human-Nature Relations in the Anthropocene"
-                            text="Inter- and transdisciplinary research on the interrelations between humans, nature, and digital transformation"
+                            title="Human-Nature Relationships in the Anthropocene"
+                            text="Inter and trans-disciplinary research on the interactions between humans, nature and digital transformation."
                             link="/en/science/human-nature-relations"
                         />
+
                         <SlideContent
                             imageName="ieti-keyvisual.png"
                             altText="IETI Keyvisual"
                             kicker="Research Area 3"
                             title="Public Engagement and Impact"
-                            text="We promote the strategic anchoring of public engagement in research and research institutions. To this end, we open up both research culture and processes to non-academic stakeholders through a broad spectrum of formats and methods."
+                            text="We promote the strategic anchoring of public engagement in science and scientific institutions. We do this by opening up the culture and processes of science to non-academic stakeholders, using a wide range of formats and methods."
                             link="/en/science/public-engagement"
                         />
                     </Slideshow>

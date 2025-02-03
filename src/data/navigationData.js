@@ -235,7 +235,7 @@ export const mainNavData = {
             submenu: [
               { to: "/de/pressemitteilungen", label: "Presse" },
               { to: "/de/museum/medien/news", label: "News" },
-              { to: "/de/museum/medien/journal-fuer-natur", label: "Journal \"für Natur\"" },
+              { to: "/de/museum/medien/journal-fuer-natur", label: "Journal \"Für Natur\"" },
               { to: "http://eepurl.com/vsVBv", label: "Newsletter" }
             ]
           },

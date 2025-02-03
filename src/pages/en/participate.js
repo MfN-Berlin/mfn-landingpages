@@ -50,20 +50,20 @@ const IndexPage = () => {
                             className: "w-full h-full object-cover"
                         }}
                         textProps={{
-                            kicker: "Experience Science",
-                            headline: "Get Involved with Nature!",
-                            body: "Discover our opportunities to participate in our research, create new knowledge together, and experience nature.",
+                            kicker: "Hands-On Science",
+                            headline: "Get Stuck in for Nature!",
+                            body: "Discover the various ways you can get involved with our research, help us discover new things, and experience nature.",
                             headlineStyle: "h1",
                             spacing: "wide",
                             alignment: "center",
                             buttons: [
                                 {
-                                    text: "Volunteering",
+                                    text: "Volunteer Scheme",
                                     url: "/en/museum/participate/citizen-science/volunteering",
                                     variant: "plain"
                                 },
                                 {
-                                    text: "Educational Programs",
+                                    text: "Education Offers",
                                     url: "/en/museum/education",
                                     variant: "plain"
                                 },
@@ -90,6 +90,7 @@ const IndexPage = () => {
                         alignment="center"
                     />
                 </Section>
+
                 <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Card
                         variant="classic"
@@ -101,19 +102,16 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Nature of Things. A Participatory Collection of the Anthropocene",
-                            body: "How has your environment changed? Which personal items or testimonies from the past tell this story? Contribute with your object and your story to better understand environmental change and future challenges!",
+                            headline: "The Nature of Things. An interactive collection on the Anthropocene",
+                            body: "How has our environment changed? What personal items or evidence from the past can tell us about these changes? Use your item and your history to help us better understand changes in the environment and the challenges of the future!",
                             headlineStyle: "h3",
                             alignment: "center"
                         }}
                         url="/en/science/changing-natures.-collecting-anthropocene-together"
                     />
-
-
-
                 </Section>
-                <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
 
+                <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Card
                         variant="classic"
                         imageProps={{
@@ -123,8 +121,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Help the Archive",
-                            body: "Help us develop our collection and actively contribute to the creation of new knowledge. Along the way, you'll gain experience in museum work, database management, and research.",
+                            headline: "Help the archive",
+                            body: "Help the museum's historical team make historical documents legible again, so that they can be used for research. Participants must have knowledge of historical German languages, such as Kurrent or Sütterlin.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -133,7 +131,6 @@ const IndexPage = () => {
 
                     <Card
                         variant="classic"
-                        alignment="center"
                         imageProps={{
                             imageName: "MfN_Sammlung_Hwja_Goetz.jpg",
                             alt: "Our bird collection with approximately 200,000 objects",
@@ -141,17 +138,16 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Volunteer Engagement",
-                            body: "Help us develop our collection and actively contribute to the creation of new knowledge. Gain experience in museum work, database management, and research. Read more about your potential areas of involvement here.",
+                            headline: "Volunteering",
+                            body: "Help us unlock the secrets of our collection and play an active part in new discoveries. Along the way, you will gain experience in research, database management, what it's like to work at a museum and much more.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
                         url="/en/museum/participate/citizen-science/volunteering"
                     />
-
                 </Section>
-                <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
 
+                <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Card
                         variant="classic"
                         imageProps={{
@@ -161,8 +157,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Open Museum Studio in the Microscopy Center",
-                            body: "Colorful butterflies, impressive bird wings, ancient fossils: In our Open Museum Studio, objects aren't behind glass - they're in your hand, right in front of you, or under the microscope.",
+                            headline: "Open Museum Workshop in the microscope centre",
+                            body: "Brightly coloured butterflies, impressive bird wings, ancient fossils: our Open Museum Workshop does away with glass cabinets, allowing you to explore exhibits with your hands, your nose, or a microscope.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -178,8 +174,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "mit:forschen! (co:research!)",
-                            body: "Together with Science in Dialogue, we operate mit:forschen!, the central online platform for Citizen Science in Germany. Participate in one of 270 projects from various disciplines.",
+                            headline: "mit:forschen!",
+                            body: "We've partnered up with Wissenschaft im Dialog to run mit:forschen!, the central online platform for citizen science in Germany. Get involved in one of 270 projects across a range of subjects.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -196,17 +192,17 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Nature Knowledge Network",
-                            body: "We reflect on natural knowledge from different perspectives through exchange. Once a month, we also meet at the museum to discuss scientific texts together.",
+                            body: "We create dialogue to reflect on nature knowledge from different perspectives. We meet up in the museum once a month to discuss scientific texts as a group.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
                         url="/en/science/netzwerk-naturwissen"
                     />
-
                 </Section>
+
                 <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Blockquote
-                        text="<strong>Our Mission:</strong><br/> We explore Earth and Life in dialogue with people."
+                        text="<strong>Our mission:</strong><br/> to explore life and the earth in dialogue with the people on it."
                         backgroundColor=""
                         className="bg-Green-500"
                     />
@@ -221,30 +217,30 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Naturblick: Discover Urban Nature",
-                            body: "With Naturblick, you can easily identify plants and animals and learn more about nature in your city. Save your observations and share them with science and nature conservation.",
+                            headline: "Naturblick: Exploring Nature in the City",
+                            body: "Naturblick makes it easy to identify plants and animals, and to learn more about nature in your city. Save your observations and share them with researchers and conservationists.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
                         url="/en/science/naturblick-discover-urban-nature"
                     />
+
                     <Card
                         variant="classic"
                         imageProps={{
                             imageName: "180622_Forschen_und_Feiern_37__(c)_Hwa Ja-Goetz_MfN.jpg",
-                            alt: "Children examining objects in the museum's microscopy center | Source: Museum für Naturkunde Berlin",
+                            alt: "Children examining objects in the museum's microscopy center",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Experience Nature Through Art – Guided Tour and Mask Making",
-                            body: "In the dinosaur hall, children get to know the over 13-meter-tall <em>Giraffatitan</em> and many other dinosaurs, such as the carnivorous <em>Allosaurus</em> or the spiky <em>Kentrosaurus</em>.",
+                            headline: "Nature Meets Art – Guided Tour and Mask Painting",
+                            body: "In the Dinosaur Hall, children will meet the 13 metre-tall Giraffatitan, plus loads of other dinosaurs, like the carnivorous Allosaurus or the spiny Kentrosaurus.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
                         url="/en/museum/education/school-and-kindergarten/workshops-and-microscopy"
                     />
-
 
                     <Card
                         variant="classic"
@@ -255,8 +251,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Mineralogy/Geology Special Interest Group",
-                            body: "The Mineralogy/Geology Group at the Museum für Naturkunde is an open association of hobby collectors and enthusiasts who share a passion for minerals and rocks. They meet for fascinating specialist lectures on the first Tuesday of every month (except August).",
+                            headline: "Mineralogy/Geology Group",
+                            body: "The Mineralogy/Geology Group is an open collective of hobby collectors and enthusiasts who share a passion for rocks and minerals. They meet on the first Tuesday of every month (except August) for exciting talks from experts.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -272,8 +268,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Kulturring in Berlin e.V. – Paleontology Group",
-                            body: "Every third Tuesday of the month, we invite hobby collectors and anyone interested in paleontology to engaging specialist lectures. Afterwards, there are opportunities to engage with the researchers, ask questions, and participate in discussions.",
+                            headline: "Kulturring in Berlin e.V. – Palaeontology Group",
+                            body: "The Palaeontology Group invites anyone interested in palaeontology to attend one of their exciting talks from experts, held on the third Tuesday of every month. After the talk, you will have an opportunity to chat with the experts, ask questions and discuss palaeontology.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -284,13 +280,13 @@ const IndexPage = () => {
                         variant="classic"
                         imageProps={{
                             imageName: "160216_lepidoptera_kasten_05_c_hwaja-goetz_mfn.jpg",
-                            alt: "Photograph of an insect box with butterflies in different colors.",
+                            alt: "Photograph of an insect box with butterflies in different colors",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Entomological Society ORION Berlin",
-                            body: "The society inspires young people to appreciate regional insect diversity and is committed to protecting endangered species and their habitats. Through educational programs and nature conservation projects, they actively contribute to preserving biodiversity.",
+                            headline: "Entomologische Gesellschaft ORION Berlin",
+                            body: "Berlin's entomological society is all about getting young people excited about the regional diversity of insect life, and works on protecting threatened species and their habitats. With educational programmes and conservation projects, they play an active role in maintaining biodiversity.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -301,29 +297,28 @@ const IndexPage = () => {
                         variant="classic"
                         imageProps={{
                             imageName: "bild-2619.png",
-                            alt: "Photograph of a beetle on a leaf.",
+                            alt: "Photograph of a beetle on a leaf",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "German Youth Association for Nature Observation",
-                            body: "The DJN group Brandenburg and Berlin consists of young people from Berlin and surrounding areas who are interested in natural history and politics. Together, they explore some of Germany's most species-rich and exciting natural areas – including the Schorfheide, the Oder Valley, former military training grounds, and the Havel landscape.",
+                            headline: "Deutscher Jugendbund für Naturbeobachtung",
+                            body: "The DJN Brandenburg and Berlin is a group of young people from the Greater Berlin area who are interested in natural sciences and politics. They come together to explore some of the most diverse and exciting areas of natural beauty in Germany – such as Schorfheide, the Oder Valley, old military parade grounds, and the Havel region.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
                         url="/en/museum/participate/citizen-science/special-interest-groups"
                     />
-
-
                 </Section>
                 <Section columns={1} backgroundColor="bg-White" padding="pt-16">
                     <CardText
-                        headline="Participation: Briefly Explained"
+                        headline="Getting Involved: In Brief"
                         headlineStyle="h1"
                         spacing="wide"
                         alignment="center"
                     />
                 </Section>
+
                 <Section columns={1} forceGrid={true} backgroundColor="bg-White" padding="pt-16 pb-8">
                     <Teaser
                         imageProps={{
@@ -333,11 +328,11 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "Citizen Science",
-                            body: "Support scientists in their work and contribute to the creation of new knowledge. Depending on how you choose to participate, you can actively shape the research process, satisfy your curiosity, and above all: experience the joy of being part of research!",
+                            body: "Support researchers in their work and play a role in making new discoveries. Whether it's about actively shaping the research process or satisfying your curiosity, how you get involved is up to you – the most important thing is taking joy in science!",
                             headlineStyle: "h3"
                         }}
                         buttonProps={{
-                            label: "Research with us!",
+                            label: "Come and get involved in our research work!",
                             variant: "primary",
                             url: "/en/museum/participate/citizen-science/"
                         }}
@@ -345,8 +340,8 @@ const IndexPage = () => {
                         textPosition="bottom-left"
                     />
                 </Section>
-                <Section columns={2} backgroundColor="bg-White" padding="pt-0 pb-16" >
 
+                <Section columns={2} backgroundColor="bg-White" padding="pt-0 pb-16">
                     <Card
                         variant="classic"
                         imageProps={{
@@ -356,8 +351,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Volunteering",
-                            body: "Support the museum by organizing, inventorying, and labeling collection objects, entering data into databases, and conducting research. Experts can also take on the processing of specific groups or partial collections in our scientific collections.",
+                            headline: "Volunteer Scheme",
+                            body: "Support the museum by organising, cataloguing and labelling exhibits, entering data into databases, and undertaking research. Qualified professionals can also get involved in curating specific groups or sub-collections within our scientific collections.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -373,14 +368,13 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Educational Programs",
-                            body: "With guided tours and various events, we offer a wide range of programs and events for children, families, kindergartens, schools, and adults – in the city, at the museum, and digitally.",
+                            headline: "Education",
+                            body: "With guided tours and a variety of different events, we have a wide range of programmes and events for kids, families, nurseries, schools and grown-ups – in the city, in the museum and virtually.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
                         url="/en/museum/education"
                     />
-
                 </Section>
                 <Section columns={1} backgroundColor="bg-Black-100">
                     <CardText

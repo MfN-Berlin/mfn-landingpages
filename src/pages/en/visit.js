@@ -46,7 +46,7 @@ const IndexPage = () => {
     <>
       <Header activeNavItem="visit" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
-          <AccessibilityNav currentPage="Plan Your Visit" />
+        <AccessibilityNav currentPage="Plan Your Visit" />
         <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36">
           <StoryTime
             imageProps={{
@@ -98,9 +98,9 @@ const IndexPage = () => {
         <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
           <div className="py-10 md:py-20">
             <CardText
-              headline="Opening Hours"
+              headline="Opening Times"
               headlineStyle="h1"
-              body="The Museum is open daily until 18:00.<br/>Monday is closed.<br/>Last entry is 30 minutes before closing."
+              body="The museum is open daily until 6:00pm.<br/>The museum is closed on Mondays.<br/>Last entry is 30 minutes before closing time."
               spacing="wide"
               alignment="center"
             />
@@ -110,12 +110,11 @@ const IndexPage = () => {
                 to="/en/visit/special-opening-hours"
                 className="w-full block text-center text-Green-500 typography-p"
               >
-                Detailed Plan with Special Opening Hours
+                Detailed schedule with special opening times
               </Link>
             </div>
           </div>
-          <Accordion bgColor="white" id="öffnungszeiten">
-
+          <Accordion bgColor="white" id="opening-times">
             <OpenToday />
 
             <AccordionSpacer>
@@ -124,7 +123,7 @@ const IndexPage = () => {
                   Tuesday, Wednesday, Thursday, Friday
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2">
-                  09:30 to 18:00
+                  09:30am to 6:00pm
                 </div>
               </div>
             </AccordionSpacer>
@@ -132,10 +131,10 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Saturday, Sunday, and on <a href="/en/visit/special-opening-hours" className="underline">Holidays</a>
+                  Saturday, Sunday, and on <a href="/en/visit/special-opening-hours" className="underline">public holidays</a>
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2">
-                  10:00 to 18:00
+                  10:00am to 6:00pm
                 </div>
               </div>
             </AccordionSpacer>
@@ -150,29 +149,28 @@ const IndexPage = () => {
                 </div>
               </div>
             </AccordionSpacer>
-
           </Accordion>
-
         </Section>
         <Section columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
           <div className="flex -mt-20 md:-mt-40 flex-col justify-center items-center gap-10 md:gap-20">
             <CardText
               headline="Tickets & Prices"
               headlineStyle="h1"
-              body={`Tickets can be purchased at the Museum or in the <a href="/tickets/online-shop" className="underline" target="_blank" rel="noopener noreferrer">Online Shop</a>. 
-                We recommend booking Online-Zeitfenstertickets beforehand to avoid waiting at the ticket counter.`}
+              body={`Tickets can be purchased on arrival or in the <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline" target="_blank" rel="noopener noreferrer">online shop</a>. 
+        We recommend booking tickets online in advance to avoid queuing at the museum.`}
               spacing="wide"
               alignment="center"
               buttons={[
                 {
-                  text: "Ticket Cooperations",
-                  url: "/en/visit/cooperations",
+                  text: "CombiTickets",
+                  url: "/en/visit/combi-tickets",
                   variant: "plain"
-                }]}
+                }
+              ]}
             />
-
           </div>
-          <Accordion bgColor="green" defaultOpenIndex={0} id="tickets-preise">
+
+          <Accordion bgColor="green" defaultOpenIndex={0} id="tickets-prices">
             <AccordionItem title="Single Tickets">
               <div className="flex flex-col items-end justify-start w-full px-4 pb-4 gap-2.5">
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
@@ -180,20 +178,20 @@ const IndexPage = () => {
                     Adults
                   </h3>
                   <h3 className="w-[125px] text-right text-Black-900 text-[21px]">
-                    11,00 €
+                    €11.00
                   </h3>
                 </div>
                 <div className="flex justify-between items-baseline gap-2.5 w-full">
                   <h3 className="text-Black-700 flex-1 text-[21px]">
-                    Children under 6
+                    Children aged 6 and over
                   </h3>
                   <h3 className="w-[125px] text-right text-Black-900 text-[21px]">
-                    5,00 €
+                    €5.00
                   </h3>
                 </div>
               </div>
-
             </AccordionItem>
+
             <AccordionItem title="Group Tickets">
               <div className="p-5">
                 <ul className="flex flex-col gap-4 list-disc pl-4">
@@ -203,17 +201,17 @@ const IndexPage = () => {
                         Families (two adults with up to three children under 14)
                       </p>
                       <p className="font-bold whitespace-nowrap">
-                        18,00 €
+                        €18.00
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="flex justify-between items-baseline">
                       <p className="flex-1 pr-8">
-                        Mini-Families (one adult with up to two children under 14)
+                        Mini Families (one adult with up to two children under 14)
                       </p>
                       <p className="font-bold whitespace-nowrap">
-                        12,00 €
+                        €12.00
                       </p>
                     </div>
                   </li>
@@ -223,45 +221,38 @@ const IndexPage = () => {
                         Adults in groups of 10 or more
                       </p>
                       <p className="font-bold whitespace-nowrap">
-                        8,00 €
+                        €8.00
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="flex justify-between items-baseline">
                       <p className="flex-1 pr-8">
-                        Discounted in groups of 10 or more
+                        Concessions in groups of 10 or more
                       </p>
                       <p className="font-bold whitespace-nowrap">
-                        2,00 €
+                        €2.00
                       </p>
                     </div>
                   </li>
                 </ul>
               </div>
             </AccordionItem>
-            <AccordionItem title="Annual Passes and Vouchers">
+
+            <AccordionItem title="Annual Passes and Gift Vouchers">
               <div className="p-5">
                 <div className="flex flex-col gap-6">
                   <ul className="flex flex-col gap-4 list-disc pl-4">
                     <li>
                       <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Adults
-                        </p>
-                        <p className="font-bold whitespace-nowrap">
-                          35,00 €
-                        </p>
+                        <p className="flex-1 pr-8">Adults</p>
+                        <p className="font-bold whitespace-nowrap">€35.00</p>
                       </div>
                     </li>
                     <li>
                       <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Discounted
-                        </p>
-                        <p className="font-bold whitespace-nowrap">
-                          23,00 €
-                        </p>
+                        <p className="flex-1 pr-8">Concessions</p>
+                        <p className="font-bold whitespace-nowrap">€23.00</p>
                       </div>
                     </li>
                     <li>
@@ -269,184 +260,67 @@ const IndexPage = () => {
                         <p className="flex-1 pr-8">
                           Families (two adults with up to three children under 14)
                         </p>
-                        <p className="font-bold whitespace-nowrap">
-                          65,00 €
-                        </p>
+                        <p className="font-bold whitespace-nowrap">€65.00</p>
                       </div>
                     </li>
                     <li>
                       <div className="flex justify-between items-baseline">
                         <p className="flex-1 pr-8">
-                          Mini-Families (one adult with up to two children under 14)
+                          Mini Families (one adult with up to two children under 14)
                         </p>
-                        <p className="font-bold whitespace-nowrap">
-                          38,00 €
-                        </p>
+                        <p className="font-bold whitespace-nowrap">€38.00</p>
                       </div>
                     </li>
                   </ul>
-
                   <p>
-                    Download the <a href="https://www.museumfuernaturkunde.berlin/sites/default/files/23_0704_Antrag_Jahreskarten_EN.pdf" className="underline" target="_blank" rel="noopener noreferrer">Application Form</a> and apply for your annual pass today. Please send the completed form by email to <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
+                    Download the <a href="https://www.museumfuernaturkunde.berlin/sites/default/files/23_0704_Antrag_Jahreskarten_EN.pdf" className="underline" target="_blank" rel="noopener noreferrer">Application Form</a> today to apply for your Annual Pass. E-mail your completed application form to <a href="mailto:info@mfn.berlin" className="underline">info@mfn.berlin</a>.
                   </p>
-                  <h4>Vouchers</h4>
-                  <p>You will receive vouchers for a visit to the Museum at the regular ticket counter times.</p>
+                  <h4>Gift Vouchers</h4>
+                  <p>Gift Vouchers for tickets to the museum are available from the ticket desk during our regular opening times.</p>
                 </div>
               </div>
             </AccordionItem>
-            <AccordionItem title="Discounts">
+
+            <AccordionItem title="Concessions">
               <div className="p-5">
                 <div className="flex flex-col gap-6">
                   <p>
-                    The following people are entitled to discounted admission with the appropriate proof:
+                    The following persons are eligible for discounted entry, subject to presenting proof or a valid ID:
                   </p>
-
                   <ul className="flex flex-col gap-4 list-disc pl-4">
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Students and students with a student ID card
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Students
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Apprentices
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Pensioners and pensioners
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Social assistance recipients
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Unemployed
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Participants in voluntary services and with the <a href="https://www.berlin.de/buergeraktiv/anerkennung/ehrenamtskarte/" className="underline" target="_blank" rel="noopener noreferrer">Ehrenamtskarte</a>
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Disabled persons (GdB 50 and above) with the appropriate official proof
-                        </p>
-                      </div>
-                    </li>
+                    <li>Schoolchildren aged 16 and over with a school ID</li>
+                    <li>Students</li>
+                    <li>Trainees/Apprentices</li>
+                    <li>Pensioners</li>
+                    <li>Visitors on social welfare</li>
+                    <li>Unemployed visitors</li>
+                    <li>Volunteers, subject to presentation of a volunteer's card</li>
+                    <li>Visitors with disabilities (degree of disability of 50 or more), subject to presenting official documentation</li>
                   </ul>
-
                   <p>
-                    You can get a discount with the Museum Pass Berlin, the Welcome Card Berlin, and a ticket for the Deutsches Technikmuseum. <a href="/en/visit/cooperations" className="underline" target="_blank" rel="noopener noreferrer">More information about cooperations</a>
+                    Discounted tickets are available to holders of a Museum Pass Berlin, a Berlin WelcomeCard or a ticket to the German Museum of Technology. <a href="/en/visit/combi-tickets" className="underline">More info on CombiTickets</a>
                   </p>
                 </div>
               </div>
             </AccordionItem>
-            <AccordionItem title="Free Admission">
+
+            <AccordionItem title="Free Entry">
               <div className="p-5">
-                <div className="flex flex-col gap-6">
-                  <ul className="flex flex-col gap-4 list-disc pl-4">
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Preschool children and children under 6
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Up to two teachers, educators, or educators accompanying a class, children's or youth group
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          ICOM members and members (International Council of Museums, International Council of Museums)
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Members of the World Federation of Tourist Guide Associations (WFTGA)
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Inhabitants of a member card of the German Museum Association
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Groups of students from Berlin's universities and colleges participating in a course at the museum
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Inhabitants of a valid press pass
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Employees of other Berlin museums who identify themselves as such
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Companions of disabled persons who are registered in the disabled persons' pass
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex justify-between items-baseline">
-                        <p className="flex-1 pr-8">
-                          Refugees and welcome classes who identify themselves as such
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                <ul className="flex flex-col gap-4 list-disc pl-4">
+                  <li>Pre-school children, children under 6</li>
+                  <li>Up to two teachers or school staff, when accompanying a school trip or group of children/young people</li>
+                  <li>Members of ICOM (International Council of Museums)</li>
+                  <li>Members of WFTGA (World Federation of Tourist Guide Associations)</li>
+                  <li>Holders of a Deutscher Museumsbund member's card</li>
+                  <li>Registered groups of students attending a university or college in Berlin who are visiting the museum as part of their studies</li>
+                  <li>Holders of a valid press pass</li>
+                  <li>Employees of other Berlin museums, subject to proof</li>
+                  <li>Companions of disabled visitors who are named on the disabled visitor's pass</li>
+                  <li>Refugees and "Willkommensklassen", subject to proof</li>
+                </ul>
               </div>
             </AccordionItem>
-
           </Accordion>
-
         </Section>
 
         <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
@@ -470,7 +344,7 @@ const IndexPage = () => {
             <CardText
               headline="Getting Here"
               headlineStyle="h1"
-              body="We're looking forward to your visit! The Museum für Naturkunde is located in Berlin-Mitte. We recommend arriving by public transport or by bike, as there are no parking spaces at the Museum and only limited parking spaces in the vicinity."
+              body="We look forward to welcoming you! The Museum für Naturkunde is located in the Mitte district of Berlin. We recommend travelling to the museum by bike or public transport, as there is limited parking at and around the museum."
               spacing="wide"
               alignment="center"
               className="text-[#5f5f5f]"
@@ -496,83 +370,78 @@ const IndexPage = () => {
                   <TransportIcon iconId="bvg-bus" ariaLabel="Bus symbol for lines 245 and N40" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 245 N40 </span>
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />300m Footpath</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />300m on foot</span></p>
                 <br />
 
                 <p>S-Hauptbahnhof (
                   <TransportIcon iconId="bvg-s5" ariaLabel="S-Bahn symbol S5" className="w-[28px]" />
                   <TransportIcon iconId="bvg-s7" ariaLabel="S-Bahn symbol S7" className="w-[28px]" />
                   )<span className="font-italic text-Black-500">
-                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />1.300m Footpath</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />1,300m on foot</span></p>
                 <br />
 
                 <p>S-Nordbahnhof (
                   <TransportIcon iconId="bvg-s1" ariaLabel="S-Bahn symbol S1" className="w-[28px]" />
                   <TransportIcon iconId="bvg-s2" ariaLabel="S-Bahn symbol S2" className="w-[28px]" />
-                  
                   )<span className="font-italic text-Black-500">
-                  <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />900m Footpath</span></p>
+                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />900m on foot</span></p>
                 <br />
 
                 <p>Invalidenpark (
                   <TransportIcon iconId="bvg-bus" ariaLabel="Bus symbol for lines 120, 123, 142, 245, N20 and N40" className="h-[24px] w-[20px]" />
                   <span className="text-xs font-normal text-Black-700"> 120 123 142 245 N20 N40 </span>
                   )<span className="font-italic text-Black-500">
-                  <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] w-[24px] mt-[-4px] opacity-50" />300m Footpath</span></p>
-                <br />
+                    <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />300m on foot</span></p>
               </div>
             </AccordionItem>
+
             <AccordionItem title="By Bike">
               <div className="p-5">
                 <p>
-                  You can also reach the Museum conveniently via the Invalidenstraße with your bike.<br />
+                  The museum is also very easy to reach by bike, via Invalidenstraße.<br />
                   <br />
-                  We have ample bike parking spaces available. This way, you not only contribute to the environment, but you can also flexibly and actively plan your visit. Additionally, we offer you lockers in the cloakroom where you can securely store your bike accessories.<br />
+                  There are plenty of bike racks available at the museum. Not only cycling good for the environment, it also allows you to actively plan your journey and gives you flexibility. There are also lockers available in the museum for storing your bike equipment.<br />
                   <br />
-                  There is an electric bike pump at the adjacent Federal Ministry for Digital and Transport, which you can use free of charge at any time.
+                  At the neighbouring Federal Ministry of Transport and Digital Infrastructure, you will find an electric bike pump which is available to use for free 24 hours a day.
                 </p>
               </div>
             </AccordionItem>
+
             <AccordionItem title="By Car">
               <div className="p-5">
                 <p>
-                  There are no parking spaces at the Museum für Naturkunde.<br />
+                  There is no parking at the Museum für Naturkunde.<br />
                   <br />
-                  Parking lots and car parks in the vicinity:
+                  Parking options nearby:
                 </p>
                 <div className="p-5">
-                  <div className="flex flex-col gap-6">
-                    <ul className="flex flex-col gap-4 list-disc pl-4">
-                      <li>
-                        <div className="flex justify-between items-baseline">
-                          <p className="flex-1 pr-8">
-                            <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ecba0e90d1:0xab7167f4ea5dd8b9!8m2!3d52.5306377!4d13.3814623" className="underline" target="_blank" rel="noopener noreferrer">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, paid, <span className="font-italic text-Black-500">
-                              <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                                <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
-                              </svg>200m Footpath</span>
-                          </p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between items-baseline">
-                          <p className="flex-1 pr-8">
-                            <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851ec7dc000d7:0x506c4690a67db5eb!8m2!3d52.5295898!4d13.3840763" className="underline" target="_blank" rel="noopener noreferrer">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, paid, <span className="font-italic text-Black-500">
-                              <svg className="inline px-[0.1em] h-[18px] w-[24px] mt-[-4px] opacity-50 m-0" aria-label="Person Walking">
-                                <use href={withPrefix("/images/transport-icons3.svg?v=1#person-walking")} />
-                              </svg>350m Footpath</span>
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul className="flex flex-col gap-4 list-disc pl-4">
+                    <li>
+                      <div className="flex justify-between items-baseline">
+                        <p className="flex-1 pr-8">
+                          <a href="https://www.google.de/maps/place/Invalidenstra%C3%9Fe+38,+10115+Berlin/@52.5306377,13.3792736,17z/" className="underline" target="_blank" rel="noopener noreferrer">Mercure Hotel Berlin City</a>, Invalidenstraße 38, 10115 Berlin, subject to a fee, <span className="font-italic text-Black-500">
+                            <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />200m on foot</span>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="flex justify-between items-baseline">
+                        <p className="flex-1 pr-8">
+                          <a href="https://www.google.de/maps/place/Chausseestra%C3%9Fe+118,+10115+Berlin/@52.529593,13.3818876,17z/" className="underline" target="_blank" rel="noopener noreferrer">H+ Hotel Berlin Mitte / Rewe</a>, Chausseestraße 118-120, 10115 Berlin, subject to a fee, <span className="font-italic text-Black-500">
+                            <TransportIcon iconId="person-walking" ariaLabel="Walking distance symbol" className="h-[18px] mt-[-4px] opacity-50" />350m on foot</span>
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </AccordionItem>
+
             <AccordionItem title="Accessibility">
               <div className="p-5">
-                <p>The accessible entrance is located to the right of the main entrance. Opposite, there are three disabled parking spaces. <br /><br />
-                  <strong>Please note:</strong> the disabled parking spaces are currently not accessible due to construction work at the neighboring building. We ask for your understanding!<br /><br />
-                  The cloakroom, the accessible WC, and the exhibition floor are accessible from this entrance with a lift or wheelchair ramp. <a href="/en/museum/plan-your-visit/accessibility" className="underline" target="_blank" rel="noopener noreferrer">More information</a></p>
+                <p>The disabled entrance is located to the right of the main entrance. There are three disabled parking spaces located opposite the disabled entrance.<br /><br />
+                  <strong>Please note:</strong> The disabled parking spaces by the neighbouring building are currently not in operation due to building works. Thank you for your understanding!<br /><br />
+                  You can access the cloakroom, disabled toilets and exhibition floor from this entrance via a lift or stair lift. <a href="/en/museum/plan-your-visit/accessibility" className="underline">More info</a></p>
               </div>
             </AccordionItem>
           </Accordion>
@@ -581,10 +450,10 @@ const IndexPage = () => {
           <CardText
             headline="In the Museum"
             headlineStyle="h1"
-            body={`In our exhibitions, you'll gain insights into the gigantic adventures of nature - through original research objects!
-              <br/><br/>
-              More about our <a href="/en/museum/plan-your-visit/visitors-regulations" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Visitor Regulations</a> and 
-              our <a href="/en/museum/plan-your-visit/film-and-photography" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">Rules for Film and Photography</a>.`}
+            body={`Our exhibitions will give you insights into amazing natural adventures – through original exhibits!
+      <br/><br/>
+      More info on our <a href="/en/museum/plan-your-visit/visitors-regulations" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">visitor rules</a> and 
+      our <a href="/en/museum/plan-your-visit/film-and-photography" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">rules for photography and video recording</a>.`}
             spacing="wide"
             alignment="center"
           />
@@ -793,7 +662,6 @@ const IndexPage = () => {
                 url="/en/museum/plan-your-visit/digital-guide"
               />
             </div>
-            
           </div>
         </Section>
 
@@ -801,7 +669,7 @@ const IndexPage = () => {
           <CardText
             headline="Special Visits"
             headlineStyle="h1"
-            body="We look forward to welcoming groups and special occasions. All educational programs"
+            body="We are more than happy to host group visits and special events. All education offers"
             spacing="wide"
             alignment="center"
           />
@@ -817,7 +685,7 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "School Classes",
+              headline: "School Trips",
               headlineStyle: "h3",
               spacing: "wide"
             }}
@@ -827,7 +695,7 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "111123_Zeichenkurs_Exploratorium_15_2.jpg",
-              alt: "A woman sits at the microscope and draws the magnified view on paper. | Image source: Museum für Naturkunde Berlin",
+              alt: "A woman sits at the microscope and draws the magnified view on paper",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
@@ -842,12 +710,12 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "160222_Schueler_Fuehrung_Grabungskiste_28.jpg",
-              alt: "Another Image",
+              alt: "Children celebrating a birthday party at the museum",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Children's Birthday Parties",
+              headline: "Kids' Birthdays",
               headlineStyle: "h3",
               spacing: "wide"
             }}
@@ -857,7 +725,7 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "171030_naturkunde_356_(c)_Thomas_Rosenthal.jpg",
-              alt: "Exhibition area in the Museum für Naturkunde Berlin",
+              alt: "Group of visitors in the exhibition area",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
@@ -873,7 +741,7 @@ const IndexPage = () => {
           <CardText
             headline="Frequently Asked Questions"
             headlineStyle="h1"
-            body="We receive many questions about visiting the Museum. Here we answer the most frequently asked questions. If you have any other questions, please feel free to contact us!"
+            body="We get asked lots of questions about visiting the museum. On this page, you will find answers to the questions we hear most often. Please don't hesitate to get in touch if you can't find the answer to your question here!"
             spacing="wide"
             alignment="center"
             className="text-[#5f5f5f]"
@@ -890,60 +758,50 @@ const IndexPage = () => {
             <AccordionItem title="Where can I get tickets?">
               <div className="p-5">
                 <p>
-                  You can buy online tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline" target="_blank" rel="noopener noreferrer">here</a> or at the museum ticket counter.
+                  You can buy tickets <a href="https://ticketshop.museumfuernaturkunde.berlin" className="underline" target="_blank" rel="noopener noreferrer">online</a> or at the museum ticket desk.
                   <br /><br />
-                  We recommend booking online time-slot tickets in advance to avoid waiting times. Tickets can be booked 14 days in advance.
+                  We recommend booking tickets online in advance to avoid queuing at the museum. Tickets can be purchased up to 14 days in advance.
                   <br /><br />
-                  A time-slot ticket allows you to enter the museum within one hour of your booked time. After that, you can stay in the museum as long as you like during our opening hours.
+                  A timeslot ticket entitles you to entry to the museum within one hour of your selected entry time. You can then spend as long as you like in the museum until closing time.
                   <br /><br />
-                  Note: Your admission ticket is valid for all current exhibitions in the Museum für Naturkunde on the same day.
+                  Info: Your ticket is valid for all current exhibitions at the Museum für Naturkunde on the day of entry.
                 </p>
               </div>
             </AccordionItem>
 
-            <AccordionItem title="How do I best get to the museum?">
+            <AccordionItem title="What is the best way to get to the museum?">
               <div className="p-5">
-                <p>We recommend using public transportation or cycling to reach the museum.</p>
+                <p>We recommend travelling to the museum by bike or public transport.</p>
               </div>
             </AccordionItem>
 
-            <AccordionItem title="Is there an audio guide?">
+            <AccordionItem title="Do you have an audio guide?">
               <div className="p-5">
-                <p>Yes. We offer a free digital guide for your own smartphone in 11 languages. There is also an audio guide for children and a highlights tour for the deaf in German Sign Language (DGS).
+                <p>Yes. We have a free digital guide that you can access using your smartphone. This guide is available in 11 languages. We also have an audio guide for kids and a highlights tour in German Sign Language for visitors with hearing loss.
                   <br /><br />
-                  We also offer two themed audio guides to experience the exhibition and objects from additional perspectives.
+                  We also offer two themed audio guides which add an additional perspective to the exhibition and the exhibits.
                   <br /><br />
-                  <a href="/en/museum/plan-your-visit/digital-guide" className="underline" target="_blank" rel="noopener noreferrer">Here</a> you can find more information.
+                  <a href="/en/museum/plan-your-visit/digital-guide" className="underline">More information is available here</a>.
                   <br /><br />
-                  We recommend bringing your own headphones to use the audio guide.</p>
+                  We recommend bringing your own headphones to enjoy the audio guide.</p>
               </div>
             </AccordionItem>
 
             <AccordionItem title="Can I take photos in the museum?">
               <div className="p-5">
-                <p>Photography for personal use is allowed in the museum. Commercial photography requires permission. More information <a href="/en/museum/plan-your-visit/film-and-photography" className="underline" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                <p>You may take photos in the museum for personal use. Taking photos for commercial purposes requires a permit. <a href="/en/museum/plan-your-visit/film-and-photography" className="underline">More info here</a>.</p>
               </div>
             </AccordionItem>
 
-            <AccordionItem title="Can I bring a stroller into the museum?">
+            <AccordionItem title="Can I bring my buggy into the museum?">
               <div className="p-5">
-                <p>Yes, you can visit the museum with a stroller.</p>
+                <p>Yes, you can visit the museum with a buggy.</p>
               </div>
             </AccordionItem>
 
-            <AccordionItem title="Can I bring animals into the museum?">
+            <AccordionItem title="Can I bring pets into the museum?">
               <div className="p-5">
-                <p>No. Exceptions apply for assistance and guide dogs with appropriate documentation.</p>
-              </div>
-            </AccordionItem>
-
-            <AccordionItem title="Accessible entrance">
-              <div className="p-5">
-                <p>The accessible entrance is located to the right of the main portal. There are three disabled parking spaces opposite.
-                  <br /><br />
-                  <strong>Please note:</strong> the disabled parking spaces are currently not accessible due to construction work on the neighboring building. We ask for your understanding!
-                  <br /><br />
-                  The cloakrooms, accessible toilet and exhibition level can be reached from this entrance by elevator or stair lift. <a href="/en/museum/plan-your-visit/accessibility" className="underline" target="_blank" rel="noopener noreferrer">More information</a></p>
+                <p>No. We only allow guide dogs and assistance dogs, subject to proof.</p>
               </div>
             </AccordionItem>
           </Accordion>
@@ -952,7 +810,7 @@ const IndexPage = () => {
           <CardText
             headline="Contact"
             headlineStyle="h1"
-            body="Do you need anything else for your visit?"
+            body="Got questions or want to get in touch? We'd love to hear from you!"
             spacing="wide"
             alignment="center"
           />
@@ -963,11 +821,10 @@ const IndexPage = () => {
               url="/en/contact"
             />
             <Button
-              text="Call us"
+              text="Give us a call"
               variant="primary"
-              url="tel:+4930889140-8591"  // Telefonnummer ohne Klammern und Leerzeichen
+              url="tel:+4930889140-8591"
             />
-           
           </div>
         </Section>
         <Section columns={1} backgroundColor="bg-Black-100">

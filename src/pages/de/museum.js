@@ -68,9 +68,9 @@ const IndexPage = () => {
                 url: "/de/museum/medien/news/"
               },
               {
-                text: "Sponsoren",
+                text: "Presse",
                 variant: "plain",
-                url: "/de/ueber-uns/berliner-sparkasse-ist-hauptsponsor/"
+                url: "/de/pressemitteilungen"
               }
             ]}
           />
@@ -119,7 +119,7 @@ const IndexPage = () => {
         </Section>
         <Section backgroundColor="bg-Green-100" columns={1}>
           <CardText
-            body="Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan."
+            body="Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit.  Mit unserem Zukunftsplan entwickeln wir das Museum sich zu einem Ort des Austauschs über die Zukunft unserer Erde, der Wissen auf neue Weise vermittelt und kreiert – gemeinsam mit der Gesellschaft."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -195,7 +195,7 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "The Museums Lab",
+              headline: "TheMuseumsLab",
               headlineStyle: "h3",
               body: "In der internationalen Kooperation \"TheMuseumsLab\" entwickeln afrikanische und europäische Museumsbeschäftigte gemeinsam Konzepte für die Zukunft von Museen in Afrika und Europa. Das Vorhaben fördert beiderseitiges Lernen, Austausch und Fortbildung.",
               spacing: "wide",
@@ -215,7 +215,7 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "BROMACKER: Neue Wege der Wissenschafts-kommunikation",
+              headline: "BROMACKER: Neue Wege der Wissenschaftskommunikation",
               headlineStyle: "h3",
               body: "Das einzigartige Projekt verknüpft Forschung und Wissenstransfer an der Ursaurier-Fundstelle im UNESCO Global Geopark Thüringen Inselsberg - Drei Gleichen, am Museum für Naturkunde Berlin, an der Stiftung Schloss Friedenstein Gotha und übergeordnet multimedial.",
               spacing: "wide"
@@ -323,7 +323,13 @@ const IndexPage = () => {
                 text: "Sponsoren",
                 variant: "plain",
                 url: "/de/ueber-uns/berliner-sparkasse-ist-hauptsponsor/"
+              },
+              {
+                text: "Museums-Evolution",
+                variant: "plain",
+                url: "/de/evolution-des-museums"
               }
+              
             ]}
           />
         </Section>
@@ -352,14 +358,14 @@ const IndexPage = () => {
             variant="classic"
             imageProps={{
               imageName: "tagesspiegel-journal-1.jpg",
-              alt: "Titelbild des Journals 'für natur' im Tagesspiegel",
+              alt: "Titelbild des Journals 'Für Natur' im Tagesspiegel",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unser Magazin \"für natur\"",
+              headline: "Unser Journal \"Für Natur\"",
               headlineStyle: "h3",
-              body: "In unseren Journalen für Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
+              body: "In unseren Journalen ür Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
               spacing: "wide"
             }}
             url="de/museum/medien/journal-fuer-natur/"

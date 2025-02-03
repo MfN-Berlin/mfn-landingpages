@@ -19,7 +19,7 @@ export const featureTranslations = {
     },
     en: {
       pageHelpful: "Do you find this page helpful?",
-      helpImprove: "Your rating helps us improve this service for you.",
+      helpImprove: "Your feedback can help us improve this website for you. We will not collect any personal data for this survey.",
       privacyNote: "We do not collect any personal data for this survey.",
       privacyLink: "Privacy Policy",
       ratingMessages: {
@@ -98,7 +98,7 @@ export const featureTranslations = {
     en: {
       homepage: "Homepage",
       signLanguage: "Sign Language",
-      easyLanguage: "Easy Language",
+      easyLanguage: "Simple Language",
       accessibility: "Accessibility",
       urls: {
         signLanguage: "https://www.youtube.com/watch?v=pUUvyoe0tpc",
