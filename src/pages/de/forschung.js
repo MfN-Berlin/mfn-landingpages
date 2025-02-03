@@ -322,7 +322,7 @@ const VisitPage = () => {
                 </Section>
                 <Section backgroundColor="bg-Green-100" columns={1} padding="pt-16 pb-8">
                     <CardText
-                        headline="Arbeitsgruppen"
+                        headline="Arbeitsgruppen und Teams"
                         headlineStyle="h1"
                         spacing="wide"
                         alignment="center"
@@ -345,6 +345,14 @@ const VisitPage = () => {
                             title="Arbeitsgruppe Dunlop"
                             text="Die AG Dunlop untersucht die Evolution und Systematik fossiler und rezenter Spinnentiere, mit besonderem Schwerpunkt auf Skorpionen und Spinnen."
                             link="/de/wissenschaft/ag-dunlop"
+                        />
+                         <SlideContent
+                            imageName="2022_c_IsabelAlvarez_2021_c_AlenaSchmick_TheMuseumsLab.jpeg"
+                            altText="TheMusemsLab "
+                            kicker="Forschungsbereich 3"
+                            title="TheMusemsLab"
+                            text="TheMuseumsLab ist ein kollaboratives Projekt für gemeinsames Lernen und Wissensaustausch zwischen afrikanischen und europäischen Museumsfachkräften. In Zusammenarbeit mit zahlreichen internationalen Partnern schaffen wir Räume für Dialog, Vernetzung, berufliche Weiterentwicklung und Perspektiverweiterungen zur Museumszusammenarbeit zwischen Afrika und Europa."
+                            link="/de/ueber-uns/das-museum/themuseumslab"
                         />
                         <SlideContent
                             imageName="Thomisid5-crop.jpg"
