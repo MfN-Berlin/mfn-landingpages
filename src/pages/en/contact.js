@@ -51,7 +51,7 @@ const ContactPage = () => {
               {Object.keys(imageMap).length > 0 && (
                 <StoryTime
                   imageProps={{
-                    imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+                    imageName: "Museum_fuer_Naturkunde_mit_Vorplatz_im_Sommer_c_Pablo_Castagnola.jpg",
                     alt: "Birds view of the Museum für Naturkunde",
                     imageMap: imageMap,
                     className: "w-full h-full object-cover"

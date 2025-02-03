@@ -29,14 +29,14 @@ const OpenToday = () => {
 
   const getOpeningInfo = () => {
     // const now = new Date();
-    const xdate = new Date('2024-12-25T22:00:00');  
-    const now = xdate;
+    // const xdate = new Date('2024-12-25T22:00:00');  
+    const now = new Date();
     const currentHour = now.getHours();
     const isAfterClosing = currentHour >= 18;
 
     // Wenn nach Schließzeit, dann Infos für morgen anzeigen
     // const targetDate = new Date();
-    const targetDate = xdate;
+    const targetDate = now;
     if (isAfterClosing) {
       targetDate.setDate(targetDate.getDate() + 1);
     }

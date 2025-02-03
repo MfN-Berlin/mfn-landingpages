@@ -389,7 +389,7 @@ const VisitPage = () => {
 
                     </Slideshow>
                 </Section>
-                <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
+                {/* <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
                     <CardText
                         headline="Publikationen"
                         headlineStyle="h1"
@@ -403,7 +403,7 @@ const VisitPage = () => {
                             }
                         ]}
                     />
-                </Section>
+                </Section> */}
                 {/* <Section backgroundColor="bg-White" columns={3} padding="pb-16">
                     <Link to="/de/presse/pressemitteilungen/wie-lebensstrategien-und-lebensraeume-die-regenerationsfaehigkeiten-von" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
                         <div className="w-full bg-Green-100 flex flex-col  ">

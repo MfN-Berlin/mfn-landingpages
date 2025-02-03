@@ -85,16 +85,9 @@ const IndexPage = () => {
             }}
             textProps={{
               headline: "Ein Haus für Natur und Gesellschaft",
-              body: "Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan.",
+              body: " \"Für uns geht es darum, ein Ort der Begegnung, des Dialogs und der Demokratie zu sein. Konstante Veränderung ist Teil unserer DNA. Wir sind das Museum der Zukunft.\" – Prof. Johannes Vogel, PhD, Generaldirektor",
               headlineStyle: "h4",
               spacing: "wide",
-              buttons: [
-                {
-                  text: "Zukunftsplan",
-                  url: "/de/museum/zukunft/zukunftsplan/",
-                  className: "mt-4",
-                }
-              ]
             }}
             textStyle="box-white"
             textPosition="bottom-left"
@@ -126,7 +119,7 @@ const IndexPage = () => {
              </Section>
              <Section backgroundColor="bg-Green-100" columns={1}>
             <CardText
-            body="Der Zukunftsplan, den das Museum tagtäglich umsetzt, sieht die bauliche Sanierung des Museums vor, die mehr als 30 Millionen Objekte umfassende wissenschaftliche Sammlung des Museums wird erschlossen und besser zugänglich gemacht."
+            body="Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Unser Drehbuch auf dem Weg dorthin ist unser Zukunftsplan."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -408,7 +401,7 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "Museum für Naturkunde mit Vorplatz im Sommer (c) Pablo Castagnola.jpg",
+              imageName: "Museum_fuer_Naturkunde_mit_Vorplatz_im_Sommer_c_Pablo_Castagnola.jpg",
               alt: "Fassade des Museums für Naturkunde",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"

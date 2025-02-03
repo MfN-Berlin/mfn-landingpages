@@ -11,7 +11,7 @@ const StoryTime = ({
   linkText
 }) => {
   const ImageElement = (
-    <div className="w-full md:w-1/2 aspect-square relative">
+    <div className="w-full md:w-1/2 h-[400px] md:h-auto w-[400px] md:w-full md:aspect-square relative">
       <div className="absolute inset-0 rounded-full overflow-hidden m-12">
         <ContentImage 
           {...imageProps}
@@ -36,7 +36,7 @@ const StoryTime = ({
   );
 
   return (
-    <div className="w-full flex flex-col md:flex-row justify-start items-center gap-20 xl:gap-36">
+    <div className="w-full flex flex-col md:flex-row justify-start items-center gap-1 md:gap-20 xl:gap-36">
       {imagePosition === 'left' ? (
         <>
           {ImageElement}
