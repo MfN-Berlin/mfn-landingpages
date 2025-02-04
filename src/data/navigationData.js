@@ -176,15 +176,15 @@ export const mainNavData = {
         column: 3,
         items: [
           {
-            to: "/de/forschung/team-projekte",
-            label: "Team & Projekte",
+            to: "/de/forschung/personensuche",
+            label: "Personensuche",
             order: 1
           },
-          {
-            to: "/de/forschung/publikationen",
-            label: "Publikationen",
-            order: 2
-          }
+          // {
+          //   to: "/de/forschung/publikationen",
+          //   label: "Publikationen",
+          //   order: 2
+          // }
         ]
       }
     ]
@@ -214,13 +214,13 @@ export const mainNavData = {
         items: [
           {
             to: "/de/museum/zukunft",
-            label: "Das Museum in der Zukunft",
+            label: "Das Museum in Zukunft",
             order: 1,
             submenu: [
               { to: "/de/museum/zukunft/zukunftsplan", label: "Zukunftsplan" },
               { to: "/de/wissenschaft/sammlungserschliessung-und-entwicklung", label: "Sammlungserschließung" },
               { to: "/de/zukunft/wissenstransfer", label: "Wissenstransfer" },
-              { to: "/de/zukunft/werde-teil-unserer-museums-evolution", label: "Museums-Evolution" }
+              // { to: "/de/zukunft/werde-teil-unserer-museums-evolution", label: "Museums-Evolution" }
             ]
           }
         ]

@@ -67,7 +67,7 @@ exports.createPages = async ({ actions, graphql }) => {
     },
     {
       path: "/de/forschung/team-projekte",
-      component: path.resolve(`./src/pages/de/forschung/team-projekte.js`),
+      component: path.resolve(`./src/pages/de/forschung/personensuche.js`),
     }
   ];
 

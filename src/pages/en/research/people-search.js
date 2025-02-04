@@ -457,8 +457,8 @@ export default TeamProjectsPage
 
 export const Head = () => (
     <HeadComponent
-        title="Team and Projects"
+        title="People Search"
         description="Find people, projects, collections and laboratories at the Museum für Naturkunde Berlin"
-        pathname="/en/research/team-projects"
+        pathname="/en/research/people-search"
     />
 )

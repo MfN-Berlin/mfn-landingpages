@@ -177,15 +177,15 @@ export const mainNavDataEn = {
         column: 3,
         items: [
           {
-            to: "/en/research/team-projects",
-            label: "Team & Projects",
+            to: "/en/research/people-search",
+            label: "People Search",
             order: 1
           },
-          {
-            to: "/en/research/publications",
-            label: "Publications",
-            order: 2
-          }
+          // {
+          //   to: "/en/research/publications",
+          //   label: "Publications",
+          //   order: 2
+          // }
         ]
       }
     ]
@@ -221,7 +221,7 @@ export const mainNavDataEn = {
               { to: "/en/future/future-plan", label: "Future Plan" },
               { to: "/en/science/collection-discovery-and-development", label: "Collection discovery" },
               { to: "/en/future/knowledge-transfer", label: "Knowledge Transfer" },
-              { to: "/en/future/join-our-museum-evolution", label: "Museum Evolution" }
+              // { to: "/en/future/join-our-museum-evolution", label: "Museum Evolution" }
             ]
           }
         ]
