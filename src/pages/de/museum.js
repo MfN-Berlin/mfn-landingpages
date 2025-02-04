@@ -126,7 +126,7 @@ const IndexPage = () => {
               {
                 text: "Zukunftsplan",
                 variant: "plain",
-                url: "/de/museum/zukunft/zukunftsplan/"
+                url: "/de/museum/zukunft"
               }
             ]}
           />
@@ -151,7 +151,7 @@ const IndexPage = () => {
               body: "Am Museum für Naturkunde Berlin bewahren wir 30 Millionen Sammlungsobjekte, jedes davon birgt Wissen von unschätzbarem Wert. Um eine umfängliche Nutzung der Sammlung zu ermöglichen, erschließen wir sie im Rahmen des Zukunftsplans – das heißt konservatorisch sichern, digital erfassen und innovative Nutzungszugänge schaffen.",
               spacing: "wide"
             }}
-            url="/de/wissenschaft/sammlungserschliessung-und-entwicklung/"
+            url="/de/museum/zukunft/sammlungserschliessung"
           />
           <Card
             variant="classic"
@@ -167,7 +167,7 @@ const IndexPage = () => {
               body: "Im Rahmen des Zukunftsplans entwickeln wir das Museum und seine Ausstellung zu einem lebendigen Ort des Wissens, der über zukunftsweisender Formate interdisziplinärer und partizipativer Wissenschaft und einer offenen Informationsinfrastruktur, die Sammlung und Forschung des Museums zugänglich und erlebbar macht. ",
               spacing: "wide"
             }}
-            url="/de/zukunft/wissenstransfer"
+            url="/de/museum/zukunft/wissenstransfer"
           />
           <Card
             variant="classic"
@@ -183,7 +183,7 @@ const IndexPage = () => {
               body: "Unsere \"Artentdeckungsfabrik\" trägt zur Erforschung und Erhaltung der biologischen Vielfalt bei, indem wir mit modernster Technologie  Tausende von Insekten-Proben in kurzer Zeit analysieren und systematisch zuordnen können.",
               spacing: "wide"
             }}
-            url="/de/die-artentdeckungsfabrik"
+            url="/de/museum/artentdeckungsfabrik"
           />
           <Card
             variant="classic"
@@ -201,7 +201,7 @@ const IndexPage = () => {
               spacing: "wide",
               alignment: "left"
             }}
-            url="de/ueber-uns/das-museum/themuseumslab"
+            url="/de/museum/themuseumslab"
           />
 
 
@@ -220,7 +220,7 @@ const IndexPage = () => {
               body: "Das einzigartige Projekt verknüpft Forschung und Wissenstransfer an der Ursaurier-Fundstelle im UNESCO Global Geopark Thüringen Inselsberg - Drei Gleichen, am Museum für Naturkunde Berlin, an der Stiftung Schloss Friedenstein Gotha und übergeordnet multimedial.",
               spacing: "wide"
             }}
-            url="de/wissenschaft/bromacker-neue-wege-der-wissenschaftskommunikation"
+            url="/de/museum/bromacker"
           />
           <Card
             variant="classic"
@@ -236,7 +236,7 @@ const IndexPage = () => {
               body: "Expert:innen des Museums für Naturkunde Berlin untersuchen das außerirdische Aubrit-Gestein und koordinieren ein internationales Konsortium zur Erforschung des Ribbeck-Meteoriten. Erste Ergebnisse zeigen: Er könnte mit der Erde verwandt sein – und Bausteine des Lebens in sich tragen.",
               spacing: "wide"
             }}
-            url="/de/zukunde/besuch-eines-fernen-verwandten"
+            url="/de/museum/ribbeck-meteorit"
           />
 
         </Section>
@@ -307,27 +307,27 @@ const IndexPage = () => {
               {
                 text: "Über uns",
                 variant: "plain",
-                url: "/de/ueber-uns/das-museum/"
+                url: "/de/museum"
               },
               {
                 text: "Bau",
                 variant: "plain",
-                url: "/de/ueber-uns/bau/"
+                url: "/de/museum/bau"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "/de/ueber-uns/team/"
+                url: "/de/museum/team"
               },
               {
                 text: "Sponsoren",
                 variant: "plain",
-                url: "/de/ueber-uns/berliner-sparkasse-ist-hauptsponsor/"
+                url: "/de/museum/sponsoren"
               },
               {
                 text: "Museums-Evolution",
                 variant: "plain",
-                url: "/de/evolution-des-museums"
+                url: "/de/museum/geschichte"
               }
               
             ]}
@@ -352,7 +352,7 @@ const IndexPage = () => {
               body: "An vier Orten im Ausstellungsrundgang informieren wir vom 11. Juni 2024 bis Ende Juni 2027 mit Installationen über den Zukunftsplan.",
               spacing: "wide"
             }}
-            url="de/museum/ausstellungen/zukunftsplan"
+            url="de/museum/zukunft"
           />
           <Card
             variant="classic"
@@ -368,7 +368,7 @@ const IndexPage = () => {
               body: "In unseren Journalen ür Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
               spacing: "wide"
             }}
-            url="de/museum/medien/journal-fuer-natur/"
+            url="de/museum/medien/journal"
           />
           <Card
             variant="classic"
@@ -384,7 +384,7 @@ const IndexPage = () => {
               body: "Unsere Berichte geben einen detaillierten Einblick in unsere Forschungsbereiche sowie über die spannendsten und wichtigsten Forschungsprojekte.",
               spacing: "wide"
             }}
-            url="de/ueber-uns/das-museum/publikationen-und-downloads"
+            url="de/museum/medien/publikationen"
           />
           <Card
             variant="classic"
@@ -400,7 +400,7 @@ const IndexPage = () => {
               body: "Verstärken Sie unser Team im wissenschaftlichen Bereich, im technischen Bereich oder in der Verwaltung.",
               spacing: "wide"
             }}
-            url="de/museum/jobs-und-karriere/"
+            url="de/museum/jobs-und-karriere"
           />
 
 

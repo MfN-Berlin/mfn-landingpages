@@ -148,7 +148,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/ehrenamtliches-engagement/"
+                        url="/de/mitmachen/ehrenamt"
                     />
 
                 </Section>
@@ -229,7 +229,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/wissenschaft/naturblick-stadtnatur-entdecken"
+                        url="/de/mitmachen/naturblick"
                     />
                     <Card
                         variant="classic"
@@ -245,7 +245,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren"
+                        url="/de/mitmachen/bildungsangebote/schule-und-kita/workshops"
                     />
 
 
@@ -263,7 +263,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
+                        url="/de/mitmachen/buergerwissenschaften/fachgruppen"
                     />
 
                     <Card
@@ -280,7 +280,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
+                        url="/de/mitmachen/buergerwissenschaften/fachgruppen"
                     />
 
                     <Card
@@ -297,7 +297,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
+                        url="/de/mitmachen/buergerwissenschaften/fachgruppen"
                     />
 
                     <Card
@@ -314,7 +314,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/museum/mitmachen/buergerwissenschaften/fachgruppen"
+                        url="/de/mitmachen/buergerwissenschaften/fachgruppen"
                     />
 
 
@@ -342,7 +342,7 @@ const IndexPage = () => {
                         buttonProps={{
                             label: "Forschen Sie bei uns mit!",
                             variant: "primary",
-                            url: "/de/museum/mitmachen/buergerwissenschaften/"
+                            url: "/de/mitmachen/buergerwissenschaften"
                         }}
                         textStyle="box-white"
                         textPosition="bottom-left"
@@ -364,7 +364,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/ehrenamtliches-engagement/"
+                        url="/de/mitmachen/ehrenamt"
                     />
 
                     <Card
@@ -381,7 +381,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/bildung"
+                        url="/de/mitmachen/bildungsangebote"
                     />
 
                 </Section>

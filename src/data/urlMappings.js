@@ -7,7 +7,7 @@ export const urlMappings = {
   '/de/museum': '/en/museum',
   '/de/kontakt': '/en/contact',
   '/de/forschung/publikationen': '/en/research/publications',
-  '/de/forschung/team-projekte': '/en/research/team-projects',
+  '/de/forschung/personensuche': '/en/research/people-search',
   '/de/datenschutzerklaerung': '/en/general-privacy-notice',
   '/de/datenschutzeinstellungen': '/en/privacy-settings',
   
@@ -19,7 +19,7 @@ export const urlMappings = {
   '/en/museum': '/de/museum',
   '/en/contact': '/de/kontakt',
   '/en/research/publications': '/de/forschung/publikationen',
-  '/en/research/team-projects': '/de/forschung/team-projekte',
+  '/en/research/people-search': '/de/forschung/personensuche',
   '/en/general-privacy-notice': '/de/datenschutzerklaerung',
   '/en/privacy-settings': '/de/datenschutzeinstellungen',
 };

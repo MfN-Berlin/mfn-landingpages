@@ -20,21 +20,21 @@ export const mainNavData = {
             label: "Ausstellungen",
             order: 1,
             submenu: [
-              { to: "/de/museum/ausstellungen/zugvoegel", label: "ZUGvögel" },
+              { to: "/de/besuch-planen/ausstellungen/zugvoegel-eine-sammlung-bewegung", label: "ZUGvögel" },
               { to: "/de/museum/ausstellungen/zukunftsplan", label: "Zukunftsplan" },
-              { to: "/de/museum/ausstellungen/dinosaurier-zeitalter-der-riesenechsen", label: "Dinosaurier!" },
+              { to: "/de/besuch-planen/ausstellungen/dinosaurier-zeitalter-der-riesenechsen", label: "Dinosaurier!" },
               { to: "/de/museum/ausstellungen/digitize", label: "digitize!" },
-              { to: "/de/museum/ausstellungen/saurierwelt", label: "Saurierwelt" },
-              { to: "/de/museum/ausstellungen/system-erde", label: "System Erde" },
-              { to: "/de/museum/ausstellungen/kosmos-und-sonnensystem", label: "Kosmos und Sonnensystem" },
-              { to: "/de/museum/ausstellungen/evolution-aktion", label: "Evolution in Aktion" },
-              { to: "/de/museum/ausstellungen/nass-sammlung", label: "Nass-Sammlung" },
-              { to: "/de/museum/ausstellungen/kellers-insektenmodelle", label: "Kellers Insektenmodelle" },
-              { to: "/de/museum/ausstellungen/highlights-der-praeparationskunst", label: "Highlights der Präparationskunst" },
-              { to: "/de/museum/ausstellungen/mineralien", label: "Mineralien" },
-              { to: "/de/museum/ausstellungen/humboldt-intervention", label: "Humboldt-Intervention" },
+              { to: "/de/besuch-planen/ausstellungen/saurierwelt", label: "Saurierwelt" },
+              { to: "/de/besuch-planen/ausstellungen/system-erde", label: "System Erde" },
+              { to: "/de/besuch-planen/ausstellungen/kosmos-und-sonnensystem", label: "Kosmos und Sonnensystem" },
+              { to: "/de/besuch-planen/ausstellungen/evolution-aktion", label: "Evolution in Aktion" },
+              { to: "/de/besuch-planen/ausstellungen/nass-sammlung", label: "Nass-Sammlung" },
+              { to: "/de/besuch-planen/ausstellungen/kellers-insektenmodelle", label: "Kellers Insektenmodelle" },
+              { to: "/de/besuch-planen/ausstellungen/highlights-der-praeparationskunst", label: "Highlights der Präparationskunst" },
+              { to: "/de/besuch-planen/ausstellungen/mineralien", label: "Mineralien" },
+              { to: "/de/besuch-planen/ausstellungen/humboldt-intervention", label: "Humboldt-Intervention" },
               { to: "/de/museum/wanderausstellungen", label: "Wanderausstellungen" },
-              { to: "/de/museum/ausstellungen/archiv-sonderausstellungen", label: "Archiv: Sonderausstellungen" }
+              { to: "/de/besuch-planen/ausstellungen/archiv-sonderausstellungen", label: "Archiv: Sonderausstellungen" }
             ]
           }
         ]
@@ -43,14 +43,14 @@ export const mainNavData = {
         column: 2,
         items: [
           {
-            to: "/de/museum/fuernatur-digital",
+            to: "/de/besuch-planen/fuernatur-digital",
             label: "#fürNatur digital",
             order: 1,
             submenu: [
-              { to: "/de/museum/fuernatur-digital/beats-bones-der-podcast", label: "Beats & Bones" },
-              { to: "/de/museum/fuernatur-digital/queering-nature", label: "Queering Nature" },
-              { to: "/de/museum/fuernatur-digital/suesses-oder-saurier", label: "Süßes oder Saurier" },
-              { to: "/de/museum/fuernatur-digital/wie-gras", label: "Wie Gras" }
+              { to: "/de/besuch-planen/fuernatur-digital/beats-bones-der-podcast-aus-dem-museum-fuer-naturkunde-berlin", label: "Beats & Bones" },
+              { to: "/de/besuch-planen/fuernatur-digital/queering-nature", label: "Queering Nature" },
+              { to: "/de/besuch-planen/fuernatur-digital/suesses-oder-saurier-der-wissenspodcast-fuer-kinder", label: "Süßes oder Saurier" },
+              { to: "/de/besuch-planen/fuernatur-digital/wie-gras.-ein-literarischer-audioguide-zum-anthropozaen", label: "Wie Gras" }
             ]
           }
         ]
@@ -59,16 +59,16 @@ export const mainNavData = {
         column: 3,
         items: [
           {
-            to: "/de/museum/besuch-planen",
+            to: "/de/besuch-planen/im-museum",
             label: "Im Museum",
             order: 1,
             submenu: [
-              { to: "/de/museum/besuch-planen/anfahrt", label: "Anfahrt" },
-              { to: "/de/museum/besuch-planen/barrierefreiheit", label: "Barrierefreiheit" },
-              { to: "/de/museum/besuch-planen/besuchendenordnung", label: "Besucherordnung" },
-              { to: "/de/museum/besuch-planen/digital-guide", label: "Digital Guide / Audioguide" },
-              { to: "/de/museum/besuch-planen/fotografieren-und-filmaufnahmen", label: "Fotografieren und Filmaufnahmen" },
-              { to: "/de/museum/besuch-planen/museumscafe", label: "Museumscafé" },
+              { to: "/de/besuch-planen/im-museum/anfahrt", label: "Anfahrt" },
+              { to: "/de/besuch-planen/im-museum/barrierefreiheit", label: "Barrierefreiheit" },
+              { to: "/de/besuch-planen/im-museum/besuchendenordnung", label: "Besucherordnung" },
+              { to: "/de/besuch-planen/im-museum/digital-guide", label: "Digital Guide / Audioguide" },
+              { to: "/de/besuch-planen/im-museum/fotografieren-und-filmaufnahmen", label: "Fotografieren und Filmaufnahmen" },
+              { to: "/de/besuch-planen/im-museum/museumscafe", label: "Museumscafé" },
               { to: "https://www.naturkundemuseum-shop.de", label: "Museumsshop" },
               { to: "https://ticketshop.museumfuernaturkunde.berlin", label: "Ticketshop" }
             ]
@@ -85,12 +85,12 @@ export const mainNavData = {
         column: 1,
         items: [
           {
-            to: "/de/museum/mitmachen/buergerwissenschaften",
+            to: "/de/mitmachen/buergerwissenschaften",
             label: "Bürgerwissenschaften",
             order: 1
           },
           {
-            to: "/de/mitmachen/ehrenamtliches-engagement",
+            to: "/de/mitmachen/ehrenamt",
             label: "Ehrenamt",
             order: 2
           }
@@ -100,17 +100,17 @@ export const mainNavData = {
         column: 2,
         items: [
           {
-            to: "/de/mitmachen/bildung",
+            to: "/de/mitmachen/bildungsangebote",
             label: "Bildungsangebote",
             order: 1,
             submenu: [
-              { to: "/de/museum/bildung/fuernatur-digital-angebote", label: "Digitale Angebote" },
-              { to: "/de/museum/bildung/fuehrungen", label: "Führungen" },
-              { to: "/de/museum/bildung/schule-und-kita", label: "Schule und Kita" },
-              { to: "/de/museum/bildung/familien", label: "Familien" },
-              { to: "/de/museum/bildung/kindergeburtstage", label: "Kindergeburtstage" },
-              { to: "/de/museum/bildung/erwachsene", label: "Erwachsene" },
-              { to: "/de/museum/bildung/fortbildungen", label: "Fortbildungen" }
+              { to: "/de/mitmachen/bildungsangebote/fuernatur-digital-angebote-fuer-familien-und-kinder", label: "Digitale Angebote" },
+              { to: "/de/mitmachen/bildungsangebote/fuehrungen", label: "Führungen" },
+              { to: "/de/mitmachen/bildungsangebote/schule-und-kita", label: "Schule und Kita" },
+              { to: "/de/mitmachen/bildungsangebote/familien", label: "Familien" },
+              { to: "/de/mitmachen/bildungsangebote/kindergeburtstage", label: "Kindergeburtstage" },
+              { to: "/de/mitmachen/bildungsangebote/erwachsene", label: "Erwachsene" },
+              { to: "/de/mitmachen/bildungsangebote/fortbildungen", label: "Fortbildungen" }
             ]
           }
         ]
@@ -135,13 +135,13 @@ export const mainNavData = {
         column: 1,
         items: [
           {
-            to: "/de/wissenschaft/forschung",
+            to: "/de/forschung/forschung",
             label: "Forschung",
             order: 1,
             submenu: [
-              { to: "/de/wissenschaft/forschung/dynamik-der-natur", label: "Dynamik der Natur" },
-              { to: "/de/wissenschaft/forschung/zukunft-der-sammlung", label: "Zukunft der Sammlung" },
-              { to: "/de/wissenschaft/forschung/gesellschaft-und-natur", label: "Gesellschaft und Natur" }
+              { to: "/de/forschung/forschung/dynamik-der-natur", label: "Dynamik der Natur" },
+              { to: "/de/forschung/forschung/zukunft-der-sammlung", label: "Zukunft der Sammlung" },
+              { to: "/de/forschung/forschung/gesellschaft-und-natur", label: "Gesellschaft und Natur" }
             ]
           }
         ]
@@ -150,24 +150,24 @@ export const mainNavData = {
         column: 2,
         items: [
           {
-            to: "/de/wissenschaft/infrastruktur",
+            to: "/de/forschung/infrastruktur",
             label: "Infrastruktur",
             order: 1,
             submenu: [
-              { to: "/de/wissenschaft/infrastruktur/sammlung", label: "Sammlung" },
-              { to: "/de/wissenschaft/infrastruktur/labore", label: "Labore" },
-              { to: "/de/wissenschaft/infrastruktur/it-forschungsinfrastruktur", label: "IT Forschungsinfrastruktur" },
-              { to: "/de/wissenschaft/infrastruktur/forschungsdatenmanagementstruktur", label: "Forschungsdatenmanagementstruktur" }
+              { to: "/de/forschung/infrastruktur/sammlung", label: "Sammlung" },
+              { to: "/de/forschung/infrastruktur/labore", label: "Labore" },
+              { to: "/de/forschung/infrastruktur/it-forschungsinfrastruktur", label: "IT Forschungsinfrastruktur" },
+              { to: "/de/forschung/infrastruktur/forschungsdaten-infrastruktur", label: "Forschungsdatenmanagementstruktur" }
             ]
           },
           {
-            to: "/de/wissenschaft/transfer",
+            to: "/de/forschung/transfer",
             label: "Transfer",
             order: 2,
             submenu: [
-              { to: "/de/wissenschaft/transfer/kommunizieren", label: "Kommunizieren" },
-              { to: "/de/wissenschaft/transfer/beraten", label: "Beraten" },
-              { to: "/de/wissenschaft/transfer/anwenden", label: "Anwenden" }
+              { to: "/de/forschung/transfer/kommunizieren", label: "Kommunizieren" },
+              { to: "/de/forschung/transfer/beraten", label: "Beraten" },
+              { to: "/de/forschung/transfer/anwenden", label: "Anwenden" }
             ]
           }
         ]
@@ -201,10 +201,10 @@ export const mainNavData = {
             label: "Das Museum heute",
             order: 1,
             submenu: [
-              { to: "/de/ueber-uns/das-museum", label: "Das Museum" },
-              { to: "/de/ueber-uns/bau", label: "Bau" },
-              { to: "/de/ueber-uns/berliner-sparkasse-ist-hauptsponsor", label: "Sponsoren" },
-              { to: "/de/ueber-uns/team", label: "Team" }
+              { to: "/de/museum/heute/das-museum", label: "Das Museum" },
+              { to: "/de/museum/heute/bau", label: "Bau" },
+              { to: "/de/museum/heute/berliner-sparkasse-ist-hauptsponsor-des-museums-fuer-naturkunde-berlin", label: "Sponsoren" },
+              { to: "/de/museum/heute/team", label: "Team" }
             ]
           }
         ]
@@ -218,8 +218,8 @@ export const mainNavData = {
             order: 1,
             submenu: [
               { to: "/de/museum/zukunft/zukunftsplan", label: "Zukunftsplan" },
-              { to: "/de/wissenschaft/sammlungserschliessung-und-entwicklung", label: "Sammlungserschließung" },
-              { to: "/de/zukunft/wissenstransfer", label: "Wissenstransfer" },
+              { to: "/de/wissenschaft/sammlungserschliessung", label: "Sammlungserschließung" },
+              { to: "/de/museum/zukunft/wissenstransfer", label: "Wissenstransfer" },
               // { to: "/de/zukunft/werde-teil-unserer-museums-evolution", label: "Museums-Evolution" }
             ]
           }
@@ -233,9 +233,9 @@ export const mainNavData = {
             label: "Medien",
             order: 1,
             submenu: [
-              { to: "/de/pressemitteilungen", label: "Presse" },
+              { to: "/de/museum/medien/presse", label: "Presse" },
               { to: "/de/museum/medien/news", label: "News" },
-              { to: "/de/museum/medien/journal-fuer-natur", label: "Journal \"Für Natur\"" },
+              { to: "/de/museum/medien/journal-fuer-natur", label: "Journal \"für Natur\"" },
               { to: "http://eepurl.com/vsVBv", label: "Newsletter" }
             ]
           },
@@ -244,8 +244,8 @@ export const mainNavData = {
             label: "Jobs & Karriere",
             order: 2,
             submenu: [
-              { to: "/de/museum/jobs-und-karriere/arbeiten-am-museum", label: "Hier Arbeiten" },
-              { to: "/de/ueber-uns/jobs-und-karriere/stellenausschreibungen", label: "Stellenausschreibungen" }
+              { to: "/de/museum/jobs-und-karriere/hier-arbeiten", label: "Hier Arbeiten" },
+              { to: "/de/museum/jobs-und-karriere/stellenausschreibungen", label: "Stellenausschreibungen" }
             ]
           }
         ]
