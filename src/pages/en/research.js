@@ -305,7 +305,7 @@ const ResearchPage = () => {
                             buttons: [
                                 {
                                     text: "Open Person Search",
-                                    url: "/en/research/team-projects/",
+                                    url: "/en/research/people-search/",
                                     variant: "primary"
                                 }
                             ]

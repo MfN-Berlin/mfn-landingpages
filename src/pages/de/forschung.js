@@ -311,7 +311,7 @@ const VisitPage = () => {
                             buttons: [
                                 {
                                     text: "Personenuche öffnen",
-                                    url: "/de/forschung/team-projekte/",
+                                    url: "/de/forschung/personensuche/",
                                     variant: "primary"
                                 }
                             ]
