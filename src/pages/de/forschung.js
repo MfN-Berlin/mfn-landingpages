@@ -214,7 +214,7 @@ const VisitPage = () => {
                             body: "Die Sammlung umfasst Objekte aus der Zeit des Ursprungs des Sonnensystems vor mehr als 4,5 Milliarden Jahren bis heute und enthält eine große Anzahl von Erstbeschreibungen von Arten (Typusexemplare).",
                             spacing: "regular"
                         }}
-                        url="/de/wissenschaft/infrastruktur/sammlung/"
+                        url="/de/forschung/infrastruktur/sammlung/"
                     />
                     <Card
                         variant="white"
@@ -231,7 +231,7 @@ const VisitPage = () => {
                             body: "Historische Dokumente und Forschungsergebnisse stehen als wertvolle Ressourcen für Studien bereit.",
                             spacing: "regular"
                         }}
-                        url="/de/wissenschaft/archiv"
+                        url="/de/forschung/infrastruktur/archiv"
                     />
 
                     <Card
@@ -249,7 +249,7 @@ const VisitPage = () => {
                             body: "Nutzen sie unsere naturwissenschaftlichen und historischen Bestände zur Unterstützung von Forschung, Lehre und Wissensvermittlung.",
                             spacing: "regular"
                         }}
-                        url="de/wissenschaft/bibliothek/"
+                        url="/de/forschung/infrastruktur/bibliothek/"
                     />
 
                 </Section>
@@ -270,7 +270,7 @@ const VisitPage = () => {
                             body: "Unsere  Labore stehen Mitarbeitenden des Museums, Studierenden, Doktoranden,  Postdocs und Gastwissenschaftlerinnen und Gastwissenschaftlern für ihre  Forschungsprojekte offen.",
                             spacing: "regular",
                         }}
-                        url="/de/wissenschaft/infrastruktur/labore"
+                        url="/de/forschung/infrastruktur/labore"
 
                     />
                     <Card
@@ -288,7 +288,7 @@ const VisitPage = () => {
                             body: "Wir veröffentlichen drei wissenschaftliche Zeitschriften: Deutsche Entomologische Zeitschrift, Zoosystematics and Evolution (früher Mitteilungen aus dem Zoologischen Museum Berlin) und Fossil Record.",
                             spacing: "regular"
                         }}
-                        url="/de/wissenschaft/wissenschaftliche-zeitschriften"
+                        url="/de/forschung/zeitschriften"
                     />
 
 
@@ -311,7 +311,7 @@ const VisitPage = () => {
                             buttons: [
                                 {
                                     text: "Personenuche öffnen",
-                                    url: "/de/forschung/personensuche/",
+                                    url: "/de/forschung/team",
                                     variant: "primary"
                                 }
                             ]

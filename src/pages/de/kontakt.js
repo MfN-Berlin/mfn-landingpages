@@ -54,31 +54,30 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Team",
-                                    url: "de/ueber-uns/team",
+                                    url: "/de/museum/team",
                                     variant: "plain"
                                 },
                                 {
                                     text: "FAQ",
-                                    url: "de/besuch-planen/faq",
+                                    url: "/de/besuch-planen/im-museum/faq",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Presse",
-                                    url: "de/pressemitteilungen",
+                                    url: "/de/museum/medien/presse",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Besuch planen",
-                                    url: "de/besuch-planen/",
+                                    url: "/de/besuch-planen",
                                     variant: "plain"
-                                }
-                                ,
+                                },
                                 {
                                     text: "Über uns",
-                                    url: "de/ueber-uns/das-museum",
+                                    url: "/de/museum",
                                     variant: "plain"
-                                }]
-
+                                }
+                            ]
                         }}
                         imagePosition="right"
                     />
@@ -120,7 +119,7 @@ const IndexPage = () => {
                         headlineStyle="h3"
                         spacing="regular"
                         alignment="left"
-                        body={`Alles rund um unsere <a href='/de/museum/bildung/fuehrungen'>Führungen</a><br/>
+                        body={`Alles rund um unsere <a href='/de/mitmachen/bildungsangebote/fuehrungen'>Führungen</a><br/>
                         <a href='mailto:bildung@mfn.berlin'>bildung@mfn.berlin</a><br/>
                         <a href='https://survey.naturkundemuseum-berlin.de/de/Kontaktformular'>Kontaktformular</a> (aktuell nicht erreichbar) für Mailanfragen`}
                     />
@@ -150,7 +149,7 @@ const IndexPage = () => {
                         headlineStyle="h3"
                         spacing="regular"
                         alignment="left"
-                        body={`<a href='/de/wissenschaft/bibliothek'>Die Bibliothek</a> ist Dienstag bis Freitag für externe Nutzende zugänglich. Bitte melden Sie sich per <a href='mailto:bibliothek@mfn.berlin'>Email</a> zwecks Terminabsprache.`}
+                        body={`<a href='/de/forschung/infrastruktur/bibliothek'>Die Bibliothek</a> ist Dienstag bis Freitag für externe Nutzende zugänglich. Bitte melden Sie sich per <a href='mailto:bibliothek@mfn.berlin'>Email</a> zwecks Terminabsprache.`}
                     />
                     <CardText
                         headline="Archiv"

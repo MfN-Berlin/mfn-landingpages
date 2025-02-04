@@ -76,16 +76,15 @@ const IndexPage = () => {
                   text: "Ausstellungen",
                   url: "#im-museum",
                   variant: "plain"
-                }
-                ,
+                },
                 {
                   text: "Digitale Angebote",
-                  url: "/de/museum/bildung/fuernatur-digital-angebote-fuer-familien-und-kinder",
+                  url: "/de/mitmachen/bildungsangebote/fuernatur-digital-angebote-fuer-familien-und-kinder",
                   variant: "plain"
                 },
                 {
                   text: "Bildungsangebote",
-                  url: "/de/museum/bildung",
+                  url: "/de/mitmachen/bildungsangebote",
                   variant: "plain"
                 }]
             }}
@@ -109,7 +108,7 @@ const IndexPage = () => {
             <div className="w-full">
               <Button
                 text="Genauer Plan mit Sonderöffnungszeiten"
-                url="/de/besuch-planen/sonderoeffnungszeiten"
+                url="/de/besuch-planen/im-museum/sonderoeffnungszeiten"
                 variant="plain"
                 className="w-full justify-center"
               />
@@ -133,7 +132,7 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Samstag, Sonntag, und <a href="/de/besuch-planen/sonderoeffnungszeiten" className="underline">an Feiertagen</a>
+                  Samstag, Sonntag, und <a href="/de/besuch-planen/im-museum/sonderoeffnungszeiten" className="underline">an Feiertagen</a>
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2 leading-none">
                   10:00 bis 18:00
