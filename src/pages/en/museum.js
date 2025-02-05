@@ -50,12 +50,12 @@ const IndexPage = () => {
               {
                 text: "Career",
                 variant: "plain",
-                url: "en/about/jobs-and-career/"
+                url: "/en/about/jobs-and-career/"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "en/about/team/"
+                url: "/en/about/team/"
               },
               {
                 text: "Contact",
@@ -65,7 +65,7 @@ const IndexPage = () => {
               {
                 text: "News",
                 variant: "plain",
-                url: "en/about/news/"
+                url: "/en/about/news/"
               },
               {
                 text: "Press",
@@ -150,7 +150,7 @@ const IndexPage = () => {
               body: "At the Museum für Naturkunde Berlin, we preserve 30 million collection objects, each holding knowledge of inestimable value. To ensure comprehensive use of the collection, we are making it accessible as part of our future plan—this means securing it through conservation, digitizing it, and creating innovative ways of access and utilization.",
               spacing: "wide"
             }}
-            url="/en/science/collection-discovery"
+            url="/en/research/collection-discovery"
           />
 
           <Card
@@ -203,7 +203,7 @@ const IndexPage = () => {
               spacing: "wide",
               alignment: "left"
             }}
-            url="/en/museum/today/museum/themuseumslab"
+            url="/en/museum/today/themuseumslab"
           />
 
           <Card
@@ -220,7 +220,7 @@ const IndexPage = () => {
               body: "This unique project connects research and knowledge transfer at the Ursaurier fossil site in the UNESCO Global Geopark Thuringia Inselsberg - Drei Gleichen, at the Museum für Naturkunde Berlin, and the Friedenstein Castle Foundation in Gotha, while also employing multimedia platforms for broader engagement.",
               spacing: "wide"
             }}
-            url="/en/science/bromacker-new-ways-science-communication"
+            url="/en/research/bromacker-new-ways-science-communication"
           />
 
           <Card
@@ -286,22 +286,22 @@ const IndexPage = () => {
               {
                 text: "About Us",
                 variant: "plain",
-                url: "en/about/museum/"
+                url: "/en/about/"
               },
               {
                 text: "Construction",
                 variant: "plain",
-                url: "en/about/building/"
+                url: "/en/about/building/"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "en/about/team/"
+                url: "/en/about/team/"
               },
               {
                 text: "Sponsors",
                 variant: "plain",
-                url: "en/about/sponsors/"
+                url: "/en/about/sponsors/"
               }
             ]}
           />
@@ -322,7 +322,7 @@ const IndexPage = () => {
               body: "At four locations along the exhibition tour, installations will provide information about the Future Plan from June 11, 2024, until the end of June 2027.",
               spacing: "wide"
             }}
-            url="/en/museum/exhibitions/future-plan"
+            url="/en/visit/exhibitions/future-plan"
           />
 
           <Card
@@ -356,7 +356,7 @@ const IndexPage = () => {
               body: "Our reports provide a detailed insight into our research fields and highlight the most exciting and significant research projects.",
               spacing: "wide"
             }}
-            url="en/about/museum/publications-and-downloads"
+            url="/en/about/publications-and-downloads"
           />
 
           <Card
