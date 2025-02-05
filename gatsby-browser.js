@@ -7,7 +7,7 @@
 import './src/styles/global.css'
 
 // Version logging
-const VERSION = 'v1.0.2'
+const VERSION = 'v1.0.3'
 
 export const onClientEntry = () => {
     // Temporär Prefetching deaktivieren
@@ -16,10 +16,10 @@ export const onClientEntry = () => {
     }
     
     // Version in Konsole ausgeben
-    console.log(VERSION)
+    // console.log(VERSION)
 }
 
 // Alternative: Bei jedem Routenwechsel
 export const onRouteUpdate = () => {
-    console.log(VERSION)
+    // console.log(VERSION)
 }

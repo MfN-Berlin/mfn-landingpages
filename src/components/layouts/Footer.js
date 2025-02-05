@@ -6,10 +6,10 @@ import { featureTranslations } from '../../data/featureTranslations';
 import { getAssetPath } from '../../scripts/assetPrefix';
 
 const FooterLink = ({ to, children, external = false, onClick }) => {
-  const linkProps = external 
-    ? { href: to, target: "_blank", rel: "noopener noreferrer" } 
-    : { to, onClick }; 
-  
+  const linkProps = external
+    ? { href: to, target: "_blank", rel: "noopener noreferrer" }
+    : { to, onClick };
+
   return (
     <li className="inline-block p-1 py-[0.5em] px-[1em] ml-1">
       {external ? (
@@ -22,10 +22,10 @@ const FooterLink = ({ to, children, external = false, onClick }) => {
 };
 
 const SocialLink = ({ href, icon, title }) => (
-  <a 
-    href={href} 
-    target="_blank" 
-    rel="noopener noreferrer" 
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
     className="text-gray-300 hover:text-white mx-0 tracking-[0.8em]"
     title={title}
     aria-label={title}
@@ -58,8 +58,8 @@ const Footer = () => {
               <FooterLink to={paths.news}>{t.links?.news || 'News'}</FooterLink>
               <FooterLink to="https://www.naturkundemuseum-shop.de/" external>{t.links?.shop || 'Shop'}</FooterLink>
               <FooterLink to={paths.privacyPolicy}>{t.links?.privacyPolicy || 'Privacy Policy'}</FooterLink>
-              <FooterLink 
-                to="#" 
+              <FooterLink
+                to="#"
                 onClick={(e) => {
                   e.preventDefault();
                   setShowCookieSettings(true);
@@ -74,38 +74,27 @@ const Footer = () => {
             </ul>
           </nav>
 
-          <nav aria-label="Social Media Links" className="flex flex-wrap justify-center gap-4 my-8">
-            <SocialLink 
-              href="https://www.instagram.com/mfnberlin" 
-              icon="" 
-              title="Instagram"
-            />
-            <SocialLink 
-              href="https://www.twitter.com/mfnberlin" 
-              icon="" 
-              title="Twitter"
-            />
-            <SocialLink 
-              href="https://www.tiktok.com/@mfnberlin?lang=de" 
-              icon="" 
-              title="TikTok"
-            />
-            <SocialLink 
-              href="https://www.facebook.com/MfN.Berlin" 
-              icon="" 
-              title="Facebook"
-            />
-            <SocialLink 
-              href="https://www.linkedin.com/company/mfnberlin" 
-              icon="" 
-              title="LinkedIn"
-            />
-            <SocialLink 
-              href="https://www.youtube.com/user/MfNBerlin" 
-              icon="" 
-              title="YouTube"
-            />
-          </nav>
+
+          <div class="mfn-module-social-links">
+            <a href="https://www.instagram.com/mfnberlin" target="_blank" title="Instagram">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@mfnberlin?lang=de" target="_blank" title="TikTok">
+              <i class="fa fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/user/MfNBerlin" target="_blank" title="YouTube">
+              <i class="fa fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/MfN.Berlin" target="_blank" title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/mfnberlin" target="_blank" title="LinkedIn">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="https://bsky.app/profile/mfnberlin.bsky.social" target="_blank" title="Bluesky">
+              <i class="fa fa-bluesky"></i>
+            </a>
+          </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 mb-8">
@@ -169,21 +158,21 @@ const Footer = () => {
 
           <section className="text-center mb-8 px-4">
             <h2 className="text-sm font-bold mb-4">{t.newsletterSignup?.title || 'Newsletter'}</h2>
-            <form 
-              action="https://berlin.us6.list-manage.com/subscribe/post?u=7cc783779868ff99f465accff&amp;id=6742162bdf" 
-              method="post" 
+            <form
+              action="https://berlin.us6.list-manage.com/subscribe/post?u=7cc783779868ff99f465accff&amp;id=6742162bdf"
+              method="post"
               target="_blank"
               className="w-full max-w-[375px] mx-auto"
             >
               <div className="flex flex-col sm:flex-row gap-2">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="EMAIL"
-                  placeholder={t.newsletterSignup?.emailPlaceholder || 'Email address'} 
-                  className="flex-1 p-2 bg-Black-900 text-white border border-Black-700 text-sm min-w-0" 
-                  required 
+                  placeholder={t.newsletterSignup?.emailPlaceholder || 'Email address'}
+                  className="flex-1 p-2 bg-Black-900 text-white border border-Black-700 text-sm min-w-0"
+                  required
                 />
-                <button 
+                <button
                   type="submit"
                   className="h-[41px] px-4 pt-1.5 pb-2 inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 font-bold whitespace-nowrap"
                 >
@@ -192,8 +181,8 @@ const Footer = () => {
               </div>
               <p className="text-sm text-Black-700 mt-2">
                 {t.newsletterSignup?.privacyNote || 'By clicking "Subscribe" you accept our'}{' '}
-                <Link 
-                  to={`/${language}/datenschutzerklaerung#newsletter`} 
+                <Link
+                  to={`/${language}/datenschutzerklaerung#newsletter`}
                   className="text-Black-700 hover:text-white"
                 >
                   {t.newsletterSignup?.privacyLink || 'Privacy Policy'}
@@ -204,9 +193,9 @@ const Footer = () => {
 
           <div className="flex flex-col items-center text-center text-Black-700 mt-16 pt-16">
             <img
-              src={getAssetPath("/images/leibniz.svg")}
+              src={getAssetPath("/images/leibniz-30-years-small.png")}
               alt={t.instituteName || "Museum für Naturkunde Leibniz-Institut für Evolutions- und Biodiversitätsforschung"}
-              className="w-20 h-20 mb-4"
+              className=" h-15 mb-4"
             />
             <p className="text-sm max-w-full">
               {t.instituteName || "Museum für Naturkunde Leibniz-Institut für Evolutions- und Biodiversitätsforschung"}
@@ -215,7 +204,7 @@ const Footer = () => {
         </div>
       </footer>
 
-      <CookieConsent 
+      <CookieConsent
         forceOpen={showCookieSettings}
         onClose={() => setShowCookieSettings(false)}
       />
