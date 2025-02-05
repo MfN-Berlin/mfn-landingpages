@@ -201,7 +201,7 @@ const IndexPage = () => {
               spacing: "wide",
               alignment: "left"
             }}
-            url="de/museum/heute/das-museum/themuseumslab"
+            url="/de/museum/heute/das-museum/themuseumslab"
           />
 
 
@@ -236,7 +236,7 @@ const IndexPage = () => {
               body: "Expert:innen des Museums für Naturkunde Berlin untersuchen das außerirdische Aubrit-Gestein und koordinieren ein internationales Konsortium zur Erforschung des Ribbeck-Meteoriten. Erste Ergebnisse zeigen: Er könnte mit der Erde verwandt sein – und Bausteine des Lebens in sich tragen.",
               spacing: "wide"
             }}
-            url="/de/museum/ribbeck-meteorit"
+            url="/de/besuch-eines-fernen-verwandten"
           />
 
         </Section>
@@ -352,7 +352,7 @@ const IndexPage = () => {
               body: "An vier Orten im Ausstellungsrundgang informieren wir vom 11. Juni 2024 bis Ende Juni 2027 mit Installationen über den Zukunftsplan.",
               spacing: "wide"
             }}
-            url="de/museum/ausstellungen/zukunftsplan"
+            url="/de/museum/ausstellungen/zukunftsplan"
           />
           <Card
             variant="classic"
@@ -368,7 +368,7 @@ const IndexPage = () => {
               body: "In unseren Journalen ür Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
               spacing: "wide"
             }}
-            url="de/museum/medien/journal-fuer-natur"
+            url="/de/museum/medien/journal-fuer-natur"
           />
           <Card
             variant="classic"
@@ -384,7 +384,7 @@ const IndexPage = () => {
               body: "Unsere Berichte geben einen detaillierten Einblick in unsere Forschungsbereiche sowie über die spannendsten und wichtigsten Forschungsprojekte.",
               spacing: "wide"
             }}
-            url="de/museum/heute/das-museum/publikationen-und-downloads"
+            url="/de/museum/heute/das-museum/publikationen-und-downloads"
           />
           <Card
             variant="classic"
@@ -400,7 +400,7 @@ const IndexPage = () => {
               body: "Verstärken Sie unser Team im wissenschaftlichen Bereich, im technischen Bereich oder in der Verwaltung.",
               spacing: "wide"
             }}
-            url="de/museum/jobs-und-karriere"
+            url="/de/museum/jobs-und-karriere"
           />
 
 

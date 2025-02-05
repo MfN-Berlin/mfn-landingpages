@@ -231,7 +231,7 @@ const VisitPage = () => {
                             body: "Historische Dokumente und Forschungsergebnisse stehen als wertvolle Ressourcen für Studien bereit.",
                             spacing: "regular"
                         }}
-                        url="/de/forschung/infrastruktur/archiv"
+                        url="/de/forschung/archiv"
                     />
 
                     <Card
@@ -249,7 +249,7 @@ const VisitPage = () => {
                             body: "Nutzen sie unsere naturwissenschaftlichen und historischen Bestände zur Unterstützung von Forschung, Lehre und Wissensvermittlung.",
                             spacing: "regular"
                         }}
-                        url="/de/forschung/infrastruktur/bibliothek/"
+                        url="/de/forschung/bibliothek"
                     />
 
                 </Section>
@@ -288,7 +288,7 @@ const VisitPage = () => {
                             body: "Wir veröffentlichen drei wissenschaftliche Zeitschriften: Deutsche Entomologische Zeitschrift, Zoosystematics and Evolution (früher Mitteilungen aus dem Zoologischen Museum Berlin) und Fossil Record.",
                             spacing: "regular"
                         }}
-                        url="/de/forschung/zeitschriften"
+                        url="/de/forschung/wissenschaftliche-zeitschriften"
                     />
 
 
@@ -384,7 +384,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 3"
                             title="Mensch-Natur-Beziehungen im Anthropozän"
                             text="Inter- und transdisziplinäre Forschung zu den Wechselbeziehungen zwischen Mensch, Natur und digitaler Transformation"
-                            link="de/wissenschaft/mensch-natur-beziehungen-im-anthropozaen"
+                            link="/de/wissenschaft/mensch-natur-beziehungen-im-anthropozaen"
                         />
                         <SlideContent
                             imageName="ieti-keyvisual.png"
@@ -392,7 +392,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 3"
                             title="Public Engagement und Impact"
                             text="Wir fördern die strategische Verankerung von Public Engagement in der Forschung und in Forschungseinrichtungen. Dazu öffnen wir sowohl die Forschungskultur als auch -prozesse für nicht-akademische Stakeholder durch ein breites Spektrum an Formaten und Methoden."
-                            link="de/wissenschaft/ieti-impact-orientiertes-public-engagement"
+                            link="/de/wissenschaft/ieti-impact-orientiertes-public-engagement"
                         />
 
                     </Slideshow>

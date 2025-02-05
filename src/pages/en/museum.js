@@ -125,7 +125,7 @@ const IndexPage = () => {
               {
                 text: "Future Plan",
                 variant: "plain",
-                url: "en/museum/future/future-plan"
+                url: "/en/museum/future/future-plan"
               }
             ]}
           />
