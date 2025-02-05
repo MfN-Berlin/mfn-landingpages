@@ -1,6 +1,6 @@
 export const topNavLinksEn = [
-  { to: "/en/museum/visit/opening-hours", label: "Opening Hours" },
-  { to: "/en/museum/visit/how-to-get-here", label: "How to get here" },
+  { to: "/en/visit/plan-your-visit", label: "Opening Hours" },
+  { to: "/en/visit/plan-your-visit/how-get-here", label: "How to get here" },
   { to: "https://ticketshop.museumfuernaturkunde.berlin", label: "Tickets", isSpecial: true },
   { to: "/en/press-releases", label: "Press" },
   { to: "/en/museum/media/news", label: "News" },

@@ -70,17 +70,17 @@ const IndexPage = () => {
                 },
                 {
                   text: "Getting Here",
-                  url: "/en/museum/visit/getting-here",
+                  url: "#getting-here",
                   variant: "plain"
                 },
                 {
                   text: "Exhibitions",
-                  url: "/en/museum/exhibitions",
+                  url: "#in-the-museum",
                   variant: "plain"
                 },
                 {
                   text: "Digital Offerings",
-                  url: "/en/museum/education/digital-offerings",
+                  url: "/en/visit/furnatur-digital",
                   variant: "plain"
                 },
                 {
@@ -107,7 +107,7 @@ const IndexPage = () => {
             <UpcomingHoliday />
             <div className="w-full">
               <Link
-                to="/en/visit/special-opening-hours"
+                to="/en/special-opening-times"
                 className="w-full block text-center text-Green-500 typography-p"
               >
                 Detailed schedule with special opening times
@@ -131,7 +131,7 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Saturday, Sunday, and on <a href="/en/visit/special-opening-hours" className="underline">public holidays</a>
+                  Saturday, Sunday, and on <a href="en/special-opening-times" className="underline">public holidays</a>
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2">
                   10:00am to 6:00pm
@@ -163,7 +163,7 @@ const IndexPage = () => {
               buttons={[
                 {
                   text: "CombiTickets",
-                  url: "/en/visit/combi-tickets",
+                  url: "/en/combitickets",
                   variant: "plain"
                 }
               ]}
@@ -298,7 +298,7 @@ const IndexPage = () => {
                     <li>Visitors with disabilities (degree of disability of 50 or more), subject to presenting official documentation</li>
                   </ul>
                   <p>
-                    Discounted tickets are available to holders of a Museum Pass Berlin, a Berlin WelcomeCard or a ticket to the German Museum of Technology. <a href="/en/visit/combi-tickets" className="underline">More info on CombiTickets</a>
+                    Discounted tickets are available to holders of a Museum Pass Berlin, a Berlin WelcomeCard or a ticket to the German Museum of Technology. <a href="/en/combitickets" className="underline">More info on CombiTickets</a>
                   </p>
                 </div>
               </div>
@@ -323,7 +323,7 @@ const IndexPage = () => {
           </Accordion>
         </Section>
 
-        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
+        <Section id="getting-here" columns={2} backgroundColor="bg-Green-100" gapClass="gap-20 xl:gap-36" justifyContent="center">
           <div className="flex flex-col justify-center items-center">
             <div className="py-[30px] mb-[17px]">
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
@@ -441,19 +441,19 @@ const IndexPage = () => {
               <div className="p-5">
                 <p>The disabled entrance is located to the right of the main entrance. There are three disabled parking spaces located opposite the disabled entrance.<br /><br />
                   <strong>Please note:</strong> The disabled parking spaces by the neighbouring building are currently not in operation due to building works. Thank you for your understanding!<br /><br />
-                  You can access the cloakroom, disabled toilets and exhibition floor from this entrance via a lift or stair lift. <a href="/en/museum/plan-your-visit/accessibility" className="underline">More info</a></p>
+                  You can access the cloakroom, disabled toilets and exhibition floor from this entrance via a lift or stair lift. <a href="/en/visit/plan-your-visit/accessibility" className="underline">More info</a></p>
               </div>
             </AccordionItem>
           </Accordion>
         </Section>
-        <Section columns={1} backgroundColor="bg-white" padding="pb-4 pt-16">
+        <Section id="in-the-museum" columns={1} backgroundColor="bg-white" padding="pb-4 pt-16">
           <CardText
             headline="In the Museum"
             headlineStyle="h1"
             body={`Our exhibitions will give you insights into amazing natural adventures – through original exhibits!
       <br/><br/>
-      More info on our <a href="/en/museum/plan-your-visit/visitors-regulations" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">visitor rules</a> and 
-      our <a href="/en/museum/plan-your-visit/film-and-photography" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">rules for photography and video recording</a>.`}
+      More info on our <a href="/en/visit/plan-your-visit/visitors-regulations" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">visitor rules</a> and 
+      our <a href="/en/visit/plan-your-visit/film-and-photography" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">rules for photography and video recording</a>.`}
             spacing="wide"
             alignment="center"
           />
@@ -464,14 +464,14 @@ const IndexPage = () => {
               imageName="zv_1200x675_WEBSEITE_0.jpg"
               title="ZUGvögel – Collection in Motion"
               kicker="Special exhibition from 11 June 2024 to the end of June 2027"
-              link="en/museum/exhibitions/zugvogel"
+              link="/en/visit/exhibitions/zugvogel-collection-motion"
               altText="Migratory Birds"
             />
             <SlideContent
               imageName="zp_1200x675_WEBSEITE.jpg"
               title="Zukunftsplan – The Museum in Motion"
               kicker="Installation in the museum from 11 June 2024 to the end of June 2027"
-              link="/en/museum/exhibitions/zukunftsplan"
+              link="/en/visit/exhibitions/zukunftsplan"
               altText="Visualization of the future plan for the Museum für Naturkunde Berlin"
             />
             <SlideContent
@@ -591,7 +591,7 @@ const IndexPage = () => {
                   spacing: "regular",
                   headlineStyle: "h3"
                 }}
-                url="/en/museum/events"
+                url="/en/visit/events"
               />
             </div>
 
@@ -609,7 +609,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url="/en/museum/plan-your-visit/accessibility"
+                url="/en/visit/plan-your-visit/accessibility"
               />
               <Card
                 variant="classic"
@@ -624,7 +624,7 @@ const IndexPage = () => {
                   spacing: "tight",
                   headlineStyle: "h3"
                 }}
-                url="/en/museum/plan-your-visit/cloakroom"
+                url="/en/visit/plan-your-visit/cloakroom"
               />
             </div>
 
@@ -642,7 +642,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "regular"
                 }}
-                url="/en/museum/plan-your-visit/museum-cafe"
+                url="/en/visit/plan-your-visit/museum-cafe"
               />
             </div>
             <div className="sm:col-span-1 lg:col-span-1">
@@ -659,7 +659,7 @@ const IndexPage = () => {
                   headlineStyle: "h3",
                   spacing: "wide"
                 }}
-                url="/en/museum/plan-your-visit/digital-guide"
+                url="/en/visit/plan-your-visit/digital-guide"
               />
             </div>
           </div>
@@ -689,7 +689,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/en/museum/education/school-and-kindergarten"
+            url="/en/participate/education/school-and-kindergarten"
           />
           <Card
             variant="classic"
@@ -704,7 +704,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/en/museum/education/adults"
+            url="/en/participate/education/adults"
           />
           <Card
             variant="classic"
@@ -719,7 +719,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/en/museum/education/childrens-birthday-parties"
+            url="/en/participate/education/childrens-birthday-parties"
           />
           <Card
             variant="classic"
@@ -734,7 +734,7 @@ const IndexPage = () => {
               headlineStyle: "h3",
               spacing: "wide"
             }}
-            url="/en/museum/education/guided-tours"
+            url="/en/participate/education/guided-tours"
           />
         </Section>
         <Section columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-36" justifyContent="center">
@@ -748,7 +748,7 @@ const IndexPage = () => {
             buttons={[
               {
                 text: "More FAQs",
-                url: "/en/museum/visit/faq",
+                url: "/en/visit/faq",
                 variant: "plain"
               }
             ]}
@@ -781,7 +781,7 @@ const IndexPage = () => {
                   <br /><br />
                   We also offer two themed audio guides which add an additional perspective to the exhibition and the exhibits.
                   <br /><br />
-                  <a href="/en/museum/plan-your-visit/digital-guide" className="underline">More information is available here</a>.
+                  <a href="/en/visit/plan-your-visit/digital-guide" className="underline">More information is available here</a>.
                   <br /><br />
                   We recommend bringing your own headphones to enjoy the audio guide.</p>
               </div>
@@ -789,7 +789,7 @@ const IndexPage = () => {
 
             <AccordionItem title="Can I take photos in the museum?">
               <div className="p-5">
-                <p>You may take photos in the museum for personal use. Taking photos for commercial purposes requires a permit. <a href="/en/museum/plan-your-visit/film-and-photography" className="underline">More info here</a>.</p>
+                <p>You may take photos in the museum for personal use. Taking photos for commercial purposes requires a permit. <a href="/en/visit/plan-your-visit/film-and-photography" className="underline">More info here</a>.</p>
               </div>
             </AccordionItem>
 
