@@ -59,16 +59,16 @@ export const mainNavDataEn = {
         column: 3,
         items: [
           {
-            to: "/en/museum/plan-your-visit",
+            to: "/en/visit/plan-your-visit",
             label: "Plan Your Visit",
             order: 1,
             submenu: [
-              { to: "/en/museum/besucherinformationen/how-get-here", label: "How to get here" },
-              { to: "/en/museum/plan-your-visit/accessibility", label: "Accessibility" },
-              { to: "/en/museum/plan-your-visit/visitors-regulations", label: "Visitors regulations" },
-              { to: "/en/museum/plan-your-visit/digital-guide", label: "Digital Guide / Audioguide" },
-              { to: "/en/museum/plan-your-visit/film-and-photography", label: "Film and Photography" },
-              { to: "/en/museum/plan-your-visit/museum-cafe", label: "Museum Café" },
+              { to: "/en/visit/plan-your-visit/how-get-here", label: "How to get here" },
+              { to: "/en/visit/plan-your-visit/accessibility", label: "Accessibility" },
+              { to: "/en/visit/plan-your-visit/visitors-regulations", label: "Visitors regulations" },
+              { to: "/en/visit/plan-your-visit/digital-guide", label: "Digital Guide / Audioguide" },
+              { to: "/en/visit/plan-your-visit/film-and-photography", label: "Film and Photography" },
+              { to: "/en/visit/plan-your-visit/museum-cafe", label: "Museum Café" },
               { to: "https://www.naturkundemuseum-shop.de", label: "Museum Shop" },
               { to: "https://ticketshop.museumfuernaturkunde.berlin", label: "Ticketshop" }
             ]
@@ -85,12 +85,12 @@ export const mainNavDataEn = {
         column: 1,
         items: [
           {
-            to: "/en/museum/participate/citizen-science",
+            to: "/en/participate/citizen-science",
             label: "Citizen Science",
             order: 1
           },
           {
-            to: "/en/museum/participate/citizen-science/volunteering",
+            to: "/en/participate/volunteering",
             label: "Volunteering",
             order: 2
           }
@@ -100,18 +100,18 @@ export const mainNavDataEn = {
         column: 2,
         items: [
           {
-            to: "/en/museum/education",
+            to: "/en/participate/education",
             label: "Education",
             order: 1,
             submenu: [
-              { to: "/en/museum/education/furnatur-digital-family-and-children-edition", label: "Digital Offer" },
-              { to: "/en/museum/education/guided-tours", label: "Guided Tours" },
-              { to: "/en/museum/education/school-and-kindergarten", label: "School and Kindergarten" },
-              { to: "/en/museum/education/families", label: "Families" },
-              { to: "/en/museum/education/childrens-birthday-parties", label: "Children's Birthday Parties" },
-              { to: "/en/museum/education/adults", label: "Adults" },
-              { to: "/en/museum/education/advanced-training", label: "Advanced Training" },
-              { to: "/en/museum/education/partnerships-and-projects", label: "Partnerships and Projects" }
+              { to: "/en/participate/education/furnatur-digital-family-and-children-edition", label: "Digital Offer" },
+              { to: "/en/participate/education/guided-tours", label: "Guided Tours" },
+              { to: "/en/participate/education/school-and-kindergarten", label: "School and Kindergarten" },
+              { to: "/en/participate/education/families", label: "Families" },
+              { to: "/en/participate/education/childrens-birthday-parties", label: "Children's Birthday Parties" },
+              { to: "/en/participate/education/adults", label: "Adults" },
+              { to: "/en/participate/education/advanced-training", label: "Advanced Training" },
+              { to: "/en/participate/education/partnerships-and-projects", label: "Partnerships and Projects" }
             ]
           }
         ]
@@ -120,7 +120,7 @@ export const mainNavDataEn = {
         column: 3,
         items: [
           {
-            to: "/en/museum/events",
+            to: "/en/participate/events",
             label: "Events",
             order: 1
           }
@@ -136,13 +136,13 @@ export const mainNavDataEn = {
         column: 1,
         items: [
           {
-            to: "/en/science/research",
+            to: "/en/research/research",
             label: "Research",
             order: 1,
             submenu: [
-              { to: "/en/science/research/dynamics-nature", label: "Dynamics of Nature" },
-              { to: "/en/science/research/collection-future", label: "Collection Future" },
-              { to: "/en/science/research/society-and-nature", label: "Society and Nature" }
+              { to: "/en/research/research/dynamics-nature", label: "Dynamics of Nature" },
+              { to: "/en/research/research/collection-future", label: "Collection Future" },
+              { to: "/en/research/research/society-and-nature", label: "Society and Nature" }
             ]
           }
         ]
@@ -151,24 +151,24 @@ export const mainNavDataEn = {
         column: 2,
         items: [
           {
-            to: "/en/science/infrastructure",
+            to: "/en/research/infrastructure",
             label: "Infrastructure",
             order: 1,
             submenu: [
-              { to: "/en/science/infrastructure/collection", label: "Collection" },
-              { to: "/en/science/infrastructure/labs", label: "Labs" },
-              { to: "/en/science/infrastructure/research-information-technology-infrastructure", label: "Research Information Technology Infrastructure" },
-              { to: "/en/science/infrastructure/research-data-management-infrastructure", label: "Research Data Management Infrastructure" }
+              { to: "/en/research/infrastructure/collection", label: "Collection" },
+              { to: "/en/research/infrastructure/laboratories", label: "Labs" },
+              { to: "/en/research/infrastructure/research-information-technology-infrastructure", label: "Research Information Technology Infrastructure" },
+              { to: "/en/research/infrastructure/research-data-management-infrastructure", label: "Research Data Management Infrastructure" }
             ]
           },
           {
-            to: "/en/science/transfer",
+            to: "/en/research/transfer",
             label: "Transfer",
             order: 2,
             submenu: [
-              { to: "/en/science/transfer/communicating", label: "Communicating" },
-              { to: "/en/science/transfer/advising", label: "Advising" },
-              { to: "/en/science/transfer/applying", label: "Applying" }
+              { to: "/en/research/transfer/communicating", label: "Communicating" },
+              { to: "/en/research/transfer/advising", label: "Advising" },
+              { to: "/en/research/transfer/applying", label: "Applying" }
             ]
           }
         ]
@@ -202,10 +202,10 @@ export const mainNavDataEn = {
             label: "The Museum today",
             order: 1,
             submenu: [
-              { to: "/en/about/museum", label: "The Museum" },
-              { to: "/en/about/building", label: "Building" },
-              { to: "/en/about/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin", label: "Sponsors" },
-              { to: "/en/about/team", label: "Team" }
+              { to: "/en/museum/today/museum", label: "The Museum" },
+              { to: "/en/museum/today/building", label: "Building" },
+              { to: "/en/museum/today/berliner-sparkasse-main-sponsor-museum-fur-naturkunde-berlin", label: "Sponsors" },
+              { to: "/en/museum/today/team", label: "Team" }
             ]
           }
         ]
@@ -214,13 +214,13 @@ export const mainNavDataEn = {
         column: 2,
         items: [
           {
-            to: "/en/future",
+            to: "/en/museum/future",
             label: "The Museum in the future",
             order: 1,
             submenu: [
-              { to: "/en/future/future-plan", label: "Future Plan" },
-              { to: "/en/science/collection-discovery-and-development", label: "Collection discovery" },
-              { to: "/en/future/knowledge-transfer", label: "Knowledge Transfer" },
+              { to: "/en/museum/future/future-plan", label: "Future Plan" },
+              { to: "/en/research/collection-discovery", label: "Collection discovery" },
+              { to: "/en/museum/future/knowledge-transfer", label: "Knowledge Transfer" },
               // { to: "/en/future/join-our-museum-evolution", label: "Museum Evolution" }
             ]
           }
@@ -234,19 +234,19 @@ export const mainNavDataEn = {
             label: "Media",
             order: 1,
             submenu: [
-              { to: "/en/press-releases", label: "Press" },
-              { to: "/en/about/news", label: "News" },
-              { to: "/en/future/nature-journals", label: "\"für Natur\" Journal" },
+              { to: "/en/museum/media/press", label: "Press" },
+              { to: "/en/museum/media/news", label: "News" },
+              { to: "/en/museum/media/nature-journals", label: "\"für Natur\" Journal" },
               { to: "http://eepurl.com/vsVBv", label: "Newsletter" }
             ]
           },
           {
-            to: "/en/about/jobs-and-career",
+            to: "/en/museum/jobs-and-career",
             label: "Jobs & Career",
             order: 2,
             submenu: [
-              { to: "/en/about/jobs-and-career/working-museum-fur-naturkunde", label: "Work here" },
-              { to: "/en/jobs-and-career/jobs", label: "Jobs" }
+              { to: "/en/museum/jobs-and-career/work-here", label: "Work here" },
+              { to: "/en/museum/jobs-and-career/jobs", label: "Jobs" }
             ]
           }
         ]

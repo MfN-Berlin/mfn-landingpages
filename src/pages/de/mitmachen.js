@@ -59,12 +59,12 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Ehrenamt",
-                                    url: "/de/mitmachen/ehrenamtliches-engagement/",
+                                    url: "/de/mitmachen/ehrenamt",
                                     variant: "plain"
                                 },
                                 {
                                     text: "Bildungsangebote",
-                                    url: "/de/mitmachen/bildung",
+                                    url: "/de/mitmachen/bildungsangebote",
                                     variant: "plain"
                                 }
                                 ,
@@ -229,7 +229,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/naturblick"
+                        url="de/forschung/naturblick-stadtnatur-entdecken"
                     />
                     <Card
                         variant="classic"
@@ -245,7 +245,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/de/mitmachen/bildungsangebote/schule-und-kita/workshops"
+                        url="/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren"
                     />
 
 
