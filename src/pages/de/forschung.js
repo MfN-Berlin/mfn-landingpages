@@ -376,7 +376,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 2"
                             title="Zentrum für Kultur- und Sozialwissenschaften der Natur"
                             text="Unsere Arbeitsgruppe widmet sich den Politiken, Geschichten und Kulturen von Natur durch eigenständige Forschung und öffentliche Aktivitäten im Bereich Wissenstransfer. "
-                            link="de/wissenschaft/zentrum-fuer-kultur-und-sozialwissenschaften-der-natur"
+                            link="/de/forschung/zentrum-fuer-kultur-und-sozialwissenschaften-der-natur"
                         />
                         <SlideContent
                             imageName="large_Header_2023_klein_beschnitten_belichted_7cca538a55.jpg"
