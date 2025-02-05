@@ -82,6 +82,9 @@ const MainNavItem = ({ section, isActive, onMouseEnter, currentPath }) => {
     section.to.replace(/^\/de\//, '/en/') :
     section.to;
 
+  // Check if current path starts with the section's base path
+  const isActiveSection = currentPath?.startsWith(url);
+
   return (
     <button
       className="menu-item"
@@ -90,7 +93,7 @@ const MainNavItem = ({ section, isActive, onMouseEnter, currentPath }) => {
     >
       <Link
         to={url}
-        className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${isActive ? 'bg-Green-500 text-Black-900' : 'hover:bg-Green-500'
+        className={`whitespace-nowrap uppercase text-[#1a1a1a] align-middle font-bold tracking-[0.03em] inline-block text-[max(min(1.5vw,20px),12px)] px-[min(0.5vw,0.5em)] box-border hover:text-White-White focus:text-White-White transition duration-300 mx-[5px] ${isActiveSection ? 'bg-Green-500 text-Black-900' : 'hover:bg-Green-500'
           }`}
       >
         <span className="inline-block py-[0.1em] pb-[0.2em] px-[min(1vw,0.5em)]">
@@ -216,6 +219,12 @@ const Header = ({ activeNavItem, location }) => {
   const { topNavLinks: currentTopNavLinks, mainNavData: currentMainNavData } =
     getNavigationData(currentLang);
 
+  // Helper function to check if a path is active
+  const isPathActive = (sectionPath) => {
+    const currentPath = location?.pathname || '';
+    return currentPath.startsWith(sectionPath);
+  };
+
   // Find active section data
   const getActiveSectionData = () => {
     const currentLang = getLanguageFromPath(location?.pathname);
@@ -286,7 +295,7 @@ const Header = ({ activeNavItem, location }) => {
                   <MainNavItem
                     key={key}
                     section={section}
-                    isActive={activeNavItem === key}
+                    isActive={isPathActive(section.to)}
                     onMouseEnter={() => setActiveSubmenu(section.to)}
                     currentPath={location?.pathname}
                   />
