@@ -131,7 +131,7 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Saturday, Sunday, and on <a href="en/special-opening-times" className="underline">public holidays</a>
+                  Saturday, Sunday, and on public holidays
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2">
                   10:00am to 6:00pm
@@ -471,7 +471,7 @@ const IndexPage = () => {
               imageName="zp_1200x675_WEBSEITE.jpg"
               title="Zukunftsplan – The Museum in Motion"
               kicker="Installation in the museum from 11 June 2024 to the end of June 2027"
-              link="/en/visit/exhibitions/zukunftsplan"
+              link="/en/museum/exhibitions/zukunftsplan"
               altText="Visualization of the future plan for the Museum für Naturkunde Berlin"
             />
             <SlideContent
@@ -485,7 +485,7 @@ const IndexPage = () => {
               imageName="1200x800_0.jpg"
               title="Dinosaurs!"
               kicker="Our Exhibitions"
-              link="/en/museum/exhibitions/dinosaurs-age-of-giant-reptiles"
+              link="/en/visit/exhibitions/dinosaurs-age-giant-lizards"
               altText="Dinosaurs! Age of Giant Reptiles"
             />
             <SlideContent
@@ -499,7 +499,7 @@ const IndexPage = () => {
               imageName="sauriersaal_04_c_carola-radke-mfn.jpg"
               title="World of Dinosaurs"
               kicker="Our Exhibitions"
-              link="/en/museum/exhibitions/world-of-dinosaurs"
+              link="en/visit/exhibitions/world-dinosaurs"
               altText="Dinosaur skeletons in the Dinosaur Hall"
             />
             <SlideContent
@@ -541,7 +541,7 @@ const IndexPage = () => {
               imageName="2015_bobby_c_carola-radke_mfn_0.jpg"
               title="Highlights of Taxidermy"
               kicker="Our Exhibitions"
-              link="/en/museum/exhibitions/highlights-of-taxidermy"
+              link="/en/visit/exhibitions/highlights-taxidermy"
               altText="The face of the gorilla Bobby, behind it the specimen of a giant eland antelope"
             />
             <SlideContent
@@ -562,14 +562,14 @@ const IndexPage = () => {
               imageName="100423_parasiten_03_c_hwaja-goetz_mfn_0.jpg"
               title="Traveling Exhibitions"
               kicker="Our Exhibitions"
-              link="/en/museum/traveling-exhibitions"
+              link="/en/museum/touring-exhibitions"
               altText="The photo shows a prepared springbok with oxpeckers"
             />
             <SlideContent
               imageName="federband_c_hwaja-goetz_mfn.jpg"
               title="Archive: Special Exhibitions"
               kicker="Our Exhibitions"
-              link="/en/museum/exhibitions/archive-special-exhibitions"
+              link="/en/visit/exhibitions/archive-special-exhibition"
               altText="Feather band made of different colored feathers"
             />
           </Slideshow>
@@ -591,7 +591,7 @@ const IndexPage = () => {
                   spacing: "regular",
                   headlineStyle: "h3"
                 }}
-                url="/en/visit/events"
+                url="/en/participate/events"
               />
             </div>
 
@@ -669,9 +669,16 @@ const IndexPage = () => {
           <CardText
             headline="Special Visits"
             headlineStyle="h1"
-            body="We are more than happy to host group visits and special events. All education offers"
+            body="We are more than happy to host group visits and special events."
             spacing="wide"
             alignment="center"
+            buttons={[
+              {
+                text: "All Education Offers",
+                url: "/en/participate/education",
+                variant: "plain"
+              }
+            ]}
           />
         </Section>
 
@@ -748,7 +755,7 @@ const IndexPage = () => {
             buttons={[
               {
                 text: "More FAQs",
-                url: "/en/visit/faq",
+                url: "/en/visitor-faqs",
                 variant: "plain"
               }
             ]}

@@ -222,7 +222,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="/en/science/naturblick-discover-urban-nature"
+                        url="/en/research/naturblick-discovering-nature-city"
                     />
 
                     <Card

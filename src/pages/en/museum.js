@@ -70,7 +70,7 @@ const IndexPage = () => {
               {
                 text: "Press",
                 variant: "plain",
-                url: "en/press-releases/"
+                url: "/en/museum/media/press"
               }
             ]}
           />
@@ -125,7 +125,7 @@ const IndexPage = () => {
               {
                 text: "Future Plan",
                 variant: "plain",
-                url: "en/future/future-plan/"
+                url: "en/museum/future/future-plan"
               }
             ]}
           />
@@ -203,7 +203,7 @@ const IndexPage = () => {
               spacing: "wide",
               alignment: "left"
             }}
-            url="/en/museum/today/themuseumslab"
+            url="/en/museum/today/museum/themuseumslab"
           />
 
           <Card
@@ -322,7 +322,7 @@ const IndexPage = () => {
               body: "At four locations along the exhibition tour, installations will provide information about the Future Plan from June 11, 2024, until the end of June 2027.",
               spacing: "wide"
             }}
-            url="/en/visit/exhibitions/future-plan"
+            url="/en/museum/exhibitions/zukunftsplan"
           />
 
           <Card
@@ -339,7 +339,7 @@ const IndexPage = () => {
               body: "In our journals Für Natur, we take you along on our journey into the future.",
               spacing: "wide"
             }}
-            url="en/future/nature-journals/"
+            url="/en/museum/media/nature-journals"
           />
 
           <Card

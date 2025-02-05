@@ -152,7 +152,7 @@ const ResearchPage = () => {
                             body: "We are investigating the processes that form the natural world: from evolution and the diversity of species, to the origins of the solar system.",
                             spacing: "regular"
                         }}
-                        url="/en/science/dynamics-of-nature"
+                        url="/en/research/research/dynamics-nature"
                     />
                     <Card
                         variant="green"
@@ -169,7 +169,7 @@ const ResearchPage = () => {
                             body: "We curate an open and networked collection which opens up new avenues for research and knowledge transfer through innovative approaches to data and knowledge management – in partnership with stakeholders from science, society and culture.",
                             spacing: "regular"
                         }}
-                        url="/en/science/research/collection-future"
+                        url="/en/research/research/collection-future"
                     />
 
                     <Card
@@ -187,7 +187,7 @@ const ResearchPage = () => {
                             body: "We are exploring how participation and knowledge-sharing enrich research and practical knowledge for nature.",
                             spacing: "regular"
                         }}
-                        url="/en/science/society-and-nature"
+                        url="/en/research/research/society-and-nature"
                     />
 
                     <Card
@@ -332,7 +332,7 @@ const ResearchPage = () => {
                             kicker="Research Area 1"
                             title="Palaeobotany Working Group"
                             text="The Palaeobotany Working Group conducts research on the evolution and diversity of fossilised plants. Our focus is on reconstructing extinct plants and their habitats."
-                            link="/en/science/paleobotany-working-group"
+                            link="/en/research/palaeobotany-lab"
                         />
 
                         <SlideContent
@@ -341,7 +341,7 @@ const ResearchPage = () => {
                             kicker="Research Area 1"
                             title="Dunlop Working Group"
                             text="The Dunlop Working Group is investigating the evolution and taxonomy of fossilised and living arachnids, with a particular focus on spiders and scorpions."
-                            link="/en/science/dunlop-working-group"
+                            link="/en/research/dunlop-lab"
                         />
 
                         <SlideContent
@@ -368,7 +368,7 @@ const ResearchPage = () => {
                             kicker="Research Area 2"
                             title="Centre for Nature in Cultural and Social Sciences"
                             text="Our working group is dedicated to the politics, history and culture of nature, conducting independent research and public knowledge transfer activities."
-                            link="/en/science/cultural-social-sciences"
+                            link="/en/research/center-humanities-nature"
                         />
 
                         <SlideContent
@@ -377,7 +377,7 @@ const ResearchPage = () => {
                             kicker="Research Area 3"
                             title="Human-Nature Relationships in the Anthropocene"
                             text="Inter and trans-disciplinary research on the interactions between humans, nature and digital transformation."
-                            link="/en/science/human-nature-relations"
+                            link="/en/human-nature-relationships-anthropocene"
                         />
 
                         <SlideContent
@@ -386,7 +386,7 @@ const ResearchPage = () => {
                             kicker="Research Area 3"
                             title="Public Engagement and Impact"
                             text="We promote the strategic anchoring of public engagement in science and scientific institutions. We do this by opening up the culture and processes of science to non-academic stakeholders, using a wide range of formats and methods."
-                            link="/en/science/public-engagement"
+                            link="/en/research/ieti-impact-oriented-public-engagement"
                         />
                     </Slideshow>
                 </Section>
