@@ -112,7 +112,7 @@ const SearchForm = () => (
       role="button"
       aria-label="Suchfeld ein-/ausblenden"
     >
-      <span className="font-icomoon text-[min(5.8vw,2em)] block h-[24px] leading-[0.7]" role="presentation"></span>
+      <span className="font-icomoon text-[min(5.8vw,2em)] block h-[24px] leading-[0.7]" role="presentation"></span>
     </label>
     <div className="hidden peer-checked:block absolute left-0 right-0 top-full bg-white py-16 text-center z-[199] height-[42px]">
       <form action="/de/search" method="get" id="views-exposed-form-mfn-search-page-1" acceptCharset="UTF-8" className="inline-block">

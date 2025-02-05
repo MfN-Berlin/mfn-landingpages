@@ -108,7 +108,7 @@ const IndexPage = () => {
             <div className="w-full">
               <Button
                 text="Genauer Plan mit Sonderöffnungszeiten"
-                url="/de/besuch-planen/im-museum/sonderoeffnungszeiten"
+                url="/de/sonderoeffnungszeiten"
                 variant="plain"
                 className="w-full justify-center"
               />
@@ -132,7 +132,7 @@ const IndexPage = () => {
             <AccordionSpacer>
               <div className="p-0 flex flex-col justify-center items-center gap-0">
                 <div className="text-center text-Green-600 typography-kicker">
-                  Samstag, Sonntag, und <a href="/de/besuch-planen/im-museum/sonderoeffnungszeiten" className="underline">an Feiertagen</a>
+                  Samstag, Sonntag, und <a href="/de/sonderoeffnungszeiten" className="underline">an Feiertagen</a>
                 </div>
                 <div className="text-center text-Black-900 font-bold text-[34px] py-2 leading-none">
                   10:00 bis 18:00
@@ -171,7 +171,7 @@ const IndexPage = () => {
               buttons={[
                 {
                   text: "Ticketkooperationen",
-                  url: "/de/besuch-planen/ticketkooperationen",
+                  url: "/de/ticketkooperationen",
                   variant: "plain"
                 }]}
             />
@@ -366,7 +366,7 @@ const IndexPage = () => {
                   </ul>
 
                   <p>
-                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="/de/besuch-planen/ticketkooperationen" className="underline" target="_blank" rel="noopener noreferrer">Mehr Infos zu Kooperationen</a>
+                    Sie erhalten Ermäßigung mit dem Museumspass Berlin, der Welcome Card Berlin und einer Eintrittskarte des Deutschen Technikmuseums. <a href="/de/ticketkooperationen" className="underline" target="_blank" rel="noopener noreferrer">Mehr Infos zu Kooperationen</a>
                   </p>
                 </div>
               </div>
@@ -895,7 +895,7 @@ const IndexPage = () => {
               buttons={[
                 {
                   text: "Mehr häufig gestellte Fragen",
-                  url: "/de/museum/besuch-planen/faq",
+                  url: "/de/haeufig-gestellte-fragen",
                   variant: "plain"
                 }
               ]}
