@@ -612,7 +612,7 @@ const IndexPage = () => {
               imageName="Ribbeck-Meteorit_im_Museum_fuer_Naturkunde_Berlin_c_Pablo_Castagnola.jpg"
               title="Ribbet Meteorit im Mineraliensaal"
               kicker="Bruchstücke fielen im Januar 2024 im Havelland vom Himmel"
-              link="de/presse/pressemitteilungen/meteoritenfunde-bei-berlin-meteor-als-seltener-aubrit-klassifiziert"
+              link="/de/besuch-eines-fernen-verwandten"
               altText="Ribbeck-Meteorit im Museum für Naturkunde Berlin (c) Pablo Castagnola"
             />
             <SlideContent

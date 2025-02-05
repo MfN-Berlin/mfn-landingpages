@@ -151,7 +151,7 @@ const IndexPage = () => {
               body: "Am Museum für Naturkunde Berlin bewahren wir 30 Millionen Sammlungsobjekte, jedes davon birgt Wissen von unschätzbarem Wert. Um eine umfängliche Nutzung der Sammlung zu ermöglichen, erschließen wir sie im Rahmen des Zukunftsplans – das heißt konservatorisch sichern, digital erfassen und innovative Nutzungszugänge schaffen.",
               spacing: "wide"
             }}
-            url="/de/museum/zukunft/sammlungserschliessung"
+            url="/de/wissenschaft/sammlungserschliessung"
           />
           <Card
             variant="classic"
@@ -183,7 +183,7 @@ const IndexPage = () => {
               body: "Unsere \"Artentdeckungsfabrik\" trägt zur Erforschung und Erhaltung der biologischen Vielfalt bei, indem wir mit modernster Technologie  Tausende von Insekten-Proben in kurzer Zeit analysieren und systematisch zuordnen können.",
               spacing: "wide"
             }}
-            url="/de/museum/artentdeckungsfabrik"
+            url="/de/die-artentdeckungsfabrik"
           />
           <Card
             variant="classic"
@@ -201,7 +201,7 @@ const IndexPage = () => {
               spacing: "wide",
               alignment: "left"
             }}
-            url="/de/museum/themuseumslab"
+            url="de/museum/heute/das-museum/themuseumslab"
           />
 
 
@@ -220,7 +220,7 @@ const IndexPage = () => {
               body: "Das einzigartige Projekt verknüpft Forschung und Wissenstransfer an der Ursaurier-Fundstelle im UNESCO Global Geopark Thüringen Inselsberg - Drei Gleichen, am Museum für Naturkunde Berlin, an der Stiftung Schloss Friedenstein Gotha und übergeordnet multimedial.",
               spacing: "wide"
             }}
-            url="/de/museum/bromacker"
+            url="/de/wissenschaft/bromacker-neue-wege-der-wissenschaftskommunikation"
           />
           <Card
             variant="classic"
@@ -312,22 +312,22 @@ const IndexPage = () => {
               {
                 text: "Bau",
                 variant: "plain",
-                url: "/de/museum/bau"
+                url: "/de/museum/heute/bau"
               },
               {
                 text: "Team",
                 variant: "plain",
-                url: "/de/museum/team"
+                url: "/de/museum/heute/team"
               },
               {
                 text: "Sponsoren",
                 variant: "plain",
-                url: "/de/museum/sponsoren"
+                url: "/de/museum/heute/berliner-sparkasse-ist-hauptsponsor-des-museums-fuer-naturkunde-berlin"
               },
               {
                 text: "Museums-Evolution",
                 variant: "plain",
-                url: "/de/museum/geschichte"
+                url: "/de/museum/zukunft/werde-teil-unserer-museums-evolution"
               }
               
             ]}
@@ -352,7 +352,7 @@ const IndexPage = () => {
               body: "An vier Orten im Ausstellungsrundgang informieren wir vom 11. Juni 2024 bis Ende Juni 2027 mit Installationen über den Zukunftsplan.",
               spacing: "wide"
             }}
-            url="de/museum/zukunft"
+            url="de/museum/ausstellungen/zukunftsplan"
           />
           <Card
             variant="classic"
@@ -368,7 +368,7 @@ const IndexPage = () => {
               body: "In unseren Journalen ür Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
               spacing: "wide"
             }}
-            url="de/museum/medien/journal"
+            url="de/museum/medien/journal-fuer-natur"
           />
           <Card
             variant="classic"
@@ -384,7 +384,7 @@ const IndexPage = () => {
               body: "Unsere Berichte geben einen detaillierten Einblick in unsere Forschungsbereiche sowie über die spannendsten und wichtigsten Forschungsprojekte.",
               spacing: "wide"
             }}
-            url="de/museum/medien/publikationen"
+            url="de/museum/heute/das-museum/publikationen-und-downloads"
           />
           <Card
             variant="classic"

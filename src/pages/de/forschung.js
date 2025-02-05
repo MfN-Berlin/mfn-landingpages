@@ -311,7 +311,7 @@ const VisitPage = () => {
                             buttons: [
                                 {
                                     text: "Personenuche öffnen",
-                                    url: "/de/forschung/team",
+                                    url: "/de/forschung/personensuche",
                                     variant: "primary"
                                 }
                             ]
@@ -368,7 +368,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 1"
                             title="Amniota Lab"
                             text="Unsere Forschung konzentriert sich auf fossile und an Land lebende Wirbeltiere, wie Eidechsen und Schlangen (Müller) sowie pflanzenfressende Säugetiere (Bibi). "
-                            link="/de/wissenschaft/multipleye-lab"
+                            link="/de/wissenschaft/amniota-lab"
                         />
                         <SlideContent
                             imageName="zm_b_vi_0245_walmodell.jpg"
@@ -376,7 +376,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 2"
                             title="Zentrum für Kultur- und Sozialwissenschaften der Natur"
                             text="Unsere Arbeitsgruppe widmet sich den Politiken, Geschichten und Kulturen von Natur durch eigenständige Forschung und öffentliche Aktivitäten im Bereich Wissenstransfer. "
-                            link="/de/wissenschaft/multipleye-lab"
+                            link="de/wissenschaft/zentrum-fuer-kultur-und-sozialwissenschaften-der-natur"
                         />
                         <SlideContent
                             imageName="large_Header_2023_klein_beschnitten_belichted_7cca538a55.jpg"
@@ -384,7 +384,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 3"
                             title="Mensch-Natur-Beziehungen im Anthropozän"
                             text="Inter- und transdisziplinäre Forschung zu den Wechselbeziehungen zwischen Mensch, Natur und digitaler Transformation"
-                            link="/de/wissenschaft/multipleye-lab"
+                            link="de/wissenschaft/mensch-natur-beziehungen-im-anthropozaen"
                         />
                         <SlideContent
                             imageName="ieti-keyvisual.png"
@@ -392,7 +392,7 @@ const VisitPage = () => {
                             kicker="Forschungsbereich 3"
                             title="Public Engagement und Impact"
                             text="Wir fördern die strategische Verankerung von Public Engagement in der Forschung und in Forschungseinrichtungen. Dazu öffnen wir sowohl die Forschungskultur als auch -prozesse für nicht-akademische Stakeholder durch ein breites Spektrum an Formaten und Methoden."
-                            link="/de/wissenschaft/multipleye-lab"
+                            link="de/wissenschaft/ieti-impact-orientiertes-public-engagement"
                         />
 
                     </Slideshow>
