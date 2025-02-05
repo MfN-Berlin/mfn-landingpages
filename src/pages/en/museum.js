@@ -150,7 +150,7 @@ const IndexPage = () => {
               body: "At the Museum für Naturkunde Berlin, we preserve 30 million collection objects, each holding knowledge of inestimable value. To ensure comprehensive use of the collection, we are making it accessible as part of our future plan—this means securing it through conservation, digitizing it, and creating innovative ways of access and utilization.",
               spacing: "wide"
             }}
-            url="en/science/collection-discovery-and-development/"
+            url="/en/science/collection-discovery"
           />
 
           <Card
@@ -203,7 +203,7 @@ const IndexPage = () => {
               spacing: "wide",
               alignment: "left"
             }}
-            url="/en/about/the-museum/themuseumslab"
+            url="/en/museum/today/museum/themuseumslab"
           />
 
           <Card
