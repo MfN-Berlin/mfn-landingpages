@@ -478,7 +478,7 @@ const IndexPage = () => {
               imageName="Ribbeck-Meteorit_im_Museum_fuer_Naturkunde_Berlin_c_Pablo_Castagnola.jpg"
               title="Ribbet Meteorite in the Mineral Hall"
               kicker="Pieces fell in January 2024 in the Havelland from the sky"
-              link="en/visit-a-distant-relative"
+              link="/en/visit-a-distant-relative"
               altText="Ribbeck Meteorite in the Mineral Hall (c) Pablo Castagnola"
             />
             <SlideContent
@@ -499,7 +499,7 @@ const IndexPage = () => {
               imageName="sauriersaal_04_c_carola-radke-mfn.jpg"
               title="World of Dinosaurs"
               kicker="Our Exhibitions"
-              link="en/visit/exhibitions/world-dinosaurs"
+              link="/en/visit/exhibitions/world-dinosaurs"
               altText="Dinosaur skeletons in the Dinosaur Hall"
             />
             <SlideContent

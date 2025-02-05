@@ -229,7 +229,7 @@ const IndexPage = () => {
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
-                        url="de/forschung/naturblick-stadtnatur-entdecken"
+                        url="/de/forschung/naturblick-stadtnatur-entdecken"
                     />
                     <Card
                         variant="classic"
