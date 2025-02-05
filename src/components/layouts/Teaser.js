@@ -62,7 +62,7 @@ const Teaser = ({
     <div className={`relative w-full ${className}`}>
       {isCircle ? (
         // Circle variant: relative container, absolute image
-        <div className={`relative w-full h-full ${getMinHeight()}`}>
+        <div className={`relative grid w-full h-full ${getMinHeight()}`}>
           {imageProps && (
             <ContentImage 
               {...imageProps}
