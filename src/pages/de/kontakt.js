@@ -54,12 +54,12 @@ const IndexPage = () => {
                             buttons: [
                                 {
                                     text: "Team",
-                                    url: "/de/museum/team",
+                                    url: "/de/museum/heute/team",
                                     variant: "plain"
                                 },
                                 {
                                     text: "FAQ",
-                                    url: "/de/besuch-planen/im-museum/faq",
+                                    url: "/de/haeufig-gestellte-fragen",
                                     variant: "plain"
                                 },
                                 {
@@ -98,7 +98,7 @@ const IndexPage = () => {
                         headlineStyle="h3"
                         spacing="regular"
                         alignment="left"
-                        body={`Für Medienvertreter haben wir ein <a href='de/pressemitteilungen'>Presseportal</a> eingerichtet.<br/>
+                        body={`Für Medienvertreter haben wir ein <a href='/de/museum/medien/presse'>Presseportal</a> eingerichtet.<br/>
                         <a href='mailto:presse@mfn.berlin'>presse@mfn.berlin</a><br/>
                         <a href='mailto:gesine.steiner@mfn.berlin'>Dr. Gesine Steiner</a> (Pressesprecherin)<br/>
                         030 889140-8917`}
@@ -149,7 +149,7 @@ const IndexPage = () => {
                         headlineStyle="h3"
                         spacing="regular"
                         alignment="left"
-                        body={`<a href='/de/forschung/infrastruktur/bibliothek'>Die Bibliothek</a> ist Dienstag bis Freitag für externe Nutzende zugänglich. Bitte melden Sie sich per <a href='mailto:bibliothek@mfn.berlin'>Email</a> zwecks Terminabsprache.`}
+                        body={`<a href='/de/forschung/bibliothek'>Die Bibliothek</a> ist Dienstag bis Freitag für externe Nutzende zugänglich. Bitte melden Sie sich per <a href='mailto:bibliothek@mfn.berlin'>Email</a> zwecks Terminabsprache.`}
                     />
                     <CardText
                         headline="Archiv"

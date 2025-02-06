@@ -41,9 +41,9 @@ const IndexPage = () => {
         <Section backgroundColor="bg-white" columns={1}>
           <CardText
             kicker="Our Vision and Mission"
-            headline="We explore the Earth and life in dialogue with people"
+            headline="Our mission is to discover and describe life and earth – with people, through dialogue."
             headlineStyle="h1"
-            body="As an excellent research museum and an innovative communication center, we shape the scientific and societal dialogue about the future of our planet—worldwide."
+            body="As an excellent research museum and innovative communication platform, we want to engage with and influence the scientific and societal discourse about the future of our planet, worldwide."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -279,7 +279,7 @@ const IndexPage = () => {
           <CardText
             headline="The Museum"
             headlineStyle="h2"
-            body="We Implement Our Future Plan Every Day. Learn more about our work and become part of our team."
+            body="We implement our future plan every day. Learn more about our work and become part of our team."
             spacing="wide"
             alignment="center"
             buttons={[
