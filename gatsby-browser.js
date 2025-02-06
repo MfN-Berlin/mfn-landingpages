@@ -7,7 +7,7 @@
 import './src/styles/global.css'
 
 // Version logging
-const VERSION = 'v1.0.8'
+const VERSION = 'v1.0.9'
 
 export const onClientEntry = () => {
     // Temporär Prefetching deaktivieren

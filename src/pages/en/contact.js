@@ -66,27 +66,27 @@ const ContactPage = () => {
                     buttons: [
                       {
                         text: "Team",
-                        url: "en/about/team",
+                        url: "/en/museum/today/team",
                         variant: "plain"
                       },
                       {
                         text: "FAQ",
-                        url: "en/plan-your-visit/faq",
+                        url: "/en/visitor-faqs",
                         variant: "plain"
                       },
                       {
                         text: "Press",
-                        url: "en/press-releases",
+                        url: "/en/museum/media/press",
                         variant: "plain"
                       },
                       {
                         text: "Plan Your Visit",
-                        url: "en/visit/",
+                        url: "/en/visit/",
                         variant: "plain"
                       },
                       {
                         text: "About Us",
-                        url: "en/about/museum",
+                        url: "/en/museum/today/museum",
                         variant: "plain"
                       }]
                   }}
@@ -110,7 +110,7 @@ const ContactPage = () => {
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`For media representatives, we have set up a <a href='en/press-releases'>press portal</a>.<br/>
+                body={`For media representatives, we have set up a <a href='/en/museum/media/press'>press portal</a>.<br/>
                 <a href='mailto:presse@mfn.berlin'>presse@mfn.berlin</a><br/>
                 <a href='mailto:gesine.steiner@mfn.berlin'>Dr. Gesine Steiner</a> (Press Officer)<br/>
                 030 889140-8917`}
@@ -122,7 +122,7 @@ const ContactPage = () => {
                 headlineStyle="h3"
                 spacing="regular"
                 alignment="left"
-                body={`For questions about our <a href='en/museum/events'>events</a><br/>
+                body={`For questions about our <a href='/en/participate/events'>events</a><br/>
                 
                 <a href='mailto:info@mfn.berlin'>info@mfn.berlin</a>`}
               />
@@ -154,28 +154,32 @@ const ContactPage = () => {
                 body={`For individual offers, please contact: Stefanie Krzyzniewski (<a href='mailto:s.krzyzniewski@mfn.berlin'>s.krzyzniewski@mfn.berlin</a>)`}
               />
             </Section>
-            <CardText
-              headline="Library"
-              headlineStyle="h3"
-              spacing="regular"
-              alignment="left"
-              body={`<a href='/en/science/library'>The library</a> is accessible Tuesday through Friday for external users. Please contact us via <a href='mailto:bibliothek@mfn.berlin'>email</a> to schedule an appointment.`}
-            />
-            <CardText
-              headline="Archive"
-              headlineStyle="h3"
-              spacing="regular"
-              alignment="left"
-              body={`Archive visits are only possible by prior appointment.<br/>
+            <Section backgroundColor="bg-Green-100" columns={2} padding="py-8">
+
+              <CardText
+                headline="Library"
+                headlineStyle="h3"
+                spacing="regular"
+                alignment="left"
+                body={`<a href='/en/science/library'>The library</a> is accessible Tuesday through Friday for external users. Please contact us via <a href='mailto:bibliothek@mfn.berlin'>email</a> to schedule an appointment.`}
+              />
+              <CardText
+                headline="Archive"
+                headlineStyle="h3"
+                spacing="regular"
+                alignment="left"
+                body={`Archive visits are only possible by prior appointment.<br/>
               <a href='mailto:archiv@mfn.berlin'>archiv@mfn.berlin</a><br/>
               030 889140 8519<br/>
               `}
-            />
-          </main>
-          <Footer />
-        </>
-      )}
-    </Location>
+              />
+          </Section>
+        </main>
+      <Footer />
+      </>
+  )
+}
+    </Location >
   )
 }
 
