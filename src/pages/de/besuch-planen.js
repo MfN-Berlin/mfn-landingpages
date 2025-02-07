@@ -20,6 +20,7 @@ import { getAssetPath } from '../../scripts/assetPrefix'  // Helper für Asset-P
 import TransportIcon from '../../components/elements/TransportIcon'  // Icons für Verkehrsmittel
 
 
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
