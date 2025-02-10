@@ -157,7 +157,7 @@ const Footer = () => {
           </div>
 
           <section className="text-center mb-8 px-4">
-            <h2 className="text-sm font-bold mb-4">{t.newsletterSignup?.title || 'Newsletter'}</h2>
+            <h2 className="text-sm font-bold mb-4">{t.newsletter.title || 'Newsletter'}</h2>
             <form
               action="https://berlin.us6.list-manage.com/subscribe/post?u=7cc783779868ff99f465accff&amp;id=6742162bdf"
               method="post"
@@ -168,7 +168,7 @@ const Footer = () => {
                 <input
                   type="email"
                   name="EMAIL"
-                  placeholder={t.newsletterSignup?.emailPlaceholder || 'Email address'}
+                  placeholder={t.newsletter.emailPlaceholder || 'Email address'}
                   className="flex-1 p-2 bg-Black-900 text-white border border-Black-700 text-sm min-w-0"
                   required
                 />
@@ -176,16 +176,16 @@ const Footer = () => {
                   type="submit"
                   className="h-[41px] px-4 pt-1.5 pb-2 inline-flex justify-center items-center gap-2.5 transition-colors duration-200 ease-in-out focus:outline-none bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 font-bold whitespace-nowrap"
                 >
-                  {t.newsletterSignup?.subscribe || 'Subscribe'}
+                  {t.newsletter.subscribe || 'Subscribe'}
                 </button>
               </div>
               <p className="text-sm text-Black-700 mt-2">
-                {t.newsletterSignup?.privacyNote || 'By clicking "Subscribe" you accept our'}{' '}
+                {t.newsletter.privacyNote || 'By clicking "Subscribe" you accept our'}{' '}
                 <Link
                   to={`/${language}/datenschutzerklaerung#newsletter`}
                   className="text-Black-700 hover:text-white"
                 >
-                  {t.newsletterSignup?.privacyLink || 'Privacy Policy'}
+                  {t.newsletter.privacyLink || 'Privacy Policy'}
                 </Link>
               </p>
             </form>

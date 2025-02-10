@@ -9,7 +9,7 @@ const Button = ({ text, children, variant = 'primary', url, onClick, className =
     primary: 'h-[34px] px-4 pt-1.5 pb-2 bg-Green-500 text-White-White hover:bg-Green-600 focus:bg-Green-500 focus:border-2 focus:border-Black-900 typography-button',
     secondary: 'h-[34px] px-4 pt-1.5 pb-2 bg-White-White text-Black-900 border-2 border-Green-500 hover:bg-Green-200 focus:border-Black-900 typography-button',
     inverted: 'h-[34px] px-4 pt-1.5 pb-2 bg-White-White text-Black-900 hover:bg-Green-200 focus:bg-White-White focus:border-2 focus:border-Black-900 typography-button',
-    plain: 'text-Green-500 hover:text-Green-600 underline typography-body focus:outline-2 focus:outline-offset-2 focus:outline-Green-500'
+    plain: 'text-Green-500 hover:text-Green-600 underline typography-body focus:outline-2 focus:outline-offset-2 focus:outline-Green-500 text-left'
   };
 
   const handleClick = (e) => {

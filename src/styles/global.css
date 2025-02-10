@@ -41,6 +41,8 @@
     color: theme('colors.Green.700');
   }
 
+
+
   .custom-swiper {
     --max-container-width: 1165px;
     --swiper-pagination-bottom: auto;
@@ -131,7 +133,11 @@
   .typography-button {
     @apply font-tradegothic-bold text-xs sm:text-sm leading-21 sm:leading-24 tracking-normal;
   }
-
+  
+  .font-bold{
+    font-weight:400 !important;
+  }
+  
   @supports (-webkit-hyphens:none) {
     .font-bold, .font-bold-italic, strong {
       font-weight: 500 !important; /* Safari-spezifisch */

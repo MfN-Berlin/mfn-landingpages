@@ -85,7 +85,7 @@ const IndexPage = () => {
             }}
             textProps={{
               headline: "Ein Haus für Natur und Gesellschaft",
-              body: " \"Für uns geht es darum, ein Ort der Begegnung, des Dialogs und der Demokratie zu sein. Konstante Veränderung ist Teil unserer DNA. Wir sind das Museum der Zukunft.\" – Prof. Johannes Vogel, PhD, Generaldirektor",
+              body: "„Für uns geht es darum, ein Ort der Begegnung, des Dialogs und der Demokratie zu sein. Konstante Veränderung ist Teil unserer DNA. Wir sind das Museum der Zukunft.“ – Prof. Johannes Vogel, PhD, Generaldirektor",
               headlineStyle: "h4",
               spacing: "wide",
             }}
@@ -119,7 +119,7 @@ const IndexPage = () => {
         </Section>
         <Section backgroundColor="bg-Green-100" columns={1}>
           <CardText
-            body="Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit.  Mit unserem Zukunftsplan entwickeln wir das Museum sich zu einem Ort des Austauschs über die Zukunft unserer Erde, der Wissen auf neue Weise vermittelt und kreiert – gemeinsam mit der Gesellschaft."
+            body="Das Museum für Naturkunde Berlin der Zukunft wird offen, integriert und forschungsstark sein, ein Vorbild für die Forschungsmuseen weltweit. Mit unserem Zukunftsplan entwickeln wir das Museum zu einem Ort des Austauschs über die Zukunft unserer Erde, der Wissen auf neue Weise vermittelt und kreiert – gemeinsam mit der Gesellschaft."
             spacing="wide"
             alignment="center"
             buttons={[
@@ -180,7 +180,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Die Artentdeckungsfabrik",
               headlineStyle: "h3",
-              body: "Unsere \"Artentdeckungsfabrik\" trägt zur Erforschung und Erhaltung der biologischen Vielfalt bei, indem wir mit modernster Technologie  Tausende von Insekten-Proben in kurzer Zeit analysieren und systematisch zuordnen können.",
+              body: "Unsere „Artentdeckungsfabrik“ trägt zur Erforschung und Erhaltung der biologischen Vielfalt bei, indem wir mit modernster Technologie  Tausende von Insekten-Proben in kurzer Zeit analysieren und systematisch zuordnen können.",
               spacing: "wide"
             }}
             url="/de/die-artentdeckungsfabrik"
@@ -197,7 +197,7 @@ const IndexPage = () => {
             textProps={{
               headline: "TheMuseumsLab",
               headlineStyle: "h3",
-              body: "In der internationalen Kooperation \"TheMuseumsLab\" entwickeln afrikanische und europäische Museumsbeschäftigte gemeinsam Konzepte für die Zukunft von Museen in Afrika und Europa. Das Vorhaben fördert beiderseitiges Lernen, Austausch und Fortbildung.",
+              body: "In der internationalen Kooperation „TheMuseumsLab“ entwickeln afrikanische und europäische Museumsbeschäftigte gemeinsam Konzepte für die Zukunft von Museen in Afrika und Europa. Das Vorhaben fördert beiderseitiges Lernen, Austausch und Fortbildung.",
               spacing: "wide",
               alignment: "left"
             }}
@@ -363,7 +363,7 @@ const IndexPage = () => {
               className: "w-full h-auto object-cover"
             }}
             textProps={{
-              headline: "Unser Journal \"Für Natur\"",
+              headline: "Unser Journal „Für Natur“",
               headlineStyle: "h3",
               body: "In unseren Journalen ür Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
               spacing: "wide"
