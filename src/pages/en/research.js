@@ -345,6 +345,14 @@ const ResearchPage = () => {
                         />
 
                         <SlideContent
+                            imageName="2022_c_IsabelAlvarez_2021_c_AlenaSchmick_TheMuseumsLab.jpeg"
+                            altText="TheMusemsLab "
+                            kicker="Research Area 3"
+                            title="TheMusemsLab"
+                            text="In the international cooperation 'TheMuseumsLab' museum professionals from Africa and Europe jointly develop concepts for the future of museums on both continents. This initiative fosters mutual learning, exchange, and professional development."
+                            link="/en/museum/today/museum/themuseumslab/"
+                        />
+                        <SlideContent
                             imageName="Thomisid5-crop.jpg"
                             altText="Close-up of a crab spider (Thomisidae)"
                             kicker="Research Area 1"

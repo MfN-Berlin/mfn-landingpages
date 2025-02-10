@@ -147,7 +147,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Collection Access and Development",
               headlineStyle: "h3",
-              body: "At the Museum für Naturkunde Berlin, we preserve 30 million collection objects, each holding knowledge of inestimable value. To ensure comprehensive use of the collection, we are making it accessible as part of our future plan—this means securing it through conservation, digitizing it, and creating innovative ways of access and utilization.",
+              body: "The Museum für Naturkunde Berlin is home to 30 million artifacts, each containing invaluable knowledge. To ensure comprehensive use of the collection, we are making it accessible as part of our future plan—this means securing it through conservation, digitizing it, and creating innovative ways of access and utilization.",
               spacing: "wide"
             }}
             url="/en/research/collection-discovery"
@@ -156,8 +156,8 @@ const IndexPage = () => {
           <Card
             variant="classic"
             imageProps={{
-              imageName: "zp_1200x675_WEBSEITE.jpg",
-              alt: "Kids at the Biodiversity Wall",
+              imageName: "biodiversitaetswand_c_thomas_rosenthal.jpg",
+              alt: "Kinder an der Biodiversitätswand",              alt: "Kids at the Biodiversity Wall",
               imageMap: imageMap,
               className: "w-full h-auto object-cover"
             }}

@@ -141,7 +141,7 @@ export const featureTranslations = {
         title: "Newsletter",
         emailPlaceholder: "E-Mail-Adresse",
         subscribe: "Anmelden",
-        privacyNote: "Mit Klick auf \"Anmelden\" bestätigen Sie unsere",
+        privacyNote: "Mit Klick auf „Anmelden“ bestätigen Sie unsere",
         privacyLink: "Datenschutzerklärung"
       },
       links: {

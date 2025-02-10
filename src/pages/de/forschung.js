@@ -52,7 +52,7 @@ const VisitPage = () => {
                             kicker: "Offen und integriert",
                             headline: "Unsere Forschung",
                             headlineStyle: "h1",
-                            body: "Das \"Museum für Naturkunde – Leibniz-Institut für Evolutions- und Biodiversitätsforschung\" ist ein integriertes Forschungsmuseum der Leibniz-Gemeinschaft. Sammlung, Forschung und Wissenstransfer sind eng verknüpft und schaffen gemeinsam neue Erkenntnisse.",
+                            body: "Das „Museum für Naturkunde – Leibniz-Institut für Evolutions- und Biodiversitätsforschung“ ist ein integriertes Forschungsmuseum der Leibniz-Gemeinschaft. Sammlung, Forschung und Wissenstransfer sind eng verknüpft und schaffen gemeinsam neue Erkenntnisse.",
                             spacing: "wide",
                             alignment: "center",
                         }}
@@ -81,7 +81,7 @@ const VisitPage = () => {
                                         Informieren Sie sich über unsere Forschung
                                     </label>
                                     <p className="text-sm text-Black-700 mt-2">
-                                        Suchen Sie nach Personen und/oder Stichworten und finden Sie dazu passende Forschungsaktivitäten. <br /><br />
+                                        Suchen Sie nach Personen und/oder Stichworten und finden Sie dazu passende Forschungsaktivitäten.
                                     </p>
                                 </div>
                                 <div className="mt-auto flex flex-col md:flex-row gap-2">
@@ -306,11 +306,11 @@ const VisitPage = () => {
                             kicker: "Arbeitsgruppen und Teams",
                             headline: "Kontakt",
                             headlineStyle: "h2",
-                            body: "Suchen und finden Sie Menschen, die am Museum für Naturkunde Berlin arbeiten. Die Suche bietet Informationen zu Personen, Projekten, Kontaktmöglichkeiten und Rollen.",
+                            body: "Suchen und finden Sie Menschen, die am „Museum für Naturkunde Berlin“ arbeiten. Die Suche bietet Informationen zu Personen, Projekten, Kontaktmöglichkeiten und Rollen.",
                             spacing: "wide",
                             buttons: [
                                 {
-                                    text: "Personenuche öffnen",
+                                    text: "Personensuche öffnen",
                                     url: "/de/forschung/personensuche",
                                     variant: "primary"
                                 }
