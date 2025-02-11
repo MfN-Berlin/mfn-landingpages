@@ -1,80 +1,78 @@
-# MfN Web Scraper
+# Team Profiles Scraper
 
-Dieses Projekt enthält Skripte zum Scrapen und Verarbeiten von Daten von der Website des Museums für Naturkunde Berlin. Es besteht aus drei Hauptkomponenten, die nacheinander ausgeführt werden, um Mitarbeiterprofile mit ihren zugehörigen Projekten zu verknüpfen.
+This script collects information about team members and their projects from the MfN website.
 
-## Workflow
+## Directory Structure
 
-1. **Scrapen der Mitarbeiterprofile** (`scraper_profiles.py`)
-   - Scrapet alle Profile von der Teamseite
-   - Speichert die Daten in `team_profiles.csv`
-   - Extrahierte Informationen pro Profil:
-     - Titel (Name)
-     - Email
-     - Telefon
-     - Rolle/Aufgaben
-     - Projekte (aus den Profilen)
+team-profiles-scraper/
+├── components/                    # Individual scraper components
+│   ├── scraper_profiles_de.py    # Scraper for German team profiles
+│   ├── scraper_profiles_en.py    # Scraper for English team profiles
+│   ├── scraper_projects_de.py    # Scraper for German projects
+│   ├── scraper_projects_en.py    # Scraper for English projects
+│   ├── join_tables_de.py         # Links German profiles with projects
+│   └── join_tables_en.py         # Links English profiles with projects
+├── temporary-storage/            # Temporary CSV files
+├── final-output/                # Final JSON files
+├── team_scraper.py             # Main script
+└── README.md                   # This file
 
-2. **Scrapen der Projektdaten** (`scraper_projects.py`)
-   - Scrapet alle Projekte aus dem Wissenschafts-Navigator
-   - Speichert die Daten in `navigator_data2.csv`
-   - Extrahierte Informationen pro Projekt:
-     - Titel
-     - Excerpt (Kurzbeschreibung)
-     - Tags
-     - Team (beteiligte Personen)
-     - Projekt-URL
+## How it Works
 
-3. **Verknüpfung der Daten** (`join_tables.py`)
-   - Verbindet die Informationen aus beiden CSV-Dateien
-   - Fügt jedem Mitarbeiterprofil die zugehörigen Projekte hinzu
-   - Erstellt `team_profiles_with_projects.json` mit allen verknüpften Daten
-   - Strukturierte JSON-Ausgabe mit detaillierten Projekt-Informationen
+The script performs the following steps:
 
-## Ausführung
+1. Creates necessary directories (`temporary-storage/` and `final-output/`)
+2. Collects team profiles (DE/EN)
+3. Collects project data (DE/EN)
+4. Links the data and creates JSON files
 
-Führen Sie die Skripte in dieser Reihenfolge aus:
+## Usage
 
-bash
-python scraper_profiles.py
-python scraper_projects.py
-python join_tables.py
+Run the main script:
 
+    python team_scraper.py
 
-## Dateien im Workflow
+## Output
 
-### Input
-- Keine initialen Dateien erforderlich
+The script creates:
 
-### Zwischendateien
-- `team_profiles.csv`: Enthält die Mitarbeiterprofile
-- `navigator_data2.csv`: Enthält die Projektdaten
+1. Temporary CSV files in `temporary-storage/`:
+   - `team_profiles_de.csv`
+   - `team_profiles_en.csv`
+   - `navigator_data2_de.csv`
+   - `navigator_data_en.csv`
 
-### Output
-- `team_profiles_with_projects.json`: Finales Dokument mit allen verknüpften Informationen
+2. Final JSON files in `final-output/`:
+   - `team_profiles_with_projects_de.json`
+   - `team_profiles_with_projects_en.json`
 
-## Datenstruktur
+## Error Handling
 
-### team_profiles.csv
-- Delimiter: `;`
-- Spalten: 
-  - Titel (Name der Person)
-  - Email
-  - Telefon
-  - Rolle
-  - Projekte (aus den Profilen)
+- The script checks for all necessary components before execution
+- If an error occurs in any component, the process stops
+- Error messages are displayed in the terminal
 
-### navigator_data2.csv
-- Delimiter: `;`
-- Spalten:
-  - Title (Projektname)
-  - Excerpt
-  - Tags
-  - Team
-  - Projekt-URL
+## Debugging
 
-### team_profiles_with_projects.json
-- Enthält alle Spalten aus team_profiles.csv
-- Zusätzliche Spalte "scraped projects" mit verlinkten Projekten im Format:
-  `"Projektname 1" [URL1], "Projektname 2" [URL2], ...`
+Each component outputs status messages:
+- Which profiles/projects are currently being scraped
+- Found team members
+- Page changes during pagination
 
-## Abhängigkeiten
+## Maintenance
+
+When the website structure changes, the following elements may need to be adjusted:
+- CSS selectors in the scraper components
+- Keywords for roles and projects
+- URL structures
+
+## Dependencies
+
+- Python 3.x
+- requests
+- beautifulsoup4
+- pandas
+
+## Installing Dependencies
+
+    pip install requests beautifulsoup4 pandas

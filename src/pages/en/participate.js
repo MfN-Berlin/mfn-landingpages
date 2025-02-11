@@ -121,8 +121,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Help the archive",
-                            body: "Help the museum's historical team make historical documents legible again, so that they can be used for research. Participants must have knowledge of historical German languages, such as Kurrent or Sütterlin.",
+                            headline: "Transcribe Historical Documents Together",
+                            body: "Help internal research projects gain easy access to the contents of historical documents from the archive. Knowledge of old German scripts like Kurrent or Sütterlin is required.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}

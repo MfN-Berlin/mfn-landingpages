@@ -66,8 +66,7 @@ const IndexPage = () => {
                                     text: "Bildungsangebote",
                                     url: "/de/mitmachen/bildungsangebote",
                                     variant: "plain"
-                                }
-                                ,
+                                },
                                 {
                                     text: "Veranstaltungen",
                                     url: "/de/mitmachen/veranstaltungen",
@@ -78,7 +77,6 @@ const IndexPage = () => {
                                     url: "/de/museum/mitmachen/buergerwissenschaften",
                                     variant: "plain"
                                 }]
-
                         }}
                         imagePosition="right"
                     />
@@ -125,8 +123,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Helfen Sie dem Archiv",
-                            body: "Helfen Sie der historischen Arbeitsstelle des Museums historische Dokumente wieder leserlich und für die Forschung nutzbar zu machen. Voraussetzung ist die Kenntnis altdeutscher Sprachen, wie Kurrent oder Sütterlin.",
+                            headline: "Historische Schriftstücke gemeinsam transkribieren",
+                            body: "Helfen Sie internen Forschungsprojekten, einen einfachen Zugang zu den Inhalten der historischen Dokumente des Archivs zu erhalten. Voraussetzung ist die Kenntnis altdeutscher Sprachen, wie Kurrent oder Sütterlin.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -181,7 +179,7 @@ const IndexPage = () => {
                         }}
                         textProps={{
                             headline: "mit:forschen!",
-                            body: "Gemeinsam mit Wissenschaft im Dialog betreiben wir mit:forschen!, die zentrale Online-Platform für Citizen Science in Deutschland. Beteiligen Sie sich an einem der 270 Projekte aus den unterschiedlichsten Disziplinen.",
+                            body: "Gemeinsam mit Wissenschaft im Dialog betreiben wir „mit:forschen!“, die zentrale Online-Platform für Citizen Science in Deutschland. Beteiligen Sie sich an einem der 270 Projekte aus den unterschiedlichsten Disziplinen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
@@ -208,8 +206,8 @@ const IndexPage = () => {
                 </Section>
                 <Section columns={1} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
                     <Blockquote
-                        text="<strong>Unsere Mission:</strong><br/> Wir erforschen die Erde und das Leben im Dialog mit den Menschen."
-                        backgroundColor=""  // Green-500 color
+                        text="<strong>Unsere Mission:</strong><br/> „Wir erforschen die Erde und das Leben im Dialog mit den Menschen.“"
+                        backgroundColor=""
                         className="bg-Green-500"
                     />
                 </Section>

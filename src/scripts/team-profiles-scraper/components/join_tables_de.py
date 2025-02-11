@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import os
 
 def clean_text(text):
     if pd.isna(text):
@@ -38,9 +39,11 @@ def clean_team_member(member_data):
     return {k: v for k, v in clean_member.items() if v is not None or k == 'navigator_projects'}
 
 def main():
-    # Dateien einlesen
-    team_profiles_df = pd.read_csv('team_profiles_de.csv', delimiter=';')
-    navigator_data_df = pd.read_csv('navigator_data2_de.csv', delimiter=';')
+    script_dir = os.path.dirname(os.path.dirname(__file__))
+    
+    # Lese Dateien
+    team_profiles_df = pd.read_csv(os.path.join(script_dir, 'temporary-storage', 'team_profiles_de.csv'), delimiter=';')
+    navigator_data_df = pd.read_csv(os.path.join(script_dir, 'temporary-storage', 'navigator_data2_de.csv'), delimiter=';')
 
     # Dictionary für die JSON-Struktur erstellen
     team_data = {}
@@ -77,8 +80,8 @@ def main():
             if not isinstance(project.get('tags'), list):
                 project['tags'] = []
 
-    # Als JSON speichern
-    output_file = 'team_profiles_with_projects_de.json'
+    # Save as JSON
+    output_file = os.path.join(script_dir, 'final-output', 'team_profiles_with_projects_de.json')
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(team_data, f, ensure_ascii=False, indent=2)
     
