@@ -11,7 +11,7 @@ const StoryTime = ({
   linkText
 }) => {
   const ImageElement = (
-    <div className="w-full md:w-1/2 h-[400px] md:h-auto w-[400px] md:w-full md:aspect-square relative">
+    <div className="w-full md:w-1/2 aspect-square relative max-w-[500px] mx-auto">
       <div className="absolute inset-0 rounded-full overflow-hidden m-12">
         <ContentImage 
           {...imageProps}

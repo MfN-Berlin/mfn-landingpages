@@ -1,14 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import os
 from urllib.parse import urljoin  # For resolving relative URLs
 
 # Base URL for navigation
 base_url = "https://www.museumfuernaturkunde.berlin/en/science/navigator"
 start_url = base_url + "?query=&f%5B0%5D=&f%5B0%5D=&f%5B0%5D="
 
+# Path to CSV file relative to script directory
+output_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'temporary-storage', 'navigator_data_en.csv')
+
 # Create CSV file
-with open('navigator_data_en.csv', mode='w', newline='', encoding='utf-8') as file:
+with open(output_file, mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file, delimiter=';')
     # Write CSV header
     writer.writerow(['Title', 'Excerpt', 'Tags', 'Team', 'Project-URL'])

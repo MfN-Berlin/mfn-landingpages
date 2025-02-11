@@ -90,7 +90,7 @@ export const featureTranslations = {
       easyLanguage: "Leichte Sprache",
       accessibility: "Barrierefreiheit",
       urls: {
-        signLanguage: "https://www.youtube.com/watch?v=pUUvyoe0tpc",
+        signLanguage: "/de/gebaerdensprache",
         easyLanguage: "/leichte-sprache",
         accessibility: "/de/museum/besuch-planen/barrierefreiheit"
       }
@@ -101,7 +101,7 @@ export const featureTranslations = {
       easyLanguage: "Simple Language",
       accessibility: "Accessibility",
       urls: {
-        signLanguage: "https://www.youtube.com/watch?v=pUUvyoe0tpc",
+        signLanguage: "/en/sign-language",
         easyLanguage: "/leichte-sprache",
         accessibility: "/en/museum/plan-your-visit/accessibility"
       }

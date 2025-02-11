@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import os
 
 # Base URL
 base_url = "https://www.museumfuernaturkunde.berlin"
@@ -12,8 +13,11 @@ team_url = base_url + "/en/about/team"
 response = requests.get(team_url)
 soup = BeautifulSoup(response.content, 'html.parser')
 
+# Path to CSV file relative to script directory
+output_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'temporary-storage', 'team_profiles_en.csv')
+
 # Create CSV file
-with open('team_profiles_en.csv', mode='w', newline='', encoding='utf-8') as file:
+with open(output_file, mode='w', newline='', encoding='utf-8') as file:
     # Use semicolon as separator
     writer = csv.writer(file, delimiter=';')
     
@@ -71,9 +75,15 @@ with open('team_profiles_en.csv', mode='w', newline='', encoding='utf-8') as fil
             
             while sibling and sibling.name not in ['h2', 'h3']:
                 if sibling.text.strip():
-                    # Remove paragraph marks and semicolons
-                    cleaned_text = sibling.text.replace('\n', ' ').replace(';', ',').strip()
-                    content.append(cleaned_text)
+                    # Handle lists
+                    if sibling.name == 'ul':
+                        # Collect all list items and join them with commas
+                        list_items = [li.text.strip() for li in sibling.find_all('li')]
+                        content.append(', '.join(list_items))
+                    else:
+                        # Remove paragraph marks and semicolons
+                        cleaned_text = sibling.text.replace('\n', ' ').replace(';', ',').strip()
+                        content.append(cleaned_text)
                 sibling = sibling.find_next_sibling()
 
             # Assignment to "Role" or "Projects" based on keywords
