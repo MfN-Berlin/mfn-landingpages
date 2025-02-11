@@ -30,19 +30,22 @@ The script performs the following steps:
 
 Run the main script:
 
-    python team_scraper.py
+    `python team_scraper.py`
+
+Copy the resulting json files from `/output` to `/src/data` to implement them.
 
 ## Output
 
 The script creates:
 
 1. Temporary CSV files in `temporary-storage/`:
+
    - `team_profiles_de.csv`
    - `team_profiles_en.csv`
    - `navigator_data2_de.csv`
    - `navigator_data_en.csv`
-
 2. Final JSON files in `final-output/`:
+
    - `team_profiles_with_projects_de.json`
    - `team_profiles_with_projects_en.json`
 
@@ -55,6 +58,7 @@ The script creates:
 ## Debugging
 
 Each component outputs status messages:
+
 - Which profiles/projects are currently being scraped
 - Found team members
 - Page changes during pagination
@@ -62,6 +66,7 @@ Each component outputs status messages:
 ## Maintenance
 
 When the website structure changes, the following elements may need to be adjusted:
+
 - CSS selectors in the scraper components
 - Keywords for roles and projects
 - URL structures
@@ -75,4 +80,6 @@ When the website structure changes, the following elements may need to be adjust
 
 ## Installing Dependencies
 
+```
     pip install requests beautifulsoup4 pandas
+```
