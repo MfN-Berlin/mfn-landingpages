@@ -182,8 +182,8 @@ const VisitPage = () => {
                     <Card
                         variant="green"
                         imageProps={{
-                            imageName: "titel_fb3.png",
-                            alt: "Zusammenfassung in einer Graphik der Keynote von Martina Schraudner am 26.9.2022. zum Thema Partizipation in der Wissenschaft.",
+                            imageName: "FB3_neu.jpg",
+                            alt: "Zwei Wissenschaftlerinnen bei der Nuthung der Naturblick App",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}

@@ -175,8 +175,8 @@ const ResearchPage = () => {
                     <Card
                         variant="green"
                         imageProps={{
-                            imageName: "titel_fb3.png",
-                            alt: "Summary graphic from Martina Schraudner's keynote on 26.9.2022 about participation in science.",
+                            imageName: "FB3_neu.jpg",
+                            alt: "Two scientists using the Naturblick App.",
                             imageMap: imageMap,
                             className: "w-full h-auto object-cover"
                         }}
