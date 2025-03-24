@@ -396,6 +396,22 @@ const ResearchPage = () => {
                             text="We promote the strategic anchoring of public engagement in science and scientific institutions. We do this by opening up the culture and processes of science to non-academic stakeholders, using a wide range of formats and methods."
                             link="/en/research/ieti-impact-oriented-public-engagement"
                         />
+                         <SlideContent
+                            imageName="1.MB_.DTE_.Dia 01, Lager Tendaguru.jpg"
+                            altText="1.MB.DTE.Dia 01, Historisches Foto vom Tendaguru mit Lager, ca. 1910 ©Archiv MfN"
+                            kicker="Research Area 2"
+                            title="AG Digital Tendaguru"
+                            text="Our team is developing a contextualised digital research platform on the fossils and archival materials of the colonial German Tendaguru expedition undertaken by the Museum für Naturkunde between 1909 and 1913 in present-day Tanzania."
+                            link="/en/research/virtual-access-fossil-and-archival-material-german-tendaguru-expedition-1909-1913"
+                        />
+                        <SlideContent
+                            imageName="public policy research photo.jpg"
+                            altText="public policy research photo"
+                            kicker="Research Area 3"
+                            title="Public Policy Research Group"
+                            text="The Public Policy Research Group analyzes the interplay between science and policy. At the center of its work is the question of the possibilities and limitations of evidence-based policymaking in complex problem situations at the intersection of society and nature."
+                            link="/en/research/public-policy-research"
+                        />
                     </Slideshow>
                 </Section>
 

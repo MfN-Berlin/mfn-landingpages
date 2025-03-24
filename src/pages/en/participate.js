@@ -112,22 +112,7 @@ const IndexPage = () => {
                 </Section>
 
                 <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
-                    <Card
-                        variant="classic"
-                        imageProps={{
-                            imageName: "20220827_223801__1200x800Px.jpg",
-                            alt: "Writing alphabet with quill and ink",
-                            imageMap: imageMap,
-                            className: "w-full h-auto object-cover"
-                        }}
-                        textProps={{
-                            headline: "Transcribe Historical Documents Together",
-                            body: "Help internal research projects gain easy access to the contents of historical documents from the archive. Knowledge of old German scripts like Kurrent or Sütterlin is required.",
-                            headlineStyle: "h3",
-                            alignment: "left"
-                        }}
-                        url="/en/museum/participate/transcription-workshop"
-                    />
+                   
 
                     <Card
                         variant="classic"
@@ -145,10 +130,7 @@ const IndexPage = () => {
                         }}
                         url="/en/museum/participate/citizen-science/volunteering"
                     />
-                </Section>
-
-                <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
-                    <Card
+                     <Card
                         variant="classic"
                         imageProps={{
                             imageName: "Mikroskopierzentrum_CapsarPauli.jpg",
@@ -164,6 +146,9 @@ const IndexPage = () => {
                         }}
                         url="/en/museum/education/school-and-kindergarten/workshops-and-microscopy"
                     />
+  </Section>
+
+<Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
 
                     <Card
                         variant="classic"

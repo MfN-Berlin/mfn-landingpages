@@ -114,22 +114,7 @@ const IndexPage = () => {
                 </Section>
                 <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
 
-                    <Card
-                        variant="classic"
-                        imageProps={{
-                            imageName: "20220827_223801__1200x800Px.jpg",
-                            alt: "Alphabet mit Feder und Tinte nachschreiben",
-                            imageMap: imageMap,
-                            className: "w-full h-auto object-cover"
-                        }}
-                        textProps={{
-                            headline: "Historische Schriftstücke gemeinsam transkribieren",
-                            body: "Helfen Sie internen Forschungsprojekten, einen einfachen Zugang zu den Inhalten der historischen Dokumente des Archivs zu erhalten. Voraussetzung ist die Kenntnis altdeutscher Sprachen, wie Kurrent oder Sütterlin.",
-                            headlineStyle: "h3",
-                            alignment: "left"
-                        }}
-                        url="/de/museum/mitmachen/transkriptionswerkstatt"
-                    />
+                   
 
                     <Card
                         variant="classic"
@@ -149,9 +134,7 @@ const IndexPage = () => {
                         url="/de/mitmachen/ehrenamt"
                     />
 
-                </Section>
-                <Section columns={3} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
-
+               
                     <Card
                         variant="classic"
                         imageProps={{
@@ -168,6 +151,8 @@ const IndexPage = () => {
                         }}
                         url="/de/museum/bildung/schule-und-kita/workshops-und-mikroskopieren"
                     />
+ </Section>
+                <Section columns={2} backgroundColor="bg-Green-100" padding="pt-16 pb-0">
 
                     <Card
                         variant="classic"
@@ -195,7 +180,7 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Netzwerk Naturwissen",
+                            headline: "Netzwerk Naturwissen liest",
                             body: "Im Austausch reflektieren wir Naturwissen aus unterschiedlichen Perspektiven. Einmal im Monat treffen wir uns dazu auch, um im Museum gemeinsam wissenschaftliche Texte zu diskutieren.",
                             headlineStyle: "h3",
                             alignment: "left"
@@ -238,8 +223,8 @@ const IndexPage = () => {
                             className: "w-full h-auto object-cover"
                         }}
                         textProps={{
-                            headline: "Natur künstlerisch erleben – Führung und Masken basteln",
-                            body: "Im Sauriersaal lernen die Kinder den über 13 Meter großen <em>Giraffatitan</em> und viele weitere Dinosaurier, wie den Fleischfresser <em>Allosaurus</em> oder den Stacheldinosaurier <em>Kentrosaurus</em>, kennen.",
+                            headline: "Workshops und Mikroskopieren",
+                            body: "Bei Workshops und Mikroskopierkursen können Kinder ab 5 Jahren und Jugendliche aller Klassenstufen die Abenteuer der Natur entdecken und die Welt der Wissenschaft kennenlernen.",
                             headlineStyle: "h3",
                             alignment: "left"
                         }}
