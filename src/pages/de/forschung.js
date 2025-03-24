@@ -394,6 +394,25 @@ const VisitPage = () => {
                             text="Wir fördern die strategische Verankerung von Public Engagement in der Forschung und in Forschungseinrichtungen. Dazu öffnen wir sowohl die Forschungskultur als auch -prozesse für nicht-akademische Stakeholder durch ein breites Spektrum an Formaten und Methoden."
                             link="/de/wissenschaft/ieti-impact-orientiertes-public-engagement"
                         />
+                         <SlideContent
+                            imageName="1.MB_.DTE_.Dia 01, Lager Tendaguru.jpg"
+                            altText="1.MB.DTE.Dia 01, Historisches Foto vom Tendaguru mit Lager, ca. 1910 ©Archiv MfN"
+                            kicker="Forschungsbereich 2"
+                            title="AG Digital Tendaguru"
+                            text="Unser Team entwickelt eine kontextualisierte digitale Forschungsplattform über die Fossilien und Archivmaterialien der kolonialen deutschen Tendaguru-Expedition, die vom Museum für Naturkunde zwischen 1909 und 1913 im heutigen Tansania durchgeführt wurde."
+                            link="/de/forschung/virtueller-zugang-zu-fossil-und-archivmaterial-der-deutschen-tendaguru-expedition-1909"
+                        />
+                         <SlideContent
+                            imageName="public policy research photo.jpg"
+                            altText="public policy research photo"
+                            kicker="Forschungsbereich 3"
+                            title="Arbeitsgruppe Public Policy Research"
+                            text="Die Arbeitsgruppe Public Policy Research analysiert das Zusammenspiel von Wissenschaft und Politik. Im Mittelpunkt steht die Frage nach den Möglichkeiten und Grenzen evidenzbasierter Politikgestaltung in komplexen Problemlagen an der Schnittstelle von Gesellschaft und Natur."
+                            link="/de/forschung/public-policy-research"
+                        />
+
+
+
 
                     </Slideshow>
                 </Section>
