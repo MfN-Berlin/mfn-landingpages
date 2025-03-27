@@ -48,7 +48,9 @@ const formatAuthors = (mfnAuthors, unknownAuthors) => {
 
 const highlightMatches = (text, searchTerm) => {
   if (!searchTerm || !text) return text;
+  
   try {
+    // Escape special characters in the search term
     const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp(`(${escapedSearchTerm})`, 'gi');
     return text.replace(regex, '<mark class="bg-Yellow-100">$1</mark>');
@@ -118,18 +120,20 @@ const formatAPA = (pub, searchTerm) => {
 
 const ITEMS_PER_PAGE = 10
 
+
 const PublicationsPage = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchMode, setSearchMode] = useState('fuzzy')
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [activeTooltip, setActiveTooltip] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
-  const [sortOrder, setSortOrder] = useState('id-asc')
+  const [sortOrder, setSortOrder] = useState('year-desc'); // Default sort: Year descending
 
   const publications = useMemo(() => {
     try {
       const publicationFile = data?.allFile?.edges?.find(
-        edge => edge.node.name === 'publications_database_2'
+        edge => edge.node.sourceInstanceName === 'data' && 
+               edge.node.name === 'publications_2007-2023'
       );
       
       if (!publicationFile?.node?.internal?.content) {
@@ -137,7 +141,7 @@ const PublicationsPage = ({ data }) => {
       }
       
       const parsed = JSON.parse(publicationFile.node.internal.content);
-      return parsed.paragraphs || [];
+      return parsed.publications || [];
     } catch (error) {
       console.error('Error parsing publications:', error);
       return [];
@@ -165,17 +169,21 @@ const PublicationsPage = ({ data }) => {
   }
 
   const fuse = useMemo(() => new Fuse(publications, {
-    keys: ['text_content', 'content'],
+    keys: ['title', 'mfn_authors', 'unknown_authors', 'journal', 'year', 'keyword'],
     ...fuseConfigs[searchMode]
   }), [publications, searchMode])
 
   const sortPublications = (pubs) => {
     return [...pubs].sort((a, b) => {
       switch (sortOrder) {
-        case 'id-asc':
-          return (a.id || '').localeCompare(b.id || '');
-        case 'id-desc':
-          return (b.id || '').localeCompare(a.id || '');
+        case 'year-asc':
+          return (a.year || 0) - (b.year || 0);
+        case 'year-desc':
+          return (b.year || 0) - (a.year || 0);
+        case 'title-asc':
+          return (a.title || '').localeCompare(b.title || '');
+        case 'title-desc':
+          return (b.title || '').localeCompare(a.title || '');
         default:
           return 0;
       }
@@ -186,8 +194,7 @@ const PublicationsPage = ({ data }) => {
     const filtered = !searchTerm ? publications : fuse.search(searchTerm).map(result => ({
       ...result.item,
       score: result.score,
-      matches: result.matches,
-      highlightedContent: highlightMatches(result.item.content, searchTerm)
+      matches: result.matches
     }));
     return sortPublications(filtered);
   }, [searchTerm, fuse, publications, sortOrder]);
@@ -207,10 +214,10 @@ const PublicationsPage = ({ data }) => {
     <>
       <Header />
       <main>
-        <AccessibilityNav currentPage="Publications Raw" />
+        <AccessibilityNav currentPage="Publications" />
         <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
           <div className="mb-4 max-w-[768px] mx-auto">
-            <h1 className="text-center">Publications Raw Database</h1>
+            <h1 className="text-center">Publications</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
             Scientific Articles, Scientific Monographs, Edited Volumes - Editorship, Book Chapters, Conference Papers, Popular Science Articles, Popular Science Books, Reports and Position Papers. From 2007 to 2023<br/><br/>
             </label>
@@ -263,8 +270,10 @@ const PublicationsPage = ({ data }) => {
                       className="w-full p-2 border border-Black-300 rounded"
                       aria-label="Select sort order"
                     >
-                      <option value="id-asc">ID (A-Z)</option>
-                      <option value="id-desc">ID (Z-A)</option>
+                      <option value="year-desc">Year (newest first)</option>
+                      <option value="year-asc">Year (oldest first)</option>
+                      <option value="title-asc">Title (A-Z)</option>
+                      <option value="title-desc">Title (Z-A)</option>
                     </select>
                   </div>
                   
@@ -296,23 +305,25 @@ const PublicationsPage = ({ data }) => {
               }
             </h2>
             <p className="text-sm text-Black-600 mb-8">
-              Sorted by: ID
+              Sorted by: {
+                sortOrder === 'year-desc' ? 'Year (newest first)' :
+                sortOrder === 'year-asc' ? 'Year (oldest first)' :
+                sortOrder === 'title-asc' ? 'Title (A-Z)' :
+                'Title (Z-A)'
+              }
             </p>
 
             {/* Publications List */}
             <div className="mt-8">
               {paginatedPublications.map((pub, index) => (
-                <div key={pub.id || index} className="bg-White-White mb-8 p-8">
+                <div key={index} className="bg-White-White mb-8 p-8">
                   <article>
                     <div className="flex items-start justify-between">
-                      <div 
-                        dangerouslySetInnerHTML={{ 
-                          __html: pub.highlightedContent || pub.content
-                        }} 
-                        className="flex-grow"
-                      />
+                      <p dangerouslySetInnerHTML={{ 
+                        __html: formatAPA(pub, searchTerm) 
+                      }} className="flex-grow" />
                       
-                      {searchTerm && pub.matches && (
+                      {searchTerm && (
                         <div className="relative ml-2">
                           <button
                             onClick={() => setActiveTooltip(activeTooltip === index ? null : index)}
@@ -481,8 +492,8 @@ export default PublicationsPage
 
 export const Head = () => (
     <HeadComponent
-        title="Publications 2025"
+        title="Publications"
         description="Browse scientific publications from the Museum für Naturkunde Berlin"
-        pathname="/en/research/publications_2025"
+        pathname="/en/research/publications_old"
     />
 )

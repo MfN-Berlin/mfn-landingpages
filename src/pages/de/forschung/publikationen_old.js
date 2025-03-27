@@ -6,7 +6,8 @@ import Header from "../../../components/layouts/Header"
 import Footer from '../../../components/layouts/Footer'
 import Section from '../../../components/elements/Section'
 import AccessibilityNav from '../../../components/layouts/AccessibilityNav'
-import HeadComponent from "../../../components/layouts/HeadComponent"
+import HeadComponent from '../../../components/layouts/HeadComponent'
+
 // Error Boundary Component
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -48,7 +49,9 @@ const formatAuthors = (mfnAuthors, unknownAuthors) => {
 
 const highlightMatches = (text, searchTerm) => {
   if (!searchTerm || !text) return text;
+  
   try {
+    // Escape special characters in the search term
     const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp(`(${escapedSearchTerm})`, 'gi');
     return text.replace(regex, '<mark class="bg-Yellow-100">$1</mark>');
@@ -118,18 +121,20 @@ const formatAPA = (pub, searchTerm) => {
 
 const ITEMS_PER_PAGE = 10
 
+
 const PublicationsPage = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [searchMode, setSearchMode] = useState('exact')
+  const [searchMode, setSearchMode] = useState('fuzzy')
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [activeTooltip, setActiveTooltip] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
-  const [sortOrder, setSortOrder] = useState('id-asc')
+  const [sortOrder, setSortOrder] = useState('year-desc');
 
   const publications = useMemo(() => {
     try {
       const publicationFile = data?.allFile?.edges?.find(
-        edge => edge.node.name === 'publications_database_3'
+        edge => edge.node.sourceInstanceName === 'data' && 
+               edge.node.name === 'publications_2007-2023'
       );
       
       if (!publicationFile?.node?.internal?.content) {
@@ -137,7 +142,7 @@ const PublicationsPage = ({ data }) => {
       }
       
       const parsed = JSON.parse(publicationFile.node.internal.content);
-      return parsed.paragraphs || [];
+      return parsed.publications || [];
     } catch (error) {
       console.error('Error parsing publications:', error);
       return [];
@@ -165,17 +170,21 @@ const PublicationsPage = ({ data }) => {
   }
 
   const fuse = useMemo(() => new Fuse(publications, {
-    keys: ['text_content', 'content'],
+    keys: ['title', 'mfn_authors', 'unknown_authors', 'journal', 'year', 'keyword'],
     ...fuseConfigs[searchMode]
   }), [publications, searchMode])
 
   const sortPublications = (pubs) => {
     return [...pubs].sort((a, b) => {
       switch (sortOrder) {
-        case 'id-asc':
-          return (a.id || '').localeCompare(b.id || '');
-        case 'id-desc':
-          return (b.id || '').localeCompare(a.id || '');
+        case 'year-asc':
+          return (a.year || 0) - (b.year || 0);
+        case 'year-desc':
+          return (b.year || 0) - (a.year || 0);
+        case 'title-asc':
+          return (a.title || '').localeCompare(b.title || '');
+        case 'title-desc':
+          return (b.title || '').localeCompare(a.title || '');
         default:
           return 0;
       }
@@ -186,8 +195,7 @@ const PublicationsPage = ({ data }) => {
     const filtered = !searchTerm ? publications : fuse.search(searchTerm).map(result => ({
       ...result.item,
       score: result.score,
-      matches: result.matches,
-      highlightedContent: highlightMatches(result.item.content, searchTerm)
+      matches: result.matches
     }));
     return sortPublications(filtered);
   }, [searchTerm, fuse, publications, sortOrder]);
@@ -207,14 +215,13 @@ const PublicationsPage = ({ data }) => {
     <>
       <Header />
       <main>
-        <AccessibilityNav currentPage="Publikationen" />
+      <AccessibilityNav currentPage="Publikationen" />
         <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
           <div className="mb-4 max-w-[768px] mx-auto">
-            <h1 className="text-center">Publikationen 2025 (3)</h1>
+            <h1 className="text-center">Publikationen</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-            Wissenschaftliche Artikel, Wissenschaftliche Monographien, Herausgeberschaften, Buchkapitel, Konferenzbeiträge, Populärwissenschaftliche Artikel, Populärwissenschaftliche Bücher, Berichte und Positionspapiere. Von 2007 bis 2023<br/><br/>
+            Wissenschaftliche Artikel, Fachwissenschaftliche Monografien, Sammelwerke – Herausgeberschaft, Sammelbandbeiträge, Konferenzbeiträge, Populärwissenschaftliche Beiträge, Populärwissenschaftliche Monografien, Berichte und Positionspapiere. Zeitraum 2007 bis 2023<br/><br/>
             </label>
-            
             <div className="search-container mt-4">
               <div className="flex flex-col md:flex-row gap-4">
               
@@ -223,9 +230,9 @@ const PublicationsPage = ({ data }) => {
                     type="search"
                     value={searchTerm}
                     onChange={handleSearch}
-                    placeholder="Suche nach Namen, Jahren, Zeitschriften oder Stichwörtern"
+                    placeholder="Suchen Sie nach Personen, Jahren, Journals oder Stichworten"
                     className="w-full p-2 border border-Black-300 rounded pr-10"
-                    aria-label="Suche in allen Projekten"
+                    aria-label="Suchen Sie in allen Team-Projekten"
                   />
                   <button
                     onClick={() => setIsSettingsOpen(!isSettingsOpen)}
@@ -242,29 +249,31 @@ const PublicationsPage = ({ data }) => {
               {isSettingsOpen && (
                 <div className="mt-2 p-4 bg-white border border-Black-200 rounded shadow-lg">
                   <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2">Suchmodus (verschiedene Algorithmen können unterschiedliche Suchergebnisse liefern):</label>
+                    <label className="block text-sm font-medium mb-2">Suchmodus (unterschiedliche Algorithmen können unterschiedliche Suchergebnisse liefern):</label>
                     <select
                       value={searchMode}
                       onChange={(e) => setSearchMode(e.target.value)}
                       className="w-full p-2 border border-Black-300 rounded"
                       aria-label="Suchmodus auswählen"
                     >
-                      <option value="exact">Exakte Suche (Standard)</option>
-                      <option value="fuzzy">Unscharfe Suche</option>
+                      <option value="fuzzy">Fuzzy Suche (Standard)</option>
+                      <option value="exact">Exakte Suche</option>
                       <option value="extended">Erweiterte Suche</option>
                     </select>
                   </div>
-
+                  
                   <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2">Sortieren nach:</label>
+                    <label className="block text-sm font-medium mb-2">Sortierung:</label>
                     <select
                       value={sortOrder}
                       onChange={(e) => setSortOrder(e.target.value)}
                       className="w-full p-2 border border-Black-300 rounded"
-                      aria-label="Sortierreihenfolge auswählen"
+                      aria-label="Sortierung auswählen"
                     >
-                      <option value="id-asc">ID (A-Z)</option>
-                      <option value="id-desc">ID (Z-A)</option>
+                      <option value="year-desc">Jahr (neueste zuerst)</option>
+                      <option value="year-asc">Jahr (älteste zuerst)</option>
+                      <option value="title-asc">Titel (A-Z)</option>
+                      <option value="title-desc">Titel (Z-A)</option>
                     </select>
                   </div>
                   
@@ -276,8 +285,8 @@ const PublicationsPage = ({ data }) => {
                         <li>^wort (Präfix-Suche)</li>
                         <li>wort$ (Suffix-Suche)</li>
                         <li>!wort (Negation)</li>
-                        <li>'wort1 wort2 (UND-Suche)</li>
-                        <li>'wort1 |wort2 (ODER-Suche)</li>
+                        <li>'wort1 wort2 (AND-Suche)</li>
+                        <li>'wort1 |wort2 (OR-Suche)</li>
                       </ul>
                     </div>
                   )}
@@ -287,6 +296,7 @@ const PublicationsPage = ({ data }) => {
           </div>
         </Section>
 
+        {/* Publikationsliste */}
         <Section backgroundColor="bg-Green-100" columns={1} padding="pt-8 pb-8">
           <div className="mb-8 publications-list max-w-3xl mx-auto" role="region" aria-label="Publikationsliste">
             <h2 className="mb-4">
@@ -296,28 +306,30 @@ const PublicationsPage = ({ data }) => {
               }
             </h2>
             <p className="text-sm text-Black-600 mb-8">
-              Sortiert nach: ID
+              Sortierung: {
+                sortOrder === 'year-desc' ? 'Jahr (neueste zuerst)' :
+                sortOrder === 'year-asc' ? 'Jahr (älteste zuerst)' :
+                sortOrder === 'title-asc' ? 'Titel (A-Z)' :
+                'Titel (Z-A)'
+              }
             </p>
 
             {/* Publications List */}
             <div className="mt-8">
               {paginatedPublications.map((pub, index) => (
-                <div key={pub.id || index} className="bg-White-White mb-8 p-8">
+                <div key={index} className="bg-White-White mb-8 p-8">
                   <article>
                     <div className="flex items-start justify-between">
-                      <div 
-                        dangerouslySetInnerHTML={{ 
-                          __html: pub.highlightedContent || pub.content
-                        }} 
-                        className="flex-grow"
-                      />
+                      <p dangerouslySetInnerHTML={{ 
+                        __html: formatAPA(pub, searchTerm) 
+                      }} className="flex-grow" />
                       
-                      {searchTerm && pub.matches && (
+                      {searchTerm && (
                         <div className="relative ml-2">
                           <button
                             onClick={() => setActiveTooltip(activeTooltip === index ? null : index)}
                             className="p-2 hover:bg-Black-100 rounded-full"
-                            aria-label="Suchergebnisdetails anzeigen"
+                            aria-label="Zeige Suchergebnisdetails"
                           >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
@@ -332,7 +344,7 @@ const PublicationsPage = ({ data }) => {
                                   <span className="font-medium">{match.key}:</span> {match.value}
                                   <br />
                                   <span className="text-Black-500">
-                                    Übereinstimmung: {Math.round(pub.score * 100)}%
+                                    Score: {Math.round(pub.score * 100)}%
                                   </span>
                                 </p>
                               ))}
@@ -348,7 +360,7 @@ const PublicationsPage = ({ data }) => {
 
             {/* Pagination */}
             {pageCount > 1 && (
-              <nav aria-label="Seitennavigation" className="mt-8">
+              <nav aria-label="Pagination" className="mt-8">
                 <ul className="flex justify-center items-center gap-2 p-0 m-0 list-none">
                   <li>
                     <button 
@@ -414,7 +426,7 @@ const PublicationsPage = ({ data }) => {
                             onClick={() => setCurrentPage(page)}
                             className={`px-3 py-2 rounded hover:bg-Green-100 
                               ${currentPage === page ? 'bg-Green-500 text-white' : ''}`}
-                            aria-label={`Page ${page}`}
+                            aria-label={`Seite ${page}`}
                             aria-current={currentPage === page ? 'page' : undefined}
                           >
                             {page}
@@ -482,7 +494,7 @@ export default PublicationsPage
 export const Head = () => (
     <HeadComponent
         title="Publikationen"
-        description="Durchsuchen Sie wissenschaftliche Publikationen des Museum für Naturkunde Berlin"
-        pathname="/de/forschung/publikationen"
+        description="Durchsuchen Sie die wissenschaftlichen Publikationen des Museums für Naturkunde Berlin"
+        pathname="/de/forschung/publikationen_old"
     />
 )
