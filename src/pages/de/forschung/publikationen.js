@@ -124,12 +124,13 @@ const PublicationsPage = ({ data }) => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [activeTooltip, setActiveTooltip] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
-  const [sortOrder, setSortOrder] = useState('id-asc')
+  const [sortOrder, setSortOrder] = useState('year-desc')
+  const [selectedYears, setSelectedYears] = useState([])
 
   const publications = useMemo(() => {
     try {
       const publicationFile = data?.allFile?.edges?.find(
-        edge => edge.node.name === 'publications_database_3'
+        edge => edge.node.name === 'publications_database_4'
       );
       
       if (!publicationFile?.node?.internal?.content) {
@@ -172,25 +173,62 @@ const PublicationsPage = ({ data }) => {
   const sortPublications = (pubs) => {
     return [...pubs].sort((a, b) => {
       switch (sortOrder) {
-        case 'id-asc':
-          return (a.id || '').localeCompare(b.id || '');
-        case 'id-desc':
-          return (b.id || '').localeCompare(a.id || '');
+        case 'year-desc':
+          const yearCompareDesc = (b.publication_year || 0) - (a.publication_year || 0);
+          return yearCompareDesc !== 0 ? yearCompareDesc : (a.text_content || '').localeCompare(b.text_content || '');
+        
+        case 'year-asc':
+          const yearCompareAsc = (a.publication_year || 0) - (b.publication_year || 0);
+          return yearCompareAsc !== 0 ? yearCompareAsc : (a.text_content || '').localeCompare(b.text_content || '');
+        
+        case 'alpha-asc':
+          return (a.text_content || '').localeCompare(b.text_content || '');
+        
+        case 'alpha-desc':
+          return (b.text_content || '').localeCompare(a.text_content || '');
+        
         default:
           return 0;
       }
     });
   };
 
+  const availableYears = useMemo(() => {
+    if (!publications.length) return [];
+    
+    const years = publications
+      .map(pub => pub.publication_year)
+      .filter(year => year && typeof year === 'number');
+    
+    return [...new Set(years)].sort((a, b) => b - a);
+  }, [publications]);
+
+  useEffect(() => {
+    if (availableYears.length > 0) {
+      setSelectedYears(availableYears);
+    }
+  }, [availableYears]);
+
   const filteredPublications = useMemo(() => {
-    const filtered = !searchTerm ? publications : fuse.search(searchTerm).map(result => ({
-      ...result.item,
-      score: result.score,
-      matches: result.matches,
-      highlightedContent: highlightMatches(result.item.content, searchTerm)
-    }));
+    let filtered = publications;
+
+    if (selectedYears.length === 0) {
+      return [];
+    }
+
+    filtered = filtered.filter(pub => selectedYears.includes(pub.publication_year));
+
+    if (searchTerm) {
+      filtered = fuse.search(searchTerm).map(result => ({
+        ...result.item,
+        score: result.score,
+        matches: result.matches,
+        highlightedContent: highlightMatches(result.item.content, searchTerm)
+      }));
+    }
+
     return sortPublications(filtered);
-  }, [searchTerm, fuse, publications, sortOrder]);
+  }, [searchTerm, fuse, publications, sortOrder, selectedYears]);
 
   const pageCount = Math.ceil(filteredPublications.length / ITEMS_PER_PAGE);
   const paginatedPublications = filteredPublications.slice(
@@ -203,6 +241,36 @@ const PublicationsPage = ({ data }) => {
     setCurrentPage(1);
   };
 
+  const handleYearChange = (year) => {
+    setSelectedYears(prev => 
+      prev.includes(year)
+        ? prev.filter(y => y !== year)
+        : [...prev, year]
+    );
+    setCurrentPage(1);
+  };
+
+  const handleSelectAllYears = () => {
+    setSelectedYears(selectedYears.length === availableYears.length ? [] : availableYears);
+    setCurrentPage(1);
+  };
+
+  // Neue Berechnung der Jahresspanne
+  const yearRange = useMemo(() => {
+    if (!publications.length) return { start: 2007, end: 2023 }; // Fallback
+    
+    const years = publications
+      .map(pub => pub.publication_year)
+      .filter(year => year && typeof year === 'number');
+    
+    if (!years.length) return { start: 2007, end: 2023 }; // Fallback wenn keine Jahre gefunden
+
+    return {
+      start: Math.min(...years),
+      end: Math.max(...years)
+    };
+  }, [publications]);
+
   return (
     <>
       <Header />
@@ -210,9 +278,9 @@ const PublicationsPage = ({ data }) => {
         <AccessibilityNav currentPage="Publikationen" />
         <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
           <div className="mb-4 max-w-[768px] mx-auto">
-            <h1 className="text-center">Publikationen 2025 (3)</h1>
+            <h1 className="text-center">Publikationen</h1>
             <label htmlFor="search-publications" className="block mt-2 max-w-3xl text-center mx-auto">
-            Wissenschaftliche Artikel, Wissenschaftliche Monographien, Herausgeberschaften, Buchkapitel, Konferenzbeiträge, Populärwissenschaftliche Artikel, Populärwissenschaftliche Bücher, Berichte und Positionspapiere. Von 2007 bis 2023<br/><br/>
+              Wissenschaftliche Artikel, Wissenschaftliche Monographien, Herausgeberschaften, Buchkapitel, Konferenzbeiträge, Populärwissenschaftliche Artikel, Populärwissenschaftliche Bücher, Berichte und Positionspapiere. Von {yearRange.start} bis {yearRange.end}<br/><br/>
             </label>
             
             <div className="search-container mt-4">
@@ -256,6 +324,33 @@ const PublicationsPage = ({ data }) => {
                   </div>
 
                   <div className="mb-4">
+                    <label className="block text-sm font-medium mb-2">
+                      Nach Jahr filtern:
+                      <button 
+                        onClick={handleSelectAllYears}
+                        className="ml-2 text-sm text-Green-600 hover:text-Green-800"
+                      >
+                        {selectedYears.length === availableYears.length ? 'Alle abwählen' : 'Alle auswählen'}
+                      </button>
+                    </label>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {availableYears.map(year => (
+                        <button
+                          key={year}
+                          onClick={() => handleYearChange(year)}
+                          className={`px-3 py-1 rounded border ${
+                            selectedYears.includes(year)
+                              ? 'bg-Green-500 text-white border-Green-600'
+                              : 'bg-white text-Black-700 border-Black-300 hover:bg-Black-50'
+                          }`}
+                        >
+                          {year}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
                     <label className="block text-sm font-medium mb-2">Sortieren nach:</label>
                     <select
                       value={sortOrder}
@@ -263,8 +358,10 @@ const PublicationsPage = ({ data }) => {
                       className="w-full p-2 border border-Black-300 rounded"
                       aria-label="Sortierreihenfolge auswählen"
                     >
-                      <option value="id-asc">ID (A-Z)</option>
-                      <option value="id-desc">ID (Z-A)</option>
+                      <option value="year-desc">Nach Jahr (2024 - 2017)</option>
+                      <option value="year-asc">Nach Jahr (2017 - 2024)</option>
+                      <option value="alpha-asc">Alphabetisch (A-Z)</option>
+                      <option value="alpha-desc">Alphabetisch (Z-A)</option>
                     </select>
                   </div>
                   
@@ -292,12 +389,9 @@ const PublicationsPage = ({ data }) => {
             <h2 className="mb-4">
               {searchTerm 
                 ? `${filteredPublications.length} Ergebnisse gefunden`
-                : `${publications.length} Publikationen`
+                : `${filteredPublications.length} Publikationen`
               }
             </h2>
-            <p className="text-sm text-Black-600 mb-8">
-              Sortiert nach: ID
-            </p>
 
             {/* Publications List */}
             <div className="mt-8">
