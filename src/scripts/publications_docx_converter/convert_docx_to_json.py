@@ -6,9 +6,52 @@ from bs4 import BeautifulSoup
 import mammoth
 import logging
 from datetime import datetime
+import re
 
 # Logging konfigurieren
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def convert_text_urls_to_links(html_content):
+    """
+    Konvertiert Text-URLs in HTML-Links.
+    Erkennt verschiedene URL-Formate und wandelt sie in <a> Tags um.
+    """
+    # URL Pattern für verschiedene Formate
+    url_pattern = r'(?<!href=")(?<!src=")((?:https?:\/\/|www\.)[^\s<>"]+(?:\.[^\s<>"]+)+)'
+    
+    def replace_url(match):
+        url = match.group(1)
+        full_url = url if url.startswith(('http://', 'https://')) else f'https://{url}'
+        return f'<a href="{full_url}" target="_blank" rel="noopener noreferrer" class="underline text-Green-500 hover:text-Green-600">{url}</a>'
+    
+    # URLs ersetzen, aber nur wenn sie nicht bereits in einem Link sind
+    return re.sub(url_pattern, replace_url, html_content)
+
+def extract_year_from_filename(filename):
+    """
+    Extrahiert Jahreszahlen aus dem Dateinamen.
+    Sucht nach 4-stelligen Zahlen zwischen 1900 und 2100.
+    """
+    try:
+        # Suche nach 4-stelligen Zahlen
+        years = re.findall(r'(?:19|20)\d{2}', filename)
+        
+        if not years:
+            return None
+            
+        # Wenn mehrere Jahre gefunden wurden, prüfe ob sie sich widersprechen
+        if len(years) > 1:
+            years = [int(y) for y in years]
+            # Wenn die Jahre zu weit auseinander liegen, geben wir None zurück
+            if max(years) - min(years) > 1:
+                logging.warning(f"Mehrere widersprüchliche Jahre im Dateinamen gefunden: {filename}")
+                return None
+            return max(years)  # Nehme das spätere Jahr
+            
+        return int(years[0])
+    except Exception as e:
+        logging.error(f"Fehler beim Extrahieren des Jahres aus {filename}: {str(e)}")
+        return None
 
 def convert_docx_to_json_db():
     # Pfade definieren
@@ -40,10 +83,16 @@ def convert_docx_to_json_db():
         try:
             logging.info(f"Verarbeite {docx_path.name}...")
             
+            # Extrahiere Jahr aus Dateinamen
+            publication_year = extract_year_from_filename(docx_path.stem)
+            if publication_year:
+                logging.info(f"Jahr {publication_year} aus Dateinamen extrahiert")
+            
             # Datei-Metadaten speichern
             file_info = {
                 "filename": docx_path.name,
-                "processed_at": datetime.now().isoformat()
+                "processed_at": datetime.now().isoformat(),
+                "extracted_year": publication_year
             }
 
             # DOCX zu HTML konvertieren mit Formatierung
@@ -60,6 +109,9 @@ def convert_docx_to_json_db():
                     # Leere Absätze überspringen
                     if not p.get_text().strip():
                         continue
+                    
+                    # Text-URLs in Links umwandeln
+                    content_with_links = convert_text_urls_to_links(str(p))
                         
                     # Absatz-Datensatz erstellen
                     paragraph_entry = {
@@ -67,10 +119,11 @@ def convert_docx_to_json_db():
                         "source_file": docx_path.name,
                         "source_index": idx,
                         "type": p.name,  # p, h1, ul, etc.
-                        "content": str(p),  # Original HTML
+                        "content": content_with_links,  # HTML mit konvertierten Links
                         "text_content": p.get_text(),  # Nur Text für Suche
-                        "has_links": bool(p.find_all('a')),
+                        "has_links": bool(p.find_all('a')) or bool(re.search(r'https?:\/\/|www\.', str(p))),
                         "has_emphasis": bool(p.find_all(['em', 'strong', 'i', 'b'])),
+                        "publication_year": publication_year
                     }
                     
                     database["paragraphs"].append(paragraph_entry)
