@@ -4,7 +4,8 @@ import { featureTranslations } from '../../data/featureTranslations';
 
 const UpcomingHoliday = () => {
   const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
-  const HOLIDAYS = featureTranslations.upcomingHoliday[language].holidays;
+  const translations = featureTranslations.upcomingHoliday[language] || featureTranslations.upcomingHoliday.de;
+  const HOLIDAYS = translations.holidays;
 
   const [upcomingHoliday, setUpcomingHoliday] = useState(null);
 

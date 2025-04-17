@@ -38,6 +38,8 @@ const SubmenuItem = ({ item }) => (
       <a
         href={item.to}
         className="block text-sm text-left text-gray-900 font-bold hover:text-Green-500 transition duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {item.label}
       </a>
@@ -57,6 +59,8 @@ const SubmenuItem = ({ item }) => (
               <a
                 href={subItem.to}
                 className="block text-sm text-gray-600 hover:text-Green-500 transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {subItem.label}
               </a>
@@ -149,6 +153,38 @@ const LanguageSwitcher = ({ currentPath }) => {
 
   const getTargetPath = (targetLang) => {
     if (!cleanPath) return `/${targetLang}/`;
+    
+    // Special handling for leichte-sprache paths
+    if (targetLang === 'de-x-ls') {
+      const pathMappings = {
+        '/de/besuch-planen': '/leichte-sprache/besuch-planen',
+        '/de/mitmachen': '/leichte-sprache/mitmachen',
+        '/de/forschung': '/leichte-sprache/forschung',
+        '/de/museum': '/leichte-sprache/museum',
+        '/en/visit': '/leichte-sprache/besuch-planen',
+        '/en/participate': '/leichte-sprache/mitmachen',
+        '/en/research': '/leichte-sprache/forschung',
+        '/en/museum': '/leichte-sprache/museum'
+      };
+
+      // Remove trailing slash if present
+      const normalizedPath = cleanPath.endsWith('/') ? cleanPath.slice(0, -1) : cleanPath;
+      return pathMappings[normalizedPath] || '/leichte-sprache';
+    }
+    
+    // Handle switching from leichte-sprache to other languages
+    if (cleanPath.startsWith('/leichte-sprache/')) {
+      const pathMappings = {
+        '/leichte-sprache/besuch-planen': targetLang === LANGUAGES.EN ? '/en/visit' : '/de/besuch-planen',
+        '/leichte-sprache/mitmachen': targetLang === LANGUAGES.EN ? '/en/participate' : '/de/mitmachen',
+        '/leichte-sprache/forschung': targetLang === LANGUAGES.EN ? '/en/research' : '/de/forschung',
+        '/leichte-sprache/museum': targetLang === LANGUAGES.EN ? '/en/museum' : '/de/museum'
+      };
+      
+      const normalizedPath = cleanPath.endsWith('/') ? cleanPath.slice(0, -1) : cleanPath;
+      return pathMappings[normalizedPath] || `/${targetLang}/`;
+    }
+    
     return getTranslatedUrl(cleanPath, targetLang);
   };
 
@@ -175,7 +211,7 @@ const LanguageSwitcher = ({ currentPath }) => {
         </li>
         <li className="de-x-ls list-none">
           <Link
-            to="/leichte-sprache"
+            to={getTargetPath('de-x-ls')}
             className="language-link text-Black-900 pl-2 inline-block"
             hrefLang="de-x-ls"
             aria-label="Leichte Sprache"
@@ -229,10 +265,17 @@ const Header = ({ activeNavItem, location }) => {
   const getActiveSectionData = () => {
     const currentLang = getLanguageFromPath(location?.pathname);
     const { mainNavData: currentMainNavData } = getNavigationData(currentLang);
-
-    return Object.values(currentMainNavData).find(
-      section => section.to === activeSubmenu
+    
+    // Find the active section based on the activeSubmenu state
+    const activeSection = Object.values(currentMainNavData).find(section => 
+      section.to === activeSubmenu
     );
+    
+    // Return the active section data with submenuColumns as an array
+    return {
+      ...activeSection,
+      submenuColumns: activeSection?.submenuColumns || []
+    };
   };
 
   return (

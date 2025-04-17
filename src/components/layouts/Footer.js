@@ -75,24 +75,24 @@ const Footer = () => {
           </nav>
 
 
-          <div class="mfn-module-social-links">
+          <div className="mfn-module-social-links">
             <a href="https://www.instagram.com/mfnberlin" target="_blank" title="Instagram">
-              <i class="fa fa-instagram"></i>
+              <i className="fa fa-instagram"></i>
             </a>
             <a href="https://www.tiktok.com/@mfnberlin?lang=de" target="_blank" title="TikTok">
-              <i class="fa fa-tiktok"></i>
+              <i className="fa fa-tiktok"></i>
             </a>
             <a href="https://www.youtube.com/user/MfNBerlin" target="_blank" title="YouTube">
-              <i class="fa fa-youtube"></i>
+              <i className="fa fa-youtube"></i>
             </a>
             <a href="https://www.facebook.com/MfN.Berlin" target="_blank" title="Facebook">
-              <i class="fa fa-facebook"></i>
+              <i className="fa fa-facebook"></i>
             </a>
             <a href="https://www.linkedin.com/company/mfnberlin" target="_blank" title="LinkedIn">
-              <i class="fa fa-linkedin"></i>
+              <i className="fa fa-linkedin"></i>
             </a>
             <a href="https://bsky.app/profile/mfnberlin.bsky.social" target="_blank" title="Bluesky">
-              <i class="fa fa-bluesky"></i>
+              <i className="fa fa-bluesky"></i>
             </a>
           </div>
 

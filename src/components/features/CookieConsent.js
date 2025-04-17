@@ -12,7 +12,6 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState({
     essential: true,
-    tracking: false,
     media_youtube: false,
     media_podigee: false,
     misc: false,
@@ -79,7 +78,6 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
       setIsVisible(true);
       setPreferences({
         essential: true,
-        tracking: false,
         media_youtube: false,
         media_podigee: false,
         misc: false,
@@ -102,20 +100,18 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
 
   const handleAcceptAll = () => {
     savePreference('cookie-agreed', '2');
-    savePreference('cookie-agreed-categories', JSON.stringify(["essential","tracking","media_youtube","media_podigee","misc"]));
+    savePreference('cookie-agreed-categories', JSON.stringify(["essential","media_youtube","media_podigee","misc"]));
     savePreference('cookie-agreed-version', '2.0.0');
     handleClose();
   };
 
   const handleAcceptEssential = () => {
     savePreference('cookie-agreed', '0');
-    savePreference('cookie-agreed-categories', JSON.stringify(["essential"]));
     handleClose();
   };
 
   const handleSaveSettings = () => {
     const enabledCategories = ['essential'];
-    if (preferences.tracking) enabledCategories.push('tracking');
     if (preferences.media_youtube) enabledCategories.push('media_youtube');
     if (preferences.media_podigee) enabledCategories.push('media_podigee');
     if (preferences.misc) enabledCategories.push('misc');
@@ -240,17 +236,6 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
                     isReadOnly={true}
                   />
                   
-                  <CookieServiceItem
-                    title={t.categories.tracking.title}
-                    description={t.categories.tracking.description}
-                    isActive={preferences.tracking}
-                    isReadOnly={false}
-                    onChange={() => setPreferences(prev => ({
-                      ...prev,
-                      tracking: !prev.tracking
-                    }))}
-                  />
-
                   <CookieServiceItem
                     title={t.categories.youtube.title}
                     description={t.categories.youtube.description}

@@ -8,7 +8,7 @@ import { featureTranslations } from '../../data/featureTranslations';
 
 const Feedback = () => {
   const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
-  const t = featureTranslations.feedback[language];
+  const translations = featureTranslations.feedback[language] || featureTranslations.feedback.de;
 
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
@@ -107,18 +107,18 @@ const Feedback = () => {
         <div className="flex items-center justify-between gap-12 flex-col md:flex-row ">
           <div className="flex flex-col gap-4 flex-1 text-center md:text-left">
             <h2 className="text-Black-900">
-              {t.pageHelpful}
+              {translations.pageHelpful}
             </h2>
             <p className="text-Black-500">
-              {t.helpImprove} <br/>
-              {t.privacyNote} (
+              {translations.helpImprove} <br/>
+              {translations.privacyNote} (
               <a 
                 href={language === 'de' ? '/de/datenschutzerklaerung' : '/en/general-privacy-notice'}
                 className="underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t.privacyLink}
+                {translations.privacyLink}
               </a>
               )
             </p>
@@ -160,20 +160,20 @@ const Feedback = () => {
             <button 
               onClick={handleClose}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-              aria-label={t.closeModal || "Close feedback modal"}
+              aria-label={translations.closeModal || "Close feedback modal"}
             >
               <XMarkIcon className="w-6 h-6" />
             </button>
 
             <h3 id="feedback-modal-title" className="text-xl font-bold mb-4">
-              {rating} {rating === 1 ? t.star : t.stars}
+              {rating} {rating === 1 ? translations.star : translations.stars}
             </h3>
-            <p className="mb-4">{t.ratingMessages[rating]}</p>
+            <p className="mb-4">{translations.ratingMessages[rating]}</p>
             <textarea
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               className="w-full p-2 border rounded-lg mb-4 h-32"
-              placeholder={t.feedbackPlaceholder}
+              placeholder={translations.feedbackPlaceholder}
               aria-label="Feedback text"
             />
             <div className="flex justify-end">
@@ -182,7 +182,7 @@ const Feedback = () => {
                 onClick={handleSubmit}
                 disabled={isSubmitting}
               >
-                {t.sendComment}
+                {translations.sendComment}
               </Button>
             </div>
           </div>
