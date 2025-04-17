@@ -28,7 +28,7 @@ export const generateUrl = (to, currentPath) => {
   }
   
   // If the URL already has a language prefix, use it
-  if (to.startsWith('/de/') || to.startsWith('/en/')) {
+  if (to.startsWith('/de/') || to.startsWith('/en/') || to.startsWith('/leichte-sprache/')) {
     return to;
   }
   
