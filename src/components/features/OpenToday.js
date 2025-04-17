@@ -24,10 +24,10 @@ const holidays = [
 ];
 
 const OpenToday = () => {
-  const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
-  const t = featureTranslations.openToday[language];
-
   const getOpeningInfo = () => {
+    const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
+    const translations = featureTranslations.openToday[language] || featureTranslations.openToday.de;
+    
     // const now = new Date();
     // const xdate = new Date('2024-12-25T22:00:00');  
     const now = new Date();
@@ -47,7 +47,7 @@ const OpenToday = () => {
     const isHoliday = isDateMatch(holidays, month, date);
     const isWeekend = day === 0 || day === 6;
     const openingTime = isWeekend ? "10:00" : "09:30";
-    const timePrefix = isAfterClosing ? t.tomorrow : t.today;
+    const timePrefix = isAfterClosing ? translations.tomorrow : translations.today;
 
     // Prüfe ob der Zieltag geschlossen ist
     const isTargetDayClosed = isDateMatch(closingDays, month, date) || 
@@ -59,8 +59,8 @@ const OpenToday = () => {
         isOpen: false,
         openingTime: null,
         isHoliday: false,
-        message1: `${timePrefix} ${t.isMuseum2}`,
-        message2: t.closedMessage
+        message1: `${timePrefix} ${translations.isMuseum2}`,
+        message2: translations.closedMessage
       };
     }
 
@@ -69,8 +69,8 @@ const OpenToday = () => {
       isOpen: !isAfterClosing || isTargetDayClosed === false,
       openingTime,
       isHoliday,
-      message1: `${timePrefix} ${isHoliday ? ` (${t.holiday})` : ''} ${t.isMuseum1}`,
-      message2: `${openingTime} ${t.until} 18:00 `
+      message1: `${timePrefix} ${isHoliday ? ` (${translations.holiday})` : ''} ${translations.isMuseum1}`,
+      message2: `${openingTime} ${translations.until} 18:00 `
     };
   };
 

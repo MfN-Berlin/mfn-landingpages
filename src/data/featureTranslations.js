@@ -33,6 +33,20 @@ export const featureTranslations = {
       stars: "stars",
       feedbackPlaceholder: "Your feedback (optional)",
       sendComment: "Send Comment"
+    },
+    'de-x-ls': {
+      title: 'Ihre Meinung ist uns wichtig',
+      subtitle: 'Wie gefällt Ihnen unser Museum?',
+      ratingLabels: {
+        1: 'Nicht gut',
+        2: 'Weniger gut',
+        3: 'Okay',
+        4: 'Gut',
+        5: 'Sehr gut'
+      },
+      submitButton: 'Absenden',
+      thankYouMessage: 'Vielen Dank für Ihre Bewertung!',
+      errorMessage: 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal.'
     }
   },
   openToday: {
@@ -55,10 +69,30 @@ export const featureTranslations = {
       until: "to",
       holiday: "holiday",
       clock: "hrs"
+    },
+    'de-x-ls': {
+      title: 'Öffnungszeiten',
+      subtitle: 'Heute geöffnet',
+      closed: 'Heute geschlossen',
+      specialHours: 'Besondere Öffnungszeiten',
+      regularHours: 'Reguläre Öffnungszeiten',
+      monday: 'Montag',
+      tuesday: 'Dienstag',
+      wednesday: 'Mittwoch',
+      thursday: 'Donnerstag',
+      friday: 'Freitag',
+      saturday: 'Samstag',
+      sunday: 'Sonntag',
+      closedText: 'geschlossen',
+      openText: 'geöffnet',
+      until: 'bis',
+      from: 'von',
+      to: 'bis'
     }
   },
   upcomingHoliday: {
     de: {
+      title: 'Feiertage',
       holidays: [
           { month: 12, date: 24, duration: 3, headline: "Weihnachten 2024", message: "Am 24. und 25. Dezember bleibt das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 bis 18:00 Uhr." },
           { month: 12, date: 31, duration: 3, headline: "Neujahr 2025", message: "am 31. Dezember bleibt das Museum geschlossen, an Neujahr öffnet das Museum wieder, von 10:00 bis 18:00 Uhr." },
@@ -71,6 +105,7 @@ export const featureTranslations = {
       ]
     },
     en: {
+      title: 'Holidays',
       holidays: [
         { month: 12, date: 24, duration: 3, headline: "Christmas 2024", message: "On December 24 and 25, the museum will be closed. On December 26, the museum will open from 10:00 AM to 6:00 PM." },
         { month: 12, date: 31, duration: 3, headline: "New Year 2025", message: "On December 31, the museum will be closed. On New Year's Day, the museum will reopen from 10:00 AM to 6:00 PM." },
@@ -81,6 +116,19 @@ export const featureTranslations = {
         { month: 6, date: 8, duration: 2, headline: "Pentecost", message: "On Pentecost Sunday and Monday, the museum will be open from 10:00 AM to 6:00 PM." },
         { month: 10, date: 3, duration: 1, headline: "German Unity Day", message: "On October 3, the museum will be open from 10:00 AM to 6:00 PM." }
     ]
+    },
+    'de-x-ls': {
+      title: 'Feiertage',
+      holidays: [
+        { month: 12, date: 24, duration: 3, headline: "Weihnachten 2024", message: "Am 24. und 25. Dezember bleibt das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 12, date: 31, duration: 3, headline: "Neujahr 2025", message: "am 31. Dezember bleibt das Museum geschlossen, an Neujahr öffnet das Museum wieder, von 10:00 bis 18:00 Uhr." },
+        { month: 3, date: 8, duration: 1, headline: "Internationaler Frauentag", message: "Am 8. März öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 4, date: 18, duration: 5, headline: "Karfreitag, Ostersonntag und Ostermontag", message: "an Karfreitag, Ostersonntag und Ostermontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 5, date: 1, duration: 1, headline: "Tag der Arbeit", message: "Am 1. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 5, date: 29, duration: 1, headline: "Christi Himmelfahrt", message: "Am 29. Mai hat das Museum von 10:00 bis 18:00 Uhr geöffnet" },
+        { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
+      ]
     }
   },
   accessibilityNav: {
@@ -104,6 +152,17 @@ export const featureTranslations = {
         signLanguage: "/en/sign-language",
         easyLanguage: "/leichte-sprache",
         accessibility: "/en/museum/plan-your-visit/accessibility"
+      }
+    },
+    'leichte-sprache': {
+      homepage: "Startseite",
+      signLanguage: "Gebärdensprache",
+      easyLanguage: "Leichte Sprache",
+      accessibility: "Barrierefreiheit",
+      urls: {
+        signLanguage: "/leichte-sprache/gebaerdensprache",
+        easyLanguage: "/leichte-sprache",
+        accessibility: "/leichte-sprache/barrierefreiheit"
       }
     }
   },
@@ -141,7 +200,7 @@ export const featureTranslations = {
         title: "Newsletter",
         emailPlaceholder: "E-Mail-Adresse",
         subscribe: "Anmelden",
-        privacyNote: "Mit Klick auf „Anmelden“ bestätigen Sie unsere",
+        privacyNote: "Mit Klick auf \"Anmelden\" bestätigen Sie unsere",
         privacyLink: "Datenschutzerklärung"
       },
       links: {
@@ -205,25 +264,70 @@ export const featureTranslations = {
         jobsAndCareer: "Jobs & Career"
       },
       instituteName: "Museum für Naturkunde Leibniz Institute for Evolution and Biodiversity Research"
+    },
+    'leichte-sprache': {
+      socialLinks: {
+        instagram: "Instagram",
+        twitter: "Twitter",
+        tiktok: "TikTok",
+        facebook: "Facebook",
+        linkedin: "LinkedIn",
+        youtube: "YouTube"
+      },
+      address: {
+        title: "Adresse",
+        phone: "Tel",
+        fax: "Fax",
+        email: "E-Mail",
+        website: "museumfuernaturkunde.berlin"
+      },
+      prices: {
+        title: "Eintrittspreise",
+        adult: "Erwachsene",
+        reduced: "Ermäßigt",
+        groupPrices: "Gruppenpreise und Weiteres"
+      },
+      openingHours: {
+        title: "Öffnungszeiten",
+        weekdays: "Dienstag – Freitag",
+        weekend: "Wochenende und Feiertage",
+        weekdayTimes: "9.30 – 18.00 Uhr",
+        weekendTimes: "10.00 – 18.00 Uhr"
+      },
+      newsletter: {
+        title: "Newsletter",
+        emailPlaceholder: "E-Mail-Adresse",
+        subscribe: "Anmelden",
+        privacyNote: "Mit Klick auf \"Anmelden\" bestätigen Sie unsere",
+        privacyLink: "Datenschutzerklärung"
+      },
+      links: {
+        press: "Presse",
+        news: "News",
+        shop: "Shop",
+        privacyPolicy: "Datenschutzerklärung",
+        privacySettings: "Datenschutzeinstellungen",
+        accessibility: "Barrierefreiheit",
+        imprint: "Impressum",
+        newsletter: "Newsletter",
+        jobsAndCareer: "Jobs & Karriere"
+      },
+      instituteName: "Museum für Naturkunde Leibniz-Institut für Evolutions- und Biodiversitätsforschung"
     }
   },
   cookieConsent: {
     de: {
       title: "Datenschutzeinstellungen",
-      intro: "Auf unserer Webseite nutzen wir Cookies und binden Inhalte Dritter wie z. B. Videos ein. Cookies dienen Ihnen dazu, das Anzeigen von Inhalten Dritter und das statistische Erfassen Ihres Besuches auf unserer Webseite zu erlauben. Außerdem ermöglichen Cookies essenzielle Funktionen der Webseite.",
-      privacyLink: "Datenschutzerklärung",
+      intro: "Auf unserer Webseite nutzen wir Cookies und binden Inhalte Dritter wie z. B. Videos ein. Cookies dienen Ihnen dazu, das Anzeigen von Inhalten Dritter und andere Funktionen der Webseite zu erlauben oder zu verbieten. Außerdem ermöglichen Cookies essentielle Funktionen der Webseite.\n\nSie können Ihre Einstellungen jederzeit über den Link Datenschutzeinstellungen im unteren Bereich dieser Webseite ändern.",
+      privacyLink: "Mehr dazu können Sie in unserer Datenschutzerklärung nachlesen.",
       settings: "Einstellungen",
       acceptEssential: "Essenzielles akzeptieren",
       acceptAll: "Alles akzeptieren",
       saveSettings: "Einstellungen übernehmen",
       categories: {
         essential: {
-          title: "Essenziell",
-          description: "Diese Cookies sind notwendig, um die Webseite nutzen zu können."
-        },
-        tracking: {
-          title: "Tracking",
-          description: "Wir nutzen Matomo um das Nutzerverhalten in einer Statistik zu erfassen. Dies erlaubt uns das Nutzerverhalten zu analysieren, um unsere Webseite ständig zu verbessern."
+          title: "Essenzielle Cookies für Datenschutzeinstellungen",
+          description: "Diese Cookies dienen der Speicherung der Einstellungen, die Sie in diesem Formular vornehmen. Gespeichert wird aus den folgenden Gründen: A) Auswahl der von Ihnen zugelassenen Cookies und Funktionen. B) Die Version des Cookie-Banners, um bei Änderungen am Cookie-Banner dieses erneut anzeigen zu können.\n\nSie können das Setzen dieser Cookies nicht deaktivieren, weil ohne diese Cookies keine Speicherung Ihrer Einstellungen erfolgen würde. Dadurch müssten die Datenschutzeinstellungen beim Besuch jeder Seite dieser Internetpräsenz erneut abgefragt werden."
         },
         youtube: {
           title: "Youtube",
@@ -234,8 +338,8 @@ export const featureTranslations = {
           description: "Wir binden Inhalte von Podigee wie z. B. Podcasts auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Podigee geladen werden. Dadurch können personenbezogene Daten an Podigee übertragen werden, als würden Sie die Webseite von Podigee direkt besuchen."
         },
         misc: {
-          title: "Funktionale Cookies",
-          description: "Diese Cookies ermöglichen es der Website, eine verbesserte Funktionalität und Personalisierung zu bieten (z. B. merken wir uns, wenn Sie Hinweise der Seite als gelesen markiert haben und zeigen sie nicht erneut an). Das deaktivieren beeinträchtigt die Funktionalität der Seite nicht."
+          title: "Info-Banner",
+          description: "Diese Cookies sorgen dafür, dass Hinweise, welche von Ihnen als gelesen markiert worden sind, nicht erneut angezeigt werden. Durch Abwählen dieser Option werden Ihnen solche Hinweise bei jedem erneuten Aufrufen der jeweiligen Sektion unserer Internetpräsenz erneut angezeigt."
         }
       },
       accepted: "Zugestimmt",
@@ -243,37 +347,33 @@ export const featureTranslations = {
       back: "zurück"
     },
     en: {
-      title: "Privacy Settings",
-      intro: "On our website, we use cookies and integrate third-party content such as videos. Cookies help you allow the display of third-party content and the statistical recording of your visit to our website. Cookies also enable essential website functions.",
-      privacyLink: "Privacy Policy",
+      title: "Privacy settings",
+      intro: "On our website we use cookies and embed third party content such as videos. Cookies are used to allow you to view third-party content and to use other functions on the website. Cookies also enable essential website functions.\n\nYou can change your settings at any time via the link Privacy Settings at the bottom of this website.",
+      privacyLink: "You can read more about this in our privacy policy.",
       settings: "Settings",
-      acceptEssential: "Accept Essential",
-      acceptAll: "Accept All",
-      saveSettings: "Save Settings",
+      acceptEssential: "Accept essential",
+      acceptAll: "Accept all",
+      saveSettings: "Apply settings",
       categories: {
         essential: {
-          title: "Essential",
-          description: "These cookies are necessary to use the website."
-        },
-        tracking: {
-          title: "Tracking",
-          description: "We use Matomo to record user behavior in statistics. This allows us to analyze user behavior to continuously improve our website."
+          title: "Essential cookies for privacy settings",
+          description: "These cookies are used to store the settings you make in this form. They are stored for the following reasons: A) Selection of the cookies and functions you have allowed. B) The version of the cookie banner so that it can be displayed again if changes are made to the cookie banner.\n\nYou cannot deactivate the setting of these cookies because your settings would not be saved without these cookies. As a result, the data protection settings would have to be queried again each time you visit this website."
         },
         youtube: {
           title: "Youtube",
-          description: "We embed content from Youtube such as videos on our website. This content supplements the information on the respective page. If you activate this option, a cookie will be set that allows you to automatically load content from Youtube. This may transfer personal data to Youtube as if you were visiting the Youtube website directly."
+          description: "We integrate content from Youtube such as videos on our website. This content supplements the information on the respective page. If you activate this option, a cookie is set with which you allow content from Youtube to be loaded automatically. This allows personal data to be transferred to Youtube as if you were visiting Youtube's website directly."
         },
         podigee: {
           title: "Podigee",
-          description: "We embed content from Podigee such as podcasts on our website. This content supplements the information on the respective page. If you activate this option, a cookie will be set that allows you to automatically load content from Podigee. This may transfer personal data to Podigee as if you were visiting the Podigee website directly."
+          description: "We include content from Podigee, such as podcasts, on our website. This content supplements the information on the respective page. If you activate this option, a cookie is set with which you allow content from Podigee to be loaded automatically. This allows personal data to be transferred to Podigee as if you were visiting Podigee's website directly."
         },
         misc: {
-          title: "Functional Cookies",
-          description: "These cookies enable the website to provide enhanced functionality and personalization (e.g., we remember when you have marked notices on the page as read and don't show them again). Disabling these does not impair the functionality of the site."
+          title: "Info banner",
+          description: "These cookies ensure that notices that you have marked as read are not displayed again. If you deselect this option, such notices will be displayed again each time you visit the respective section of our website."
         }
       },
-      accepted: "Accepted",
-      rejected: "Rejected",
+      accepted: "ACCEPTED",
+      rejected: "REJECTED",
       back: "back"
     }
   }

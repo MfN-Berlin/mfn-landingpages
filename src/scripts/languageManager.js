@@ -1,3 +1,5 @@
+console.log('MFN-DEBUG: languageManager.js loaded');
+
 export const LANGUAGES = {
   DE: 'de',
   EN: 'en'
@@ -10,7 +12,7 @@ export const getLanguageFromPath = (path) => {
   
   const pathWithoutPrefix = path.replace('/mfn-landingpages', '');
   
-  const matches = pathWithoutPrefix.match(/^\/(en|de)\//);
+  const matches = pathWithoutPrefix.match(/^\/(en|de|leichte-sprache)\//);
   
   if (matches && matches[1]) {
     return matches[1];
@@ -44,6 +46,15 @@ export const getNavigationData = (language) => {
     return {
       topNavLinks: topNavLinksEn,
       mainNavData: mainNavDataEn,
+      navigationKeyMap
+    };
+  }
+  
+  if (language === 'leichte-sprache') {
+    const { topNavLinks, mainNavData } = require('../data/navigationDataLeichteSprache');
+    return {
+      topNavLinks,
+      mainNavData,
       navigationKeyMap
     };
   }
