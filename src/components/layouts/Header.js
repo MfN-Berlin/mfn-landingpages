@@ -156,35 +156,10 @@ const LanguageSwitcher = ({ currentPath }) => {
     
     // Special handling for leichte-sprache paths
     if (targetLang === 'de-x-ls') {
-      const pathMappings = {
-        '/de/besuch-planen': '/leichte-sprache/besuch-planen',
-        '/de/mitmachen': '/leichte-sprache/mitmachen',
-        '/de/forschung': '/leichte-sprache/forschung',
-        '/de/museum': '/leichte-sprache/museum',
-        '/en/visit': '/leichte-sprache/besuch-planen',
-        '/en/participate': '/leichte-sprache/mitmachen',
-        '/en/research': '/leichte-sprache/forschung',
-        '/en/museum': '/leichte-sprache/museum'
-      };
-
-      // Remove trailing slash if present
-      const normalizedPath = cleanPath.endsWith('/') ? cleanPath.slice(0, -1) : cleanPath;
-      return pathMappings[normalizedPath] || '/leichte-sprache';
+      return getTranslatedUrl(cleanPath, 'leichte-sprache');
     }
     
-    // Handle switching from leichte-sprache to other languages
-    if (cleanPath.startsWith('/leichte-sprache/')) {
-      const pathMappings = {
-        '/leichte-sprache/besuch-planen': targetLang === LANGUAGES.EN ? '/en/visit' : '/de/besuch-planen',
-        '/leichte-sprache/mitmachen': targetLang === LANGUAGES.EN ? '/en/participate' : '/de/mitmachen',
-        '/leichte-sprache/forschung': targetLang === LANGUAGES.EN ? '/en/research' : '/de/forschung',
-        '/leichte-sprache/museum': targetLang === LANGUAGES.EN ? '/en/museum' : '/de/museum'
-      };
-      
-      const normalizedPath = cleanPath.endsWith('/') ? cleanPath.slice(0, -1) : cleanPath;
-      return pathMappings[normalizedPath] || `/${targetLang}/`;
-    }
-    
+    // Direct translation using getTranslatedUrl
     return getTranslatedUrl(cleanPath, targetLang);
   };
 

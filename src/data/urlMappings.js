@@ -1,5 +1,5 @@
 export const urlMappings = {
-  // German to English
+  // Base mappings for German <-> English
   '/de/': '/en/',
   '/de/besuch-planen': '/en/visit',
   '/de/mitmachen': '/en/participate',
@@ -10,8 +10,8 @@ export const urlMappings = {
   '/de/forschung/personensuche': '/en/research/people-search',
   '/de/datenschutzerklaerung': '/en/general-privacy-notice',
   '/de/datenschutzeinstellungen': '/en/privacy-settings',
-  
-  // English to German
+
+  // English to German (reverse mappings)
   '/en/': '/de/',
   '/en/visit': '/de/besuch-planen',
   '/en/participate': '/de/mitmachen',
@@ -23,29 +23,47 @@ export const urlMappings = {
   '/en/general-privacy-notice': '/de/datenschutzerklaerung',
   '/en/privacy-settings': '/de/datenschutzeinstellungen',
 
-  // Leichte Sprache to German
-  '/leichte-sprache/': '/de/',
-  '/leichte-sprache/besuch-planen': '/de/besuch-planen',
-  '/leichte-sprache/mitmachen': '/de/mitmachen',
-  '/leichte-sprache/forschung': '/de/forschung',
-  '/leichte-sprache/museum': '/de/museum',
-  '/leichte-sprache/kontakt': '/de/kontakt',
-  '/leichte-sprache/forschung/publikationen': '/de/forschung/publikationen',
-  '/leichte-sprache/forschung/personensuche': '/de/forschung/personensuche',
-  '/leichte-sprache/datenschutzerklaerung': '/de/datenschutzerklaerung',
-  '/leichte-sprache/datenschutzeinstellungen': '/de/datenschutzeinstellungen',
-
-  // German to Leichte Sprache
-  '/de/': '/leichte-sprache/',
-  '/de/besuch-planen': '/leichte-sprache/besuch-planen',
-  '/de/mitmachen': '/leichte-sprache/mitmachen',
-  '/de/forschung': '/leichte-sprache/forschung',
-  '/de/museum': '/leichte-sprache/museum',
-  '/de/kontakt': '/leichte-sprache/kontakt',
-  '/de/forschung/publikationen': '/leichte-sprache/forschung/publikationen',
-  '/de/forschung/personensuche': '/leichte-sprache/forschung/personensuche',
-  '/de/datenschutzerklaerung': '/leichte-sprache/datenschutzerklaerung',
-  '/de/datenschutzeinstellungen': '/leichte-sprache/datenschutzeinstellungen'
+  // Additional mappings for Leichte Sprache
+  '/leichte-sprache/': {
+    de: '/de/',
+    en: '/en/'
+  },
+  '/leichte-sprache/besuch-planen': {
+    de: '/de/besuch-planen',
+    en: '/en/visit'
+  },
+  '/leichte-sprache/mitmachen': {
+    de: '/de/mitmachen',
+    en: '/en/participate'
+  },
+  '/leichte-sprache/forschung': {
+    de: '/de/forschung',
+    en: '/en/research'
+  },
+  '/leichte-sprache/museum': {
+    de: '/de/museum',
+    en: '/en/museum'
+  },
+  '/leichte-sprache/kontakt': {
+    de: '/de/kontakt',
+    en: '/en/contact'
+  },
+  '/leichte-sprache/forschung/publikationen': {
+    de: '/de/forschung/publikationen',
+    en: '/en/research/publications'
+  },
+  '/leichte-sprache/forschung/personensuche': {
+    de: '/de/forschung/personensuche',
+    en: '/en/research/people-search'
+  },
+  '/leichte-sprache/datenschutzerklaerung': {
+    de: '/de/datenschutzerklaerung',
+    en: '/en/general-privacy-notice'
+  },
+  '/leichte-sprache/datenschutzeinstellungen': {
+    de: '/de/datenschutzeinstellungen',
+    en: '/en/privacy-settings'
+  }
 };
 
 export const getTranslatedUrl = (currentPath, targetLang) => {
@@ -56,46 +74,41 @@ export const getTranslatedUrl = (currentPath, targetLang) => {
   const normalizedPath = currentPath
     .replace(pathPrefix, '')  // Remove path prefix if present
     .replace(/\/$/, '');      // Remove trailing slash
-  
-  let translatedPath;
-  if (targetLang === 'en') {
-    // Looking for German to English mapping
-    if (normalizedPath.startsWith('/de/')) {
-      translatedPath = urlMappings[normalizedPath] || `/${targetLang}${normalizedPath.slice(3)}`;
-    } else if (normalizedPath.startsWith('/leichte-sprache/')) {
-      // Map Leichte Sprache to English via German
-      const germanPath = urlMappings[normalizedPath];
-      translatedPath = urlMappings[germanPath] || `/${targetLang}${germanPath.slice(3)}`;
-    } else {
-      // Already an English path, keep it
-      translatedPath = normalizedPath;
-    }
-  } else if (targetLang === 'leichte-sprache') {
-    // Looking for German to Leichte Sprache mapping
-    if (normalizedPath.startsWith('/de/')) {
-      translatedPath = urlMappings[normalizedPath] || `/${targetLang}${normalizedPath.slice(3)}`;
-    } else if (normalizedPath.startsWith('/en/')) {
-      // Map English to Leichte Sprache via German
-      const germanPath = urlMappings[normalizedPath];
-      translatedPath = urlMappings[germanPath] || `/${targetLang}${germanPath.slice(3)}`;
-    } else {
-      // Already a Leichte Sprache path, keep it
-      translatedPath = normalizedPath;
-    }
-  } else {
-    // Looking for English to German mapping
+
+  // Wenn das Ziel Leichte Sprache ist, müssen wir:
+  // 1. Erst den deutschen Pfad finden (falls wir auf einer englischen Seite sind)
+  // 2. Dann den deutschen Pfad in einen Leichte-Sprache-Pfad umwandeln
+  if (targetLang === 'leichte-sprache') {
+    let germanPath = normalizedPath;
+    
+    // Wenn wir auf einer englischen Seite sind, finden wir erst den deutschen Pfad
     if (normalizedPath.startsWith('/en/')) {
-      const matchingPair = Object.entries(urlMappings).find(([_, en]) => en === normalizedPath);
-      translatedPath = matchingPair ? matchingPair[0] : `/${targetLang}${normalizedPath.slice(3)}`;
-    } else if (normalizedPath.startsWith('/leichte-sprache/')) {
-      // Map Leichte Sprache to German
-      translatedPath = urlMappings[normalizedPath] || `/${targetLang}${normalizedPath.slice(15)}`;
-    } else {
-      // Already a German path, keep it
-      translatedPath = normalizedPath;
+      germanPath = urlMappings[normalizedPath];
+      if (!germanPath) {
+        return `/leichte-sprache${normalizedPath.slice(normalizedPath.indexOf('/', 1))}`;
+      }
+    }
+    
+    // Jetzt wandeln wir den deutschen Pfad in einen Leichte-Sprache-Pfad um
+    return germanPath.replace('/de/', '/leichte-sprache/');
+  }
+  
+  // Standard-Sprachmappings für Deutsch und Englisch
+  if (targetLang === 'en' && normalizedPath.startsWith('/de/')) {
+    const mapping = urlMappings[normalizedPath];
+    if (mapping && mapping.startsWith('/en/')) {
+      return mapping;
+    }
+  }
+  
+  if (targetLang === 'de' && normalizedPath.startsWith('/en/')) {
+    const mapping = urlMappings[normalizedPath];
+    if (mapping && mapping.startsWith('/de/')) {
+      return mapping;
     }
   }
 
-  // Clean up any double slashes and return without prefix
-  return translatedPath.replace(/\/+/g, '/');
+  // Fallback: replace language prefix
+  const pathWithoutLang = normalizedPath.slice(normalizedPath.indexOf('/', 1));
+  return `/${targetLang}${pathWithoutLang}`;
 }; 

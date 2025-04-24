@@ -10,9 +10,26 @@ const Navigation = () => {
   console.log('Current pathname:', pathname);
   
   const getNavigationData = () => {
+    // Für Leichte Sprache immer die deutsche Navigation als Basis verwenden
     if (pathname.startsWith('/leichte-sprache')) {
-      console.log('Using leichte sprache navigation');
-      return mainNavDataLeichteSprache;
+      console.log('Using leichte sprache navigation (based on German)');
+      // Tiefe Kopie der deutschen Navigation erstellen
+      const leichteSpracheNav = JSON.parse(JSON.stringify(mainNavData));
+      
+      // URLs für Leichte Sprache anpassen
+      Object.keys(leichteSpracheNav).forEach(key => {
+        leichteSpracheNav[key].to = leichteSpracheNav[key].to.replace('/de/', '/leichte-sprache/');
+        // Submenu-URLs auch anpassen, falls vorhanden
+        if (leichteSpracheNav[key].submenuColumns) {
+          leichteSpracheNav[key].submenuColumns.forEach(column => {
+            column.items.forEach(item => {
+              item.to = item.to.replace('/de/', '/leichte-sprache/');
+            });
+          });
+        }
+      });
+      
+      return leichteSpracheNav;
     } else if (pathname.startsWith('/en')) {
       console.log('Using English navigation');
       return mainNavDataEn;
