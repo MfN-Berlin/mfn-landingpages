@@ -291,7 +291,7 @@ const PublicationsPage = ({ data }) => {
                     type="search"
                     value={searchTerm}
                     onChange={handleSearch}
-                    placeholder="Suche nach Namen, Jahren, Zeitschriften oder Stichwörtern"
+                    placeholder="Suche nach Namen, Zeitschriften oder Stichwörtern"
                     className="w-full p-2 border border-Black-300 rounded pr-10"
                     aria-label="Suche in allen Projekten"
                   />

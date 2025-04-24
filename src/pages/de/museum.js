@@ -365,7 +365,7 @@ const IndexPage = () => {
             textProps={{
               headline: "Unser Journal „Für Natur“",
               headlineStyle: "h3",
-              body: "In unseren Journalen ür Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
+              body: "In unseren Journalen für Natur nehmen wir Sie mit auf unseren Weg in die Zukunft.",
               spacing: "wide"
             }}
             url="/de/museum/medien/journal-fuer-natur"

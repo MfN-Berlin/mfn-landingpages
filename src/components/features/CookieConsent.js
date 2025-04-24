@@ -5,7 +5,8 @@ import { getLanguageFromPath } from '../../scripts/languageManager';
 import { featureTranslations } from '../../data/featureTranslations';
 
 const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
-  const language = getLanguageFromPath(typeof window !== 'undefined' ? window.location.pathname : '');
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const language = pathname.startsWith('/leichte-sprache') ? 'de' : getLanguageFromPath(pathname);
   const t = featureTranslations.cookieConsent[language];
 
   const [isVisible, setIsVisible] = useState(false);
@@ -16,6 +17,22 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
     media_podigee: false,
     misc: false,
   });
+
+  // Body-Scroll-Lock
+  useEffect(() => {
+    if (isVisible) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = 'calc(100vw - 100%)'; // Verhindert Springen durch Scrollbar
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+  }, [isVisible]);
 
   const getEnvironmentConfig = () => {
     if (typeof window === 'undefined') return {};
@@ -74,7 +91,25 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
     if (typeof window === 'undefined') return;
 
     const existingPreference = getStoredPreference('cookie-agreed');
-    if (!existingPreference) {
+    const storedCategories = getStoredPreference('cookie-agreed-categories');
+    
+    if (existingPreference) {
+      if (storedCategories) {
+        try {
+          const categories = JSON.parse(storedCategories);
+          setPreferences({
+            essential: true,
+            media_youtube: categories.includes('media_youtube'),
+            media_podigee: categories.includes('media_podigee'),
+            misc: categories.includes('misc')
+          });
+        } catch (e) {
+          console.error('Error parsing stored cookie categories:', e);
+        }
+      }
+      
+      setIsVisible(!existingPreference || forceOpen);
+    } else {
       setIsVisible(true);
       setPreferences({
         essential: true,
@@ -83,7 +118,7 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
         misc: false,
       });
     }
-  }, []);
+  }, [forceOpen]);
 
   useEffect(() => {
     if (forceOpen) {
@@ -99,14 +134,30 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
   };
 
   const handleAcceptAll = () => {
+    const newPreferences = {
+      essential: true,
+      media_youtube: true,
+      media_podigee: true,
+      misc: true
+    };
+    setPreferences(newPreferences);
     savePreference('cookie-agreed', '2');
-    savePreference('cookie-agreed-categories', JSON.stringify(["essential","media_youtube","media_podigee","misc"]));
+    savePreference('cookie-agreed-categories', JSON.stringify(['essential', 'media_youtube', 'media_podigee', 'misc']));
     savePreference('cookie-agreed-version', '2.0.0');
     handleClose();
   };
 
   const handleAcceptEssential = () => {
-    savePreference('cookie-agreed', '0');
+    const newPreferences = {
+      essential: true,
+      media_youtube: false,
+      media_podigee: false,
+      misc: false
+    };
+    setPreferences(newPreferences);
+    savePreference('cookie-agreed', '2');
+    savePreference('cookie-agreed-categories', JSON.stringify(['essential']));
+    savePreference('cookie-agreed-version', '2.0.0');
     handleClose();
   };
 
@@ -178,107 +229,110 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-[100] overflow-y-auto py-8" role="dialog" aria-modal="true">
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="bg-white max-w-2xl w-full mx-4 rounded-lg shadow-xl my-auto">
-          <div className="p-6">
-            {!showSettings ? (
-              <div className="mfn-cookie-banner__content">
-                <p className="text-sm text-gray-500 mb-2">Cookies</p>
-                <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
-                <div className="prose prose-sm mb-6">
-                  <p>
-                    {t.intro}
-                  </p>
+    <div className="fixed inset-0 z-[100] overflow-hidden" role="dialog" aria-modal="true">
+      <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
+      <div className="fixed inset-0 overflow-y-auto">
+        <div className="flex min-h-full items-center justify-center p-4">
+          <div className="relative bg-white max-w-2xl w-full mx-auto rounded-lg shadow-xl">
+            <div className="p-6">
+              {!showSettings ? (
+                <div className="mfn-cookie-banner__content">
+                  <p className="text-sm text-gray-500 mb-2">Cookies</p>
+                  <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
+                  <div className="prose prose-sm mb-6">
+                    <p>
+                      {t.intro}
+                    </p>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button
+                      onClick={() => setShowSettings(true)}
+                      variant="primary"
+                      text={t.settings}
+                    />
+                    <Button
+                      onClick={handleAcceptEssential}
+                      variant="primary"
+                      text={t.acceptEssential}
+                    />
+                    <Button
+                      onClick={handleAcceptAll}
+                      variant="primary"
+                      text={t.acceptAll}
+                    />
+                  </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    onClick={() => setShowSettings(true)}
-                    variant="primary"
-                    text={t.settings}
-                  />
-                  <Button
-                    onClick={handleAcceptEssential}
-                    variant="primary"
-                    text={t.acceptEssential}
-                  />
-                  <Button
-                    onClick={handleAcceptAll}
-                    variant="primary"
-                    text={t.acceptAll}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div className="mfn-cookie-banner__content">
-                <div className="flex items-center mb-4">
-                  <button 
-                    onClick={handleBackButton}
-                    className="flex items-center text-gray-600 hover:text-gray-900"
-                  >
-                    <span className="mr-2">←</span> {t.back}
-                  </button>
-                </div>
-                <p className="text-sm text-gray-500 mb-2">Cookies</p>
-                <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
-                
-                <div className="prose prose-sm mb-6">
-                  <p>
-                    {t.intro}
-                  </p>
-                </div>
-                
-                <div className="space-y-6 mb-6">
-                  <CookieServiceItem
-                    title={t.categories.essential.title}
-                    description={t.categories.essential.description}
-                    isActive={true}
-                    isReadOnly={true}
-                  />
+              ) : (
+                <div className="mfn-cookie-banner__content">
+                  <div className="flex items-center mb-4">
+                    <button 
+                      onClick={handleBackButton}
+                      className="flex items-center text-gray-600 hover:text-gray-900"
+                    >
+                      <span className="mr-2">←</span> {t.back}
+                    </button>
+                  </div>
+                  <p className="text-sm text-gray-500 mb-2">Cookies</p>
+                  <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
                   
-                  <CookieServiceItem
-                    title={t.categories.youtube.title}
-                    description={t.categories.youtube.description}
-                    isActive={preferences.media_youtube}
-                    isReadOnly={false}
-                    onChange={() => setPreferences(prev => ({
-                      ...prev,
-                      media_youtube: !prev.media_youtube
-                    }))}
-                  />
+                  <div className="prose prose-sm mb-6">
+                    <p>
+                      {t.intro}
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-6 mb-6">
+                    <CookieServiceItem
+                      title={t.categories.essential.title}
+                      description={t.categories.essential.description}
+                      isActive={true}
+                      isReadOnly={true}
+                    />
+                    
+                    <CookieServiceItem
+                      title={t.categories.youtube.title}
+                      description={t.categories.youtube.description}
+                      isActive={preferences.media_youtube}
+                      isReadOnly={false}
+                      onChange={() => setPreferences(prev => ({
+                        ...prev,
+                        media_youtube: !prev.media_youtube
+                      }))}
+                    />
 
-                  <CookieServiceItem
-                    title={t.categories.podigee.title}
-                    description={t.categories.podigee.description}
-                    isActive={preferences.media_podigee}
-                    isReadOnly={false}
-                    onChange={() => setPreferences(prev => ({
-                      ...prev,
-                      media_podigee: !prev.media_podigee
-                    }))}
-                  />
+                    <CookieServiceItem
+                      title={t.categories.podigee.title}
+                      description={t.categories.podigee.description}
+                      isActive={preferences.media_podigee}
+                      isReadOnly={false}
+                      onChange={() => setPreferences(prev => ({
+                        ...prev,
+                        media_podigee: !prev.media_podigee
+                      }))}
+                    />
 
-                  <CookieServiceItem
-                    title={t.categories.misc.title}
-                    description={t.categories.misc.description}
-                    isActive={preferences.misc}
-                    isReadOnly={false}
-                    onChange={() => setPreferences(prev => ({
-                      ...prev,
-                      misc: !prev.misc
-                    }))}
-                  />
+                    <CookieServiceItem
+                      title={t.categories.misc.title}
+                      description={t.categories.misc.description}
+                      isActive={preferences.misc}
+                      isReadOnly={false}
+                      onChange={() => setPreferences(prev => ({
+                        ...prev,
+                        misc: !prev.misc
+                      }))}
+                    />
+                  </div>
+
+                  <div className="flex justify-end">
+                    <Button
+                      onClick={handleSaveSettings}
+                      variant="primary"
+                      text={t.saveSettings}
+                    />
+                  </div>
                 </div>
-
-                <div className="flex justify-end">
-                  <Button
-                    onClick={handleSaveSettings}
-                    variant="primary"
-                    text={t.saveSettings}
-                  />
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

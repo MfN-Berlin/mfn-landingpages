@@ -318,63 +318,61 @@ export const featureTranslations = {
   cookieConsent: {
     de: {
       title: "Datenschutzeinstellungen",
-      intro: "Auf unserer Webseite nutzen wir Cookies und binden Inhalte Dritter wie z. B. Videos ein. Cookies dienen Ihnen dazu, das Anzeigen von Inhalten Dritter und andere Funktionen der Webseite zu erlauben oder zu verbieten. Außerdem ermöglichen Cookies essentielle Funktionen der Webseite.\n\nSie können Ihre Einstellungen jederzeit über den Link Datenschutzeinstellungen im unteren Bereich dieser Webseite ändern.",
-      privacyLink: "Mehr dazu können Sie in unserer Datenschutzerklärung nachlesen.",
-      settings: "Einstellungen",
-      acceptEssential: "Essenzielles akzeptieren",
-      acceptAll: "Alles akzeptieren",
-      saveSettings: "Einstellungen übernehmen",
+      intro: "Wir verwenden Cookies und ähnliche Technologien, um Ihnen ein optimales Nutzungserlebnis zu bieten. Einige sind technisch notwendig, andere helfen uns, unser Angebot zu verbessern.",
+      settings: "Einstellungen anpassen",
+      acceptEssential: "Nur notwendige akzeptieren",
+      acceptAll: "Alle akzeptieren",
+      back: "Zurück",
+      accepted: "AN",
+      rejected: "AUS",
+      saveSettings: "Einstellungen speichern",
       categories: {
         essential: {
-          title: "Essenzielle Cookies für Datenschutzeinstellungen",
-          description: "Diese Cookies dienen der Speicherung der Einstellungen, die Sie in diesem Formular vornehmen. Gespeichert wird aus den folgenden Gründen: A) Auswahl der von Ihnen zugelassenen Cookies und Funktionen. B) Die Version des Cookie-Banners, um bei Änderungen am Cookie-Banner dieses erneut anzeigen zu können.\n\nSie können das Setzen dieser Cookies nicht deaktivieren, weil ohne diese Cookies keine Speicherung Ihrer Einstellungen erfolgen würde. Dadurch müssten die Datenschutzeinstellungen beim Besuch jeder Seite dieser Internetpräsenz erneut abgefragt werden."
+          title: "Technisch notwendige Cookies",
+          description: "Diese Cookies sind für den Betrieb der Website erforderlich und können nicht deaktiviert werden."
         },
         youtube: {
-          title: "Youtube",
-          description: "Wir binden Inhalte von Youtube wie z. B. Videos auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Youtube geladen werden. Dadurch können personenbezogene Daten an Youtube übertragen werden, als würden Sie die Webseite von Youtube direkt besuchen."
+          title: "YouTube",
+          description: "Ermöglicht das Einbetten von YouTube-Videos."
         },
         podigee: {
           title: "Podigee",
-          description: "Wir binden Inhalte von Podigee wie z. B. Podcasts auf unserer Webseite ein. Diese Inhalte ergänzen die Informationen auf der jeweiligen Seite. Wenn Sie diese Option aktivieren, wird ein Cookie gesetzt, mit dem Sie erlauben, dass automatisch Inhalte von Podigee geladen werden. Dadurch können personenbezogene Daten an Podigee übertragen werden, als würden Sie die Webseite von Podigee direkt besuchen."
+          description: "Ermöglicht das Einbetten von Podigee-Podcasts."
         },
         misc: {
-          title: "Info-Banner",
-          description: "Diese Cookies sorgen dafür, dass Hinweise, welche von Ihnen als gelesen markiert worden sind, nicht erneut angezeigt werden. Durch Abwählen dieser Option werden Ihnen solche Hinweise bei jedem erneuten Aufrufen der jeweiligen Sektion unserer Internetpräsenz erneut angezeigt."
+          title: "Sonstige externe Medien",
+          description: "Ermöglicht das Einbetten von externen Medien wie Karten oder Social Media."
         }
-      },
-      accepted: "Zugestimmt",
-      rejected: "Abgelehnt",
-      back: "zurück"
+      }
     },
     en: {
-      title: "Privacy settings",
-      intro: "On our website we use cookies and embed third party content such as videos. Cookies are used to allow you to view third-party content and to use other functions on the website. Cookies also enable essential website functions.\n\nYou can change your settings at any time via the link Privacy Settings at the bottom of this website.",
-      privacyLink: "You can read more about this in our privacy policy.",
-      settings: "Settings",
-      acceptEssential: "Accept essential",
+      title: "Privacy Settings",
+      intro: "We use cookies and similar technologies to provide you with an optimal user experience. Some are technically necessary, others help us improve our service.",
+      settings: "Adjust settings",
+      acceptEssential: "Accept only necessary",
       acceptAll: "Accept all",
-      saveSettings: "Apply settings",
+      back: "Back",
+      accepted: "ON",
+      rejected: "OFF",
+      saveSettings: "Save settings",
       categories: {
         essential: {
-          title: "Essential cookies for privacy settings",
-          description: "These cookies are used to store the settings you make in this form. They are stored for the following reasons: A) Selection of the cookies and functions you have allowed. B) The version of the cookie banner so that it can be displayed again if changes are made to the cookie banner.\n\nYou cannot deactivate the setting of these cookies because your settings would not be saved without these cookies. As a result, the data protection settings would have to be queried again each time you visit this website."
+          title: "Technically necessary cookies",
+          description: "These cookies are required for the operation of the website and cannot be deactivated."
         },
         youtube: {
-          title: "Youtube",
-          description: "We integrate content from Youtube such as videos on our website. This content supplements the information on the respective page. If you activate this option, a cookie is set with which you allow content from Youtube to be loaded automatically. This allows personal data to be transferred to Youtube as if you were visiting Youtube's website directly."
+          title: "YouTube",
+          description: "Enables the embedding of YouTube videos."
         },
         podigee: {
           title: "Podigee",
-          description: "We include content from Podigee, such as podcasts, on our website. This content supplements the information on the respective page. If you activate this option, a cookie is set with which you allow content from Podigee to be loaded automatically. This allows personal data to be transferred to Podigee as if you were visiting Podigee's website directly."
+          description: "Enables the embedding of Podigee podcasts."
         },
         misc: {
-          title: "Info banner",
-          description: "These cookies ensure that notices that you have marked as read are not displayed again. If you deselect this option, such notices will be displayed again each time you visit the respective section of our website."
+          title: "Other external media",
+          description: "Enables the embedding of external media such as maps or social media."
         }
-      },
-      accepted: "ACCEPTED",
-      rejected: "REJECTED",
-      back: "back"
+      }
     }
   }
 }; 

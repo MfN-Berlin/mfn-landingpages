@@ -416,7 +416,7 @@ const VisitPage = () => {
 
                     </Slideshow>
                 </Section>
-                {/* <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
+                <Section backgroundColor="bg-White" columns={1} padding="pt-16 pb-8">
                     <CardText
                         headline="Publikationen"
                         headlineStyle="h1"
@@ -424,30 +424,30 @@ const VisitPage = () => {
                         alignment="center"
                         buttons={[
                             {
-                                text: "Publikationen 2007 - 2023",
+                                text: "Publikationen 2017 - 2024",
                                 variant: "plain",
                                 url: "/de/forschung/publikationen/"
                             }
                         ]}
                     />
-                </Section> */}
-                {/* <Section backgroundColor="bg-White" columns={3} padding="pb-16">
+                </Section>
+                <Section backgroundColor="bg-White" columns={3} padding="pb-16">
                     <Link to="/de/presse/pressemitteilungen/wie-lebensstrategien-und-lebensraeume-die-regenerationsfaehigkeiten-von" className="group w-full p-3 rounded-[10px] inline-flex flex-col items-start gap-2.5 hover:bg-Green-200 focus:border-2 focus:border-[#729800]">
                         <div className="w-full bg-Green-100 flex flex-col  ">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
-                                    Ausgewählte Publikation 2024                                </p>
+                                    Ausgewählte Publikation 2025                                </p>
                                 <h3 className="text-White-White font-normal">
-                                    Effects of life history strategies and habitats on limb regeneration in plethodontid salamanders
+                                    Bats resolve conflicting sensory information for individual recognition
                                 </h3>
                             </div>
                             <div className="w-full p-[30px] flex flex-col gap-2.5">
                                 <p className="text-Black-700 text-sm leading-tight">
-                                    Bothe, V., Müller, H., Shubin, N., & Fröbisch, N. (2024). 
-                                    <span className="font-bold">Effects of life history strategies and habitats on limb regeneration in plethodontid salamanders</span>. 
-                                    <span className="italic">Developmental Dynamics</span>. 
-                                    <a href="https://doi.org/10.1002/dvdy.742" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
-                                        https://doi.org/10.1002/dvdy.742
+                                    Knörnschild, M., Nagy, M., Russo, D., (2025).  
+                                    <span className="italic">Current Biology</span>.&nbsp; 
+                                    <span className="font-bold">Bats resolve conflicting sensory information for individual recognition</span>. 
+                                    <a href="https://doi.org/10.1016/j.cub.2025.02.060" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
+                                    https://doi.org/10.1016/j.cub.2025.02.060
                                     </a>
                                 </p>
                             </div>
@@ -458,18 +458,18 @@ const VisitPage = () => {
                         <div className="w-full bg-Green-100 flex flex-col ">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
-                                    Ausgewählte Publikation 2024                                </p>
+                                    Ausgewählte Publikation 2025                                </p>
                                 <h3 className="text-White-White font-normal">
-                                    A comprehensive phylogeny and revised taxonomy of Diadectomorpha with a discussion on the origin of tetrapod herbivory
+                                Digitization as a research methodology in colonial natural history collections
                                 </h3>
                             </div>
                             <div className="w-full p-[30px] flex flex-col gap-2.5">
                                 <p className="text-Black-700 text-sm leading-tight">
-                                    Ponstein, J., MacDougall, M. J., & Fröbisch, J. (2024). 
-                                    <span className="font-bold">A comprehensive phylogeny and revised taxonomy of Diadectomorpha with a discussion on the origin of tetrapod herbivory</span>. 
-                                    <span className="italic">Royal Society Open Science</span>. 
-                                    <a href="https://doi.org/10.1098/rsos.231355" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
-                                        https://doi.org/10.1098/rsos.231355
+                                Díez Díaz, V., Akhlaq, S., Kaiser, K., Heumann, I. & Schwarz, D. (2025). 
+                                    <span className="italic">Nature Reviews Biodiversity</span>. 
+                                    <span className="font-bold">Digitization as a research methodology in colonial natural history collections</span>. 
+                                    <a href="https://doi.org/10.1038/s44358-025-00031-2" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
+                                    https://doi.org/10.1038/s44358-025-00031-2
                                     </a>
                                 </p>
                             </div>
@@ -480,24 +480,24 @@ const VisitPage = () => {
                         <div className="w-full bg-Green-100 flex flex-col ">
                             <div className="w-full p-[30px] bg-Green-500 flex flex-col gap-20 group-hover:bg-Green-600 transition-colors duration-300">
                                 <p className="typography-kicker text-White-White font-normal">
-                                    Ausgewählte Publikation 2024                                </p>
+                                    Ausgewählte Publikation 2025                                </p>
                                 <h3 className="text-White-White font-normal">
-                                    Contemporary intergeneric hybridization and backcrossing among birds-of-paradise
+                                Revision of Romanian sauropod dinosaurs reveals high titanosaur diversity and body-size disparity on the latest Cretaceous Haţeg Island, with implications for titanosaurian biogeography
                                 </h3>
                             </div>
                             <div className="w-full p-[30px] flex flex-col gap-2.5">
                                 <p className="text-Black-700 text-sm leading-tight">
                                     Thörn, F., Soares, A. E. R., Müller, I. A., Päckert, M., Frahnert, S., van Grouw, H., Kamminga, P., Peona, V., Suh, A., Blom, M. P. K., & Irestedt, M. (2024). 
-                                    <span className="font-bold">Contemporary intergeneric hybridization and backcrossing among birds-of-paradise</span>. 
-                                    <span className="italic">Evolution Letters</span>. 
-                                    <a href="https://doi.org/10.1093/evlett/qrae023" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
-                                        https://doi.org/10.1093/evlett/qrae023
+                                    <span className="font-bold">Revision of Romanian sauropod dinosaurs reveals high titanosaur diversity and body-size disparity on the latest Cretaceous Haţeg Island, with implications for titanosaurian biogeography.</span>. 
+                                    <span className="italic">Journal of Systematic Palaeontology, 23(1).</span>. 
+                                    <a href="https://doi.org/10.1080/14772019.2024.2441516" className="text-Green-500 hover:text-Green-600 hover:underline break-all">
+                                    https://doi.org/10.1080/14772019.2024.2441516
                                     </a>
                                 </p>
                             </div>
                         </div>
                     </Link>
-                </Section> */}
+                </Section>
                 <Section columns={1} backgroundColor="bg-Black-100">
                     <CardText
                         headline="Kontakt"
