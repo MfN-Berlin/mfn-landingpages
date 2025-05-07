@@ -20,7 +20,15 @@ const holidays = [
   { month: 12, date: 26 }, // 2. Weihnachtsfeiertag
   { month: 1, date: 1 },   // Neujahr
   { month: 3, date: 8 },   // Internationaler Frauentag
-  // ... other holidays
+  { month: 3, date: 8 },   // Internationaler Frauentag 2025
+  { month: 4, date: 18 },  // Karfreitag 2025
+  { month: 4, date: 20 },  // Ostersonntag 2025
+  { month: 4, date: 21 },  // Ostermontag 2025
+  { month: 5, date: 1 },   // Tag der Arbeit 2025
+  { month: 5, date: 29 },  // Christi Himmelfahrt 2025
+  { month: 6, date: 8 },   // Pfingstsonntag 2025
+  { month: 6, date: 9 },   // Pfingstmontag 2025
+  { month: 10, date: 3 },  // Tag der Deutschen Einheit 2025
 ];
 
 const OpenToday = () => {

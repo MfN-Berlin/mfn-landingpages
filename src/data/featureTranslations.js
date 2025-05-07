@@ -112,6 +112,7 @@ export const featureTranslations = {
         { month: 3, date: 8, duration: 1, headline: "International Women's Day", message: "On March 8, the museum will be open from 10:00 AM to 6:00 PM." },
         { month: 4, date: 18, duration: 5, headline: "Good Friday, Easter Sunday, and Easter Monday", message: "On Good Friday, Easter Sunday, and Easter Monday, the museum will be open from 10:00 AM to 6:00 PM." },
         { month: 5, date: 1, duration: 1, headline: "Labor Day", message: "On May 1, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 5, date: 8, duration: 1, headline: "80. Jahrestag der Befreiung vom Nationalsozialismus", message: "On May 8, the museum will be open from 10:00 AM to 6:00 PM." },
         { month: 5, date: 29, duration: 1, headline: "Ascension Day", message: "On May 29, the museum will be open from 10:00 AM to 6:00 PM." },
         { month: 6, date: 8, duration: 2, headline: "Pentecost", message: "On Pentecost Sunday and Monday, the museum will be open from 10:00 AM to 6:00 PM." },
         { month: 10, date: 3, duration: 1, headline: "German Unity Day", message: "On October 3, the museum will be open from 10:00 AM to 6:00 PM." }
@@ -125,6 +126,7 @@ export const featureTranslations = {
         { month: 3, date: 8, duration: 1, headline: "Internationaler Frauentag", message: "Am 8. März öffnet das Museum von 10:00 bis 18:00 Uhr." },
         { month: 4, date: 18, duration: 5, headline: "Karfreitag, Ostersonntag und Ostermontag", message: "an Karfreitag, Ostersonntag und Ostermontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
         { month: 5, date: 1, duration: 1, headline: "Tag der Arbeit", message: "Am 1. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 5, date: 8, duration: 1, headline: "80. Jahrestag der Befreiung vom Nationalsozialismus", message: "Am 8. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
         { month: 5, date: 29, duration: 1, headline: "Christi Himmelfahrt", message: "Am 29. Mai hat das Museum von 10:00 bis 18:00 Uhr geöffnet" },
         { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
         { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
