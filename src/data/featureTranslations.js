@@ -99,6 +99,7 @@ export const featureTranslations = {
           { month: 3, date: 8, duration: 1, headline: "Internationaler Frauentag", message: "Am 8. März öffnet das Museum von 10:00 bis 18:00 Uhr." },
           { month: 4, date: 18, duration: 5, headline: "Karfreitag, Ostersonntag und Ostermontag", message: "an Karfreitag, Ostersonntag und Ostermontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
           { month: 5, date: 1, duration: 1, headline: "Tag der Arbeit", message: "Am 1. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 5, date: 8, duration: 1, headline: "80. Jahrestag der Befreiung vom Nationalsozialismus", message: "Am 8. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
           { month: 5, date: 29, duration: 1, headline: "Christi Himmelfahrt", message: "Am 29. Mai hat das Museum von 10:00 bis 18:00 Uhr geöffnet" },
           { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
           { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
