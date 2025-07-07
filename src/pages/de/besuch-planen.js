@@ -392,14 +392,14 @@ const IndexPage = () => {
                     <li>
                       <div className="flex justify-between items-baseline">
                         <p className="flex-1 pr-8">
-                          ICOM-Mitglieder und Mitgliederinnen (Internationaler Museumsrat, International Council of Museums)
+                          ICOM-Mitglieder (Internationaler Museumsrat, International Council of Museums)
                         </p>
                       </div>
                     </li>
                     <li>
                       <div className="flex justify-between items-baseline">
                         <p className="flex-1 pr-8">
-                          Mitglieder und Mitgliederinnen der WFTGA (the World Federation of Tourist Guide Associations)
+                          Mitglieder der WFTGA (the World Federation of Tourist Guide Associations)
                         </p>
                       </div>
                     </li>
