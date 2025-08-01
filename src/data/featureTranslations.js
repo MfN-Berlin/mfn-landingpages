@@ -102,7 +102,7 @@ export const featureTranslations = {
           // { month: 5, date: 8, duration: 1, headline: "80. Jahrestag der Befreiung vom Nationalsozialismus", message: "Am 8. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
           // { month: 5, date: 29, duration: 1, headline: "Christi Himmelfahrt", message: "Am 29. Mai hat das Museum von 10:00 bis 18:00 Uhr geöffnet" },
           // { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
-          { month: 8, date: 3, duration: 3, headline: "Wartungsarbeiten", message: "Am 3. und 5. Mai bleibt das Museum aufgrund von Wartungsarbeiten geschlossen." },
+          { month: 8, date: 3, duration: 3, headline: "Wartungsarbeiten", message: "Am 3. und 5. August bleibt das Museum aufgrund von Wartungsarbeiten geschlossen." },
           { month: 9, date: 19, duration: 2, headline: "Geschlossene Veranstaltung", message: "Am 19. und 20. September bleibt das Museum aufgrund von Veranstaltungen geschlossen." },
           { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
       ]
@@ -134,7 +134,7 @@ export const featureTranslations = {
         // { month: 5, date: 8, duration: 1, headline: "80. Jahrestag der Befreiung vom Nationalsozialismus", message: "Am 8. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
         // { month: 5, date: 29, duration: 1, headline: "Christi Himmelfahrt", message: "Am 29. Mai hat das Museum von 10:00 bis 18:00 Uhr geöffnet" },
         // { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
-        { month: 8, date: 3, duration: 3, headline: "Schließung wegen Umbau", message: "Am 3. und 5. Mai bleibt das Museum aufgrund von Wartungsarbeiten geschlossen." },
+        { month: 8, date: 3, duration: 3, headline: "Schließung wegen Umbau", message: "Am 3. und 5. August bleibt das Museum aufgrund von Wartungsarbeiten geschlossen." },
         { month: 9, date: 19, duration: 2, headline: "Geschlossene Veranstaltung", message: "Am 19. und 20. September bleibt das Museum aufgrund von Veranstaltungen geschlossen." },
         { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
       ]
