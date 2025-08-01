@@ -13,6 +13,10 @@ const closingDays = [
   { month: 12, date: 24 },
   { month: 12, date: 25 },
   { month: 12, date: 31 },
+  { month: 8, date: 3 },
+  { month: 8, date: 5 },
+  { month: 9, date: 19 },
+  { month: 9, date: 20 },
 ];
 
 const holidays = [
