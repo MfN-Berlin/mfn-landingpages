@@ -104,7 +104,14 @@ export const featureTranslations = {
           // { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
           { month: 8, date: 3, duration: 3, headline: "Wartungsarbeiten", message: "Am 3. und 5. August bleibt das Museum aufgrund von Wartungsarbeiten geschlossen." },
           { month: 9, date: 19, duration: 2, headline: "Geschlossene Veranstaltung", message: "Am 19. und 20. September bleibt das Museum aufgrund von Veranstaltungen geschlossen." },
-          { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
+          { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 12, date: 24, duration: 3, headline: "Weihnachten 2025", message: "Am 24. und 25. Dezember bleibt das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 1, date: 1, duration: 1, headline: "Neujahr", message: "Am 1. Januar öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 4, date: 3, duration: 1, headline: "Karfreitag", message: "Am 3. April öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 4, date: 6, duration: 1, headline: "Ostermontag", message: "Am 6. April öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 5, date: 1, duration: 1, headline: "Tag der Arbeit", message: "Am 1. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 5, date: 14, duration: 1, headline: "Christi Himmelfahrt", message: "Am 14. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+          { month: 5, date: 24, duration: 2, headline: "Pfingstsonntag und Pfingstmontag", message: "Am 24 und 25. Mai öffnet das Museum jeweils von 10:00 bis 18:00 Uhr." }
       ]
     },
     en: {
@@ -120,7 +127,14 @@ export const featureTranslations = {
         // { month: 6, date: 8, duration: 2, headline: "Pentecost", message: "On Pentecost Sunday and Monday, the museum will be open from 10:00 AM to 6:00 PM." },
         { month: 8, date: 3, duration: 3, headline: "Schließung wegen Umbau", message: "The museum will be closed from August 3 to 5 due to maintenance work." },
         { month: 9, date: 19, duration: 2, headline: "Geschlossene Veranstaltung", message: "The museum will be closed from September 19 to 20 due to an event." },
-        { month: 10, date: 3, duration: 1, headline: "German Unity Day", message: "On October 3, the museum will be open from 10:00 AM to 6:00 PM." }
+        { month: 10, date: 3, duration: 1, headline: "German Unity Day", message: "On October 3, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 12, date: 24, duration: 3, headline: "Christmas 2025", message: "On December 24 and 25, the museum will be closed. On December 26, the museum will open from 10:00 AM to 6:00 PM." },
+        { month: 1, date: 1, duration: 1, headline: "New Year's Day", message: "On January 1, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 4, date: 3, duration: 1, headline: "Good Friday", message: "On April 3, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 4, date: 6, duration: 1, headline: "Easter Monday", message: "On April 6, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 5, date: 1, duration: 1, headline: "Labor Day", message: "On May 1, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 5, date: 14, duration: 1, headline: "Ascension Day", message: "On May 14, the museum will be open from 10:00 AM to 6:00 PM." },
+        { month: 5, date: 24, duration: 2, headline: "Pentecost Sunday and Monday", message: "On May 24 and 25, the museum will be open from 10:00 AM to 6:00 PM." }
     ]
     },
     'de-x-ls': {
@@ -136,7 +150,14 @@ export const featureTranslations = {
         // { month: 6, date: 8, duration: 2, headline: "Pfingsten", message: "An Pfingstsonntag und Pfingstmontag öffnet das Museum von 10:00 bis 18:00 Uhr." },
         { month: 8, date: 3, duration: 3, headline: "Schließung wegen Umbau", message: "Am 3. und 5. August bleibt das Museum aufgrund von Wartungsarbeiten geschlossen." },
         { month: 9, date: 19, duration: 2, headline: "Geschlossene Veranstaltung", message: "Am 19. und 20. September bleibt das Museum aufgrund von Veranstaltungen geschlossen." },
-        { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." }
+        { month: 10, date: 3, duration: 1, headline: "Tag der Deutschen Einheit", message: "Am 3. Oktober öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 12, date: 24, duration: 3, headline: "Weihnachten 2025", message: "Am 24. und 25. Dezember bleibt das Museum geschlossen. Am 26. Dezember öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 1, date: 1, duration: 1, headline: "Neujahr", message: "Am 1. Januar öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 4, date: 3, duration: 1, headline: "Karfreitag", message: "Am 3. April öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 4, date: 6, duration: 1, headline: "Ostermontag", message: "Am 6. April öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 5, date: 1, duration: 1, headline: "Tag der Arbeit", message: "Am 1. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 5, date: 14, duration: 1, headline: "Christi Himmelfahrt", message: "Am 14. Mai öffnet das Museum von 10:00 bis 18:00 Uhr." },
+        { month: 5, date: 24, duration: 2, headline: "Pfingstsonntag und Pfingstmontag", message: "Am 24 und 25. Mai öffnet das Museum jeweils von 10:00 bis 18:00 Uhr." }
       ]
     }
   },
