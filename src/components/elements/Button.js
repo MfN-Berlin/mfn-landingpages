@@ -29,7 +29,7 @@ const Button = ({ text, children, variant = 'primary', url, onClick, className =
                   ? 'EXTERNAL_LINK_CLICK'
                   : 'INTERNAL_LINK_CLICK';
       
-      window.fathom.trackGoal(eventName, 0);
+      window.fathom.trackEvent(eventName);
     }
 
     if (onClick) {

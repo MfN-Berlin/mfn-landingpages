@@ -55,7 +55,7 @@ const Feedback = () => {
     
     // Fathom tracking für Feedback-Interaktionen
     if (typeof window !== 'undefined' && window.fathom) {
-      window.fathom.trackGoal('FEEDBACK_RATING_CLICK', selectedRating);
+      window.fathom.trackEvent('FEEDBACK_RATING_CLICK', { _value: selectedRating });
     }
   };
 

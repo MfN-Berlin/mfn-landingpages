@@ -40,7 +40,7 @@ export const AccordionItem = ({ children, title, index }) => {
     if (typeof window !== 'undefined' && window.fathom) {
       const action = isOpen ? 'CLOSE' : 'OPEN';
       const sectionName = title.replace(/[^a-zA-Z0-9]/g, '_').toUpperCase();
-      window.fathom.trackGoal(`ACCORDION_${action}_${sectionName}`, 0);
+      window.fathom.trackEvent(`ACCORDION_${action}_${sectionName}`);
     }
     
     handleIndexChange(isOpen ? null : index);
