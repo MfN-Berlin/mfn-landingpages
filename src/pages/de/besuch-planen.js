@@ -51,7 +51,11 @@ const IndexPage = () => {
   // Fathom tracking function
   const trackEvent = (eventName, value = null) => {
     if (typeof window !== 'undefined' && window.fathom) {
-      window.fathom.trackGoal(eventName, value || 0);
+      if (value !== null) {
+        window.fathom.trackEvent(eventName, { _value: value });
+      } else {
+        window.fathom.trackEvent(eventName);
+      }
     }
   };
 

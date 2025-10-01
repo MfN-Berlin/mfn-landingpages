@@ -17,7 +17,7 @@ const Slideshow = ({ children, imageMap, centered = false }) => {
       emblaApi.scrollPrev();
       // Fathom tracking
       if (typeof window !== 'undefined' && window.fathom) {
-        window.fathom.trackGoal('SLIDESHOW_PREV', 0);
+        window.fathom.trackEvent('SLIDESHOW_PREV');
       }
     }
   }, [emblaApi]);
@@ -27,7 +27,7 @@ const Slideshow = ({ children, imageMap, centered = false }) => {
       emblaApi.scrollNext();
       // Fathom tracking
       if (typeof window !== 'undefined' && window.fathom) {
-        window.fathom.trackGoal('SLIDESHOW_NEXT', 0);
+        window.fathom.trackEvent('SLIDESHOW_NEXT');
       }
     }
   }, [emblaApi]);
@@ -37,7 +37,7 @@ const Slideshow = ({ children, imageMap, centered = false }) => {
       emblaApi.scrollTo(index);
       // Fathom tracking
       if (typeof window !== 'undefined' && window.fathom) {
-        window.fathom.trackGoal('SLIDESHOW_DOT_CLICK', index);
+        window.fathom.trackEvent('SLIDESHOW_DOT_CLICK', { _value: index });
       }
     }
   }, [emblaApi]);
