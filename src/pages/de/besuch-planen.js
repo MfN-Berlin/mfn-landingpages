@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useEffect, useRef } from "react"
 import { graphql, useStaticQuery, withPrefix, Link } from "gatsby"  // Gatsby-spezifische Imports für Datenabfragen und Navigation
 import Header from "../../components/layouts/Header"  // Kopfbereich der Seite mit Navigation
 import Button from "../../components/elements/Button"  // Wiederverwendbare Button-Komponente
@@ -41,12 +42,81 @@ const IndexPage = () => {
     imageMap[node.relativePath] = node.childImageSharp?.gatsbyImageData;
   });
 
+  // Fathom tracking refs
+  const sectionRefs = useRef({});
+  const trackedSections = useRef(new Set());
+  const startTime = useRef(Date.now());
+  const scrollDepthTracked = useRef(new Set());
+
+  // Fathom tracking function
+  const trackEvent = (eventName, value = null) => {
+    if (typeof window !== 'undefined' && window.fathom) {
+      window.fathom.trackGoal(eventName, value || 0);
+    }
+  };
+
+  // Scroll tracking effect
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+      // Track scroll depth milestones
+      [25, 50, 75, 100].forEach(milestone => {
+        if (scrollPercent >= milestone && !scrollDepthTracked.current.has(milestone)) {
+          scrollDepthTracked.current.add(milestone);
+          trackEvent(`SCROLL_${milestone}`, milestone);
+        }
+      });
+
+      // Track section visibility
+      Object.entries(sectionRefs.current).forEach(([sectionName, ref]) => {
+        if (ref && !trackedSections.current.has(sectionName)) {
+          const rect = ref.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight * 0.5 && rect.bottom > 0;
+          
+          if (isVisible) {
+            trackedSections.current.add(sectionName);
+            const timeToSection = Math.round((Date.now() - startTime.current) / 1000);
+            trackEvent(`SECTION_${sectionName.toUpperCase()}`, timeToSection);
+          }
+        }
+      });
+    };
+
+    // Track initial page load
+    trackEvent('PAGE_LOAD_BESUCH_PLANEN');
+
+    // Track time-based engagement
+    const engagementTimers = [30, 60, 120, 300]; // 30s, 1min, 2min, 5min
+    engagementTimers.forEach(seconds => {
+      setTimeout(() => {
+        trackEvent(`ENGAGEMENT_${seconds}S`, seconds);
+      }, seconds * 1000);
+    });
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Helper function to set section refs
+  const setSectionRef = (sectionName) => (el) => {
+    sectionRefs.current[sectionName] = el;
+  };
+
   return (
     <>
       <Header activeNavItem="besuchplanen" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
         <AccessibilityNav currentPage="Besuch planen" />
-        <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36">
+        <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" ref={setSectionRef('hero')}>
           <StoryTime
             imageProps={{
               imageName: "171030_naturkunde_156_c_thomas_rosenthal_0.jpg",
@@ -95,7 +165,7 @@ const IndexPage = () => {
           />
 
         </Section>
-        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center" ref={setSectionRef('oeffnungszeiten')}>
           <div className="py-10 md:py-20">
             <CardText
               headline="Öffnungszeiten"
@@ -154,7 +224,7 @@ const IndexPage = () => {
           </Accordion>
 
         </Section>
-        <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+        <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center" ref={setSectionRef('tickets_preise')}>
           <div className="flex flex-col justify-center items-center gap-10 md:gap-20 py-10 md:py-20">
             {/* <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
               <p className="text-center text-black">
@@ -454,7 +524,7 @@ const IndexPage = () => {
 
         </Section>
 
-        <Section id="anreise" columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center">
+        <Section id="anreise" columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center" ref={setSectionRef('anreise')}>
           <div className="flex flex-col justify-center items-center py-10 md:py-20">
             <div className="py-[30px] mb-[17px]">
               <div className="w-[200px] h-[200px] relative overflow-hidden rounded-full">
@@ -577,7 +647,7 @@ const IndexPage = () => {
             </AccordionItem>
           </Accordion>
         </Section>
-        <Section id="im-museum" columns={1} backgroundColor="bg-white" padding="pt-8 md:pt-16 pb-4 md:pb-8">
+        <Section id="im-museum" columns={1} backgroundColor="bg-white" padding="pt-8 md:pt-16 pb-4 md:pb-8" ref={setSectionRef('im_museum')}>
           <div className="py-10 md:py-20">
             <CardText
               headline="Im Museum"
@@ -708,7 +778,7 @@ const IndexPage = () => {
             />
           </Slideshow>
         </Section>
-        <Section backgroundColor="bg-white" padding="pt-8 md:pt-16 pb-4 md:pb-8">
+        <Section backgroundColor="bg-white" padding="pt-8 md:pt-16 pb-4 md:pb-8" ref={setSectionRef('museum_services')}>
           <div className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="sm:col-span-2 lg:col-span-2">
               <Card
@@ -800,7 +870,7 @@ const IndexPage = () => {
 
           </div>
         </Section>
-        <Section columns={1} backgroundColor="bg-Green-100" padding="pt-8 md:pt-16 pb-0">
+        <Section columns={1} backgroundColor="bg-Green-100" padding="pt-8 md:pt-16 pb-0" ref={setSectionRef('besondere_besuche')}>
           <div className="py-10 md:py-20">
 
             <CardText
@@ -821,7 +891,7 @@ const IndexPage = () => {
             />
           </div>
         </Section>
-        <Section columns={4} backgroundColor="bg-Green-100">
+        <Section columns={4} backgroundColor="bg-Green-100" ref={setSectionRef('bildungsangebote')}>
           <Card
             variant="classic"
             imageProps={{
@@ -883,7 +953,7 @@ const IndexPage = () => {
             url="/de/museum/bildung/familien"
           />
         </Section>
-        <Section columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-36" justifyContent="center">
+        <Section columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-36" justifyContent="center" ref={setSectionRef('faq')}>
           <div className="py-10 md:py-20">
             <CardText
               headline="Oft gestellte Fragen"
@@ -963,7 +1033,7 @@ const IndexPage = () => {
               </AccordionItem>
             </Accordion>
         </Section>
-        <Section columns={1} backgroundColor="bg-Black-100">
+        <Section columns={1} backgroundColor="bg-Black-100" ref={setSectionRef('kontakt')}>
           <CardText
             headline="Kontakt"
             headlineStyle="h1"
@@ -985,7 +1055,7 @@ const IndexPage = () => {
           </div>
 
         </Section>
-        <Section columns={1} backgroundColor="bg-Black-100">
+        <Section columns={1} backgroundColor="bg-Black-100" ref={setSectionRef('feedback')}>
           <Feedback />
         </Section>
       </main>

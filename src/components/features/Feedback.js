@@ -52,6 +52,11 @@ const Feedback = () => {
   const handleStarClick = (selectedRating) => {
     setRating(selectedRating);
     setShowModal(true);
+    
+    // Fathom tracking für Feedback-Interaktionen
+    if (typeof window !== 'undefined' && window.fathom) {
+      window.fathom.trackGoal('FEEDBACK_RATING_CLICK', selectedRating);
+    }
   };
 
   const submitInBackground = async (rating, feedbackText = '', isFullSubmission = false) => {

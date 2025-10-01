@@ -36,6 +36,13 @@ export const AccordionItem = ({ children, title, index }) => {
   const headingId = `${accordionId}-heading-${index}`;
 
   const toggleItem = () => {
+    // Fathom tracking für Accordion-Interaktionen
+    if (typeof window !== 'undefined' && window.fathom) {
+      const action = isOpen ? 'CLOSE' : 'OPEN';
+      const sectionName = title.replace(/[^a-zA-Z0-9]/g, '_').toUpperCase();
+      window.fathom.trackGoal(`ACCORDION_${action}_${sectionName}`, 0);
+    }
+    
     handleIndexChange(isOpen ? null : index);
   };
 
