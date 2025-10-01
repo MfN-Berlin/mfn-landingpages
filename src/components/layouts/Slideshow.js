@@ -13,15 +13,33 @@ const Slideshow = ({ children, imageMap, centered = false }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
+    if (emblaApi) {
+      emblaApi.scrollPrev();
+      // Fathom tracking
+      if (typeof window !== 'undefined' && window.fathom) {
+        window.fathom.trackGoal('SLIDESHOW_PREV', 0);
+      }
+    }
   }, [emblaApi]);
 
   const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
+    if (emblaApi) {
+      emblaApi.scrollNext();
+      // Fathom tracking
+      if (typeof window !== 'undefined' && window.fathom) {
+        window.fathom.trackGoal('SLIDESHOW_NEXT', 0);
+      }
+    }
   }, [emblaApi]);
 
   const scrollTo = useCallback((index) => {
-    if (emblaApi) emblaApi.scrollTo(index);
+    if (emblaApi) {
+      emblaApi.scrollTo(index);
+      // Fathom tracking
+      if (typeof window !== 'undefined' && window.fathom) {
+        window.fathom.trackGoal('SLIDESHOW_DOT_CLICK', index);
+      }
+    }
   }, [emblaApi]);
 
   useEffect(() => {

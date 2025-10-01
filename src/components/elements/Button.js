@@ -13,6 +13,25 @@ const Button = ({ text, children, variant = 'primary', url, onClick, className =
   };
 
   const handleClick = (e) => {
+    // Fathom tracking für Button-Klicks
+    if (typeof window !== 'undefined' && window.fathom && url) {
+      const eventName = url.startsWith('#') 
+        ? `SCROLL_TO_${url.substring(1).toUpperCase()}`
+        : url.includes('ticketshop') 
+          ? 'TICKET_SHOP_CLICK'
+          : url.includes('maps.app.goo.gl') || url.includes('google.de/maps')
+            ? 'MAPS_CLICK'
+            : url.startsWith('tel:')
+              ? 'PHONE_CLICK'
+              : url.startsWith('mailto:')
+                ? 'EMAIL_CLICK'
+                : url.startsWith('http')
+                  ? 'EXTERNAL_LINK_CLICK'
+                  : 'INTERNAL_LINK_CLICK';
+      
+      window.fathom.trackGoal(eventName, 0);
+    }
+
     if (onClick) {
       onClick(e);
     } else if (url) {
