@@ -47,6 +47,9 @@ const IndexPage = () => {
   const trackedSections = useRef(new Set());
   const startTime = useRef(Date.now());
   const scrollDepthTracked = useRef(new Set());
+  const sectionViewTimes = useRef({});
+  const currentVisibleSection = useRef(null);
+  const sectionStartTime = useRef(null);
 
   // Fathom tracking function
   const trackEvent = (eventName, value = null) => {
@@ -76,23 +79,87 @@ const IndexPage = () => {
         }
       });
 
-      // Track section visibility
+      // Track section visibility and time spent
+      let mostVisibleSection = null;
+      let maxVisibleArea = 0;
+
       Object.entries(sectionRefs.current).forEach(([sectionName, ref]) => {
-        if (ref && !trackedSections.current.has(sectionName)) {
+        if (ref) {
           const rect = ref.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight * 0.5 && rect.bottom > 0;
+          const viewportHeight = window.innerHeight;
           
-          if (isVisible) {
-            trackedSections.current.add(sectionName);
-            const timeToSection = Math.round((Date.now() - startTime.current) / 1000);
-            trackEvent(`SECTION_${sectionName.toUpperCase()}`, timeToSection);
+          // Calculate visible area of this section
+          const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
+          const visibleArea = Math.max(0, visibleTop);
+          
+          // Track first time reaching section
+          if (!trackedSections.current.has(sectionName)) {
+            const isVisible = rect.top < viewportHeight * 0.5 && rect.bottom > 0;
+            if (isVisible) {
+              trackedSections.current.add(sectionName);
+              const timeToSection = Math.round((Date.now() - startTime.current) / 1000);
+              trackEvent(`SECTION_REACHED_${sectionName.toUpperCase()}`, timeToSection);
+            }
+          }
+          
+          // Find section with most visible area
+          if (visibleArea > maxVisibleArea && visibleArea > 100) { // Minimum 100px visible
+            maxVisibleArea = visibleArea;
+            mostVisibleSection = sectionName;
           }
         }
       });
+
+      // Track section view time when switching sections
+      const now = Date.now();
+      if (mostVisibleSection !== currentVisibleSection.current) {
+        // End timing for previous section
+        if (currentVisibleSection.current && sectionStartTime.current) {
+          const timeSpent = Math.round((now - sectionStartTime.current) / 1000);
+          if (timeSpent >= 2) { // Only track if spent at least 2 seconds
+            const sectionName = currentVisibleSection.current.toUpperCase();
+            
+            // Track time spent in buckets
+            let timeBucket;
+            if (timeSpent < 5) timeBucket = '2_5S';
+            else if (timeSpent < 10) timeBucket = '5_10S';
+            else if (timeSpent < 20) timeBucket = '10_20S';
+            else if (timeSpent < 30) timeBucket = '20_30S';
+            else if (timeSpent < 60) timeBucket = '30_60S';
+            else timeBucket = '60S_PLUS';
+            
+            trackEvent(`SECTION_TIME_${sectionName}_${timeBucket}`, timeSpent);
+          }
+        }
+        
+        // Start timing for new section
+        currentVisibleSection.current = mostVisibleSection;
+        sectionStartTime.current = mostVisibleSection ? now : null;
+      }
     };
 
     // Track initial page load
     trackEvent('PAGE_LOAD_BESUCH_PLANEN');
+
+    // Global click tracking for HTML links
+    const handleGlobalClick = (e) => {
+      const link = e.target.closest('a');
+      if (link && link.href && link.href.includes('ticketshop.museumfuernaturkunde.berlin')) {
+        // Determine context based on link text or parent elements
+        const linkText = link.textContent.toLowerCase();
+        let context = 'HTML_LINK';
+        
+        if (linkText.includes('onlineshop')) {
+          context = 'TICKETS_SECTION_TEXT';
+        } else if (linkText.includes('hier')) {
+          context = 'FAQ_SECTION_TEXT';
+        }
+        
+        trackEvent(`TICKET_SHOP_${context}`);
+      }
+    };
+
+    document.addEventListener('click', handleGlobalClick);
 
     // Track time-based engagement
     const engagementTimers = [30, 60, 120, 300]; // 30s, 1min, 2min, 5min
@@ -102,11 +169,33 @@ const IndexPage = () => {
       }, seconds * 1000);
     });
 
+    // Track final section time on page unload
+    const handleBeforeUnload = () => {
+      if (currentVisibleSection.current && sectionStartTime.current) {
+        const timeSpent = Math.round((Date.now() - sectionStartTime.current) / 1000);
+        if (timeSpent >= 2) {
+          const sectionName = currentVisibleSection.current.toUpperCase();
+          let timeBucket;
+          if (timeSpent < 5) timeBucket = '2_5S';
+          else if (timeSpent < 10) timeBucket = '5_10S';
+          else if (timeSpent < 20) timeBucket = '10_20S';
+          else if (timeSpent < 30) timeBucket = '20_30S';
+          else if (timeSpent < 60) timeBucket = '30_60S';
+          else timeBucket = '60S_PLUS';
+          
+          trackEvent(`SECTION_TIME_${sectionName}_${timeBucket}`, timeSpent);
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('beforeunload', handleBeforeUnload);
     handleScroll(); // Initial check
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      document.removeEventListener('click', handleGlobalClick);
     };
   }, []);
 
@@ -139,7 +228,8 @@ const IndexPage = () => {
                 {
                   text: "Tickets",
                   url: "https://ticketshop.museumfuernaturkunde.berlin",
-                  variant: "plain"
+                  variant: "plain",
+                  trackingContext: "HERO_BUTTON"
                 },
                 {
                   text: "Anfahrt",
@@ -166,6 +256,7 @@ const IndexPage = () => {
             className="h-96"
             imagePosition="right"
             linkText="Zum Ticket Shop"
+            linkTrackingContext="HERO_CIRCLE"
           />
 
         </Section>

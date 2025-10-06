@@ -76,6 +76,7 @@ const CardText = ({
               url={buttonProps.url}
               variant={buttonProps.variant}
               onClick={buttonProps.onClick}
+              trackingContext={buttonProps.trackingContext}
             />
           ))}
         </div>
