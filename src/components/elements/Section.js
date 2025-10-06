@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Section = ({ 
+const Section = React.forwardRef(({ 
   children, 
   className = '', 
   backgroundColor = 'bg-transparent',
@@ -12,7 +12,7 @@ const Section = ({
   justifyContent = 'start',
   forceGrid = false,
   id
-}) => {
+}, ref) => {
   const getGridClass = () => {
     if (layout === 'custom') {
       return `grid-cols-12 ${gapClass}`;
@@ -36,6 +36,7 @@ const Section = ({
 
   return (
     <section 
+      ref={ref}
       id={id}
       className={`w-full ${padding} ${backgroundColor} ${className}`}
     >
@@ -55,6 +56,8 @@ const Section = ({
       </div>
     </section>
   );
-};
+});
+
+Section.displayName = 'Section';
 
 export default Section;
