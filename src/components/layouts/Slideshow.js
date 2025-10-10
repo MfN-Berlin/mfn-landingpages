@@ -13,33 +13,15 @@ const Slideshow = ({ children, imageMap, centered = false }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => {
-    if (emblaApi) {
-      emblaApi.scrollPrev();
-      // Fathom tracking
-      if (typeof window !== 'undefined' && window.fathom) {
-        window.fathom.trackEvent('SLIDESHOW_PREV');
-      }
-    }
+    if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
 
   const scrollNext = useCallback(() => {
-    if (emblaApi) {
-      emblaApi.scrollNext();
-      // Fathom tracking
-      if (typeof window !== 'undefined' && window.fathom) {
-        window.fathom.trackEvent('SLIDESHOW_NEXT');
-      }
-    }
+    if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
   const scrollTo = useCallback((index) => {
-    if (emblaApi) {
-      emblaApi.scrollTo(index);
-      // Fathom tracking
-      if (typeof window !== 'undefined' && window.fathom) {
-        window.fathom.trackEvent('SLIDESHOW_DOT_CLICK', { _value: index });
-      }
-    }
+    if (emblaApi) emblaApi.scrollTo(index);
   }, [emblaApi]);
 
   useEffect(() => {

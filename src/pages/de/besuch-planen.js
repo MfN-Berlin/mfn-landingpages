@@ -68,17 +68,6 @@ const IndexPage = () => {
     if (typeof window === 'undefined') return;
 
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
-
-      // Track scroll depth milestones
-      [25, 50, 75, 100].forEach(milestone => {
-        if (scrollPercent >= milestone && !scrollDepthTracked.current.has(milestone)) {
-          scrollDepthTracked.current.add(milestone);
-          trackEvent(`SCROLL_${milestone}`, milestone);
-        }
-      });
 
       // Track section visibility and time spent
       let mostVisibleSection = null;
@@ -142,21 +131,70 @@ const IndexPage = () => {
     // Track initial page load
     trackEvent('PAGE_LOAD_BESUCH_PLANEN');
 
-    // Global click tracking for HTML links
+    // Comprehensive link tracking
     const handleGlobalClick = (e) => {
       const link = e.target.closest('a');
-      if (link && link.href && link.href.includes('ticketshop.museumfuernaturkunde.berlin')) {
-        // Determine context based on link text or parent elements
-        const linkText = link.textContent.toLowerCase();
-        let context = 'HTML_LINK';
+      if (!link) return;
+
+      let eventName = '';
+      const href = link.href || link.getAttribute('to') || '';
+      const linkText = link.textContent?.trim() || '';
+      
+      // Ticketshop links - specific tracking
+      if (href.includes('ticketshop.museumfuernaturkunde.berlin')) {
+        // Determine section context
+        const section = link.closest('[data-section]')?.getAttribute('data-section') || 'unknown';
         
-        if (linkText.includes('onlineshop')) {
-          context = 'TICKETS_SECTION_TEXT';
-        } else if (linkText.includes('hier')) {
-          context = 'FAQ_SECTION_TEXT';
+        if (linkText.toLowerCase().includes('onlineshop')) {
+          eventName = `LINK_TICKETSHOP_${section.toUpperCase()}_ONLINESHOP_TEXT`;
+        } else if (linkText.toLowerCase().includes('hier')) {
+          eventName = `LINK_TICKETSHOP_${section.toUpperCase()}_HIER_TEXT`;
+        } else if (linkText.toLowerCase().includes('tickets')) {
+          eventName = `LINK_TICKETSHOP_${section.toUpperCase()}_TICKETS_BUTTON`;
+        } else if (linkText.toLowerCase().includes('zum ticket shop')) {
+          eventName = `LINK_TICKETSHOP_${section.toUpperCase()}_CIRCLE_BUTTON`;
+        } else {
+          eventName = `LINK_TICKETSHOP_${section.toUpperCase()}_UNKNOWN`;
         }
-        
-        trackEvent(`TICKET_SHOP_${context}`);
+      }
+      // Internal navigation links
+      else if (href.startsWith('#')) {
+        const target = href.substring(1);
+        eventName = `LINK_INTERNAL_SCROLL_${target.toUpperCase()}`;
+      }
+      // Internal site links
+      else if (href.includes(window.location.hostname) || href.startsWith('/')) {
+        // Extract page name from URL
+        const urlParts = href.split('/').filter(part => part);
+        const pageName = urlParts[urlParts.length - 1] || 'HOME';
+        eventName = `LINK_INTERNAL_${pageName.toUpperCase().replace(/[^A-Z0-9]/g, '_')}`;
+      }
+      // External links
+      else if (href.startsWith('http')) {
+        if (href.includes('maps.app.goo.gl') || href.includes('google.de/maps')) {
+          eventName = 'LINK_EXTERNAL_GOOGLE_MAPS';
+        } else if (href.includes('museumfuernaturkunde.berlin')) {
+          eventName = 'LINK_EXTERNAL_MFN_DOMAIN';
+        } else {
+          // Extract domain for external links
+          try {
+            const domain = new URL(href).hostname.replace(/^www\./, '').replace(/\./g, '_').toUpperCase();
+            eventName = `LINK_EXTERNAL_${domain}`;
+          } catch {
+            eventName = 'LINK_EXTERNAL_UNKNOWN';
+          }
+        }
+      }
+      // Phone and email links
+      else if (href.startsWith('tel:')) {
+        eventName = 'LINK_PHONE_CALL';
+      }
+      else if (href.startsWith('mailto:')) {
+        eventName = 'LINK_EMAIL';
+      }
+
+      if (eventName) {
+        trackEvent(eventName);
       }
     };
 
@@ -216,7 +254,7 @@ const IndexPage = () => {
             type="warning"
           />
         </Section>
-        <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" ref={setSectionRef('hero')}>
+        <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" ref={setSectionRef('hero')} data-section="hero">
           <StoryTime
             imageProps={{
               imageName: "171030_naturkunde_156_c_thomas_rosenthal_0.jpg",
@@ -267,7 +305,7 @@ const IndexPage = () => {
           />
 
         </Section>
-        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center" ref={setSectionRef('oeffnungszeiten')}>
+        <Section columns={2} backgroundColor="bg-Green-100" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center" ref={setSectionRef('oeffnungszeiten')} data-section="oeffnungszeiten">
           <div className="py-10 md:py-20">
             <CardText
               headline="Öffnungszeiten"
@@ -326,7 +364,7 @@ const IndexPage = () => {
           </Accordion>
 
         </Section>
-        <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center" ref={setSectionRef('tickets_preise')}>
+        <Section id="tickets-preise" columns={2} backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" justifyContent="center" ref={setSectionRef('tickets_preise')} data-section="tickets_preise">
           <div className="flex flex-col justify-center items-center gap-10 md:gap-20 py-10 md:py-20">
             {/* <div className="flex items-center justify-center w-[166px] h-[166px] p-4 rotate-[7deg] bg-Yellow rounded-full shadow-lg">
               <p className="text-center text-black">

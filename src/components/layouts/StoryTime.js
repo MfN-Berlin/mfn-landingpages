@@ -23,13 +23,6 @@ const StoryTime = ({
         <Link 
           to={linkUrl} 
           className="absolute bottom-4 right-4 w-32 h-32 md:w-36 md:h-36 px-4 py-6 md:px-6 md:py-9 bg-Green-500 rounded-full flex-col justify-center items-center gap-2.5 inline-flex hover:bg-[#5f7d00] transition-colors duration-300 z-10"
-          onClick={() => {
-            // Fathom tracking für StoryTime-Link
-            if (typeof window !== 'undefined' && window.fathom && linkUrl && linkUrl.includes('ticketshop')) {
-              const context = linkTrackingContext || 'HERO_CIRCLE';
-              window.fathom.trackEvent(`TICKET_SHOP_${context.toUpperCase()}`);
-            }
-          }}
         >
           <div className="w-full text-center text-white text-xl font-bold leading-[1.75rem]">{linkText}</div>
         </Link>

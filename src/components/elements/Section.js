@@ -11,7 +11,9 @@ const Section = React.forwardRef(({
   layout = 'equal',
   justifyContent = 'start',
   forceGrid = false,
-  id
+  id,
+  'data-section': dataSection,
+  ...props
 }, ref) => {
   const getGridClass = () => {
     if (layout === 'custom') {
@@ -38,7 +40,9 @@ const Section = React.forwardRef(({
     <section 
       ref={ref}
       id={id}
+      data-section={dataSection}
       className={`w-full ${padding} ${backgroundColor} ${className}`}
+      {...props}
     >
       <div className={`${forceGrid ? 'grid' : 'block md:grid'}  ${innerBg ? 'grid-cols-[1fr_minmax(auto,_min(1200px,_95vw))_1fr]' : '1fr grid-cols-[1fr_minmax(auto,_min(1165px,_100vw))_1fr]'} `}>
         <div className={`col-start-2 col-end-3 px-3 ${innerBg ? `${innerBg} py-12` : ''}`}>
