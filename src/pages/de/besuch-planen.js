@@ -248,12 +248,6 @@ const IndexPage = () => {
       <Header activeNavItem="besuchplanen" />
       <main className="flex flex-col items-center justify-center min-h-screen p-0 bg-Black-000">
         <AccessibilityNav currentPage="Besuch planen" />
-        <Section backgroundColor="bg-white" padding="py-4" ref={setSectionRef('banner')}>
-          <Banner 
-            message="Aufgrund von Wartungsarbeiten, ist der Ticketshop am 13. Oktober von ca 9-12 Uhr nicht erreichbar."
-            type="warning"
-          />
-        </Section>
         <Section backgroundColor="bg-white" gapClass="gap-10 md:gap-20 xl:gap-36" ref={setSectionRef('hero')} data-section="hero">
           <StoryTime
             imageProps={{
