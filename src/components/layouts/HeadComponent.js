@@ -9,16 +9,10 @@ const HeadComponent = ({
   image = "/images/goldwespe_web.jpg",
   pathname = ""
 }) => {
-  // Get the correct site URL based on environment
   const getBaseUrl = () => {
     const { hostname } = getEnvironmentConfig()
-    
-    if (hostname === 'mfn-berlin.github.io') {
-      return 'https://mfn-berlin.github.io'
-    }
-    if (hostname === 'website-archiv.museumfuernaturkunde.berlin') {
-      return 'https://website-archiv.museumfuernaturkunde.berlin'
-    }
+    if (hostname === 'mfn-berlin.github.io') return 'https://website-archiv.museumfuernaturkunde.berlin'
+    if (hostname === 'website-archiv.museumfuernaturkunde.berlin') return 'https://website-archiv.museumfuernaturkunde.berlin'
     return 'https://www.museumfuernaturkunde.berlin'
   }
 
@@ -28,7 +22,6 @@ const HeadComponent = ({
     console.log('[MFN URL Debug]', {
       href: window.location.href,
       hostname: window.location.hostname,
-      pathname: window.location.pathname,
       siteUrl,
       computedCanonical: `${siteUrl}${pathname}`,
       nodeEnv: process.env.NODE_ENV,
