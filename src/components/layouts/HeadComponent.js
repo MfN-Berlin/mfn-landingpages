@@ -24,6 +24,17 @@ const HeadComponent = ({
 
   const siteUrl = getBaseUrl()
 
+  if (typeof window !== 'undefined') {
+    console.log('[MFN URL Debug]', {
+      href: window.location.href,
+      hostname: window.location.hostname,
+      pathname: window.location.pathname,
+      siteUrl,
+      computedCanonical: `${siteUrl}${pathname}`,
+      nodeEnv: process.env.NODE_ENV,
+    })
+  }
+
   return (
     <>
       <title>{title} | Museum für Naturkunde</title>
