@@ -60,6 +60,13 @@ const PreferenceManager = ({ forceOpen = false, onClose = () => {} }) => {
       };
     }
 
+    if (hostname === 'website-archiv.museumfuernaturkunde.berlin') {
+      return {
+        domain: 'website-archiv.museumfuernaturkunde.berlin',
+        path: '/'
+      };
+    }
+
     return {
       domain: hostname,
       path: '/'
