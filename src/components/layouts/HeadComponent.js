@@ -16,6 +16,9 @@ const HeadComponent = ({
     if (hostname === 'mfn-berlin.github.io') {
       return 'https://mfn-berlin.github.io'
     }
+    if (hostname === 'website-archiv.museumfuernaturkunde.berlin') {
+      return 'https://website-archiv.museumfuernaturkunde.berlin'
+    }
     return 'https://www.museumfuernaturkunde.berlin'
   }
 
