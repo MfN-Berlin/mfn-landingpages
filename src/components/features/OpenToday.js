@@ -43,7 +43,7 @@ const OpenToday = () => {
     // const now = new Date();
     // const xdate = new Date('2024-12-25T22:00:00');  
     const now = new Date();
-    const currentHour = now.getHours();
+    const currentHour = Number(now.toLocaleString('en', {timeZone: 'Europe/Berlin', hour12: false, hour: 'numeric'}));
     const isAfterClosing = currentHour >= 18;
 
     // Wenn nach Schließzeit, dann Infos für morgen anzeigen
@@ -52,18 +52,17 @@ const OpenToday = () => {
     if (isAfterClosing) {
       targetDate.setDate(targetDate.getDate() + 1);
     }
-
-    const day = targetDate.getDay();
-    const date = targetDate.getDate();
-    const month = targetDate.getMonth() + 1;
+    const day = targetDate.toLocaleString('en', {timeZone: 'Europe/Berlin', weekday: 'short'});
+    const date = Number(targetDate.toLocaleString("en", {timeZone: 'Europe/Berlin', day: 'numeric'}));
+    const month = Number(targetDate.toLocaleString("en", {timeZone: 'Europe/Berlin', month: 'numeric'})) + 1;
     const isHoliday = isDateMatch(holidays, month, date);
-    const isWeekend = day === 0 || day === 6;
+    const isWeekend = day === 'Sun' || day === 'Sat';
     const openingTime = isWeekend ? "10:00" : "09:30";
     const timePrefix = isAfterClosing ? translations.tomorrow : translations.today;
 
     // Prüfe ob der Zieltag geschlossen ist
     const isTargetDayClosed = isDateMatch(closingDays, month, date) || 
-                             (day === 1 && !isHoliday); // Montag und kein Feiertag
+                             (day === 'Mon' && !isHoliday); // Montag und kein Feiertag
 
     // Check closing days first
     if (isTargetDayClosed) {
